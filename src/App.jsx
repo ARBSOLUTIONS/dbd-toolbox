@@ -12,6 +12,7 @@ import { useFavorites } from './lib/favorites.js';
 import { NavContext } from './lib/nav.js';
 import { loadData, STATIC, SITE_NAME } from './lib/api.js';
 import { withTags } from './lib/tags.js';
+import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { generateBuilds } from './lib/generator.js';
 import PatchNews from './components/PatchNews.jsx';
@@ -32,6 +33,9 @@ const TABS = [
   { id: 'items', label: 'Items' },
   { id: 'offerings', label: 'Offerings' },
 ];
+
+// Offerings get a rating (1-5 stars + reason); the rating also corrects the role.
+const rateOfferings = (list) => withOfferingRatings(list).map((o) => ({ ...o, role: o.rating.role ?? o.role }));
 
 export default function App() {
   const [data, setData] = useState(null);
@@ -57,7 +61,7 @@ export default function App() {
   const load = useCallback(() => {
     loadData()
       // Add playstyle tags to every perk once, right after loading.
-      .then((d) => setData({ ...d, perks: withTags(d.perks) }))
+      .then((d) => setData({ ...d, perks: withTags(d.perks), offerings: rateOfferings(d.offerings) }))
       .catch(() =>
         setError(STATIC ? 'Could not load the data. Please reload the page.' : 'Could not reach the local server. Is “npm run dev” running?'),
       );

@@ -7,6 +7,7 @@ import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
 import { scoreBuild } from '../lib/builds.js';
 import { suggestPerks, suggestItemTypes, suggestAddons } from '../lib/combos.js';
+import { bestOffering, stars } from '../lib/offeringRatings.js';
 
 const EMPTY = {
   role: 'survivor',
@@ -59,6 +60,14 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
     chosen.length && addons.some((a) => !a) && addonPool.length
       ? suggestAddons(chosen, addonPool.filter((a) => !b.addons.includes(a.id)), 3)
       : [];
+
+  // Offerings for this role, best rated first; the stars show as a subtitle in the list.
+  const offeringOptions = data.offerings
+    .filter((o) => (o.role === b.role || o.role === 'both') && o.rating?.available !== false)
+    .sort((x, y) => (y.rating?.stars ?? 0) - (x.rating?.stars ?? 0) || x.name.localeCompare(y.name))
+    .map((o) => ({ ...o, character: o.rating ? `${stars(o.rating.stars)} · ${o.rating.kind}` : null }));
+  const mainStyle = b.playstyles[0] ?? Object.entries(rating.tags ?? {}).sort((x, y) => y[1] - x[1])[0]?.[0];
+  const suggestedOffering = chosen.length ? bestOffering(data.offerings, b.role, mainStyle) : null;
 
   const perkOptions = data.perks.filter((p) => p.role === b.role && !b.perks.includes(p.id));
   const exhaustionCount = chosen.filter((p) => p.exhaustion && p.id !== 'adrenaline').length;
@@ -210,12 +219,26 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
         <h3 className="section-title">Offering (optional)</h3>
         <div className="maker-slots">
           <Picker
-            options={data.offerings.filter((o) => o.role === b.role || o.role === 'both')}
+            options={offeringOptions}
             value={offering}
             onPick={(o) => set({ offering: o?.id ?? null })}
-            placeholder="Offering…"
+            placeholder="Offering… (best first)"
           />
         </div>
+        {offering?.rating && (
+          <p className="small muted">
+            <span className="stars">{stars(offering.rating.stars)}</span> {offering.rating.why}
+          </p>
+        )}
+        {!offering && suggestedOffering && (
+          <p className="small">
+            <strong>Tip:</strong>{' '}
+            <button className="link-button" onClick={() => set({ offering: suggestedOffering.id })}>
+              {suggestedOffering.name}
+            </button>{' '}
+            <span className="stars">{stars(suggestedOffering.rating?.stars ?? 0)}</span> — {suggestedOffering.rating?.why}
+          </p>
+        )}
       </div>
 
       <aside className="maker-side card">

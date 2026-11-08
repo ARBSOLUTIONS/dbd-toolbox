@@ -366,3 +366,14 @@ button.ok { border-color: var(--ok); color: var(--ok); }
   animation: toast-in 0.3s ease-out;
 }
 @keyframes toast-in { from { transform: translateY(20px); opacity: 0; } to { transform: none; opacity: 1; } }
+
+/* ---------- Offering ratings ---------- */
+.entity-note { margin: 6px 0; padding: 6px 8px; background: var(--panel-2); border-radius: 6px; font-size: 0.88em; }
+.stars { color: #f5c542; letter-spacing: 1px; }
+.stars-1, .stars-2 { color: #a88a3a; }
+.kind-impact { border-color: var(--ok); color: var(--ok); }
+.kind-situational { border-color: var(--warn); color: var(--warn); }
+.kind-bloodpoints { color: var(--muted); }
+.tier { color: var(--text); }
+.tier-5 { color: #f5c542; }
+.tier-4 { color: #4caf50; }

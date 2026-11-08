@@ -20,6 +20,7 @@ import { resolveBuild, scoreBuild } from '../src/lib/builds.js';
 import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
+import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -127,7 +128,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 </head>
 <body>
 <header class="top"><a class="logo" href="/">DBD-<span>Toolbox</span></a>
-<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a></nav></header>
+<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
@@ -285,6 +286,60 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
   );
 }
 
+// ---------- 5b. Offering tier list ----------
+{
+  const rated = withOfferingRatings(raw.offerings)
+    .map((o) => ({ ...o, role: o.rating.role ?? o.role }))
+    .filter((o) => o.rating.available);
+  const tiers = [
+    [5, 'S tier – game changers'],
+    [4, 'A tier – strong'],
+    [3, 'B tier – good in the right situation'],
+    [2, 'C tier – small effect'],
+    [1, 'D tier – barely any effect / Bloodpoints only'],
+  ];
+  const roleName = { survivor: 'Survivor', killer: 'Killer', both: 'Both roles' };
+  const section = (role) =>
+    tiers
+      .map(([n, label]) => {
+        const list = rated
+          .filter((o) => o.rating.stars === n && (o.role === role || o.role === 'both'))
+          .filter((o) => o.rating.kind !== 'bloodpoints' || n === 1)
+          .sort((a, b) => a.name.localeCompare(b.name));
+        if (!list.length) return '';
+        return `<h3>${label}</h3><ul class="combos">${list
+          .map(
+            (o) =>
+              `<li>${icon(o, 40)} <strong>${esc(o.name)}</strong> <span class="score">${stars(o.rating.stars)}</span> <span class="muted">${esc(KIND_LABEL[o.rating.kind])} · ${esc(roleName[o.role] ?? o.role)}</span><br>${esc(o.rating.why)}<br><span class="muted small">${esc(short(o.description, 200))}</span></li>`,
+          )
+          .join('')}</ul>`;
+      })
+      .join('');
+  const best = rated.filter((o) => o.rating.stars >= 4).map((o) => o.name);
+  const faq = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'What is the best killer offering in Dead by Daylight?', acceptedAnswer: { '@type': 'Answer', text: 'Ebony Memento Mori (kill every survivor on their last hook state), followed by Ivory Memento Mori and Putrid Oak (hooks closer together).' } },
+      { '@type': 'Question', name: 'What is the best survivor offering in Dead by Daylight?', acceptedAnswer: { '@type': 'Answer', text: "Vigo's Shroud (spawn far from the killer) and Shroud of Separation (all survivors spawn apart). White Ward is great to keep an expensive item." } },
+    ],
+  };
+  await write(
+    'offerings/index.html',
+    page({
+      url: '/offerings/',
+      title: `Best Dead by Daylight offerings – tier list (${meta.patch}) | ${SITE}`,
+      description: `Dead by Daylight offerings tier list for patch ${meta.patch}: every killer and survivor offering rated 1–5 stars for how much it helps you win. Best: ${best.join(', ')}.`,
+      body: `<h1>Dead by Daylight offerings tier list</h1>
+<p>Every offering rated from 1 to 5 stars for how much it helps you <strong>win the match</strong>. Bloodpoint offerings are great for grinding but do nothing in the match, so they are in D tier. Patch ${esc(meta.patch)}.</p>
+<h2>Killer offerings</h2>${section('killer')}
+<h2>Survivor offerings</h2>${section('survivor')}`,
+      jsonLd: [faq],
+      crumbs: [{ name: 'Offerings', url: '/offerings/' }],
+    }),
+  );
+}
+
 // ---------- 6. About, 404 ----------
 await write(
   'about/index.html',
@@ -405,6 +460,7 @@ await write(
 - [All perks](${SITE_URL}/perks/): ${data.perks.length} perks with descriptions and best combos
 - [All killers](${SITE_URL}/killers/): ${data.killers.length} killers with perks, add-ons and builds
 - [All survivors](${SITE_URL}/survivors/): ${data.survivors.length} survivors with their perks
+- [Offerings tier list](${SITE_URL}/offerings/): every offering rated 1-5 stars for how much it helps you win
 - [About, sources & licence](${SITE_URL}/about/)
 
 ## Top builds

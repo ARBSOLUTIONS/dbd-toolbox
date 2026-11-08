@@ -23,6 +23,10 @@ It runs on your own PC and opens in your browser.
   Completed or ✗ Failed to earn points.
 - **🏆 Achievements**: 26 achievements you unlock by completing challenges,
   with progress bars and a pop-up when you unlock one.
+- **Offerings tier list**: every offering rated 1–5 stars for how much it helps
+  you **win**, with a short reason (`src/lib/offeringRatings.js`). The build
+  maker sorts offerings by rating and suggests one, and generated builds get a
+  fitting offering. The public site has the same list at `/offerings/`.
 - **Perks, Killers, Survivors, Items, Offerings**: browse everything with icons
   and descriptions.
 

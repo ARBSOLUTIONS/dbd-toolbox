@@ -15,6 +15,7 @@ import { PLAYSTYLES } from './tags.js';
 import { scoreBuild } from './builds.js';
 import { suggestItemTypes, suggestAddons } from './combos.js';
 import { keywordTags } from './tags.js';
+import { bestOffering } from './offeringRatings.js';
 
 const TIPS = {
   stealth: 'Avoid chases, work on gens far from the killer and break line of sight early.',
@@ -93,7 +94,7 @@ function bestItemFor(perks, data) {
   return { item, addons };
 }
 
-function makeBuild({ id, name, role, style, perks, killer = null, item = null, addons = [], variant, patch }) {
+function makeBuild({ id, name, role, style, perks, killer = null, item = null, addons = [], variant, patch, offering = null }) {
   const rating = scoreBuild(perks, role, [style]);
   const label = PLAYSTYLES[role][style];
   return {
@@ -108,13 +109,13 @@ function makeBuild({ id, name, role, style, perks, killer = null, item = null, a
     item: item?.name ?? null,
     itemAddons: role === 'survivor' ? addons.map((a) => a.name) : undefined,
     addons: role === 'killer' ? addons.map((a) => a.name) : undefined,
-    offering: null,
+    offering: offering?.name ?? null,
     why:
       `Generated automatically for patch ${patch ?? '?'} from perk tags and known synergies` +
       `${variant === 'off-meta' ? ', avoiding the most common perks' : ''}. ` +
       (rating.pros.slice(0, 2).join(' ') || `All perks support a ${label.toLowerCase()} playstyle.`),
     howToPlay: TIPS[style] ?? '',
-    resolved: { perks, killer, item, addons, offering: null },
+    resolved: { perks, killer, item, addons, offering },
     missing: [],
     rating,
   };
@@ -133,6 +134,12 @@ export function generateBuilds(data, curated = [], changes = null) {
 
   const add = (build) => {
     if (build.resolved.perks.length < 4) return;
+    // Pick the best-rated offering that fits the build's role and playstyle.
+    const offering = bestOffering(data.offerings, build.role, build.playstyles[0]);
+    if (offering) {
+      build.offering = offering.name;
+      build.resolved.offering = offering;
+    }
     const key = build.resolved.perks.map((p) => p.id).sort().join('|') + (build.killer ?? '');
     if (seen.has(key)) return;
     seen.add(key);

@@ -6,7 +6,7 @@ import { useNav } from '../lib/nav.js';
  * Card for anything with an icon, name and description:
  * perks, add-ons, items and offerings. `subtitle` is the grey line under the name.
  */
-export function EntityCard({ entity, subtitle, isPerk = false }) {
+export function EntityCard({ entity, subtitle, note, isPerk = false }) {
   const [open, setOpen] = useState(false);
   const { showCombos } = useNav();
   const rarity = entity.rarity ? `rarity-${entity.rarity}` : '';
@@ -16,6 +16,7 @@ export function EntityCard({ entity, subtitle, isPerk = false }) {
       <div className="card-body">
         <h3>{entity.name}</h3>
         {subtitle && <div className="muted small">{subtitle}</div>}
+        {note && <div className="entity-note">{note}</div>}
         <p className="description">{entity.description}</p>
         {open && entity.quote && <p className="quote small">{entity.quote}</p>}
         {entity.tags?.length > 0 && (
