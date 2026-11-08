@@ -35,3 +35,18 @@ blockquote { margin: 12px 0; padding-left: 12px; border-left: 3px solid #6b5a2a;
 footer { max-width: 980px; margin: 24px auto; padding: 16px; border-top: 1px solid #2f2f3a; color: #9a98a3; font-size: 0.85em; }
 img { max-width: 100%; height: auto; }
 .jump .button { margin: 0 6px 8px 0; }
+
+/* Modern look, matching the app */
+body { background: radial-gradient(ellipse 70% 40% at 50% -10%, rgba(255, 61, 90, 0.14), transparent 70%), #09090b; color: #f4f4f5; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+a { color: #ff8b7a; }
+.top { position: sticky; top: 0; z-index: 5; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255, 255, 255, 0.07); }
+.logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: -0.02em; }
+.logo img { border-radius: 9px; }
+.logo span { margin-left: -6px; font-weight: 500; background: linear-gradient(135deg, #ff8a3d, #ff2e4d); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.top nav a { color: #a1a1aa; }
+.top nav a:hover { color: #f4f4f5; }
+h1, h2, h3 { letter-spacing: -0.02em; }
+.card, .combos li, .list li, .tiles a { background: rgba(255, 255, 255, 0.035); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 14px; }
+.button { background: linear-gradient(135deg, #ff8a3d, #ff2e4d); border: none; border-radius: 10px; box-shadow: 0 8px 24px -10px rgba(255, 46, 77, 0.8); }
+.tags span { border-color: rgba(255, 255, 255, 0.13); color: #a1a1aa; }
+footer { border-top-color: rgba(255, 255, 255, 0.07); color: #71717a; }

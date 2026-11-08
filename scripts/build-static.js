@@ -129,7 +129,7 @@ function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 </head>
 <body>
-<header class="top"><a class="logo" href="/">DBD-<span>Toolbox</span></a>
+<header class="top"><a class="logo" href="/"><img src="/logo.svg" alt="" width="32" height="32">DBD<span>Toolbox</span></a>
 <nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
@@ -484,10 +484,6 @@ ${[...curated].sort((a, b) => b.rating.score - a.rating.score).slice(0, 10).map(
 const indexNowKey = process.env.INDEXNOW_KEY || (await readJson('indexnow.json', {})).key;
 if (indexNowKey) await write(`${indexNowKey}.txt`, indexNowKey);
 await fs.copyFile(path.join(ROOT, 'scripts', 'seo.css'), path.join(DIST, 'seo.css'));
-await write(
-  'favicon.svg',
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#16161a"/><path d="M32 8 L44 30 L36 30 L40 56 L20 26 L29 26 Z" fill="#c0262d"/></svg>`,
-);
 await write('_headers', `/data/*\n  Cache-Control: public, max-age=300\n/icons/*\n  Cache-Control: public, max-age=604800\n`);
 
 console.log(`Static site ready in dist/: ${urls.length} pages in the sitemap, ${allBuilds.length} builds. Site URL: ${SITE_URL}`);

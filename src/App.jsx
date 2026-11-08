@@ -165,7 +165,10 @@ export default function App() {
       <header className="topbar">
         <h1>
           <button className="logo-button" onClick={() => setTab('home')} title="Home">
-            DBD-<span>Toolbox</span>
+            <img className="logo-mark" src="/logo.svg" alt="" width="36" height="36" />
+            <span className="logo-word">
+              DBD<span>Toolbox</span>
+            </span>
           </button>
         </h1>
         <DataStatus meta={data?.meta} onRefreshed={load} />

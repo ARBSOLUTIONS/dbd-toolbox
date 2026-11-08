@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1820"/>
+      <stop offset="1" stop-color="#0c0b0f"/>
+    </linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8a3d"/>
+      <stop offset="1" stop-color="#ff2e4d"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#bg)"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="14.25" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <!-- Four perk slots, arranged like a loadout -->
+  <path d="M32 6.5 45.5 20 32 33.5 18.5 20Z" fill="url(#hot)"/>
+  <path d="M18 21.5 30.5 34 18 46.5 5.5 34Z" fill="#463d4d"/>
+  <path d="M46 21.5 58.5 34 46 46.5 33.5 34Z" fill="#463d4d"/>
+  <path d="M32 35.5 44.5 48 32 60.5 19.5 48Z" fill="#332c3a"/>
+  <!-- Meat hook in the top slot -->
+  <g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M30.2 12.6a2.5 2.5 0 1 1 2.6 2.5" stroke-width="2.2"/>
+    <path d="M32.8 15.1v6.4a4.6 4.6 0 1 1-8.6-2.3" stroke-width="3"/>
+  </g>
+  <path d="M22.9 16.3l4.2 1.6-3.2 2.9z" fill="#fff"/>
+</svg>
