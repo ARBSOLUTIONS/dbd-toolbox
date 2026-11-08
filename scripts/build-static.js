@@ -10,8 +10,8 @@
 //
 // Settings (environment variables):
 //   SITE_URL                   e.g. https://dbd-toolbox.pages.dev (no trailing slash)
-//   GOOGLE_SITE_VERIFICATION   code from Google Search Console (optional)
-//   BING_SITE_VERIFICATION     code from Bing Webmaster Tools (optional)
+//   GOOGLE_SITE_VERIFICATION   code from Google Search Console (optional;
+//   BING_SITE_VERIFICATION     code from Bing Webmaster Tools   or put them in seo.config.json)
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -315,9 +315,13 @@ urls.pop();
   const file = path.join(DIST, 'index.html');
   let html = await fs.readFile(file, 'utf8');
   const description = `Free Dead by Daylight build generator: the best meta & fun survivor and killer builds for patch ${meta.patch}, perk combos, a build maker with ratings, and a challenge generator with achievements.`;
+  // Verification codes: from environment variables or from seo.config.json in the repo.
+  const seoConfig = await readJson('seo.config.json', {});
+  const google = process.env.GOOGLE_SITE_VERIFICATION || seoConfig.googleSiteVerification;
+  const bing = process.env.BING_SITE_VERIFICATION || seoConfig.bingSiteVerification;
   const verification = [
-    process.env.GOOGLE_SITE_VERIFICATION && `<meta name="google-site-verification" content="${esc(process.env.GOOGLE_SITE_VERIFICATION)}">`,
-    process.env.BING_SITE_VERIFICATION && `<meta name="msvalidate.01" content="${esc(process.env.BING_SITE_VERIFICATION)}">`,
+    google && `<meta name="google-site-verification" content="${esc(google)}">`,
+    bing && `<meta name="msvalidate.01" content="${esc(bing)}">`,
   ]
     .filter(Boolean)
     .join('\n');
