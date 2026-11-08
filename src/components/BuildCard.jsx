@@ -42,6 +42,7 @@ export default function BuildCard({ build, favorites, footer }) {
               {{ meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated', community: 'Community' }[build.type] ?? build.type}
             </span>
             {build.variant === 'off-meta' && <span className="badge badge-offmeta">Off-meta</span>}
+            {build.variant === 'spotlight' && <span className="badge badge-offmeta">Perk spotlight</span>}
             {build.newPerks?.length > 0 && (
               <span className="badge badge-new" title={`New perks: ${build.newPerks.join(', ')}`}>
                 ✨ New perk

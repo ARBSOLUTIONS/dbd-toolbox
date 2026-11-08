@@ -83,3 +83,13 @@ test('generator: ids are stable, so favourites keep working after a refresh', ()
     generated.map((b) => b.id),
   );
 });
+
+test('generator: every perk appears in at least one build', () => {
+  const t0 = Date.now();
+  const all = generateBuilds(data, curated);
+  const used = new Set();
+  for (const b of [...curated, ...all]) for (const p of b.resolved.perks) if (p) for (const id of p.aliasIds ?? [p.id]) used.add(id);
+  const missing = data.perks.filter((p) => !used.has(p.id)).map((p) => p.name);
+  assert.deepEqual(missing, []);
+  console.log(`builds: ${curated.length + all.length}, spotlights: ${all.filter((b) => b.variant === 'spotlight').length}, ${Date.now() - t0} ms`);
+});

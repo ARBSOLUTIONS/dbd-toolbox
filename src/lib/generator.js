@@ -246,6 +246,32 @@ export function generateBuilds(data, curated = [], changes = null) {
     );
   }
 
+  // Perk spotlights: every perk gets at least one build. Perks that no hand-picked
+  // or generated build uses yet get a build of their own, made around that perk.
+  const covered = new Set();
+  for (const b of [...curated, ...out]) for (const p of b.resolved.perks) if (p) for (const id of p.aliasIds ?? [p.id]) covered.add(id);
+  for (const perk of data.perks) {
+    if (covered.has(perk.id)) continue;
+    const style = perk.tags[0] ?? (perk.role === 'killer' ? 'slowdown' : 'chase');
+    const perks = pickPerks(data.perks, perk.role, style, { seed: [perk], popularity });
+    const extra = perk.role === 'survivor' ? bestItemFor(perks, data) : { item: null, addons: [] };
+    const before = out.length;
+    add(
+      makeBuild({
+        id: `auto-spotlight-${perk.role}-${perk.id}`,
+        name: `${perk.name} Spotlight`,
+        role: perk.role,
+        style,
+        perks,
+        item: extra.item,
+        addons: extra.addons,
+        variant: 'spotlight',
+        patch,
+      }),
+    );
+    if (out.length > before) for (const p of perks) for (const id of p.aliasIds ?? [p.id]) covered.add(id);
+  }
+
   // Mark builds that use perks that are new since the previous refresh.
   for (const b of out) b.newPerks = b.resolved.perks.filter((p) => fresh.has(p.id)).map((p) => p.name);
   return out;
