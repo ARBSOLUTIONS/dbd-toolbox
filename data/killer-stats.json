@@ -1,0 +1,556 @@
+{
+  "source": {
+    "name": "NightLight",
+    "url": "https://nightlight.gg/killers/viewer?shown=pick",
+    "note": "Community stats from matches uploaded to NightLight."
+  },
+  "fetchedAt": "2026-11-08T20:46:36.264Z",
+  "period": {
+    "start": "2026-10-11T16:00:00Z",
+    "end": "2026-11-08T16:00:00Z"
+  },
+  "games": 8133,
+  "average": {
+    "matches": 8133,
+    "pickRate": 2.27,
+    "killRate": 46.29,
+    "kills": [
+      28.49,
+      20.28,
+      13.13,
+      13.78,
+      24.32
+    ]
+  },
+  "killers": {
+    "the-slasher": {
+      "matches": 519,
+      "pickRate": 6.38,
+      "killRate": 44.85,
+      "kills": [
+        30.44,
+        19.27,
+        12.52,
+        15.99,
+        21.77
+      ]
+    },
+    "the-mastermind": {
+      "matches": 454,
+      "pickRate": 5.58,
+      "killRate": 41.35,
+      "kills": [
+        31.94,
+        21.81,
+        13.22,
+        14.98,
+        18.06
+      ]
+    },
+    "the-ghoul": {
+      "matches": 403,
+      "pickRate": 4.96,
+      "killRate": 46.77,
+      "kills": [
+        27.3,
+        20.35,
+        14.64,
+        13.4,
+        24.32
+      ]
+    },
+    "the-blight": {
+      "matches": 344,
+      "pickRate": 4.23,
+      "killRate": 48.04,
+      "kills": [
+        27.62,
+        18.9,
+        12.5,
+        15.7,
+        25.29
+      ]
+    },
+    "the-spirit": {
+      "matches": 272,
+      "pickRate": 3.34,
+      "killRate": 46.42,
+      "kills": [
+        28.31,
+        19.85,
+        12.87,
+        15.81,
+        23.16
+      ]
+    },
+    "the-good-guy": {
+      "matches": 271,
+      "pickRate": 3.33,
+      "killRate": 45.02,
+      "kills": [
+        31,
+        15.13,
+        16.61,
+        17.34,
+        19.93
+      ]
+    },
+    "the-judgment": {
+      "matches": 266,
+      "pickRate": 3.27,
+      "killRate": 54.89,
+      "kills": [
+        24.06,
+        16.17,
+        12.41,
+        10.9,
+        36.47
+      ]
+    },
+    "the-huntress": {
+      "matches": 261,
+      "pickRate": 3.21,
+      "killRate": 38.6,
+      "kills": [
+        34.1,
+        23.75,
+        13.41,
+        11.11,
+        17.62
+      ]
+    },
+    "the-animatronic": {
+      "matches": 255,
+      "pickRate": 3.14,
+      "killRate": 41.96,
+      "kills": [
+        29.8,
+        24.31,
+        12.55,
+        14.9,
+        18.43
+      ]
+    },
+    "the-legion": {
+      "matches": 245,
+      "pickRate": 3.01,
+      "killRate": 43.78,
+      "kills": [
+        30.2,
+        19.59,
+        13.47,
+        18.37,
+        18.37
+      ]
+    },
+    "the-hillbilly": {
+      "matches": 242,
+      "pickRate": 2.98,
+      "killRate": 52.38,
+      "kills": [
+        22.31,
+        19.01,
+        15.7,
+        12.81,
+        30.17
+      ]
+    },
+    "the-ghost-face": {
+      "matches": 230,
+      "pickRate": 2.83,
+      "killRate": 50,
+      "kills": [
+        26.96,
+        19.13,
+        10.43,
+        13.91,
+        29.57
+      ]
+    },
+    "the-nemesis": {
+      "matches": 230,
+      "pickRate": 2.83,
+      "killRate": 43.8,
+      "kills": [
+        33.04,
+        18.26,
+        13.04,
+        11.74,
+        23.91
+      ]
+    },
+    "the-nurse": {
+      "matches": 228,
+      "pickRate": 2.8,
+      "killRate": 38.82,
+      "kills": [
+        35.53,
+        25.88,
+        7.46,
+        10.09,
+        21.05
+      ]
+    },
+    "the-executioner": {
+      "matches": 223,
+      "pickRate": 2.74,
+      "killRate": 54.04,
+      "kills": [
+        19.73,
+        20.63,
+        12.56,
+        17.94,
+        29.15
+      ]
+    },
+    "the-shape": {
+      "matches": 212,
+      "pickRate": 2.61,
+      "killRate": 48.35,
+      "kills": [
+        25.47,
+        22.17,
+        9.91,
+        18.4,
+        24.06
+      ]
+    },
+    "the-cannibal": {
+      "matches": 206,
+      "pickRate": 2.53,
+      "killRate": 48.06,
+      "kills": [
+        16.99,
+        32.52,
+        12.14,
+        17.96,
+        20.39
+      ]
+    },
+    "the-wraith": {
+      "matches": 197,
+      "pickRate": 2.42,
+      "killRate": 47.84,
+      "kills": [
+        29.44,
+        17.26,
+        12.69,
+        13.71,
+        26.9
+      ]
+    },
+    "the-trapper": {
+      "matches": 186,
+      "pickRate": 2.29,
+      "killRate": 45.03,
+      "kills": [
+        27.96,
+        22.58,
+        13.44,
+        13.44,
+        22.58
+      ]
+    },
+    "the-deathslinger": {
+      "matches": 175,
+      "pickRate": 2.15,
+      "killRate": 43.43,
+      "kills": [
+        25.14,
+        27.43,
+        16,
+        11.43,
+        20
+      ]
+    },
+    "the-nightmare": {
+      "matches": 168,
+      "pickRate": 2.07,
+      "killRate": 46.88,
+      "kills": [
+        32.14,
+        14.29,
+        14.88,
+        11.31,
+        27.38
+      ]
+    },
+    "the-first": {
+      "matches": 163,
+      "pickRate": 2,
+      "killRate": 50.46,
+      "kills": [
+        25.77,
+        16.56,
+        15.34,
+        14.72,
+        27.61
+      ]
+    },
+    "the-clown": {
+      "matches": 161,
+      "pickRate": 1.98,
+      "killRate": 45.81,
+      "kills": [
+        26.71,
+        23.6,
+        14.29,
+        10.56,
+        24.84
+      ]
+    },
+    "the-dark-lord": {
+      "matches": 160,
+      "pickRate": 1.97,
+      "killRate": 42.66,
+      "kills": [
+        31.25,
+        16.88,
+        21.88,
+        10,
+        20
+      ]
+    },
+    "the-oni": {
+      "matches": 149,
+      "pickRate": 1.83,
+      "killRate": 40.27,
+      "kills": [
+        33.56,
+        20.81,
+        16.11,
+        10.07,
+        19.46
+      ]
+    },
+    "the-pig": {
+      "matches": 145,
+      "pickRate": 1.78,
+      "killRate": 50.69,
+      "kills": [
+        24.83,
+        20,
+        12.41,
+        13.1,
+        29.66
+      ]
+    },
+    "the-unknown": {
+      "matches": 143,
+      "pickRate": 1.76,
+      "killRate": 41.61,
+      "kills": [
+        37.06,
+        19.58,
+        8.39,
+        9.79,
+        25.17
+      ]
+    },
+    "the-doctor": {
+      "matches": 126,
+      "pickRate": 1.55,
+      "killRate": 44.25,
+      "kills": [
+        34.13,
+        19.05,
+        8.73,
+        11.9,
+        26.19
+      ]
+    },
+    "the-artist": {
+      "matches": 120,
+      "pickRate": 1.48,
+      "killRate": 47.71,
+      "kills": [
+        30,
+        18.33,
+        10,
+        14.17,
+        27.5
+      ]
+    },
+    "the-knight": {
+      "matches": 119,
+      "pickRate": 1.46,
+      "killRate": 50,
+      "kills": [
+        29.41,
+        15.13,
+        11.76,
+        13.45,
+        30.25
+      ]
+    },
+    "the-lich": {
+      "matches": 119,
+      "pickRate": 1.46,
+      "killRate": 55.25,
+      "kills": [
+        21.85,
+        17.65,
+        12.61,
+        13.45,
+        34.45
+      ]
+    },
+    "the-trickster": {
+      "matches": 117,
+      "pickRate": 1.44,
+      "killRate": 41.24,
+      "kills": [
+        25.64,
+        23.93,
+        23.08,
+        14.53,
+        12.82
+      ]
+    },
+    "the-onryo": {
+      "matches": 117,
+      "pickRate": 1.44,
+      "killRate": 49.15,
+      "kills": [
+        24.79,
+        19.66,
+        15.38,
+        14.53,
+        25.64
+      ]
+    },
+    "the-dredge": {
+      "matches": 112,
+      "pickRate": 1.38,
+      "killRate": 48.44,
+      "kills": [
+        28.57,
+        16.07,
+        16.07,
+        11.61,
+        27.68
+      ]
+    },
+    "the-plague": {
+      "matches": 108,
+      "pickRate": 1.33,
+      "killRate": 45.6,
+      "kills": [
+        32.41,
+        17.59,
+        14.81,
+        5.56,
+        29.63
+      ]
+    },
+    "the-cenobite": {
+      "matches": 102,
+      "pickRate": 1.25,
+      "killRate": 49.51,
+      "kills": [
+        25.49,
+        20.59,
+        12.75,
+        12.75,
+        28.43
+      ]
+    },
+    "the-singularity": {
+      "matches": 97,
+      "pickRate": 1.19,
+      "killRate": 46.65,
+      "kills": [
+        31.96,
+        16.49,
+        12.37,
+        11.34,
+        27.84
+      ]
+    },
+    "the-houndmaster": {
+      "matches": 91,
+      "pickRate": 1.12,
+      "killRate": 46.15,
+      "kills": [
+        29.67,
+        21.98,
+        10.99,
+        8.79,
+        28.57
+      ]
+    },
+    "the-xenomorph": {
+      "matches": 90,
+      "pickRate": 1.11,
+      "killRate": 50.28,
+      "kills": [
+        24.44,
+        22.22,
+        10,
+        14.44,
+        28.89
+      ]
+    },
+    "the-demogorgon": {
+      "matches": 76,
+      "pickRate": 0.93,
+      "killRate": 44.74,
+      "kills": [
+        30.26,
+        21.05,
+        11.84,
+        13.16,
+        23.68
+      ]
+    },
+    "the-krasue": {
+      "matches": 70,
+      "pickRate": 0.86,
+      "killRate": 45.71,
+      "kills": [
+        28.57,
+        18.57,
+        15.71,
+        15.71,
+        21.43
+      ]
+    },
+    "the-skull-merchant": {
+      "matches": 57,
+      "pickRate": 0.7,
+      "killRate": 50.88,
+      "kills": [
+        28.07,
+        17.54,
+        8.77,
+        14.04,
+        31.58
+      ]
+    },
+    "the-twins": {
+      "matches": 54,
+      "pickRate": 0.66,
+      "killRate": 50,
+      "kills": [
+        25.93,
+        25.93,
+        3.7,
+        11.11,
+        33.33
+      ]
+    },
+    "the-hag": {
+      "matches": 50,
+      "pickRate": 0.61,
+      "killRate": 52,
+      "kills": [
+        24,
+        22,
+        6,
+        18,
+        30
+      ]
+    }
+  },
+  "unmatched": []
+}

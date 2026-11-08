@@ -72,6 +72,28 @@ The first refresh takes about 8 minutes because it downloads around 1,500 icons
 (perks, add-ons, items, offerings and portraits). Later refreshes only download
 new icons and take about 20 seconds.
 
+### Killer stats (NightLight)
+
+Pick and kill rates on the **Killers** page come from
+[NightLight](https://nightlight.gg). They are saved in `data/killer-stats.json`:
+
+```bash
+npm run update-stats
+```
+
+It skips the request if the stats are less than 24 hours old (add
+`-- --force` to fetch anyway).
+
+NightLight's bot protection currently blocks scripts, so the automatic download
+usually fails (the old stats are kept). Update by hand instead:
+
+1. Open <https://nightlight.gg/api/v1/stats/global/killers> in your browser
+   and save the page as `killer-stats-nightlight.json` (Ctrl + S).
+2. Run `npm run update-stats -- --file path/to/killer-stats-nightlight.json`.
+3. Commit `data/killer-stats.json`. The public site picks it up on its next build.
+
+GitHub Actions does not update these stats, because it would hit the same block.
+
 ## Public website (DBD-Toolbox)
 
 The public version is a **static website**. It has no server: the data is
@@ -277,9 +299,7 @@ The app cannot see your real matches, so *you* mark a challenge as completed.
 |---|---|---|
 | [Dead by Daylight Wiki](https://deadbydaylight.wiki.gg) | Perks, killers, survivors, items, add-ons, offerings, descriptions, icons | Only normal `/wiki/` pages and `/images/`, which robots.txt allows. No `api.php` or Special/Cargo pages. Max ~1 request per second. Content is **CC BY-NC-SA 3.0**: personal, non-commercial use with credit. |
 
-Usage statistics (pick rate, kill/escape rate) are **not** included yet. No
-source we checked clearly allows automated use. See the plan in the project
-notes.
+| [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer pick rate, kill rate and kill distribution (last 28 days, from matches players upload) | One request to the public JSON the stats page uses (`/api/v1/stats/global/killers`, allowed by robots.txt), at most once a day, with a clear User-Agent. NightLight asks for a low request rate and credit, so the Killers page names NightLight as the source. Survivor escape rates are not imported. |
 
 ## Project layout
 

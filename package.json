@@ -8,6 +8,7 @@
     "dev": "concurrently -n server,web -c yellow,cyan \"node --watch-path=server server/index.js\" \"vite\"",
     "start": "vite build && node server/index.js",
     "refresh-data": "node scripts/refresh-data.js",
+    "update-stats": "node scripts/update-stats.js",
     "test": "node --test \"test/*.test.js\"",
     "check-builds": "node scripts/check-builds.js",
     "build:static": "vite build --mode static && node scripts/build-static.js",

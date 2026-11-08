@@ -219,7 +219,7 @@ export default function App() {
         )}
         {data && tab === 'perks' && <PerkList perks={data.perks} />}
         {data && tab === 'killers' && (
-          <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} />
+          <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.killerStats} />
         )}
         {data && tab === 'survivors' && (
           <CharacterList characters={data.survivors} perksById={perksById} />
