@@ -642,3 +642,33 @@ footer { color: var(--muted); border-top-color: var(--border); }
   border-radius: 6px;
   z-index: 0;
 }
+
+/* Which character a perk belongs to */
+.slot-owner {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 2px;
+  padding: 1px 7px 1px 2px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.85em;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.slots .slot .slot-owner img {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top;
+  background: #000;
+  filter: none;
+  flex: none;
+}
+.slot-owner.general { padding-left: 7px; font-style: italic; }
+.slots .slot .slot-owner img { position: static; }

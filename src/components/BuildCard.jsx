@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
 
-export function Slot({ entity, fallback, big }) {
+export function Slot({ entity, fallback, big, showOwner }) {
+  const owner = showOwner && entity ? entity.owner ?? null : undefined;
   return (
     <div
       className={`slot ${big ? 'slot-big' : ''}`}
@@ -14,6 +15,12 @@ export function Slot({ entity, fallback, big }) {
     >
       {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" loading="lazy" /> : <div className="slot-empty" />}
       <span>{entity?.name ?? fallback ?? '—'}</span>
+      {owner !== undefined && (
+        <span className={`slot-owner ${owner ? '' : 'general'}`} title={owner ? `Unique perk of ${owner.name}` : 'General perk, available to everyone'}>
+          {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" loading="lazy" />}
+          {owner ? (entity.role === 'survivor' ? owner.name.split(' ')[0] : owner.name.replace(/^The /, '')) : 'General'}
+        </span>
+      )}
     </div>
   );
 }
@@ -72,7 +79,7 @@ export default function BuildCard({ build, favorites, footer }) {
 
       <div className="slots">
         {resolved.perks.map((p, i) => (
-          <Slot key={i} entity={p} fallback={build.perks[i]} />
+          <Slot key={i} entity={p} fallback={build.perks[i]} showOwner />
         ))}
       </div>
 
@@ -96,11 +103,11 @@ export default function BuildCard({ build, favorites, footer }) {
         </p>
       )}
 
-      {['meta', 'fun'].includes(build.type) && <p className="muted small stats-line">
-        {build.stats
-          ? `${build.stats.label}: ${build.stats.value} — ${build.stats.source}, ${build.stats.date}`
-          : 'Statistics: not available (no source that allows automated use yet).'}
-      </p>}
+      {build.stats && (
+        <p className="muted small stats-line">
+          {`${build.stats.label}: ${build.stats.value} — ${build.stats.source}, ${build.stats.date}`}
+        </p>
+      )}
 
       {build.author && <p className="muted small community-author">by {build.author}</p>}
       {footer}

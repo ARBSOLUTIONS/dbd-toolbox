@@ -51,6 +51,19 @@ const TAB_GROUPS = [
   },
 ];
 
+// Link every perk to the character it comes from (name + portrait), for the build cards.
+function withOwners(perks, d) {
+  const chars = {};
+  for (const c of [...(d.killers ?? []), ...(d.survivors ?? [])]) {
+    chars[c.name] = c;
+    for (const a of c.aliases ?? []) chars[a] ??= c;
+  }
+  return perks.map((p) => {
+    const c = p.character && chars[p.character];
+    return { ...p, owner: c ? { name: c.name, portrait: c.portrait } : null };
+  });
+}
+
 // Offerings get a rating (1-5 stars + reason); the rating also corrects the role.
 const rateOfferings = (list) => withOfferingRatings(list).map((o) => ({ ...o, role: o.rating.role ?? o.role }));
 
@@ -79,7 +92,7 @@ export default function App() {
   const load = useCallback(() => {
     loadData()
       // Add playstyle tags to every perk once, right after loading.
-      .then((d) => setData({ ...d, perks: withTags(d.perks), offerings: rateOfferings(d.offerings) }))
+      .then((d) => setData({ ...d, perks: withOwners(withTags(d.perks), d), offerings: rateOfferings(d.offerings) }))
       .catch(() =>
         setError(STATIC ? 'Could not load the data. Please reload the page.' : 'Could not reach the local server. Is “npm run dev” running?'),
       );
