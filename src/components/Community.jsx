@@ -177,8 +177,15 @@ export default function Community({ data, favorites, picks = [], onOpenMaker }) 
         const build = { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }) };
         // The NightLight check box replaces the per-card NightLight line here.
         return { ...build, analysis: analyseBuild({ ...build, nl: buildStats(build, data.stats) }, data.stats, perksById) };
-      }),
-    [builds, data, perksById],
+      })
+        // Builds recommended by build sites and creators sit in the same list
+        // (no votes: they were not shared by a player).
+        .concat(
+          picks
+            .filter((b) => b.role === role && (!killer || !b.killer || b.killer === killer))
+            .map((b) => ({ ...b, nl: undefined, isPick: true, analysis: analyseBuild(b, data.stats, perksById) })),
+        ),
+    [builds, data, perksById, picks, role, killer],
   );
   const shown = useMemo(
     () => (sort === 'stats' ? [...analysed].sort((a, b) => analysisSortKey(b.analysis) - analysisSortKey(a.analysis)) : analysed),
@@ -270,31 +277,17 @@ export default function Community({ data, favorites, picks = [], onOpenMaker }) 
           <BuildCard
             key={b.id}
             build={b}
+            favorites={b.isPick ? favorites : undefined}
             footer={
               <>
                 <StatCheck a={b.analysis} />
-                <VoteBar build={b} onChange={updateVote} favorites={favorites} />
+                {!b.isPick && <VoteBar build={b} onChange={updateVote} favorites={favorites} />}
               </>
             }
           />
         ))}
       </div>
 
-      {(() => {
-        const list = picks.filter((b) => b.role === role && (!killer || !b.killer || b.killer === killer));
-        if (!list.length) return null;
-        return (
-          <>
-            <h2 className="community-picks-title">🎥 Recommended by the community</h2>
-            <p className="muted small">Builds from build sites and creators for the current patch, each with its source. No votes here.</p>
-            <div className="build-grid">
-              {list.map((b) => (
-                <BuildCard key={b.id} build={b} favorites={favorites} />
-              ))}
-            </div>
-          </>
-        );
-      })()}
     </section>
   );
 }
