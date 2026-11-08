@@ -26,6 +26,9 @@ import Challenges from './components/Challenges.jsx';
 import Achievements, { AchievementToasts } from './components/Achievements.jsx';
 import { useChallenges } from './lib/challengeStore.js';
 
+/** Always visible in the header; the rest sits under "More". */
+const PRIMARY_TABS = ['builds', 'maker', 'community', 'ranking', 'patchnotes'];
+
 const TAB_GROUPS = [
   {
     label: 'Start',
@@ -63,6 +66,7 @@ const TAB_GROUPS = [
     ],
   },
 ];
+const ALL_TABS = TAB_GROUPS.flatMap((g) => g.tabs);
 
 // Link every perk to the character it comes from (name + portrait), for the build cards.
 function withOwners(perks, d) {
@@ -93,6 +97,7 @@ export default function App() {
   const [buildFilter, setBuildFilter] = useState({});
   const [focusBuild, setFocusBuild] = useState(null);
   const [showBanner, setShowBanner] = useState(true);
+  const [moreOpen, setMoreOpen] = useState(false);
   useEffect(() => {
     if (!focusBuild) return undefined;
     const close = (e) => e.key === 'Escape' && setFocusBuild(null);
@@ -105,6 +110,19 @@ export default function App() {
     window.scrollTo(0, 0);
   }, []);
   const [comboPerk, setComboPerk] = useState(null);
+  const moreActive = tab !== 'home' && !PRIMARY_TABS.includes(tab);
+  // Close the "More" menu on a click outside it or on Escape.
+  useEffect(() => {
+    if (!moreOpen) return undefined;
+    const onDown = (e) => !e.target.closest('.mainnav-more') && setMoreOpen(false);
+    const onKey = (e) => e.key === 'Escape' && setMoreOpen(false);
+    document.addEventListener('pointerdown', onDown);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onDown);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [moreOpen]);
   const favorites = useFavorites();
   const challenges = useChallenges({
     killerCount: data?.killers?.length || 45,
@@ -197,26 +215,48 @@ export default function App() {
             </span>
           </button>
         </h1>
-        <DataStatus meta={data?.meta} onRefreshed={load} />
-        <nav className="tabs" aria-label="Main menu">
-          {TAB_GROUPS.map((g) => (
-            <div key={g.label} className="tab-group">
-              <span className="tab-group-label">{g.label}</span>
-              <div className="tab-group-items">
-                {g.tabs.map((t) => (
-                  <button
-                    key={t.id}
-                    className={`tab ${tab === t.id ? 'active' : ''}`}
-                    aria-current={tab === t.id ? 'page' : undefined}
-                    onClick={() => setTab(t.id)}
-                  >
-                    {t.label}
-                  </button>
-                ))}
-              </div>
+        <nav className="mainnav" aria-label="Main menu">
+          {PRIMARY_TABS.map((id) => {
+            const t = ALL_TABS.find((x) => x.id === id);
+            return (
+              <button key={id} className={`mainnav-link ${tab === id ? 'active' : ''}`} aria-current={tab === id ? 'page' : undefined} onClick={() => setTab(id)}>
+                {t.label}
+              </button>
+            );
+          })}
+          <details className="mainnav-more" open={moreOpen} onToggle={(e) => setMoreOpen(e.currentTarget.open)}>
+            <summary className={`mainnav-link ${moreActive ? 'active' : ''}`}>
+              {moreActive ? ALL_TABS.find((x) => x.id === tab).label : 'More'}
+              <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" strokeWidth="1.5" /></svg>
+            </summary>
+            <div className="mainnav-menu">
+              {TAB_GROUPS.map((g) => {
+                const rest = g.tabs.filter((t) => !PRIMARY_TABS.includes(t.id) && t.id !== 'home');
+                if (!rest.length) return null;
+                return (
+                  <div key={g.label} className="mainnav-group">
+                    <p className="mainnav-group-label">{g.label}</p>
+                    {rest.map((t) => (
+                      <button
+                        key={t.id}
+                        className={`mainnav-item ${tab === t.id ? 'active' : ''}`}
+                        aria-current={tab === t.id ? 'page' : undefined}
+                        onClick={() => {
+                          setTab(t.id);
+                          setMoreOpen(false);
+                        }}
+                      >
+                        <strong>{t.label}</strong>
+                        <span>{t.desc}</span>
+                      </button>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          </details>
         </nav>
+        <DataStatus meta={data?.meta} onRefreshed={load} />
       </header>
 
       <main>

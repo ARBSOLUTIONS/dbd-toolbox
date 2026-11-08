@@ -44,106 +44,66 @@ export default function Home({ data, builds, onOpen, onShowBuild }) {
 
   const showcase = top('killer')[0] ?? top('survivor')[0];
 
+  const patchLine = [
+    patchSummary.length ? patchSummary.join(', ') : 'No balance changes detected',
+    analysis.builds.length ? `${analysis.builds.length} builds affected` : null,
+  ].filter(Boolean).join('. ');
+
   return (
-    <section className="home">
-      <div className="home-hero frame">
-        <i className="corner tl" aria-hidden="true" />
-        <i className="corner tr" aria-hidden="true" />
-        <i className="corner bl" aria-hidden="true" />
-        <i className="corner br" aria-hidden="true" />
-        <div className="home-hero-text">
-          <p className="eyebrow">Dead by Daylight build toolbox{patch ? ` · patch ${patch}` : ''}</p>
-          <h2>Find a build that wins. Or one that’s just fun.</h2>
-          <p className="home-lead">
-            Rated killer and survivor builds, a build maker that scores your perks, community picks, patch impact and
-            challenges. Updated with every patch.
+    <section className="home2">
+      <div className="h2-hero">
+        <div className="h2-hero-text">
+          <h2 className="h2-title">Find a build that wins. Or one that’s just fun.</h2>
+          <p className="h2-lead">
+            {builds.length} rated builds for killers and survivors, every one of the {data.perks.length} perks, and a build maker
+            that scores your own loadout{patch ? ` for patch ${patch}` : ''}.
           </p>
-          <div className="home-cta">
-            <button className="primary big" onClick={() => onOpen('builds')}>
+          <div className="h2-cta">
+            <button className="h2-btn primary" onClick={() => onOpen('builds')}>
               Browse builds
             </button>
-            <button className="light big" onClick={() => onOpen('maker')}>
+            <button className="h2-btn" onClick={() => onOpen('maker')}>
               Make your own
-            </button>
-            <button className="ghost big" onClick={() => onOpen('challenges')}>
-              Random challenge <span aria-hidden="true">→</span>
             </button>
           </div>
         </div>
+
         {showcase && (
-          <button className="home-hero-art" onClick={() => onShowBuild(showcase)} aria-label={`Open build: ${showcase.name}`}>
-            <span className="art-label">Top rated · {showcase.killer ?? (showcase.role === 'killer' ? 'Any killer' : 'Survivor')}</span>
-            <span className="art-loadout">
-              {showcase.resolved.perks.map((p, i) =>
-                p ? (
-                  <span key={i} className="art-perk">
-                    <img src={iconSrc(p.icon)} alt="" width="72" height="72" />
-                  </span>
-                ) : (
-                  <span key={i} className="art-perk empty" />
-                ),
-              )}
+          <button className="h2-loadout" onClick={() => onShowBuild(showcase)} aria-label={`Open build: ${showcase.name}`}>
+            <span className="h2-diamonds">
+              {showcase.resolved.perks.map((p, i) => (
+                <span key={i} className={`h2-diamond d${i}`}>
+                  {p && <img src={iconSrc(p.icon)} alt="" width="76" height="76" />}
+                </span>
+              ))}
             </span>
-            <span className="art-name">{showcase.name}</span>
-            <span className="art-score">
-              Score <strong>{showcase.rating?.score ?? 0}</strong>
+            <span className="h2-loadout-meta">
+              <span className="h2-loadout-name">{showcase.name}</span>
+              <span className="h2-loadout-sub">
+                Highest rated {showcase.role === 'killer' ? `for ${showcase.killer ?? 'any killer'}` : 'survivor build'}, score {showcase.rating?.score ?? 0}
+              </span>
             </span>
           </button>
         )}
       </div>
 
-      <ul className="home-numbers">
-        <li>
-          <strong>{builds.length}</strong> Builds
-        </li>
-        <li>
-          <strong>{data.perks.length}</strong> Perks
-        </li>
-        <li>
-          <strong>{data.killers.length}</strong> Killers
-        </li>
-        <li>
-          <strong>{data.survivors.length}</strong> Survivors
-        </li>
-      </ul>
+      <button className="h2-patch" onClick={() => onOpen('patchnotes')}>
+        <strong>{record?.toPatch && record.fromPatch !== record.toPatch ? `Patch ${record.fromPatch} to ${record.toPatch}` : `Patch ${patch ?? '?'}`}</strong>
+        <span>{patchLine}.</span>
+        {nextChapter && (
+          <span className="h2-patch-next">
+            {nextChapter.name} arrives {new Date(`${nextChapter.date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}
+          </span>
+        )}
+      </button>
 
-      <div className="home-row">
-        <article className="card home-patch" onClick={() => onOpen('patchnotes')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && onOpen('patchnotes')}>
-          <p className="eyebrow">Latest patch</p>
-          <h3>{record?.toPatch && record.fromPatch !== record.toPatch ? `${record.fromPatch} → ${record.toPatch}` : `Patch ${patch ?? '?'}`}</h3>
-          <p className="muted small">{patchSummary.length ? patchSummary.join(' · ') : 'No balance changes detected.'}</p>
-          {analysis.builds.length > 0 && (
-            <p className="small">
-              <strong>{analysis.builds.length}</strong> builds affected by buffs and nerfs.
-            </p>
-          )}
-          {nextChapter && (
-            <p className="small home-next">
-              Next: <strong>{nextChapter.name}</strong> ({nextChapter.kind}) on{' '}
-              {new Date(`${nextChapter.date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}
-            </p>
-          )}
-          <span className="link-button">See the patch notes <span aria-hidden="true">→</span></span>
-        </article>
-
-        <article className="card home-beginner" onClick={() => onOpen('builds', { type: 'beginner' })} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && onOpen('builds', { type: 'beginner' })}>
-          <p className="eyebrow">New to the fog?</p>
-          <h3>Beginner builds</h3>
-          <p className="muted small">
-            {beginner} easy builds made from General perks plus one or two perks from free characters. No DLC needed to
-            get started.
-          </p>
-          <span className="link-button">Show beginner builds <span aria-hidden="true">→</span></span>
-        </article>
-      </div>
-
-      <div className="home-row">
+      <div className="h2-lists">
         {['survivor', 'killer'].map((role) => (
-          <div key={role} className="card home-top">
-            <div className="home-top-head">
+          <div key={role} className="h2-list">
+            <div className="h2-list-head">
               <h3>{role === 'survivor' ? 'Top survivor builds' : 'Top killer builds'}</h3>
-              <button className="link-button small" onClick={() => onOpen('builds', { role })}>
-                All →
+              <button className="h2-link" onClick={() => onOpen('builds', { role })}>
+                See all
               </button>
             </div>
             {top(role).map((b) => (
@@ -153,6 +113,20 @@ export default function Home({ data, builds, onOpen, onShowBuild }) {
         ))}
       </div>
 
+      <div className="h2-more">
+        <button onClick={() => onOpen('builds', { type: 'beginner' })}>
+          <strong>New to the game?</strong>
+          <span>{beginner} beginner builds that need no paid characters.</span>
+        </button>
+        <button onClick={() => onOpen('community')}>
+          <strong>Community builds</strong>
+          <span>Builds shared by players and picked by creators.</span>
+        </button>
+        <button onClick={() => onOpen('challenges')}>
+          <strong>Random challenge</strong>
+          <span>Roll a loadout and see if you can win with it.</span>
+        </button>
+      </div>
     </section>
   );
 }

@@ -471,3 +471,157 @@ footer.site-footer {
   .art-loadout { transition: none; }
   .home-hero-art:hover .art-loadout { transform: none; }
 }
+
+/* =====================================================================
+   Header v2: one slim bar with logo, five main links, a "More" menu and the patch pill.
+   ===================================================================== */
+.topbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 8px 6px 12px;
+  border-radius: 12px;
+  background: rgba(10, 10, 11, 0.82);
+  z-index: 45;
+}
+.topbar h1 { flex: none; margin-right: 18px; }
+.mainnav { display: flex; align-items: center; gap: 2px; flex: 1; min-width: 0; }
+.mainnav-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 12px; min-height: 36px;
+  border: 0; border-radius: 8px; background: none;
+  color: rgba(255, 255, 255, 0.66); font: 500 0.9rem/1 var(--display);
+  cursor: pointer; white-space: nowrap; list-style: none;
+  transition: color 0.15s var(--ease), background 0.15s var(--ease);
+}
+.mainnav-link::-webkit-details-marker { display: none; }
+.mainnav-link:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.mainnav-link.active { color: #fff; background: rgba(255, 255, 255, 0.08); box-shadow: inset 0 -2px 0 var(--accent); }
+.mainnav-link:focus-visible, .mainnav-item:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; }
+.mainnav-more { position: static; }
+.mainnav-more[open] > summary svg { transform: rotate(180deg); }
+.mainnav-more svg { transition: transform 0.2s var(--ease); opacity: 0.7; }
+.mainnav-menu {
+  position: absolute; top: calc(100% + 8px); right: 8px; z-index: 100;
+  display: grid; grid-template-columns: repeat(3, minmax(190px, 1fr)); gap: 4px 16px;
+  width: max-content; max-width: min(720px, 92vw);
+  padding: 14px; border: 1px solid var(--border); border-radius: 12px;
+  background: #0c0c0d; box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.9);
+  animation: menu-in 0.18s var(--ease);
+}
+@keyframes menu-in { from { opacity: 0; transform: translateY(-4px); } }
+.mainnav-group-label { margin: 0 0 4px 10px; font-size: 0.78rem; color: var(--faint); }
+.mainnav-item {
+  display: grid; gap: 2px; width: 100%; padding: 8px 10px; text-align: left;
+  border: 0; border-radius: 8px; background: none; color: #fff; cursor: pointer;
+}
+.mainnav-item strong { font-weight: 500; font-size: 0.92rem; }
+.mainnav-item span { font-size: 0.8rem; color: var(--muted); line-height: 1.35; }
+.mainnav-item:hover { background: rgba(255, 255, 255, 0.05); }
+.mainnav-item.active strong { color: var(--accent-text); }
+.topbar .status-chip { flex: none; margin-left: auto; }
+
+@media (max-width: 860px) {
+  .topbar { flex-wrap: wrap; }
+  .topbar h1 { margin-right: auto; }
+  .mainnav { order: 3; flex-basis: 100%; overflow-x: auto; scrollbar-width: none; padding-top: 4px; border-top: 1px solid var(--border); }
+  .mainnav-menu { left: 8px; right: 8px; grid-template-columns: 1fr 1fr; width: auto; }
+}
+@media (max-width: 520px) { .mainnav-menu { grid-template-columns: 1fr; max-height: 70vh; overflow: auto; } }
+
+/* =====================================================================
+   Home v2: headline plus the top build as four diamond perk slots.
+   ===================================================================== */
+.home2 { display: grid; gap: 28px; }
+.h2-hero {
+  display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 32px;
+  padding: 56px 8px 40px;
+}
+.h2-title {
+  margin: 0; max-width: 13ch;
+  font: 600 clamp(2.4rem, 5.6vw, 4.6rem)/0.98 var(--display);
+  letter-spacing: -0.045em; color: #fff; text-wrap: balance;
+}
+.h2-lead { margin: 22px 0 0; max-width: 46ch; font-size: 1.06rem; line-height: 1.6; color: var(--muted); }
+.h2-cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.h2-btn {
+  min-height: 46px; padding: 0 22px; border-radius: 999px;
+  border: 1px solid var(--border-strong); background: transparent; color: #fff;
+  font: 500 0.98rem var(--display); cursor: pointer;
+  transition: background 0.15s var(--ease), border-color 0.15s var(--ease);
+}
+.h2-btn:hover { background: rgba(255, 255, 255, 0.06); border-color: #555; }
+.h2-btn.primary { background: var(--accent); border-color: var(--accent); }
+.h2-btn.primary:hover { background: var(--accent-hover); }
+.h2-btn:focus-visible, .h2-loadout:focus-visible, .h2-patch:focus-visible, .h2-more button:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 3px; }
+
+/* The memorable thing: four perk diamonds, like the in-game loadout. */
+.h2-loadout {
+  position: relative; isolation: isolate; display: grid; justify-items: center; gap: 22px;
+  padding: 10px; border: 0; background: none; color: #fff; cursor: pointer;
+}
+.h2-loadout::before {
+  content: ""; position: absolute; inset: 12% 10% 30%; z-index: -1;
+  background: radial-gradient(closest-side, rgba(217, 31, 44, 0.42), transparent);
+  filter: blur(18px);
+}
+.h2-diamonds {
+  display: grid; grid-template-columns: repeat(2, 104px); gap: 14px;
+  margin: 46px; transform: rotate(45deg);
+}
+.h2-diamond {
+  width: 104px; height: 104px; display: grid; place-items: center;
+  background: linear-gradient(145deg, #1b1b1d, #08080a);
+  border: 1px solid #3a3d42;
+  box-shadow: inset 0 0 0 4px #000, inset 0 0 0 5px #26282c;
+  transition: border-color 0.2s var(--ease), transform 0.3s var(--ease);
+}
+.h2-diamond img { width: 82px; height: 82px; transform: rotate(-45deg); }
+.h2-loadout:hover .h2-diamond { border-color: var(--accent); }
+.h2-loadout:hover .h2-diamond.d0 { transform: translate(-3px, -3px); }
+.h2-loadout:hover .h2-diamond.d3 { transform: translate(3px, 3px); }
+.h2-loadout-meta { display: grid; gap: 4px; text-align: center; }
+.h2-loadout-name { font: 600 1.25rem var(--display); letter-spacing: -0.02em; }
+.h2-loadout-sub { font-size: 0.88rem; color: var(--muted); }
+
+.h2-patch {
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px;
+  width: 100%; padding: 16px 20px; text-align: left; cursor: pointer;
+  border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px;
+  background: #0b0b0c; color: var(--muted); font-size: 0.95rem;
+}
+.h2-patch strong { color: #fff; font-weight: 600; }
+.h2-patch-next { margin-left: auto; color: var(--accent-text); }
+.h2-patch:hover { border-color: var(--border-strong); border-left-color: var(--accent); }
+
+.h2-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.h2-list-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 8px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.h2-list-head h3 { margin: 0; font: 600 1.15rem var(--display); letter-spacing: -0.02em; }
+.h2-link { border: 0; background: none; color: var(--accent-text); font: 500 0.9rem var(--display); cursor: pointer; padding: 6px 0; }
+.h2-link:hover { text-decoration: underline; }
+.home2 .mini-build { border: 0; border-bottom: 1px solid var(--border); border-radius: 0; background: none; padding: 12px 2px; }
+.home2 .mini-build:hover { background: rgba(255, 255, 255, 0.03); }
+
+.h2-more { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-bottom: 24px; }
+.h2-more button {
+  display: grid; gap: 4px; padding: 18px; text-align: left; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 10px; background: none; color: var(--muted); font-size: 0.9rem; line-height: 1.45;
+}
+.h2-more strong { color: #fff; font: 600 1rem var(--display); }
+.h2-more button:hover { border-color: var(--border-strong); background: #0b0b0c; }
+
+@media (max-width: 860px) {
+  .h2-hero { grid-template-columns: 1fr; padding-top: 28px; }
+  .h2-lists, .h2-more { grid-template-columns: 1fr; }
+  .h2-patch-next { margin-left: 0; }
+}
+@media (max-width: 400px) {
+  .h2-diamonds { grid-template-columns: repeat(2, 84px); gap: 10px; margin: 36px; }
+  .h2-diamond { width: 84px; height: 84px; }
+  .h2-diamond img { width: 64px; height: 64px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mainnav-menu { animation: none; }
+  .h2-diamond, .mainnav-more svg { transition: none; }
+}
