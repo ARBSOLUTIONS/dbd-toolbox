@@ -3,6 +3,15 @@ import BuildCard from './BuildCard.jsx';
 import { PLAYSTYLES } from '../lib/tags.js';
 import { makeQuery } from '../lib/search.js';
 
+// Builds with NightLight stats: an exact match counts most, otherwise the perk averages.
+const nlRate = (b) => (b.nl ? (b.nl.exact?.rate ?? b.nl.avgRate ?? -1) - (b.nl.baseline ?? 0) : -99);
+const nlUsage = (b) => (b.nl ? (b.nl.exact ? 100 + (b.nl.exact.samples ?? 0) / 1e4 : b.nl.avgUsage) : -1);
+const SORTS = {
+  score: { label: 'Best score first', fn: (a, b) => b.rating.score - a.rating.score },
+  rate: { label: 'Best kill / escape rate (NightLight)', fn: (a, b) => nlRate(b) - nlRate(a) || b.rating.score - a.rating.score },
+  usage: { label: 'Most played (NightLight)', fn: (a, b) => nlUsage(b) - nlUsage(a) || b.rating.score - a.rating.score },
+};
+
 export default function BuildList({ builds, killers, favorites, initial = {} }) {
   const [role, setRole] = useState(initial.role ?? 'survivor');
   const [type, setType] = useState(initial.type ?? 'all');
@@ -11,6 +20,8 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
   const [query, setQuery] = useState('');
   const [onlyNew, setOnlyNew] = useState(false);
   const [showStyles, setShowStyles] = useState(false);
+  const [sort, setSort] = useState('score');
+  const anyStats = builds.some((b) => b.nl);
   const anyNew = builds.some((b) => b.newPerks?.length);
 
   const toggleStyle = (s) => setStyles(styles.includes(s) ? styles.filter((x) => x !== s) : [...styles, s]);
@@ -38,8 +49,8 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
           q.matches(b.item ?? '') ||
           q.matches(b.killer ?? ''),
       )
-      .sort((a, b) => b.rating.score - a.rating.score);
-  }, [builds, role, type, killer, styles, query, onlyNew]);
+      .sort(SORTS[sort].fn);
+  }, [builds, role, type, killer, styles, query, onlyNew, sort]);
 
   return (
     <section>
@@ -58,6 +69,7 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
             ['meta', 'Strong / meta'],
             ['fun', 'Fun'],
             ['auto', 'Auto'],
+            ...(builds.some((b) => b.type === 'popular') ? [['popular', '📊 Most played']] : []),
           ].map(([id, label]) => (
             <button key={id} className={type === id ? 'active' : ''} onClick={() => setType(id)}>
               {label}
@@ -84,8 +96,17 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
 
       <div className="list-meta">
         <span className="muted small">
-          {shown.length} build{shown.length === 1 ? '' : 's'} · best score first
+          {shown.length} build{shown.length === 1 ? '' : 's'}
         </span>
+        <select value={sort} onChange={(e) => setSort(e.target.value)} aria-label="Sort builds">
+          {Object.entries(SORTS)
+            .filter(([id]) => id === 'score' || anyStats)
+            .map(([id, s]) => (
+              <option key={id} value={id}>
+                {s.label}
+              </option>
+            ))}
+        </select>
         <button className={`chip ${styles.length ? 'active' : ''}`} onClick={() => setShowStyles(!showStyles)}>
           Playstyle{styles.length ? ` (${styles.length})` : ''} {showStyles ? '▴' : '▾'}
         </button>

@@ -1,79 +1,250 @@
-// Killer pick rate / kill rate stats from NightLight (https://nightlight.gg).
+// Community stats from NightLight (https://nightlight.gg), built from matches
+// that players upload.
 //
-// NightLight builds these stats from matches that players upload. The numbers
-// come from the same public JSON the page https://nightlight.gg/killers/viewer
-// loads. NightLight asks API users to keep requests low and to credit them, so:
-// - one request per update, at most once a day (see MIN_AGE_HOURS),
-// - a clear User-Agent,
-// - the credit is stored in the file and shown in the app.
+// NightLight's bot protection blocks scripts, so the data is collected in a
+// normal browser with scripts/nightlight-collector.js (see the README) and
+// imported here from that file:
 //
-// Output: data/killer-stats.json (kept separate from the wiki data, so a wiki
-// refresh never touches it and a failed stats update never breaks the wiki data).
+//   npm run update-stats -- --file nightlight-export-2026-11-08.json
+//
+// The importer also accepts a single saved killers feed
+// (https://nightlight.gg/api/v1/stats/global/killers) for a quick killer-only update.
+//
+// Output: data/nightlight.json. It is kept apart from the wiki data, so a wiki
+// refresh never touches it and a bad import never breaks the wiki data.
+// NightLight asks API users to credit them: the source is stored in the file
+// and shown wherever the numbers appear.
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { DATA_DIR } from './refresh.js';
 
-export const NIGHTLIGHT_URL = 'https://nightlight.gg/api/v1/stats/global/killers';
-export const NIGHTLIGHT_PAGE = 'https://nightlight.gg/killers/viewer?shown=pick';
-export const MIN_AGE_HOURS = 24;
-const FILE = path.join(DATA_DIR, 'killer-stats.json');
-const USER_AGENT = 'DBD-Toolbox/0.1 (fan build helper; one request per day; credits NightLight)';
+export const STATS_FILE = path.join(DATA_DIR, 'nightlight.json');
+export const NIGHTLIGHT_PAGE = 'https://nightlight.gg/killers/viewer';
 
-const pct = (v) => (typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 100 ? v : null);
-const norm = (s) => s.normalize('NFKC').toLowerCase().replace(/^the\s+/, '').trim();
+// ---------- name matching ----------
+
+/** "Barbecue & Chilli" → "barbecueandchilli", "The Onryō" → "onryo". */
+export function nameKey(s) {
+  return String(s ?? '')
+    .normalize('NFKD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/^the\s+/, '')
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+function distance(a, b) {
+  if (Math.abs(a.length - b.length) > 2) return 99;
+  const row = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i++) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= b.length; j++) {
+      const tmp = row[j];
+      row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1));
+      prev = tmp;
+    }
+  }
+  return row[b.length];
+}
 
 /**
- * Turns NightLight's response into our format. Killers are matched to
- * data/killers.json by name ("The Onryō" etc. match exactly; "The " is optional).
- * Throws when the response does not look as expected, so old data is kept.
+ * Returns a function name → our id. Exact key match first; otherwise a small
+ * spelling difference (e.g. "Chili" vs "Chilli") when there is exactly one
+ * close candidate.
  */
-export function parseNightlight(json, killers, fetchedAt = new Date().toISOString()) {
-  const d = json?.data;
-  if (json?.status !== 'success' || !Array.isArray(d?.killers)) {
-    throw new Error('NightLight response looks different than expected');
-  }
-  const byName = new Map(killers.map((k) => [norm(k.name), k.id]));
-  const stats = {};
-  const unmatched = [];
-  let average = null;
+export function makeMatcher(list) {
+  const byKey = new Map(list.map((x) => [nameKey(x.name), x.id]));
+  return (name) => {
+    const key = nameKey(name);
+    if (byKey.has(key)) return byKey.get(key);
+    if (key.length < 6) return null;
+    const close = [...byKey.keys()].filter((k) => distance(k, key) <= 2);
+    return close.length === 1 ? byKey.get(close[0]) : null;
+  };
+}
 
-  for (const row of d.killers) {
+// ---------- parsing ----------
+
+const pct = (v) => (typeof v === 'number' && Number.isFinite(v) && v >= 0 && v <= 100 ? v : null);
+const int = (v) => (Number.isInteger(v) && v >= 0 ? v : null);
+const killsOf = (row) => [0, 1, 2, 3, 4].map((n) => pct(row?.breakdown?.[n]));
+
+function parseKillerFeed(feed, matchKiller, unmatched) {
+  const killers = {};
+  let average = null;
+  for (const row of feed?.killers ?? []) {
     if (typeof row?.name !== 'string') continue;
-    const entry = {
-      matches: Number.isInteger(row.matches) ? row.matches : null,
-      pickRate: pct(row.pick_rate),
-      killRate: pct(row.kill_rate),
-      // Share of games with 0, 1, 2, 3 and 4 kills (percent).
-      kills: [0, 1, 2, 3, 4].map((n) => pct(row.breakdown?.[n])),
-    };
+    const entry = { matches: int(row.matches), pickRate: pct(row.pick_rate), killRate: pct(row.kill_rate), kills: killsOf(row) };
     if (row.name === 'Overall Average') {
       average = entry;
       continue;
     }
-    const id = byName.get(norm(row.name));
-    if (id) stats[id] = entry;
+    const id = matchKiller(row.name);
+    if (id) killers[id] = entry;
     else unmatched.push(row.name);
   }
+  if (Object.keys(killers).length < 20 || !average) {
+    throw new Error(`NightLight killer data incomplete (${Object.keys(killers).length} killers matched)`);
+  }
+  // The "Overall Average" row has matches: 0; the site shows the sum of all killers.
+  average.matches = Object.values(killers).reduce((sum, k) => sum + (k.matches ?? 0), 0);
+  return { killers, average };
+}
 
-  const matched = Object.keys(stats).length;
-  if (matched < 20 || !average) throw new Error(`NightLight data incomplete (${matched} killers matched)`);
-  // The "Overall Average" row has matches: 0; the page shows the sum of all killers.
-  const total = Object.values(stats).reduce((sum, s) => sum + (s.matches ?? 0), 0);
-  average.matches = total;
+function parseSurvivorFeed(feed, matchSurvivor, unmatched) {
+  const survivors = {};
+  let total = 0;
+  let escapes = 0;
+  for (const row of feed?.survivors ?? []) {
+    if (typeof row?.name !== 'string' || row.name === 'Overall Average') continue;
+    const entry = { matches: int(row.count), pickRate: pct(row.pick_rate), escapeRate: pct(row.escape_rate) };
+    const id = matchSurvivor(row.name);
+    if (!id) {
+      unmatched.push(row.name);
+      continue;
+    }
+    survivors[id] = entry;
+    if (entry.matches && entry.escapeRate != null) {
+      total += entry.matches;
+      escapes += (entry.matches * entry.escapeRate) / 100;
+    }
+  }
+  return { survivors, average: { matches: total, escapeRate: total ? Math.round((escapes / total) * 1e4) / 100 : null } };
+}
 
-  return {
+/** Global perk usage: { ourPerkId: { role, usage, rate, count } }. */
+function parsePerkFeeds(feeds, perkNames, matchPerk, unmatched) {
+  const perks = {};
+  const nlToOurs = {};
+  for (const [role, feed, rateKey] of [
+    ['killer', feeds.killerPerks, 'kill_rate'],
+    ['survivor', feeds.survivorPerks, 'escape_rate'],
+  ]) {
+    for (const row of feed?.perks ?? []) {
+      const name = perkNames[row.id];
+      if (!name) continue;
+      const id = matchPerk[role](name);
+      if (!id) {
+        unmatched.push(name);
+        continue;
+      }
+      nlToOurs[row.id] = id;
+      perks[id] = { role, usage: pct(row.pct), rate: pct(row[rateKey]), count: int(row.count) };
+    }
+  }
+  return { perks, nlToOurs };
+}
+
+/** Maps a perk id from NightLight to ours, also for perks missing from the global feeds. */
+function perkMapper(nlToOurs, perkNames, matchPerk, role) {
+  return (nlId) => {
+    if (nlId == null || nlId < 0) return null;
+    return nlToOurs[nlId] ?? (perkNames[nlId] ? matchPerk[role](perkNames[nlId]) : null);
+  };
+}
+
+function parsePage(page, role, mapPerk) {
+  const rateKey = role === 'killer' ? 'kill_rate' : 'escape_rate';
+  const winKey = role === 'killer' ? 'kills' : 'escapes';
+  const topPerks = (page?.top_perks ?? [])
+    .map((p) => ({ perk: mapPerk(p.perk_id), usage: pct(p.usage_rate), rate: pct(p[rateKey]) }))
+    .filter((p) => p.perk && p.usage);
+  const topBuilds = (page?.top_builds ?? [])
+    .map((b) => ({
+      perks: (b.perks ?? []).map(mapPerk).filter(Boolean),
+      usage: pct(b.pct),
+      rate: pct(b[rateKey]),
+      // "survivors" counts survivor slots: 4 per killer match, 1 per survivor match.
+      samples: int(b.survivors),
+      wins: int(b[winKey]),
+    }))
+    .filter((b) => b.perks.length >= 3 && b.samples);
+  return { since: page?.stats_since_patch ?? null, topPerks, topBuilds };
+}
+
+/** Adds up the survivor top builds of all survivor pages into one list. */
+function popularSurvivorBuilds(survivors) {
+  const byKey = new Map();
+  for (const s of Object.values(survivors)) {
+    for (const b of s.topBuilds ?? []) {
+      const key = [...b.perks].sort().join('|');
+      const cur = byKey.get(key) ?? { perks: [...b.perks].sort(), samples: 0, wins: 0 };
+      cur.samples += b.samples ?? 0;
+      cur.wins += b.wins ?? 0;
+      byKey.set(key, cur);
+    }
+  }
+  return [...byKey.values()]
+    .map((b) => ({ ...b, rate: b.samples ? Math.round((b.wins / b.samples) * 1e4) / 100 : null }))
+    .sort((a, b) => b.samples - a.samples)
+    .slice(0, 40);
+}
+
+/**
+ * Turns a collector export (or a single killers feed) into data/nightlight.json.
+ * `data` = { killers, survivors, perks } from data/. Throws when the input does
+ * not look as expected, so the old stats are kept.
+ */
+export function parseNightlight(raw, data, importedAt = new Date().toISOString()) {
+  const unmatched = { killers: [], survivors: [], perks: [] };
+  const matchKiller = makeMatcher(data.killers);
+  const matchSurvivor = makeMatcher(data.survivors ?? []);
+  const matchPerk = {
+    killer: makeMatcher((data.perks ?? []).filter((p) => p.role === 'killer')),
+    survivor: makeMatcher((data.perks ?? []).filter((p) => p.role === 'survivor')),
+  };
+
+  // A single saved killers feed: { status: 'success', data: { killers: [...] } }
+  const singleFeed = raw?.status === 'success' && Array.isArray(raw?.data?.killers);
+  if (!singleFeed && raw?.format !== 'dbd-toolbox-nightlight-export') {
+    throw new Error('Not a NightLight export (run scripts/nightlight-collector.js in your browser first)');
+  }
+  const feeds = singleFeed ? { killers: raw.data } : raw.feeds ?? {};
+  const k = parseKillerFeed(feeds.killers, matchKiller, unmatched.killers);
+  const out = {
     source: {
       name: 'NightLight',
       url: NIGHTLIGHT_PAGE,
-      note: 'Community stats from matches uploaded to NightLight.',
+      note: 'Community stats from matches uploaded to NightLight; not official numbers.',
     },
-    fetchedAt,
-    period: { start: d.start ?? null, end: d.end ?? null },
-    games: average.matches,
-    average,
-    killers: stats,
+    collectedAt: singleFeed ? importedAt : raw.collectedAt ?? importedAt,
+    importedAt,
+    period: { start: feeds.killers?.start ?? null, end: feeds.killers?.end ?? null },
+    games: k.average.matches,
+    average: k.average,
+    killers: k.killers,
+    survivorAverage: null,
+    survivors: {},
+    perks: {},
+    popularSurvivorBuilds: [],
     unmatched,
   };
+  if (singleFeed) return out;
+
+  const perkNames = raw.perkNames ?? {};
+  const s = parseSurvivorFeed(feeds.survivors, matchSurvivor, unmatched.survivors);
+  out.survivors = s.survivors;
+  out.survivorAverage = s.average;
+  const { perks, nlToOurs } = parsePerkFeeds(feeds, perkNames, matchPerk, unmatched.perks);
+  if (Object.keys(perks).length < 100) throw new Error(`Only ${Object.keys(perks).length} perks matched – check the export`);
+  out.perks = perks;
+
+  for (const [role, pages, target, match] of [
+    ['killer', raw.pages?.killers, out.killers, matchKiller],
+    ['survivor', raw.pages?.survivors, out.survivors, matchSurvivor],
+  ]) {
+    const mapPerk = perkMapper(nlToOurs, perkNames, matchPerk, role);
+    for (const [name, page] of Object.entries(pages ?? {})) {
+      const id = match(name);
+      if (!id || !target[id]) continue; // only characters that are in the stats feed
+      Object.assign(target[id], parsePage(page, role, mapPerk));
+    }
+  }
+  out.popularSurvivorBuilds = popularSurvivorBuilds(out.survivors);
+  for (const list of Object.values(unmatched)) list.splice(0, list.length, ...new Set(list));
+  return out;
 }
 
 async function readJson(file, fallback) {
@@ -84,52 +255,42 @@ async function readJson(file, fallback) {
   }
 }
 
-/**
- * Updates data/killer-stats.json. Skips the request when the stored stats are
- * younger than MIN_AGE_HOURS (unless force). Returns { action, why, ... }.
- */
-export async function updateKillerStats({ force = false, file = null, log = console.log, now = new Date() } = {}) {
-  const old = await readJson(FILE, null);
-  const ageHours = old?.fetchedAt ? (now - new Date(old.fetchedAt)) / 36e5 : Infinity;
-  if (!file && !force && ageHours < MIN_AGE_HOURS) {
-    return { action: 'none', why: `stats are ${ageHours.toFixed(1)} h old (updates once per ${MIN_AGE_HOURS} h)` };
-  }
+/** Imports a collector export (or killers feed) file into data/nightlight.json. */
+export async function importStats(file, { log = console.log } = {}) {
+  const data = {
+    killers: await readJson(path.join(DATA_DIR, 'killers.json'), []),
+    survivors: await readJson(path.join(DATA_DIR, 'survivors.json'), []),
+    perks: await readJson(path.join(DATA_DIR, 'perks.json'), []),
+  };
+  if (!data.killers.length) throw new Error('No killers in data/. Run "npm run refresh-data" first.');
+  log(`Reading NightLight stats from ${file}...`);
+  const raw = JSON.parse(await fs.readFile(file, 'utf8'));
+  const stats = parseNightlight(raw, data);
 
-  const killers = await readJson(path.join(DATA_DIR, 'killers.json'), []);
-  if (!killers.length) throw new Error('No killers in data/. Run "npm run refresh-data" first.');
-
-  let json;
-  if (file) {
-    // Manual import: a JSON file the user saved from NIGHTLIGHT_URL in their browser.
-    log(`Reading NightLight stats from ${file}...`);
-    json = JSON.parse(await fs.readFile(file, 'utf8'));
-  } else {
-    log(`Fetching killer stats from NightLight...`);
-    const res = await fetch(NIGHTLIGHT_URL, {
-      headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' },
-      signal: AbortSignal.timeout(30_000),
-    });
-    if (res.headers.get('cf-mitigated') === 'challenge') {
-      // NightLight's Cloudflare shows a bot check to this client. We respect
-      // that instead of working around it: use the manual import instead.
-      throw new Error(
-        `NightLight's bot protection blocked the automatic download – keeping the old stats.\n` +
-          `  Open ${NIGHTLIGHT_URL} in your browser, save it as a .json file, then run:\n` +
-          `  npm run update-stats -- --file <path to the saved file>`,
-      );
+  // A killers-only import keeps the survivor and perk stats of the previous import.
+  const old = await readJson(STATS_FILE, null);
+  if (!raw.format && old?.perks && Object.keys(old.perks).length) {
+    for (const key of ['survivorAverage', 'survivors', 'perks', 'popularSurvivorBuilds']) stats[key] = old[key];
+    for (const [id, k] of Object.entries(stats.killers)) {
+      const prev = old.killers?.[id];
+      if (prev?.topPerks) Object.assign(k, { since: prev.since, topPerks: prev.topPerks, topBuilds: prev.topBuilds });
     }
-    if (!res.ok) throw new Error(`NightLight answered HTTP ${res.status} – keeping the old stats`);
-    json = await res.json();
+    log('  killers feed only: kept the survivor, perk and build stats of the previous import');
   }
-  const stats = parseNightlight(json, killers, now.toISOString());
 
-  // The stats cover a rolling 28-day window, so they change every day; the
-  // file is rewritten each time (fetchedAt doubles as the "last checked" time).
-  await fs.writeFile(FILE + '.tmp', JSON.stringify(stats, null, 2));
-  await fs.rename(FILE + '.tmp', FILE);
-  const missing = killers.filter((k) => !stats.killers[k.id]).map((k) => k.name);
-  log(`  ${Object.keys(stats.killers).length} killers, ${stats.games} games (${stats.period.start?.slice(0, 10)} – ${stats.period.end?.slice(0, 10)})`);
-  if (missing.length) log(`  no NightLight stats yet for: ${missing.join(', ')}`);
-  if (stats.unmatched.length) log(`  ? NightLight killers not in our data: ${stats.unmatched.join(', ')}`);
-  return { action: 'updated', games: stats.games, killers: Object.keys(stats.killers).length };
+  await fs.writeFile(STATS_FILE + '.tmp', JSON.stringify(stats, null, 2));
+  await fs.rename(STATS_FILE + '.tmp', STATS_FILE);
+
+  const count = (o) => Object.keys(o ?? {}).length;
+  log(
+    `  ${count(stats.killers)} killers, ${count(stats.survivors)} survivors, ${count(stats.perks)} perks, ` +
+      `${stats.games} killer games (${stats.period.start?.slice(0, 10)} – ${stats.period.end?.slice(0, 10)})`,
+  );
+  const missing = data.killers.filter((k) => !stats.killers[k.id]).map((k) => k.name);
+  if (missing.length) log(`  no stats yet for: ${missing.join(', ')}`);
+  for (const [kind, names] of Object.entries(stats.unmatched)) {
+    if (names.length) log(`  ? NightLight ${kind} not found in our data: ${names.join(', ')}`);
+  }
+  if (raw.failed?.length) log(`  ! pages the collector could not read: ${raw.failed.join('; ')}`);
+  return { action: 'updated', killers: count(stats.killers), survivors: count(stats.survivors), perks: count(stats.perks) };
 }

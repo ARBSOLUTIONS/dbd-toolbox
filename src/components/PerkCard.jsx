@@ -31,6 +31,12 @@ export function EntityCard({ entity, subtitle, note, isPerk = false }) {
         </h3>
         {subtitle && <div className="muted small">{subtitle}</div>}
         {note && <div className="entity-note">{note}</div>}
+        {entity.nl?.usage != null && (
+          <div className="muted small" title="From matches uploaded to NightLight.gg">
+            📊 Used in {entity.nl.usage.toFixed(1)}% of {entity.nl.role} games
+            {entity.nl.rate != null && ` · ${entity.nl.rate.toFixed(1)}% ${entity.nl.role === 'killer' ? 'kill' : 'escape'} rate`}
+          </div>
+        )}
         <p className="description">{entity.description}</p>
         {open && entity.quote && <p className="quote small">{entity.quote}</p>}
         {entity.tags?.length > 0 && (

@@ -76,6 +76,40 @@ export function ScoreBadge({ score }) {
   );
 }
 
+/** One line with this build's NightLight numbers (see src/lib/nlStats.js). */
+function NightLightLine({ nl }) {
+  const diff = (rate) => (rate != null && nl.baseline != null ? rate - nl.baseline : null);
+  const vs = (rate) => {
+    const d = diff(rate);
+    if (d == null) return null;
+    return (
+      <span className={d >= 0 ? 'good' : 'bad'}>
+        {' '}({d >= 0 ? '+' : ''}{d.toFixed(1)} vs avg)
+      </span>
+    );
+  };
+  if (nl.exact) {
+    const games = nl.rateLabel === 'kill rate' ? Math.round(nl.exact.samples / 4) : nl.exact.samples;
+    return (
+      <p className="small nl-line" title="From matches uploaded to NightLight.gg">
+        📊 Played as-is on NightLight{nl.exact.usage ? ` (${nl.exact.usage}% of games)` : ''}: {nl.exact.rate?.toFixed(1)}%{' '}
+        {nl.rateLabel}
+        {vs(nl.exact.rate)} over {games} games
+      </p>
+    );
+  }
+  return (
+    <p className="small nl-line muted" title="Average of the four perks, from matches uploaded to NightLight.gg">
+      📊 Perks used in {nl.avgUsage.toFixed(1)}% of games on average
+      {nl.avgRate != null && (
+        <>
+          {' '}· {nl.avgRate.toFixed(1)}% {nl.rateLabel} with them{vs(nl.avgRate)}
+        </>
+      )}
+    </p>
+  );
+}
+
 export default function BuildCard({ build, favorites, footer }) {
   const [open, setOpen] = useState(false);
   const { resolved, rating } = build;
@@ -106,7 +140,7 @@ export default function BuildCard({ build, favorites, footer }) {
             <span className={`badge badge-${build.type}`}>
               {build.variant === 'spotlight'
                 ? 'Perk spotlight'
-                : { beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto', community: 'Community' }[build.type] ??
+                : { beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto', community: 'Community', popular: '📊 Most played' }[build.type] ??
                   build.type}
             </span>
             {status && (
@@ -163,11 +197,7 @@ export default function BuildCard({ build, favorites, footer }) {
         </p>
       )}
 
-      {build.stats && (
-        <p className="muted small stats-line">
-          {`${build.stats.label}: ${build.stats.value} — ${build.stats.source}, ${build.stats.date}`}
-        </p>
-      )}
+      {build.nl && <NightLightLine nl={build.nl} />}
 
       {build.author && <p className="muted small community-author">by {build.author}</p>}
       {footer}
@@ -181,6 +211,34 @@ export default function BuildCard({ build, favorites, footer }) {
             <>
               <h4>How to play</h4>
               <p>{build.howToPlay}</p>
+            </>
+          )}
+          {build.nl && (
+            <>
+              <h4>Community stats (NightLight)</h4>
+              <table className="stats-table nl-table">
+                <thead>
+                  <tr>
+                    <th>Perk</th>
+                    <th>Used in</th>
+                    <th>{build.nl.rateLabel}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {build.nl.perks.map((p) => (
+                    <tr key={p.id}>
+                      <td>{p.name}</td>
+                      <td>{p.usage ? `${p.usage.toFixed(1)}%` : '< 1%'}</td>
+                      <td>{p.rate != null ? `${p.rate.toFixed(1)}%` : '–'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p className="muted small">
+                {build.nl.killerScope ? `Usage among ${build.killer} players. ` : 'Usage among all players of this role. '}
+                Average {build.nl.rateLabel}: {build.nl.baseline?.toFixed(1)}%. From matches uploaded to NightLight.gg; a
+                guide, not official numbers.
+              </p>
             </>
           )}
           <h4>Why this score</h4>

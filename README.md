@@ -72,27 +72,44 @@ The first refresh takes about 8 minutes because it downloads around 1,500 icons
 (perks, add-ons, items, offerings and portraits). Later refreshes only download
 new icons and take about 20 seconds.
 
-### Killer stats (NightLight)
+### Community stats (NightLight)
 
-Pick and kill rates on the **Killers** page come from
-[NightLight](https://nightlight.gg). They are saved in `data/killer-stats.json`:
+Pick rates, kill and escape rates, perk usage and the **📊 Most played** builds
+come from [NightLight](https://nightlight.gg) (last 28 days, from matches that
+players upload). They are saved in `data/nightlight.json` and used in:
 
-```bash
-npm run update-stats
-```
+- **Killers / Survivors**: pick rate, kill or escape rate, kill distribution,
+  and each character's most used perks and builds.
+- **Perks**: how often each perk is used and its kill or escape rate.
+- **Builds**: every build card shows a 📊 line (the build's own numbers when
+  NightLight lists that exact build, otherwise the average of its perks). You
+  can sort by kill/escape rate or by most played. The generator adds "Most
+  played" builds per killer and for survivors, and prefers perks that many
+  players use and that win more often than average.
+- `npm run check-builds` shows the numbers for the hand-picked builds and
+  flags meta builds whose perks win clearly less than average.
 
-It skips the request if the stats are less than 24 hours old (add
-`-- --force` to fetch anyway).
+NightLight's bot protection blocks scripts, so this project never downloads
+from NightLight itself. You collect the stats in your own browser instead
+(about 3 minutes, roughly 105 slow requests; please do this at most once a week):
 
-NightLight's bot protection currently blocks scripts, so the automatic download
-usually fails (the old stats are kept). Update by hand instead:
+1. Open <https://nightlight.gg/perks/viewer> in your browser and wait until it
+   has loaded.
+2. Open the developer console (F12 → Console), paste the whole content of
+   `scripts/nightlight-collector.js` and press Enter. (Chrome may ask you to
+   type `allow pasting` first.)
+3. Wait until it downloads `nightlight-export-<date>.json`.
+4. Import it:
 
-1. Open <https://nightlight.gg/api/v1/stats/global/killers> in your browser
-   and save the page as `killer-stats-nightlight.json` (Ctrl + S).
-2. Run `npm run update-stats -- --file path/to/killer-stats-nightlight.json`.
-3. Commit `data/killer-stats.json`. The public site picks it up on its next build.
+   ```bash
+   npm run update-stats -- --file path/to/nightlight-export-<date>.json
+   ```
 
-GitHub Actions does not update these stats, because it would hit the same block.
+5. Commit `data/nightlight.json`. The public site picks it up on its next build.
+
+A single saved killers feed (<https://nightlight.gg/api/v1/stats/global/killers>,
+Ctrl + S) also works for a quick killer-only update; it keeps the perk and
+build stats from the previous full import.
 
 ## Public website (DBD-Toolbox)
 
@@ -299,7 +316,7 @@ The app cannot see your real matches, so *you* mark a challenge as completed.
 |---|---|---|
 | [Dead by Daylight Wiki](https://deadbydaylight.wiki.gg) | Perks, killers, survivors, items, add-ons, offerings, descriptions, icons | Only normal `/wiki/` pages and `/images/`, which robots.txt allows. No `api.php` or Special/Cargo pages. Max ~1 request per second. Content is **CC BY-NC-SA 3.0**: personal, non-commercial use with credit. |
 
-| [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer pick rate, kill rate and kill distribution (last 28 days, from matches players upload) | One request to the public JSON the stats page uses (`/api/v1/stats/global/killers`, allowed by robots.txt), at most once a day, with a clear User-Agent. NightLight asks for a low request rate and credit, so the Killers page names NightLight as the source. Survivor escape rates are not imported. |
+| [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer and survivor pick, kill and escape rates; perk usage; each character's top perks and builds (last 28 days, from matches players upload) | Collected by hand in your own browser with `scripts/nightlight-collector.js`: the public stats feeds and character pages (allowed by robots.txt), one request every 1.5 s, at most about once a week. This project never fetches from NightLight automatically, because their bot protection blocks scripts. NightLight asks for a low request rate and credit, so every page with these numbers names NightLight as the source. |
 
 ## Project layout
 

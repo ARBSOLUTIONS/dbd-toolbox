@@ -17,6 +17,7 @@ import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
+import { buildStats } from './lib/nlStats.js';
 import PatchNotes from './components/PatchNotes.jsx';
 import Home from './components/Home.jsx';
 import BuildCard from './components/BuildCard.jsx';
@@ -74,6 +75,10 @@ function withOwners(perks, d) {
   });
 }
 
+// NightLight usage / win rate on every perk (shown on perk cards), if imported.
+const withPerkStats = (perks, stats) =>
+  stats?.perks ? perks.map((p) => ({ ...p, nl: stats.perks[p.id] ?? null })) : perks;
+
 // Offerings get a rating (1-5 stars + reason); the rating also corrects the role.
 const rateOfferings = (list) => withOfferingRatings(list).map((o) => ({ ...o, role: o.rating.role ?? o.role }));
 
@@ -115,7 +120,9 @@ export default function App() {
   const load = useCallback(() => {
     loadData()
       // Add playstyle tags to every perk once, right after loading.
-      .then((d) => setData({ ...d, perks: withOwners(withTags(d.perks), d), offerings: rateOfferings(d.offerings) }))
+      .then((d) =>
+        setData({ ...d, perks: withPerkStats(withOwners(withTags(d.perks), d), d.stats), offerings: rateOfferings(d.offerings) }),
+      )
       .catch(() =>
         setError(STATIC ? 'Could not load the data. Please reload the page.' : 'Could not reach the local server. Is “npm run dev” running?'),
       );
@@ -134,11 +141,12 @@ export default function App() {
     const fresh = new Set(data.changes?.newPerkIds ?? []);
     return (data.curated?.builds ?? []).map((b) => {
       const r = repairBuild(resolveBuild(b, data), data, data.changes);
-      return {
+      const build = {
         ...r,
         rating: scoreBuild(r.resolved.perks, b.role, b.playstyles),
         newPerks: r.resolved.perks.filter((p) => p && fresh.has(p.id)).map((p) => p.name),
       };
+      return { ...build, nl: buildStats(build, data.stats) };
     });
   }, [data]);
 
@@ -146,7 +154,8 @@ export default function App() {
   // follow every patch. Hand-picked builds come first, generated ones after.
   const allBuilds = useMemo(() => {
     if (!data) return [];
-    return [...builds, ...generateBuilds(data, builds, data.changes)];
+    const generated = generateBuilds(data, builds, data.changes).map((b) => ({ ...b, nl: buildStats(b, data.stats) }));
+    return [...builds, ...generated];
   }, [data, builds]);
 
   // Your own builds from the Build maker, rated the same way.
@@ -154,7 +163,8 @@ export default function App() {
     if (!data) return [];
     return favorites.custom.map((b) => {
       const r = resolveBuild(b, data);
-      return { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
+      const build = { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
+      return { ...build, nl: buildStats(build, data.stats) };
     });
   }, [data, favorites.custom]);
 
@@ -219,10 +229,10 @@ export default function App() {
         )}
         {data && tab === 'perks' && <PerkList perks={data.perks} />}
         {data && tab === 'killers' && (
-          <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.killerStats} />
+          <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
         )}
         {data && tab === 'survivors' && (
-          <CharacterList characters={data.survivors} perksById={perksById} />
+          <CharacterList characters={data.survivors} perksById={perksById} stats={data.stats} role="survivor" />
         )}
         {data && tab === 'items' && <ItemList items={data.items} addons={data.addons} />}
         {data && tab === 'offerings' && <OfferingList offerings={data.offerings} />}

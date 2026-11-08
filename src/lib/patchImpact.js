@@ -174,7 +174,7 @@ export function analysePatch(record, data, builds) {
       perk: perkData.get(key) ?? null,
       judgement: judgeChange(d.before, d.after),
       builds: used,
-      handPicked: used.filter((b) => b.type !== 'auto').length,
+      handPicked: used.filter((b) => b.type !== 'auto' && b.type !== 'popular').length,
     };
   });
   // Most impactful first: size of the change, then how many builds use the perk.
@@ -197,7 +197,7 @@ export function analysePatch(record, data, builds) {
   }
   const affected = [...byBuild.values()].sort(
     (x, y) =>
-      (y.build.type !== 'auto') - (x.build.type !== 'auto') ||
+      (!['auto', 'popular'].includes(y.build.type)) - (!['auto', 'popular'].includes(x.build.type)) ||
       Math.abs(y.score) - Math.abs(x.score) ||
       y.perks.length - x.perks.length,
   );

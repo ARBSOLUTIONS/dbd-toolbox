@@ -70,9 +70,9 @@ const changes = await readJson('data/changes.json', null);
 const history = await readJson('data/patch-history.json', []);
 const patchNotes = await readJson('data/patch-notes.json', []);
 const autoState = await readJson('data/auto-update.json', {});
-const killerStats = await readJson('data/killer-stats.json', null);
+const stats = await readJson('data/nightlight.json', null);
 
-const data = { meta, ...raw, perks: withTags(raw.perks), changes };
+const data = { meta, ...raw, perks: withTags(raw.perks), changes, stats };
 const curated = curatedFile.builds.map((b) => {
   const r = repairBuild(resolveBuild(b, data), data, changes);
   return { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
@@ -84,7 +84,7 @@ const today = new Date().toISOString().slice(0, 10);
 const lastmod = (meta.fetchedAt ?? new Date().toISOString()).slice(0, 10);
 
 // ---------- 1. App data ----------
-await write('data/app-data.json', JSON.stringify({ meta, ...raw, changes, killerStats, patchNotes, patchHistory: history, curated: curatedFile }));
+await write('data/app-data.json', JSON.stringify({ meta, ...raw, changes, stats, patchNotes, patchHistory: history, curated: curatedFile }));
 const prediction = predictNextPatch(history, autoState.announcements ?? meta.announcements ?? [], new Date());
 await write(
   'data/status.json',
@@ -152,7 +152,7 @@ function buildCardHtml(b) {
   const perks = b.resolved.perks.filter(Boolean);
   const extra = [b.resolved.item, b.resolved.killer, ...(b.resolved.addons ?? [])].filter(Boolean);
   return `<article class="card"><h3><a href="${buildUrl(b)}">${esc(b.name)}</a> <span class="score">${b.rating.score}</span></h3>
-<p class="muted">${b.type === 'beginner' ? 'Beginner' : b.type === 'auto' ? 'Auto-generated' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
+<p class="muted">${b.type === 'beginner' ? 'Beginner' : b.type === 'auto' ? 'Auto-generated' : b.type === 'popular' ? 'Most played (NightLight)' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
 <p class="icons">${perks.map((p) => `<a href="/perks/${p.id}/" title="${esc(p.name)}">${icon(p, 48)}</a>`).join('')}</p>
 <p>${perks.map(perkLink).join(' · ')}${extra.length ? `<br><span class="muted">${extra.map((e) => esc(e.name)).join(' · ')}</span>` : ''}</p></article>`;
 }
@@ -255,7 +255,7 @@ ${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><
 // ---------- 5. Build pages ----------
 for (const b of allBuilds) {
   const perks = b.resolved.perks.filter(Boolean);
-  const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'meta' ? 'strong (meta)' : 'fun';
+  const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'popular' ? 'most played (community stats)' : b.type === 'meta' ? 'strong (meta)' : 'fun';
   const who = b.killer ?? (b.role === 'killer' ? 'any killer' : 'survivors');
   const title = `${b.name} – ${b.role === 'killer' ? `${who} build` : 'survivor build'}: ${perks.map((p) => p.name).join(', ')} | ${SITE}`;
   const description = short(`${b.name}: a ${kind} Dead by Daylight build for ${who}. ${b.why}`);
@@ -368,6 +368,7 @@ await write(
 <h2>Not affiliated</h2><p>${SITE} is an unofficial fan project and is not affiliated with, endorsed or sponsored by Behaviour Interactive Inc. Dead by Daylight, its characters, names and artwork are trademarks and property of Behaviour Interactive Inc. and their respective licensors. If you are a rights holder and want something removed, please <a href="https://github.com/ARBSOLUTIONS/dbd-toolbox/issues">open an issue on GitHub</a>.</p>
 <h2>Source code</h2><p>The project is open on <a href="https://github.com/ARBSOLUTIONS/dbd-toolbox">GitHub</a>. Suggestions for builds and perk tags are welcome.</p>
 <h2>Build ratings</h2><p>Hand-picked builds are based on general community knowledge. Synergy scores and generated builds are calculated by this site from perk descriptions and known combinations. They are a guide, not win-rate statistics.</p>
+<h2>Community statistics</h2><p>Pick rates, kill and escape rates and the "Most played" builds come from <a href="https://nightlight.gg">NightLight</a>, which collects them from matches that players upload. They are not official numbers and only cover players who use NightLight.</p>
 <h2>Privacy</h2><p>No accounts, no ads, no tracking cookies and no analytics. Favourites, your own builds and challenge progress are stored only in your own browser (localStorage).</p>`,
     crumbs: [{ name: 'About', url: '/about/' }],
   }),

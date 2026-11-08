@@ -198,6 +198,20 @@ main { padding-top: 16px; }
 .kill-bar-wrap { height: 60px; width: 18px; display: flex; align-items: flex-end; background: var(--border); border-radius: 4px; overflow: hidden; }
 .kill-bar { width: 100%; background: var(--accent); }
 .killer-stats > p { flex-basis: 100%; margin: 0; }
+.top-usage { display: flex; flex-wrap: wrap; gap: 16px 40px; margin-top: 16px; }
+.top-usage h4 { margin: 0 0 6px; font-size: 0.9rem; color: var(--muted); }
+.stats-table { border-collapse: collapse; font-size: 0.85em; }
+.stats-table th { text-align: left; font-weight: 600; color: var(--muted); padding: 2px 10px 4px 0; }
+.stats-table td { padding: 2px 10px 2px 0; border-top: 1px solid var(--border); vertical-align: middle; }
+.stats-table td img { width: 22px; height: 22px; vertical-align: middle; margin-right: 6px; }
+.stats-table td.build-perks img { width: 30px; height: 30px; margin-right: 2px; }
+
+/* NightLight numbers on build and perk cards */
+.nl-line { margin: 6px 0 0; }
+.nl-line .good { color: #4caf6a; }
+.nl-line .bad { color: #e0575d; }
+.nl-table { margin-top: 4px; }
+.badge-popular { background: #1d3a4a; border-color: #2f6a86; }
 
 /* Rarity colours (as in the game) shown as a left border on cards */
 .perk-card[class*='rarity-'] { border-left-width: 4px; }

@@ -1,22 +1,29 @@
 import { useState } from 'react';
 import PerkCard, { EntityCard, RARITY_LABEL, sortByRarity } from './PerkCard.jsx';
 import { iconSrc } from '../lib/format.js';
-
-const SORTS = {
-  release: { label: 'Release order', fn: null },
-  name: { label: 'A–Z', fn: (a, b) => a.name.replace(/^The /, '').localeCompare(b.name.replace(/^The /, '')) },
-  pick: { label: 'Pick rate', fn: (a, b, s) => (s[b.id]?.pickRate ?? -1) - (s[a.id]?.pickRate ?? -1) },
-  kill: { label: 'Kill rate', fn: (a, b, s) => (s[b.id]?.killRate ?? -1) - (s[a.id]?.killRate ?? -1) },
-};
+import { baselineRate, periodLabel, MIN_SAMPLES } from '../lib/nlStats.js';
 
 const fmt = (v, digits = 1) => (v == null ? '–' : `${v.toFixed(digits)}%`);
-const day = (iso) => (iso ? new Date(iso).toLocaleDateString(undefined, { day: 'numeric', month: 'short' }) : '?');
 
-/** Pick rate, kill rate and kill distribution for one killer (NightLight data). */
-function KillerStats({ entry, stats }) {
-  if (!entry) return <p className="muted small">No community stats for this killer yet.</p>;
-  const avg = stats.average;
-  const diff = entry.killRate != null && avg?.killRate != null ? entry.killRate - avg.killRate : null;
+function sorts(role) {
+  const rate = role === 'killer' ? 'killRate' : 'escapeRate';
+  return {
+    release: { label: 'Release order', fn: null },
+    name: { label: 'A–Z', fn: (a, b) => a.name.replace(/^The /, '').localeCompare(b.name.replace(/^The /, '')) },
+    pick: { label: 'Pick rate', fn: (a, b, s) => (s[b.id]?.pickRate ?? -1) - (s[a.id]?.pickRate ?? -1) },
+    rate: {
+      label: role === 'killer' ? 'Kill rate' : 'Escape rate',
+      fn: (a, b, s) => (s[b.id]?.[rate] ?? -1) - (s[a.id]?.[rate] ?? -1),
+    },
+  };
+}
+
+/** Pick rate, kill/escape rate and (killers) kill distribution for one character. */
+function CharacterStats({ entry, stats, role }) {
+  if (!entry) return <p className="muted small">No community stats for this character yet.</p>;
+  const rate = role === 'killer' ? entry.killRate : entry.escapeRate;
+  const avg = baselineRate(stats, role);
+  const diff = rate != null && avg != null ? rate - avg : null;
   return (
     <div className="killer-stats">
       <div className="stat-row">
@@ -25,9 +32,9 @@ function KillerStats({ entry, stats }) {
           <span className="stat-label">Pick rate</span>
         </div>
         <div className="stat">
-          <span className="stat-value">{fmt(entry.killRate)}</span>
+          <span className="stat-value">{fmt(rate)}</span>
           <span className="stat-label">
-            Kill rate
+            {role === 'killer' ? 'Kill rate' : 'Escape rate'}
             {diff != null && (
               <span className={diff >= 0 ? 'good' : 'bad'}> ({diff >= 0 ? '+' : ''}{diff.toFixed(1)} vs avg)</span>
             )}
@@ -38,19 +45,91 @@ function KillerStats({ entry, stats }) {
           <span className="stat-label">Games</span>
         </div>
       </div>
-      <div className="kill-dist" aria-label="Kill distribution">
-        {entry.kills.map((v, n) => (
-          <div key={n} className="kill-col" title={`${n} kills: ${fmt(v)}`}>
-            <div className="kill-bar-wrap">
-              <div className="kill-bar" style={{ height: `${Math.min(100, (v ?? 0) * 2)}%` }} />
+      {entry.kills && (
+        <div className="kill-dist" aria-label="Kill distribution">
+          {entry.kills.map((v, n) => (
+            <div key={n} className="kill-col" title={`${n} kills: ${fmt(v)}`}>
+              <div className="kill-bar-wrap">
+                <div className="kill-bar" style={{ height: `${Math.min(100, (v ?? 0) * 2)}%` }} />
+              </div>
+              <span className="small">{fmt(v, 0)}</span>
+              <span className="small muted">{n}K</span>
             </div>
-            <span className="small">{fmt(v, 0)}</span>
-            <span className="small muted">{n}K</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
       {entry.matches != null && entry.matches < 150 && (
         <p className="muted small">Small sample: treat these numbers as a rough guide.</p>
+      )}
+    </div>
+  );
+}
+
+/** The character's most used perks and builds on NightLight. */
+function TopUsage({ entry, perksById, role }) {
+  const label = role === 'killer' ? 'kill rate' : 'escape rate';
+  const topPerks = (entry?.topPerks ?? []).slice(0, 10);
+  const topBuilds = (entry?.topBuilds ?? []).filter((b) => b.samples >= MIN_SAMPLES / (role === 'killer' ? 1 : 4)).slice(0, 5);
+  if (!topPerks.length && !topBuilds.length) return null;
+  const perkName = (id) => perksById[id]?.name ?? id;
+  return (
+    <div className="top-usage">
+      {topPerks.length > 0 && (
+        <div>
+          <h4>Most used perks{entry.since ? ` (since ${entry.since})` : ''}</h4>
+          <table className="stats-table">
+            <thead>
+              <tr>
+                <th>Perk</th>
+                <th>Used</th>
+                <th>{label}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topPerks.map((p) => (
+                <tr key={p.perk}>
+                  <td>
+                    {perksById[p.perk] && <img src={iconSrc(perksById[p.perk].icon)} alt="" loading="lazy" />}
+                    {perkName(p.perk)}
+                  </td>
+                  <td>{fmt(p.usage)}</td>
+                  <td>{fmt(p.rate)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {topBuilds.length > 0 && (
+        <div>
+          <h4>Most used builds</h4>
+          <table className="stats-table">
+            <thead>
+              <tr>
+                <th>Build</th>
+                <th>Used</th>
+                <th>{label}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {topBuilds.map((b) => (
+                <tr key={b.perks.join('|')}>
+                  <td className="build-perks">
+                    {b.perks.map((id) =>
+                      perksById[id] ? (
+                        <img key={id} src={iconSrc(perksById[id].icon)} alt={perkName(id)} title={perkName(id)} loading="lazy" />
+                      ) : (
+                        <span key={id}>{id}</span>
+                      ),
+                    )}
+                  </td>
+                  <td>{fmt(b.usage)}</td>
+                  <td title={`${b.wins}/${b.samples}`}>{fmt(b.rate)}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );
@@ -59,7 +138,7 @@ function KillerStats({ entry, stats }) {
 function StatsCredit({ stats }) {
   return (
     <p className="muted small">
-      Stats: {stats.games?.toLocaleString()} games from {day(stats.period.start)} – {day(stats.period.end)}, from{' '}
+      Stats: {stats.games?.toLocaleString()} killer games, {periodLabel(stats)}, from{' '}
       <a href={stats.source.url} target="_blank" rel="noreferrer">
         NightLight.gg
       </a>{' '}
@@ -70,9 +149,9 @@ function StatsCredit({ stats }) {
 
 /**
  * Grid of character portraits (killers or survivors). Clicking one shows its
- * unique perks and, for killers, its power add-ons and community stats.
+ * unique perks, for killers its power add-ons, and community stats.
  */
-export default function CharacterList({ characters, perksById, addons = [], stats = null }) {
+export default function CharacterList({ characters, perksById, addons = [], stats = null, role = 'killer' }) {
   const [selected, setSelected] = useState(null);
   const [sort, setSort] = useState('release');
   const character = characters.find((c) => c.id === selected);
@@ -80,13 +159,16 @@ export default function CharacterList({ characters, perksById, addons = [], stat
     ? sortByRarity(addons.filter((a) => a.killer === character.name))
     : [];
   const power = charAddons[0]?.power;
-  const byId = stats?.killers ?? {};
+  const byId = (role === 'killer' ? stats?.killers : stats?.survivors) ?? {};
+  const hasStats = Object.keys(byId).length > 0;
+  const SORTS = sorts(role);
   const sortFn = SORTS[sort].fn;
   const shown = sortFn ? [...characters].sort((a, b) => sortFn(a, b, byId)) : characters;
+  const tileRate = (s) => (role === 'killer' ? `${fmt(s.killRate)} kills` : `${fmt(s.escapeRate)} escapes`);
 
   return (
     <section>
-      {stats && (
+      {hasStats && (
         <div className="toolbar">
           <label>
             Sort:{' '}
@@ -107,10 +189,10 @@ export default function CharacterList({ characters, perksById, addons = [], stat
             onClick={() => setSelected(c.id === selected ? null : c.id)}
           >
             <img src={iconSrc(c.portrait)} alt="" loading="lazy" />
-            <span>{c.name.replace(/^The /, '')}</span>
-            {stats && byId[c.id] && (
+            <span>{role === 'killer' ? c.name.replace(/^The /, '') : c.name}</span>
+            {byId[c.id] && (
               <span className="tile-stat small muted">
-                {sort === 'pick' ? `${fmt(byId[c.id].pickRate, 2)} picks` : `${fmt(byId[c.id].killRate)} kills`}
+                {sort === 'pick' ? `${fmt(byId[c.id].pickRate, 2)} picks` : tileRate(byId[c.id])}
               </span>
             )}
           </button>
@@ -127,10 +209,11 @@ export default function CharacterList({ characters, perksById, addons = [], stat
           </h2>
           {power && <p className="muted">Power: {power}</p>}
 
-          {stats && (
+          {hasStats && (
             <>
               <h3 className="section-title">Community stats (last 28 days)</h3>
-              <KillerStats entry={byId[character.id]} stats={stats} />
+              <CharacterStats entry={byId[character.id]} stats={stats} role={role} />
+              <TopUsage entry={byId[character.id]} perksById={perksById} role={role} />
             </>
           )}
 

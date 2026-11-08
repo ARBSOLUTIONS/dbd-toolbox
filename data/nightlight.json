@@ -1,10 +1,11 @@
 {
   "source": {
     "name": "NightLight",
-    "url": "https://nightlight.gg/killers/viewer?shown=pick",
-    "note": "Community stats from matches uploaded to NightLight."
+    "url": "https://nightlight.gg/killers/viewer",
+    "note": "Community stats from matches uploaded to NightLight; not official numbers."
   },
-  "fetchedAt": "2026-11-08T20:46:36.264Z",
+  "collectedAt": "2026-11-08T20:56:09.754Z",
+  "importedAt": "2026-11-08T20:56:09.754Z",
   "period": {
     "start": "2026-10-11T16:00:00Z",
     "end": "2026-11-08T16:00:00Z"
@@ -552,5 +553,13 @@
       ]
     }
   },
-  "unmatched": []
+  "survivorAverage": null,
+  "survivors": {},
+  "perks": {},
+  "popularSurvivorBuilds": [],
+  "unmatched": {
+    "killers": [],
+    "survivors": [],
+    "perks": []
+  }
 }
