@@ -24,6 +24,7 @@ const EMPTY = {
 export default function BuildMaker({ data, builds, favorites, initial }) {
   const [b, setB] = useState(initial ?? EMPTY);
   const [saved, setSaved] = useState(false);
+  const [offeringSort, setOfferingSort] = useState('win');
   const set = (patch) => {
     setB((old) => ({ ...old, ...patch }));
     setSaved(false);
@@ -62,10 +63,15 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
       : [];
 
   // Offerings for this role, best rated first; the stars show as a subtitle in the list.
+  // Offerings for this role, sorted by winning or by Bloodpoint farming; both ratings show in the list.
+  const offerScore = (o) => (offeringSort === 'bp' ? o.rating?.bp?.stars ?? 0 : o.rating?.stars ?? 0);
   const offeringOptions = data.offerings
     .filter((o) => (o.role === b.role || o.role === 'both') && o.rating?.available !== false)
-    .sort((x, y) => (y.rating?.stars ?? 0) - (x.rating?.stars ?? 0) || x.name.localeCompare(y.name))
-    .map((o) => ({ ...o, character: o.rating ? `${stars(o.rating.stars)} · ${o.rating.kind}` : null }));
+    .sort((x, y) => offerScore(y) - offerScore(x) || x.name.localeCompare(y.name))
+    .map((o) => ({
+      ...o,
+      character: o.rating ? `🏆 ${stars(o.rating.stars)}   🩸 ${stars(o.rating.bp?.stars ?? 0)}` : null,
+    }));
   const mainStyle = b.playstyles[0] ?? Object.entries(rating.tags ?? {}).sort((x, y) => y[1] - x[1])[0]?.[0];
   const suggestedOffering = chosen.length ? bestOffering(data.offerings, b.role, mainStyle) : null;
 
@@ -216,18 +222,30 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
           </>
         )}
 
-        <h3 className="section-title">Offering (optional)</h3>
+        <h3 className="section-title">
+          Offering (optional)
+          <span className="sort-toggle">
+            <button className={offeringSort === 'win' ? 'active' : ''} onClick={() => setOfferingSort('win')}>
+              🏆 Best for winning
+            </button>
+            <button className={offeringSort === 'bp' ? 'active' : ''} onClick={() => setOfferingSort('bp')}>
+              🩸 Best for Bloodpoints
+            </button>
+          </span>
+        </h3>
         <div className="maker-slots">
           <Picker
             options={offeringOptions}
             value={offering}
             onPick={(o) => set({ offering: o?.id ?? null })}
-            placeholder="Offering… (best first)"
+            placeholder={offeringSort === 'bp' ? 'Offering… (most Bloodpoints first)' : 'Offering… (best for winning first)'}
           />
         </div>
         {offering?.rating && (
           <p className="small muted">
-            <span className="stars">{stars(offering.rating.stars)}</span> {offering.rating.why}
+            🏆 <span className="stars">{stars(offering.rating.stars)}</span> 🩸{' '}
+            <span className="stars">{stars(offering.rating.bp?.stars ?? 0)}</span> —{' '}
+            {offeringSort === 'bp' ? offering.rating.bp?.why : offering.rating.why}
           </p>
         )}
         {!offering && suggestedOffering && (

@@ -108,7 +108,7 @@ export function rateBloodpoints(o) {
   const d = o.description;
   const pct = Number(d.match(/\+(\d+)\s*%\s*bonus Bloodpoints/i)?.[1] ?? d.match(/\+(\d+)\s*%/)?.[1] ?? 0);
   const allCategories = /all Scoring Categories/i.test(d);
-  const everyone = /to all Players/i.test(d);
+  const everyone = /to all Players|all Players benefit/i.test(d);
   const allSurvivors = /to all Survivors/i.test(d);
   if (/doubles all Bloodpoints awarded/i.test(d)) {
     return { stars: 3, why: 'Doubles event Bloodpoints. Only useful while the event is running.' };

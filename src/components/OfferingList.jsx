@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { EntityCard, RARITY_LABEL } from './PerkCard.jsx';
-import { KIND_LABEL, stars } from '../lib/offeringRatings.js';
+import { stars } from '../lib/offeringRatings.js';
 
 const ROLE_LABEL = { survivor: 'Survivor', killer: 'Killer', both: 'Both roles' };
 
@@ -36,34 +36,36 @@ const MODES = {
 function OfferingCard({ o, mode }) {
   const r = o.rating;
   const isBp = mode === 'bp';
-  const n = isBp ? r.bp?.stars ?? 0 : r.stars;
   return (
     <EntityCard
       entity={o}
       subtitle={[RARITY_LABEL[o.rarity] ?? o.rarity, ROLE_LABEL[o.role], o.subcategory].filter(Boolean).join(' · ')}
       note={
         <>
-          <span className={`stars stars-${n}`} title={`${n} of 5`}>
-            {stars(n)}
-          </span>{' '}
-          {isBp ? (
-            <span className="badge kind-bloodpoints">Bloodpoints</span>
-          ) : (
-            <span className={`badge kind-${r.kind}`}>{KIND_LABEL[r.kind]}</span>
-          )}
-          {r.legacy && <span className="badge"> Legacy</span>}
-          <div className="small">{isBp ? r.bp?.why : r.why}</div>
-          {isBp && r.legacy && <div className="small muted">No longer in the Bloodweb: only if you still have some.</div>}
+          {/* Both ratings are always shown; the one for the chosen mode comes first. */}
+          {[isBp ? 'bp' : 'win', isBp ? 'win' : 'bp'].map((m, i) => {
+            const v = m === 'bp' ? r.bp?.stars ?? 0 : r.stars;
+            return (
+              <div key={m} className={`rating-line ${i === 0 ? 'primary' : 'secondary'}`}>
+                <span className="rating-label">{m === 'bp' ? '🩸 Farming' : '🏆 Winning'}</span>
+                <span className={`stars stars-${v}`} title={`${v} of 5`}>
+                  {stars(v)}
+                </span>
+                {i === 0 && <div className="small">{m === 'bp' ? r.bp?.why : r.why}</div>}
+              </div>
+            );
+          })}
+          {r.legacy && <div className="small muted">Legacy: no longer in the Bloodweb, only if you still have some.</div>}
         </>
       }
     />
   );
 }
 
-export default function OfferingList({ offerings }) {
+export default function OfferingList({ offerings, initialMode = 'win' }) {
   const [role, setRole] = useState('all');
   const [view, setView] = useState('tiers');
-  const [mode, setMode] = useState('win');
+  const [mode, setMode] = useState(initialMode);
   const [showBp, setShowBp] = useState(false);
   const M = MODES[mode];
 
@@ -92,15 +94,26 @@ export default function OfferingList({ offerings }) {
 
   return (
     <section>
+      <div className="mode-bar" role="tablist" aria-label="Rate offerings for">
+        {Object.entries(MODES).map(([id, m]) => (
+          <button
+            key={id}
+            role="tab"
+            aria-selected={mode === id}
+            className={`mode-button ${mode === id ? 'active' : ''}`}
+            onClick={() => setMode(id)}
+          >
+            <span className="mode-icon">{id === 'bp' ? '🩸' : '🏆'}</span>
+            <span>
+              <strong>{id === 'bp' ? 'Best for farming Bloodpoints' : 'Best for winning'}</strong>
+              <span className="small muted">
+                {id === 'bp' ? 'Which offerings give the most Bloodpoints' : 'Which offerings help you win the match'}
+              </span>
+            </span>
+          </button>
+        ))}
+      </div>
       <div className="toolbar">
-        <div className="segmented" title="What should the rating be about?">
-          {Object.entries(MODES).map(([id, m]) => (
-            <button key={id} className={mode === id ? 'active' : ''} onClick={() => setMode(id)}>
-              {id === 'bp' ? '🩸 ' : '🏆 '}
-              {m.label}
-            </button>
-          ))}
-        </div>
         <div className="segmented">
           {['all', 'survivor', 'killer'].map((r) => (
             <button key={r} className={role === r ? 'active' : ''} onClick={() => setRole(r)}>

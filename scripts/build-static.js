@@ -333,9 +333,10 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
       description: `Dead by Daylight offerings tier list for patch ${meta.patch}: every killer and survivor offering rated 1–5 stars for how much it helps you win. Best: ${best.join(', ')}.`,
       body: `<h1>Dead by Daylight offerings tier list</h1>
 <p>Every offering rated from 1 to 5 stars for how much it helps you <strong>win the match</strong>. Bloodpoint offerings are great for grinding but do nothing in the match, so they are in D tier. Patch ${esc(meta.patch)}.</p>
-<h2>Killer offerings</h2>${section('killer')}
-<h2>Survivor offerings</h2>${section('survivor')}
-<h2>Best offerings for farming Bloodpoints</h2>
+<p class="jump"><a class="button" href="#farming">🩸 Best offerings for farming Bloodpoints ↓</a> <a class="button" href="#killer">🏆 Best killer offerings ↓</a> <a class="button" href="#survivor">🏆 Best survivor offerings ↓</a></p>
+<h2 id="killer">Killer offerings (best for winning)</h2>${section('killer')}
+<h2 id="survivor">Survivor offerings (best for winning)</h2>${section('survivor')}
+<h2 id="farming">🩸 Best offerings for farming Bloodpoints</h2>
 <p>Bloodpoint offerings do nothing in the match, but they are the fastest way to level up. Rated 1–5 stars for how many extra Bloodpoints they give. They stack, and Bloody Party Streamers boost everyone in the match.</p>
 <ul class="combos">${rated
         .filter((o) => (o.rating.bp?.stars ?? 0) > 0)

@@ -377,3 +377,17 @@ button.ok { border-color: var(--ok); color: var(--ok); }
 .tier { color: var(--text); }
 .tier-5 { color: #f5c542; }
 .tier-4 { color: #4caf50; }
+
+/* ---------- Offerings: winning vs farming ---------- */
+.mode-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 14px; }
+.mode-button { display: flex; gap: 12px; align-items: center; text-align: left; padding: 12px 14px; border-radius: 10px; }
+.mode-button > span:last-child { display: flex; flex-direction: column; gap: 2px; }
+.mode-button.active { background: var(--accent-soft); border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.mode-icon { font-size: 1.8rem; line-height: 1; }
+.rating-line { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.rating-line + .rating-line { margin-top: 4px; }
+.rating-line .small { flex-basis: 100%; }
+.rating-label { font-size: 0.8em; min-width: 72px; }
+.rating-line.secondary { opacity: 0.75; }
+.sort-toggle { display: inline-flex; gap: 4px; margin-left: 8px; }
+.sort-toggle button { padding: 2px 8px; font-size: 0.8em; }
