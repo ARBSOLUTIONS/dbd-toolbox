@@ -123,7 +123,6 @@ export default function ScoreBreakdown({ rating, role, extraNotes = [] }) {
         <strong>= {rating.score}</strong>
       </div>
       <p className="muted small score-hint">
-        Click a part to see why.{' '}
         <button className="link-button small" onClick={() => setShowHow(!showHow)}>
           How does scoring work? {showHow ? '▴' : '▾'}
         </button>

@@ -96,11 +96,10 @@ function ScoreLine({ rating, role, onOpen }) {
           {' '}
           <span className={c.points >= 0 ? 'good' : 'bad'}>
             {c.points >= 0 ? '+' : '−'} {Math.abs(c.points)} NightLight
-          </span>{' '}
-          <span className="muted">({role === 'killer' ? 'kill' : 'escape'} rates of the perks vs average)</span>
+          </span>
         </>
       ) : (
-        <span className="muted"> (no NightLight stats)</span>
+        null
       )}{' '}
       <button className="link-button small" onClick={onOpen}>
         why?

@@ -175,8 +175,8 @@ export default function Community({ data, favorites, onOpenMaker }) {
       (builds ?? []).map((b) => {
         const r = resolveBuild(toBuildCardShape(b), data);
         const build = { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }) };
-        build.nl = buildStats(build, data.stats);
-        return { ...build, analysis: analyseBuild(build, data.stats, perksById) };
+        // The NightLight check box replaces the per-card NightLight line here.
+        return { ...build, analysis: analyseBuild({ ...build, nl: buildStats(build, data.stats) }, data.stats, perksById) };
       }),
     [builds, data, perksById],
   );

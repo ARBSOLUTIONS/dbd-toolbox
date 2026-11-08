@@ -78,16 +78,15 @@ const BASE_STYLES = {
 
 /** The parts of the build score, in the order they are shown. */
 export const SCORE_PARTS = [
-  { id: 'fit', label: 'Playstyle fit', max: 35, explain: 'How many of the 4 perks support the chosen playstyle (35 × matching ÷ 4).' },
-  { id: 'synergy', label: 'Synergy', max: 35, explain: 'Known strong perk pairs (9 each) and tags shared by 2+ perks (3 each), max 35.' },
-  { id: 'balance', label: 'Balance', max: 30, explain: 'Basic needs: killers want gen slowdown (−12 without) and info (−6 without); survivors want a chase or second-chance perk (−12 without) and something for the team (−6 without).' },
+  { id: 'synergy', label: 'Synergy', max: 50, explain: 'Known strong perk pairs (13 each) and purposes shared by 2+ perks (4 each), max 50.' },
+  { id: 'balance', label: 'Balance', max: 50, explain: 'Basic needs: killers want gen slowdown (−20 without) and info (−10 without); survivors want a chase or second-chance perk (−20 without) and something for the team (−10 without). −10 per empty slot.' },
   { id: 'conflicts', label: 'Conflicts', max: 0, explain: 'Penalties: the same perk twice (licensed copy, −15), two Exhaustion perks (−15), 2+ hexes without Undying or Thrill of the Hunt (−6).' },
   { id: 'community', label: 'Community stats', max: 10, explain: 'NightLight: how often these perks win compared with the average perk of their role, corrected for small samples (−10 to +10). Only when stats are imported.' },
 ];
 
 /**
  * Rates a set of perks for a role. The score (0-100) is a rough guide:
- *   fit (0-35) + synergy (0-35) + balance (0-30) − conflicts, capped to 0-100,
+ *   synergy (0-50) + balance (0-50) − conflicts, capped to 0-100,
  *   then + community (−10..+10, NightLight stats, only with { stats }), capped again.
  * Returns { score, base, parts, community, pros, cons, tags }. `parts` lists
  * each part's points with the reasons behind it (see SCORE_PARTS).
@@ -96,7 +95,7 @@ export function scoreBuild(perks, role, playstyles = [], { stats = null, killerI
   const list = perks.filter(Boolean);
   const pros = [];
   const cons = [];
-  const notes = { fit: [], synergy: [], balance: [], conflicts: [], community: [] };
+  const notes = { synergy: [], balance: [], conflicts: [], community: [] };
   const pro = (part, text) => {
     pros.push(text);
     notes[part].push({ good: true, text });
@@ -111,48 +110,37 @@ export function scoreBuild(perks, role, playstyles = [], { stats = null, killerI
   const tagCount = {};
   for (const p of tagged) for (const t of p.tags) tagCount[t] = (tagCount[t] ?? 0) + 1;
 
-  // 1. Fit with the playstyle (max 35). Without a chosen playstyle we use the
-  //    build's own most common tag, so a focused build still scores well.
-  const focus = playstyles.length
-    ? playstyles
-    : [Object.entries(tagCount).sort((a, b) => b[1] - a[1])[0]?.[0]].filter(Boolean);
-  const matching = tagged.filter((p) => p.tags.some((t) => focus.includes(t))).length;
-  const fit = Math.round((matching / 4) * 35);
-  if (playstyles.length) {
-    if (matching >= 3) pro('fit', `${matching} of 4 perks support your ${playstyles.join(' / ')} playstyle.`);
-    else con('fit', `Only ${matching} of 4 perks support your ${playstyles.join(' / ')} playstyle.`);
-  } else if (focus.length) {
-    notes.fit.push({ good: matching >= 3, text: `${matching} of 4 perks share the build's main purpose (${focus[0]}).` });
-  }
-  if (list.length < 4) con('fit', `${4 - list.length} empty perk slot${list.length === 3 ? '' : 's'}.`);
-
   // 2. Synergy (max 35): known strong pairs count most, shared tags a little.
   const ids = new Set(tagged.flatMap((p) => p.aliasIds ?? [p.id]));
   const pairs = SYNERGIES.filter(([a, b]) => ids.has(a) && ids.has(b));
   for (const [, , why] of pairs) pro('synergy', why);
   const sharedTags = Object.entries(tagCount).filter(([, n]) => n >= 2).map(([t]) => t);
-  const synergy = Math.min(35, pairs.length * 9 + sharedTags.length * 3);
-  if (sharedTags.length) notes.synergy.push({ good: true, text: `Shared purposes: ${sharedTags.join(', ')} (+3 each).` });
+  const synergy = Math.min(50, pairs.length * 13 + sharedTags.length * 4);
+  if (sharedTags.length) notes.synergy.push({ good: true, text: `Shared purposes: ${sharedTags.join(', ')} (+4 each).` });
   if (!pairs.length && !sharedTags.length) notes.synergy.push({ good: false, text: 'No known strong pairs and no shared purposes.' });
 
-  // 3. Balance (max 30)
-  let balance = 30;
+  // 3. Balance (max 50)
+  let balance = 50;
+  if (list.length < 4) {
+    balance -= (4 - list.length) * 10;
+    con('balance', `${4 - list.length} empty perk slot${list.length === 3 ? '' : 's'}.`);
+  }
   if (role === 'killer') {
     if (!tagCount.slowdown) {
-      balance -= 12;
+      balance -= 20;
       con('balance', 'No gen slowdown: survivors may finish gens quickly.');
     } else if (tagCount.slowdown >= 2) pro('balance', 'Multiple slowdown perks keep the gens under control.');
     if (!tagCount.aura && !tagCount.info) {
-      balance -= 6;
+      balance -= 10;
       con('balance', 'No information perks: you will spend more time searching.');
     }
   } else {
     if (!tagCount.chase && !tagCount['anti-tunnel']) {
-      balance -= 12;
+      balance -= 20;
       con('balance', 'No chase or second-chance perk: you can go down quickly when found.');
     }
     if (!tagCount.aura && !tagCount['gen-rush'] && !tagCount.altruism) {
-      balance -= 6;
+      balance -= 10;
       con('balance', 'Nothing that helps the team (info, gens or saves).');
     }
   }
@@ -183,9 +171,9 @@ export function scoreBuild(perks, role, playstyles = [], { stats = null, killerI
     for (const t of community.cons) con('community', t);
   }
 
-  const base = Math.max(0, Math.min(100, fit + synergy + balance - conflicts));
+  const base = Math.max(0, Math.min(100, Math.max(0, balance) + synergy - conflicts));
   const score = Math.max(0, Math.min(100, base + (community?.points ?? 0)));
-  const value = { fit, synergy, balance, conflicts: -conflicts, community: community?.points ?? null };
+  const value = { synergy, balance, conflicts: -conflicts, community: community?.points ?? null };
   const parts = SCORE_PARTS.filter((p) => p.id !== 'community' || community).map((p) => ({ ...p, value: value[p.id], notes: notes[p.id] }));
   return { score, base, parts, community, pros, cons, tags: tagCount };
 }
