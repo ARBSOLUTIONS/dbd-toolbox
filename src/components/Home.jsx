@@ -42,49 +42,74 @@ export default function Home({ data, builds, onOpen, onShowBuild }) {
     record?.offerings?.added?.length && `${record.offerings.added.length} new offerings`,
   ].filter(Boolean);
 
+  const showcase = top('killer')[0] ?? top('survivor')[0];
+
   return (
     <section className="home">
-      <div className="home-hero">
+      <div className="home-hero frame">
+        <i className="corner tl" aria-hidden="true" />
+        <i className="corner tr" aria-hidden="true" />
+        <i className="corner bl" aria-hidden="true" />
+        <i className="corner br" aria-hidden="true" />
         <div className="home-hero-text">
           <p className="eyebrow">Dead by Daylight build toolbox{patch ? ` · patch ${patch}` : ''}</p>
-          <h2>
-            Find a build that <span>wins</span> — or one that’s just fun.
-          </h2>
+          <h2>Find a build that wins. Or one that’s just fun.</h2>
           <p className="home-lead">
-            Hundreds of rated killer and survivor builds, a build maker that scores your perks, community picks, patch
-            impact and challenges. Always up to date with the latest patch.
+            Rated killer and survivor builds, a build maker that scores your perks, community picks, patch impact and
+            challenges. Updated with every patch.
           </p>
           <div className="home-cta">
             <button className="primary big" onClick={() => onOpen('builds')}>
-              ⚔️ Browse builds
+              Browse builds
             </button>
-            <button className="big" onClick={() => onOpen('maker')}>
-              🛠️ Make your own
+            <button className="light big" onClick={() => onOpen('maker')}>
+              Make your own
             </button>
-            <button className="big" onClick={() => onOpen('challenges')}>
-              🎲 Random challenge
+            <button className="ghost big" onClick={() => onOpen('challenges')}>
+              Random challenge <span aria-hidden="true">→</span>
             </button>
           </div>
-          <ul className="home-numbers">
-            <li>
-              <strong>{builds.length}</strong> builds
-            </li>
-            <li>
-              <strong>{data.perks.length}</strong> perks
-            </li>
-            <li>
-              <strong>{data.killers.length}</strong> killers
-            </li>
-            <li>
-              <strong>{data.survivors.length}</strong> survivors
-            </li>
-          </ul>
         </div>
+        {showcase && (
+          <button className="home-hero-art" onClick={() => onShowBuild(showcase)} aria-label={`Open build: ${showcase.name}`}>
+            <span className="art-label">Top rated · {showcase.killer ?? (showcase.role === 'killer' ? 'Any killer' : 'Survivor')}</span>
+            <span className="art-loadout">
+              {showcase.resolved.perks.map((p, i) =>
+                p ? (
+                  <span key={i} className="art-perk">
+                    <img src={iconSrc(p.icon)} alt="" width="72" height="72" />
+                  </span>
+                ) : (
+                  <span key={i} className="art-perk empty" />
+                ),
+              )}
+            </span>
+            <span className="art-name">{showcase.name}</span>
+            <span className="art-score">
+              Score <strong>{showcase.rating?.score ?? 0}</strong>
+            </span>
+          </button>
+        )}
       </div>
+
+      <ul className="home-numbers">
+        <li>
+          <strong>{builds.length}</strong> Builds
+        </li>
+        <li>
+          <strong>{data.perks.length}</strong> Perks
+        </li>
+        <li>
+          <strong>{data.killers.length}</strong> Killers
+        </li>
+        <li>
+          <strong>{data.survivors.length}</strong> Survivors
+        </li>
+      </ul>
 
       <div className="home-row">
         <article className="card home-patch" onClick={() => onOpen('patchnotes')} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && onOpen('patchnotes')}>
-          <p className="eyebrow">📜 Latest patch</p>
+          <p className="eyebrow">Latest patch</p>
           <h3>{record?.toPatch && record.fromPatch !== record.toPatch ? `${record.fromPatch} → ${record.toPatch}` : `Patch ${patch ?? '?'}`}</h3>
           <p className="muted small">{patchSummary.length ? patchSummary.join(' · ') : 'No balance changes detected.'}</p>
           {analysis.builds.length > 0 && (
@@ -94,21 +119,21 @@ export default function Home({ data, builds, onOpen, onShowBuild }) {
           )}
           {nextChapter && (
             <p className="small home-next">
-              ⏳ Next: <strong>{nextChapter.name}</strong> ({nextChapter.kind}) on{' '}
+              Next: <strong>{nextChapter.name}</strong> ({nextChapter.kind}) on{' '}
               {new Date(`${nextChapter.date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'long' })}
             </p>
           )}
-          <span className="link-button">See the patch notes →</span>
+          <span className="link-button">See the patch notes <span aria-hidden="true">→</span></span>
         </article>
 
         <article className="card home-beginner" onClick={() => onOpen('builds', { type: 'beginner' })} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && onOpen('builds', { type: 'beginner' })}>
-          <p className="eyebrow">🌱 New to the fog?</p>
+          <p className="eyebrow">New to the fog?</p>
           <h3>Beginner builds</h3>
           <p className="muted small">
             {beginner} easy builds made from General perks plus one or two perks from free characters. No DLC needed to
             get started.
           </p>
-          <span className="link-button">Show beginner builds →</span>
+          <span className="link-button">Show beginner builds <span aria-hidden="true">→</span></span>
         </article>
       </div>
 
@@ -116,7 +141,7 @@ export default function Home({ data, builds, onOpen, onShowBuild }) {
         {['survivor', 'killer'].map((role) => (
           <div key={role} className="card home-top">
             <div className="home-top-head">
-              <h3>{role === 'survivor' ? '🏃 Top survivor builds' : '🔪 Top killer builds'}</h3>
+              <h3>{role === 'survivor' ? 'Top survivor builds' : 'Top killer builds'}</h3>
               <button className="link-button small" onClick={() => onOpen('builds', { role })}>
                 All →
               </button>

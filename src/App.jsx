@@ -88,6 +88,7 @@ export default function App() {
   const [tab, setTabState] = useState('home');
   const [buildFilter, setBuildFilter] = useState({});
   const [focusBuild, setFocusBuild] = useState(null);
+  const [showBanner, setShowBanner] = useState(true);
   useEffect(() => {
     if (!focusBuild) return undefined;
     const close = (e) => e.key === 'Escape' && setFocusBuild(null);
@@ -168,8 +169,20 @@ export default function App() {
     });
   }, [data, favorites.custom]);
 
+  const patch = data?.meta?.patch;
+
   return (
     <NavContext.Provider value={nav}>
+    {patch && showBanner && (
+      <div className="announce">
+        <button className="announce-link" onClick={() => setTab('patchnotes')}>
+          Patch {patch} is live. See which builds got buffed and nerfed <span aria-hidden="true">→</span>
+        </button>
+        <button className="announce-close" onClick={() => setShowBanner(false)} aria-label="Hide this message">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+        </button>
+      </div>
+    )}
     <div className="app">
       <header className="topbar">
         <h1>
@@ -193,7 +206,6 @@ export default function App() {
                     aria-current={tab === t.id ? 'page' : undefined}
                     onClick={() => setTab(t.id)}
                   >
-                    <span className="tab-icon" aria-hidden="true">{t.icon}</span>
                     {t.label}
                   </button>
                 ))}
@@ -251,22 +263,42 @@ export default function App() {
 
       <AchievementToasts store={challenges} />
 
-      <footer className="muted small">
-        Game data and icons from the{' '}
-        <a href="https://deadbydaylight.wiki.gg" target="_blank" rel="noreferrer">
-          Dead by Daylight Wiki
-        </a>{' '}
-        (CC BY-NC-SA 3.0). {SITE_NAME} is a free, non-commercial fan project and is not affiliated with or endorsed by
-        Behaviour Interactive. Dead by Daylight is a trademark of Behaviour Interactive Inc.
-        {STATIC && (
-          <>
-            {' '}
-            <a href="/about/">About, licence &amp; privacy</a> · <a href="/perks/">All perks</a> ·{' '}
-            <a href="/killers/">All killers</a> · <a href="/builds/">All builds</a>
-          </>
-        )}
-      </footer>
     </div>
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <img className="footer-mark" src="/logo.svg" alt="" width="44" height="44" />
+          <div className="footer-cols">
+            {TAB_GROUPS.map((g) => (
+              <div key={g.label} className="footer-col">
+                <span className="footer-col-label">{g.label}</span>
+                {g.tabs.map((t) => (
+                  <button key={t.id} className="footer-link" onClick={() => setTab(t.id)}>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            ))}
+            {STATIC && (
+              <div className="footer-col">
+                <span className="footer-col-label">Pages</span>
+                <a className="footer-link" href="/about/">About &amp; privacy</a>
+                <a className="footer-link" href="/perks/">All perks</a>
+                <a className="footer-link" href="/killers/">All killers</a>
+                <a className="footer-link" href="/builds/">All builds</a>
+              </div>
+            )}
+          </div>
+          <p className="footer-legal">
+            Game data and icons from the{' '}
+            <a href="https://deadbydaylight.wiki.gg" target="_blank" rel="noreferrer">
+              Dead by Daylight Wiki
+            </a>{' '}
+            (CC BY-NC-SA 3.0). {SITE_NAME} is a free, non-commercial fan project and is not affiliated with or endorsed
+            by Behaviour Interactive. Dead by Daylight is a trademark of Behaviour Interactive Inc.
+          </p>
+        </div>
+        <div className="footer-word" aria-hidden="true">DBD Toolbox</div>
+      </footer>
     </NavContext.Provider>
   );
 }
