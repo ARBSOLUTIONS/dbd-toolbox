@@ -80,42 +80,40 @@ export default function BuildCard({ build, favorites, footer }) {
   const [open, setOpen] = useState(false);
   const { resolved, rating } = build;
   const labels = PLAYSTYLES[build.role];
+  const changedPerks = (build.patchNotes ?? []).filter((n) => n.kind === 'changed').map((n) => n.perk);
+  // At most one status badge, most important first.
+  const status = build.patchNotes?.some((n) => n.from || n.kind === 'dropped')
+    ? { className: 'badge-updated', label: `🔄 Updated for ${build.patch ?? 'new patch'}`, title: 'Fixed automatically after a patch' }
+    : changedPerks.length
+    ? { className: 'badge-changed', label: '⚠ Perk changed', title: `Changed in patch ${build.patch ?? ''}: ${changedPerks.join(', ')}` }
+    : build.newPerks?.length
+    ? { className: 'badge-new', label: '✨ New perk', title: `New perks: ${build.newPerks.join(', ')}` }
+    : build.variant === 'off-meta'
+    ? { className: 'badge-offmeta', label: 'Off-meta', title: 'Less common perks' }
+    : null;
 
   return (
     <article className={`card build-card type-${build.type}`}>
       <header className="build-head">
         <div>
           <h3>{build.name}</h3>
+          <p className="build-sub">
+            {[build.role === 'killer' ? build.killer ?? 'Any killer' : null, ...build.playstyles.map((p) => labels[p] ?? p)]
+              .filter(Boolean)
+              .join(' · ')}
+          </p>
           <div className="badges">
             <span className={`badge badge-${build.type}`}>
-              {{ beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated', community: 'Community' }[build.type] ?? build.type}
+              {build.variant === 'spotlight'
+                ? 'Perk spotlight'
+                : { beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto', community: 'Community' }[build.type] ??
+                  build.type}
             </span>
-            {build.variant === 'off-meta' && <span className="badge badge-offmeta">Off-meta</span>}
-            {build.variant === 'spotlight' && <span className="badge badge-offmeta">Perk spotlight</span>}
-            {build.newPerks?.length > 0 && (
-              <span className="badge badge-new" title={`New perks: ${build.newPerks.join(', ')}`}>
-                ✨ New perk
+            {status && (
+              <span className={`badge ${status.className}`} title={status.title}>
+                {status.label}
               </span>
             )}
-            {build.patchNotes?.some((n) => n.from || n.kind === 'dropped') && (
-              <span className="badge badge-updated" title={`Fixed automatically after patch ${build.patch ?? ''}`}>
-                🔄 Updated for {build.patch ?? 'new patch'}
-              </span>
-            )}
-            {build.patchNotes?.some((n) => n.kind === 'changed') && (
-              <span
-                className="badge badge-changed"
-                title={`Changed in patch ${build.patch ?? ''}: ${build.patchNotes.filter((n) => n.kind === 'changed').map((n) => n.perk).join(', ')}`}
-              >
-                ⚠ Perk changed
-              </span>
-            )}
-            <span className="badge">{build.role === 'killer' ? build.killer ?? 'Any killer' : 'Survivor'}</span>
-            {build.playstyles.map((p) => (
-              <span key={p} className="badge badge-style">
-                {labels[p] ?? p}
-              </span>
-            ))}
           </div>
         </div>
         <div className="build-head-right">
@@ -138,7 +136,7 @@ export default function BuildCard({ build, favorites, footer }) {
         ))}
       </div>
 
-      <div className="slots slots-small">
+      <div className="slots slots-small slots-compact">
         {build.role === 'survivor' ? (
           build.item && <Slot entity={resolved.item} fallback={build.item} />
         ) : (
@@ -150,16 +148,12 @@ export default function BuildCard({ build, favorites, footer }) {
         {resolved.offering && <Slot entity={resolved.offering} />}
       </div>
 
-      {build.why && <p className="why">{build.why}</p>}
+      {build.why && <p className={`why ${open ? '' : 'clamp'}`}>{build.why}</p>}
 
-      {build.patchNotes?.some((n) => n.kind === 'changed') && (
+      {open && changedPerks.length > 0 && (
         <p className="patch-note small">
-          ⚠ Changed in patch {build.patch}:{' '}
-          {build.patchNotes
-            .filter((n) => n.kind === 'changed')
-            .map((n) => n.perk)
-            .join(', ')}
-          . The perk text on hover is already up to date; the explanation above may be older.
+          ⚠ Changed in patch {build.patch}: {changedPerks.join(', ')}. The perk text on hover is already up to date; the
+          explanation above may be older.
         </p>
       )}
 
@@ -178,8 +172,8 @@ export default function BuildCard({ build, favorites, footer }) {
       {build.author && <p className="muted small community-author">by {build.author}</p>}
       {footer}
 
-      <button className="link-button" onClick={() => setOpen(!open)}>
-        {open ? 'Less' : 'How to play & rating details'}
+      <button className="link-button details-toggle" onClick={() => setOpen(!open)}>
+        {open ? 'Show less ▴' : 'Details ▾'}
       </button>
       {open && (
         <div className="build-details">

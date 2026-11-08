@@ -17,7 +17,6 @@ import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
-import PatchNews from './components/PatchNews.jsx';
 import PatchNotes from './components/PatchNotes.jsx';
 import Home from './components/Home.jsx';
 import BuildCard from './components/BuildCard.jsx';
@@ -197,9 +196,8 @@ export default function App() {
       <main>
         {error && <p className="error">{error}</p>}
         {!data && !error && <p className="muted">Loading…</p>}
-        {data?.changes && tab !== 'home' && tab !== 'patchnotes' && <PatchNews changes={data.changes} />}
         {data && tab === 'home' && (
-          <Home data={data} builds={allBuilds} groups={TAB_GROUPS} onOpen={setTab} onShowBuild={setFocusBuild} />
+          <Home data={data} builds={allBuilds} onOpen={setTab} onShowBuild={setFocusBuild} />
         )}
         {data && tab === 'patchnotes' && <PatchNotes data={data} builds={allBuilds} onShowBuild={setFocusBuild} />}
         {data && tab === 'builds' && (

@@ -10,6 +10,7 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
   const [styles, setStyles] = useState([]);
   const [query, setQuery] = useState('');
   const [onlyNew, setOnlyNew] = useState(false);
+  const [showStyles, setShowStyles] = useState(false);
   const anyNew = builds.some((b) => b.newPerks?.length);
 
   const toggleStyle = (s) => setStyles(styles.includes(s) ? styles.filter((x) => x !== s) : [...styles, s]);
@@ -56,7 +57,7 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
             ['beginner', '🌱 Beginner'],
             ['meta', 'Strong / meta'],
             ['fun', 'Fun'],
-            ['auto', 'Auto-generated'],
+            ['auto', 'Auto'],
           ].map(([id, label]) => (
             <button key={id} className={type === id ? 'active' : ''} onClick={() => setType(id)}>
               {label}
@@ -81,23 +82,33 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
         />
       </div>
 
-      <div className="chips">
+      <div className="list-meta">
+        <span className="muted small">
+          {shown.length} build{shown.length === 1 ? '' : 's'} · best score first
+        </span>
+        <button className={`chip ${styles.length ? 'active' : ''}`} onClick={() => setShowStyles(!showStyles)}>
+          Playstyle{styles.length ? ` (${styles.length})` : ''} {showStyles ? '▴' : '▾'}
+        </button>
         {anyNew && (
           <button className={`chip chip-new ${onlyNew ? 'active' : ''}`} onClick={() => setOnlyNew(!onlyNew)}>
             ✨ Uses new perks
           </button>
         )}
-        {Object.entries(PLAYSTYLES[role]).map(([id, label]) => (
-          <button key={id} className={`chip ${styles.includes(id) ? 'active' : ''}`} onClick={() => toggleStyle(id)}>
-            {label}
-          </button>
-        ))}
       </div>
-
-      <p className="muted small">
-        {shown.length} build{shown.length === 1 ? '' : 's'}, sorted by synergy score. “Strong” and “Fun” builds
-        are hand-picked; “Auto-generated” builds are recalculated from the latest data after every update.
-      </p>
+      {showStyles && (
+        <div className="chips">
+          {Object.entries(PLAYSTYLES[role]).map(([id, label]) => (
+            <button key={id} className={`chip ${styles.includes(id) ? 'active' : ''}`} onClick={() => toggleStyle(id)}>
+              {label}
+            </button>
+          ))}
+          {styles.length > 0 && (
+            <button className="link-button small" onClick={() => setStyles([])}>
+              Clear
+            </button>
+          )}
+        </div>
+      )}
 
       {shown.length ? (
         <div className="build-grid">

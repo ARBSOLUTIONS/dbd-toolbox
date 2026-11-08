@@ -77,7 +77,7 @@ export default function DataStatus({ meta, onRefreshed }) {
   // Next expected patches: announced on the wiki, or predicted from the patch rhythm.
   const prediction = auto?.prediction;
   const predictions = prediction?.predictions ?? [];
-  const [next, second] = predictions;
+  const [next] = predictions;
   const predictionTitle = prediction
     ? [
         ...predictions.map(
@@ -98,25 +98,25 @@ export default function DataStatus({ meta, onRefreshed }) {
   return (
     <div className={`data-status ${old ? 'is-old' : ''}`}>
       {meta ? (
-        <span title={new Date(meta.fetchedAt).toLocaleString()}>
-          Patch <strong>{meta.patch ?? '?'}</strong> · data fetched <strong>{timeAgo(meta.fetchedAt)}</strong>
-          {old && ' — consider refreshing'}
+        <span
+          className="status-chip"
+          title={[`Data fetched ${timeAgo(meta.fetchedAt)} (${new Date(meta.fetchedAt).toLocaleString()})`, autoText, autoTitle, '', predictionTitle]
+            .filter((x) => x !== undefined && x !== null)
+            .join('\n')}
+        >
+          <i className={`status-dot ${old ? 'old' : ''}`} aria-hidden="true" />
+          Patch <strong>{meta.patch ?? '?'}</strong>
+          {next && (
+            <span className="status-next">
+              {' '}
+              · next ≈ {shortDate(next.date)}
+              {next.source === 'announced' ? nameOf(next) : ''}
+            </span>
+          )}
         </span>
       ) : meta === null ? (
         <span>No data yet — click “Refresh data”.</span>
       ) : null /* still loading */}
-      {next && (
-        <span className="auto-status prediction" title={predictionTitle}>
-          Next patch ≈ <strong>{shortDate(next.date)}</strong>
-          {next.source === 'announced' ? nameOf(next) : ' (likely)'}
-          {second && ` · ${shortDate(second.date)}${nameOf(second)}`}
-        </span>
-      )}
-      {autoText && (
-        <span className="auto-status" title={autoTitle}>
-          {autoText}
-        </span>
-      )}
       {!STATIC && (
         <button onClick={startRefresh} disabled={running}>
           {running ? 'Refreshing…' : 'Refresh data'}

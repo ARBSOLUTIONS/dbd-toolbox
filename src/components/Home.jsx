@@ -20,7 +20,7 @@ function MiniBuild({ build, onShow }) {
   );
 }
 
-export default function Home({ data, builds, groups, onOpen, onShowBuild }) {
+export default function Home({ data, builds, onOpen, onShowBuild }) {
   const record = data.patchNotes?.[0] ?? data.changes ?? null;
   const analysis = useMemo(() => analysePatch(record, data, builds), [record, data, builds]);
 
@@ -32,16 +32,6 @@ export default function Home({ data, builds, groups, onOpen, onShowBuild }) {
   const beginner = builds.filter((b) => b.type === 'beginner').length;
   const patch = data.meta?.patch;
   const nextChapter = (data.meta?.announcements ?? []).find((a) => a.date >= new Date().toISOString().slice(0, 10));
-
-  // A strip of perk icons in the hero, taken from the highest rated builds.
-  const heroPerks = useMemo(() => {
-    const seen = new Set();
-    const out = [];
-    for (const b of [...builds].sort((x, y) => (y.rating?.score ?? 0) - (x.rating?.score ?? 0))) {
-      for (const p of b.resolved.perks) if (p && !seen.has(p.id) && out.length < 12) seen.add(p.id) && out.push(p);
-    }
-    return out;
-  }, [builds]);
 
   const patchSummary = [
     analysis.counts.buff && `${analysis.counts.buff} buff${analysis.counts.buff === 1 ? '' : 's'}`,
@@ -55,11 +45,6 @@ export default function Home({ data, builds, groups, onOpen, onShowBuild }) {
   return (
     <section className="home">
       <div className="home-hero">
-        <div className="home-hero-perks" aria-hidden="true">
-          {heroPerks.map((p) => (
-            <img key={p.id} src={iconSrc(p.icon)} alt="" />
-          ))}
-        </div>
         <div className="home-hero-text">
           <p className="eyebrow">Dead by Daylight build toolbox{patch ? ` · patch ${patch}` : ''}</p>
           <h2>
@@ -143,24 +128,6 @@ export default function Home({ data, builds, groups, onOpen, onShowBuild }) {
         ))}
       </div>
 
-      {groups.map((g) => (
-        <div key={g.label} className="home-group">
-          <h2 className="section-title">{g.label}</h2>
-          <div className="home-tiles">
-            {g.tabs
-              .filter((t) => t.id !== 'home')
-              .map((t) => (
-                <button key={t.id} className="home-tile" onClick={() => onOpen(t.id)}>
-                  <span className="home-tile-icon" aria-hidden="true">
-                    {t.icon}
-                  </span>
-                  <strong>{t.label}</strong>
-                  <span className="muted small">{t.desc}</span>
-                </button>
-              ))}
-          </div>
-        </div>
-      ))}
     </section>
   );
 }
