@@ -40,3 +40,12 @@ test('new, unknown offerings still get a sensible rating', () => {
   assert.equal(bp.rating.kind, 'bloodpoints');
   assert.equal(realm.rating.kind, 'situational');
 });
+
+test('Bloodpoint farming rating: party streamers and cakes on top, Mori gives none', () => {
+  const by = Object.fromEntries(offerings.map((o) => [o.name, o.rating.bp.stars]));
+  assert.equal(by['Bloody Party Streamers'], 5);
+  assert.equal(by['Escape! Cake'], 5);
+  assert.equal(by['Ardent Shrike Wreath'], 3);
+  assert.equal(by['Shrike Wreath'], 1);
+  assert.equal(by['Ebony Memento Mori'], 0);
+});

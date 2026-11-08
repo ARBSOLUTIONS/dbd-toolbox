@@ -33,6 +33,7 @@ export default function PatchNews({ changes }) {
     p.changed.length && `${p.changed.length} changed perk${p.changed.length > 1 ? 's' : ''}`,
     changes.killers.added.length && `new killer: ${changes.killers.added.join(', ')}`,
     changes.survivors.added.length && `new survivor: ${changes.survivors.added.join(', ')}`,
+    changes.offerings?.added.length && `${changes.offerings.added.length} new offerings`,
     changes.addons.added.length + changes.addons.changed.length &&
       `${changes.addons.added.length + changes.addons.changed.length} new/changed add-ons`,
   ].filter(Boolean);

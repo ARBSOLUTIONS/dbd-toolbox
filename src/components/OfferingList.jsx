@@ -3,27 +3,57 @@ import { EntityCard, RARITY_LABEL } from './PerkCard.jsx';
 import { KIND_LABEL, stars } from '../lib/offeringRatings.js';
 
 const ROLE_LABEL = { survivor: 'Survivor', killer: 'Killer', both: 'Both roles' };
-const TIERS = [
-  [5, 'S tier — game changers'],
-  [4, 'A tier — strong'],
-  [3, 'B tier — good in the right situation'],
-  [2, 'C tier — small effect'],
-  [1, 'D tier — barely any effect / Bloodpoints only'],
-];
 
-function OfferingCard({ o }) {
+// Two ways to rate: how much an offering helps you WIN, or how good it is for FARMING Bloodpoints.
+const MODES = {
+  win: {
+    label: 'Winning',
+    score: (o) => o.rating.stars,
+    tiers: [
+      [5, 'S tier — game changers'],
+      [4, 'A tier — strong'],
+      [3, 'B tier — good in the right situation'],
+      [2, 'C tier — small effect'],
+      [1, 'D tier — barely any effect / Bloodpoints only'],
+    ],
+    intro: 'Rated 1–5 stars for how much they help you win the match (not for Bloodpoints).',
+  },
+  bp: {
+    label: 'Bloodpoint farming',
+    score: (o) => o.rating.bp?.stars ?? 0,
+    tiers: [
+      [5, 'S tier — +100% in every category'],
+      [4, 'A tier — big bonus in every category'],
+      [3, 'B tier — +100% in one category, or team bonus'],
+      [2, 'C tier — medium bonus'],
+      [1, 'D tier — small bonus'],
+    ],
+    intro:
+      'Rated 1–5 stars for how many extra Bloodpoints they give. Tip: Bloodpoint offerings stack, and Bloody Party Streamers boost everyone in the match.',
+  },
+};
+
+function OfferingCard({ o, mode }) {
   const r = o.rating;
+  const isBp = mode === 'bp';
+  const n = isBp ? r.bp?.stars ?? 0 : r.stars;
   return (
     <EntityCard
       entity={o}
       subtitle={[RARITY_LABEL[o.rarity] ?? o.rarity, ROLE_LABEL[o.role], o.subcategory].filter(Boolean).join(' · ')}
       note={
         <>
-          <span className={`stars stars-${r.stars}`} title={`${r.stars} of 5`}>
-            {stars(r.stars)}
+          <span className={`stars stars-${n}`} title={`${n} of 5`}>
+            {stars(n)}
           </span>{' '}
-          <span className={`badge kind-${r.kind}`}>{KIND_LABEL[r.kind]}</span>
-          <div className="small">{r.why}</div>
+          {isBp ? (
+            <span className="badge kind-bloodpoints">Bloodpoints</span>
+          ) : (
+            <span className={`badge kind-${r.kind}`}>{KIND_LABEL[r.kind]}</span>
+          )}
+          {r.legacy && <span className="badge"> Legacy</span>}
+          <div className="small">{isBp ? r.bp?.why : r.why}</div>
+          {isBp && r.legacy && <div className="small muted">No longer in the Bloodweb: only if you still have some.</div>}
         </>
       }
     />
@@ -33,23 +63,27 @@ function OfferingCard({ o }) {
 export default function OfferingList({ offerings }) {
   const [role, setRole] = useState('all');
   const [view, setView] = useState('tiers');
+  const [mode, setMode] = useState('win');
   const [showBp, setShowBp] = useState(false);
+  const M = MODES[mode];
 
   const shown = useMemo(
     () =>
       offerings
         .filter((o) => role === 'all' || o.role === role || o.role === 'both')
         .filter((o) => o.rating.available)
-        .filter((o) => showBp || o.rating.kind !== 'bloodpoints')
-        .sort((a, b) => b.rating.stars - a.rating.stars || a.name.localeCompare(b.name)),
-    [offerings, role, showBp],
+        // Winning mode hides pure Bloodpoint offerings unless asked; farming mode only shows offerings that give Bloodpoints.
+        .filter((o) => (mode === 'bp' ? M.score(o) > 0 : showBp || o.rating.kind !== 'bloodpoints'))
+        .sort((a, b) => M.score(b) - M.score(a) || a.name.localeCompare(b.name)),
+    [offerings, role, showBp, mode, M],
   );
 
   const byCategory = useMemo(() => {
     const map = new Map();
     for (const o of shown) {
-      if (!map.has(o.category)) map.set(o.category, []);
-      map.get(o.category).push(o);
+      const key = o.subcategory === 'All Categories' ? 'Bonus Bloodpoints (all categories)' : o.category;
+      if (!map.has(key)) map.set(key, []);
+      map.get(key).push(o);
     }
     return [...map.entries()];
   }, [shown]);
@@ -59,6 +93,14 @@ export default function OfferingList({ offerings }) {
   return (
     <section>
       <div className="toolbar">
+        <div className="segmented" title="What should the rating be about?">
+          {Object.entries(MODES).map(([id, m]) => (
+            <button key={id} className={mode === id ? 'active' : ''} onClick={() => setMode(id)}>
+              {id === 'bp' ? '🩸 ' : '🏆 '}
+              {m.label}
+            </button>
+          ))}
+        </div>
         <div className="segmented">
           {['all', 'survivor', 'killer'].map((r) => (
             <button key={r} className={role === r ? 'active' : ''} onClick={() => setRole(r)}>
@@ -74,25 +116,26 @@ export default function OfferingList({ offerings }) {
             By category
           </button>
         </div>
-        <label className="small">
-          <input type="checkbox" checked={showBp} onChange={(e) => setShowBp(e.target.checked)} /> Show Bloodpoint
-          offerings
-        </label>
+        {mode === 'win' && (
+          <label className="small">
+            <input type="checkbox" checked={showBp} onChange={(e) => setShowBp(e.target.checked)} /> Show Bloodpoint
+            offerings
+          </label>
+        )}
       </div>
       <p className="muted small">
-        Rated 1–5 stars for how much they help you <strong>win</strong> (not for Bloodpoints). {retired} retired
-        offerings are hidden.
+        {M.intro} {retired} retired offerings are hidden.
       </p>
 
       {view === 'tiers'
-        ? TIERS.map(([n, label]) => {
-            const list = shown.filter((o) => o.rating.stars === n);
+        ? M.tiers.map(([n, label]) => {
+            const list = shown.filter((o) => M.score(o) === n);
             return list.length ? (
               <div key={n}>
                 <h3 className={`section-title tier tier-${n}`}>{label}</h3>
                 <div className="grid">
                   {list.map((o) => (
-                    <OfferingCard key={o.id} o={o} />
+                    <OfferingCard key={o.id} o={o} mode={mode} />
                   ))}
                 </div>
               </div>
@@ -103,7 +146,7 @@ export default function OfferingList({ offerings }) {
               <h3 className="section-title">{category}</h3>
               <div className="grid">
                 {list.map((o) => (
-                  <OfferingCard key={o.id} o={o} />
+                  <OfferingCard key={o.id} o={o} mode={mode} />
                 ))}
               </div>
             </div>

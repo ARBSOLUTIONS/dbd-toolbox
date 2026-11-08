@@ -321,6 +321,7 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
     '@type': 'FAQPage',
     mainEntity: [
       { '@type': 'Question', name: 'What is the best killer offering in Dead by Daylight?', acceptedAnswer: { '@type': 'Answer', text: 'Ebony Memento Mori (kill every survivor on their last hook state), followed by Ivory Memento Mori and Putrid Oak (hooks closer together).' } },
+      { '@type': 'Question', name: 'What is the best offering to farm Bloodpoints in Dead by Daylight?', acceptedAnswer: { '@type': 'Answer', text: 'Bloody Party Streamers (+100% Bloodpoints in every category for everyone in the match), then Escape! Cake (survivor) and Survivor Pudding (killer), each +100% in every category. Bloodpoint offerings stack.' } },
       { '@type': 'Question', name: 'What is the best survivor offering in Dead by Daylight?', acceptedAnswer: { '@type': 'Answer', text: "Vigo's Shroud (spawn far from the killer) and Shroud of Separation (all survivors spawn apart). White Ward is great to keep an expensive item." } },
     ],
   };
@@ -328,12 +329,22 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
     'offerings/index.html',
     page({
       url: '/offerings/',
-      title: `Best Dead by Daylight offerings – tier list (${meta.patch}) | ${SITE}`,
+      title: `Best Dead by Daylight offerings – tier list & Bloodpoint farming (${meta.patch}) | ${SITE}`,
       description: `Dead by Daylight offerings tier list for patch ${meta.patch}: every killer and survivor offering rated 1–5 stars for how much it helps you win. Best: ${best.join(', ')}.`,
       body: `<h1>Dead by Daylight offerings tier list</h1>
 <p>Every offering rated from 1 to 5 stars for how much it helps you <strong>win the match</strong>. Bloodpoint offerings are great for grinding but do nothing in the match, so they are in D tier. Patch ${esc(meta.patch)}.</p>
 <h2>Killer offerings</h2>${section('killer')}
-<h2>Survivor offerings</h2>${section('survivor')}`,
+<h2>Survivor offerings</h2>${section('survivor')}
+<h2>Best offerings for farming Bloodpoints</h2>
+<p>Bloodpoint offerings do nothing in the match, but they are the fastest way to level up. Rated 1–5 stars for how many extra Bloodpoints they give. They stack, and Bloody Party Streamers boost everyone in the match.</p>
+<ul class="combos">${rated
+        .filter((o) => (o.rating.bp?.stars ?? 0) > 0)
+        .sort((a, b) => b.rating.bp.stars - a.rating.bp.stars || a.name.localeCompare(b.name))
+        .map(
+          (o) =>
+            `<li>${icon(o, 40)} <strong>${esc(o.name)}</strong> <span class="score">${stars(o.rating.bp.stars)}</span> <span class="muted">${esc(roleName[o.role] ?? o.role)}${o.rating.legacy ? ' · legacy (no longer in the Bloodweb)' : ''}</span><br>${esc(o.rating.bp.why)}</li>`,
+        )
+        .join('')}</ul>`,
       jsonLd: [faq],
       crumbs: [{ name: 'Offerings', url: '/offerings/' }],
     }),

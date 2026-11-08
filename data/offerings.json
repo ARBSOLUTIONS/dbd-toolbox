@@ -1,5 +1,215 @@
 [
   {
+    "id": "escape-cake",
+    "name": "Escape! Cake",
+    "rarity": "uncommon",
+    "description": "Grants +100% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"This picture of a cake sure is real. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_escapeCake.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_escapeCake.png/96px-IconFavors_escapeCake.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Escape!_Cake",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "hollow-shell",
+    "name": "Hollow Shell",
+    "rarity": "uncommon",
+    "description": "Grants +25% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"An unidentifiable cocoon which was breached by whatever was inside. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_hollowShell.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_hollowShell.png/96px-IconFavors_hollowShell.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Hollow_Shell",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "sealed-envelope",
+    "name": "Sealed Envelope",
+    "rarity": "uncommon",
+    "description": "Grants +25% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"An unaddressed and unopened envelope yellowed by its time. Its message will never be known. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_sealedEnvelope.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_sealedEnvelope.png/96px-IconFavors_sealedEnvelope.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sealed_Envelope",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "survivor-pudding",
+    "name": "Survivor Pudding",
+    "rarity": "uncommon",
+    "description": "Grants +100% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A heavily salted pudding... \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_survivorPudding.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_survivorPudding.png/96px-IconFavors_survivorPudding.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Survivor_Pudding",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "bloody-party-streamers",
+    "name": "Bloody Party Streamers",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in all Scoring Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A reminder of a bloody good time when people came together, but left screaming. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_bloodyPartyStreamers.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_bloodyPartyStreamers.png/96px-IconFavors_bloodyPartyStreamers.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bloody_Party_Streamers",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "bound-envelope",
+    "name": "Bound Envelope",
+    "rarity": "rare",
+    "description": "Grants +25% bonus Bloodpoints in all Scoring Categories to all Survivors.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"An opened envelope re-sealed and bound with four coloured ribbons. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_boundEnvelope.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_boundEnvelope.png/96px-IconFavors_boundEnvelope.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bound_Envelope",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "coconut-scream-pie",
+    "name": "Coconut Scream Pie",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nAll Players benefit from the following primary effect:\n• Grants +109% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial..\nAdditionally, you benefit from the following secondary effect:\n• The Aura of the Invitation Pillar is revealed to you within 16 metres.\nCoconut Scream Pie was only available during the Ninth Year Anniversary Anniversary Event.",
+    "quote": "\"The secret ingredient is love... wait, no, that's blood. Happy Anniversary! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconsFavors_9thAnniversary.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconsFavors_9thAnniversary.png/96px-IconsFavors_9thAnniversary.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Coconut_Scream_Pie",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "frightful-flan",
+    "name": "Frightful Flan",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nIt may be a masquerade ball, but there is no masking the foul odour of this quivering yellow mass.\nConsuming it, however, fills you with vigour.\nGrants +106% bonus Bloodpoints in all Scoring Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nCalls upon The Entity for the following effects:\n• The Aura of the Crown Pillar is revealed to you purple within 8 metres.\n• Triggers a map-wide auditory cue when the Crown Pillar teleports to a new location.\nFrightful Flan was only available during the Sixth Year Anniversary Anniversary Event.",
+    "quote": "\"Happy Anniversary! We made you this cake/pie/pudding/unspeakable horror. \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_frightfulFlan.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_frightfulFlan.png/96px-IconFavors_frightfulFlan.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Frightful_Flan",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "ghastly-gateau",
+    "name": "Ghastly Gateau",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA spectacularly grim cake to mark our four years together.\nOne percent tastier than a Gruesome Gateau.\nGrants +104% bonus Bloodpoints in all Scoring Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nGhastly Gateau was only available during the Fourth Year Anniversary Anniversary Event.",
+    "quote": "\"Happy Anniversary! Here is to many more! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ghastlyGateau.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ghastlyGateau.png/96px-IconFavors_ghastlyGateau.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ghastly_Gateau",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "gruesome-gateau",
+    "name": "Gruesome Gateau",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA terrific stomach-churning cake to mark our three years together.\nGrants +103% bonus Bloodpoints in all Scoring Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nGruesome Gateau was only available during the Third Year Anniversary Anniversary Event.",
+    "quote": "\"Happy Anniversary! Here is to our three years together! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_gruesomeGateau.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_gruesomeGateau.png/96px-IconFavors_gruesomeGateau.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Gruesome_Gateau",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "sacrificial-cake",
+    "name": "Sacrificial Cake",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA revolting cake that marks our five years together.\nGrants +105% bonus Bloodpoints in all Scoring Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nCalls upon The Entity for the following effects:\n• The Aura of the Crown Pillar is revealed to you in purple within 8 metres.\n• Triggers a map-wide auditory cue when the Crown Pillar teleports to a new location.\nSacrificial Cake was only available during the Fifth Year Anniversary Event.",
+    "quote": "\"Happy Anniversary! We are dying to celebrate many more with you! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_sacrificialCake.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_sacrificialCake.png/96px-IconFavors_sacrificialCake.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sacrificial_Cake",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "screech-cobbler",
+    "name": "Screech Cobbler",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nIf you listen really closely, you can almost hear it screaming for more ice cream.\nGrants 108% bonus Bloodpoints in all Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nCalls upon The Entity for the following effects:\n• Increases the Aura-reveal distance of the Masquerade Pillars by +8 metres.\n• Increases the number of Chests in the environment by +1.\nScreech Cobbler was only available during the Eighth Year Anniversary Event.",
+    "quote": "\"Happy anniversary! Hope this comfort food isn't too... discomforting. \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_screechCobbler.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_screechCobbler.png/96px-IconFavors_screechCobbler.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Screech_Cobbler",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "terrormisu",
+    "name": "Terrormisu",
+    "rarity": "event",
+    "description": "THIS OFFERING CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA celebratory dessert to be eaten during the masquerade.\nEach layer is more horrifying than the last.\nGrants 107% bonus Bloodpoints in all Categories to all Players.\n• The bonus Bloodpoints are applied after exiting the Trial.\nCalls upon The Entity for the following effect:\n• The Aura of the Masquerade Pillar is revealed to you in purple within 32 metres.\nTerrormisu was only available during the Seventh Year Anniversary Event.",
+    "quote": "\"Thanks for celebrating our Anniversary! Don't ask why it's so spongy. \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_terrormisu.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_terrormisu.png/96px-IconFavors_terrormisu.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Terrormisu",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
+    "id": "toothy-torte",
+    "name": "Toothy Torte",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nAll Players benefit from the following primary effect:\n• Grants +110% bonus Bloodpoints in all Scoring Categories.\n• The bonus Bloodpoints are applied after exiting the Trial..\nAdditionally, you benefit from the following secondary effect:\n• The Aura of the Banquet Table is revealed to you within 16 metres.\n• Killer: start with maximum Poison charges.\n• Survivor: start with a Morsel.\nToothy Torte is only available during the Tenth Year Anniversary Anniversary Event.",
+    "quote": "\"Chew fast, or it'll chew you right back. Thanks for celebrating with us! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/offerings/IconsFavors_10thAnniversary.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconsFavors_10thAnniversary.png/96px-IconsFavors_10thAnniversary.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Toothy_Torte",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "All Categories",
+    "role": "both"
+  },
+  {
     "id": "primrose-blossom-sachet",
     "name": "Primrose Blossom Sachet",
     "rarity": "common",

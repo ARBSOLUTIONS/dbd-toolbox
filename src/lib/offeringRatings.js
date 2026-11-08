@@ -53,6 +53,12 @@ export const OFFERING_RATINGS = {
   'Scratched Coin': { stars: 1, kind: 'situational', role: 'survivor', why: 'One chest less. Rarely useful.' },
   'Cut Coin': { stars: 1, kind: 'situational', role: 'survivor', why: 'Two chests less. Rarely useful.' },
 
+  // --- Bloodpoints in all categories (only Bloodpoints, no effect in the match) ---
+  'Escape! Cake': { stars: 1, kind: 'bloodpoints', role: 'survivor', why: '+100% Bloodpoints in every category. No effect on the match: a farming offering.' },
+  'Survivor Pudding': { stars: 1, kind: 'bloodpoints', role: 'killer', why: '+100% Bloodpoints in every category. No effect on the match: a farming offering.' },
+  'Bound Envelope': { stars: 1, kind: 'bloodpoints', role: 'survivor', why: '+25% Bloodpoints in every category for all survivors. No effect on the match.' },
+  'Bloody Party Streamers': { stars: 1, kind: 'bloodpoints', role: 'both', why: '+100% Bloodpoints in every category for everyone. No effect on the match.' },
+
   // --- Luck (survivor) ---
   "Vigo's Jar of Salty Lips": { stars: 2, kind: 'impact', role: 'survivor', why: '+3% self-unhook chance for everyone. Small, but helps the whole team.' },
   'Black Salt Statuette': { stars: 2, kind: 'impact', role: 'survivor', why: '+2% self-unhook chance for everyone.' },
@@ -72,18 +78,51 @@ const REALM = {
 /** Rating for an offering: { stars, kind, role, why, available }. */
 export function rateOffering(o) {
   const retired = /no longer available|was retired/i.test(o.description);
-  if (retired) return { stars: 0, kind: 'retired', role: o.role, why: 'No longer available in the game.', available: false };
+  const bp = rateBloodpoints(o);
+  if (retired) return { stars: 0, kind: 'retired', role: o.role, why: 'No longer available in the game.', available: false, bp };
+  const legacy = /can no longer be obtained/i.test(o.description);
+  const withBp = (r) => ({ ...r, bp, legacy, why: legacy ? `${r.why} No longer in the Bloodweb: only usable if you still have some.` : r.why });
 
   const manual = OFFERING_RATINGS[o.name];
-  if (manual) return { role: o.role, ...manual, available: true };
+  if (manual) return withBp({ role: o.role, ...manual, available: true });
 
   if (o.category === 'Bonus Bloodpoints' || /bonus bloodpoints/i.test(o.description)) {
     const pct = o.description.match(/\+(\d+)\s*%/)?.[1] ?? '?';
-    return { ...BP(pct), role: o.role, available: true };
+    return withBp({ ...BP(pct), role: o.role, available: true });
   }
-  if (o.category === 'Realm Selection') return { ...REALM, available: true };
-  if (o.category === 'Events') return { stars: 1, kind: 'bloodpoints', role: 'both', why: 'Event offering: extra Bloodpoints or event items.', available: true };
-  return { stars: 2, kind: 'situational', role: o.role, why: 'Not rated by hand yet.', available: true };
+  if (o.category === 'Realm Selection') return withBp({ ...REALM, available: true });
+  if (o.category === 'Events') return withBp({ stars: 1, kind: 'bloodpoints', role: 'both', why: 'Event offering: extra Bloodpoints or event items.', available: true });
+  return withBp({ stars: 2, kind: 'situational', role: o.role, why: 'Not rated by hand yet.', available: true });
+}
+
+/**
+ * How good is an offering for FARMING Bloodpoints? 0-5 stars, from the description:
+ *   +100% in all categories (incl. "for everyone")  5
+ *   +X% in all categories for all survivors         3
+ *   +25-75% in all categories                       2-4
+ *   +100% / +75% / +50% in one category             3 / 2 / 1
+ *   event Bloodpoint offerings                      3 (only during the event)
+ *   no Bloodpoint bonus                             0
+ */
+export function rateBloodpoints(o) {
+  const d = o.description;
+  const pct = Number(d.match(/\+(\d+)\s*%\s*bonus Bloodpoints/i)?.[1] ?? d.match(/\+(\d+)\s*%/)?.[1] ?? 0);
+  const allCategories = /all Scoring Categories/i.test(d);
+  const everyone = /to all Players/i.test(d);
+  const allSurvivors = /to all Survivors/i.test(d);
+  if (/doubles all Bloodpoints awarded/i.test(d)) {
+    return { stars: 3, why: 'Doubles event Bloodpoints. Only useful while the event is running.' };
+  }
+  if (!/bonus Bloodpoints/i.test(d) || !pct) return { stars: 0, why: 'Gives no extra Bloodpoints.' };
+  if (allCategories) {
+    if (everyone) return { stars: 5, why: `+${pct}% in every category for EVERYONE in the match. The best farming offering; stacks with other Bloodpoint offerings.` };
+    if (allSurvivors) return { stars: 3, why: `+${pct}% in every category for all survivors. Great for team farming.` };
+    const stars = pct >= 100 ? 5 : pct >= 75 ? 4 : pct >= 50 ? 3 : 2;
+    return { stars, why: `+${pct}% in every category for you.` };
+  }
+  const category = d.match(/in the (\w+) Scoring Category/i)?.[1];
+  const stars = pct >= 100 ? 3 : pct >= 75 ? 2 : 1;
+  return { stars, why: `+${pct}% in one category${category ? ` (${category})` : ''}. Best in a category you fill up easily.` };
 }
 
 /** Adds `rating` to every offering. */

@@ -1,14 +1,21 @@
 {
-  "fetchedAt": "2026-11-08T03:04:27.083Z",
-  "durationSeconds": 6,
+  "fetchedAt": "2026-11-08T04:10:29.268Z",
+  "durationSeconds": 11,
   "patch": "10.2.2a",
+  "announcements": [
+    {
+      "name": "Terrifier",
+      "kind": "chapter",
+      "date": "2026-11-24"
+    }
+  ],
   "counts": {
     "perks": 336,
     "killers": 45,
     "survivors": 55,
     "items": 38,
     "addons": 954,
-    "offerings": 88
+    "offerings": 102
   },
   "sources": [
     {

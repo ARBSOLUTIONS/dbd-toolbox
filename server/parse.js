@@ -171,7 +171,9 @@ export function parseOfferings(html) {
       h4 = headingText($, el);
       return;
     }
-    if (!inList || !h3 || h4 === 'All Categories') return;
+    // Note: 'All Categories' holds the best Bloodpoint offerings (Escape! Cake, Bloody Party
+    // Streamers...), so it must not be skipped. Duplicates are removed by dedupe().
+    if (!inList || !h3) return;
     const role =
       OFFERING_ROLES[`${h3}/${h4}`] ?? OFFERING_ROLES[h3] ?? 'both';
     for (const row of parseIconNameTable($, el)) {
