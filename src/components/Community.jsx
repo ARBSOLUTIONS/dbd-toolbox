@@ -143,7 +143,7 @@ function VoteBar({ build, onChange, favorites }) {
   );
 }
 
-export default function Community({ data, favorites, onOpenMaker }) {
+export default function Community({ data, favorites, picks = [], onOpenMaker }) {
   const [role, setRole] = useState('survivor');
   const [killer, setKiller] = useState('');
   const [sort, setSort] = useState('top');
@@ -279,6 +279,22 @@ export default function Community({ data, favorites, onOpenMaker }) {
           />
         ))}
       </div>
+
+      {(() => {
+        const list = picks.filter((b) => b.role === role && (!killer || !b.killer || b.killer === killer));
+        if (!list.length) return null;
+        return (
+          <>
+            <h2 className="community-picks-title">🎥 Recommended by the community</h2>
+            <p className="muted small">Builds from build sites and creators for the current patch, each with its source. No votes here.</p>
+            <div className="build-grid">
+              {list.map((b) => (
+                <BuildCard key={b.id} build={b} favorites={favorites} />
+              ))}
+            </div>
+          </>
+        );
+      })()}
     </section>
   );
 }

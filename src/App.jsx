@@ -236,7 +236,7 @@ export default function App() {
           <BuildMaker data={data} builds={builds} favorites={favorites} onShared={() => setTab('community')} />
         )}
         {data && tab === 'community' && (
-          <Community data={data} favorites={favorites} onOpenMaker={() => setTab('maker')} />
+          <Community data={data} favorites={favorites} picks={allBuilds.filter((b) => b.type === 'creator')} onOpenMaker={() => setTab('maker')} />
         )}
         {data && tab === 'challenges' && <Challenges data={data} curated={builds} store={challenges} />}
         {tab === 'achievements' && <Achievements store={challenges} />}
