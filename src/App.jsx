@@ -17,7 +17,7 @@ import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
-import { buildStats } from './lib/nlStats.js';
+import { buildStats, perkStatsTable } from './lib/nlStats.js';
 import PatchNotes from './components/PatchNotes.jsx';
 import Home from './components/Home.jsx';
 import BuildCard from './components/BuildCard.jsx';
@@ -76,8 +76,10 @@ function withOwners(perks, d) {
 }
 
 // NightLight usage / win rate on every perk (shown on perk cards), if imported.
-const withPerkStats = (perks, stats) =>
-  stats?.perks ? perks.map((p) => ({ ...p, nl: stats.perks[p.id] ?? null })) : perks;
+const withPerkStats = (perks, stats) => {
+  const table = perkStatsTable(perks, stats);
+  return perks.map((p) => ({ ...p, nl: table[p.id] ?? null }));
+};
 
 // Offerings get a rating (1-5 stars + reason); the rating also corrects the role.
 const rateOfferings = (list) => withOfferingRatings(list).map((o) => ({ ...o, role: o.rating.role ?? o.role }));
@@ -144,7 +146,7 @@ export default function App() {
       const r = repairBuild(resolveBuild(b, data), data, data.changes);
       const build = {
         ...r,
-        rating: scoreBuild(r.resolved.perks, b.role, b.playstyles),
+        rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }),
         newPerks: r.resolved.perks.filter((p) => p && fresh.has(p.id)).map((p) => p.name),
       };
       return { ...build, nl: buildStats(build, data.stats) };
@@ -164,7 +166,7 @@ export default function App() {
     if (!data) return [];
     return favorites.custom.map((b) => {
       const r = resolveBuild(b, data);
-      const build = { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
+      const build = { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }) };
       return { ...build, nl: buildStats(build, data.stats) };
     });
   }, [data, favorites.custom]);
@@ -239,7 +241,7 @@ export default function App() {
         {data && tab === 'favorites' && (
           <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} perks={data.perks} />
         )}
-        {data && tab === 'perks' && <PerkList perks={data.perks} />}
+        {data && tab === 'perks' && <PerkList perks={data.perks} stats={data.stats} />}
         {data && tab === 'killers' && (
           <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
         )}

@@ -80,12 +80,24 @@ players upload). They are saved in `data/nightlight.json` and used in:
 
 - **Killers / Survivors**: pick rate, kill or escape rate, kill distribution,
   and each character's most used perks and builds.
-- **Perks**: how often each perk is used and its kill or escape rate.
+- **Perks**: every perk card has a stats block: how often it is used (and its
+  rank), its kill or escape rate against the average perk of its role, the
+  number of games, and a verdict (▲ above average, ● about average, ▼ below
+  average, ? too few games, under 100). The **Stats table** view lists all
+  perks with these numbers; sort by most used, best rate or most above/below
+  average, and filter by verdict.
+- **Build scores**: the score (0–100) is the rule-based score (playstyle fit,
+  synergy, balance) plus a **community part of −10 to +10**: for each perk,
+  its kill/escape rate minus the average, weighted by how many games back it
+  up (full weight from 400 games), times 0.6. Killer perks use that killer's
+  own numbers when known, compared with that killer's kill rate. "Why this
+  score" names the perks that win clearly more or less (4+ points) and perks
+  with too few games. The generator uses the same score, so generated builds
+  now prefer perks that win more often.
 - **Builds**: every build card shows a 📊 line (the build's own numbers when
   NightLight lists that exact build, otherwise the average of its perks). You
   can sort by kill/escape rate or by most played. The generator adds "Most
-  played" builds per killer and for survivors, and prefers perks that many
-  players use and that win more often than average.
+  played" builds per killer and for survivors.
 - `npm run check-builds` shows the numbers for the hand-picked builds and
   flags meta builds whose perks win clearly less than average.
 
@@ -110,6 +122,22 @@ from NightLight itself. You collect the stats in your own browser instead
 A single saved killers feed (<https://nightlight.gg/api/v1/stats/global/killers>,
 Ctrl + S) also works for a quick killer-only update; it keeps the perk and
 build stats from the previous full import.
+
+**Only the perk stats** (no console needed, about a minute):
+
+1. Open <https://nightlight.gg/perks/viewer>, choose **Survivor Perks**, wait
+   until the list has loaded, select all (Ctrl + A), copy (Ctrl + C) and paste
+   it into a text file, e.g. `survivor-perks.txt`.
+2. Do the same with **Killer Perks** → `killer-perks.txt`.
+3. Import both:
+
+   ```bash
+   npm run update-stats -- --perks-text survivor-perks.txt --perks-text killer-perks.txt
+   ```
+
+The "Empty Slot" rows on that page (builds with fewer than 4 perks) are left
+out: they are no perk, and their kill rates (up to 70%+) would distort the
+average.
 
 ## Public website (DBD-Toolbox)
 

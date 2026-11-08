@@ -213,6 +213,45 @@ main { padding-top: 16px; }
 .nl-table { margin-top: 4px; }
 .badge-popular { background: #1d3a4a; border-color: #2f6a86; }
 
+/* Perk statistics (NightLight) on perk cards and in the perk stats table */
+.perk-stats {
+  margin: 8px 0 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--muted);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.82em;
+  display: grid;
+  gap: 4px;
+}
+.perk-stats.verdict-strong { border-left-color: #4caf6a; }
+.perk-stats.verdict-weak { border-left-color: #e0575d; }
+.perk-stats-head { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.perk-verdict { font-weight: 600; white-space: nowrap; }
+.verdict-strong .perk-verdict, td.good { color: #4caf6a; }
+.verdict-weak .perk-verdict, td.bad { color: #e0575d; }
+.verdict-few .perk-verdict { color: var(--muted); }
+.perk-stats .good { color: #4caf6a; }
+.perk-stats .bad { color: #e0575d; }
+.perk-stat-row { display: grid; grid-template-columns: 84px 1fr 48px; align-items: center; gap: 8px; }
+.perk-stat-row strong { text-align: right; font-variant-numeric: tabular-nums; }
+.perk-stat-label { color: var(--muted); }
+.perk-bar { position: relative; height: 6px; background: var(--border); overflow: visible; }
+.perk-bar > span { position: absolute; inset: 0 auto 0 0; background: var(--muted); }
+.perk-bar-rate > span { background: var(--text); opacity: 0.75; }
+.verdict-strong .perk-bar-rate > span { background: #4caf6a; opacity: 1; }
+.verdict-weak .perk-bar-rate > span { background: #e0575d; opacity: 1; }
+.perk-bar > i { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--text); }
+.perk-stats-toolbar { align-items: center; }
+.perk-stats-toolbar > p { flex-basis: 100%; margin: 0; }
+.table-scroll { overflow-x: auto; }
+.perk-table { width: 100%; font-size: 0.88em; }
+.perk-table td, .perk-table th { padding: 4px 12px 4px 0; white-space: nowrap; }
+.perk-table td:first-child { white-space: normal; min-width: 180px; }
+.perk-table th .link-button { color: inherit; font-weight: 600; padding: 0; }
+.perk-table th .link-button.active { color: var(--text); }
+.perk-table td { font-variant-numeric: tabular-nums; }
+
 /* Rarity colours (as in the game) shown as a left border on cards */
 .perk-card[class*='rarity-'] { border-left-width: 4px; }
 .rarity-common { border-left-color: #6b5a47; }

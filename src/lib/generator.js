@@ -23,14 +23,13 @@ import { keywordTags } from './tags.js';
 import { bestOffering } from './offeringRatings.js';
 import { perkUsage, baselineRate, popularBuildSpecs, periodLabel, rateLabel } from './nlStats.js';
 
-/** Small bonus (max ~6.5) for perks players use a lot and that win more than average. */
-function statsBonus(usage, baseline, id) {
+/**
+ * Small bonus (max 5) for perks that many players use. How often perks win is
+ * already part of scoreBuild (community stats), so it is not counted twice here.
+ */
+function statsBonus(usage, _baseline, id) {
   const u = usage?.[id];
-  if (!u) return 0;
-  const popular = Math.min(u.usage, 30) / 6;
-  const winning =
-    u.rate != null && baseline != null && u.usage >= 1 ? Math.max(-1.5, Math.min(1.5, (u.rate - baseline) / 3)) : 0;
-  return popular + winning;
+  return u ? Math.min(u.usage, 30) / 6 : 0;
 }
 
 const TIPS = {
@@ -69,7 +68,7 @@ export function pickPerks(
   allPerks,
   role,
   style,
-  { seed = [], exclude = new Set(), popularity = {}, usage = null, baseline = null } = {},
+  { seed = [], exclude = new Set(), popularity = {}, usage = null, baseline = null, stats = null, killerId = null } = {},
 ) {
   const pool = allPerks.filter((p) => p.role === role && !exclude.has(p.id));
   const chosen = [...seed];
@@ -93,7 +92,7 @@ export function pickPerks(
     let bestValue = -Infinity;
     for (const c of pool) {
       if (used.has(c.id)) continue;
-      const { score } = scoreBuild([...chosen, c], role, [style]);
+      const { score } = scoreBuild([...chosen, c], role, [style], { stats, killerId });
       const value =
         score +
         (c.tags[0] === style ? 3 : c.tags.includes(style) ? 1 : 0) +
@@ -121,8 +120,8 @@ function bestItemFor(perks, data) {
   return { item, addons };
 }
 
-function makeBuild({ id, name, role, style, perks, killer = null, item = null, addons = [], variant, patch, offering = null, type = 'auto', why = null }) {
-  const rating = scoreBuild(perks, role, [style]);
+function makeBuild({ id, name, role, style, perks, killer = null, item = null, addons = [], variant, patch, offering = null, type = 'auto', why = null, stats = null }) {
+  const rating = scoreBuild(perks, role, [style], { stats, killerId: killer?.id ?? null });
   const label = PLAYSTYLES[role][style];
   return {
     id,
@@ -160,7 +159,7 @@ export function generateBuilds(data, curated = [], changes = null) {
   const usageFor = { survivor: perkUsage(stats, 'survivor'), killer: perkUsage(stats, 'killer') };
   const baseline = { survivor: baselineRate(stats, 'survivor'), killer: baselineRate(stats, 'killer') };
   for (const [id, p] of Object.entries(stats?.perks ?? {})) if (p.usage >= 12) common.add(id);
-  const opts = (role, extra = {}) => ({ popularity, usage: usageFor[role], baseline: baseline[role], ...extra });
+  const opts = (role, extra = {}) => ({ popularity, usage: usageFor[role], baseline: baseline[role], stats, ...extra });
   const seen = new Set(curated.map((b) => b.resolved.perks.filter(Boolean).map((p) => p.id).sort().join('|')));
   const patch = data.meta?.patch;
   const out = [];
@@ -229,6 +228,7 @@ export function generateBuilds(data, curated = [], changes = null) {
         patch,
         type: 'popular',
         why,
+        stats,
       }),
     );
   }
@@ -255,6 +255,7 @@ export function generateBuilds(data, curated = [], changes = null) {
           addons,
           variant,
           patch,
+          stats,
         }),
       );
     }
@@ -279,6 +280,7 @@ export function generateBuilds(data, curated = [], changes = null) {
           perks,
           variant,
           patch,
+          stats,
         }),
       );
     }
@@ -297,7 +299,7 @@ export function generateBuilds(data, curated = [], changes = null) {
       STYLE_FOR_KILLER_ADDONS.filter((s) => counts[s]).sort((a, b) => counts[b] - counts[a])[0] ?? 'slowdown';
     const seed = ownPerks.filter((p) => p.tags.includes(style)).slice(0, 1);
     // This killer's own NightLight perk usage says more than the global numbers.
-    const perks = pickPerks(data.perks, 'killer', style, opts('killer', { seed, usage: perkUsage(stats, 'killer', killer.id) }));
+    const perks = pickPerks(data.perks, 'killer', style, opts('killer', { seed, usage: perkUsage(stats, 'killer', killer.id), killerId: killer.id }));
     const addons = suggestAddons(perks, ownAddons, 2).map((x) => x.addon);
     const short = killer.name.replace(/^The /, '');
     add(
@@ -311,6 +313,7 @@ export function generateBuilds(data, curated = [], changes = null) {
         addons,
         variant: 'killer',
         patch,
+        stats,
       }),
     );
   }
@@ -334,6 +337,7 @@ export function generateBuilds(data, curated = [], changes = null) {
         addons: extra.addons,
         variant: 'new',
         patch,
+        stats,
       }),
     );
   }
@@ -359,6 +363,7 @@ export function generateBuilds(data, curated = [], changes = null) {
         addons: extra.addons,
         variant: 'spotlight',
         patch,
+        stats,
       }),
     );
     if (out.length > before) for (const p of perks) for (const id of p.aliasIds ?? [p.id]) covered.add(id);

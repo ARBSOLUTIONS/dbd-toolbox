@@ -247,6 +247,101 @@ export function parseNightlight(raw, data, importedAt = new Date().toISOString()
   return out;
 }
 
+// ---------- perk stats from the perk viewer page text ----------
+
+const PERIOD_RE = /\d{1,2} \w{3} \d{2}, \d{2}:\d{2} - \d{1,2} \w{3} \d{2}, \d{2}:\d{2}/;
+
+/** "11 Oct 26, 18:00" → ISO date (UTC). */
+function periodPart(s) {
+  const m = s.match(/(\d{1,2}) (\w{3}) (\d{2}), (\d{2}):(\d{2})/);
+  if (!m) return null;
+  const month = 'JanFebMarAprMayJunJulAugSepOctNovDec'.indexOf(m[2]) / 3;
+  if (month < 0) return null;
+  return new Date(Date.UTC(2000 + Number(m[3]), month, Number(m[1]), Number(m[4]), Number(m[5]))).toISOString();
+}
+
+/**
+ * Reads the perk list of https://nightlight.gg/perks/viewer (one role) from
+ * either the page text (select all + copy in the browser, saved as .txt) or
+ * simple lines "Name|games|pick rate|kill or escape rate" after a "role:" line.
+ * Returns { role, period, rows: [{ name, games, pickRate, rate }] }.
+ */
+export function parsePerkText(text) {
+  text = text.replace(/\r\n/g, '\n');
+  const rows = [];
+  let role = text.match(/^role:\s*(killer|survivor)\s*$/m)?.[1] ?? null;
+  for (const m of text.matchAll(/^([^|\n#]+)\|(\d+)\|([\d.]+)\|([\d.]+)\s*$/gm)) {
+    rows.push({ name: m[1].trim(), games: Number(m[2]), pickRate: Number(m[3]), rate: Number(m[4]) });
+  }
+  if (!rows.length) {
+    // Page text: name, "N Games", pick-rate bar, kill/escape-rate bar.
+    const re = /\n([^\n\t]+)\n(\d+) Games\n(?:\t\n)?0%\nPick Rate\n[\d.]+%\n([\d.]+)%\n0%\n(Escape|Kill) Rate\n100%\n([\d.]+)%/g;
+    for (const m of text.matchAll(re)) {
+      rows.push({ name: m[1].trim(), games: Number(m[2]), pickRate: Number(m[3]), rate: Number(m[5]) });
+      role ??= m[4] === 'Kill' ? 'killer' : 'survivor';
+    }
+  }
+  if (!role || rows.length < 50) {
+    throw new Error('This does not look like the NightLight perk list (open nightlight.gg/perks/viewer, select all, copy)');
+  }
+  const period = text.match(PERIOD_RE)?.[0] ?? null;
+  const [start, end] = period ? period.split(' - ').map(periodPart) : [null, null];
+  return { role, period: { start, end }, rows };
+}
+
+/**
+ * Puts one role's perk list into the stats (replacing that role's perks) and
+ * stores the average kill/escape rate over all perk appearances of that role.
+ */
+export function mergePerkText(stats, parsed, perks) {
+  const match = makeMatcher(perks.filter((p) => p.role === parsed.role));
+  const out = { ...stats, perks: { ...(stats.perks ?? {}) } };
+  for (const [id, p] of Object.entries(out.perks)) if (p.role === parsed.role) delete out.perks[id];
+  const unmatched = [];
+  let games = 0;
+  let wins = 0;
+  for (const row of parsed.rows) {
+    // "Empty Slot" rows (builds with fewer than 4 perks) are no perk and are left
+    // out of the average too: their kill rates are far off (up to 70%+), which
+    // would make almost every real perk look below average.
+    if (/^\d(st|nd|rd|th) Empty Slot$/i.test(row.name)) continue;
+    games += row.games;
+    wins += (row.games * row.rate) / 100;
+    const id = match(row.name);
+    if (!id) {
+      unmatched.push(row.name);
+      continue;
+    }
+    out.perks[id] = { role: parsed.role, usage: pct(row.pickRate), rate: pct(row.rate), count: row.games };
+  }
+  const average = games ? Math.round((wins / games) * 1e4) / 100 : null;
+  out.perkAverage = { ...(stats.perkAverage ?? {}), [parsed.role]: average };
+  out.perkPeriod = { ...(stats.perkPeriod ?? {}), [parsed.role]: parsed.period };
+  if (parsed.role === 'survivor' && !stats.survivorAverage?.escapeRate) {
+    out.survivorAverage = { matches: null, escapeRate: average, from: 'perk slots' };
+  }
+  out.unmatched = { ...(stats.unmatched ?? {}), perks: unmatched };
+  out.importedAt = new Date().toISOString();
+  return out;
+}
+
+/** Imports perk viewer text files (one per role) into data/nightlight.json. */
+export async function importPerkText(files, { log = console.log } = {}) {
+  const perks = await readJson(path.join(DATA_DIR, 'perks.json'), []);
+  let stats = await readJson(STATS_FILE, null);
+  if (!stats) throw new Error('Import the killer stats first (npm run update-stats -- --file ...)');
+  for (const file of files) {
+    const parsed = parsePerkText(await fs.readFile(file, 'utf8'));
+    stats = mergePerkText(stats, parsed, perks);
+    const n = Object.values(stats.perks).filter((p) => p.role === parsed.role).length;
+    log(`  ${parsed.role} perks: ${n} of ${parsed.rows.length} rows matched, average ${stats.perkAverage[parsed.role]}% ${parsed.role === 'killer' ? 'kill' : 'escape'} rate`);
+    if (stats.unmatched.perks.length) log(`  ? not found in our data: ${stats.unmatched.perks.join(', ')}`);
+  }
+  await fs.writeFile(STATS_FILE + '.tmp', JSON.stringify(stats, null, 2));
+  await fs.rename(STATS_FILE + '.tmp', STATS_FILE);
+  return { action: 'updated', perks: Object.keys(stats.perks).length };
+}
+
 async function readJson(file, fallback) {
   try {
     return JSON.parse(await fs.readFile(file, 'utf8'));

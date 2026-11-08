@@ -1,6 +1,64 @@
 import { useState } from 'react';
 import { iconSrc } from '../lib/format.js';
 import { useNav } from '../lib/nav.js';
+import { PERK_VERDICTS } from '../lib/nlStats.js';
+
+const cap = (s) => s[0].toUpperCase() + s.slice(1);
+
+/**
+ * NightLight numbers for one perk: how often it is used (bar relative to the
+ * most used perk of its role) and how often it wins (bar with a tick at the
+ * average), plus a verdict. See perkStatsTable in nlStats.js.
+ */
+export function PerkStats({ nl }) {
+  const v = PERK_VERDICTS[nl.verdict] ?? PERK_VERDICTS.few;
+  const usageWidth = nl.maxUsage ? Math.max(2, (nl.usage / nl.maxUsage) * 100) : 0;
+  return (
+    <div
+      className={`perk-stats verdict-${nl.verdict}`}
+      title="Community stats from matches uploaded to NightLight.gg (last 28 days)"
+    >
+      <div className="perk-stats-head">
+        <span className="perk-verdict">
+          {v.short} {v.label}
+        </span>
+        {nl.rank && (
+          <span className="muted">
+            #{nl.rank} of {nl.of} most used
+          </span>
+        )}
+      </div>
+      <div className="perk-stat-row">
+        <span className="perk-stat-label">Used in</span>
+        <span className="perk-bar">
+          <span style={{ width: `${usageWidth}%` }} />
+        </span>
+        <strong>{nl.usage.toFixed(1)}%</strong>
+      </div>
+      {nl.rate != null && (
+        <div className="perk-stat-row">
+          <span className="perk-stat-label">{cap(nl.rateLabel)}</span>
+          <span className="perk-bar perk-bar-rate">
+            <span style={{ width: `${nl.rate}%` }} />
+            {nl.average != null && <i style={{ left: `${nl.average}%` }} title={`Average ${nl.average}%`} />}
+          </span>
+          <strong>{nl.rate.toFixed(1)}%</strong>
+        </div>
+      )}
+      <div className="muted small">
+        {nl.delta != null && (
+          <span className={nl.delta >= 0 ? 'good' : 'bad'}>
+            {nl.delta >= 0 ? '+' : ''}
+            {nl.delta.toFixed(1)} vs average ({nl.average}%)
+          </span>
+        )}
+        {' · '}
+        {nl.count?.toLocaleString() ?? '?'} {nl.role} games
+        {nl.borrowedFrom && ' · numbers of the identical perk'}
+      </div>
+    </div>
+  );
+}
 
 /**
  * Card for anything with an icon, name and description:
@@ -31,12 +89,7 @@ export function EntityCard({ entity, subtitle, note, isPerk = false }) {
         </h3>
         {subtitle && <div className="muted small">{subtitle}</div>}
         {note && <div className="entity-note">{note}</div>}
-        {entity.nl?.usage != null && (
-          <div className="muted small" title="From matches uploaded to NightLight.gg">
-            📊 Used in {entity.nl.usage.toFixed(1)}% of {entity.nl.role} games
-            {entity.nl.rate != null && ` · ${entity.nl.rate.toFixed(1)}% ${entity.nl.role === 'killer' ? 'kill' : 'escape'} rate`}
-          </div>
-        )}
+        {entity.nl?.usage != null && <PerkStats nl={entity.nl} />}
         <p className="description">{entity.description}</p>
         {open && entity.quote && <p className="quote small">{entity.quote}</p>}
         {entity.tags?.length > 0 && (

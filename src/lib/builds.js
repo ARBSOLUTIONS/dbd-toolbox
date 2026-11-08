@@ -3,6 +3,7 @@
 // - scoreBuild: gives a 0-100 rating plus plain-English reasons
 
 import { tagsFor, isExhaustionPerk } from './tags.js';
+import { communityScore } from './nlStats.js';
 
 const norm = (s) => (s ?? '').toLowerCase().replace(/[’']/g, "'").trim();
 
@@ -82,8 +83,11 @@ const BASE_STYLES = {
  *   - synergy: known strong pairs and shared tags
  *   - balance: basic needs (killers want slowdown, survivors want a second chance)
  *   - conflicts: things that don't work together (2 exhaustion perks, too many hexes)
+ *   - community (optional, -10..+10): with NightLight stats ({ stats, killerId }),
+ *     perks that win more often than average on NightLight add points, perks
+ *     that win clearly less take points away (see communityScore in nlStats.js).
  */
-export function scoreBuild(perks, role, playstyles = []) {
+export function scoreBuild(perks, role, playstyles = [], { stats = null, killerId = null } = {}) {
   const list = perks.filter(Boolean);
   const pros = [];
   const cons = [];
@@ -155,8 +159,16 @@ export function scoreBuild(perks, role, playstyles = []) {
     cons.push('Several hexes without Undying or Thrill of the Hunt: one dull totem cleanse and they are gone.');
   }
 
-  const score = Math.max(0, Math.min(100, fit + synergy + balance));
-  return { score, pros, cons, tags: tagCount };
+  // Community stats (NightLight): a correction on top of the rule-based score.
+  const community = communityScore(list, role, stats, killerId);
+  if (community) {
+    pros.push(...community.pros);
+    cons.push(...community.cons);
+  }
+
+  const base = Math.max(0, Math.min(100, fit + synergy + balance));
+  const score = Math.max(0, Math.min(100, base + (community?.points ?? 0)));
+  return { score, base, community, pros, cons, tags: tagCount };
 }
 
 export function defaultPlaystyles(role) {

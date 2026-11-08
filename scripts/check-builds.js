@@ -30,13 +30,14 @@ let problems = 0;
 const weak = [];
 for (const build of read('../builds/builds.json').builds) {
   const r = resolveBuild(build, data);
-  const { score } = scoreBuild(r.resolved.perks, build.role, build.playstyles);
+  const { score, base, community } = scoreBuild(r.resolved.perks, build.role, build.playstyles, { stats, killerId: r.resolved.killer?.id });
   const status = r.missing.length ? 'MISSING' : 'ok';
   const nl = buildStats(r, stats);
   const nlText = nl
     ? `  [NightLight: ${nl.exact ? `exact build ${nl.exact.rate}%` : `perks ${nl.avgUsage}% used, ${nl.avgRate ?? '?'}%`} ${nl.rateLabel}, avg ${nl.baseline}%]`
     : '';
-  console.log(`${status.padEnd(7)} ${String(score).padStart(3)}  ${build.name} (${build.killer ?? build.role})${nlText}`);
+  const parts = community ? `${base}${community.points >= 0 ? '+' : ''}${community.points}` : '';
+  console.log(`${status.padEnd(7)} ${String(score).padStart(3)} ${parts.padStart(6)}  ${build.name} (${build.killer ?? build.role})${nlText}`);
   for (const m of r.missing) console.log(`          - not found: ${m}`);
   if (verbose) {
     for (const a of r.resolved.addons.filter(Boolean)) {

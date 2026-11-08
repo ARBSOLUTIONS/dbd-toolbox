@@ -1,23 +1,34 @@
-// Run with:  npm run update-stats -- --file nightlight-export-<date>.json
 // Imports NightLight community stats into data/nightlight.json.
 //
-// Make the file first with scripts/nightlight-collector.js, which runs in your
-// own browser on nightlight.gg (NightLight's bot protection blocks scripts, so
-// this project never downloads from NightLight itself). See the README.
-import { importStats } from '../server/nightlight.js';
+//   npm run update-stats -- --file nightlight-export-<date>.json
+//       Everything, from scripts/nightlight-collector.js (runs in your browser).
+//
+//   npm run update-stats -- --perks-text survivor-perks.txt --perks-text killer-perks.txt
+//       Only the perk stats: open https://nightlight.gg/perks/viewer, choose
+//       Survivor Perks (then Killer Perks), select all (Ctrl + A), copy, and
+//       save each as a .txt file.
+//
+// NightLight's bot protection blocks scripts, so this project never downloads
+// from NightLight itself. See the README.
+import { importStats, importPerkText } from '../server/nightlight.js';
 
 const args = process.argv.slice(2);
-const file = args[args.indexOf('--file') + 1];
-if (!args.includes('--file') || !file) {
+const valuesOf = (flag) => args.flatMap((a, i) => (a === flag && args[i + 1] ? [args[i + 1]] : []));
+const file = valuesOf('--file')[0];
+const perkTexts = valuesOf('--perks-text');
+if (!file && !perkTexts.length) {
   console.error(
-    'Usage: npm run update-stats -- --file <nightlight-export.json>\n' +
-      'Create the file with scripts/nightlight-collector.js in your browser (see README).',
+    'Usage:\n' +
+      '  npm run update-stats -- --file <nightlight-export.json>\n' +
+      '  npm run update-stats -- --perks-text <survivor.txt> --perks-text <killer.txt>\n' +
+      'See the README for how to make these files.',
   );
   process.exit(1);
 }
 
 try {
-  console.log(JSON.stringify(await importStats(file)));
+  if (file) console.log(JSON.stringify(await importStats(file)));
+  if (perkTexts.length) console.log(JSON.stringify(await importPerkText(perkTexts)));
 } catch (err) {
   console.error('Stats import failed:', err.message);
   process.exit(1);

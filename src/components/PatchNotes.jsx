@@ -122,7 +122,7 @@ function AffectedBuild({ entry, onShow }) {
   const label = { buff: 'Stronger', nerf: 'Weaker', rework: 'Needs a look', mixed: 'About the same' }[tone];
   return (
     <button className={`affected-build v-${tone}`} onClick={() => onShow(build)}>
-      <ScoreBadge score={build.rating?.score ?? 0} />
+      <ScoreBadge score={build.rating?.score ?? 0} community={build.rating?.community} />
       <div className="grow">
         <strong>{build.name}</strong>
         <div className="muted small">

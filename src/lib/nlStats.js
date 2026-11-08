@@ -15,14 +15,22 @@ export function baselineRate(stats, role) {
 }
 
 /**
- * Perk usage for a role: { perkId: { usage, rate } }. For a killer, that
+ * The average to compare a perk's kill/escape rate with: the rate over every
+ * perk slot of that role (from the perk list), else the role average.
+ */
+export function perkBaseline(stats, role) {
+  return stats?.perkAverage?.[role] ?? baselineRate(stats, role);
+}
+
+/**
+ * Perk usage for a role: { perkId: { usage, rate, count } }. For a killer, that
  * killer's own top perks are used when known (they say more than the global
  * numbers), the global numbers otherwise.
  */
 export function perkUsage(stats, role, killerId = null) {
   const out = {};
   for (const [id, p] of Object.entries(stats?.perks ?? {})) {
-    if (p.role === role && p.usage != null) out[id] = { usage: p.usage, rate: p.rate, scope: 'all' };
+    if (p.role === role && p.usage != null) out[id] = { usage: p.usage, rate: p.rate, count: p.count ?? null, scope: 'all' };
   }
   for (const p of (killerId && stats?.killers?.[killerId]?.topPerks) || []) {
     out[p.perk] = { usage: p.usage, rate: p.rate, scope: 'killer' };
@@ -66,11 +74,110 @@ export function buildStats(build, stats) {
     perks: rows,
     avgUsage: round(rows.reduce((s, r) => s + r.usage, 0) / rows.length),
     avgRate: rated.length ? round(rated.reduce((s, r) => s + r.rate, 0) / rated.length) : null,
-    baseline: baselineRate(stats, build.role),
+    baseline: perkBaseline(stats, build.role),
     rateLabel: rateLabel(build.role),
     killerScope: Boolean(killerId && stats.killers?.[killerId]?.topPerks?.length),
     exact: exactMatch(stats, build.role, perks.map((p) => p.id), killerId),
   };
+}
+
+/** Fewer games than this: too few to say if a perk is strong or weak. */
+export const MIN_PERK_GAMES = 100;
+
+export const PERK_VERDICTS = {
+  strong: { label: 'Above average', short: '▲' },
+  average: { label: 'About average', short: '●' },
+  weak: { label: 'Below average', short: '▼' },
+  few: { label: 'Too few games', short: '?' },
+};
+
+/**
+ * NightLight numbers for every perk, ready to show: usage, rate, how it
+ * compares with the average perk of its role, its rank by usage and a verdict.
+ * Licensed copies (e.g. Will to Live = Decisive Strike) borrow their twin's
+ * numbers. Returns { perkId: {...} }.
+ */
+export function perkStatsTable(perks, stats) {
+  if (!stats?.perks || !Object.keys(stats.perks).length) return {};
+  const out = {};
+  const byRole = { killer: [], survivor: [] };
+  for (const p of perks) {
+    const id = [p.id, ...(p.aliasIds ?? [])].find((x) => stats.perks[x]?.role === p.role);
+    const s = id ? stats.perks[id] : null;
+    if (!s) continue;
+    const average = perkBaseline(stats, p.role);
+    const delta = s.rate != null && average != null ? round1(s.rate - average) : null;
+    const verdict =
+      (s.count ?? 0) < MIN_PERK_GAMES || delta == null
+        ? 'few'
+        : delta >= NEUTRAL_BAND
+        ? 'strong'
+        : delta <= -NEUTRAL_BAND
+        ? 'weak'
+        : 'average';
+    out[p.id] = { ...s, average, delta, verdict, borrowedFrom: id !== p.id ? id : null, rateLabel: rateLabel(p.role) };
+    if (id === p.id) byRole[p.role]?.push(out[p.id]);
+  }
+  for (const list of Object.values(byRole)) {
+    const max = Math.max(0, ...list.map((x) => x.usage ?? 0));
+    list.sort((a, b) => (b.usage ?? 0) - (a.usage ?? 0)).forEach((x, i) => Object.assign(x, { rank: i + 1, of: list.length, maxUsage: max }));
+  }
+  // Licensed copies share their twin's place in the ranking.
+  for (const x of Object.values(out)) {
+    const twin = x.borrowedFrom && out[x.borrowedFrom];
+    if (twin) Object.assign(x, { rank: twin.rank, of: twin.of, maxUsage: twin.maxUsage });
+  }
+  return out;
+}
+
+/** Games before a perk's numbers count fully in the score (fewer: they count less). */
+export const FULL_WEIGHT_GAMES = 400;
+/** Score points per point of kill/escape rate above or below average, and the cap. */
+const POINTS_PER_RATE = 0.6;
+const MAX_POINTS = 10;
+
+/**
+ * The "community" part of a build's score: how often its perks win on
+ * NightLight compared with the average perk slot of that role. Killer perks
+ * use that killer's own numbers when known, compared with that killer's kill
+ * rate. Perks with few games count less; perks without numbers count 0.
+ *
+ * Returns { points (-10..+10), perks: [...], pros, cons } or null without perk stats.
+ */
+export function communityScore(perks, role, stats, killerId = null) {
+  if (!stats?.perks || !Object.keys(stats.perks).length) return null;
+  const list = perks.filter(Boolean);
+  if (!list.length) return null;
+  const usage = perkUsage(stats, role, killerId);
+  const average = perkBaseline(stats, role);
+  const killerRate = killerId ? stats.killers?.[killerId]?.killRate ?? null : null;
+  const label = rateLabel(role);
+
+  const rows = list.map((p) => {
+    const u = (p.aliasIds ?? [p.id]).map((id) => usage[id]).find(Boolean);
+    if (!u || u.rate == null) return { id: p.id, name: p.name, rate: null, base: null, delta: null, weight: 0, usage: u?.usage ?? 0 };
+    const killerScope = u.scope === 'killer' && killerRate != null;
+    const base = killerScope ? killerRate : average;
+    const weight = killerScope ? Math.min(1, u.usage / 5) : Math.min(1, (u.count ?? 0) / FULL_WEIGHT_GAMES);
+    return { id: p.id, name: p.name, rate: u.rate, base, delta: round1(u.rate - base), weight, usage: u.usage, scope: killerScope ? 'killer' : 'all' };
+  });
+
+  const sum = rows.reduce((s, r) => s + (r.delta ?? 0) * r.weight, 0);
+  const points = Math.max(-MAX_POINTS, Math.min(MAX_POINTS, Math.round(sum * POINTS_PER_RATE)));
+  const pros = [];
+  const cons = [];
+  if (points >= 2) pros.push(`Community stats: these perks win more often than average on NightLight (+${points}).`);
+  if (points <= -2) cons.push(`Community stats: these perks win less often than average on NightLight (${points}).`);
+  const solid = rows.filter((r) => r.delta != null && r.weight >= 0.5);
+  for (const r of solid.filter((x) => x.delta >= 4).sort((a, b) => b.delta - a.delta).slice(0, 2)) {
+    pros.push(`${r.name} has a high ${label} on NightLight (${r.rate.toFixed(1)}% vs ${r.base.toFixed(1)}% average).`);
+  }
+  for (const r of solid.filter((x) => x.delta <= -4).sort((a, b) => a.delta - b.delta).slice(0, 2)) {
+    cons.push(`${r.name} has a low ${label} on NightLight (${r.rate.toFixed(1)}% vs ${r.base.toFixed(1)}% average).`);
+  }
+  const unknown = rows.filter((r) => r.weight < 0.25).map((r) => r.name);
+  if (unknown.length) cons.push(`Too few games on NightLight to judge: ${unknown.join(', ')}.`);
+  return { points, average, perks: rows, pros, cons };
 }
 
 /**

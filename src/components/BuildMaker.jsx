@@ -43,7 +43,11 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
   const addons = b.addons.map((id) => byId(addonPool, id));
   const offering = byId(data.offerings, b.offering);
 
-  const rating = useMemo(() => scoreBuild(chosen, b.role, b.playstyles), [chosen, b.role, b.playstyles]);
+  const killerId = b.role === 'killer' ? data.killers.find((k) => k.name === b.killer)?.id ?? null : null;
+  const rating = useMemo(
+    () => scoreBuild(chosen, b.role, b.playstyles, { stats: data.stats, killerId }),
+    [chosen, b.role, b.playstyles, data.stats, killerId],
+  );
 
   // Extra notes about add-ons that support the perks.
   const addonNotes = useMemo(() => {
@@ -292,7 +296,7 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
             <h3>{b.name.trim() || 'Your build'}</h3>
             <div className="muted small">{chosen.length}/4 perks</div>
           </div>
-          <ScoreBadge score={rating.score} />
+          <ScoreBadge score={rating.score} community={rating.community} />
         </div>
 
         {chosen.length === 0 ? (

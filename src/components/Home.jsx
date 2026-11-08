@@ -15,7 +15,7 @@ function MiniBuild({ build, onShow }) {
         <strong>{build.name}</strong>
         <span className="muted small">{build.role === 'killer' ? build.killer ?? 'Any killer' : 'Survivor'}</span>
       </div>
-      <ScoreBadge score={build.rating?.score ?? 0} />
+      <ScoreBadge score={build.rating?.score ?? 0} community={build.rating?.community} />
     </button>
   );
 }

@@ -75,7 +75,7 @@ const stats = await readJson('data/nightlight.json', null);
 const data = { meta, ...raw, perks: withTags(raw.perks), changes, stats };
 const curated = curatedFile.builds.map((b) => {
   const r = repairBuild(resolveBuild(b, data), data, changes);
-  return { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
+  return { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }) };
 });
 const generated = generateBuilds(data, curated, changes);
 const allBuilds = [...curated, ...generated];
