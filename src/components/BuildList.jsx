@@ -3,9 +3,9 @@ import BuildCard from './BuildCard.jsx';
 import { PLAYSTYLES } from '../lib/tags.js';
 import { makeQuery } from '../lib/search.js';
 
-export default function BuildList({ builds, killers, favorites }) {
-  const [role, setRole] = useState('survivor');
-  const [type, setType] = useState('all');
+export default function BuildList({ builds, killers, favorites, initial = {} }) {
+  const [role, setRole] = useState(initial.role ?? 'survivor');
+  const [type, setType] = useState(initial.type ?? 'all');
   const [killer, setKiller] = useState('all');
   const [styles, setStyles] = useState([]);
   const [query, setQuery] = useState('');

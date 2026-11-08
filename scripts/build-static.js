@@ -68,6 +68,7 @@ const raw = {
 const curatedFile = await readJson('builds/builds.json', { builds: [] });
 const changes = await readJson('data/changes.json', null);
 const history = await readJson('data/patch-history.json', []);
+const patchNotes = await readJson('data/patch-notes.json', []);
 const autoState = await readJson('data/auto-update.json', {});
 
 const data = { meta, ...raw, perks: withTags(raw.perks), changes };
@@ -82,7 +83,7 @@ const today = new Date().toISOString().slice(0, 10);
 const lastmod = (meta.fetchedAt ?? new Date().toISOString()).slice(0, 10);
 
 // ---------- 1. App data ----------
-await write('data/app-data.json', JSON.stringify({ meta, ...raw, changes, curated: curatedFile }));
+await write('data/app-data.json', JSON.stringify({ meta, ...raw, changes, patchNotes, patchHistory: history, curated: curatedFile }));
 const prediction = predictNextPatch(history, autoState.announcements ?? meta.announcements ?? [], new Date());
 await write(
   'data/status.json',

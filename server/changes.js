@@ -17,6 +17,14 @@ function diffList(oldList, newList, { key = (x) => x.id, label = (x) => x.name, 
   return { added, removed, changed };
 }
 
+/** [{...info, before, after}] for entries whose description changed. */
+function textDetails(oldList, newList, key, info) {
+  const before = byKey(oldList, key);
+  return (newList ?? [])
+    .filter((x) => before.has(key(x)) && before.get(key(x)).description !== x.description)
+    .map((x) => ({ ...info(x), before: before.get(key(x)).description, after: x.description }));
+}
+
 /**
  * Returns a changes object, or null when nothing relevant changed.
  * `old` and `fresh` are { meta, perks, killers, survivors, items, addons, offerings }.
@@ -50,6 +58,17 @@ export function computeChanges(old, fresh) {
   );
   if (!total && changes.fromPatch === changes.toPatch) return null;
   changes.total = total;
+  // Old and new text of every changed perk / add-on / item, so the app can
+  // judge buffs and nerfs and show what exactly changed.
+  changes.details = {
+    perks: textDetails(old.perks, fresh.perks, (p) => `${p.role}:${p.id}`, (p) => ({ id: p.id, role: p.role, name: p.name })),
+    addons: textDetails(old.addons, fresh.addons, (a) => `${a.killer ?? a.itemType}:${a.id}`, (a) => ({
+      id: a.id,
+      name: a.name,
+      owner: a.killer ?? a.itemType,
+    })),
+    items: textDetails(old.items, fresh.items, (i) => i.id, (i) => ({ id: i.id, name: i.name })),
+  };
   // Plain ids of new perks, so the app can mark builds that use them.
   changes.newPerkIds = fresh.perks
     .filter((p) => !old.perks.some((o) => o.role === p.role && o.id === p.id))

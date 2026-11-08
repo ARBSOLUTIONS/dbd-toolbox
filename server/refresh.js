@@ -243,6 +243,9 @@ export async function refreshData(log = console.log) {
   const changes = computeChanges(old, { meta, perks, killers, survivors, items, addons, offerings });
   if (changes) {
     await writeJson('changes.json', changes);
+    // Patch notes history for the Patch notes page (newest first, last 20 updates).
+    const history = await readJson('patch-notes.json', []);
+    await writeJson('patch-notes.json', [changes, ...history.filter((h) => h.date !== changes.date)].slice(0, 20));
     log(`Changes since last refresh: ${changes.total} (new perks: ${changes.perks.added.join(', ') || 'none'})`);
   }
 

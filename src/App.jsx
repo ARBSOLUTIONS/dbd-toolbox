@@ -18,36 +18,46 @@ import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
 import PatchNews from './components/PatchNews.jsx';
+import PatchNotes from './components/PatchNotes.jsx';
+import Home from './components/Home.jsx';
+import BuildCard from './components/BuildCard.jsx';
 import Challenges from './components/Challenges.jsx';
 import Achievements, { AchievementToasts } from './components/Achievements.jsx';
 import { useChallenges } from './lib/challengeStore.js';
 
 const TAB_GROUPS = [
   {
+    label: 'Start',
+    tabs: [
+      { id: 'home', icon: '🏠', label: 'Home', desc: 'Overview of everything on the site.' },
+      { id: 'patchnotes', icon: '📜', label: 'Patch notes', desc: 'Buffs, nerfs and which builds they affect.' },
+    ],
+  },
+  {
     label: 'Builds',
     tabs: [
-      { id: 'builds', icon: '⚔️', label: 'Builds' },
-      { id: 'combos', icon: '🔗', label: 'Combos' },
-      { id: 'maker', icon: '🛠️', label: 'Build maker' },
-      { id: 'community', icon: '👥', label: 'Community' },
-      { id: 'favorites', icon: '★', label: 'Favourites' },
+      { id: 'builds', icon: '⚔️', label: 'Builds', desc: 'Rated meta, fun, beginner and generated builds.' },
+      { id: 'combos', icon: '🔗', label: 'Combos', desc: 'Pick a perk and find what pairs best with it.' },
+      { id: 'maker', icon: '🛠️', label: 'Build maker', desc: 'Make a build and get an instant score.' },
+      { id: 'community', icon: '👥', label: 'Community', desc: 'Builds shared and voted on by players.' },
+      { id: 'favorites', icon: '★', label: 'Favourites', desc: 'Your saved builds and perks.' },
     ],
   },
   {
     label: 'Play',
     tabs: [
-      { id: 'challenges', icon: '🎲', label: 'Challenges' },
-      { id: 'achievements', icon: '🏆', label: 'Achievements' },
+      { id: 'challenges', icon: '🎲', label: 'Challenges', desc: 'Random, daily and weekly build challenges.' },
+      { id: 'achievements', icon: '🏆', label: 'Achievements', desc: 'Unlock badges by completing challenges.' },
     ],
   },
   {
     label: 'Game data',
     tabs: [
-      { id: 'perks', icon: '✦', label: 'Perks' },
-      { id: 'killers', icon: '🔪', label: 'Killers' },
-      { id: 'survivors', icon: '🏃', label: 'Survivors' },
-      { id: 'items', icon: '🔦', label: 'Items' },
-      { id: 'offerings', icon: '🕯️', label: 'Offerings' },
+      { id: 'perks', icon: '✦', label: 'Perks', desc: 'Every perk with its full description.' },
+      { id: 'killers', icon: '🔪', label: 'Killers', desc: 'All killers, their perks and add-ons.' },
+      { id: 'survivors', icon: '🏃', label: 'Survivors', desc: 'All survivors and their perks.' },
+      { id: 'items', icon: '🔦', label: 'Items', desc: 'Items and item add-ons.' },
+      { id: 'offerings', icon: '🕯️', label: 'Offerings', desc: 'Offerings rated from 1 to 5 stars.' },
     ],
   },
 ];
@@ -71,7 +81,20 @@ const rateOfferings = (list) => withOfferingRatings(list).map((o) => ({ ...o, ro
 export default function App() {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [tab, setTab] = useState('builds');
+  const [tab, setTabState] = useState('home');
+  const [buildFilter, setBuildFilter] = useState({});
+  const [focusBuild, setFocusBuild] = useState(null);
+  useEffect(() => {
+    if (!focusBuild) return undefined;
+    const close = (e) => e.key === 'Escape' && setFocusBuild(null);
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [focusBuild]);
+  const setTab = useCallback((id, filter) => {
+    if (id === 'builds') setBuildFilter({ ...(filter ?? {}), key: Date.now() });
+    setTabState(id);
+    window.scrollTo(0, 0);
+  }, []);
   const [comboPerk, setComboPerk] = useState(null);
   const favorites = useFavorites();
   const challenges = useChallenges({
@@ -141,7 +164,9 @@ export default function App() {
     <div className="app">
       <header className="topbar">
         <h1>
-          DBD-<span>Toolbox</span>
+          <button className="logo-button" onClick={() => setTab('home')} title="Home">
+            DBD-<span>Toolbox</span>
+          </button>
         </h1>
         <DataStatus meta={data?.meta} onRefreshed={load} />
         <nav className="tabs" aria-label="Main menu">
@@ -169,8 +194,14 @@ export default function App() {
       <main>
         {error && <p className="error">{error}</p>}
         {!data && !error && <p className="muted">Loading…</p>}
-        {data?.changes && <PatchNews changes={data.changes} />}
-        {data && tab === 'builds' && <BuildList builds={allBuilds} killers={data.killers} favorites={favorites} />}
+        {data?.changes && tab !== 'home' && tab !== 'patchnotes' && <PatchNews changes={data.changes} />}
+        {data && tab === 'home' && (
+          <Home data={data} builds={allBuilds} groups={TAB_GROUPS} onOpen={setTab} onShowBuild={setFocusBuild} />
+        )}
+        {data && tab === 'patchnotes' && <PatchNotes data={data} builds={allBuilds} onShowBuild={setFocusBuild} />}
+        {data && tab === 'builds' && (
+          <BuildList key={buildFilter.key} initial={buildFilter} builds={allBuilds} killers={data.killers} favorites={favorites} />
+        )}
         {data && tab === 'combos' && (
           <Combos data={data} builds={allBuilds} perkId={comboPerk} setPerkId={setComboPerk} favorites={favorites} />
         )}
@@ -195,6 +226,17 @@ export default function App() {
         {data && tab === 'items' && <ItemList items={data.items} addons={data.addons} />}
         {data && tab === 'offerings' && <OfferingList offerings={data.offerings} />}
       </main>
+
+      {focusBuild && (
+        <div className="modal-backdrop" onClick={() => setFocusBuild(null)}>
+          <div className="modal" role="dialog" aria-modal="true" aria-label={focusBuild.name} onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setFocusBuild(null)} aria-label="Close">
+              ✕
+            </button>
+            <BuildCard build={focusBuild} favorites={favorites} />
+          </div>
+        </div>
+      )}
 
       <AchievementToasts store={challenges} />
 

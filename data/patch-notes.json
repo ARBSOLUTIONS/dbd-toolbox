@@ -1,0 +1,59 @@
+[
+  {
+    "fromPatch": "10.2.2a",
+    "toPatch": "10.2.2a",
+    "date": "2026-11-08T04:10:29.268Z",
+    "perks": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "killers": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "survivors": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "items": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "addons": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "offerings": {
+      "added": [
+        "Escape! Cake",
+        "Hollow Shell",
+        "Sealed Envelope",
+        "Survivor Pudding",
+        "Bloody Party Streamers",
+        "Bound Envelope",
+        "Coconut Scream Pie",
+        "Frightful Flan",
+        "Ghastly Gateau",
+        "Gruesome Gateau",
+        "Sacrificial Cake",
+        "Screech Cobbler",
+        "Terrormisu",
+        "Toothy Torte"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "total": 14,
+    "newPerkIds": [],
+    "details": {
+      "perks": [],
+      "addons": [],
+      "items": []
+    }
+  }
+]

@@ -36,6 +36,8 @@ app.get('/api/data', async (_req, res) => {
     addons: await readJson('addons.json', []),
     offerings: await readJson('offerings.json', []),
     changes: await readJson('changes.json', null),
+    patchNotes: await readJson('patch-notes.json', []),
+    patchHistory: await readJson('patch-history.json', []),
     // Hand-picked builds live outside data/ so a refresh never overwrites them.
     curated: await readJsonFrom(path.join(ROOT, 'builds', 'builds.json'), { builds: [] }),
   });
