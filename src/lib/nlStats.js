@@ -195,17 +195,17 @@ export function rankPerks(perks, stats, { role, by = 'strength' } = {}) {
   return { role, by, ranked, unranked, tiers, average: perkBaseline(stats, role), period: stats?.perkPeriod?.[role] ?? stats?.period ?? null };
 }
 
-/** Games before a perk's numbers count fully in the score (fewer: they count less). */
-export const FULL_WEIGHT_GAMES = 400;
-/** Score points per point of kill/escape rate above or below average, and the cap. */
-const POINTS_PER_RATE = 0.6;
-const MAX_POINTS = 10;
+/** Score points per point of perk strength, and the cap. */
+export const POINTS_PER_RATE = 0.6;
+export const MAX_POINTS = 10;
 
 /**
- * The "community" part of a build's score: how often its perks win on
- * NightLight compared with the average perk slot of that role. Killer perks
+ * The "community" part of a build's score: the sum of its perks' strength
+ * (the same number the perk ranking uses: kill/escape rate minus the average
+ * perk of the role, × games ÷ (games + PRIOR_GAMES)), × 0.6, capped at ±10.
+ * Perks under MIN_PERK_GAMES games, or without numbers, count 0. Killer perks
  * use that killer's own numbers when known, compared with that killer's kill
- * rate. Perks with few games count less; perks without numbers count 0.
+ * rate (weight: usage ÷ 5%, max 1).
  *
  * Returns { points (-10..+10), perks: [...], pros, cons } or null without perk stats.
  */
@@ -220,27 +220,31 @@ export function communityScore(perks, role, stats, killerId = null) {
 
   const rows = list.map((p) => {
     const u = (p.aliasIds ?? [p.id]).map((id) => usage[id]).find(Boolean);
-    if (!u || u.rate == null) return { id: p.id, name: p.name, rate: null, base: null, delta: null, weight: 0, usage: u?.usage ?? 0 };
+    if (!u || u.rate == null) {
+      return { id: p.id, name: p.name, rate: null, base: null, delta: null, weight: 0, strength: null, usage: u?.usage ?? 0, count: null };
+    }
     const killerScope = u.scope === 'killer' && killerRate != null;
     const base = killerScope ? killerRate : average;
-    const weight = killerScope ? Math.min(1, u.usage / 5) : Math.min(1, (u.count ?? 0) / FULL_WEIGHT_GAMES);
-    return { id: p.id, name: p.name, rate: u.rate, base, delta: round1(u.rate - base), weight, usage: u.usage, scope: killerScope ? 'killer' : 'all' };
+    const count = u.count ?? 0;
+    const weight = killerScope ? Math.min(1, u.usage / 5) : count < MIN_PERK_GAMES ? 0 : count / (count + PRIOR_GAMES);
+    const delta = round1(u.rate - base);
+    return { id: p.id, name: p.name, rate: u.rate, base, delta, weight, strength: round1(delta * weight), usage: u.usage, count, scope: killerScope ? 'killer' : 'all' };
   });
 
-  const sum = rows.reduce((s, r) => s + (r.delta ?? 0) * r.weight, 0);
+  const sum = rows.reduce((s, r) => s + (r.strength ?? 0), 0);
   const points = Math.max(-MAX_POINTS, Math.min(MAX_POINTS, Math.round(sum * POINTS_PER_RATE)));
   const pros = [];
   const cons = [];
   if (points >= 2) pros.push(`Community stats: these perks win more often than average on NightLight (+${points}).`);
   if (points <= -2) cons.push(`Community stats: these perks win less often than average on NightLight (${points}).`);
-  const solid = rows.filter((r) => r.delta != null && r.weight >= 0.5);
+  const solid = rows.filter((r) => r.delta != null && r.weight >= 0.4);
   for (const r of solid.filter((x) => x.delta >= 4).sort((a, b) => b.delta - a.delta).slice(0, 2)) {
     pros.push(`${r.name} has a high ${label} on NightLight (${r.rate.toFixed(1)}% vs ${r.base.toFixed(1)}% average).`);
   }
   for (const r of solid.filter((x) => x.delta <= -4).sort((a, b) => a.delta - b.delta).slice(0, 2)) {
     cons.push(`${r.name} has a low ${label} on NightLight (${r.rate.toFixed(1)}% vs ${r.base.toFixed(1)}% average).`);
   }
-  const unknown = rows.filter((r) => r.weight < 0.25).map((r) => r.name);
+  const unknown = rows.filter((r) => r.weight === 0).map((r) => r.name);
   if (unknown.length) cons.push(`Too few games on NightLight to judge: ${unknown.join(', ')}.`);
   return { points, average, perks: rows, pros, cons };
 }

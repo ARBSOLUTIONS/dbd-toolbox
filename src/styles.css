@@ -252,6 +252,36 @@ main { padding-top: 16px; }
 .perk-table th .link-button.active { color: var(--text); }
 .perk-table td { font-variant-numeric: tabular-nums; }
 
+/* Score breakdown (what a build's score is made of) */
+.score-breakdown { display: grid; gap: 2px; margin: 4px 0 8px; }
+.score-part { border-bottom: 1px solid var(--border); }
+.score-part-head {
+  display: grid; grid-template-columns: 120px 1fr 64px; align-items: center; gap: 10px;
+  width: 100%; padding: 6px 0; background: none; border: 0; color: inherit; text-align: left; cursor: pointer;
+}
+.score-part-head:hover .score-part-label { color: var(--text); text-decoration: underline; }
+.score-part-label { color: var(--muted); font-size: 0.88em; }
+.score-part-value { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+.score-part-value small { font-weight: 400; color: var(--muted); }
+.score-bar { position: relative; height: 8px; background: var(--border); }
+.score-bar > span { position: absolute; top: 0; bottom: 0; left: 0; background: var(--text); opacity: 0.8; }
+.score-bar > span.neg { background: #e0575d; opacity: 1; }
+.score-bar.centred > span { left: auto; }
+.score-bar.centred > span.pos { background: #4caf6a; opacity: 1; }
+.score-bar.centred > i { position: absolute; left: 50%; top: -3px; bottom: -3px; width: 1px; background: var(--muted); }
+.part-conflicts .score-part-value { color: #e0575d; }
+.part-community .score-part-label::after { content: ' (NightLight)'; font-size: 0.85em; }
+.score-part-body { padding: 0 0 10px; }
+.score-part-body > p { margin: 0 0 6px; }
+.score-perks { margin-top: 6px; }
+.score-perks td, .score-perks th { padding-right: 12px; }
+.score-total { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0 2px; font-size: 0.9em; }
+.score-total strong { font-size: 1.2rem; }
+.score-hint { margin: 2px 0 0; }
+.score-how { border: 1px solid var(--border); padding: 8px 12px; margin-top: 6px; }
+.score-how ul { margin: 4px 0; padding-left: 18px; }
+.score-how p { margin: 4px 0; }
+
 /* Perk ranking (tier list from NightLight stats) */
 .perk-ranking { --tier-S: #e8b33a; --tier-A: #4caf6a; --tier-B: #8f8f8f; --tier-C: #d9822b; --tier-D: #e0575d; }
 .rank-source { margin: 4px 0 12px; }

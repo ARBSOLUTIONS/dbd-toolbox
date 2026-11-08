@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import Picker from './Picker.jsx';
 import { ScoreBadge } from './BuildCard.jsx';
+import ScoreBreakdown from './ScoreBreakdown.jsx';
 import { ITEM_TYPE_LABEL } from './ItemList.jsx';
 import { RARITY_LABEL } from './PerkCard.jsx';
 import { iconSrc } from '../lib/format.js';
@@ -302,18 +303,7 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
         {chosen.length === 0 ? (
           <p className="muted small">Pick perks on the left to get a rating and explanation.</p>
         ) : (
-          <ul className="reasons">
-            {[...rating.pros, ...addonNotes].map((r, i) => (
-              <li key={`p${i}`} className="pro">
-                {r}
-              </li>
-            ))}
-            {rating.cons.map((r, i) => (
-              <li key={`c${i}`} className="con">
-                {r}
-              </li>
-            ))}
-          </ul>
+          <ScoreBreakdown rating={rating} role={b.role} extraNotes={addonNotes} />
         )}
 
         {perkSuggestions.length > 0 && (

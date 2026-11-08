@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
+import ScoreBreakdown from './ScoreBreakdown.jsx';
 
 export function Slot({ entity, fallback, big, showOwner }) {
   const owner = showOwner && entity ? entity.owner ?? null : undefined;
@@ -220,47 +221,23 @@ export default function BuildCard({ build, favorites, footer }) {
               <p>{build.howToPlay}</p>
             </>
           )}
-          {build.nl && (
-            <>
-              <h4>Community stats (NightLight)</h4>
-              <table className="stats-table nl-table">
-                <thead>
-                  <tr>
-                    <th>Perk</th>
-                    <th>Used in</th>
-                    <th>{build.nl.rateLabel}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {build.nl.perks.map((p) => (
-                    <tr key={p.id}>
-                      <td>{p.name}</td>
-                      <td>{p.usage ? `${p.usage.toFixed(1)}%` : '< 1%'}</td>
-                      <td>{p.rate != null ? `${p.rate.toFixed(1)}%` : '–'}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <p className="muted small">
-                {build.nl.killerScope ? `Usage among ${build.killer} players. ` : 'Usage among all players of this role. '}
-                Average {build.nl.rateLabel}: {build.nl.baseline?.toFixed(1)}%. From matches uploaded to NightLight.gg; a
-                guide, not official numbers.
-              </p>
-            </>
-          )}
           <h4>Why this score</h4>
-          <ul className="reasons">
-            {rating.pros.map((r, i) => (
-              <li key={`p${i}`} className="pro">
-                {r}
-              </li>
-            ))}
-            {rating.cons.map((r, i) => (
-              <li key={`c${i}`} className="con">
-                {r}
-              </li>
-            ))}
-          </ul>
+          {rating.parts?.length ? (
+            <ScoreBreakdown rating={rating} role={build.role} />
+          ) : (
+            <ul className="reasons">
+              {rating.pros.map((r, i) => (
+                <li key={`p${i}`} className="pro">
+                  {r}
+                </li>
+              ))}
+              {rating.cons.map((r, i) => (
+                <li key={`c${i}`} className="con">
+                  {r}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </article>

@@ -138,3 +138,23 @@ test('re-importing perk text keeps a snapshot of the previous period only', () =
   const again = mergePerkText(second, parsePerkText(later), perks);
   assert.deepEqual(again.previousPerks, second.previousPerks, 'same period again: snapshot unchanged');
 });
+
+test('score parts add up to the score, with and without stats', () => {
+  const list = [byName('Dead Hard'), byName('Resilience'), byName('Lithe'), byName('Breakout')];
+  for (const opts of [{}, { stats }]) {
+    const r = scoreBuild(list, 'survivor', ['chase'], opts);
+    const rules = r.parts.filter((p) => p.id !== 'community').reduce((s, p) => s + p.value, 0);
+    assert.equal(r.base, Math.max(0, Math.min(100, rules)));
+    assert.equal(r.parts.some((p) => p.id === 'community'), Boolean(opts.stats));
+    for (const p of r.parts) assert.ok(Array.isArray(p.notes), p.id);
+  }
+});
+
+test('community points use the same strength as the perk ranking', async () => {
+  const { rankPerks } = await import('../src/lib/nlStats.js');
+  const list = [byName('Dead Hard'), byName('Breakout')];
+  const c = communityScore(list, 'survivor', stats);
+  const ranked = Object.fromEntries(rankPerks(perks, stats, { role: 'survivor' }).ranked.map((e) => [e.perk.id, e.strength]));
+  for (const p of c.perks) assert.equal(p.strength, ranked[p.id], p.name);
+  assert.equal(c.points, Math.round((ranked[byName('Dead Hard').id] + ranked[byName('Breakout').id]) * 0.6));
+});
