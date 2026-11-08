@@ -1,5 +1,6 @@
 import { useMemo, useRef, useState } from 'react';
 import { iconSrc } from '../lib/format.js';
+import { makeQuery } from '../lib/search.js';
 
 /**
  * Search box with a dropdown list of matching options (perks, items, add-ons...).
@@ -11,16 +12,17 @@ export default function Picker({ options, value, onPick, placeholder = 'Searchâ€
   const blurTimer = useRef();
 
   const matches = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = makeQuery(query);
+    const rank = (o) => Math.min(q.rank(o.name), q.rank(o.character ?? '') + 3);
     return options
-      .filter((o) => !q || o.name.toLowerCase().includes(q) || (o.character ?? '').toLowerCase().includes(q))
+      .map((o) => ({ o, r: rank(o) }))
+      .filter(({ r }) => r !== Infinity)
       .sort((a, b) => {
-        // Pinned options (e.g. favourite perks) first, then names that start with the query.
-        if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
-        const as = a.name.toLowerCase().startsWith(q) ? 0 : 1;
-        const bs = b.name.toLowerCase().startsWith(q) ? 0 : 1;
-        return as - bs || a.name.localeCompare(b.name);
+        // Pinned options (e.g. favourite perks) first, then the best name matches.
+        if (!!a.o.pinned !== !!b.o.pinned) return a.o.pinned ? -1 : 1;
+        return a.r - b.r || a.o.name.localeCompare(b.o.name);
       })
+      .map(({ o }) => o)
       .slice(0, 40);
   }, [options, query]);
 

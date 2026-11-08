@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
 import BuildCard from './BuildCard.jsx';
 import { PLAYSTYLES } from '../lib/tags.js';
+import { makeQuery } from '../lib/search.js';
 
 export default function BuildList({ builds, killers, favorites }) {
   const [role, setRole] = useState('survivor');
@@ -19,7 +20,7 @@ export default function BuildList({ builds, killers, favorites }) {
   };
 
   const shown = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    const q = makeQuery(query);
     return builds
       .filter((b) => b.role === role)
       .filter((b) => type === 'all' || b.type === type)
@@ -30,10 +31,11 @@ export default function BuildList({ builds, killers, favorites }) {
       .filter((b) => !styles.length || styles.some((s) => b.playstyles.includes(s)))
       .filter(
         (b) =>
-          !q ||
-          b.name.toLowerCase().includes(q) ||
-          b.perks.some((p) => p.toLowerCase().includes(q)) ||
-          (b.item ?? '').toLowerCase().includes(q),
+          q.empty ||
+          q.matches(b.name) ||
+          b.perks.some((p) => q.matches(p)) ||
+          q.matches(b.item ?? '') ||
+          q.matches(b.killer ?? ''),
       )
       .sort((a, b) => b.rating.score - a.rating.score);
   }, [builds, role, type, killer, styles, query, onlyNew]);
