@@ -15,7 +15,8 @@ export default function Picker({ options, value, onPick, placeholder = 'Searchâ€
     return options
       .filter((o) => !q || o.name.toLowerCase().includes(q) || (o.character ?? '').toLowerCase().includes(q))
       .sort((a, b) => {
-        // Names that start with the query first.
+        // Pinned options (e.g. favourite perks) first, then names that start with the query.
+        if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
         const as = a.name.toLowerCase().startsWith(q) ? 0 : 1;
         const bs = b.name.toLowerCase().startsWith(q) ? 0 : 1;
         return as - bs || a.name.localeCompare(b.name);
@@ -70,7 +71,10 @@ export default function Picker({ options, value, onPick, placeholder = 'Searchâ€
             <li key={o.id + (o.killer ?? o.itemType ?? '')} onMouseDown={(e) => e.preventDefault()} onClick={() => pick(o)}>
               <img src={iconSrc(o.icon ?? o.portrait)} alt="" loading="lazy" />
               <div>
-                <div>{o.name}</div>
+                <div>
+                  {o.pinned && <span className="pin">â˜… </span>}
+                  {o.name}
+                </div>
                 {o.character && <div className="muted small">{o.character}</div>}
               </div>
             </li>

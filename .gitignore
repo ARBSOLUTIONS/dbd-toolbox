@@ -2,3 +2,4 @@ node_modules/
 dist/
 data/*.tmp
 .claude/
+data/community-local.json

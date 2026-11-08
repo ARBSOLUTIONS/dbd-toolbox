@@ -8,6 +8,7 @@ import { PLAYSTYLES } from '../lib/tags.js';
 import { scoreBuild } from '../lib/builds.js';
 import { suggestPerks, suggestItemTypes, suggestAddons } from '../lib/combos.js';
 import { bestOffering, stars } from '../lib/offeringRatings.js';
+import { shareBuild } from '../lib/community.js';
 
 const EMPTY = {
   role: 'survivor',
@@ -21,10 +22,11 @@ const EMPTY = {
 };
 
 /** Make your own build and get a live rating, explanation and suggestions. */
-export default function BuildMaker({ data, builds, favorites, initial }) {
+export default function BuildMaker({ data, builds, favorites, initial, onShared }) {
   const [b, setB] = useState(initial ?? EMPTY);
   const [saved, setSaved] = useState(false);
   const [offeringSort, setOfferingSort] = useState('win');
+  const [share, setShare] = useState(null); // null | { description, author, busy, error, done }
   const set = (patch) => {
     setB((old) => ({ ...old, ...patch }));
     setSaved(false);
@@ -75,7 +77,10 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
   const mainStyle = b.playstyles[0] ?? Object.entries(rating.tags ?? {}).sort((x, y) => y[1] - x[1])[0]?.[0];
   const suggestedOffering = chosen.length ? bestOffering(data.offerings, b.role, mainStyle) : null;
 
-  const perkOptions = data.perks.filter((p) => p.role === b.role && !b.perks.includes(p.id));
+  // Favourite perks (★ on any perk card) are shown first in the perk lists.
+  const perkOptions = data.perks
+    .filter((p) => p.role === b.role && !b.perks.includes(p.id))
+    .map((p) => (favorites.isFavoritePerk?.(p.id) ? { ...p, pinned: true } : p));
   const exhaustionCount = chosen.filter((p) => p.exhaustion && p.id !== 'adrenaline').length;
 
   function setPerk(i, perk) {
@@ -112,6 +117,28 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
       offering: offering?.name ?? null,
       why: [...rating.pros, ...addonNotes].slice(0, 3).join(' '),
     };
+  }
+
+  async function submitShare() {
+    const o = toBuildObject();
+    setShare((s) => ({ ...s, busy: true, error: null }));
+    try {
+      await shareBuild({
+        role: o.role,
+        name: o.name,
+        description: share.description,
+        author: share.author,
+        killer: o.killer,
+        perks: o.perks,
+        item: o.item,
+        addons: o.role === 'killer' ? o.addons : o.itemAddons,
+        offering: o.offering,
+        playstyles: o.playstyles,
+      });
+      setShare((s) => ({ ...s, busy: false, done: true }));
+    } catch (err) {
+      setShare((s) => ({ ...s, busy: false, error: err.message }));
+    }
   }
 
   function saveFavorite() {
@@ -328,8 +355,14 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
         )}
 
         <div className="maker-actions">
-          <button disabled={!chosen.length} onClick={saveFavorite}>
-            {saved ? '★ Saved to favourites' : '☆ Save to favourites'}
+          <button className="primary" disabled={!chosen.length} onClick={saveFavorite}>
+            {saved ? '★ Saved to favourites' : '☆ Save build to favourites'}
+          </button>
+          <button
+            disabled={!chosen.length}
+            onClick={() => setShare(share ? null : { description: '', author: '' })}
+          >
+            📤 Share with community
           </button>
           <button
             disabled={!chosen.length}
@@ -339,6 +372,46 @@ export default function BuildMaker({ data, builds, favorites, initial }) {
             Copy as JSON
           </button>
         </div>
+
+        {share && (
+          <div className="share-form">
+            {share.done ? (
+              <p className="small">
+                ✅ Shared! Others can now find and rate it.{' '}
+                <button className="link-button" onClick={onShared}>
+                  Go to Community builds →
+                </button>
+              </p>
+            ) : (
+              <>
+                <p className="small muted">
+                  Shared builds are <strong>public</strong>. Name: “{b.name.trim() || 'My build'}” (change it at the top).
+                </p>
+                <textarea
+                  placeholder="Why does this build work? How do you play it? (optional)"
+                  maxLength={500}
+                  value={share.description}
+                  onChange={(e) => setShare({ ...share, description: e.target.value })}
+                />
+                <input
+                  type="text"
+                  placeholder="Your nickname (optional, shown publicly)"
+                  maxLength={24}
+                  value={share.author}
+                  onChange={(e) => setShare({ ...share, author: e.target.value })}
+                />
+                <div className="maker-actions">
+                  <button className="primary" disabled={share.busy || b.name.trim().length < 3} onClick={submitShare}>
+                    {share.busy ? 'Sharing…' : 'Share publicly'}
+                  </button>
+                  <button onClick={() => setShare(null)}>Cancel</button>
+                </div>
+                {b.name.trim().length < 3 && <p className="warning small">Give your build a name first (at the top).</p>}
+                {share.error && <p className="error small">{share.error}</p>}
+              </>
+            )}
+          </div>
+        )}
       </aside>
     </section>
   );
