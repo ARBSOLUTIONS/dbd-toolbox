@@ -68,12 +68,12 @@ function SlotTip({ entity, pos }) {
   );
 }
 
-export function ScoreBadge({ score, community = null }) {
+export function ScoreBadge({ score, community = null, plain = false }) {
   const level = score >= 80 ? 'high' : score >= 55 ? 'mid' : 'low';
   return (
     <div
       className={`score score-${level}`}
-      title={
+      title={plain ? undefined :
         'Score (0-100): how well these perks fit together and with the playstyle' +
         (community ? `, ${community.points >= 0 ? '+' : ''}${community.points} from NightLight community stats (how often the perks win)` : '') +
         '. A rough guide, not a win rate.'
@@ -81,30 +81,6 @@ export function ScoreBadge({ score, community = null }) {
     >
       {score}
     </div>
-  );
-}
-
-/** Always-visible sum: where the score comes from (rules + NightLight). */
-function ScoreLine({ rating, role, onOpen }) {
-  if (!rating?.parts?.length) return null;
-  const c = rating.community;
-  return (
-    <p className="score-line small">
-      <span className="muted">Score {rating.score} =</span> rules {rating.base}
-      {c ? (
-        <>
-          {' '}
-          <span className={c.points >= 0 ? 'good' : 'bad'}>
-            {c.points >= 0 ? '+' : '−'} {Math.abs(c.points)} NightLight
-          </span>
-        </>
-      ) : (
-        null
-      )}{' '}
-      <button className="link-button small" onClick={onOpen}>
-        why?
-      </button>
-    </p>
   );
 }
 
@@ -192,7 +168,16 @@ export default function BuildCard({ build, favorites, footer }) {
               {favorites.isFavorite(build.id) ? '★' : '☆'}
             </button>
           )}
-          <ScoreBadge score={rating.score} community={rating.community} />
+          {rating.parts?.length ? (
+            <div className="score-hover" tabIndex={0}>
+              <ScoreBadge score={rating.score} community={rating.community} plain />
+              <div className="score-popover" role="tooltip">
+                <ScoreBreakdown rating={rating} role={build.role} />
+              </div>
+            </div>
+          ) : (
+            <ScoreBadge score={rating.score} community={rating.community} />
+          )}
         </div>
       </header>
 
@@ -229,7 +214,6 @@ export default function BuildCard({ build, favorites, footer }) {
         </p>
       )}
 
-      <ScoreLine rating={rating} role={build.role} onOpen={() => setOpen(true)} />
       {build.nl && <NightLightLine nl={build.nl} />}
 
       {build.author && <p className="muted small community-author">by {build.author}</p>}
@@ -246,10 +230,9 @@ export default function BuildCard({ build, favorites, footer }) {
               <p>{build.howToPlay}</p>
             </>
           )}
+          {!rating.parts?.length && (
+            <>
           <h4>Why this score</h4>
-          {rating.parts?.length ? (
-            <ScoreBreakdown rating={rating} role={build.role} />
-          ) : (
             <ul className="reasons">
               {rating.pros.map((r, i) => (
                 <li key={`p${i}`} className="pro">
@@ -262,6 +245,7 @@ export default function BuildCard({ build, favorites, footer }) {
                 </li>
               ))}
             </ul>
+            </>
           )}
         </div>
       )}
