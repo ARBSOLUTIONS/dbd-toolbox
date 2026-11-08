@@ -155,3 +155,53 @@ test('generator adds "Most played" builds from the stats', () => {
   const without = generateBuilds(data);
   assert.equal(without.filter((b) => b.type === 'popular').length, 0, 'no stats → no popular builds');
 });
+
+// ---------- analyseBuild (community build check) ----------
+import { analyseBuild, analysisSortKey } from '../src/lib/nlStats.js';
+
+const perksById = Object.fromEntries(data.perks.map((p) => [p.id, p]));
+const nurse = data.killers.find((k) => k.name === 'The Nurse') ?? data.killers[0];
+const killerBuild = (perks) => ({ role: 'killer', resolved: { killer: nurse, perks } });
+
+function statsFor(rates, extra = {}) {
+  const perks = {};
+  kPerks.slice(0, 8).forEach((p, i) => (perks[p.id] = { role: 'killer', usage: 10, rate: rates[i] ?? 46 }));
+  return {
+    average: { killRate: 46 },
+    killers: { [nurse.id]: { killRate: 52, pickRate: 4, matches: 300, ...extra } },
+    perks,
+  };
+}
+
+test('analyseBuild judges a killer build against that killer when perk stats are killer-specific', () => {
+  const topPerks = kPerks.slice(0, 4).map((p) => ({ perk: p.id, usage: 20, rate: 56 }));
+  const a = analyseBuild(killerBuild(kPerks.slice(0, 4)), statsFor([], { topPerks }), perksById);
+  assert.equal(a.vsKiller, true);
+  assert.equal(a.baseline, 52);
+  assert.equal(a.delta, 4);
+  assert.equal(a.verdict, 'strong');
+  assert.equal(a.killer.vsAverage, 6);
+});
+
+test('analyseBuild flags the weakest perk and suggests a clearly better swap', () => {
+  // Perks 0-3 in the build; perk 0 is poor, perk 6 is much better and often played.
+  const stats = statsFor([38, 46, 47, 48, 44, 45, 55, 40]);
+  const a = analyseBuild(killerBuild(kPerks.slice(0, 4)), stats, perksById);
+  assert.equal(a.vsKiller, false);
+  assert.equal(a.weakest.id, kPerks[0].id);
+  assert.equal(a.swap.in.id, kPerks[6].id);
+  assert.equal(a.verdict, 'average'); // avg 44.75 vs 46
+});
+
+test('analyseBuild still judges the killer without perk stats, and sorts it after perk-judged builds', () => {
+  const stats = { average: { killRate: 46 }, killers: { [nurse.id]: { killRate: 52 } }, perks: {} };
+  const onlyKiller = analyseBuild(killerBuild(kPerks.slice(0, 4)), stats, perksById);
+  assert.equal(onlyKiller.perkData, false);
+  assert.equal(onlyKiller.verdict, 'unknown');
+  assert.equal(onlyKiller.killer.killRate, 52);
+
+  const judged = analyseBuild(killerBuild(kPerks.slice(0, 4)), statsFor([30, 30, 30, 30]), perksById);
+  assert.ok(analysisSortKey(judged) > analysisSortKey(onlyKiller));
+  assert.ok(analysisSortKey(onlyKiller) > analysisSortKey(null));
+  assert.equal(analyseBuild({ role: 'survivor', resolved: { perks: sPerks.slice(0, 4) } }, { perks: {} }), null);
+});

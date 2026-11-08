@@ -362,6 +362,38 @@ main { padding-top: 28px; min-height: 60vh; }
 .mini-build:hover:not(:disabled) { background: var(--surface-2); }
 .home-tile { border-radius: var(--radius); background: var(--panel); }
 
+/* ---------- Community: NightLight check ---------- */
+.stat-summary { margin: -4px 0 14px; }
+.stat-check {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--v, var(--border-strong));
+  border-radius: var(--radius-sm);
+  background: #070707;
+}
+.stat-check p { margin: 0; }
+.stat-check.v-strong { --v: #3ecf8e; }
+.stat-check.v-average { --v: #e8c47a; }
+.stat-check.v-weak { --v: #ff5964; }
+.stat-check-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.stat-check-title { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--faint); }
+.stat-verdict {
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 1px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--v, var(--border-strong));
+  color: var(--v, var(--muted));
+}
+.stat-check-main { font-size: 0.88rem; }
+.stat-check-main strong { font-size: 1.05rem; font-weight: 500; font-variant-numeric: tabular-nums; }
+.stat-check .good { color: #3ecf8e; }
+.stat-check .bad { color: #ff5964; }
+.stat-swap strong { color: #fff; font-weight: 500; }
+
 /* ---------- Footer ---------- */
 footer.site-footer {
   margin-top: 96px;

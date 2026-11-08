@@ -97,6 +97,98 @@ export function popularBuildSpecs(stats, { survivorCount = 4 } = {}) {
   return specs;
 }
 
+/** How far above/below the average (in points) still counts as "about average". */
+export const NEUTRAL_BAND = 1.5;
+
+/**
+ * A verdict on one build from NightLight numbers, used for community builds.
+ *
+ * Uses, best first: the build's own numbers when NightLight lists this exact
+ * build, else the average of its four perks. Killer builds are compared with
+ * that killer's own kill rate when the perk numbers are for that killer (a
+ * Nurse build should beat the Nurse, not the average killer). Without any perk
+ * numbers, killer builds still get the killer's own kill and pick rate.
+ *
+ * Also points out the weakest perk and, when NightLight knows a clearly better
+ * and often played perk for the same role (and killer), suggests a swap.
+ *
+ * `perksById` is { id: perk } for the game data, used to name suggestions.
+ * Returns null when NightLight has nothing at all about this build.
+ */
+export function analyseBuild(build, stats, perksById = {}) {
+  if (!stats) return null;
+  const killerId = build.role === 'killer' ? build.resolved?.killer?.id ?? null : null;
+  const kStats = killerId ? stats.killers?.[killerId] ?? null : null;
+  const killer = kStats?.killRate != null
+    ? {
+        name: build.resolved.killer.name,
+        killRate: kStats.killRate,
+        pickRate: kStats.pickRate ?? null,
+        matches: kStats.matches ?? null,
+        vsAverage: stats.average?.killRate != null ? round1(kStats.killRate - stats.average.killRate) : null,
+      }
+    : null;
+
+  const nl = build.nl ?? buildStats(build, stats);
+  if (!nl && !killer) return null;
+
+  const label = rateLabel(build.role);
+  if (!nl) return { verdict: 'unknown', rate: null, delta: null, killer, rateLabel: label, perkData: false };
+
+  // Which number to judge, and against what.
+  const exact = nl.exact?.rate != null ? nl.exact : null;
+  const rate = exact ? exact.rate : nl.avgRate;
+  const vsKiller = Boolean(killer && nl.killerScope);
+  const baseline = vsKiller ? killer.killRate : nl.baseline;
+  const delta = rate != null && baseline != null ? round1(rate - baseline) : null;
+  const verdict = delta == null ? 'unknown' : delta >= NEUTRAL_BAND ? 'strong' : delta <= -NEUTRAL_BAND ? 'weak' : 'average';
+
+  // How much to trust it.
+  const rated = nl.perks.filter((p) => p.rate != null && p.usage >= 1);
+  const confidence = exact
+    ? exact.samples >= MIN_SAMPLES * 2 ? 'high' : exact.samples >= MIN_SAMPLES ? 'medium' : 'low'
+    : rated.length === nl.perks.length && nl.perks.length === 4 ? 'medium' : 'low';
+
+  // Weakest perk and a possible swap.
+  const inBuild = new Set((build.resolved?.perks ?? []).filter(Boolean).flatMap((p) => [p.id, ...(p.aliasIds ?? [])]));
+  const weakest = [...rated].sort((a, b) => a.rate - b.rate)[0] ?? null;
+  let swap = null;
+  if (weakest && baseline != null && weakest.rate < baseline) {
+    const byAnyId = {};
+    for (const p of Object.values(perksById)) for (const id of [p.id, ...(p.aliasIds ?? [])]) byAnyId[id] ??= p;
+    const best = Object.entries(perkUsage(stats, build.role, killerId))
+      .filter(([id, u]) => !inBuild.has(id) && u.rate != null && u.usage >= 3 && u.rate >= weakest.rate + 2 && byAnyId[id])
+      .sort((a, b) => b[1].rate - a[1].rate)[0];
+    if (best) swap = { out: weakest, in: { id: byAnyId[best[0]].id, name: byAnyId[best[0]].name, ...best[1] } };
+  }
+
+  return {
+    verdict,
+    rate,
+    delta,
+    baseline,
+    vsKiller,
+    source: exact ? 'exact' : 'perks',
+    games: exact ? (build.role === 'killer' ? Math.round(exact.samples / 4) : exact.samples) : null,
+    confidence,
+    unrated: nl.perks.filter((p) => p.rate == null || p.usage < 1).map((p) => p.name),
+    weakest: weakest && baseline != null && weakest.rate < baseline ? weakest : null,
+    swap,
+    killer,
+    rateLabel: label,
+    perkData: true,
+  };
+}
+
+const round1 = (v) => Math.round(v * 10) / 10;
+
+/**
+ * Sort key for "best NightLight numbers first": builds judged on perk numbers
+ * first, then killer builds that only have the killer's own kill rate, then
+ * builds NightLight knows nothing about.
+ */
+export const analysisSortKey = (a) => (a?.delta != null ? a.delta : a?.killer?.vsAverage != null ? a.killer.vsAverage - 100 : -Infinity);
+
 /** "11 Oct – 8 Nov" */
 export function periodLabel(stats) {
   const fmt = (iso) => (iso ? new Date(iso).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', timeZone: 'UTC' }) : '?');
