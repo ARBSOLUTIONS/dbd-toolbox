@@ -672,3 +672,7 @@ footer { color: var(--muted); border-top-color: var(--border); }
 }
 .slot-owner.general { padding-left: 7px; font-style: italic; }
 .slots .slot .slot-owner img { position: static; }
+
+/* Beginner builds */
+.badge-beginner { background: #10301f; border-color: #3ecf8e; color: #8ff0c0; font-weight: 600; }
+.build-card.type-beginner { --type-color: #3ecf8e; }

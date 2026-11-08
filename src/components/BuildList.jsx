@@ -51,6 +51,7 @@ export default function BuildList({ builds, killers, favorites }) {
         <div className="segmented">
           {[
             ['all', 'All'],
+            ['beginner', '🌱 Beginner'],
             ['meta', 'Strong / meta'],
             ['fun', 'Fun'],
             ['auto', 'Auto-generated'],

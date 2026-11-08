@@ -46,7 +46,7 @@ export default function BuildCard({ build, favorites, footer }) {
           <h3>{build.name}</h3>
           <div className="badges">
             <span className={`badge badge-${build.type}`}>
-              {{ meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated', community: 'Community' }[build.type] ?? build.type}
+              {{ beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated', community: 'Community' }[build.type] ?? build.type}
             </span>
             {build.variant === 'off-meta' && <span className="badge badge-offmeta">Off-meta</span>}
             {build.variant === 'spotlight' && <span className="badge badge-offmeta">Perk spotlight</span>}

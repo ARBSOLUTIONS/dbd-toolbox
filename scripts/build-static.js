@@ -149,7 +149,7 @@ function buildCardHtml(b) {
   const perks = b.resolved.perks.filter(Boolean);
   const extra = [b.resolved.item, b.resolved.killer, ...(b.resolved.addons ?? [])].filter(Boolean);
   return `<article class="card"><h3><a href="${buildUrl(b)}">${esc(b.name)}</a> <span class="score">${b.rating.score}</span></h3>
-<p class="muted">${b.type === 'auto' ? 'Auto-generated' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
+<p class="muted">${b.type === 'beginner' ? 'Beginner' : b.type === 'auto' ? 'Auto-generated' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
 <p class="icons">${perks.map((p) => `<a href="/perks/${p.id}/" title="${esc(p.name)}">${icon(p, 48)}</a>`).join('')}</p>
 <p>${perks.map(perkLink).join(' · ')}${extra.length ? `<br><span class="muted">${extra.map((e) => esc(e.name)).join(' · ')}</span>` : ''}</p></article>`;
 }
@@ -252,7 +252,7 @@ ${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><
 // ---------- 5. Build pages ----------
 for (const b of allBuilds) {
   const perks = b.resolved.perks.filter(Boolean);
-  const kind = b.type === 'auto' ? 'auto-generated' : b.type === 'meta' ? 'strong (meta)' : 'fun';
+  const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'meta' ? 'strong (meta)' : 'fun';
   const who = b.killer ?? (b.role === 'killer' ? 'any killer' : 'survivors');
   const title = `${b.name} – ${b.role === 'killer' ? `${who} build` : 'survivor build'}: ${perks.map((p) => p.name).join(', ')} | ${SITE}`;
   const description = short(`${b.name}: a ${kind} Dead by Daylight build for ${who}. ${b.why}`);

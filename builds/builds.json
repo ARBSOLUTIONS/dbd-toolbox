@@ -1660,6 +1660,250 @@
       "offering": null,
       "why": "Many ways to make survivors Exposed for one-hit downs.",
       "howToPlay": "Chase right after unhooks and stuns."
+    },
+    {
+      "id": "b-first-trials",
+      "name": "First Trials",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "aura",
+        "chase"
+      ],
+      "perks": [
+        "Kindred",
+        "Spine Chill",
+        "Sprint Burst",
+        "Bond"
+      ],
+      "item": "First Aid Kit",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Kindred and Bond show where your team is, Spine Chill warns you when the killer looks your way, and Sprint Burst gives you a head start when a chase begins. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Walk instead of running so Sprint Burst stays ready. When Spine Chill lights up, stop and look around. Use the auras to find teammates who need help."
+    },
+    {
+      "id": "b-safe-healer",
+      "name": "Safe & Sound",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "healing",
+        "altruism"
+      ],
+      "perks": [
+        "Resilience",
+        "We'll Make It",
+        "Botany Knowledge",
+        "Prove Thyself"
+      ],
+      "item": "First Aid Kit",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Botany Knowledge and We'll Make It make healing much faster, Resilience speeds you up while injured, and Prove Thyself rewards working on generators together. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Stay near your team, heal anyone who is injured and work on gens in pairs. Unhook teammates and heal them right after."
+    },
+    {
+      "id": "b-quiet-rookie",
+      "name": "Quiet Rookie",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "stealth"
+      ],
+      "perks": [
+        "Spine Chill",
+        "Lightweight",
+        "Urban Evasion",
+        "Iron Will"
+      ],
+      "item": "Toolbox",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Iron Will makes you silent while injured, Urban Evasion lets you crouch-walk at speed and Lightweight hides your footprints, so the killer has a hard time finding you. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Crouch behind walls and grass when the killer comes close. Bring the Toolbox to finish gens faster while staying hidden."
+    },
+    {
+      "id": "b-never-give-up",
+      "name": "Never Give Up",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "endgame",
+        "gen-rush"
+      ],
+      "perks": [
+        "Hope",
+        "Déjà Vu",
+        "Kindred",
+        "Adrenaline"
+      ],
+      "item": "Toolbox",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Déjà Vu points you to the generators to finish, Adrenaline heals you and gives a speed burst when the last gen is done, and Hope makes you even faster in the endgame. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Keep doing generators. When the last one pops, Adrenaline and Hope give you the speed to reach the exit gate."
+    },
+    {
+      "id": "b-chest-explorer",
+      "name": "Chest Explorer",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "items"
+      ],
+      "perks": [
+        "Plunderer's Instinct",
+        "Kindred",
+        "Leader",
+        "Self-Care"
+      ],
+      "item": "Worn-Out Tools",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Plunderer's Instinct shows chests so you can find better items, Self-Care lets you heal alone, and Leader speeds up your teammates nearby. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Open the chests you see early in the match. Heal yourself with Self-Care when nobody is near, then join a teammate on a gen."
+    },
+    {
+      "id": "b-unhook-hero",
+      "name": "Unhook Hero",
+      "role": "survivor",
+      "type": "beginner",
+      "playstyles": [
+        "altruism",
+        "anti-tunnel"
+      ],
+      "perks": [
+        "Kindred",
+        "We'll Make It",
+        "Bond",
+        "Empathy"
+      ],
+      "item": "First Aid Kit",
+      "itemAddons": [],
+      "offering": null,
+      "why": "Kindred shows who is near a hooked survivor, Bond and Empathy show where teammates are and who is hurt, and We'll Make It lets you heal them quickly after the save. Only uses perks every survivor has from the start (General perks) plus one or two perks from the free base-game characters, so you can run it right away.",
+      "howToPlay": "Be the one who goes for the unhook. Wait until the killer walks away from the hook, save, then heal the survivor right away."
+    },
+    {
+      "id": "b-hook-learner",
+      "name": "Hook Learner",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "info",
+        "anti-heal"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Bitter Murmur",
+        "Brutal Strength",
+        "Bloodhound"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Bitter Murmur shows survivors when a gen finishes, Bloodhound makes blood trails easy to follow, Sloppy Butcher slows their healing and Brutal Strength breaks pallets faster. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Follow the blood and scratch marks. When a gen is done, go to the auras Bitter Murmur shows you."
+    },
+    {
+      "id": "b-gen-defender",
+      "name": "Gen Defender",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Whispers",
+        "Agitation",
+        "Thanatophobia"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Thanatophobia slows repairs for every injured survivor, Sloppy Butcher keeps them injured longer, Whispers tells you when someone is near and Agitation speeds up carrying. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Hit as many survivors as you can. Injured survivors work slower, so keep pressure on everyone instead of one person."
+    },
+    {
+      "id": "b-hex-hunter",
+      "name": "Hex Hunter",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "hex",
+        "endgame"
+      ],
+      "perks": [
+        "Hex: No One Escapes Death",
+        "Hex: Thrill of the Hunt",
+        "Enduring",
+        "Unnerving Presence"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Thrill of the Hunt protects your hex totems, No One Escapes Death makes the endgame deadly, Enduring helps against pallets and Unnerving Presence makes skill checks harder. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Do not give up if gens are done: when the gates are powered, No One Escapes Death makes your hits one-shot downs."
+    },
+    {
+      "id": "b-trapper-starter",
+      "name": "Trapper Starter",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Deerstalker",
+        "Bitter Murmur",
+        "Agitation",
+        "Enduring"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Agitation makes carrying survivors to your traps and hooks faster, Enduring helps you chase through pallets, Bitter Murmur and Deerstalker give easy information. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Set traps near gens, pallets and windows. Survivors caught in traps are easy downs.",
+      "killer": "The Trapper"
+    },
+    {
+      "id": "b-wraith-sneak",
+      "name": "Sneaky Wraith",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "stealth",
+        "info"
+      ],
+      "perks": [
+        "Whispers",
+        "Spies from the Shadows",
+        "Unrelenting",
+        "Bloodhound"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Whispers and Spies from the Shadows tell you where survivors are while you are invisible, Bloodhound helps you follow injured ones and Unrelenting gets you back into chase fast after a miss. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Stay cloaked while you travel and uncloak right next to a survivor for a surprise hit.",
+      "killer": "The Wraith"
+    },
+    {
+      "id": "b-nurse-anti-heal",
+      "name": "No Healing Allowed",
+      "role": "killer",
+      "type": "beginner",
+      "playstyles": [
+        "anti-heal",
+        "snowball"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Distressing",
+        "Thanatophobia",
+        "Enduring"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Sloppy Butcher and Thanatophobia punish survivors for being injured, Distressing makes your terror radius bigger so they stay scared, and Enduring helps in chases. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
+      "howToPlay": "Spread your hits over different survivors so many stay injured and slow."
     }
   ]
 }
