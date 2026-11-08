@@ -1,26 +1,68 @@
-import { useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
 
 export function Slot({ entity, fallback, big, showOwner }) {
   const owner = showOwner && entity ? entity.owner ?? null : undefined;
+  const [tip, setTip] = useState(null);
+  const show = (e) => {
+    if (!entity?.description) return;
+    const r = e.currentTarget.getBoundingClientRect();
+    setTip({ x: r.left + r.width / 2, top: r.top, bottom: r.bottom });
+  };
   return (
     <div
       className={`slot ${big ? 'slot-big' : ''}`}
-      title={
-        entity
-          ? `${entity.identicalTo ? `Same effect as ${entity.identicalTo}.\n\n` : ''}${entity.description}`
-          : fallback
-      }
+      tabIndex={entity?.description ? 0 : undefined}
+      onMouseEnter={show}
+      onMouseLeave={() => setTip(null)}
+      onFocus={show}
+      onBlur={() => setTip(null)}
+      title={entity ? undefined : fallback}
     >
       {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" loading="lazy" /> : <div className="slot-empty" />}
       <span>{entity?.name ?? fallback ?? '—'}</span>
       {owner !== undefined && (
-        <span className={`slot-owner ${owner ? '' : 'general'}`} title={owner ? `Unique perk of ${owner.name}` : 'General perk, available to everyone'}>
+        <span className={`slot-owner ${owner ? '' : 'general'}`}>
           {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" loading="lazy" />}
           {owner ? (entity.role === 'survivor' ? owner.name.split(' ')[0] : owner.name.replace(/^The /, '')) : 'General'}
         </span>
       )}
+      {tip && createPortal(<SlotTip entity={entity} pos={tip} />, document.body)}
+    </div>
+  );
+}
+
+/** Floating card with the full description, shown while hovering a slot. */
+function SlotTip({ entity, pos }) {
+  const ref = useRef(null);
+  const [style, setStyle] = useState({ left: pos.x, top: pos.bottom + 8, visibility: 'hidden' });
+  useLayoutEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const w = el.offsetWidth;
+    const h = el.offsetHeight;
+    const left = Math.min(Math.max(8, pos.x - w / 2), window.innerWidth - w - 8);
+    // Prefer below the icon; go above when there is no room.
+    const top = pos.bottom + 8 + h > window.innerHeight && pos.top - 8 - h > 0 ? pos.top - 8 - h : pos.bottom + 8;
+    setStyle({ left, top });
+  }, [pos]);
+  const owner = entity.owner;
+  return (
+    <div className="slot-tip" ref={ref} style={style} role="tooltip">
+      <div className="slot-tip-head">
+        <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" />
+        <div>
+          <strong>{entity.name}</strong>
+          <div className="muted small">
+            {entity.role === 'killer' ? 'Killer perk' : entity.role === 'survivor' ? 'Survivor perk' : entity.rarity ?? ''}
+            {entity.character !== undefined && (owner ? ` · ${owner.name}` : entity.role ? ' · General' : '')}
+          </div>
+        </div>
+      </div>
+      {entity.identicalTo && <p className="muted small">Same effect as {entity.identicalTo}.</p>}
+      <p className="slot-tip-desc">{entity.description}</p>
     </div>
   );
 }
