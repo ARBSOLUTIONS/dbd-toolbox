@@ -1,0 +1,20 @@
+{
+  "fetchedAt": "2026-11-08T03:04:27.083Z",
+  "durationSeconds": 6,
+  "patch": "10.2.2a",
+  "counts": {
+    "perks": 336,
+    "killers": 45,
+    "survivors": 55,
+    "items": 38,
+    "addons": 954,
+    "offerings": 88
+  },
+  "sources": [
+    {
+      "name": "Dead by Daylight Wiki",
+      "url": "https://deadbydaylight.wiki.gg",
+      "license": "CC BY-NC-SA 3.0"
+    }
+  ]
+}

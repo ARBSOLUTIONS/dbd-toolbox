@@ -1,0 +1,27 @@
+{
+  "name": "dbd-build-helper",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Personal Dead by Daylight build helper. Data from the Dead by Daylight Wiki (CC BY-NC-SA 3.0).",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n server,web -c yellow,cyan \"node --watch-path=server server/index.js\" \"vite\"",
+    "start": "vite build && node server/index.js",
+    "refresh-data": "node scripts/refresh-data.js",
+    "test": "node --test test/",
+    "check-builds": "node scripts/check-builds.js",
+    "build:static": "vite build --mode static && node scripts/build-static.js",
+    "indexnow": "node scripts/indexnow.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vite": "^6.0.7"
+  }
+}

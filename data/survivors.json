@@ -1,0 +1,827 @@
+[
+  {
+    "id": "dwight-fairfield",
+    "name": "Dwight Fairfield",
+    "aliases": "Dwight Fairfield",
+    "portrait": {
+      "local": "/icons/survivors/S01_DwightFairfield_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S01_DwightFairfield_Portrait.png/128px-S01_DwightFairfield_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Dwight_Fairfield",
+    "perks": [
+      "bond",
+      "leader",
+      "prove-thyself"
+    ]
+  },
+  {
+    "id": "meg-thomas",
+    "name": "Meg Thomas",
+    "aliases": "Meg Thomas",
+    "portrait": {
+      "local": "/icons/survivors/S02_MegThomas_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S02_MegThomas_Portrait.png/128px-S02_MegThomas_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Meg_Thomas",
+    "perks": [
+      "adrenaline",
+      "quick-and-quiet",
+      "sprint-burst"
+    ]
+  },
+  {
+    "id": "claudette-morel",
+    "name": "Claudette Morel",
+    "aliases": "Claudette Morel",
+    "portrait": {
+      "local": "/icons/survivors/S03_ClaudetteMorel_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S03_ClaudetteMorel_Portrait.png/128px-S03_ClaudetteMorel_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Claudette_Morel",
+    "perks": [
+      "botany-knowledge",
+      "empathy",
+      "self-care"
+    ]
+  },
+  {
+    "id": "jake-park",
+    "name": "Jake Park",
+    "aliases": "Jake Park 제이크 박 (Korean)",
+    "portrait": {
+      "local": "/icons/survivors/S04_JakePark_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S04_JakePark_Portrait.png/128px-S04_JakePark_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jake_Park",
+    "perks": [
+      "calm-spirit",
+      "iron-will",
+      "saboteur"
+    ]
+  },
+  {
+    "id": "nea-karlsson",
+    "name": "Nea Karlsson",
+    "aliases": "Nea Karlsson",
+    "portrait": {
+      "local": "/icons/survivors/S05_NeaKarlsson_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S05_NeaKarlsson_Portrait.png/128px-S05_NeaKarlsson_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Nea_Karlsson",
+    "perks": [
+      "balanced-landing",
+      "streetwise",
+      "urban-evasion"
+    ]
+  },
+  {
+    "id": "laurie-strode",
+    "name": "Laurie Strode",
+    "aliases": "Laurie Strode",
+    "portrait": {
+      "local": "/icons/survivors/S06_LaurieStrode_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S06_LaurieStrode_Portrait.png/128px-S06_LaurieStrode_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Laurie_Strode",
+    "perks": [
+      "decisive-strike",
+      "object-of-obsession",
+      "sole-survivor"
+    ]
+  },
+  {
+    "id": "ace-visconti",
+    "name": "Ace Visconti",
+    "aliases": "Ace Visconti",
+    "portrait": {
+      "local": "/icons/survivors/S07_AceVisconti_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S07_AceVisconti_Portrait.png/128px-S07_AceVisconti_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ace_Visconti",
+    "perks": [
+      "ace-in-the-hole",
+      "open-handed",
+      "up-the-ante"
+    ]
+  },
+  {
+    "id": "bill-overbeck",
+    "name": "Bill Overbeck",
+    "aliases": "William \"Bill\" Overbeck",
+    "portrait": {
+      "local": "/icons/survivors/S08_BillOverbeck_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S08_BillOverbeck_Portrait.png/128px-S08_BillOverbeck_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bill_Overbeck",
+    "perks": [
+      "borrowed-time",
+      "left-behind",
+      "unbreakable"
+    ]
+  },
+  {
+    "id": "feng-min",
+    "name": "Feng Min",
+    "aliases": "Feng Min 凤敏 (Chinese)",
+    "portrait": {
+      "local": "/icons/survivors/S09_FengMin_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S09_FengMin_Portrait.png/128px-S09_FengMin_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Feng_Min",
+    "perks": [
+      "alert",
+      "lithe",
+      "technician"
+    ]
+  },
+  {
+    "id": "david-king",
+    "name": "David King",
+    "aliases": "David King",
+    "portrait": {
+      "local": "/icons/survivors/S10_DavidKing_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S10_DavidKing_Portrait.png/128px-S10_DavidKing_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/David_King",
+    "perks": [
+      "dead-hard",
+      "no-mither",
+      "were-gonna-live-forever"
+    ]
+  },
+  {
+    "id": "quentin-smith",
+    "name": "Quentin Smith",
+    "aliases": "Quentin Smith",
+    "portrait": {
+      "local": "/icons/survivors/S11_QuentinSmith_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S11_QuentinSmith_Portrait.png/128px-S11_QuentinSmith_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Quentin_Smith",
+    "perks": [
+      "pharmacy",
+      "vigil",
+      "wake-up"
+    ]
+  },
+  {
+    "id": "david-tapp",
+    "name": "David Tapp",
+    "aliases": "Detective David Tapp",
+    "portrait": {
+      "local": "/icons/survivors/S12_DavidTapp_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S12_DavidTapp_Portrait.png/128px-S12_DavidTapp_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/David_Tapp",
+    "perks": [
+      "detectives-hunch",
+      "stake-out",
+      "tenacity"
+    ]
+  },
+  {
+    "id": "kate-denson",
+    "name": "Kate Denson",
+    "aliases": "Kate Denson",
+    "portrait": {
+      "local": "/icons/survivors/S13_KateDenson_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S13_KateDenson_Portrait.png/128px-S13_KateDenson_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Kate_Denson",
+    "perks": [
+      "boil-over",
+      "dance-with-me",
+      "windows-of-opportunity"
+    ]
+  },
+  {
+    "id": "adam-francis",
+    "name": "Adam Francis",
+    "aliases": "Adam Francis",
+    "portrait": {
+      "local": "/icons/survivors/S14_AdamFrancis_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S14_AdamFrancis_Portrait.png/128px-S14_AdamFrancis_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Adam_Francis",
+    "perks": [
+      "autodidact",
+      "deliverance",
+      "diversion"
+    ]
+  },
+  {
+    "id": "jeff-johansen",
+    "name": "Jeff Johansen",
+    "aliases": "Jeffrey \"Jeff\" Johansen",
+    "portrait": {
+      "local": "/icons/survivors/S15_JeffJohansen_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S15_JeffJohansen_Portrait.png/128px-S15_JeffJohansen_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jeff_Johansen",
+    "perks": [
+      "aftercare",
+      "breakdown",
+      "distortion"
+    ]
+  },
+  {
+    "id": "jane-romero",
+    "name": "Jane Romero",
+    "aliases": "Jane Romero",
+    "portrait": {
+      "local": "/icons/survivors/S16_JaneRomero_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S16_JaneRomero_Portrait.png/128px-S16_JaneRomero_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jane_Romero",
+    "perks": [
+      "head-on",
+      "poised",
+      "solidarity"
+    ]
+  },
+  {
+    "id": "ash-williams",
+    "name": "Ash Williams",
+    "aliases": "Ashley J. Williams",
+    "portrait": {
+      "local": "/icons/survivors/S17_AshWilliams_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S17_AshWilliams_Portrait.png/128px-S17_AshWilliams_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ash_Williams",
+    "perks": [
+      "buckle-up",
+      "flip-flop",
+      "mettle-of-man"
+    ]
+  },
+  {
+    "id": "nancy-wheeler",
+    "name": "Nancy Wheeler",
+    "aliases": "Nancy Wheeler",
+    "portrait": {
+      "local": "/icons/survivors/S18_NancyWheeler_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S18_NancyWheeler_Portrait.png/128px-S18_NancyWheeler_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Nancy_Wheeler",
+    "perks": [
+      "better-together",
+      "fixated",
+      "inner-strength"
+    ]
+  },
+  {
+    "id": "steve-harrington",
+    "name": "Steve Harrington",
+    "aliases": "Steve Harrington",
+    "portrait": {
+      "local": "/icons/survivors/S19_SteveHarrington_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S19_SteveHarrington_Portrait.png/128px-S19_SteveHarrington_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Steve_Harrington",
+    "perks": [
+      "babysitter",
+      "camaraderie",
+      "second-wind"
+    ]
+  },
+  {
+    "id": "yui-kimura",
+    "name": "Yui Kimura",
+    "aliases": "Yui Kimura 木村 結衣 (Japanese)",
+    "portrait": {
+      "local": "/icons/survivors/S20_YuiKimura_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S20_YuiKimura_Portrait.png/128px-S20_YuiKimura_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Yui_Kimura",
+    "perks": [
+      "any-means-necessary",
+      "breakout",
+      "lucky-break"
+    ]
+  },
+  {
+    "id": "zarina-kassir",
+    "name": "Zarina Kassir",
+    "aliases": "Zarina Kassir",
+    "portrait": {
+      "local": "/icons/survivors/S21_ZarinaKassir_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S21_ZarinaKassir_Portrait.png/128px-S21_ZarinaKassir_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Zarina_Kassir",
+    "perks": [
+      "for-the-people",
+      "off-the-record",
+      "red-herring"
+    ]
+  },
+  {
+    "id": "cheryl-mason",
+    "name": "Cheryl Mason",
+    "aliases": "Cheryl Mason",
+    "portrait": {
+      "local": "/icons/survivors/S22_CherylMason_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S22_CherylMason_Portrait.png/128px-S22_CherylMason_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Cheryl_Mason",
+    "perks": [
+      "blood-pact",
+      "repressed-alliance",
+      "soul-guard"
+    ]
+  },
+  {
+    "id": "felix-richter",
+    "name": "Felix Richter",
+    "aliases": "Felix Richter",
+    "portrait": {
+      "local": "/icons/survivors/S23_FelixRichter_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S23_FelixRichter_Portrait.png/128px-S23_FelixRichter_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Felix_Richter",
+    "perks": [
+      "built-to-last",
+      "desperate-measures",
+      "visionary"
+    ]
+  },
+  {
+    "id": "elodie-rakoto",
+    "name": "Élodie Rakoto",
+    "aliases": "Élodie Rakoto",
+    "portrait": {
+      "local": "/icons/survivors/S24_ElodieRakoto_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S24_ElodieRakoto_Portrait.png/128px-S24_ElodieRakoto_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/%C3%89lodie_Rakoto",
+    "perks": [
+      "appraisal",
+      "deception",
+      "power-struggle"
+    ]
+  },
+  {
+    "id": "lee-yun-jin",
+    "name": "Lee Yun-jin",
+    "aliases": "Lee Yun-jin 이윤진 (Korean)",
+    "portrait": {
+      "local": "/icons/survivors/S25_LeeYun-jin_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S25_LeeYun-jin_Portrait.png/128px-S25_LeeYun-jin_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Lee_Yun-jin",
+    "perks": [
+      "fast-track",
+      "self-preservation",
+      "smash-hit"
+    ]
+  },
+  {
+    "id": "jill-valentine",
+    "name": "Jill Valentine",
+    "aliases": "Jill Valentine",
+    "portrait": {
+      "local": "/icons/survivors/S26_JillValentine_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S26_JillValentine_Portrait.png/128px-S26_JillValentine_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jill_Valentine",
+    "perks": [
+      "blast-mine",
+      "counterforce",
+      "resurgence"
+    ]
+  },
+  {
+    "id": "leon-scott-kennedy",
+    "name": "Leon Scott Kennedy",
+    "aliases": "Leon Scott Kennedy",
+    "portrait": {
+      "local": "/icons/survivors/S27_LeonScottKennedy_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S27_LeonScottKennedy_Portrait.png/128px-S27_LeonScottKennedy_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Leon_Scott_Kennedy",
+    "perks": [
+      "bite-the-bullet",
+      "flashbang",
+      "rookie-spirit"
+    ]
+  },
+  {
+    "id": "mikaela-reid",
+    "name": "Mikaela Reid",
+    "aliases": "Mikaela Reid",
+    "portrait": {
+      "local": "/icons/survivors/S28_MikaelaReid_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S28_MikaelaReid_Portrait.png/128px-S28_MikaelaReid_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Mikaela_Reid",
+    "perks": [
+      "boon-circle-of-healing",
+      "boon-shadow-step",
+      "clairvoyance"
+    ]
+  },
+  {
+    "id": "jonah-vasquez",
+    "name": "Jonah Vasquez",
+    "aliases": "Jonah Vasquez",
+    "portrait": {
+      "local": "/icons/survivors/S29_JonahVasquez_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S29_JonahVasquez_Portrait.png/128px-S29_JonahVasquez_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jonah_Vasquez",
+    "perks": [
+      "boon-exponential",
+      "corrective-action",
+      "overcome"
+    ]
+  },
+  {
+    "id": "yoichi-asakawa",
+    "name": "Yoichi Asakawa",
+    "aliases": "Yoichi Asakawa 浅川 陽一 (Japanese)",
+    "portrait": {
+      "local": "/icons/survivors/S30_YoichiAsakawa_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S30_YoichiAsakawa_Portrait.png/128px-S30_YoichiAsakawa_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Yoichi_Asakawa",
+    "perks": [
+      "boon-dark-theory",
+      "empathic-connection",
+      "parental-guidance"
+    ]
+  },
+  {
+    "id": "haddie-kaur",
+    "name": "Haddie Kaur",
+    "aliases": "Haddie Kaur",
+    "portrait": {
+      "local": "/icons/survivors/S31_HaddieKaur_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S31_HaddieKaur_Portrait.png/128px-S31_HaddieKaur_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Haddie_Kaur",
+    "perks": [
+      "inner-focus",
+      "overzealous",
+      "residual-manifest"
+    ]
+  },
+  {
+    "id": "ada-wong",
+    "name": "Ada Wong",
+    "aliases": "Ada Wong",
+    "portrait": {
+      "local": "/icons/survivors/S32_AdaWong_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S32_AdaWong_Portrait.png/128px-S32_AdaWong_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ada_Wong",
+    "perks": [
+      "low-profile",
+      "reactive-healing",
+      "wiretap"
+    ]
+  },
+  {
+    "id": "rebecca-chambers",
+    "name": "Rebecca Chambers",
+    "aliases": "Rebecca Chambers",
+    "portrait": {
+      "local": "/icons/survivors/S33_RebeccaChambers_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S33_RebeccaChambers_Portrait.png/128px-S33_RebeccaChambers_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Rebecca_Chambers",
+    "perks": [
+      "better-than-new",
+      "hyperfocus",
+      "reassurance"
+    ]
+  },
+  {
+    "id": "vittorio-toscano",
+    "name": "Vittorio Toscano",
+    "aliases": "Vittorio Toscano",
+    "portrait": {
+      "local": "/icons/survivors/S34_VittorioToscano_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S34_VittorioToscano_Portrait.png/128px-S34_VittorioToscano_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vittorio_Toscano",
+    "perks": [
+      "fogwise",
+      "potential-energy",
+      "quick-gambit"
+    ]
+  },
+  {
+    "id": "thalita-lyra",
+    "name": "Thalita Lyra",
+    "aliases": "Thalita Lyra",
+    "portrait": {
+      "local": "/icons/survivors/S35_ThalitaLyra_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S35_ThalitaLyra_Portrait.png/128px-S35_ThalitaLyra_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Thalita_Lyra",
+    "perks": [
+      "cut-loose",
+      "friendly-competition",
+      "teamwork-power-of-two"
+    ]
+  },
+  {
+    "id": "renato-lyra",
+    "name": "Renato Lyra",
+    "aliases": "Renato Lyra",
+    "portrait": {
+      "local": "/icons/survivors/S36_RenatoLyra_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S36_RenatoLyra_Portrait.png/128px-S36_RenatoLyra_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Renato_Lyra",
+    "perks": [
+      "background-player",
+      "blood-rush",
+      "teamwork-collective-stealth"
+    ]
+  },
+  {
+    "id": "gabriel-soma",
+    "name": "Gabriel Soma",
+    "aliases": "Gabriel Soma",
+    "portrait": {
+      "local": "/icons/survivors/S37_GabrielSoma_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S37_GabrielSoma_Portrait.png/128px-S37_GabrielSoma_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Gabriel_Soma",
+    "perks": [
+      "made-for-this",
+      "scavenger",
+      "troubleshooter"
+    ]
+  },
+  {
+    "id": "nicolas-cage",
+    "name": "Nicolas Cage",
+    "aliases": "Nicolas Cage",
+    "portrait": {
+      "local": "/icons/survivors/S38_NicolasCage_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S38_NicolasCage_Portrait.png/128px-S38_NicolasCage_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Nicolas_Cage",
+    "perks": [
+      "dramaturgy",
+      "plot-twist",
+      "scene-partner"
+    ]
+  },
+  {
+    "id": "ellen-ripley",
+    "name": "Ellen Ripley",
+    "aliases": "Ellen Ripley",
+    "portrait": {
+      "local": "/icons/survivors/S39_EllenRipley_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S39_EllenRipley_Portrait.png/128px-S39_EllenRipley_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ellen_Ripley",
+    "perks": [
+      "chemical-trap",
+      "light-footed",
+      "lucky-star"
+    ]
+  },
+  {
+    "id": "alan-wake",
+    "name": "Alan Wake",
+    "aliases": "Alan Wake",
+    "portrait": {
+      "local": "/icons/survivors/S40_AlanWake_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S40_AlanWake_Portrait.png/128px-S40_AlanWake_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Alan_Wake",
+    "perks": [
+      "boon-illumination",
+      "champion-of-light",
+      "deadline"
+    ]
+  },
+  {
+    "id": "sable-ward",
+    "name": "Sable Ward",
+    "aliases": "Sable Ward",
+    "portrait": {
+      "local": "/icons/survivors/S41_SableWard_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S41_SableWard_Portrait.png/128px-S41_SableWard_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sable_Ward",
+    "perks": [
+      "invocation-weaving-spiders",
+      "strength-in-shadows",
+      "wicked"
+    ]
+  },
+  {
+    "id": "the-troupe",
+    "name": "The Troupe",
+    "aliases": "Aestri Yazar & Baermar Uraz",
+    "portrait": {
+      "local": "/icons/survivors/S42_TheTroupe_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S42_TheTroupe_Portrait.png/128px-S42_TheTroupe_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Troupe",
+    "perks": [
+      "bardic-inspiration",
+      "mirrored-illusion",
+      "still-sight"
+    ]
+  },
+  {
+    "id": "lara-croft",
+    "name": "Lara Croft",
+    "aliases": "Lara Croft",
+    "portrait": {
+      "local": "/icons/survivors/S43_LaraCroft_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S43_LaraCroft_Portrait.png/128px-S43_LaraCroft_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Lara_Croft",
+    "perks": [
+      "finesse",
+      "hardened",
+      "specialist"
+    ]
+  },
+  {
+    "id": "trevor-belmont",
+    "name": "Trevor Belmont",
+    "aliases": "Trevor Belmont",
+    "portrait": {
+      "local": "/icons/survivors/S44_TrevorBelmont_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S44_TrevorBelmont_Portrait.png/128px-S44_TrevorBelmont_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Trevor_Belmont",
+    "perks": [
+      "exultation",
+      "eyes-of-belmont",
+      "moment-of-glory"
+    ]
+  },
+  {
+    "id": "taurie-cain",
+    "name": "Taurie Cain",
+    "aliases": "Taurie Cain",
+    "portrait": {
+      "local": "/icons/survivors/S45_TaurieCain_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S45_TaurieCain_Portrait.png/128px-S45_TaurieCain_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Taurie_Cain",
+    "perks": [
+      "clean-break",
+      "invocation-treacherous-crows",
+      "shoulder-the-burden"
+    ]
+  },
+  {
+    "id": "orela-rose",
+    "name": "Orela Rose",
+    "aliases": "Orela Rose",
+    "portrait": {
+      "local": "/icons/survivors/S46_OrelaRose_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S46_OrelaRose_Portrait.png/128px-S46_OrelaRose_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Orela_Rose",
+    "perks": [
+      "do-no-harm",
+      "duty-of-care",
+      "rapid-response"
+    ]
+  },
+  {
+    "id": "rick-grimes",
+    "name": "Rick Grimes",
+    "aliases": "Rick Grimes",
+    "portrait": {
+      "local": "/icons/survivors/S47_RickGrimes_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S47_RickGrimes_Portrait.png/128px-S47_RickGrimes_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Rick_Grimes",
+    "perks": [
+      "apocalyptic-ingenuity",
+      "come-and-get-me",
+      "teamwork-toughen-up"
+    ]
+  },
+  {
+    "id": "michonne-grimes",
+    "name": "Michonne Grimes",
+    "aliases": "Michonne Grimes",
+    "portrait": {
+      "local": "/icons/survivors/S48_MichonneGrimes_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S48_MichonneGrimes_Portrait.png/128px-S48_MichonneGrimes_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Michonne_Grimes",
+    "perks": [
+      "conviction",
+      "last-stand",
+      "teamwork-throw-down"
+    ]
+  },
+  {
+    "id": "vee-boonyasak",
+    "name": "Vee Boonyasak",
+    "aliases": "Vee Boonyasak",
+    "portrait": {
+      "local": "/icons/survivors/S49_VeeBoonyasak_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S49_VeeBoonyasak_Portrait.png/128px-S49_VeeBoonyasak_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vee_Boonyasak",
+    "perks": [
+      "ghost-notes",
+      "one-two-three-four",
+      "road-life"
+    ]
+  },
+  {
+    "id": "dustin-henderson",
+    "name": "Dustin Henderson",
+    "aliases": "Dustin Henderson",
+    "portrait": {
+      "local": "/icons/survivors/S50_DustinHenderson_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S50_DustinHenderson_Portrait.png/128px-S50_DustinHenderson_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Dustin_Henderson",
+    "perks": [
+      "bada-bada-boom",
+      "change-of-plan",
+      "teamwork-full-circuit"
+    ]
+  },
+  {
+    "id": "eleven",
+    "name": "Eleven",
+    "aliases": "Eleven Jane Hopper",
+    "portrait": {
+      "local": "/icons/survivors/S51_Eleven_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S51_Eleven_Portrait.png/128px-S51_Eleven_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Eleven",
+    "perks": [
+      "extrasensory-perception",
+      "teamwork-soft-spoken",
+      "we-see-you"
+    ]
+  },
+  {
+    "id": "kwon-tae-young",
+    "name": "Kwon Tae-young",
+    "aliases": "Kwon Tae-young 권태영 (Korean)",
+    "portrait": {
+      "local": "/icons/survivors/S52_KwonTae-young_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S52_KwonTae-young_Portrait.png/128px-S52_KwonTae-young_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Kwon_Tae-young",
+    "perks": [
+      "a-place-for-us",
+      "five-moves-ahead",
+      "flow-state"
+    ]
+  },
+  {
+    "id": "shane-wiigwaas",
+    "name": "Shane Wiigwaas",
+    "aliases": "Shane Wiigwaas",
+    "portrait": {
+      "local": "/icons/survivors/S53_ShaneWiigwaas_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S53_ShaneWiigwaas_Portrait.png/128px-S53_ShaneWiigwaas_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shane_Wiigwaas",
+    "perks": [
+      "cross-examination",
+      "lend-a-hand",
+      "wide-open-throttle"
+    ]
+  },
+  {
+    "id": "aurora-stardotter",
+    "name": "Aurora Stardotter",
+    "aliases": "Aurora Stardotter",
+    "portrait": {
+      "local": "/icons/survivors/S54_AuroraStardotter_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S54_AuroraStardotter_Portrait.png/128px-S54_AuroraStardotter_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Aurora_Stardotter",
+    "perks": [
+      "boon-steadfast",
+      "fruits-of-your-labor",
+      "salvations-cry"
+    ]
+  },
+  {
+    "id": "sienna-shaw",
+    "name": "Sienna Shaw",
+    "aliases": "Sienna Shaw",
+    "portrait": {
+      "local": "/icons/survivors/S55_SiennaShaw_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/S55_SiennaShaw_Portrait.png/128px-S55_SiennaShaw_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sienna_Shaw",
+    "perks": [
+      "best-gift-ever",
+      "shared-trauma",
+      "valkyries-rage"
+    ]
+  }
+]

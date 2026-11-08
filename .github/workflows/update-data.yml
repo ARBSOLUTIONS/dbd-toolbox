@@ -1,0 +1,69 @@
+# Keeps the public site up to date with the game.
+# Runs every hour, but scripts/ci-update.js only contacts the wiki when a check
+# is due: every 12 hours normally, every hour on predicted patch days.
+# When the game data changed, it commits the new data; Cloudflare Pages then
+# rebuilds the site automatically. State-only commits use [skip ci] so they
+# do not trigger a rebuild.
+name: Update game data
+
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Check the wiki now, even if no check is due'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: Check for a new patch (and refresh if needed)
+        run: node scripts/ci-update.js ${{ inputs.force && '--force' || '' }}
+
+      - name: Run tests on the new data
+        run: npm test || echo "::warning::Tests report problems (e.g. new perks without hand-checked tags). The site still updates."
+
+      - name: Commit changes
+        id: commit
+        run: |
+          git config user.name "dbd-toolbox-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          if git diff --cached --name-only | grep -qv '^data/auto-update.json$'; then
+            PATCH=$(node -p "require('./data/meta.json').patch")
+            git commit -m "Update game data (patch $PATCH)"
+            echo "data=true" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Update check state [skip ci]"
+          fi
+          git push
+
+      - name: Notify search engines (IndexNow)
+        if: steps.commit.outputs.data == 'true'
+        run: |
+          sleep 300   # give Cloudflare Pages time to publish the new build
+          npm run indexnow || echo "::warning::IndexNow ping failed"

@@ -1,0 +1,496 @@
+[
+  {
+    "id": "chinese-firecracker",
+    "name": "Chinese Firecracker",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA row of small explosive devices wrapped in heavy paper casing.\nCan be used as a distraction, as a blinding device or to celebrate.\n• Press the Use Item button to detonate the Firecracker.\n• Detonates into loud bangs and intense light flashes, temporarily blinding and deafening nearby Players.\nThe Chinese Firecracker is consumed on use.\nThe Chinese Firecracker is only available during Lunar Events.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_chineseFirecracker.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_chineseFirecracker.png/96px-IconItems_chineseFirecracker.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Chinese_Firecracker",
+    "type": "firecracker"
+  },
+  {
+    "id": "third-year-party-starter",
+    "name": "Third Year Party Starter",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA small, highly-explosive dinner table decoration.\nCan be used as a distraction, as a blinding device or to celebrate our three years together.\n• Press the Use Item button to detonate the Firecracker.\n• Detonates into loud bangs and intense light flashes, temporarily blinding and deafening nearby Players.\nThe Third Year Party Starter is consumed on use.\nThe Third Year Party Starter was only available during the Third Year Anniversary Event.",
+    "quote": "\"\"Happy Anniversary! Here is to our three years together! \" — The Dead by Daylight Team\"",
+    "icon": {
+      "local": "/icons/items/IconItems_thirdYearPartyStarter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_thirdYearPartyStarter.png/96px-IconItems_thirdYearPartyStarter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Third_Year_Party_Starter",
+    "type": "firecracker"
+  },
+  {
+    "id": "winter-party-starter",
+    "name": "Winter Party Starter",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA small, highly-explosive dinner table decoration.\nCan be used as a distraction, as a blinding device or to celebrate.\n• Press the Use Item button to detonate the Firecracker.\n• Detonates into loud bangs and intense light flashes, temporarily blinding and deafening nearby Players.\nThe Winter Party Starter is consumed on use.\nThe Winter Party Starter is only available during Winter Events.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_winterPartyStarter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_winterPartyStarter.png/96px-IconItems_winterPartyStarter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Winter_Party_Starter",
+    "type": "firecracker"
+  },
+  {
+    "id": "flashlight",
+    "name": "Flashlight",
+    "rarity": "uncommon",
+    "description": "A standard Flashlight.\nCan be used to light your way in the darkness.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.",
+    "quote": "\"Most of the battery life was wastefully used by the previous owner. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_flashlight.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_flashlight.png/96px-IconItems_flashlight.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "sport-flashlight",
+    "name": "Sport Flashlight",
+    "rarity": "rare",
+    "description": "A very portable Flashlight with a good grip.\nIts efficient technology produces a powerful light while consuming less power.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.\n• Has an increased Aim accuracy of +20%.\n• Has a reduced Depletion rate of -11%.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_sportFlashlight.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_sportFlashlight.png/96px-IconItems_sportFlashlight.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sport_Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "utility-flashlight",
+    "name": "Utility Flashlight",
+    "rarity": "very-rare",
+    "description": "A sturdy but heavy Flashlight that packs a lot of power.\n• Press the Use Item button to light the Flashlight for up to 12 seconds.\n• Has an increased Beam brightness of +30%.\n• Has an increased Blindness duration of +15%.\n• Has a reduced Aim accuracy of -20%.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_utilityFlashlight.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_utilityFlashlight.png/96px-IconItems_utilityFlashlight.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Utility_Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "anniversary-flashlight",
+    "name": "Anniversary Flashlight",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA festive Flashlight.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.\n• Explodes with confetti upon blinding the Killer.\nSurprise!\nThe Anniversary Flashlight was only available during the Fourth and Fifth Year Anniversary Events.",
+    "quote": "\"\"Happy Anniversary! Here is to many more! \" — The Dead by Daylight Team\"",
+    "icon": {
+      "local": "/icons/items/IconItems_anniversaryFlashlight.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_anniversaryFlashlight.png/96px-IconItems_anniversaryFlashlight.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Anniversary_Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "banquet-flashlight",
+    "name": "Banquet Flashlight",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nIt's time to burn calories...and retinas.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.\nThe Banquet Flashlight is only available during the Tenth Year Anniversary Event.",
+    "quote": "\"\"We're blinded with happiness from all of your support! \" — The Dead by Daylight Team\"",
+    "icon": {
+      "local": "/icons/items/T_UI_iconItems_flashlight_anniversary2026.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/T_UI_iconItems_flashlight_anniversary2026.png/96px-T_UI_iconItems_flashlight_anniversary2026.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Banquet_Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "masquerade-flashlight",
+    "name": "Masquerade Flashlight",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nNot even a mask can protect you from this Flashlight's bright beam.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.\nThe Masquerade Flashlight is only available during Anniversary Events.",
+    "quote": "\"\"Happy Anniversary! The future looks bright! \" — The Dead by Daylight Team\"",
+    "icon": {
+      "local": "/icons/items/IconItems_masqueradeFlashlight.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_masqueradeFlashlight.png/96px-IconItems_masqueradeFlashlight.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Masquerade_Flashlight",
+    "type": "flashlight"
+  },
+  {
+    "id": "will-o-wisp",
+    "name": "Will O' Wisp",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA Flashlight equipped with a special lens cover that adds an orange tint and a little Ghost to the beam.\n• Press the Use Item button to light the Flashlight for up to 8 seconds.\n• Causes more friendly Ghosts in your life.\nThe Will O' Wisp is only available during Halloween Events.",
+    "quote": "\"Happy Trick or Treating! \"",
+    "icon": {
+      "local": "/icons/items/IconItems_willOWisp.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_willOWisp.png/96px-IconItems_willOWisp.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Will_O%27_Wisp",
+    "type": "flashlight"
+  },
+  {
+    "id": "apprentices-fog-vial",
+    "name": "Apprentice's Fog Vial",
+    "rarity": "common",
+    "description": "Start the Trial with 4 Charges.\nPress the Use Item button to release a concentrated Fog Cloud:\n• Expands to a maximum size of 8 metres over 2 seconds.\n• Lasts for 8 seconds.\n• Obscures visibility and sounds within its Area of Effect:\n• Has an opacity of 33%.\n• Suppresses Auras and Scratch Marks.\nApprentice's Fog Vial takes 70 seconds to recharge after use.",
+    "quote": "\"Made by the hands of a diligent but timid novice. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_apprenticesFogVial.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_apprenticesFogVial.png/96px-IconItems_apprenticesFogVial.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Apprentice%27s_Fog_Vial",
+    "type": "fog-vial"
+  },
+  {
+    "id": "artisans-fog-vial",
+    "name": "Artisan's Fog Vial",
+    "rarity": "uncommon",
+    "description": "Start the Trial with 4 Charges.\nPress the Use Item button to release a concentrated Fog Cloud:\n• Expands to a maximum size of 8 metres over 1.5 seconds.\n• Lasts for 10 seconds.\n• Obscures visibility and sounds within its Area of Effect:\n• Has an opacity of 33%.\n• Suppresses Auras and Scratch Marks.\nArtisan's Fog Vial takes 65 seconds to recharge after use.",
+    "quote": "\"Crafted by an experienced glazier with a love for her craft. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_artisansFogVial.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_artisansFogVial.png/96px-IconItems_artisansFogVial.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Artisan%27s_Fog_Vial",
+    "type": "fog-vial"
+  },
+  {
+    "id": "vigos-fog-vial",
+    "name": "Vigo's Fog Vial",
+    "rarity": "rare",
+    "description": "Start the Trial with 4 Charges.\nPress the Use Item button to release a concentrated Fog Cloud:\n• Expands to a maximum size of 8 metres over 1.2 seconds.\n• Lasts for 12 seconds.\n• Obscures visibility and sounds within its Area of Effect:\n• Has an opacity of 33%.\n• Suppresses Auras and Scratch Marks.\nVigo's Fog Vial takes 60 seconds to recharge after use.",
+    "quote": "\"From the man's own collection. Impeccable. Unparalleled. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_vigosFogVial.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_vigosFogVial.png/96px-IconItems_vigosFogVial.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vigo%27s_Fog_Vial",
+    "type": "fog-vial"
+  },
+  {
+    "id": "broken-key",
+    "name": "Broken Key",
+    "rarity": "common",
+    "description": "Start the Trial with 6 Charges.\nPress and hold the Use Item button to channel the Broken Key:\n• The Auras of other Survivors within 48 metres of your location are revealed to you for 8 seconds.\nThe Broken Key consumes -1 Charge per use of its ability.",
+    "quote": "\"The bow and shank of a key, vibrating with power. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_brokenKey.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_brokenKey.png/96px-IconItems_brokenKey.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Broken_Key",
+    "type": "key"
+  },
+  {
+    "id": "dull-key",
+    "name": "Dull Key",
+    "rarity": "uncommon",
+    "description": "Start the Trial with 5 Charges.\nPress and hold the Use Item button to channel the Dull Key:\n• The Auras of other Survivors within 56 metres of your location are revealed to you for 9 seconds.\nWhile standing next to a locked Chest, press the Use Item button to quickly open it:\n• Guarantees an Item of Rare Rarity or higher.\n• The Aura of the Chest is revealed to other Survivors within 42 metres and highlighted in yellow:\n• Grants the ability for 1 other Survivor to Rummage through that Chest once.\n• Guarantees an Item of Rare Rarity or higher.\n• While performing the Rummage action, the Aura of that Survivor is revealed to the Key holder.\nWhile standing next to the closed Hatch, press the Use Item button to re-open it:\n• Takes 2.5 seconds to open.\nThe Dull Key consumes -1 Charge per use of any one of its abilities.",
+    "quote": "\"A bent and dull key that once held great power. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_dullKey.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_dullKey.png/96px-IconItems_dullKey.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Dull_Key",
+    "type": "key"
+  },
+  {
+    "id": "skeleton-key",
+    "name": "Skeleton Key",
+    "rarity": "rare",
+    "description": "Start the Trial with 6 Charges.\nPress and hold the Use Item button to channel the Skeleton Key:\n• The Auras of other Survivors within 64 metres of your location are revealed to you for 10 seconds.\nWhile standing next to a locked Chest, press the Use Item button to quickly open it:\n• Guarantees an Item of Rare Rarity or higher.\n• The Aura of the Chest is revealed to other Survivors within 42 metres and highlighted in yellow:\n• Grants the ability for 1 other Survivor to Rummage through that Chest once.\n• Guarantees an Item of Rare Rarity or higher.\n• While performing the Rummage action, the Aura of that Survivor is revealed to the Key holder.\nWhile standing next to the closed Hatch, press the Use Item button to re-open it:\n• Takes 2.5 seconds to open.\nThe Skeleton Key consumes -1 Charge per use of any one of its abilities.",
+    "quote": "\"A tarnished and crooked key, vibrating with ominous power. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_skeletonKey.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_skeletonKey.png/96px-IconItems_skeletonKey.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Skeleton_Key",
+    "type": "key"
+  },
+  {
+    "id": "cryptic-map",
+    "name": "Cryptic Map",
+    "rarity": "common",
+    "description": "Start the Trial with 4 Charges.\nPress the Use Item button to channel the Cryptic Map:\n• The Auras of Pallets and Windows within 24 metres of your location are revealed to you for 10 seconds.\nWhile channelling the Map, press the Secondary Action button at any point before the timer elapses for the following additional effect:\n• Creates a Beam of Light at your current location that lasts for 16 seconds.\n• The Auras of Generators within 32 metres of it are revealed to all Survivors and highlighted in red.\nThe Cryptic Map consumes -1 Charge per use.",
+    "quote": "\"Looking at it, the directions make no sense. But merely holding it grants you an uncanny intuition. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_CrypticMap.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_CrypticMap.png/96px-IconItems_CrypticMap.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Cryptic_Map",
+    "type": "map"
+  },
+  {
+    "id": "scribbled-map",
+    "name": "Scribbled Map",
+    "rarity": "uncommon",
+    "description": "Start the Trial with 5 Charges.\nPress the Use Item button to channel the Scribbled Map:\n• The Auras of Pallets and Windows within 32 metres of your location are revealed to you for 12 seconds.\nWhile channelling the Map, press the Secondary Action button at any point before the timer elapses for the following additional effect:\n• Creates a Beam of Light at your current location that lasts for 16 seconds.\n• The Auras of Generators within 32 metres of it are revealed to all Survivors and highlighted in red.\nThe Scribbled Map consumes -1 Charge per use.",
+    "quote": "\"Peering at the parchment, a path appears in your mind. Moments later, you feel lost again. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_map.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_map.png/96px-IconItems_map.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Scribbled_Map",
+    "type": "map"
+  },
+  {
+    "id": "annotated-map",
+    "name": "Annotated Map",
+    "rarity": "rare",
+    "description": "Start the Trial with 6 Charges.\nPress the Use Item button to channel the Annotated Map:\n• The Auras of Pallets and Windows within 40 metres of your location are revealed to you for 14 seconds.\nWhile channelling the Map, press the Secondary Action button at any point before the timer elapses for the following additional effect:\n• Creates a Beam of Light at your current location that lasts for 16 seconds.\n• The Auras of Generators within 32 metres of it are revealed to all Survivors and highlighted in red.\nThe Annotated Map consumes -1 Charge per use.",
+    "quote": "\"The sketch is clear and detailed. Strange knowledge flows into you, followed by dread uncertainty. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_rainbowMap.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_rainbowMap.png/96px-IconItems_rainbowMap.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Annotated_Map",
+    "type": "map"
+  },
+  {
+    "id": "bloodsense-map",
+    "name": "Bloodsense Map",
+    "rarity": "event",
+    "description": "Start the Trial with 8 Charges.\nPress the Use Item button to channel the Bloodsense Map:\n• The Auras of injured Survivors, Pallets, and Windows within 48 metres of your location are revealed to you for 14 seconds.\n• Causes Pools of Blood to spawn beneath you while being used.\nWhile channelling the Map, press the Secondary Action button at any point before the timer elapses for the following additional effect:\n• Creates a Beam of Light at your current location that lasts for 16 seconds.\n• The Auras of Generators within 32 metres of it are revealed to all Survivors and highlighted in red.\nThe Bloodsense Map consumes -1 Charge per use.",
+    "quote": "\"A bloodstained piece of parchment, hastily rolled and burning with a strange power. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_bloodsenseMap.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_bloodsenseMap.png/96px-IconItems_bloodsenseMap.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bloodsense_Map",
+    "type": "map"
+  },
+  {
+    "id": "camping-aid-kit",
+    "name": "Camping Aid Kit",
+    "rarity": "common",
+    "description": "A rudimentary First Aid Kit which can save lives in emergencies, even if it's lacking some of its supplies.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +35%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Camping Aid Kit has a Capacity of 24 Charges.",
+    "quote": "\"Barely has enough material for a decent patch-up. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_campingAidKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_campingAidKit.png/96px-IconItems_campingAidKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Camping_Aid_Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "first-aid-kit",
+    "name": "First Aid Kit",
+    "rarity": "uncommon",
+    "description": "A standard First Aid Kit with all the necessary equipment for treating common to more serious injuries.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +40%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe First Aid Kit has a Capacity of 24 Charges.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_firstAidKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_firstAidKit.png/96px-IconItems_firstAidKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/First_Aid_Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "emergency-med-kit",
+    "name": "Emergency Med-Kit",
+    "rarity": "rare",
+    "description": "A sturdy and well organised Med-Kit equipped with top condition emergency supplies.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +45%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Emergency Med-Kit has a Capacity of 24 Charges.",
+    "quote": "\"There is a cure for almost everything...but not for this. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_emergencyMedKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_emergencyMedKit.png/96px-IconItems_emergencyMedKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Emergency_Med-Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "ranger-med-kit",
+    "name": "Ranger Med-Kit",
+    "rarity": "very-rare",
+    "description": "A large metal box containing medical supplies aimed at emergency rescues in hard to reach, often isolated locations.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +50%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Ranger Med-Kit has a Capacity of 24 Charges.",
+    "quote": "\"A small engraved label can be found glued to the back panel: VK. ID-3994723. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_rangerMedKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_rangerMedKit.png/96px-IconItems_rangerMedKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ranger_Med-Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "all-hallows-eve-lunchbox",
+    "name": "All Hallows' Eve Lunchbox",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA plastic lunchbox with phosphorescent Halloween Stickers that has been packed with First-Aid equipment.\n• Makes you considerably more visible.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +40%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe All Hallows' Eve Lunchbox has a Capacity of 24 Charges.\nThe All Hallows' Eve Lunchbox is only available during Halloween Events.",
+    "quote": "\"Safety first! Make sure you can be seen when trick or treating. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_allHallowsEveLunchbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_allHallowsEveLunchbox.png/96px-IconItems_allHallowsEveLunchbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/All_Hallows%27_Eve_Lunchbox",
+    "type": "medkit"
+  },
+  {
+    "id": "anniversary-med-kit",
+    "name": "Anniversary Med-Kit",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA festive Med-Kit that explodes with confetti upon fully healing a Survivor. Surprise!\n• Increased confetti of +100%.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +40%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Anniversary Med-Kit has a Capacity of 24 Charges.\nThe Anniversary Med-Kit was only available during the Fourth and Fifth Year Anniversary Events.",
+    "quote": "\"Happy Anniversary! Here's to many more! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/IconItems_anniversaryMedKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_anniversaryMedKit.png/96px-IconItems_anniversaryMedKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Anniversary_Med-Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "banquet-med-kit",
+    "name": "Banquet Med-Kit",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nDoes it heal indigestion? There's only one way to find out.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +40%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Banquet Med-Kit has a Capacity of 24 Charges.\nThe Banquet Med-Kit is only available during the Tenth Year Anniversary Event.",
+    "quote": "\"Here's to Health! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/T_UI_iconItems_medkit_anniversary2026.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/T_UI_iconItems_medkit_anniversary2026.png/96px-T_UI_iconItems_medkit_anniversary2026.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Banquet_Med-Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "masquerade-med-kit",
+    "name": "Masquerade Med-Kit",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA festive Med-Kit with a shocking surprise, giving a whole new meaning to the term \"Health Scare\".\n• Increased confetti of +100%.\nCan be used to heal other Survivors:\n• Increased Altruistic Healing speed of +40%.\nUnlocks the Self-Heal action:\n• Reduced Personal Healing speed of -33%.\n• Reduced Item efficiency of -33%.\nThe Masquerade Med-Kit has a Capacity of 24 Charges.\nThe Masquerade Med-Kit is only available during Anniversary Events.",
+    "quote": "\"Happy Anniversary! To your health! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/IconItems_masqueradeMedKit.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_masqueradeMedKit.png/96px-IconItems_masqueradeMedKit.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Masquerade_Med-Kit",
+    "type": "medkit"
+  },
+  {
+    "id": "worn-out-tools",
+    "name": "Worn-Out Tools",
+    "rarity": "common",
+    "description": "A metal box containing out of condition tools that could break at any moment.\nEven without training, can be used to repair or break various mechanical components.\n• 16 Charges.\n• Increases the Repair speed by +50%.\n• Reduces the Success zone of Good Skill Checks by -10%.\n• Unlocks the Sabotage action.",
+    "quote": "\"You call these tools? ... Really? \"",
+    "icon": {
+      "local": "/icons/items/IconItems_wornOutTools.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_wornOutTools.png/96px-IconItems_wornOutTools.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Worn-Out_Tools",
+    "type": "toolbox"
+  },
+  {
+    "id": "toolbox",
+    "name": "Toolbox",
+    "rarity": "uncommon",
+    "description": "Metal box containing a set of basic tools.\nEven without training, can be used to repair or break various mechanical components.\n• 20 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +15%.",
+    "quote": "\"It is unclear as to where these tools come from. Were they brought in by one of us or did they belong to one of the monsters? \"",
+    "icon": {
+      "local": "/icons/items/IconItems_toolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_toolbox.png/96px-IconItems_toolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "commodious-toolbox",
+    "name": "Commodious Toolbox",
+    "rarity": "rare",
+    "description": "A large metal box containing basic tool and extra mechanical parts.\nEven without training, can be used to repair or break various mechanical components.\n• 32 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +50%.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_commodiousToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_commodiousToolbox.png/96px-IconItems_commodiousToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Commodious_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "mechanics-toolbox",
+    "name": "Mechanic's Toolbox",
+    "rarity": "rare",
+    "description": "A metal box with specialised mechanics tools.\nEven without training, can be used to repair or break various mechanical components.\n• 16 Charges.\n• Increases the Repair speed by +75%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +25%.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_mechanicsToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_mechanicsToolbox.png/96px-IconItems_mechanicsToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Mechanic%27s_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "alexs-toolbox",
+    "name": "Alex's Toolbox",
+    "rarity": "very-rare",
+    "description": "A metal box containing mainly saws and vice grips of varying sizes but also other tools.\nEven though the content of this Toolbox is clearly aimed at destructive deeds, it can be used to repair various mechanical components as well.\n• 18 Charges.\n• Increases the Repair speed by +10%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +100%.",
+    "quote": "\"Most of the tools are identified as 'owned by Alex'. \"",
+    "icon": {
+      "local": "/icons/items/IconItems_alexsToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_alexsToolbox.png/96px-IconItems_alexsToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Alex%27s_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "engineers-toolbox",
+    "name": "Engineer's Toolbox",
+    "rarity": "very-rare",
+    "description": "A metal box with highly specialised tools meant for engineering.\nMost of the tools can be used by neophytes to make quick repairs or break various mechanical components.\n• 16 Charges.\n• Increases the Repair speed by +100%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +10%.",
+    "quote": "\"I've created tools beyond compare and stood paralysed as they were stolen from me. These are but a poor replica, spat out by The Fog. \" — Vigo's Journal",
+    "icon": {
+      "local": "/icons/items/IconItems_engineersToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_engineersToolbox.png/96px-IconItems_engineersToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Engineer%27s_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "anniversary-toolbox",
+    "name": "Anniversary Toolbox",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA Toolbox that is slightly explosive.\n• 32 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +50%.\n• Detonates a firework once depleted.\nYay!\nThe Anniversary Toolbox was only available during the Fourth and Fifth Year Anniversary Events.",
+    "quote": "\"Nothing says happy anniversary like detonating a firework and praying the Killer does not notice. Good luck and thank you for celebrating with us! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/IconItems_anniversaryToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_anniversaryToolbox.png/96px-IconItems_anniversaryToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Anniversary_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "banquet-toolbox",
+    "name": "Banquet Toolbox",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nNothing settles the stomach like manual labor.\n• 32 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +50%.\nThe Banquet Toolbox is only available during the Tenth Year Anniversary Event.",
+    "quote": "\"Hard to believe it's been 10 years. Thanks for keeping the Exit Gate lights on! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/T_UI_iconItems_toolbox_anniversary2026.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/T_UI_iconItems_toolbox_anniversary2026.png/96px-T_UI_iconItems_toolbox_anniversary2026.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Banquet_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "festive-toolbox",
+    "name": "Festive Toolbox",
+    "rarity": "event",
+    "description": "A Toolbox packed to the brim with fireworks, it is prepared to celebrate all your life's successes... and failures.\n• 32 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +50%.\n• Succeeding a Great Skill Check detonates a small cluster of firecrackers.\n• Missing a Skill Check detonates fireworks.\nThe Festive Toolbox is only available during Spring Events.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/items/IconItems_festiveToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_festiveToolbox.png/96px-IconItems_festiveToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Festive_Toolbox",
+    "type": "toolbox"
+  },
+  {
+    "id": "masquerade-toolbox",
+    "name": "Masquerade Toolbox",
+    "rarity": "event",
+    "description": "THIS ITEM CAN NO LONGER BE OBTAINED FROM THE BLOODWEB\nA Toolbox with all of the standard gadgets: wrenches, screwdrivers, fireworks, a hammer...\n• 32 Charges.\n• Increases the Repair speed by +50%.\n• Unlocks the Sabotage action.\n• Increases the Sabotage speed by +50%.\n• Detonates a firework once depleted.\nYay!\nThe Masquerade Toolbox is only available during Anniversary Events.",
+    "quote": "\"Happy Anniversary! We're fixin' to have a big party! \" — The Dead by Daylight Team",
+    "icon": {
+      "local": "/icons/items/IconItems_masqueradeToolbox.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconItems_masqueradeToolbox.png/96px-IconItems_masqueradeToolbox.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Masquerade_Toolbox",
+    "type": "toolbox"
+  }
+]

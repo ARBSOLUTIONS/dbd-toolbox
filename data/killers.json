@@ -1,0 +1,677 @@
+[
+  {
+    "id": "the-trapper",
+    "name": "The Trapper",
+    "aliases": "Trapper Chuckles Evan MacMillan",
+    "portrait": {
+      "local": "/icons/killers/K01_TheTrapper_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K01_TheTrapper_Portrait.png/128px-K01_TheTrapper_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Trapper",
+    "perks": [
+      "agitation",
+      "brutal-strength",
+      "unnerving-presence"
+    ]
+  },
+  {
+    "id": "the-wraith",
+    "name": "The Wraith",
+    "aliases": "Wraith Banshee Bob Philip Ojomo",
+    "portrait": {
+      "local": "/icons/killers/K02_TheWraith_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K02_TheWraith_Portrait.png/128px-K02_TheWraith_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Wraith",
+    "perks": [
+      "bloodhound",
+      "predator",
+      "shadowborn"
+    ]
+  },
+  {
+    "id": "the-hillbilly",
+    "name": "The Hillbilly",
+    "aliases": "Hillbilly The Crooked Max Thompson Jr.",
+    "portrait": {
+      "local": "/icons/killers/K03_TheHillbilly_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K03_TheHillbilly_Portrait.png/128px-K03_TheHillbilly_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Hillbilly",
+    "perks": [
+      "enduring",
+      "lightborn",
+      "tinkerer"
+    ]
+  },
+  {
+    "id": "the-nurse",
+    "name": "The Nurse",
+    "aliases": "Nurse Sally Smithson",
+    "portrait": {
+      "local": "/icons/killers/K04_TheNurse_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K04_TheNurse_Portrait.png/128px-K04_TheNurse_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Nurse",
+    "perks": [
+      "a-nurses-calling",
+      "stridor",
+      "thanatophobia"
+    ]
+  },
+  {
+    "id": "the-shape",
+    "name": "The Shape",
+    "aliases": "Shape Boogeyman Stalker Michael Myers",
+    "portrait": {
+      "local": "/icons/killers/K05_TheShape_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K05_TheShape_Portrait.png/128px-K05_TheShape_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Shape",
+    "perks": [
+      "dying-light",
+      "play-with-your-food",
+      "save-the-best-for-last"
+    ]
+  },
+  {
+    "id": "the-hag",
+    "name": "The Hag",
+    "aliases": "Hag Witch Lisa Sherwood",
+    "portrait": {
+      "local": "/icons/killers/K06_TheHag_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K06_TheHag_Portrait.png/128px-K06_TheHag_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Hag",
+    "perks": [
+      "hex-devour-hope",
+      "hex-ruin",
+      "hex-the-third-seal"
+    ]
+  },
+  {
+    "id": "the-doctor",
+    "name": "The Doctor",
+    "aliases": "Doctor Mu Yi Herman Carter",
+    "portrait": {
+      "local": "/icons/killers/K07_TheDoctor_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K07_TheDoctor_Portrait.png/128px-K07_TheDoctor_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Doctor",
+    "perks": [
+      "monitor-and-abuse",
+      "overcharge",
+      "overwhelming-presence"
+    ]
+  },
+  {
+    "id": "the-huntress",
+    "name": "The Huntress",
+    "aliases": "Huntress Анна Bear Anna",
+    "portrait": {
+      "local": "/icons/killers/K08_TheHuntress_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K08_TheHuntress_Portrait.png/128px-K08_TheHuntress_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Huntress",
+    "perks": [
+      "beast-of-prey",
+      "hex-huntress-lullaby",
+      "territorial-imperative"
+    ]
+  },
+  {
+    "id": "the-cannibal",
+    "name": "The Cannibal",
+    "aliases": "Cannibal Leatherface Bubba Sawyer",
+    "portrait": {
+      "local": "/icons/killers/K09_TheCannibal_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K09_TheCannibal_Portrait.png/128px-K09_TheCannibal_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Cannibal",
+    "perks": [
+      "barbecue-and-chilli",
+      "franklins-demise",
+      "knock-out"
+    ]
+  },
+  {
+    "id": "the-nightmare",
+    "name": "The Nightmare",
+    "aliases": "Nightmare The Sandman Freddy Krueger",
+    "portrait": {
+      "local": "/icons/killers/K10_TheNightmare_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K10_TheNightmare_Portrait.png/128px-K10_TheNightmare_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Nightmare",
+    "perks": [
+      "blood-warden",
+      "fire-up",
+      "remember-me"
+    ]
+  },
+  {
+    "id": "the-pig",
+    "name": "The Pig",
+    "aliases": "Pig Amanda Young",
+    "portrait": {
+      "local": "/icons/killers/K11_ThePig_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K11_ThePig_Portrait.png/128px-K11_ThePig_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Pig",
+    "perks": [
+      "make-your-choice",
+      "scourge-hook-hangmans-trick",
+      "surveillance"
+    ]
+  },
+  {
+    "id": "the-clown",
+    "name": "The Clown",
+    "aliases": "Clown Jeffrey Hawk The Ringmaster The Medicine Man Kenneth Chase alias Jeffrey Hawk",
+    "portrait": {
+      "local": "/icons/killers/K12_TheClown_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K12_TheClown_Portrait.png/128px-K12_TheClown_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Clown",
+    "perks": [
+      "bamboozle",
+      "coulrophobia",
+      "pop-goes-the-weasel"
+    ]
+  },
+  {
+    "id": "the-spirit",
+    "name": "The Spirit",
+    "aliases": "Spirit Rin Yamaoka",
+    "portrait": {
+      "local": "/icons/killers/K13_TheSpirit_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K13_TheSpirit_Portrait.png/128px-K13_TheSpirit_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Spirit",
+    "perks": [
+      "hex-haunted-ground",
+      "rancor",
+      "spirit-fury"
+    ]
+  },
+  {
+    "id": "the-legion",
+    "name": "The Legion",
+    "aliases": "Legion Frank Morrison, Julie Kostenko, Susie Lavoie, Joey Cadogan",
+    "portrait": {
+      "local": "/icons/killers/K14_TheLegion_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K14_TheLegion_Portrait.png/128px-K14_TheLegion_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Legion",
+    "perks": [
+      "discordance",
+      "iron-maiden",
+      "mad-grit"
+    ]
+  },
+  {
+    "id": "the-plague",
+    "name": "The Plague",
+    "aliases": "Plague High Priestess of Babylon Adiris",
+    "portrait": {
+      "local": "/icons/killers/K15_ThePlague_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K15_ThePlague_Portrait.png/128px-K15_ThePlague_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Plague",
+    "perks": [
+      "corrupt-intervention",
+      "dark-devotion",
+      "infectious-fright"
+    ]
+  },
+  {
+    "id": "the-ghost-face",
+    "name": "The Ghost Face",
+    "aliases": "Ghost Face Jed Olsen Danny Johnson alias Jed Olsen",
+    "portrait": {
+      "local": "/icons/killers/K16_TheGhostFace_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K16_TheGhostFace_Portrait.png/128px-K16_TheGhostFace_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Ghost_Face",
+    "perks": [
+      "furtive-chase",
+      "im-all-ears",
+      "thrilling-tremors"
+    ]
+  },
+  {
+    "id": "the-demogorgon",
+    "name": "The Demogorgon",
+    "aliases": "Demogorgon The Monster The Beast",
+    "portrait": {
+      "local": "/icons/killers/K17_TheDemogorgon_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K17_TheDemogorgon_Portrait.png/128px-K17_TheDemogorgon_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Demogorgon",
+    "perks": [
+      "cruel-limits",
+      "mindbreaker",
+      "surge"
+    ]
+  },
+  {
+    "id": "the-oni",
+    "name": "The Oni",
+    "aliases": "Oni Kazan Yamaoka",
+    "portrait": {
+      "local": "/icons/killers/K18_TheOni_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K18_TheOni_Portrait.png/128px-K18_TheOni_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Oni",
+    "perks": [
+      "blood-echo",
+      "nemesis",
+      "zanshin-tactics"
+    ]
+  },
+  {
+    "id": "the-deathslinger",
+    "name": "The Deathslinger",
+    "aliases": "Deathslinger The Collector Gunslinger Mad Mick Caleb Quinn",
+    "portrait": {
+      "local": "/icons/killers/K19_TheDeathslinger_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K19_TheDeathslinger_Portrait.png/128px-K19_TheDeathslinger_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Deathslinger",
+    "perks": [
+      "dead-mans-switch",
+      "gearhead",
+      "hex-retribution"
+    ]
+  },
+  {
+    "id": "the-executioner",
+    "name": "The Executioner",
+    "aliases": "Executioner Red Pyramid Thing Pyramid Head",
+    "portrait": {
+      "local": "/icons/killers/K20_TheExecutioner_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K20_TheExecutioner_Portrait.png/128px-K20_TheExecutioner_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Executioner",
+    "perks": [
+      "deathbound",
+      "forced-penance",
+      "trail-of-torment"
+    ]
+  },
+  {
+    "id": "the-blight",
+    "name": "The Blight",
+    "aliases": "Blight Talbot Grimes",
+    "portrait": {
+      "local": "/icons/killers/K21_TheBlight_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K21_TheBlight_Portrait.png/128px-K21_TheBlight_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Blight",
+    "perks": [
+      "dragons-grip",
+      "hex-blood-favour",
+      "hex-undying"
+    ]
+  },
+  {
+    "id": "the-twins",
+    "name": "The Twins",
+    "aliases": "Twins The Siblings Charlotte & Victor Deshayes",
+    "portrait": {
+      "local": "/icons/killers/K22_TheTwins_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K22_TheTwins_Portrait.png/128px-K22_TheTwins_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Twins",
+    "perks": [
+      "coup-de-grace",
+      "hoarder",
+      "oppression"
+    ]
+  },
+  {
+    "id": "the-trickster",
+    "name": "The Trickster",
+    "aliases": "Trickster Hak Ji-woon",
+    "portrait": {
+      "local": "/icons/killers/K23_TheTrickster_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K23_TheTrickster_Portrait.png/128px-K23_TheTrickster_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Trickster",
+    "perks": [
+      "hex-crowd-control",
+      "no-way-out",
+      "starstruck"
+    ]
+  },
+  {
+    "id": "the-nemesis",
+    "name": "The Nemesis",
+    "aliases": "Nemesis The Pursuer The Tyrant The Potential Nemesis T-Type",
+    "portrait": {
+      "local": "/icons/killers/K24_TheNemesis_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K24_TheNemesis_Portrait.png/128px-K24_TheNemesis_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Nemesis",
+    "perks": [
+      "eruption",
+      "hysteria",
+      "lethal-pursuer"
+    ]
+  },
+  {
+    "id": "the-cenobite",
+    "name": "The Cenobite",
+    "aliases": "Cenobite Pinhead Lead Cenobite Hell Priest Elliot Spencer",
+    "portrait": {
+      "local": "/icons/killers/K25_TheCenobite_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K25_TheCenobite_Portrait.png/128px-K25_TheCenobite_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Cenobite",
+    "perks": [
+      "deadlock",
+      "hex-plaything",
+      "scourge-hook-gift-of-pain"
+    ]
+  },
+  {
+    "id": "the-artist",
+    "name": "The Artist",
+    "aliases": "Artist The Bird Lady The Matron of Crows Carmina Mora",
+    "portrait": {
+      "local": "/icons/killers/K26_TheArtist_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K26_TheArtist_Portrait.png/128px-K26_TheArtist_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Artist",
+    "perks": [
+      "grim-embrace",
+      "hex-pentimento",
+      "scourge-hook-pain-resonance"
+    ]
+  },
+  {
+    "id": "the-onryo",
+    "name": "The Onryō",
+    "aliases": "Onryō 山村 貞子 Sadako Yamamura",
+    "portrait": {
+      "local": "/icons/killers/K27_TheOnryo_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K27_TheOnryo_Portrait.png/128px-K27_TheOnryo_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Onry%C5%8D",
+    "perks": [
+      "call-of-brine",
+      "merciless-storm",
+      "scourge-hook-floods-of-rage"
+    ]
+  },
+  {
+    "id": "the-dredge",
+    "name": "The Dredge",
+    "aliases": "Dredge The Druanee",
+    "portrait": {
+      "local": "/icons/killers/K28_TheDredge_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K28_TheDredge_Portrait.png/128px-K28_TheDredge_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Dredge",
+    "perks": [
+      "darkness-revealed",
+      "dissolution",
+      "septic-touch"
+    ]
+  },
+  {
+    "id": "the-mastermind",
+    "name": "The Mastermind",
+    "aliases": "Mastermind Albert Wesker",
+    "portrait": {
+      "local": "/icons/killers/K29_TheMastermind_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K29_TheMastermind_Portrait.png/128px-K29_TheMastermind_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Mastermind",
+    "perks": [
+      "awakened-awareness",
+      "superior-anatomy",
+      "terminus"
+    ]
+  },
+  {
+    "id": "the-knight",
+    "name": "The Knight",
+    "aliases": "Knight Tarhos Kovács",
+    "portrait": {
+      "local": "/icons/killers/K30_TheKnight_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K30_TheKnight_Portrait.png/128px-K30_TheKnight_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Knight",
+    "perks": [
+      "hex-face-the-darkness",
+      "hubris",
+      "nowhere-to-hide"
+    ]
+  },
+  {
+    "id": "the-skull-merchant",
+    "name": "The Skull Merchant",
+    "aliases": "Skull Merchant Adriana Imai",
+    "portrait": {
+      "local": "/icons/killers/K31_TheSkullMerchant_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K31_TheSkullMerchant_Portrait.png/128px-K31_TheSkullMerchant_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Skull_Merchant",
+    "perks": [
+      "game-afoot",
+      "leverage",
+      "thwack"
+    ]
+  },
+  {
+    "id": "the-singularity",
+    "name": "The Singularity",
+    "aliases": "Singularity HUX-A7-13",
+    "portrait": {
+      "local": "/icons/killers/K32_TheSingularity_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K32_TheSingularity_Portrait.png/128px-K32_TheSingularity_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Singularity",
+    "perks": [
+      "forced-hesitation",
+      "genetic-limits",
+      "machine-learning"
+    ]
+  },
+  {
+    "id": "the-xenomorph",
+    "name": "The Xenomorph",
+    "aliases": "Xenomorph",
+    "portrait": {
+      "local": "/icons/killers/K33_TheXenomorph_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K33_TheXenomorph_Portrait.png/128px-K33_TheXenomorph_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Xenomorph",
+    "perks": [
+      "alien-instinct",
+      "rapid-brutality",
+      "ultimate-weapon"
+    ]
+  },
+  {
+    "id": "the-good-guy",
+    "name": "The Good Guy",
+    "aliases": "Good Guy Chucky The Lakeshore Strangler Charles Lee Ray",
+    "portrait": {
+      "local": "/icons/killers/K34_TheGoodGuy_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K34_TheGoodGuy_Portrait.png/128px-K34_TheGoodGuy_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Good_Guy",
+    "perks": [
+      "batteries-included",
+      "friends-til-the-end",
+      "hex-two-can-play"
+    ]
+  },
+  {
+    "id": "the-unknown",
+    "name": "The Unknown",
+    "aliases": "Unknown",
+    "portrait": {
+      "local": "/icons/killers/K35_TheUnknown_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K35_TheUnknown_Portrait.png/128px-K35_TheUnknown_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Unknown",
+    "perks": [
+      "unbound",
+      "undone",
+      "unforeseen"
+    ]
+  },
+  {
+    "id": "the-lich",
+    "name": "The Lich",
+    "aliases": "Lich Vecna",
+    "portrait": {
+      "local": "/icons/killers/K36_TheLich_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K36_TheLich_Portrait.png/128px-K36_TheLich_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Lich",
+    "perks": [
+      "dark-arrogance",
+      "languid-touch",
+      "weave-attunement"
+    ]
+  },
+  {
+    "id": "the-dark-lord",
+    "name": "The Dark Lord",
+    "aliases": "Dark Lord Vlad Tepes Dracula Vlad the Impaler Dracula",
+    "portrait": {
+      "local": "/icons/killers/K37_TheDarkLord_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K37_TheDarkLord_Portrait.png/128px-K37_TheDarkLord_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Dark_Lord",
+    "perks": [
+      "dominance",
+      "hex-wretched-fate",
+      "human-greed"
+    ]
+  },
+  {
+    "id": "the-houndmaster",
+    "name": "The Houndmaster",
+    "aliases": "Houndmaster Portia Maye",
+    "portrait": {
+      "local": "/icons/killers/K38_TheHoundmaster_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K38_TheHoundmaster_Portrait.png/128px-K38_TheHoundmaster_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Houndmaster",
+    "perks": [
+      "all-shaking-thunder",
+      "no-quarter",
+      "scourge-hook-jagged-compass"
+    ]
+  },
+  {
+    "id": "the-ghoul",
+    "name": "The Ghoul",
+    "aliases": "Ghoul Ken Kaneki",
+    "portrait": {
+      "local": "/icons/killers/K39_TheGhoul_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K39_TheGhoul_Portrait.png/128px-K39_TheGhoul_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Ghoul",
+    "perks": [
+      "forever-entwined",
+      "hex-nothing-but-misery",
+      "none-are-free"
+    ]
+  },
+  {
+    "id": "the-animatronic",
+    "name": "The Animatronic",
+    "aliases": "Animatronic Springtrap William Afton",
+    "portrait": {
+      "local": "/icons/killers/K40_TheAnimatronic_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K40_TheAnimatronic_Portrait.png/128px-K40_TheAnimatronic_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Animatronic",
+    "perks": [
+      "haywire",
+      "help-wanted",
+      "phantom-fear"
+    ]
+  },
+  {
+    "id": "the-krasue",
+    "name": "The Krasue",
+    "aliases": "Krasue Burong Sukapat",
+    "portrait": {
+      "local": "/icons/killers/K41_TheKrasue_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K41_TheKrasue_Portrait.png/128px-K41_TheKrasue_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Krasue",
+    "perks": [
+      "hex-overture-of-doom",
+      "ravenous",
+      "wandering-eye"
+    ]
+  },
+  {
+    "id": "the-first",
+    "name": "The First",
+    "aliases": "First Vecna One Henry Creel",
+    "portrait": {
+      "local": "/icons/killers/K42_TheFirst_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K42_TheFirst_Portrait.png/128px-K42_TheFirst_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_First",
+    "perks": [
+      "hex-hive-mind",
+      "secret-project",
+      "turn-back-the-clock"
+    ]
+  },
+  {
+    "id": "the-slasher",
+    "name": "The Slasher",
+    "aliases": "Slasher Jason Voorhees",
+    "portrait": {
+      "local": "/icons/killers/K43_TheSlasher_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K43_TheSlasher_Portrait.png/128px-K43_TheSlasher_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Slasher",
+    "perks": [
+      "hex-scared-to-death",
+      "rampage",
+      "silent-shadow"
+    ]
+  },
+  {
+    "id": "the-judgment",
+    "name": "The Judgment",
+    "aliases": "Judgment",
+    "portrait": {
+      "local": "/icons/killers/K44_TheJudgment_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K44_TheJudgment_Portrait.png/128px-K44_TheJudgment_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Judgment",
+    "perks": [
+      "celestial-witness",
+      "hex-under-your-thumb",
+      "lay-waste"
+    ]
+  },
+  {
+    "id": "the-terrifier",
+    "name": "The Terrifier",
+    "aliases": "Terrifier Art The Clown",
+    "portrait": {
+      "local": "/icons/killers/K45_TheTerrifier_Portrait.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/K45_TheTerrifier_Portrait.png/128px-K45_TheTerrifier_Portrait.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Terrifier",
+    "perks": [
+      "funny-business",
+      "kill-spree",
+      "laughingstock"
+    ]
+  }
+]

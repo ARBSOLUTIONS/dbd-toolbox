@@ -1,0 +1,15 @@
+{
+  "lastCheck": "2026-11-08T03:10:13.777Z",
+  "lastResult": {
+    "action": "none",
+    "why": "still on patch 10.2.2a",
+    "livePatch": "10.2.2a"
+  },
+  "announcements": [
+    {
+      "name": "Terrifier",
+      "kind": "chapter",
+      "date": "2026-11-24"
+    }
+  ]
+}

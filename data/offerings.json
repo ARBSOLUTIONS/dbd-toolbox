@@ -1,0 +1,1322 @@
+[
+  {
+    "id": "primrose-blossom-sachet",
+    "name": "Primrose Blossom Sachet",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Altruism Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A palm-sized hand-sewn sachet containing four gold petals. The primrose opens at the very last moment before the sun gives place to the night. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_primroseBlossomSachet.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_primroseBlossomSachet.png/96px-IconFavors_primroseBlossomSachet.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Primrose_Blossom_Sachet",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fresh-primrose-blossom",
+    "name": "Fresh Primrose Blossom",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Altruism Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Golden flowers harvested at their peak. The primrose opens at the very last moment before the sun gives place to the night. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_freshPrimroseBlossom.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_freshPrimroseBlossom.png/96px-IconFavors_freshPrimroseBlossom.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fresh_Primrose_Blossom",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fragrant-primrose-blossom",
+    "name": "Fragrant Primrose Blossom",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Altruism Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Golden flowers harvested at their peak. Releases a strong earthy and comforting aroma. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_fragrantPrimroseBlossom.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_fragrantPrimroseBlossom.png/96px-IconFavors_fragrantPrimroseBlossom.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fragrant_Primrose_Blossom",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "sweet-william-sachet",
+    "name": "Sweet William Sachet",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Boldness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A palm-sized hand-sewn sachet containing a mix of pale petals and glaucous bluish leaves. Releases a strong spicy, cove-like scent. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_sweetWilliamSachet.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_sweetWilliamSachet.png/96px-IconFavors_sweetWilliamSachet.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sweet_William_Sachet",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fresh-sweet-william",
+    "name": "Fresh Sweet William",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Boldness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A bunch of flowers with pink petals and a blood red core. Releases a spicy, clove-like scent. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_freshSweetWilliam.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_freshSweetWilliam.png/96px-IconFavors_freshSweetWilliam.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fresh_Sweet_William",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fragrant-sweet-william",
+    "name": "Fragrant Sweet William",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Boldness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A bunch of flowers with pink petals and a blood red core. Releases a strong spicy, clove-like scent. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_fragrantSweetWilliam.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_fragrantSweetWilliam.png/96px-IconFavors_fragrantSweetWilliam.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fragrant_Sweet_William",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "bog-laurel-sachet",
+    "name": "Bog Laurel Sachet",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Objectives Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A palm-sized hand sewn sachet filled with dry leaves. Releases a faint tea-like aroma. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_bogLaurelSachet.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_bogLaurelSachet.png/96px-IconFavors_bogLaurelSachet.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bog_Laurel_Sachet",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fresh-bog-laurel",
+    "name": "Fresh Bog Laurel",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Objectives Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A beautiful purple flower that grows in the midst of the tainted swamp. Releases a mild tea-like aroma. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_freshBogLaurel.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_freshBogLaurel.png/96px-IconFavors_freshBogLaurel.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fresh_Bog_Laurel",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fragrant-bog-laurel",
+    "name": "Fragrant Bog Laurel",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Objectives Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A beautiful purple flower that grows in the midst of the tainted swamp. Releases a strong tea-like aroma. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_fragrantBogLaurel.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_fragrantBogLaurel.png/96px-IconFavors_fragrantBogLaurel.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fragrant_Bog_Laurel",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "crispleaf-amaranth-sachet",
+    "name": "Crispleaf Amaranth Sachet",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Survival Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"A palm-sized hand-sewn sachet stuffed with bead-like grain. Amaranth is said to be everlasting. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_crispleafAmaranthSachet.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_crispleafAmaranthSachet.png/96px-IconFavors_crispleafAmaranthSachet.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Crispleaf_Amaranth_Sachet",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fresh-crispleaf-amaranth",
+    "name": "Fresh Crispleaf Amaranth",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Survival Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"The pale green leaves are highlighted with peculiar crimson veins. Amaranth is said to be everlasting. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_freshCrispleafAmaranth.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_freshCrispleafAmaranth.png/96px-IconFavors_freshCrispleafAmaranth.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fresh_Crispleaf_Amaranth",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "fragrant-crispleaf-amaranth",
+    "name": "Fragrant Crispleaf Amaranth",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Survival Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"The pale green leaves are highlighted with peculiar crimson veins. Amaranth is said to be everlasting. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_fragrantCrispleafAmaranth.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_fragrantCrispleafAmaranth.png/96px-IconFavors_fragrantCrispleafAmaranth.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Fragrant_Crispleaf_Amaranth",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "tanager-wreath",
+    "name": "Tanager Wreath",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Brutality Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted out of bloody sticks and guts, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_tanagerWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_tanagerWreath.png/96px-IconFavors_tanagerWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Tanager_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "devout-tanager-wreath",
+    "name": "Devout Tanager Wreath",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Brutality Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Devoutly crafted out of sticks and guts, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_devoutTanagerWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_devoutTanagerWreath.png/96px-IconFavors_devoutTanagerWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Devout_Tanager_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "ardent-tanager-wreath",
+    "name": "Ardent Tanager Wreath",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Brutality Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted with a fiery, undying passion out of bloody sticks and guts, this wreath calls on The Entity's blessing fore more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ardentTanagerWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ardentTanagerWreath.png/96px-IconFavors_ardentTanagerWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ardent_Tanager_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "raven-wreath",
+    "name": "Raven Wreath",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Deviousness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted out of blackened branches and coals, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ravenWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ravenWreath.png/96px-IconFavors_ravenWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Raven_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "devout-raven-wreath",
+    "name": "Devout Raven Wreath",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Deviousness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Devoutly crafted out of blackened branches and coals, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_devoutRavenWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_devoutRavenWreath.png/96px-IconFavors_devoutRavenWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Devout_Raven_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "ardent-raven-wreath",
+    "name": "Ardent Raven Wreath",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Deviousness Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted with a fiery, undying passion out of blackened branches and coals, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ardentRavenWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ardentRavenWreath.png/96px-IconFavors_ardentRavenWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ardent_Raven_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "spotted-owl-wreath",
+    "name": "Spotted Owl Wreath",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Hunter Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted out of sharp metals, ropes and feathers, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_spottedOwlWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_spottedOwlWreath.png/96px-IconFavors_spottedOwlWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Spotted_Owl_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "devout-spotted-owl-wreath",
+    "name": "Devout Spotted Owl Wreath",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Hunter Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Devoutly crafted out of sharp metals, rope and features, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_devoutSpottedOwlWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_devoutSpottedOwlWreath.png/96px-IconFavors_devoutSpottedOwlWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Devout_Spotted_Owl_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "ardent-spotted-owl-wreath",
+    "name": "Ardent Spotted Owl Wreath",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Hunter Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted with a fiery, undying passion out of sharp metals, ropes and feathers, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ardentSpottedOwlWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ardentSpottedOwlWreath.png/96px-IconFavors_ardentSpottedOwlWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ardent_Spotted_Owl_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "shrike-wreath",
+    "name": "Shrike Wreath",
+    "rarity": "common",
+    "description": "Grants +50% bonus Bloodpoints in the Sacrifice Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted out of sticks, strings and bones, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shrikeWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shrikeWreath.png/96px-IconFavors_shrikeWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shrike_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "devout-shrike-wreath",
+    "name": "Devout Shrike Wreath",
+    "rarity": "uncommon",
+    "description": "Grants +75% bonus Bloodpoints in the Sacrifice Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Devoutly crafted out of sticks, strings and bones, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_devoutShrikeWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_devoutShrikeWreath.png/96px-IconFavors_devoutShrikeWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Devout_Shrike_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "ardent-shrike-wreath",
+    "name": "Ardent Shrike Wreath",
+    "rarity": "rare",
+    "description": "Grants +100% bonus Bloodpoints in the Sacrifice Scoring Category.\n• The bonus Bloodpoints are applied after exiting the Trial.",
+    "quote": "\"Crafted with a fiery, undying passion out of sticks, strings and bones, this wreath calls on The Entity's blessing for more blood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ardentShrikeWreath.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ardentShrikeWreath.png/96px-IconFavors_ardentShrikeWreath.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ardent_Shrike_Wreath",
+    "category": "Bonus Bloodpoints",
+    "subcategory": "Killer",
+    "role": "killer"
+  },
+  {
+    "id": "arcane-dousing-rod",
+    "name": "Arcane Dousing Rod",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nModifies all Event-related Score Events with the following effect:\n• Increases the amount of Bloodpoints they award by +100%.\nArcane Dousing Rod is only available during the Haunted by Daylight Halloween Event and can only be used in Trials of the Event Queue.",
+    "quote": "\"Taps into the latent energy of The Entity's Realm to find even more concentrated pockets of power. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_arcaneDousingRod.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_arcaneDousingRod.png/96px-IconFavors_arcaneDousingRod.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Arcane_Dousing_Rod",
+    "category": "Events",
+    "subcategory": "Halloween Events",
+    "role": "both"
+  },
+  {
+    "id": "cursed-seed",
+    "name": "Cursed Seed",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nCalls upon The Entity for the following effects:\n• Increases the number of Tangled Hooks in the environment by +1.\n• Increases the number of Tangled Generators in the environment by +1.\n• Grants bonus Bloodpoints for hooking Survivors for the first time onto a Tangled Hook.\n• Grants bonus Bloodpoints for repairing a Tangled Generator.\nThe bonus Bloodpoints are applied during the Trial.\nCursed Seed was only available during the The Midnight Grove 2021 Halloween Event.",
+    "quote": "\"The seed crackles as if what is within is attempting to burst free. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_cursedSeed.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_cursedSeed.png/96px-IconFavors_cursedSeed.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Cursed_Seed",
+    "category": "Events",
+    "subcategory": "Halloween Events",
+    "role": "both"
+  },
+  {
+    "id": "pustula-petals",
+    "name": "Pustula Petals",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nCalls upon The Entity for the following effects:\n• Increases the number of Blighted Hooks in the environment by +1.\n• Increases the number of Blighted Generators in the environment by +1.\n• Grants bonus Bloodpoints for hooking Survivors for the first time onto a Blighted Hook.\n• Grants bonus Bloodpoints for repairing a Blighted Generator.\nThe bonus Bloodpoints are applied during the Trial.\nPustula Petals was only available during the The Eternal Blight 2020 Halloween Event.",
+    "quote": "\"The Pustulas fill the air with a rancid odour that some may find enticing. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_pustulaPetals.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_pustulaPetals.png/96px-IconFavors_pustulaPetals.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Pustula_Petals",
+    "category": "Events",
+    "subcategory": "Halloween Events",
+    "role": "both"
+  },
+  {
+    "id": "red-envelope",
+    "name": "Red Envelope",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nA gesture of generosity to bring good fortune to the unfortunate.\nCalls upon The Entity for the following effects:\n• Spawns 1 Red Envelope per Player.\n• The Aura of your Red Envelope is revealed to you at the start of the Trial.\n• Interacting with your Red Envelope reveals its Aura to all other Players in the Trial until it is claimed.\n• Opening another Player's Red Envelope triggers the Rabbit's Blessing Score Event, which awards a semi-random amount of Bloodpoints.\n• When another Player opens your Red Envelope during the Trial, you are awarded Bloodpoints and a Cosmetic from the Moonlight Burrow Collection.\n• As Killer, hooking a Survivor onto a Lunar Hook triggers the Lunar Celebration Hook Score Event, which awards bonus Bloodpoints.\n• As Survivor, finishing a Lunar Generator triggers the Lunar Celebration Generator Score Event, which awards bonus Bloodpoints.\nThe bonus Bloodpoints are applied during the Trial.\nRed Envelope was only available during the Moonlight Burrow 2023 Lunar Event.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/offerings/IconFavors_redEnvelope.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_redEnvelope.png/96px-IconFavors_redEnvelope.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Red_Envelope",
+    "category": "Events",
+    "subcategory": "Lunar New Years",
+    "role": "both"
+  },
+  {
+    "id": "bloodshot-eye",
+    "name": "Bloodshot Eye",
+    "rarity": "event",
+    "description": "An eye filled with, and capable of finding, strange blood.\n• Doubles all Bloodpoints awarded for triggering Score Events related to the Event.\nThe bonus Bloodpoints are applied during the Trial.\nBloodshot Eye is only available during Spring Events.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/offerings/IconFavors_bloodshotEye.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_bloodshotEye.png/96px-IconFavors_bloodshotEye.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bloodshot_Eye",
+    "category": "Events",
+    "subcategory": "Spring Events",
+    "role": "both"
+  },
+  {
+    "id": "bbq-invitation",
+    "name": "BBQ Invitation",
+    "rarity": "event",
+    "description": "THIS OFFERING IS NO LONGER AVAILABLE\nHas the distinct aroma of burnt flesh.\nCalls upon The Entity for the following effects:\n• Grants +100% bonus Bloodpoints for hooking Survivors onto Summer Hooks.\n• Grants +100% bonus Bloodpoints for repairing Summer Generators.\nThe bonus Bloodpoints are applied during the Trial.\nBBQ Invitation was only available during the Scorching Summer BBQ 2023 Summer Event.",
+    "quote": "\"Kick back and relax in the moonlight with an ice cold drink and some barbecued meat. The Entity has invited you to enjoy yourself this fine evening. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_bbqInvitation.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_bbqInvitation.png/96px-IconFavors_bbqInvitation.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/BBQ_Invitation",
+    "category": "Events",
+    "subcategory": "Summer BBQs",
+    "role": "both"
+  },
+  {
+    "id": "chalk-pouch",
+    "name": "Chalk Pouch",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nUnlocks the ability to attempt Self-Unhooks during the first Hook Stage:\n• Increases your personal Luck at succeeding them by +1%.",
+    "quote": "\"A small cotton pouch filled with white chalky powder of unknown origin. Some believe it brings good fortune. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_chalkPouch.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_chalkPouch.png/96px-IconFavors_chalkPouch.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Chalk_Pouch",
+    "category": "Luck",
+    "subcategory": "One Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "cream-chalk-pouch",
+    "name": "Cream Chalk Pouch",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nUnlocks the ability to attempt Self-Unhooks during the first Hook Stage:\n• Increases your personal Luck at succeeding them by +2%.",
+    "quote": "\"A small cotton pouch half-filled with a cream coloured chalky powder of unknown origin. Releases a faint herbal aroma. Some believe it brings good fortune. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_creamChalkPouch.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_creamChalkPouch.png/96px-IconFavors_creamChalkPouch.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Cream_Chalk_Pouch",
+    "category": "Luck",
+    "subcategory": "One Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "ivory-chalk-pouch",
+    "name": "Ivory Chalk Pouch",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nUnlocks the ability to attempt Self-Unhooks during the first Hook Stage:\n• Increases your personal Luck at succeeding them by +3%.",
+    "quote": "\"A small leather pouch displaying a straight white line hand-sewn on one of its sides. The bag is filled with an ivory chalky powder that shines under the moonlight. Some believe it brings good fortune. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ivoryChalkPouch.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ivoryChalkPouch.png/96px-IconFavors_ivoryChalkPouch.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ivory_Chalk_Pouch",
+    "category": "Luck",
+    "subcategory": "One Survivor",
+    "role": "survivor"
+  },
+  {
+    "id": "salt-pouch",
+    "name": "Salt Pouch",
+    "rarity": "uncommon",
+    "description": "Unlocks the ability to attempt Self-Unhooks during the first Hook Stage for all Survivors:\n• Increases the Luck at succeeding them by +1% for all Survivors.",
+    "quote": "\"A small cotton pouch filled with black salt crystals. Some believe it brings good fortune. Don't spill it. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_saltPouch.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_saltPouch.png/96px-IconFavors_saltPouch.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Salt_Pouch",
+    "category": "Luck",
+    "subcategory": "All Survivors",
+    "role": "survivor"
+  },
+  {
+    "id": "black-salt-statuette",
+    "name": "Black Salt Statuette",
+    "rarity": "rare",
+    "description": "Unlocks the ability to attempt Self-Unhooks during the first Hook Stage for all Survivors:\n• Increases the Luck at succeeding them by +2% for all Survivors.",
+    "quote": "\"A friable miniature statuette made of black salt representing a woman in a kneeling position offering a gift. Some believe it brings good fortune. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_blackSaltStatuette.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_blackSaltStatuette.png/96px-IconFavors_blackSaltStatuette.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Black_Salt_Statuette",
+    "category": "Luck",
+    "subcategory": "All Survivors",
+    "role": "survivor"
+  },
+  {
+    "id": "vigos-jar-of-salty-lips",
+    "name": "Vigo's Jar of Salty Lips",
+    "rarity": "very-rare",
+    "description": "Unlocks the ability to attempt Self-Unhooks during the first Hook Stage for all Survivors:\n• Increases the Luck at succeeding them by +3% for all Survivors.",
+    "quote": "\"A tightly sealed glass jar containing torn human lips floating in a murky brine. Some believe it brings good fortune. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_vigosJarOfSaltyLips.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_vigosJarOfSaltyLips.png/96px-IconFavors_vigosJarOfSaltyLips.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vigo%27s_Jar_of_Salty_Lips",
+    "category": "Luck",
+    "subcategory": "All Survivors",
+    "role": "survivor"
+  },
+  {
+    "id": "bloodied-blueprint",
+    "name": "Bloodied Blueprint",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nGrants the following effects at the start of the Trial:\n• Increases the likelihood of the Basement spawning in the Killer Shack by +100%, if it is available.\n• The Auras of the Basement Hooks are revealed to you for 20 seconds.",
+    "quote": "\"Spatters of dried blood partially conceal the design. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_bloodiedBlueprint.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_bloodiedBlueprint.png/96px-IconFavors_bloodiedBlueprint.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bloodied_Blueprint",
+    "category": "Map Modifications",
+    "subcategory": "Basement Location",
+    "role": "both"
+  },
+  {
+    "id": "torn-blueprint",
+    "name": "Torn Blueprint",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nGrants the following effects at the start of the Trial:\n• Increases the likelihood of the Basement spawning in the Landmark Building by +100%, if it is available.\n• The Auras of the Basement Hooks are revealed to you for 20 seconds.",
+    "quote": "\"Though brittle and torn, the design is mostly legible. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_tornBlueprint.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_tornBlueprint.png/96px-IconFavors_tornBlueprint.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Torn_Blueprint",
+    "category": "Map Modifications",
+    "subcategory": "Basement Location",
+    "role": "both"
+  },
+  {
+    "id": "scratched-coin",
+    "name": "Scratched Coin",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the number of Chests in the environment by -1.",
+    "quote": "\"A defaced coin of unknown origin. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_scratchedCoin.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_scratchedCoin.png/96px-IconFavors_scratchedCoin.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Scratched_Coin",
+    "category": "Map Modifications",
+    "subcategory": "Chest Numbers",
+    "role": "survivor"
+  },
+  {
+    "id": "tarnished-coin",
+    "name": "Tarnished Coin",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the number of Chests in the environment by +1.",
+    "quote": "\"A round piece of metal which has lost all sheen. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_tarnishedCoin.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_tarnishedCoin.png/96px-IconFavors_tarnishedCoin.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Tarnished_Coin",
+    "category": "Map Modifications",
+    "subcategory": "Chest Numbers",
+    "role": "survivor"
+  },
+  {
+    "id": "cut-coin",
+    "name": "Cut Coin",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the number of Chests in the environment by -2.",
+    "quote": "\"Two halves of a thick metallic coin. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_cutCoin.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_cutCoin.png/96px-IconFavors_cutCoin.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Cut_Coin",
+    "category": "Map Modifications",
+    "subcategory": "Chest Numbers",
+    "role": "survivor"
+  },
+  {
+    "id": "shiny-coin",
+    "name": "Shiny Coin",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the number of Chests in the environment by +2.",
+    "quote": "\"A clean and polished piece of gold. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shinyCoin.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shinyCoin.png/96px-IconFavors_shinyCoin.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shiny_Coin",
+    "category": "Map Modifications",
+    "subcategory": "Chest Numbers",
+    "role": "survivor"
+  },
+  {
+    "id": "clear-reagent",
+    "name": "Clear Reagent",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the thickness of the Dark Mist by -50%.",
+    "quote": "\"The Mist rolls in, traps all in its deep madness. There is no running, no escape, no asylum, except for the clear waters of the pond lost in the forest. \" — Unknown, Notebook",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_clearReagent.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_clearReagent.png/96px-IconFavors_clearReagent.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Clear_Reagent",
+    "category": "Map Modifications",
+    "subcategory": "Fog Thickness",
+    "role": "both"
+  },
+  {
+    "id": "faint-reagent",
+    "name": "Faint Reagent",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the thickness of the Dark Mist by +25%.",
+    "quote": "\"Paralysed, I stand in the cold as death lingers. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_faintReagent.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_faintReagent.png/96px-IconFavors_faintReagent.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Faint_Reagent",
+    "category": "Map Modifications",
+    "subcategory": "Fog Thickness",
+    "role": "both"
+  },
+  {
+    "id": "hazy-reagent",
+    "name": "Hazy Reagent",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the thickness of the Dark Mist by +50%.",
+    "quote": "\"The Mist is alluring, hypnotising. I love it and fear it at the same time. \" — Donna's Sketchbook",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_hazyReagent.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_hazyReagent.png/96px-IconFavors_hazyReagent.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Hazy_Reagent",
+    "category": "Map Modifications",
+    "subcategory": "Fog Thickness",
+    "role": "both"
+  },
+  {
+    "id": "murky-reagent",
+    "name": "Murky Reagent",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the thickness of the Dark Mist by +75%.",
+    "quote": "\"The Mist seems to protect us from the beast, but it is a poison, a cancer, filling us with darkness and insanity. \" — Unknown, Notebook",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_murkyReagent.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_murkyReagent.png/96px-IconFavors_murkyReagent.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Murky_Reagent",
+    "category": "Map Modifications",
+    "subcategory": "Fog Thickness",
+    "role": "both"
+  },
+  {
+    "id": "annotated-blueprint",
+    "name": "Annotated Blueprint",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nGrants the following effect at the start of the Trial:\n• Increases the likelihood of the Hatch spawning by the Killer Shack by +100%, if it is available.",
+    "quote": "\"Essential information is scribbled along the side, but by whom? \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_annotatedBlueprint.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_annotatedBlueprint.png/96px-IconFavors_annotatedBlueprint.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Annotated_Blueprint",
+    "category": "Map Modifications",
+    "subcategory": "Hatch Location",
+    "role": "survivor"
+  },
+  {
+    "id": "vigos-blueprint",
+    "name": "Vigo's Blueprint",
+    "rarity": "common",
+    "description": "THIS OFFERING IS SECRET\nGrants the following effect at the start of the Trial:\n• Increases the likelihood of the Hatch spawning by the Landmark Building by +100%, if it is available.",
+    "quote": "\"A clever design that has the letter 'V' etched on the bottom. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_vigosBlueprint.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_vigosBlueprint.png/96px-IconFavors_vigosBlueprint.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vigo%27s_Blueprint",
+    "category": "Map Modifications",
+    "subcategory": "Hatch Location",
+    "role": "survivor"
+  },
+  {
+    "id": "mouldy-oak",
+    "name": "Mouldy Oak",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the minimum distance between Spawn locations for Hooks by -1.5 metres.",
+    "quote": "\"A damp and decaying piece of oak replete with mould. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_moldyOak.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_moldyOak.png/96px-IconFavors_moldyOak.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Mouldy_Oak",
+    "category": "Map Modifications",
+    "subcategory": "Hook Distance",
+    "role": "killer"
+  },
+  {
+    "id": "rotten-oak",
+    "name": "Rotten Oak",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the minimum distance between Spawn locations for Hooks by -2.5 metres.",
+    "quote": "\"A decomposing piece of oak in which strange markings have been etched. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_rottenOak.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_rottenOak.png/96px-IconFavors_rottenOak.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Rotten_Oak",
+    "category": "Map Modifications",
+    "subcategory": "Hook Distance",
+    "role": "killer"
+  },
+  {
+    "id": "petrified-oak",
+    "name": "Petrified Oak",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the minimum distance between Spawn locations for Hooks by +1 metre.",
+    "quote": "\"A deteriorating piece of petrified wood. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_petrifiedOak.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_petrifiedOak.png/96px-IconFavors_petrifiedOak.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Petrified_Oak",
+    "category": "Map Modifications",
+    "subcategory": "Hook Distance",
+    "role": "killer"
+  },
+  {
+    "id": "putrid-oak",
+    "name": "Putrid Oak",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Reduces the minimum distance between Spawn locations for Hooks by -3.5 metres.",
+    "quote": "\"A ruined piece of oak oozing with a black putrescent liquid. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_putridOak.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_putridOak.png/96px-IconFavors_putridOak.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Putrid_Oak",
+    "category": "Map Modifications",
+    "subcategory": "Hook Distance",
+    "role": "killer"
+  },
+  {
+    "id": "ivory-memento-mori",
+    "name": "Ivory Memento Mori",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Grants the ability to kill one Survivor with 2 Hook Stages once they are in the Dying State.",
+    "quote": "\"Grant me the favour of killing one. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ivoryMementoMori.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ivoryMementoMori.png/96px-IconFavors_ivoryMementoMori.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ivory_Memento_Mori",
+    "category": "Memento Mori",
+    "subcategory": null,
+    "role": "killer"
+  },
+  {
+    "id": "ebony-memento-mori",
+    "name": "Ebony Memento Mori",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Grants the ability to kill all Survivors with 2 Hook Stages once they are in the Dying State.",
+    "quote": "\"I could swear It spoke to the beast. It came to a halt, as if calmly listening to the leaves rustling, and then... grinned. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ebonyMementoMori.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ebonyMementoMori.png/96px-IconFavors_ebonyMementoMori.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ebony_Memento_Mori",
+    "category": "Memento Mori",
+    "subcategory": null,
+    "role": "killer"
+  },
+  {
+    "id": "azarovs-key",
+    "name": "Azarov's Key",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Autohaven Wreckers Realm to 20%.",
+    "quote": "\"A broken key pertaining to a vehicle of unknown brand. A key-chain attached to it identifies the owner as a certain 'A. Azarov'\"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_azarovsKey.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_azarovsKey.png/96px-IconFavors_azarovsKey.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Azarov%27s_Key",
+    "category": "Realm Selection",
+    "subcategory": "Autohaven Wreckers",
+    "role": "both"
+  },
+  {
+    "id": "grandmas-cookbook",
+    "name": "Grandma's Cookbook",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Backwater Swamp Realm to 20%.",
+    "quote": "\"A leather-bound book containing horrible human meat recipes such as the granny-slapping good chilli. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_granmasCookbook.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_granmasCookbook.png/96px-IconFavors_granmasCookbook.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Grandma%27s_Cookbook",
+    "category": "Realm Selection",
+    "subcategory": "Backwater Swamp",
+    "role": "both"
+  },
+  {
+    "id": "heart-locket",
+    "name": "Heart Locket",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Coldwind Farm Realm to 20%.",
+    "quote": "\"A silver heart locket necklace. The simple interior is engraved with the following: 'E+M'. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_heartLocket.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_heartLocket.png/96px-IconFavors_heartLocket.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Heart_Locket",
+    "category": "Realm Selection",
+    "subcategory": "Coldwind Farm",
+    "role": "both"
+  },
+  {
+    "id": "charred-wedding-photograph",
+    "name": "Charred Wedding Photograph",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Crotus Prenn Asylum Realm to 20%.",
+    "quote": "\"A burned portrait of a couple on their wedding day, the faces are completely charred and unidentifiable. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_charredWeddingPhotograph.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_charredWeddingPhotograph.png/96px-IconFavors_charredWeddingPhotograph.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Charred_Wedding_Photograph",
+    "category": "Realm Selection",
+    "subcategory": "Crotus Prenn Asylum",
+    "role": "both"
+  },
+  {
+    "id": "beef-tallow-mixture",
+    "name": "Beef Tallow Mixture",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the The Decimated Borgo Realm to 20%.",
+    "quote": "\"The stink of rotting organic matter emanates from this foul mixture, designed with the grim intent to create a fire that burns very hot and very long. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_beefTallowMixture.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_beefTallowMixture.png/96px-IconFavors_beefTallowMixture.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Beef_Tallow_Mixture",
+    "category": "Realm Selection",
+    "subcategory": "The Decimated Borgo",
+    "role": "both"
+  },
+  {
+    "id": "airlock-doors",
+    "name": "Airlock Doors",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to the Nostromo Wreckage Map in the Dvarka Deepwood Realm to 20%.",
+    "quote": "\"You know the quarantine procedure.24 hours for decontamination. \" — Ellen Ripley",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_airlockDoors.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_airlockDoors.png/96px-IconFavors_airlockDoors.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Airlock_Doors",
+    "category": "Realm Selection",
+    "subcategory": "Dvarka Deepwood",
+    "role": "both"
+  },
+  {
+    "id": "alien-flora",
+    "name": "Alien Flora",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to the Toba Landing Map in the Dvarka Deepwood Realm to 20%.",
+    "quote": "\"Our arrival will change the face of this planet as we know it. \" — Sarah, Science Officer",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_alienFlora.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_alienFlora.png/96px-IconFavors_alienFlora.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Alien_Flora",
+    "category": "Realm Selection",
+    "subcategory": "Dvarka Deepwood",
+    "role": "both"
+  },
+  {
+    "id": "crows-eye",
+    "name": "Crow's Eye",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Forsaken Boneyard Realm to 20%.",
+    "quote": "\"The dark, beady eye shifts back and forth as if searching for a bloody strip of carrion. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_crowsEye.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_crowsEye.png/96px-IconFavors_crowsEye.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Crow%27s_Eye",
+    "category": "Realm Selection",
+    "subcategory": "Forsaken Boneyard",
+    "role": "both"
+  },
+  {
+    "id": "jigsaw-piece",
+    "name": "Jigsaw Piece",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Gideon Meat Plant Realm to 20%.",
+    "quote": "\"Congratulations. You are still alive. Most people are so ungrateful to be alive. But not you. Not anymore. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_jigsawPiece.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_jigsawPiece.png/96px-IconFavors_jigsawPiece.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Jigsaw_Piece",
+    "category": "Realm Selection",
+    "subcategory": "Gideon Meat Plant",
+    "role": "both"
+  },
+  {
+    "id": "shattered-bottle",
+    "name": "Shattered Bottle",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Grave of Glenvale Realm to 20%.",
+    "quote": "\"Ain't much for holding a drink no more, but it can sure make a mess of a fella's throat. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shatteredBottle.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shatteredBottle.png/96px-IconFavors_shatteredBottle.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shattered_Bottle",
+    "category": "Realm Selection",
+    "subcategory": "Grave of Glenvale",
+    "role": "both"
+  },
+  {
+    "id": "hawkins-national-laboratory-id",
+    "name": "Hawkins National Laboratory ID",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Hawkins National Laboratory Realm to 20%.",
+    "quote": "\"A soggy, bloodstained identification card with a serial number. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_hawkinsNationalLaboratoryID.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_hawkinsNationalLaboratoryID.png/96px-IconFavors_hawkinsNationalLaboratoryID.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Hawkins_National_Laboratory_ID",
+    "category": "Realm Selection",
+    "subcategory": "Hawkins National Laboratory",
+    "role": "both"
+  },
+  {
+    "id": "shattered-glasses",
+    "name": "Shattered Glasses",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Léry's Memorial Institute Realm to 20%.",
+    "quote": "\"Bent reading glasses. Speckles of dried blood can be seen on the shattered lenses. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shatteredGlasses.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shatteredGlasses.png/96px-IconFavors_shatteredGlasses.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shattered_Glasses",
+    "category": "Realm Selection",
+    "subcategory": "Léry's Memorial Institute",
+    "role": "both"
+  },
+  {
+    "id": "macmillans-phalanx-bone",
+    "name": "MacMillan's Phalanx Bone",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the The MacMillan Estate Realm to 20%.",
+    "quote": "\"MacMillan's skeletal remains were found in the basement of the mine's storehouse. His leg bones shattered into pieces and a mining hammer lying in his lap. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_macMillansPhalanxBone.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_macMillansPhalanxBone.png/96px-IconFavors_macMillansPhalanxBone.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/MacMillan%27s_Phalanx_Bone",
+    "category": "Realm Selection",
+    "subcategory": "The MacMillan Estate",
+    "role": "both"
+  },
+  {
+    "id": "damaged-photo",
+    "name": "Damaged Photo",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\n28 August 1996\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Ormond Realm to 20%.",
+    "quote": "\"A dormant darkness lies beneath his childlike smile, about to be awakened. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_damagedPhoto.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_damagedPhoto.png/96px-IconFavors_damagedPhoto.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Damaged_Photo",
+    "category": "Realm Selection",
+    "subcategory": "Ormond",
+    "role": "both"
+  },
+  {
+    "id": "rpd-badge",
+    "name": "RPD Badge",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Raccoon City Realm to 20%.",
+    "quote": "\"If we stay here that monster will find us. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_rpdBadge.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_rpdBadge.png/96px-IconFavors_rpdBadge.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/RPD_Badge",
+    "category": "Realm Selection",
+    "subcategory": "Raccoon City",
+    "role": "both"
+  },
+  {
+    "id": "the-last-mask",
+    "name": "The Last Mask",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Red Forest Realm to 20%.",
+    "quote": "\"A beautifully crafted tiger mask that would fit snug on a child's face. A faded note in the Cyrillic alphabet can be found scripted on the back. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_theLastMask.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_theLastMask.png/96px-IconFavors_theLastMask.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Last_Mask",
+    "category": "Realm Selection",
+    "subcategory": "Red Forest",
+    "role": "both"
+  },
+  {
+    "id": "marys-letter",
+    "name": "Mary's Letter",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Silent Hill Realm.\n• This Offering modifies the Realm Selector Logic by a value of 20%.",
+    "quote": "\"In my restless dreams, I see that town. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_marysLetter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_marysLetter.png/96px-IconFavors_marysLetter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Mary%27s_Letter",
+    "category": "Realm Selection",
+    "subcategory": "Silent Hill",
+    "role": "both"
+  },
+  {
+    "id": "vip-wristband",
+    "name": "VIP Wristband",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to the Trickster's Delusion Map in the Sleepless District Realm to 20%.",
+    "quote": "\"Mightee One Entertainment invites you to witness the future of virtual entertainment. \"",
+    "icon": {
+      "local": "/icons/offerings/IconsFavors_vipWristband.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconsFavors_vipWristband.png/96px-IconsFavors_vipWristband.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/VIP_Wristband",
+    "category": "Realm Selection",
+    "subcategory": "Sleepless District",
+    "role": "both"
+  },
+  {
+    "id": "the-pied-piper",
+    "name": "The Pied Piper",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Springwood Realm.\n• This Offering modifies the Realm Selector Logic by a value of 20%.",
+    "quote": "\"Betrayed by the town, he exacts his revenge by taking all their children. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_thePiedPiper.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_thePiedPiper.png/96px-IconFavors_thePiedPiper.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/The_Pied_Piper",
+    "category": "Realm Selection",
+    "subcategory": "Springwood",
+    "role": "both"
+  },
+  {
+    "id": "ichorous-loam",
+    "name": "Ichorous Loam",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Withered Isle Realm to 20%.",
+    "quote": "\"Expel malthought from your mind, from your heart, from your mouth, to prevent the darkness from corrupting your truth. For to let darkness find seed in your soul is to invite The Druanee. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_ichorousLoam.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_ichorousLoam.png/96px-IconFavors_ichorousLoam.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Ichorous_Loam",
+    "category": "Realm Selection",
+    "subcategory": "Withered Isle",
+    "role": "both"
+  },
+  {
+    "id": "yamaoka-family-crest",
+    "name": "Yamaoka Family Crest",
+    "rarity": "rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Increases the chances to be sent to a Map in the Yamaoka Estate Realm to 20%.",
+    "quote": "\"You never leave a broken home. You only run away until the memories stop haunting you. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_yamaokaFamilyCrest.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_yamaokaFamilyCrest.png/96px-IconFavors_yamaokaFamilyCrest.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Yamaoka_Family_Crest",
+    "category": "Realm Selection",
+    "subcategory": "Yamaoka Estate",
+    "role": "both"
+  },
+  {
+    "id": "shroud-of-union",
+    "name": "Shroud of Union",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• You start the Trial together with someone else.",
+    "quote": "\"A knotted piece of fabric. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shroudOfUnion.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shroudOfUnion.png/96px-IconFavors_shroudOfUnion.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shroud_of_Union",
+    "category": "Shrouds",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "shroud-of-vanishing",
+    "name": "Shroud of Vanishing",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Nullifies any Offerings that would change the starting locations of Survivors.",
+    "quote": "\"In an instant, their power was lost. \"",
+    "icon": {
+      "local": "/icons/offerings/IconsFavors_shroudOfVanishing.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconsFavors_shroudOfVanishing.png/96px-IconsFavors_shroudOfVanishing.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shroud_of_Vanishing",
+    "category": "Shrouds",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "vigos-shroud",
+    "name": "Vigo's Shroud",
+    "rarity": "uncommon",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Causes you to spawn as far away from the Killer as possible.",
+    "quote": "\"I found marvels through the years in The Fog, but only now do I understand how to bend The Fog's irrefragable rules. \" — Vigo's Journal",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_vigosShroud.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_vigosShroud.png/96px-IconFavors_vigosShroud.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Vigo%27s_Shroud",
+    "category": "Shrouds",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "shroud-of-separation",
+    "name": "Shroud of Separation",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• All Survivors start the Trial separated from one another.",
+    "quote": "\"A square and washed out piece of fabric with small knots on each end. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shroudOfSeparation.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shroudOfSeparation.png/96px-IconFavors_shroudOfSeparation.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shroud_of_Separation",
+    "category": "Shrouds",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "black-splinter",
+    "name": "Black Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Shape in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": "\"He came home! \" — Dr Sam Loomis",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_blackSplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_blackSplinter.png/96px-IconFavors_blackSplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Black_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "bone-splinter",
+    "name": "Bone Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Cannibal in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": "\"You like this face? \" — Hitchhiker",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_boneSplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_boneSplinter.png/96px-IconFavors_boneSplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Bone_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "glass-splinter",
+    "name": "Glass Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Pig in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": "\"Amanda, do not be afraid. Your life has just begun. \" — Jigsaw",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_glassSplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_glassSplinter.png/96px-IconFavors_glassSplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Glass_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "muddy-splinter",
+    "name": "Muddy Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Hag in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": "\"Avoid walking in the mud or The Hag will eat your bones. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_muddySplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_muddySplinter.png/96px-IconFavors_muddySplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Muddy_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "shock-splinter",
+    "name": "Shock Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Doctor in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": "\"Your secrets are safe with me. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_shockSplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_shockSplinter.png/96px-IconFavors_shockSplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Shock_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "smoking-splinter",
+    "name": "Smoking Splinter",
+    "rarity": "iridescent",
+    "description": "THIS OFFERING WAS RETIRED\nCalls upon The Entity to grant you the following:\n• Play as The Nightmare in the next Trial instead of your selected Killer.\n• Selected Perks or Add-ons are automatically unequipped.",
+    "quote": null,
+    "icon": {
+      "local": "/icons/offerings/IconFavors_smokingSplinter.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_smokingSplinter.png/96px-IconFavors_smokingSplinter.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Smoking_Splinter",
+    "category": "Splinters",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "sacrificial-ward",
+    "name": "Sacrificial Ward",
+    "rarity": "common",
+    "description": "Calls upon The Entity for the following effect:\n• Causes all Realm or Map Selection Offerings burnt by other Players to be rejected.\nSacrificial Ward is trumped only when all other Players burn the identical Realm or Map Selection Offering.",
+    "quote": "\"With blind eyes, we surrender our will and appeal to you for guidance. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_sacrificialWard.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_sacrificialWard.png/96px-IconFavors_sacrificialWard.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Sacrificial_Ward",
+    "category": "Wards",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "black-ward",
+    "name": "Black Ward",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Causes your Add-ons to not be consumed after ending the Trial.",
+    "quote": "\"Hear my voice, spare my ways, protect me from the void. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_blackWard.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_blackWard.png/96px-IconFavors_blackWard.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/Black_Ward",
+    "category": "Wards",
+    "subcategory": null,
+    "role": "both"
+  },
+  {
+    "id": "white-ward",
+    "name": "White Ward",
+    "rarity": "very-rare",
+    "description": "THIS OFFERING IS SECRET\nCalls upon The Entity for the following effect:\n• Causes your held Item to be protected from loss upon death.\n• Causes any attached Add-ons to not be consumed upon death or escaping the Trial.",
+    "quote": "\"Keep me from evil, defend me, and pass away. \"",
+    "icon": {
+      "local": "/icons/offerings/IconFavors_whiteWard.png",
+      "remote": "https://deadbydaylight.wiki.gg/images/thumb/IconFavors_whiteWard.png/96px-IconFavors_whiteWard.png"
+    },
+    "wikiUrl": "https://deadbydaylight.wiki.gg/wiki/White_Ward",
+    "category": "Wards",
+    "subcategory": null,
+    "role": "both"
+  }
+]
