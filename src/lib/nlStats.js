@@ -130,6 +130,71 @@ export function perkStatsTable(perks, stats) {
   return out;
 }
 
+// ---------- perk ranking ----------
+
+/**
+ * "Prior" games for the strength score: a perk's distance from the average is
+ * shrunk by games / (games + PRIOR_GAMES). A perk with 20 games and a wild
+ * kill rate stays near the middle; a perk with thousands of games keeps its
+ * full difference.
+ */
+export const PRIOR_GAMES = 300;
+
+export const TIERS = [
+  { id: 'S', min: 3, label: 'Wins much more often than average' },
+  { id: 'A', min: 1.25, label: 'Wins more often than average' },
+  { id: 'B', min: -1.25, label: 'About average' },
+  { id: 'C', min: -3, label: 'Wins less often than average' },
+  { id: 'D', min: -Infinity, label: 'Wins much less often than average' },
+];
+
+/**
+ * Ranks the perks of one role with NightLight numbers. `by`:
+ *   'strength'   – kill/escape rate vs average, shrunk for small samples (default)
+ *   'popularity' – how often the perk is used
+ * Each perk gets { strength, tier, place, movement } where movement compares
+ * with the previous import (null when there is none). Perks under
+ * MIN_PERK_GAMES games are returned in `unranked`.
+ */
+export function rankPerks(perks, stats, { role, by = 'strength' } = {}) {
+  const table = perkStatsTable(perks, stats);
+  const previous = stats?.previousPerks?.[role] ?? null;
+  const prevAverage = stats?.previousPerkAverage?.[role] ?? null;
+  const strengthOf = (rate, count, average) =>
+    rate == null || average == null ? null : round1(((rate - average) * count) / (count + PRIOR_GAMES));
+
+  // Previous places, to show who moved up or down since the last import.
+  let prevPlace = null;
+  if (previous && prevAverage != null) {
+    const prevList = Object.entries(previous)
+      .filter(([, p]) => (p.count ?? 0) >= MIN_PERK_GAMES)
+      .map(([id, p]) => [id, by === 'popularity' ? p.usage : strengthOf(p.rate, p.count, prevAverage)])
+      .sort((a, b) => b[1] - a[1]);
+    prevPlace = Object.fromEntries(prevList.map(([id], i) => [id, i + 1]));
+  }
+
+  const ranked = [];
+  const unranked = [];
+  for (const p of perks) {
+    const s = table[p.id];
+    if (p.role !== role || !s || s.borrowedFrom) continue;
+    const entry = { perk: p, ...s, strength: strengthOf(s.rate, s.count ?? 0, s.average) };
+    entry.tier = TIERS.find((t) => entry.strength >= t.min)?.id ?? 'D';
+    if ((s.count ?? 0) < MIN_PERK_GAMES || entry.strength == null) unranked.push(entry);
+    else ranked.push(entry);
+  }
+  const key = by === 'popularity' ? (e) => e.usage : (e) => e.strength;
+  ranked.sort((a, b) => key(b) - key(a) || (b.count ?? 0) - (a.count ?? 0));
+  ranked.forEach((e, i) => {
+    e.place = i + 1;
+    const before = prevPlace?.[e.perk.id];
+    e.movement = prevPlace ? (before ? before - e.place : 'new') : null;
+  });
+  unranked.sort((a, b) => (b.count ?? 0) - (a.count ?? 0));
+  const tiers = TIERS.map((t) => ({ ...t, perks: ranked.filter((e) => e.tier === t.id) }));
+  return { role, by, ranked, unranked, tiers, average: perkBaseline(stats, role), period: stats?.perkPeriod?.[role] ?? stats?.period ?? null };
+}
+
 /** Games before a perk's numbers count fully in the score (fewer: they count less). */
 export const FULL_WEIGHT_GAMES = 400;
 /** Score points per point of kill/escape rate above or below average, and the cap. */

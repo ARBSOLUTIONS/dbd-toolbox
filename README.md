@@ -139,6 +139,25 @@ The "Empty Slot" rows on that page (builds with fewer than 4 perks) are left
 out: they are no perk, and their kill rates (up to 70%+) would distort the
 average.
 
+**Publish in one go:** add `--publish` to either command. It commits only
+`data/nightlight.json` and pushes it; Cloudflare Pages then rebuilds the site,
+so the perk ranking, perk stats and build scores are live within a few minutes:
+
+```bash
+npm run update-stats -- --perks-text survivor-perks.txt --perks-text killer-perks.txt --publish
+```
+
+### Perk ranking
+
+The **Perk ranking** tab (and the public page `/perk-ranking/`) is a tier list
+calculated from `data/nightlight.json` every time the site loads or is built,
+so each stats import updates it without other changes. Ranking by **best
+kill/escape rate**: the perk's rate minus the average perk of its role, shrunk
+for small samples (difference × games ÷ (games + 300)); tiers S ≥ +3,
+A ≥ +1.25, B about average, C ≤ −1.25, D ≤ −3. Perks under 100 games are
+listed apart. You can also rank by **most used**. Each import keeps the
+previous period's numbers, so ▲/▼ show how many places a perk moved.
+
 ## Public website (DBD-Toolbox)
 
 The public version is a **static website**. It has no server: the data is

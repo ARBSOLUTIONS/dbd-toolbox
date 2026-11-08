@@ -252,6 +252,53 @@ main { padding-top: 16px; }
 .perk-table th .link-button.active { color: var(--text); }
 .perk-table td { font-variant-numeric: tabular-nums; }
 
+/* Perk ranking (tier list from NightLight stats) */
+.perk-ranking { --tier-S: #e8b33a; --tier-A: #4caf6a; --tier-B: #8f8f8f; --tier-C: #d9822b; --tier-D: #e0575d; }
+.rank-source { margin: 4px 0 12px; }
+.rank-how { border: 1px solid var(--border); padding: 10px 14px; margin-bottom: 14px; max-width: 820px; }
+.rank-how p { margin: 0 0 6px; }
+.tier-list { display: grid; gap: 6px; }
+.tier-row { display: grid; grid-template-columns: 64px 1fr; border: 1px solid var(--border); background: rgba(255, 255, 255, 0.02); }
+.tier-label {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 1.6rem; font-weight: 800; color: #111; line-height: 1;
+}
+.tier-label small { font-size: 0.7rem; font-weight: 600; opacity: 0.7; margin-top: 2px; }
+.tier-S .tier-label { background: var(--tier-S); }
+.tier-A .tier-label { background: var(--tier-A); }
+.tier-B .tier-label { background: var(--tier-B); }
+.tier-C .tier-label { background: var(--tier-C); }
+.tier-D .tier-label { background: var(--tier-D); }
+.tier-perks { display: flex; flex-wrap: wrap; gap: 6px; padding: 8px; }
+.rank-chip {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 4px;
+  font-size: 0.82em; border: 1px solid var(--border); background: var(--surface-2, #161616);
+}
+.rank-chip img { width: 28px; height: 28px; }
+.rank-chip.active { border-color: var(--accent); }
+.rank-place { color: var(--muted); font-size: 0.85em; min-width: 2.2em; text-align: right; }
+.rank-num { color: var(--muted); font-variant-numeric: tabular-nums; }
+.rank-move { font-size: 0.8em; font-weight: 600; }
+.rank-move.up { color: #4caf6a; }
+.rank-move.down { color: #e0575d; }
+.rank-move.new { color: var(--tier-S); }
+.muted-chip { opacity: 0.7; }
+.tier-badge { display: inline-block; min-width: 1.6em; text-align: center; font-weight: 800; color: #111; }
+.tier-badge.tier-S { background: var(--tier-S); }
+.tier-badge.tier-A { background: var(--tier-A); }
+.tier-badge.tier-B { background: var(--tier-B); }
+.tier-badge.tier-C { background: var(--tier-C); }
+.tier-badge.tier-D { background: var(--tier-D); }
+.rank-table tbody tr { cursor: pointer; }
+.rank-table tbody tr.active td { background: var(--accent-soft, rgba(217, 31, 44, 0.14)); }
+.rank-detail { margin: 14px 0; max-width: 480px; }
+.rank-unranked { margin-top: 18px; }
+.rank-unranked summary { cursor: pointer; color: var(--muted); }
+@media (max-width: 600px) {
+  .tier-row { grid-template-columns: 44px 1fr; }
+  .tier-label { font-size: 1.2rem; }
+}
+
 /* Rarity colours (as in the game) shown as a left border on cards */
 .perk-card[class*='rarity-'] { border-left-width: 4px; }
 .rarity-common { border-left-color: #6b5a47; }

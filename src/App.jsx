@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import DataStatus from './components/DataStatus.jsx';
 import PerkList from './components/PerkList.jsx';
+import PerkRanking from './components/PerkRanking.jsx';
 import CharacterList from './components/CharacterList.jsx';
 import ItemList from './components/ItemList.jsx';
 import OfferingList from './components/OfferingList.jsx';
@@ -54,6 +55,7 @@ const TAB_GROUPS = [
     label: 'Game data',
     tabs: [
       { id: 'perks', icon: '✦', label: 'Perks', desc: 'Every perk with its full description.' },
+      { id: 'ranking', icon: '🏅', label: 'Perk ranking', desc: 'Tier list of perks from community stats.' },
       { id: 'killers', icon: '🔪', label: 'Killers', desc: 'All killers, their perks and add-ons.' },
       { id: 'survivors', icon: '🏃', label: 'Survivors', desc: 'All survivors and their perks.' },
       { id: 'items', icon: '🔦', label: 'Items', desc: 'Items and item add-ons.' },
@@ -242,6 +244,7 @@ export default function App() {
           <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} perks={data.perks} />
         )}
         {data && tab === 'perks' && <PerkList perks={data.perks} stats={data.stats} />}
+        {data && tab === 'ranking' && <PerkRanking perks={data.perks} stats={data.stats} />}
         {data && tab === 'killers' && (
           <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
         )}

@@ -93,3 +93,48 @@ test('perk stats table: verdicts, ranking by usage, and too few games', () => {
   assert.equal(table[byName('Lithe').id].maxUsage, 25);
   assert.equal(table[byName('Dead Hard').id].delta, 6);
 });
+
+test('perk ranking: small samples are shrunk, tiers and places follow the strength', async () => {
+  const { rankPerks } = await import('../src/lib/nlStats.js');
+  const r = rankPerks(perks, stats, { role: 'survivor' });
+  const names = r.ranked.map((e) => e.perk.name);
+  assert.deepEqual(names, ['Dead Hard', 'Resilience', 'Lithe', 'Breakout']);
+  assert.equal(r.ranked[0].tier, 'S', '+6 over 8000 games');
+  assert.equal(r.ranked[3].tier, 'D', '-10 over 600 games');
+  assert.equal(r.ranked[0].place, 1);
+  assert.equal(r.unranked[0].perk.name, 'Kindred', '20 games: not ranked despite 60%');
+  assert.equal(r.ranked[0].movement, null, 'no previous import');
+
+  const byUse = rankPerks(perks, stats, { role: 'survivor', by: 'popularity' });
+  assert.equal(byUse.ranked[0].perk.name, 'Lithe');
+});
+
+test('perk ranking: movement since the previous import', async () => {
+  const { rankPerks } = await import('../src/lib/nlStats.js');
+  const withPrev = {
+    ...stats,
+    previousPerkAverage: { survivor: 36 },
+    previousPerks: {
+      survivor: {
+        [byName('Lithe').id]: { usage: 25, rate: 45, count: 9000 },
+        [byName('Dead Hard').id]: { usage: 20, rate: 40, count: 8000 },
+      },
+    },
+  };
+  const r = rankPerks(perks, withPrev, { role: 'survivor' });
+  const move = Object.fromEntries(r.ranked.map((e) => [e.perk.name, e.movement]));
+  assert.equal(move['Dead Hard'], 1, 'was 2nd, now 1st');
+  assert.equal(move['Lithe'], -2, 'was 1st, now 3rd');
+  assert.equal(move['Breakout'], 'new');
+});
+
+test('re-importing perk text keeps a snapshot of the previous period only', () => {
+  const first = mergePerkText({ perks: {} }, parsePerkText(pageText(rows)), perks);
+  assert.equal(first.previousPerks, undefined, 'nothing to remember yet');
+  const later = pageText(rows).replace('08 Nov 26', '06 Dec 26');
+  const second = mergePerkText(first, parsePerkText(later), perks);
+  assert.equal(Object.keys(second.previousPerks.survivor).length, 60);
+  assert.equal(second.previousPerkAverage.survivor, first.perkAverage.survivor);
+  const again = mergePerkText(second, parsePerkText(later), perks);
+  assert.deepEqual(again.previousPerks, second.previousPerks, 'same period again: snapshot unchanged');
+});

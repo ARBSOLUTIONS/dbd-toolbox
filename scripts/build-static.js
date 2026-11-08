@@ -22,6 +22,7 @@ import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
 import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
+import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, periodLabel } from '../src/lib/nlStats.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -131,7 +132,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 </head>
 <body>
 <header class="top"><a class="logo" href="/"><img src="/logo.svg" alt="" width="32" height="32">DBD<span>Toolbox</span></a>
-<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
+<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/perk-ranking/">Perk ranking</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
@@ -210,8 +211,42 @@ ${usedIn.length ? `<div class="grid">${usedIn.map(buildCardHtml).join('')}</div>
       url: '/perks/',
       title: `All Dead by Daylight perks (${data.perks.length}) with combos | ${SITE}`,
       description: `Every Dead by Daylight survivor and killer perk for patch ${meta.patch}, with descriptions, playstyle tags and the best perk combinations.`,
-      body: `<h1>All Dead by Daylight perks</h1><p>Patch ${esc(meta.patch)}. Click a perk to see what it does and which perks work best with it.</p>${section('survivor')}${section('killer')}`,
+      body: `<h1>All Dead by Daylight perks</h1><p>Patch ${esc(meta.patch)}. Click a perk to see what it does and which perks work best with it.${stats?.perks ? ' See also the <a href="/perk-ranking/">perk ranking</a> from community stats.' : ''}</p>${section('survivor')}${section('killer')}`,
       crumbs: [{ name: 'Perks', url: '/perks/' }],
+    }),
+  );
+}
+
+// Perk ranking (tier list from NightLight community stats). Rebuilt on every
+// deploy, so it follows each new stats import automatically.
+if (stats?.perks && Object.keys(stats.perks).length) {
+  const pct = (v) => (v == null ? '–' : `${v.toFixed(1)}%`);
+  const section = (role) => {
+    const r = rankPerks(data.perks, stats, { role });
+    const label = role === 'killer' ? 'kill rate' : 'escape rate';
+    const tiers = r.tiers
+      .map(
+        (t) => `<h3>Tier ${t.id} <span class="muted">– ${esc(t.label.toLowerCase())} (${t.perks.length})</span></h3>` +
+          (t.perks.length
+            ? `<ol class="list" start="${t.perks[0].place}">${t.perks
+                .map((e) => `<li>${icon(e.perk, 32)} ${perkLink(e.perk)} <span class="muted">${pct(e.rate)} ${label} (${e.delta >= 0 ? '+' : ''}${e.delta.toFixed(1)}), used in ${pct(e.usage)} of games, ${e.count} games</span></li>`)
+                .join('')}</ol>`
+            : '<p class="muted">No perks.</p>'),
+      )
+      .join('');
+    return `<h2>${roleLabel(role)} perk ranking</h2><p class="muted">${r.ranked.length} perks ranked, average ${label} ${r.average}%. ${r.unranked.length} perks have fewer than ${MIN_PERK_GAMES} games and are not ranked.</p>${tiers}`;
+  };
+  const top = (role) => rankPerks(data.perks, stats, { role }).ranked.slice(0, 3).map((e) => e.perk.name).join(', ');
+  await write(
+    'perk-ranking/index.html',
+    page({
+      url: '/perk-ranking/',
+      title: `Dead by Daylight perk tier list from community stats (${periodLabel(stats)}) | ${SITE}`,
+      description: short(`Which Dead by Daylight perks win most often? Tier list of survivor and killer perks from NightLight community stats. Top survivor perks: ${top('survivor')}. Top killer perks: ${top('killer')}.`),
+      body: `<h1>Dead by Daylight perk ranking</h1>
+<p>Survivor and killer perks ranked by how often they win compared with the average perk, from matches players upload to <a href="https://nightlight.gg">NightLight</a> (${esc(periodLabel(stats))}). The difference is shrunk for small samples (× games ÷ (games + ${PRIOR_GAMES})), so a perk with only a few games cannot top the list. Tiers: S ≥ +3, A ≥ +1.25, B about average, C ≤ −1.25, D ≤ −3. Community numbers are a strong hint, not proof: a perk can also win because good players pick it.</p>
+${section('survivor')}${section('killer')}`,
+      crumbs: [{ name: 'Perk ranking', url: '/perk-ranking/' }],
     }),
   );
 }

@@ -296,6 +296,19 @@ export function parsePerkText(text) {
 export function mergePerkText(stats, parsed, perks) {
   const match = makeMatcher(perks.filter((p) => p.role === parsed.role));
   const out = { ...stats, perks: { ...(stats.perks ?? {}) } };
+
+  // Remember the previous numbers of this role, so the ranking can show who
+  // moved up or down. Re-importing the same period keeps the older snapshot.
+  const oldRole = Object.entries(stats.perks ?? {}).filter(([, p]) => p.role === parsed.role);
+  const samePeriod = stats.perkPeriod?.[parsed.role]?.end && stats.perkPeriod[parsed.role].end === parsed.period.end;
+  if (oldRole.length && !samePeriod) {
+    out.previousPerks = {
+      ...(stats.previousPerks ?? {}),
+      [parsed.role]: Object.fromEntries(oldRole.map(([id, p]) => [id, { usage: p.usage, rate: p.rate, count: p.count }])),
+    };
+    out.previousPerkAverage = { ...(stats.previousPerkAverage ?? {}), [parsed.role]: stats.perkAverage?.[parsed.role] ?? null };
+    out.previousPerkPeriod = { ...(stats.previousPerkPeriod ?? {}), [parsed.role]: stats.perkPeriod?.[parsed.role] ?? null };
+  }
   for (const [id, p] of Object.entries(out.perks)) if (p.role === parsed.role) delete out.perks[id];
   const unmatched = [];
   let games = 0;
