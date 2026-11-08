@@ -153,7 +153,7 @@ function buildCardHtml(b) {
   const perks = b.resolved.perks.filter(Boolean);
   const extra = [b.resolved.item, b.resolved.killer, ...(b.resolved.addons ?? [])].filter(Boolean);
   return `<article class="card"><h3><a href="${buildUrl(b)}">${esc(b.name)}</a> <span class="score">${b.rating.score}</span></h3>
-<p class="muted">${b.type === 'beginner' ? 'Beginner' : b.type === 'auto' ? 'Auto-generated' : b.type === 'popular' ? 'Most played (NightLight)' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
+<p class="muted">${b.type === 'beginner' ? 'Beginner' : b.type === 'auto' ? 'Auto-generated' : b.type === 'popular' ? 'Most played (NightLight)' : b.type === 'creator' ? 'Community pick' : b.type === 'meta' ? 'Strong / meta' : 'Fun'} · ${esc(b.killer ?? roleLabel(b.role))} · ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')}</p>
 <p class="icons">${perks.map((p) => `<a href="/perks/${p.id}/" title="${esc(p.name)}">${icon(p, 48)}</a>`).join('')}</p>
 <p>${perks.map(perkLink).join(' · ')}${extra.length ? `<br><span class="muted">${extra.map((e) => esc(e.name)).join(' · ')}</span>` : ''}</p></article>`;
 }
@@ -312,7 +312,7 @@ ${c ? `<h3>NightLight numbers per perk</h3><p class="muted">${label} of each per
 // ---------- 5. Build pages ----------
 for (const b of allBuilds) {
   const perks = b.resolved.perks.filter(Boolean);
-  const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'popular' ? 'most played (community stats)' : b.type === 'meta' ? 'strong (meta)' : 'fun';
+  const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'popular' ? 'most played (community stats)' : b.type === 'creator' ? 'community-recommended' : b.type === 'meta' ? 'strong (meta)' : 'fun';
   const who = b.killer ?? (b.role === 'killer' ? 'any killer' : 'survivors');
   const title = `${b.name} – ${b.role === 'killer' ? `${who} build` : 'survivor build'}: ${perks.map((p) => p.name).join(', ')} | ${SITE}`;
   const description = short(`${b.name}: a ${kind} Dead by Daylight build for ${who}. ${b.why}`);
@@ -322,6 +322,7 @@ for (const b of allBuilds) {
 <h2>Perks</h2><ul class="combos">${perks.map((p) => `<li>${icon(p, 48)} ${perkLink(p)} – ${esc(short(p.description, 200))}</li>`).join('')}</ul>
 ${extra.length ? `<h2>${b.role === 'killer' ? 'Killer & add-ons' : 'Item & add-ons'}</h2><ul class="combos">${extra.map((e) => `<li>${icon(e, 40)} <strong>${esc(e.name)}</strong>${e.description ? ` – ${esc(short(e.description, 160))}` : ''}</li>`).join('')}</ul>` : ''}
 <h2>Why it works</h2><p>${esc(b.why)}</p>
+${b.source ? `<p class="muted">Recommended by <a href="${esc(b.source.url)}" rel="nofollow noopener">${esc(b.source.name)}</a>${b.source.date ? ` (${esc(b.source.date)})` : ''}.</p>` : ''}
 ${b.howToPlay ? `<h2>How to play</h2><p>${esc(b.howToPlay)}</p>` : ''}
 ${scoreSection(b)}
 ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b.rating.pros.map((r) => `<li>✓ ${esc(r)}</li>`).join('')}${b.rating.cons.map((r) => `<li>✗ ${esc(r)}</li>`).join('')}</ul>` : ''}`;

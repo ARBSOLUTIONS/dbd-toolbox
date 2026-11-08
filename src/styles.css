@@ -1318,3 +1318,4 @@ main { padding-top: 22px; }
 .build-card { overflow: visible; }
 .build-card::before { border-radius: inherit; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .build-card:hover, .build-card:focus-within { z-index: 20; }
+.build-card.type-creator { --type-color: #e8a33d; }

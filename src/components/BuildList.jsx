@@ -68,6 +68,7 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
             ['beginner', '🌱 Beginner'],
             ['meta', 'Strong / meta'],
             ['fun', 'Fun'],
+            ...(builds.some((b) => b.type === 'creator') ? [['creator', '🎥 Community picks']] : []),
             ['auto', 'Auto'],
             ...(builds.some((b) => b.type === 'popular') ? [['popular', '📊 Most played']] : []),
           ].map(([id, label]) => (

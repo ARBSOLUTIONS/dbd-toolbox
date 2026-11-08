@@ -1904,6 +1904,593 @@
       "offering": null,
       "why": "Sloppy Butcher and Thanatophobia punish survivors for being injured, Distressing makes your terror radius bigger so they stay scared, and Enduring helps in chases. Only uses General perks every killer has, plus one or two perks from the free base-game killers, so you can run it right away.",
       "howToPlay": "Spread your hits over different survivors so many stay injured and slow."
+    },
+    {
+      "id": "c-solo-queue",
+      "name": "Solo Queue Info",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "aura",
+        "altruism"
+      ],
+      "perks": [
+        "Sprint Burst",
+        "Kindred",
+        "Déjà Vu",
+        "We'll Make It"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "Kindred and Déjà Vu give a random team the information it usually lacks: who is on the hook, where the killer is and which gens to finish. Sprint Burst gets you out of trouble, and We'll Make It speeds up heals after a rescue. Kindred and We'll Make It were both buffed in 10.2.0.",
+      "howToPlay": "Walk, so Sprint Burst stays ready. Go for the gens Déjà Vu shows, and use Kindred to decide who goes for the save.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-solo-anti-tunnel",
+      "name": "Solo Anti-Tunnel",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "anti-tunnel",
+        "aura"
+      ],
+      "perks": [
+        "Off the Record",
+        "Will to Live",
+        "Sprint Burst",
+        "Kindred"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "Off the Record and Will to Live make you hard to tunnel after an unhook, Sprint Burst gives a head start in chase and Kindred shows what your team is doing.",
+      "howToPlay": "After an unhook, keep moving: the protection only works while you play on. Save Sprint Burst for when the killer comes straight at you.",
+      "source": {
+        "name": "Timesaver.gg",
+        "url": "https://timesaver.gg/blog/dbd-builds-best-killer-survivor-builds",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-altruism",
+      "name": "Team Healer",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "altruism",
+        "healing"
+      ],
+      "perks": [
+        "We'll Make It",
+        "Empathy",
+        "Reassurance",
+        "Aftercare"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "Empathy shows injured team-mates, We'll Make It makes heals fast after a rescue, Reassurance buys time on the hook and Aftercare keeps everyone visible to each other.",
+      "howToPlay": "Stay central on the map. Go to whoever needs help, and use Reassurance when a save is not yet possible.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-stealth",
+      "name": "Silent Survivor",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "stealth"
+      ],
+      "perks": [
+        "Iron Will",
+        "Lucky Break",
+        "Quick & Quiet",
+        "Lightweight"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "All four perks hide you: no grunts of pain, no blood, quiet vaults and shorter scratch marks. Killers lose you after breaking line of sight.",
+      "howToPlay": "Break line of sight and hide instead of looping. Vault quietly and walk away from your scratch marks.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-flashlight",
+      "name": "Flashlight Saver",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "sabotage"
+      ],
+      "perks": [
+        "Background Player",
+        "Champion of Light",
+        "Bond",
+        "Flashbang"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "A fun build for saves: Background Player gets you to the pick-up fast, Flashbang and Champion of Light blind the killer, and Bond shows where the action is. Bring a flashlight with duration add-ons.",
+      "howToPlay": "Stay near chases using Bond. When the killer picks someone up, come in from the side and blind them.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-endgame",
+      "name": "Endgame Escape",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "endgame",
+        "altruism"
+      ],
+      "perks": [
+        "Adrenaline",
+        "Hope",
+        "Wake Up!",
+        "No One Left Behind"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "Everything switches on when the last gen pops: a heal and speed boost, faster gates and faster saves. Best in a group that plays together. No One Left Behind was buffed in 10.2.0.",
+      "howToPlay": "Finish the gens as a team. In the endgame, open a gate quickly with Wake Up! and then go back for a hooked team-mate.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-beginner-info",
+      "name": "Info Starter",
+      "role": "survivor",
+      "type": "creator",
+      "playstyles": [
+        "aura",
+        "chase"
+      ],
+      "perks": [
+        "Lithe",
+        "Windows of Opportunity",
+        "Déjà Vu",
+        "Alert"
+      ],
+      "item": null,
+      "itemAddons": [],
+      "offering": null,
+      "why": "Simple and safe: Windows of Opportunity and Déjà Vu show where to go, Alert shows the killer when it breaks something, and Lithe ends chases. Windows of Opportunity only shows windows since 10.2.0.",
+      "howToPlay": "Look at the auras before you run. Use Lithe at a window you already know.",
+      "source": {
+        "name": "Playhub",
+        "url": "https://playhub.com/blog/dead-by-daylight/best-survivor-builds-602668",
+        "date": "Jul 2026"
+      }
+    },
+    {
+      "id": "c-gen-defence",
+      "name": "Gen Defence",
+      "role": "killer",
+      "type": "creator",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Corrupt Intervention",
+        "Pop Goes the Weasel",
+        "Grim Embrace",
+        "No Holds Barred"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Called the safest build in the game by the tier list: Corrupt Intervention slows the start, Pop takes away progress after a hook, and Grim Embrace and No Holds Barred block gens as the match goes on.",
+      "howToPlay": "Hook four different survivors for Grim Embrace, and kick the most-repaired gen right after a hook for Pop.",
+      "source": {
+        "name": "Timesaver.gg tier list",
+        "url": "https://timesaver.gg/blog/dbd-best-killer-perks-tier-list-2026",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-hook-pressure",
+      "name": "Hook Pressure",
+      "role": "killer",
+      "type": "creator",
+      "playstyles": [
+        "slowdown",
+        "scourge",
+        "aura"
+      ],
+      "perks": [
+        "Scourge Hook: Pain Resonance",
+        "Undone",
+        "Lethal Pursuer",
+        "Dead Man's Switch"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Lethal Pursuer finds the first chase, then every hook damages and blocks gens. Pain Resonance is the most picked killer perk on NightLight right now.",
+      "howToPlay": "Bring survivors to the white Scourge hooks. Chase whoever is on a gen when you hook.",
+      "source": {
+        "name": "Timesaver.gg tier list",
+        "url": "https://timesaver.gg/blog/dbd-best-killer-perks-tier-list-2026",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-help-wanted",
+      "name": "Help Wanted",
+      "role": "killer",
+      "type": "creator",
+      "playstyles": [
+        "slowdown",
+        "info"
+      ],
+      "perks": [
+        "Help Wanted",
+        "Scourge Hook: Pain Resonance",
+        "Nowhere to Hide",
+        "Grim Embrace"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Help Wanted was strongly buffed in 10.2.0 and is rising in both use and kill rate. Do not combine it with Hex: Ruin or Monstrous Shrine.",
+      "howToPlay": "Kick the gens Help Wanted marks and use Nowhere to Hide to see who is nearby.",
+      "source": {
+        "name": "Timesaver.gg tier list",
+        "url": "https://timesaver.gg/blog/dbd-best-killer-perks-tier-list-2026",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-chase",
+      "name": "Chase Machine",
+      "role": "killer",
+      "type": "creator",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Bamboozle",
+        "Enduring",
+        "Unrelenting",
+        "Pop Goes the Weasel"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Win by ending chases faster: Bamboozle blocks windows, Enduring shortens pallet stuns and Unrelenting (buffed in 10.2.0) cuts the cooldown after an attack.",
+      "howToPlay": "Play through pallets instead of respecting them, and kick a gen after each hook for Pop.",
+      "source": {
+        "name": "Timesaver.gg tier list",
+        "url": "https://timesaver.gg/blog/dbd-best-killer-perks-tier-list-2026",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-free-beginner",
+      "name": "Free Starter",
+      "role": "killer",
+      "type": "creator",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Agitation",
+        "Iron Grasp",
+        "Whispers",
+        "Brutal Strength"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Only general perks every player has. Whispers tells you if survivors are near, and Agitation plus Iron Grasp make far hooks possible. Agitation and Iron Grasp were buffed in 10.2.0.",
+      "howToPlay": "Walk towards where Whispers lights up, and carry survivors to a hook far from the gens they were on.",
+      "source": {
+        "name": "Timesaver.gg",
+        "url": "https://timesaver.gg/blog/dbd-builds-best-killer-survivor-builds",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-nurse",
+      "name": "Nurse Regression",
+      "role": "killer",
+      "killer": "The Nurse",
+      "type": "creator",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Corrupt Intervention",
+        "Pop Goes the Weasel",
+        "Eruption",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Nurse ends chases fast, so these perks turn every hook and down into gen regression.",
+      "howToPlay": "Use the first blink to get line of sight and the second for the hit. Blink beside the survivor, not on top of them.",
+      "source": {
+        "name": "xTakker (Nurse)",
+        "url": "https://dbdtakker.com/en/killers/the-nurse",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-blight",
+      "name": "Hens Meta Blight",
+      "role": "killer",
+      "killer": "The Blight",
+      "type": "creator",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Pop Goes the Weasel",
+        "Corrupt Intervention",
+        "Scourge Hook: Pain Resonance",
+        "Eruption"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Blight rushes to the first hooks, so Pain Resonance and Pop hit hard early, and Eruption punishes every down.",
+      "howToPlay": "Use rushes to reach survivors fast and take hooks on the white Scourge hooks.",
+      "source": {
+        "name": "dbdvault – pepostrous",
+        "url": "https://dbdvault.com/builds",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-spirit",
+      "name": "Spirit Ruin",
+      "role": "killer",
+      "killer": "The Spirit",
+      "type": "creator",
+      "playstyles": [
+        "slowdown",
+        "hex"
+      ],
+      "perks": [
+        "Corrupt Intervention",
+        "Scourge Hook: Pain Resonance",
+        "Hex: Ruin",
+        "Eruption"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Spirit wins chases fast, so Ruin and Eruption keep the gens slow while she does.",
+      "howToPlay": "Make survivors drop pallets before you phase. Use short phases at weak pallets.",
+      "source": {
+        "name": "xTakker (Spirit)",
+        "url": "https://dbdtakker.com/en/killers/the-spirit",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-huntress",
+      "name": "Huntress Pressure",
+      "role": "killer",
+      "killer": "The Huntress",
+      "type": "creator",
+      "playstyles": [
+        "slowdown",
+        "scourge"
+      ],
+      "perks": [
+        "Scourge Hook: Pain Resonance",
+        "Lay Waste",
+        "Undone",
+        "Turn Back the Clock"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Gens explode and stay damaged while you chase at range.",
+      "howToPlay": "At melee range against a healthy survivor, throw a hatchet instead of hitting. Lob hatchets over low walls.",
+      "source": {
+        "name": "xTakker (Huntress)",
+        "url": "https://dbdtakker.com/en/killers/the-huntress",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-ghoul",
+      "name": "Ghoul Anti-Heal",
+      "role": "killer",
+      "killer": "The Ghoul",
+      "type": "creator",
+      "playstyles": [
+        "anti-heal",
+        "slowdown"
+      ],
+      "perks": [
+        "Surge",
+        "Scourge Hook: Monstrous Shrine",
+        "Distressing",
+        "Coulrophobia"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Basic downs trigger Surge, and Distressing plus Coulrophobia make healing very slow in his large terror radius.",
+      "howToPlay": "Chase in Enraged Mode, use the power mainly at pallets, and finish downs with a basic attack for Surge.",
+      "source": {
+        "name": "xTakker (Ghoul)",
+        "url": "https://dbdtakker.com/en/killers/the-ghoul",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-ghost-face",
+      "name": "Ultimato Ghost Face",
+      "role": "killer",
+      "killer": "The Ghost Face",
+      "type": "creator",
+      "playstyles": [
+        "aura",
+        "stealth"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "A Nurse's Calling",
+        "Surge",
+        "Thrilling Tremors"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "An aura stealth build on the current patch: find targets to stalk to Exposed, while Surge and Thrilling Tremors stall gens without breaking stealth.",
+      "howToPlay": "Use the auras to sneak up, stalk to Exposed and down with one hit.",
+      "source": {
+        "name": "dbdvault – IMonika",
+        "url": "https://dbdvault.com/builds",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-dark-lord",
+      "name": "Dracula Hexes",
+      "role": "killer",
+      "killer": "The Dark Lord",
+      "type": "creator",
+      "playstyles": [
+        "hex",
+        "slowdown"
+      ],
+      "perks": [
+        "Hex: Ruin",
+        "Scourge Hook: Pain Resonance",
+        "Eruption",
+        "Hex: Undying"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Ruin and Pain Resonance slow the gens, and Undying protects Ruin.",
+      "howToPlay": "Switch forms often: bat to scout, wolf to track and dash, vampire form to throw fire.",
+      "source": {
+        "name": "xTakker (Dark Lord)",
+        "url": "https://dbdtakker.com/en/killers/the-dark-lord",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-houndmaster",
+      "name": "Houndmaster M1",
+      "role": "killer",
+      "killer": "The Houndmaster",
+      "type": "creator",
+      "playstyles": [
+        "chase",
+        "slowdown"
+      ],
+      "perks": [
+        "Rapid Brutality",
+        "Save the Best for Last",
+        "Scourge Hook: Pain Resonance",
+        "Eruption"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Rapid Brutality and Save the Best for Last speed up chains of basic hits.",
+      "howToPlay": "Send the dog so the survivor vaults a pallet while you circle around. After a hook, use the dog to find the next survivor.",
+      "source": {
+        "name": "xTakker (Houndmaster)",
+        "url": "https://dbdtakker.com/en/killers/the-houndmaster",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-the-first",
+      "name": "The First Hexes",
+      "role": "killer",
+      "killer": "The First",
+      "type": "creator",
+      "playstyles": [
+        "hex",
+        "slowdown"
+      ],
+      "perks": [
+        "Corrupt Intervention",
+        "Scourge Hook: Pain Resonance",
+        "Hex: Ruin",
+        "Hex: Undying"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Corrupt Intervention gives an early grip, Ruin and Pain Resonance regress gens, and Undying protects the hex.",
+      "howToPlay": "Take control of the opening gens and guard the area of your hex totem.",
+      "source": {
+        "name": "xTakker (The First)",
+        "url": "https://dbdtakker.com/en/killers/the-first",
+        "date": "Oct 2026"
+      }
+    },
+    {
+      "id": "c-jason",
+      "name": "Sniper Jason",
+      "role": "killer",
+      "killer": "The Slasher",
+      "type": "creator",
+      "playstyles": [
+        "aura",
+        "info"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Gearhead",
+        "Overwhelming Presence",
+        "Turn Back the Clock"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Gearhead shows gen repairs, Overwhelming Presence slows items and Lethal Pursuer finds the first targets.",
+      "howToPlay": "Go after whoever Lethal Pursuer and Gearhead reveal.",
+      "source": {
+        "name": "dbdvault – JaveHunt",
+        "url": "https://dbdvault.com/builds",
+        "date": "Nov 2026"
+      }
+    },
+    {
+      "id": "c-xenomorph",
+      "name": "Hens' Favorite Xeno",
+      "role": "killer",
+      "killer": "The Xenomorph",
+      "type": "creator",
+      "playstyles": [
+        "slowdown",
+        "chase"
+      ],
+      "perks": [
+        "Barbecue & Chilli",
+        "Scourge Hook: Pain Resonance",
+        "Eruption",
+        "Bamboozle"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Bamboozle closes the windows the tail cannot reach, and Barbecue & Chilli finds the next target after each hook.",
+      "howToPlay": "Use the tunnels to move between gens, and block windows on loops the tail cannot cover.",
+      "source": {
+        "name": "dbdvault – Hens",
+        "url": "https://dbdvault.com/builds",
+        "date": "Nov 2026"
+      }
     }
   ]
 }

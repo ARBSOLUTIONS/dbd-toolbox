@@ -148,7 +148,7 @@ export default function BuildCard({ build, favorites, footer }) {
             <span className={`badge badge-${build.type}`}>
               {build.variant === 'spotlight'
                 ? 'Perk spotlight'
-                : { beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto', community: 'Community', popular: '📊 Most played' }[build.type] ??
+                : { beginner: '🌱 Beginner', meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto', community: 'Community', creator: '🎥 Community pick', popular: '📊 Most played' }[build.type] ??
                   build.type}
             </span>
             {status && (
@@ -217,6 +217,15 @@ export default function BuildCard({ build, favorites, footer }) {
       {build.nl && <NightLightLine nl={build.nl} />}
 
       {build.author && <p className="muted small community-author">by {build.author}</p>}
+      {build.source && (
+        <p className="muted small community-author">
+          Source:{' '}
+          <a href={build.source.url} target="_blank" rel="noopener noreferrer">
+            {build.source.name}
+          </a>
+          {build.source.date ? ` (${build.source.date})` : ''}
+        </p>
+      )}
       {footer}
 
       <button className="link-button details-toggle" onClick={() => setOpen(!open)}>
