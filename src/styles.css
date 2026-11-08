@@ -1314,3 +1314,7 @@ main { padding-top: 22px; }
 .score-hover { position: relative; cursor: help; outline: none; }
 .score-popover { display: none; position: absolute; top: calc(100% + 6px); right: 0; z-index: 50; width: min(360px, 86vw); max-height: 70vh; overflow: auto; padding: 10px 12px; background: #0d0d0f; border: 1px solid var(--border); border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.6); text-align: left; }
 .score-hover:hover .score-popover, .score-hover:focus-within .score-popover { display: block; }
+/* Let the score popover stick out of the card; keep the top strip inside the rounded corners. */
+.build-card { overflow: visible; }
+.build-card::before { border-radius: inherit; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.build-card:hover, .build-card:focus-within { z-index: 20; }
