@@ -68,7 +68,46 @@ input[type='search'], input[type='text'], select {
 .topbar h1 { margin: 0; font-size: 1.3rem; letter-spacing: 0.04em; }
 .topbar h1 span { color: var(--accent); }
 
-.tabs { display: flex; flex-wrap: wrap; gap: 6px; min-width: 0; }
+.tabs {
+  order: 3;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 36px;
+  min-width: 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.tab-group { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.tab-group-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-left: 4px;
+}
+.tab-group-items { display: flex; flex-wrap: wrap; gap: 2px; }
+.tabs button.tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px 10px;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+.tabs button.tab:hover { background: var(--panel-2); color: var(--text); border-color: transparent; }
+.tabs button.tab.active { background: var(--accent-soft); border-color: var(--accent); color: var(--text); font-weight: 600; }
+.tab-icon { font-size: 0.95em; width: 1.2em; text-align: center; }
+@media (max-width: 700px) {
+  .tabs { gap: 10px; }
+  .tab-group { flex-basis: 100%; }
+  .topbar { position: static; }
+}
 
 .data-status {
   margin-left: auto;
@@ -412,4 +451,3 @@ button.ok { border-color: var(--ok); color: var(--ok); }
 .share-form textarea { min-height: 80px; resize: vertical; background: var(--panel); border: 1px solid var(--border); border-radius: 6px; padding: 8px; color: inherit; font: inherit; }
 
 html, body { overflow-x: hidden; }
-.tabs button { white-space: nowrap; }

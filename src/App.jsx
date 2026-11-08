@@ -21,19 +21,34 @@ import Challenges from './components/Challenges.jsx';
 import Achievements, { AchievementToasts } from './components/Achievements.jsx';
 import { useChallenges } from './lib/challengeStore.js';
 
-const TABS = [
-  { id: 'builds', label: 'Builds' },
-  { id: 'combos', label: 'Combos' },
-  { id: 'maker', label: 'Build maker' },
-  { id: 'community', label: '👥 Community' },
-  { id: 'favorites', label: '★ Favourites' },
-  { id: 'challenges', label: '🎲 Challenges' },
-  { id: 'achievements', label: '🏆 Achievements' },
-  { id: 'perks', label: 'Perks' },
-  { id: 'killers', label: 'Killers' },
-  { id: 'survivors', label: 'Survivors' },
-  { id: 'items', label: 'Items' },
-  { id: 'offerings', label: 'Offerings' },
+const TAB_GROUPS = [
+  {
+    label: 'Builds',
+    tabs: [
+      { id: 'builds', icon: '⚔️', label: 'Builds' },
+      { id: 'combos', icon: '🔗', label: 'Combos' },
+      { id: 'maker', icon: '🛠️', label: 'Build maker' },
+      { id: 'community', icon: '👥', label: 'Community' },
+      { id: 'favorites', icon: '★', label: 'Favourites' },
+    ],
+  },
+  {
+    label: 'Play',
+    tabs: [
+      { id: 'challenges', icon: '🎲', label: 'Challenges' },
+      { id: 'achievements', icon: '🏆', label: 'Achievements' },
+    ],
+  },
+  {
+    label: 'Game data',
+    tabs: [
+      { id: 'perks', icon: '✦', label: 'Perks' },
+      { id: 'killers', icon: '🔪', label: 'Killers' },
+      { id: 'survivors', icon: '🏃', label: 'Survivors' },
+      { id: 'items', icon: '🔦', label: 'Items' },
+      { id: 'offerings', icon: '🕯️', label: 'Offerings' },
+    ],
+  },
 ];
 
 // Offerings get a rating (1-5 stars + reason); the rating also corrects the role.
@@ -114,14 +129,27 @@ export default function App() {
         <h1>
           DBD-<span>Toolbox</span>
         </h1>
-        <nav className="tabs">
-          {TABS.map((t) => (
-            <button key={t.id} className={tab === t.id ? 'active' : ''} onClick={() => setTab(t.id)}>
-              {t.label}
-            </button>
+        <DataStatus meta={data?.meta} onRefreshed={load} />
+        <nav className="tabs" aria-label="Main menu">
+          {TAB_GROUPS.map((g) => (
+            <div key={g.label} className="tab-group">
+              <span className="tab-group-label">{g.label}</span>
+              <div className="tab-group-items">
+                {g.tabs.map((t) => (
+                  <button
+                    key={t.id}
+                    className={`tab ${tab === t.id ? 'active' : ''}`}
+                    aria-current={tab === t.id ? 'page' : undefined}
+                    onClick={() => setTab(t.id)}
+                  >
+                    <span className="tab-icon" aria-hidden="true">{t.icon}</span>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
-        <DataStatus meta={data?.meta} onRefreshed={load} />
       </header>
 
       <main>
