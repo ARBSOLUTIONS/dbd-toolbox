@@ -7,10 +7,21 @@
       "name": "Loop Machine",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["chase", "anti-tunnel"],
-      "perks": ["Windows of Opportunity", "Lithe", "Decisive Strike", "Off the Record"],
+      "playstyles": [
+        "chase",
+        "anti-tunnel"
+      ],
+      "perks": [
+        "Windows of Opportunity",
+        "Lithe",
+        "Decisive Strike",
+        "Off the Record"
+      ],
       "item": "Emergency Med-Kit",
-      "itemAddons": ["Gauze Roll", "Surgical Suture"],
+      "itemAddons": [
+        "Gauze Roll",
+        "Surgical Suture"
+      ],
       "offering": null,
       "why": "Windows of Opportunity shows every pallet and window, so you always know where the next loop is. Lithe turns a fast vault into a burst of speed that ends many chases early. Decisive Strike and Off the Record together make you very hard to tunnel after an unhook.",
       "howToPlay": "Take chases on purpose and run them long. Save Lithe for a strong window so the killer cannot simply follow you. After an unhook, play near your team and use Decisive Strike only when the killer commits to you."
@@ -20,10 +31,20 @@
       "name": "Gen Machine",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["gen-rush"],
-      "perks": ["Déjà Vu", "Resilience", "Prove Thyself", "Hyperfocus"],
+      "playstyles": [
+        "gen-rush"
+      ],
+      "perks": [
+        "Déjà Vu",
+        "Resilience",
+        "Prove Thyself",
+        "Hyperfocus"
+      ],
       "item": "Commodious Toolbox",
-      "itemAddons": ["Brand New Part", "Socket Swivels"],
+      "itemAddons": [
+        "Brand New Part",
+        "Socket Swivels"
+      ],
       "offering": null,
       "why": "Déjà Vu shows the three generators that sit closest together, so you can work on the ones the killer would want to protect. Prove Thyself speeds up gens when you work together, and Hyperfocus rewards a string of great skill checks. Resilience adds repair speed while you are injured, which happens a lot.",
       "howToPlay": "Pick a Déjà Vu generator and stay on it. Work together with a teammate to trigger Prove Thyself. Use Brand New Part on a gen that is nearly done when the killer is busy in a chase."
@@ -33,10 +54,21 @@
       "name": "Team Anchor",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["altruism", "aura"],
-      "perks": ["Kindred", "Borrowed Time", "Reassurance", "Deliverance"],
+      "playstyles": [
+        "altruism",
+        "aura"
+      ],
+      "perks": [
+        "Kindred",
+        "Borrowed Time",
+        "Reassurance",
+        "Deliverance"
+      ],
       "item": "Ranger Med-Kit",
-      "itemAddons": ["Gauze Roll", "Abdominal Dressing"],
+      "itemAddons": [
+        "Gauze Roll",
+        "Abdominal Dressing"
+      ],
       "offering": null,
       "why": "Kindred shows everyone (and the killer near the hook) when someone is hooked, so the right person goes for the save. Borrowed Time protects the person you unhook. Reassurance buys time on a hook when you cannot reach it yet, and Deliverance lets you unhook yourself after you made a safe save.",
       "howToPlay": "You are the one who does the saves. Make your first unhook early to unlock Deliverance. Use Reassurance when the killer is camping, so you do not have to walk into a trade."
@@ -46,10 +78,21 @@
       "name": "Second Life",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["anti-tunnel", "chase"],
-      "perks": ["Dead Hard", "Decisive Strike", "Off the Record", "Unbreakable"],
+      "playstyles": [
+        "anti-tunnel",
+        "chase"
+      ],
+      "perks": [
+        "Dead Hard",
+        "Decisive Strike",
+        "Off the Record",
+        "Unbreakable"
+      ],
       "item": "First Aid Kit",
-      "itemAddons": ["Self Adherent Wrap", "Rubber Gloves"],
+      "itemAddons": [
+        "Self Adherent Wrap",
+        "Rubber Gloves"
+      ],
       "offering": null,
       "why": "This build is all about not dying first. After you are unhooked, Off the Record hides you and gives Endurance, Decisive Strike punishes a tunnelling killer, and Dead Hard gives one more hit. Unbreakable lets you pick yourself up if the killer slugs you instead.",
       "howToPlay": "Good for solo queue against killers who tunnel. Play the early game normally and keep your Dead Hard for when you are about to be hit at a loop."
@@ -59,10 +102,21 @@
       "name": "Information Broker",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["aura", "altruism"],
-      "perks": ["Windows of Opportunity", "Bond", "Kindred", "Déjà Vu"],
+      "playstyles": [
+        "aura",
+        "altruism"
+      ],
+      "perks": [
+        "Windows of Opportunity",
+        "Bond",
+        "Kindred",
+        "Déjà Vu"
+      ],
       "item": "Annotated Map",
-      "itemAddons": ["Glowing Ink", "Gnarled Compass"],
+      "itemAddons": [
+        "Glowing Ink",
+        "Gnarled Compass"
+      ],
       "offering": null,
       "why": "Four kinds of information: loops (Windows), teammates (Bond), hooks and the killer near them (Kindred) and the best generators (Déjà Vu). You always know where to go, which helps a lot in solo queue.",
       "howToPlay": "Use Bond to find teammates to work on gens with. Use the map to track gens and exits. Ideal when you play without voice chat."
@@ -72,10 +126,20 @@
       "name": "Ghost Protocol",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["stealth"],
-      "perks": ["Distortion", "Lightweight", "Quick & Quiet", "Urban Evasion"],
+      "playstyles": [
+        "stealth"
+      ],
+      "perks": [
+        "Distortion",
+        "Lightweight",
+        "Quick & Quiet",
+        "Urban Evasion"
+      ],
       "item": "Vigo's Fog Vial",
-      "itemAddons": ["Mushroom Formula", "Potent Extract"],
+      "itemAddons": [
+        "Mushroom Formula",
+        "Potent Extract"
+      ],
       "offering": null,
       "why": "Distortion blocks the killer's aura-reading perks, so they cannot find you that way. Lightweight makes your scratch marks harder to follow, Quick & Quiet hides fast vaults and locker use, and Urban Evasion lets you move quickly while crouched.",
       "howToPlay": "Avoid chases, work on far-away gens and break line of sight early. Strong against aura-reading killers."
@@ -85,10 +149,21 @@
       "name": "Endgame Closer",
       "role": "survivor",
       "type": "meta",
-      "playstyles": ["endgame", "chase"],
-      "perks": ["Adrenaline", "Hope", "Wake Up!", "Resilience"],
+      "playstyles": [
+        "endgame",
+        "chase"
+      ],
+      "perks": [
+        "Adrenaline",
+        "Hope",
+        "Wake Up!",
+        "Resilience"
+      ],
       "item": "Toolbox",
-      "itemAddons": ["Socket Swivels", "Wire Spool"],
+      "itemAddons": [
+        "Socket Swivels",
+        "Wire Spool"
+      ],
       "offering": null,
       "why": "Adrenaline heals you and gives a burst of speed as soon as the last gen pops. Hope adds more speed once the gates are powered. Wake Up! shows the exit gates and opens them faster, and Resilience speeds up both gens and gate opening while you are injured.",
       "howToPlay": "Play safe early, then go all-in in the endgame. Head straight to a gate when the last gen pops and open it for the team."
@@ -98,10 +173,22 @@
       "name": "Boon Builder",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["boon", "healing", "totems"],
-      "perks": ["Boon: Circle of Healing", "Boon: Shadow Step", "Boon: Exponential", "Self-Care"],
+      "playstyles": [
+        "boon",
+        "healing",
+        "totems"
+      ],
+      "perks": [
+        "Boon: Circle of Healing",
+        "Boon: Shadow Step",
+        "Boon: Exponential",
+        "Self-Care"
+      ],
       "item": "Camping Aid Kit",
-      "itemAddons": ["Bandages", "Rubber Gloves"],
+      "itemAddons": [
+        "Bandages",
+        "Rubber Gloves"
+      ],
       "offering": null,
       "why": "Turn a dull totem into a safe base: heal fast, recover from the dying state and hide your scratch marks. If the killer snuffs one boon, light it again somewhere else.",
       "howToPlay": "Bless a totem in the middle of the map near gens. Lead your team there to heal. Fun to annoy killers who like to slug."
@@ -111,10 +198,21 @@
       "name": "Locker Gremlin",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["chase", "stealth"],
-      "perks": ["Head On", "Quick & Quiet", "Flashbang", "Deception"],
+      "playstyles": [
+        "chase",
+        "stealth"
+      ],
+      "perks": [
+        "Head On",
+        "Quick & Quiet",
+        "Flashbang",
+        "Deception"
+      ],
       "item": "Utility Flashlight",
-      "itemAddons": ["Odd Bulb", "High-End Sapphire Lens"],
+      "itemAddons": [
+        "Odd Bulb",
+        "High-End Sapphire Lens"
+      ],
       "offering": null,
       "why": "Quick & Quiet hides your locker hops, Deception fakes where you went, and Head On stuns the killer from a locker. Flashbang lets you make a bright grenade after working on gens. You have stuns, blinds and lies everywhere.",
       "howToPlay": "Lure the killer to a locker, slip inside unseen and stun them as they pass. Use the flashlight for save plays. It does not always work, but when it does it is great fun."
@@ -124,10 +222,21 @@
       "name": "Hook Saboteur",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["sabotage", "altruism"],
-      "perks": ["Saboteur", "Breakout", "Boil Over", "Flip-Flop"],
+      "playstyles": [
+        "sabotage",
+        "altruism"
+      ],
+      "perks": [
+        "Saboteur",
+        "Breakout",
+        "Boil Over",
+        "Flip-Flop"
+      ],
       "item": "Toolbox",
-      "itemAddons": ["Wire Spool", "Cutting Wire"],
+      "itemAddons": [
+        "Wire Spool",
+        "Cutting Wire"
+      ],
       "offering": null,
       "why": "Saboteur shows the hooks near a carried survivor and lets you break them. Breakout speeds up their wiggle. Boil Over and Flip-Flop make you a nightmare to carry yourself.",
       "howToPlay": "Follow the chase from a distance and break the nearest hook just before the killer arrives. Best with a friend who plays with you."
@@ -137,10 +246,20 @@
       "name": "Chest Goblin",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["items"],
-      "perks": ["Ace in the Hole", "Plunderer's Instinct", "Appraisal", "Streetwise"],
+      "playstyles": [
+        "items"
+      ],
+      "perks": [
+        "Ace in the Hole",
+        "Plunderer's Instinct",
+        "Appraisal",
+        "Streetwise"
+      ],
       "item": "Skeleton Key",
-      "itemAddons": ["Unique Wedding Ring", "Blood Amber"],
+      "itemAddons": [
+        "Unique Wedding Ring",
+        "Blood Amber"
+      ],
       "offering": null,
       "why": "Plunderer's Instinct shows chests, Appraisal lets you open them faster and more often, and Ace in the Hole can give you strong add-ons. Streetwise makes your items last longer. Every trial is a treasure hunt, with a key to escape through the hatch.",
       "howToPlay": "Visit every chest, swap items when you find a better one and use the key to escape through the hatch."
@@ -150,10 +269,21 @@
       "name": "Bleeding Hero",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["chase", "gen-rush"],
-      "perks": ["No Mither", "Resilience", "Unbreakable", "Iron Will"],
+      "playstyles": [
+        "chase",
+        "gen-rush"
+      ],
+      "perks": [
+        "No Mither",
+        "Resilience",
+        "Unbreakable",
+        "Iron Will"
+      ],
       "item": "Worn-Out Tools",
-      "itemAddons": ["Scraps", "Clean Rag"],
+      "itemAddons": [
+        "Scraps",
+        "Clean Rag"
+      ],
       "offering": null,
       "why": "No Mither keeps you injured all game but lets you pick yourself up. Resilience gives you its speed bonus all game long because you are always injured. Unbreakable gives you an extra self-pickup, and Iron Will hides your grunts of pain.",
       "howToPlay": "Rush gens with the Resilience bonus and keep coming back up. The killer will slug you, so they waste time."
@@ -163,10 +293,21 @@
       "name": "Bodyguard",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["altruism", "anti-tunnel"],
-      "perks": ["Babysitter", "Borrowed Time", "Mettle of Man", "Dead Hard"],
+      "playstyles": [
+        "altruism",
+        "anti-tunnel"
+      ],
+      "perks": [
+        "Babysitter",
+        "Borrowed Time",
+        "Mettle of Man",
+        "Dead Hard"
+      ],
       "item": "Emergency Med-Kit",
-      "itemAddons": ["Styptic Agent", "Gauze Roll"],
+      "itemAddons": [
+        "Styptic Agent",
+        "Gauze Roll"
+      ],
       "offering": null,
       "why": "You take hits for your team. Borrowed Time and Babysitter protect the person you unhook. Mettle of Man and Dead Hard let you take an extra hit yourself, and Styptic Agent gives you even more.",
       "howToPlay": "Stay close to injured or unhooked teammates and step between them and the killer."
@@ -176,10 +317,21 @@
       "name": "Last One Standing",
       "role": "survivor",
       "type": "fun",
-      "playstyles": ["stealth", "endgame"],
-      "perks": ["Left Behind", "Sole Survivor", "Lightweight", "Urban Evasion"],
+      "playstyles": [
+        "stealth",
+        "endgame"
+      ],
+      "perks": [
+        "Left Behind",
+        "Sole Survivor",
+        "Lightweight",
+        "Urban Evasion"
+      ],
       "item": "Skeleton Key",
-      "itemAddons": ["Braided Bauble", "Unique Wedding Ring"],
+      "itemAddons": [
+        "Braided Bauble",
+        "Unique Wedding Ring"
+      ],
       "offering": null,
       "why": "This is a solo stealth plan for when things go wrong. Sole Survivor blocks the killer's aura reading when you are the last one alive, Left Behind shows the hatch, and the key opens it. Lightweight and Urban Evasion help you stay unseen.",
       "howToPlay": "Do gens quietly. When teammates go down, think about whether you can still win the game, or whether you should hide and go for the hatch."
@@ -190,9 +342,20 @@
       "role": "killer",
       "killer": "The Nurse",
       "type": "meta",
-      "playstyles": ["aura", "slowdown"],
-      "perks": ["Lethal Pursuer", "Nowhere to Hide", "Scourge Hook: Pain Resonance", "Grim Embrace"],
-      "addons": ["Matchbox", "Torn Bookmark"],
+      "playstyles": [
+        "aura",
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Nowhere to Hide",
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace"
+      ],
+      "addons": [
+        "Matchbox",
+        "Torn Bookmark"
+      ],
       "offering": null,
       "why": "Nurse can teleport anywhere, so the only thing that slows her down is finding survivors. Lethal Pursuer and Nowhere to Hide show where they are. Pain Resonance and Grim Embrace slow the gens without needing extra walking.",
       "howToPlay": "Use the start-of-match auras to blink straight to a survivor. Kick gens when Nowhere to Hide can show you who is nearby."
@@ -203,9 +366,20 @@
       "role": "killer",
       "killer": "The Blight",
       "type": "meta",
-      "playstyles": ["chase", "slowdown"],
-      "perks": ["Lethal Pursuer", "Scourge Hook: Pain Resonance", "Grim Embrace", "Pop Goes the Weasel"],
-      "addons": ["Compound Thirty-Three", "Compound Twenty-One"],
+      "playstyles": [
+        "chase",
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Pop Goes the Weasel"
+      ],
+      "addons": [
+        "Compound Thirty-Three",
+        "Compound Twenty-One"
+      ],
       "offering": null,
       "why": "Blight moves fast with his power, so he does not need speed perks, only gen pressure. Pain Resonance and Grim Embrace slow gens when you hook. Pop Goes the Weasel adds more after the hook.",
       "howToPlay": "Rush to the survivors you saw with Lethal Pursuer, end chases fast with a rush and kick a gen after the hook for Pop."
@@ -216,9 +390,20 @@
       "role": "killer",
       "killer": "The Wraith",
       "type": "fun",
-      "playstyles": ["stealth", "chase"],
-      "perks": ["Trail of Torment", "Dark Devotion", "Tinkerer", "Hex: Pentimento"],
-      "addons": ["\"Windstorm\" - Blood", "\"All Seeing\" - Blood"],
+      "playstyles": [
+        "stealth",
+        "chase"
+      ],
+      "perks": [
+        "Trail of Torment",
+        "Dark Devotion",
+        "Tinkerer",
+        "Hex: Pentimento"
+      ],
+      "addons": [
+        "\"Windstorm\" - Blood",
+        "\"All Seeing\" - Blood"
+      ],
       "offering": null,
       "why": "Wraith is already invisible. Tinkerer and Trail of Torment make you undetectable when gens get close to being finished. Dark Devotion moves your terror radius to someone else, so survivors look the wrong way.",
       "howToPlay": "Uncloak right next to survivors who are working on a gen. Use Tinkerer to find the gen."
@@ -229,9 +414,20 @@
       "role": "killer",
       "killer": "The Trapper",
       "type": "meta",
-      "playstyles": ["slowdown", "chase"],
-      "perks": ["Corrupt Intervention", "Deadlock", "Grim Embrace", "Brutal Strength"],
-      "addons": ["Trapper Sack", "Trapper Bag"],
+      "playstyles": [
+        "slowdown",
+        "chase"
+      ],
+      "perks": [
+        "Corrupt Intervention",
+        "Deadlock",
+        "Grim Embrace",
+        "Brutal Strength"
+      ],
+      "addons": [
+        "Trapper Sack",
+        "Trapper Bag"
+      ],
       "offering": null,
       "why": "Trapper needs time to set up. Corrupt Intervention and Deadlock buy that time early on. With extra traps from the add-ons you can lock down a group of three gens. Brutal Strength helps in loops without traps.",
       "howToPlay": "Place traps at the loops near three gens that sit close together, and defend those gens."
@@ -242,9 +438,20 @@
       "role": "killer",
       "killer": "The Hag",
       "type": "meta",
-      "playstyles": ["slowdown", "aura"],
-      "perks": ["Scourge Hook: Pain Resonance", "Grim Embrace", "Dead Man's Switch", "Lethal Pursuer"],
-      "addons": ["Mint Rag", "Rusty Shackles"],
+      "playstyles": [
+        "slowdown",
+        "aura"
+      ],
+      "perks": [
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Dead Man's Switch",
+        "Lethal Pursuer"
+      ],
+      "addons": [
+        "Mint Rag",
+        "Rusty Shackles"
+      ],
       "offering": null,
       "why": "Hag teleports to her traps, so she can defend a group of gens. Pain Resonance, Grim Embrace and Dead Man's Switch give strong gen slowdown without extra walking.",
       "howToPlay": "Place traps near gens and hooks. Teleport to anyone who walks into a trap."
@@ -255,9 +462,20 @@
       "role": "killer",
       "killer": "The Shape",
       "type": "fun",
-      "playstyles": ["stealth", "snowball"],
-      "perks": ["Monitor & Abuse", "Save the Best for Last", "Dark Devotion", "Play with Your Food"],
-      "addons": ["Tombstone Piece", "Judith's Tombstone"],
+      "playstyles": [
+        "stealth",
+        "snowball"
+      ],
+      "perks": [
+        "Monitor & Abuse",
+        "Save the Best for Last",
+        "Dark Devotion",
+        "Play with Your Food"
+      ],
+      "addons": [
+        "Tombstone Piece",
+        "Judith's Tombstone"
+      ],
       "offering": null,
       "why": "Tombstone Piece makes you Undetectable as soon as Evil Within III starts, and Judith's Tombstone refreshes Evil Within III every time you hook someone. Monitor & Abuse and Dark Devotion keep you hidden while you stalk, so you can stay in your strongest state for a long time.",
       "howToPlay": "Stalk quietly until Evil Within III, then go from survivor to survivor: every hook keeps your power going. Save the Best for Last helps you down the others faster."
@@ -268,9 +486,20 @@
       "role": "killer",
       "killer": "The Plague",
       "type": "fun",
-      "playstyles": ["anti-heal", "snowball"],
-      "perks": ["Sloppy Butcher", "Thanatophobia", "Hex: Plaything", "Corrupt Intervention"],
-      "addons": ["Black Incense", "Infected Emetic"],
+      "playstyles": [
+        "anti-heal",
+        "snowball"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Thanatophobia",
+        "Hex: Plaything",
+        "Corrupt Intervention"
+      ],
+      "addons": [
+        "Black Incense",
+        "Infected Emetic"
+      ],
       "offering": null,
       "why": "Plague makes survivors sick, and sick survivors need fountains. Thanatophobia punishes injured survivors with slower gens, and Sloppy Butcher makes healing slower. Survivors have to choose between Corrupt Purge and slow gens.",
       "howToPlay": "Infect everyone early and save Corrupt Purge to finish off runs. Stand near fountains when people cleanse."
@@ -281,9 +510,20 @@
       "role": "killer",
       "killer": "The Ghost Face",
       "type": "fun",
-      "playstyles": ["stealth", "snowball"],
-      "perks": ["Monitor & Abuse", "Tinkerer", "Make Your Choice", "Scourge Hook: Pain Resonance"],
-      "addons": ["Night Vision Monocular", "Outdoor Security Camera"],
+      "playstyles": [
+        "stealth",
+        "snowball"
+      ],
+      "perks": [
+        "Monitor & Abuse",
+        "Tinkerer",
+        "Make Your Choice",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Night Vision Monocular",
+        "Outdoor Security Camera"
+      ],
       "offering": null,
       "why": "Ghost Face uses stealth to mark survivors. Tinkerer and Monitor & Abuse help you get close unseen. Make Your Choice punishes a survivor who unhooks while you are nearby.",
       "howToPlay": "Lean around corners to stalk survivors, mark them and down them with one hit."
@@ -294,9 +534,19 @@
       "role": "killer",
       "killer": "The Pig",
       "type": "fun",
-      "playstyles": ["slowdown"],
-      "perks": ["Hex: Ruin", "Hex: Undying", "Hex: Thrill of the Hunt", "Scourge Hook: Pain Resonance"],
-      "addons": ["Crate of Gears", "Amanda's Letter"],
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Hex: Ruin",
+        "Hex: Undying",
+        "Hex: Thrill of the Hunt",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Crate of Gears",
+        "Amanda's Letter"
+      ],
       "offering": null,
       "why": "Reverse bear traps force survivors to search for boxes instead of working on gens. A hex stack adds even more slowdown. Thrill of the Hunt protects the hexes, so survivors lose time either way.",
       "howToPlay": "Put a trap on every survivor who is not wearing one. Defend the hex totems that are close to gens."
@@ -307,9 +557,20 @@
       "role": "killer",
       "killer": "The Oni",
       "type": "meta",
-      "playstyles": ["chase", "slowdown"],
-      "perks": ["Sloppy Butcher", "Scourge Hook: Pain Resonance", "Grim Embrace", "Lethal Pursuer"],
-      "addons": ["Renjiro's Bloody Glove", "Lion Fang"],
+      "playstyles": [
+        "chase",
+        "slowdown"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Lethal Pursuer"
+      ],
+      "addons": [
+        "Renjiro's Bloody Glove",
+        "Lion Fang"
+      ],
       "offering": null,
       "why": "Oni builds up his power from blood orbs, which drop when survivors are injured. Sloppy Butcher makes survivors bleed more. Pain Resonance and Grim Embrace slow gens while you charge your power.",
       "howToPlay": "Hit everyone once to fill your power. Use Blood Fury to down multiple survivors in a row."
@@ -320,9 +581,20 @@
       "role": "killer",
       "killer": "The Legion",
       "type": "fun",
-      "playstyles": ["anti-heal", "info"],
-      "perks": ["Thanatophobia", "Sloppy Butcher", "Discordance", "Forced Penance"],
-      "addons": ["Stab Wounds Study", "Fuming Mix Tape"],
+      "playstyles": [
+        "anti-heal",
+        "info"
+      ],
+      "perks": [
+        "Thanatophobia",
+        "Sloppy Butcher",
+        "Discordance",
+        "Forced Penance"
+      ],
+      "addons": [
+        "Stab Wounds Study",
+        "Fuming Mix Tape"
+      ],
       "offering": null,
       "why": "Legion's power injures many survivors fast. Thanatophobia and Sloppy Butcher make that extra painful: gens are slower and healing takes longer. Discordance shows where survivors work on gens together.",
       "howToPlay": "Use Feral Frenzy on groups of survivors, then go back to downing them with basic attacks."
@@ -333,9 +605,20 @@
       "role": "killer",
       "killer": "The Huntress",
       "type": "fun",
-      "playstyles": ["chase", "snowball"],
-      "perks": ["Hex: Huntress Lullaby", "Lethal Pursuer", "Bamboozle", "Hex: Undying"],
-      "addons": ["Iridescent Head", "Infantry Belt"],
+      "playstyles": [
+        "chase",
+        "snowball"
+      ],
+      "perks": [
+        "Hex: Huntress Lullaby",
+        "Lethal Pursuer",
+        "Bamboozle",
+        "Hex: Undying"
+      ],
+      "addons": [
+        "Iridescent Head",
+        "Infantry Belt"
+      ],
       "offering": null,
       "why": "With Iridescent Head, each hatchet downs a survivor in one hit. Lethal Pursuer helps you find targets at the start of the match. Huntress Lullaby makes skill checks harder, and Undying keeps your hex alive.",
       "howToPlay": "Hit survivors from range. Each throw counts, so aim carefully."
@@ -346,9 +629,20 @@
       "role": "killer",
       "killer": "The Xenomorph",
       "type": "meta",
-      "playstyles": ["chase", "aura"],
-      "perks": ["Lethal Pursuer", "Nowhere to Hide", "Grim Embrace", "Scourge Hook: Pain Resonance"],
-      "addons": ["Self-Destruct Bolt", "Harpoon Gun"],
+      "playstyles": [
+        "chase",
+        "aura"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Nowhere to Hide",
+        "Grim Embrace",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Self-Destruct Bolt",
+        "Harpoon Gun"
+      ],
       "offering": null,
       "why": "Xenomorph travels fast through tunnels. Aura perks show where to go next, and the scourge and Grim Embrace slow gens without extra walking.",
       "howToPlay": "Use the tunnels to come out near survivors you saw with your aura perks. Go for long chases only with your tail power."
@@ -359,9 +653,20 @@
       "role": "killer",
       "killer": "The Hillbilly",
       "type": "meta",
-      "playstyles": ["chase", "slowdown"],
-      "perks": ["Lethal Pursuer", "Scourge Hook: Pain Resonance", "Grim Embrace", "Dead Man's Switch"],
-      "addons": ["Tuned Carburettor", "Thermal Casing"],
+      "playstyles": [
+        "chase",
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Tuned Carburettor",
+        "Thermal Casing"
+      ],
       "offering": null,
       "why": "Hillbilly crosses the map fast with his chainsaw. You only need perks to slow the gens and to find survivors at the start.",
       "howToPlay": "Sprint to the survivors you saw with Lethal Pursuer. Use the chainsaw to end chases fast."
@@ -372,9 +677,20 @@
       "role": "killer",
       "killer": "The Doctor",
       "type": "fun",
-      "playstyles": ["info", "slowdown"],
-      "perks": ["Hex: Huntress Lullaby", "Unnerving Presence", "Overcharge", "Distressing"],
-      "addons": ["\"Calm\" - Carter's Notes", "\"Restraint\" - Carter's Notes"],
+      "playstyles": [
+        "info",
+        "slowdown"
+      ],
+      "perks": [
+        "Hex: Huntress Lullaby",
+        "Unnerving Presence",
+        "Overcharge",
+        "Distressing"
+      ],
+      "addons": [
+        "\"Calm\" - Carter's Notes",
+        "\"Restraint\" - Carter's Notes"
+      ],
       "offering": null,
       "why": "This build is all about skill checks. Doctor's madness makes skill checks harder, Distressing makes your terror radius bigger, and Unnerving Presence, Huntress Lullaby and Overcharge make survivors fail more checks. Every failed check costs gen time.",
       "howToPlay": "Shock survivors on gens and keep your terror radius over as many gens as you can. Then watch the gens explode."
@@ -385,8 +701,16 @@
       "role": "killer",
       "killer": null,
       "type": "fun",
-      "playstyles": ["endgame", "snowball"],
-      "perks": ["Hex: No One Escapes Death", "No Way Out", "Blood Warden", "Remember Me"],
+      "playstyles": [
+        "endgame",
+        "snowball"
+      ],
+      "perks": [
+        "Hex: No One Escapes Death",
+        "No Way Out",
+        "Blood Warden",
+        "Remember Me"
+      ],
       "addons": [],
       "offering": null,
       "why": "This build only kicks in at the end of the match. No Way Out and Remember Me make opening the gates take longer. Blood Warden blocks the gates for everyone, and NOED makes survivors Exposed.",
@@ -398,8 +722,15 @@
       "role": "killer",
       "killer": null,
       "type": "meta",
-      "playstyles": ["slowdown"],
-      "perks": ["Scourge Hook: Pain Resonance", "Grim Embrace", "Dead Man's Switch", "Pop Goes the Weasel"],
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Dead Man's Switch",
+        "Pop Goes the Weasel"
+      ],
       "addons": [],
       "offering": null,
       "why": "Four perks that slow the gens and trigger when you hook someone, so you do not need to stop and kick gens. Works on almost any killer.",
@@ -411,12 +742,924 @@
       "role": "killer",
       "killer": null,
       "type": "meta",
-      "playstyles": ["aura", "info"],
-      "perks": ["Lethal Pursuer", "Nowhere to Hide", "Barbecue & Chilli", "Friends 'til the End"],
+      "playstyles": [
+        "aura",
+        "info"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Nowhere to Hide",
+        "Barbecue & Chilli",
+        "Friends 'til the End"
+      ],
       "addons": [],
       "offering": null,
       "why": "Aura reading at every stage: at the start (Lethal Pursuer), when you kick gens (Nowhere to Hide), after hooks (Barbecue & Chilli) and through the Obsession (Friends 'til the End). Good for killers who move fast.",
       "howToPlay": "Use the information after every hook to choose your next target, not the closest one."
+    },
+    {
+      "id": "s-solo-savior",
+      "name": "Solo Queue Savior",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "aura",
+        "gen-rush"
+      ],
+      "perks": [
+        "Kindred",
+        "Windows of Opportunity",
+        "Deliverance",
+        "Resilience"
+      ],
+      "item": "Commodious Toolbox",
+      "itemAddons": [
+        "Socket Swivels",
+        "Wire Spool"
+      ],
+      "offering": "Vigo's Shroud",
+      "why": "Kindred gives the information voice chat would give; Windows makes every chase easier; Deliverance and Resilience keep you useful after a hook.",
+      "howToPlay": "Watch Kindred to decide who goes for the save, and stay on gens otherwise."
+    },
+    {
+      "id": "s-skill-wizard",
+      "name": "Skill Check Wizard",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "gen-rush"
+      ],
+      "perks": [
+        "Hyperfocus",
+        "Stake Out",
+        "This Is Not Happening",
+        "Déjà Vu"
+      ],
+      "item": "Commodious Toolbox",
+      "itemAddons": [
+        "Brand New Part",
+        "Grip Wrench"
+      ],
+      "offering": null,
+      "why": "Stake Out turns good checks into great ones, which feed Hyperfocus stacks for ever faster repairs.",
+      "howToPlay": "Repair near the killer's terror radius to build Stake Out tokens, then hit every great check."
+    },
+    {
+      "id": "s-healer",
+      "name": "Field Medic",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "healing",
+        "altruism"
+      ],
+      "perks": [
+        "We'll Make It",
+        "Botany Knowledge",
+        "Second Wind",
+        "Resurgence"
+      ],
+      "item": "Ranger Med-Kit",
+      "itemAddons": [
+        "Gauze Roll",
+        "Surgical Suture"
+      ],
+      "offering": null,
+      "why": "Very fast heals for your team and yourself: We'll Make It and Botany Knowledge stack, and Second Wind heals you after your next unhook.",
+      "howToPlay": "Heal teammates right after unhooks while We'll Make It is active."
+    },
+    {
+      "id": "s-vault-master",
+      "name": "Vault Master",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Finesse",
+        "Lithe",
+        "Windows of Opportunity",
+        "Resilience"
+      ],
+      "item": "Emergency Med-Kit",
+      "itemAddons": [
+        "Gauze Roll",
+        "Rubber Gloves"
+      ],
+      "offering": null,
+      "why": "Finesse speeds up fast vaults, Lithe gives speed after one, and Windows shows where to vault next.",
+      "howToPlay": "Stay healthy for Finesse and chain window loops."
+    },
+    {
+      "id": "s-sprint-survive",
+      "name": "Sprint & Survive",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "chase",
+        "anti-tunnel"
+      ],
+      "perks": [
+        "Sprint Burst",
+        "Spine Chill",
+        "Resilience",
+        "Unbreakable"
+      ],
+      "item": "First Aid Kit",
+      "itemAddons": [
+        "Self Adherent Wrap",
+        "Rubber Gloves"
+      ],
+      "offering": null,
+      "why": "Spine Chill warns you early, Sprint Burst gets you to safety, and Unbreakable saves you from slugs.",
+      "howToPlay": "Walk when the killer is near so Sprint Burst stays ready."
+    },
+    {
+      "id": "s-urban-legend",
+      "name": "Urban Legend",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "stealth"
+      ],
+      "perks": [
+        "Urban Evasion",
+        "Iron Will",
+        "Calm Spirit",
+        "Spine Chill"
+      ],
+      "item": "Vigo's Fog Vial",
+      "itemAddons": [
+        "Mushroom Formula",
+        "Volcanic Stone"
+      ],
+      "offering": null,
+      "why": "A quiet build: no grunts, no crows, fast crouching and an early warning.",
+      "howToPlay": "Crouch away when Spine Chill lights up."
+    },
+    {
+      "id": "s-blast-trapper",
+      "name": "Gen Booby Trap",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "gen-rush",
+        "chase"
+      ],
+      "perks": [
+        "Blast Mine",
+        "Wiretap",
+        "Technician",
+        "Repressed Alliance"
+      ],
+      "item": "Toolbox",
+      "itemAddons": [
+        "Socket Swivels",
+        "Clean Rag"
+      ],
+      "offering": null,
+      "why": "Trap gens that the killer kicks: Blast Mine blinds, Wiretap shows the killer, Repressed Alliance blocks a gen they want.",
+      "howToPlay": "Set traps on the gens the killer patrols."
+    },
+    {
+      "id": "s-chemical",
+      "name": "Chemist",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Chemical Trap",
+        "Bada Bada Boom",
+        "Any Means Necessary",
+        "Wide Open Throttle"
+      ],
+      "item": "Toolbox",
+      "itemAddons": [
+        "Wire Spool",
+        "Scraps"
+      ],
+      "offering": null,
+      "why": "Turn pallets and windows into traps that slow the killer down.",
+      "howToPlay": "Do gens to unlock the traps, then lead chases through them."
+    },
+    {
+      "id": "s-flashlight-saver",
+      "name": "Flashlight Saver",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "chase",
+        "altruism"
+      ],
+      "perks": [
+        "Flashbang",
+        "Champion of Light",
+        "Residual Manifest",
+        "Lightweight"
+      ],
+      "item": "Utility Flashlight",
+      "itemAddons": [
+        "Odd Bulb",
+        "High-End Sapphire Lens"
+      ],
+      "offering": null,
+      "why": "All-in on blinding the killer: save teammates from pick-ups and slow down chases.",
+      "howToPlay": "Follow the killer at a distance and blind them at pick-ups."
+    },
+    {
+      "id": "s-anti-slug",
+      "name": "Never Stay Down",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "anti-tunnel"
+      ],
+      "perks": [
+        "Unbreakable",
+        "Tenacity",
+        "Soul Guard",
+        "Boon: Exponential"
+      ],
+      "item": "First Aid Kit",
+      "itemAddons": [
+        "Bandages",
+        "Rubber Gloves"
+      ],
+      "offering": null,
+      "why": "Counter slugging killers: you crawl fast, pick yourself up and get Endurance afterwards.",
+      "howToPlay": "Crawl to the boon or a safe corner and get up."
+    },
+    {
+      "id": "s-totem-hunter",
+      "name": "Totem Hunter",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "totems"
+      ],
+      "perks": [
+        "Small Game",
+        "Counterforce",
+        "Inner Strength",
+        "Detective's Hunch"
+      ],
+      "item": "Annotated Map",
+      "itemAddons": [
+        "Glowing Ink",
+        "Gnarled Compass"
+      ],
+      "offering": null,
+      "why": "Find and cleanse every totem fast: no hexes, and Inner Strength heals you in lockers.",
+      "howToPlay": "Cleanse totems early in the match."
+    },
+    {
+      "id": "s-team-gen",
+      "name": "Team Gen Squad",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "gen-rush",
+        "altruism"
+      ],
+      "perks": [
+        "Prove Thyself",
+        "Bond",
+        "Leader",
+        "Friendly Competition"
+      ],
+      "item": "Commodious Toolbox",
+      "itemAddons": [
+        "Socket Swivels",
+        "Wire Spool"
+      ],
+      "offering": null,
+      "why": "Bond finds teammates, and Prove Thyself, Leader and Friendly Competition all reward working on gens together.",
+      "howToPlay": "Repair in pairs."
+    },
+    {
+      "id": "s-info",
+      "name": "Info Overload",
+      "role": "survivor",
+      "type": "meta",
+      "playstyles": [
+        "aura"
+      ],
+      "perks": [
+        "Alert",
+        "Spine Chill",
+        "Kindred",
+        "Windows of Opportunity"
+      ],
+      "item": "Annotated Map",
+      "itemAddons": [
+        "Glowing Ink",
+        "Sharpened Flint"
+      ],
+      "offering": null,
+      "why": "You always know where the killer is: Alert, Spine Chill and Kindred together.",
+      "howToPlay": "Use the info to stay one step ahead."
+    },
+    {
+      "id": "s-stunner",
+      "name": "Stun Lord",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Parental Guidance",
+        "Head On",
+        "Valkyrie's Rage",
+        "Smash Hit"
+      ],
+      "item": "Utility Flashlight",
+      "itemAddons": [
+        "Odd Bulb",
+        "Battery"
+      ],
+      "offering": null,
+      "why": "Every stun is rewarded: longer pallet stuns, speed after stuns and hidden escapes.",
+      "howToPlay": "Play pallets aggressively."
+    },
+    {
+      "id": "s-fogwise",
+      "name": "Fog Reader",
+      "role": "survivor",
+      "type": "fun",
+      "playstyles": [
+        "gen-rush",
+        "aura"
+      ],
+      "perks": [
+        "Fogwise",
+        "Hyperfocus",
+        "Stake Out",
+        "Déjà Vu"
+      ],
+      "item": "Commodious Toolbox",
+      "itemAddons": [
+        "Socket Swivels",
+        "Grip Wrench"
+      ],
+      "offering": null,
+      "why": "Great skill checks show you the killer and speed up repairs.",
+      "howToPlay": "Hit great checks and watch the killer's aura."
+    },
+    {
+      "id": "k-spirit",
+      "name": "Phase Walker",
+      "role": "killer",
+      "killer": "The Spirit",
+      "type": "meta",
+      "playstyles": [
+        "slowdown",
+        "aura"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Scourge Hook: Pain Resonance",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Mother-Daughter Ring",
+        "Uchiwa"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Phase to the survivors you see at the start and hook different survivors."
+    },
+    {
+      "id": "k-blight-pinball",
+      "name": "Pinball Wizard",
+      "role": "killer",
+      "killer": "The Blight",
+      "type": "fun",
+      "playstyles": [
+        "chase"
+      ],
+      "perks": [
+        "Bamboozle",
+        "Brutal Strength",
+        "Spirit Fury",
+        "Enduring"
+      ],
+      "addons": [
+        "Alchemist's Ring",
+        "Compound Thirty-Three"
+      ],
+      "offering": null,
+      "why": "An anti-loop build: windows get blocked and pallets break faster.",
+      "howToPlay": "Rush between loops and break everything."
+    },
+    {
+      "id": "k-huntress",
+      "name": "Hatchet Pressure",
+      "role": "killer",
+      "killer": "The Huntress",
+      "type": "meta",
+      "playstyles": [
+        "slowdown",
+        "chase"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Leather Loop",
+        "Yellowed Cloth"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Throw at range and save time with hook slowdown."
+    },
+    {
+      "id": "k-wraith",
+      "name": "Batting Bell",
+      "role": "killer",
+      "killer": "The Wraith",
+      "type": "meta",
+      "playstyles": [
+        "slowdown",
+        "chase"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Bamboozle"
+      ],
+      "addons": [
+        "\"Windstorm\" - Blood",
+        "\"Blink\" - Mud"
+      ],
+      "offering": null,
+      "why": "Fast cloaked travel, and Bamboozle stops loops while Pop and Grim hold the gens.",
+      "howToPlay": "Cloak between chases and uncloak right next to survivors."
+    },
+    {
+      "id": "k-trapper-fun",
+      "name": "Hook Highway",
+      "role": "killer",
+      "killer": "The Trapper",
+      "type": "fun",
+      "playstyles": [
+        "chase",
+        "stealth"
+      ],
+      "perks": [
+        "Agitation",
+        "Iron Grasp",
+        "Monitor & Abuse",
+        "Corrupt Intervention"
+      ],
+      "addons": [
+        "Iridescent Stone",
+        "Trapper Sack"
+      ],
+      "offering": null,
+      "why": "Traps all over the map and fast carries to any hook.",
+      "howToPlay": "Set traps everywhere and carry fast."
+    },
+    {
+      "id": "k-legion",
+      "name": "Frenzy Pressure",
+      "role": "killer",
+      "killer": "The Legion",
+      "type": "meta",
+      "playstyles": [
+        "anti-heal",
+        "slowdown"
+      ],
+      "perks": [
+        "Pop Goes the Weasel",
+        "Grim Embrace",
+        "Thanatophobia",
+        "Sloppy Butcher"
+      ],
+      "addons": [
+        "Never-Sleep Pills",
+        "Joey's Mix Tape"
+      ],
+      "offering": null,
+      "why": "Injure everyone with Feral Frenzy; Thanatophobia and Sloppy Butcher make that very costly.",
+      "howToPlay": "Frenzy groups, then hook and kick gens."
+    },
+    {
+      "id": "k-clown",
+      "name": "Bottle Service",
+      "role": "killer",
+      "killer": "The Clown",
+      "type": "meta",
+      "playstyles": [
+        "slowdown",
+        "chase"
+      ],
+      "perks": [
+        "Bamboozle",
+        "Pop Goes the Weasel",
+        "Grim Embrace",
+        "Lethal Pursuer"
+      ],
+      "addons": [
+        "Cheap Gin Bottle",
+        "Flask of Bleach"
+      ],
+      "offering": null,
+      "why": "Clown wins loops with his bottles; Bamboozle blocks windows.",
+      "howToPlay": "Throw bottles at loops and close the distance."
+    },
+    {
+      "id": "k-demogorgon",
+      "name": "Upside Down",
+      "role": "killer",
+      "killer": "The Demogorgon",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Scourge Hook: Pain Resonance",
+        "Surge"
+      ],
+      "addons": [
+        "Leprose Lichen",
+        "Rat Liver"
+      ],
+      "offering": null,
+      "why": "Portals give map pressure; Surge and Pain Resonance hit gens on downs and hooks.",
+      "howToPlay": "Place portals near gens."
+    },
+    {
+      "id": "k-deathslinger",
+      "name": "Reel Them In",
+      "role": "killer",
+      "killer": "The Deathslinger",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Prison Chain",
+        "Rickety Chain"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Shoot at mid range and spread your hooks."
+    },
+    {
+      "id": "k-executioner",
+      "name": "Pyramid Head",
+      "role": "killer",
+      "killer": "The Executioner",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Iridescent Seal of Metatron",
+        "Lost Memories Book"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Use Rites of Judgement through walls."
+    },
+    {
+      "id": "k-trickster",
+      "name": "Knife Show",
+      "role": "killer",
+      "killer": "The Trickster",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Ripper Brace",
+        "Trick Blades"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Throw at long range in open areas."
+    },
+    {
+      "id": "k-nemesis",
+      "name": "Tyrant",
+      "role": "killer",
+      "killer": "The Nemesis",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Serotonin Injector",
+        "Shattered S.T.A.R.S. Badge"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Infect with the tentacle and let the zombies help."
+    },
+    {
+      "id": "k-cenobite",
+      "name": "Chains of Pain",
+      "role": "killer",
+      "killer": "The Cenobite",
+      "type": "fun",
+      "playstyles": [
+        "slowdown",
+        "hex"
+      ],
+      "perks": [
+        "Hex: Plaything",
+        "Scourge Hook: Gift of Pain",
+        "Deadlock",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Original Pain",
+        "Torture Pillar"
+      ],
+      "offering": null,
+      "why": "The Cenobite's own perks together: Plaything reveals survivors, Gift of Pain and Deadlock slow the gens.",
+      "howToPlay": "Hook on scourge hooks and keep the box away from survivors."
+    },
+    {
+      "id": "k-artist",
+      "name": "Crow Commander",
+      "role": "killer",
+      "killer": "The Artist",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Thorny Nest",
+        "Silver Bell"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Send crows over gens and loops."
+    },
+    {
+      "id": "k-onryo",
+      "name": "TV Hopper",
+      "role": "killer",
+      "killer": "The Onryō",
+      "type": "fun",
+      "playstyles": [
+        "scourge",
+        "slowdown"
+      ],
+      "perks": [
+        "Scourge Hook: Floods of Rage",
+        "Scourge Hook: Pain Resonance",
+        "Grim Embrace",
+        "Merciless Storm"
+      ],
+      "addons": [
+        "Tape Editing Deck",
+        "Remote Control"
+      ],
+      "offering": null,
+      "why": "Teleport through TVs and stack scourge hook effects.",
+      "howToPlay": "Hook on scourge hooks and teleport to gens."
+    },
+    {
+      "id": "k-dredge",
+      "name": "Nightfall",
+      "role": "killer",
+      "killer": "The Dredge",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Boat Key",
+        "Malthinker's Skull"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Use lockers to cross the map."
+    },
+    {
+      "id": "k-knight",
+      "name": "Guard Duty",
+      "role": "killer",
+      "killer": "The Knight",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Map of the Realm",
+        "Jailer's Chimes"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Send guards to break loops."
+    },
+    {
+      "id": "k-singularity",
+      "name": "Biopod Net",
+      "role": "killer",
+      "killer": "The Singularity",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Hologram Generator",
+        "Denied Requisition Form"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Place biopods near gens and teleport."
+    },
+    {
+      "id": "k-goodguy",
+      "name": "Hidey-Ho",
+      "role": "killer",
+      "killer": "The Good Guy",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Running Shoes",
+        "Yardstick"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Dash in and out of chases."
+    },
+    {
+      "id": "k-unknown",
+      "name": "Cryptid",
+      "role": "killer",
+      "killer": "The Unknown",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Dead Man's Switch"
+      ],
+      "addons": [
+        "Footprint Cast",
+        "Vanishing Box"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Hit with your power around corners."
+    },
+    {
+      "id": "k-houndmaster",
+      "name": "Pack Hunter",
+      "role": "killer",
+      "killer": "The Houndmaster",
+      "type": "meta",
+      "playstyles": [
+        "slowdown"
+      ],
+      "perks": [
+        "Lethal Pursuer",
+        "Grim Embrace",
+        "Pop Goes the Weasel",
+        "Scourge Hook: Pain Resonance"
+      ],
+      "addons": [
+        "Gunpowder Tin",
+        "Spyglass"
+      ],
+      "offering": null,
+      "why": "Strong all-round slowdown: Grim Embrace and Pain Resonance trigger on hooks, so you keep chasing instead of kicking gens.",
+      "howToPlay": "Send the dog to find and catch survivors."
+    },
+    {
+      "id": "k-any-hex",
+      "name": "Hex Gambler",
+      "role": "killer",
+      "killer": null,
+      "type": "fun",
+      "playstyles": [
+        "hex",
+        "snowball"
+      ],
+      "perks": [
+        "Hex: Devour Hope",
+        "Hex: Haunted Ground",
+        "Hex: Undying",
+        "Hex: Retribution"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "A high-risk hex stack: Undying protects, Haunted Ground and Retribution punish cleansing, Devour Hope snowballs.",
+      "howToPlay": "Keep hooking away from your hexes."
+    },
+    {
+      "id": "k-any-antiheal",
+      "name": "No Healing Allowed",
+      "role": "killer",
+      "killer": null,
+      "type": "fun",
+      "playstyles": [
+        "anti-heal"
+      ],
+      "perks": [
+        "Sloppy Butcher",
+        "Coulrophobia",
+        "A Nurse's Calling",
+        "Thanatophobia"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Healing becomes slow and dangerous; injured survivors slow the gens.",
+      "howToPlay": "Hit everyone once and catch them while they heal."
+    },
+    {
+      "id": "k-any-exposed",
+      "name": "Exposed Express",
+      "role": "killer",
+      "killer": null,
+      "type": "fun",
+      "playstyles": [
+        "snowball"
+      ],
+      "perks": [
+        "Make Your Choice",
+        "Hubris",
+        "Starstruck",
+        "Rancor"
+      ],
+      "addons": [],
+      "offering": null,
+      "why": "Many ways to make survivors Exposed for one-hit downs.",
+      "howToPlay": "Chase right after unhooks and stuns."
     }
   ]
 }
