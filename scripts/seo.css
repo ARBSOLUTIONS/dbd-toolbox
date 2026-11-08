@@ -50,3 +50,5 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 .button { background: linear-gradient(135deg, #ff8a3d, #ff2e4d); border: none; border-radius: 10px; box-shadow: 0 8px 24px -10px rgba(255, 46, 77, 0.8); }
 .tags span { border-color: rgba(255, 255, 255, 0.13); color: #a1a1aa; }
 footer { border-top-color: rgba(255, 255, 255, 0.07); color: #71717a; }
+.stats-table { border-collapse: collapse; width: 100%; font-size: 0.9em; margin: 8px 0 16px; display: block; overflow-x: auto; }
+.stats-table th, .stats-table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }

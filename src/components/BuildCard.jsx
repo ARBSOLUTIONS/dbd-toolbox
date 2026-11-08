@@ -84,6 +84,31 @@ export function ScoreBadge({ score, community = null }) {
   );
 }
 
+/** Always-visible sum: where the score comes from (rules + NightLight). */
+function ScoreLine({ rating, role, onOpen }) {
+  if (!rating?.parts?.length) return null;
+  const c = rating.community;
+  return (
+    <p className="score-line small">
+      <span className="muted">Score {rating.score} =</span> rules {rating.base}
+      {c ? (
+        <>
+          {' '}
+          <span className={c.points >= 0 ? 'good' : 'bad'}>
+            {c.points >= 0 ? '+' : '−'} {Math.abs(c.points)} NightLight
+          </span>{' '}
+          <span className="muted">({role === 'killer' ? 'kill' : 'escape'} rates of the perks vs average)</span>
+        </>
+      ) : (
+        <span className="muted"> (no NightLight stats)</span>
+      )}{' '}
+      <button className="link-button small" onClick={onOpen}>
+        why?
+      </button>
+    </p>
+  );
+}
+
 /** One line with this build's NightLight numbers (see src/lib/nlStats.js). */
 function NightLightLine({ nl }) {
   const diff = (rate) => (rate != null && nl.baseline != null ? rate - nl.baseline : null);
@@ -205,6 +230,7 @@ export default function BuildCard({ build, favorites, footer }) {
         </p>
       )}
 
+      <ScoreLine rating={rating} role={build.role} onOpen={() => setOpen(true)} />
       {build.nl && <NightLightLine nl={build.nl} />}
 
       {build.author && <p className="muted small community-author">by {build.author}</p>}

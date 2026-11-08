@@ -287,6 +287,28 @@ ${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><
   );
 }
 
+// How a build's score is made: the parts, and the NightLight numbers per perk.
+function scoreSection(b) {
+  const r = b.rating;
+  if (!r.parts?.length) return '';
+  const sign = (v) => `${v > 0 ? '+' : ''}${v}`;
+  const parts = r.parts
+    .map((p) => `<tr><td>${esc(p.label)}</td><td>${p.id === 'community' ? sign(p.value) : p.value}${p.max && p.id !== 'community' ? ` / ${p.max}` : ''}</td><td class="muted">${esc(p.explain)}</td></tr>`)
+    .join('');
+  const c = r.community;
+  const label = b.role === 'killer' ? 'Kill rate' : 'Escape rate';
+  const perkRows = c
+    ? c.perks
+        .map((p) => `<tr><td>${esc(p.name)}</td><td>${p.rate != null ? `${p.rate.toFixed(1)}%` : '–'}</td><td>${p.delta != null ? sign(p.delta.toFixed(1)) : '–'}</td><td>${p.count != null ? p.count.toLocaleString('en') : '–'}</td><td>${p.strength == null || p.weight === 0 ? 'not counted' : sign(p.strength.toFixed(1))}</td></tr>`)
+        .join('')
+    : '';
+  return `<h2>How this score is made</h2>
+<p>Score ${r.score}/100 = rules ${r.base}${c ? ` ${c.points >= 0 ? '+' : '−'} ${Math.abs(c.points)} from NightLight community stats` : ''}${r.base + (c?.points ?? 0) !== r.score ? ' (capped to 0–100)' : ''}. The rules part is calculated by this site from the perk descriptions; only the community part comes from real match results.</p>
+<table class="stats-table"><thead><tr><th>Part</th><th>Points</th><th>What it measures</th></tr></thead><tbody>${parts}</tbody></table>
+${c ? `<h3>NightLight numbers per perk</h3><p class="muted">${label} of each perk vs the average ${b.role} perk (${stats.perkAverage?.[b.role]}%). Strength = difference × games ÷ (games + ${PRIOR_GAMES}); perks under ${MIN_PERK_GAMES} games count 0. Build points = 0.6 × sum of strength, at most ±10. Source: NightLight.gg, ${esc(periodLabel(stats))}.</p>
+<table class="stats-table"><thead><tr><th>Perk</th><th>${label}</th><th>vs avg</th><th>Games</th><th>Strength</th></tr></thead><tbody>${perkRows}</tbody></table>` : ''}`;
+}
+
 // ---------- 5. Build pages ----------
 for (const b of allBuilds) {
   const perks = b.resolved.perks.filter(Boolean);
@@ -301,6 +323,7 @@ for (const b of allBuilds) {
 ${extra.length ? `<h2>${b.role === 'killer' ? 'Killer & add-ons' : 'Item & add-ons'}</h2><ul class="combos">${extra.map((e) => `<li>${icon(e, 40)} <strong>${esc(e.name)}</strong>${e.description ? ` – ${esc(short(e.description, 160))}` : ''}</li>`).join('')}</ul>` : ''}
 <h2>Why it works</h2><p>${esc(b.why)}</p>
 ${b.howToPlay ? `<h2>How to play</h2><p>${esc(b.howToPlay)}</p>` : ''}
+${scoreSection(b)}
 ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b.rating.pros.map((r) => `<li>✓ ${esc(r)}</li>`).join('')}${b.rating.cons.map((r) => `<li>✗ ${esc(r)}</li>`).join('')}</ul>` : ''}`;
   await write(
     `builds/${b.id}/index.html`,

@@ -1309,3 +1309,5 @@ main { padding-top: 22px; }
   .toolbar .segmented { max-width: 100%; overflow-x: auto; scrollbar-width: none; }
   .toolbar .segmented::-webkit-scrollbar { display: none; }
 }
+.score-line { margin: 6px 0 2px; }
+.score-line .good { color: #4caf6a; } .score-line .bad { color: #e0564f; }
