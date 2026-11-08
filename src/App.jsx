@@ -15,6 +15,7 @@ import { loadData, STATIC, SITE_NAME } from './lib/api.js';
 import { withTags } from './lib/tags.js';
 import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
+import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
 import PatchNews from './components/PatchNews.jsx';
 import Challenges from './components/Challenges.jsx';
@@ -110,7 +111,7 @@ export default function App() {
     if (!data) return [];
     const fresh = new Set(data.changes?.newPerkIds ?? []);
     return (data.curated?.builds ?? []).map((b) => {
-      const r = resolveBuild(b, data);
+      const r = repairBuild(resolveBuild(b, data), data, data.changes);
       return {
         ...r,
         rating: scoreBuild(r.resolved.perks, b.role, b.playstyles),

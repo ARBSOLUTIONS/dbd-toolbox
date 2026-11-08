@@ -701,3 +701,8 @@ footer { color: var(--muted); border-top-color: var(--border); }
 .slot-tip-head strong { font-family: var(--display); font-size: 1.02rem; letter-spacing: 0.03em; }
 .slot-tip p { margin: 0 0 6px; }
 .slot-tip-desc { white-space: pre-line; color: var(--text); }
+
+/* Patch-aware hand-picked builds */
+.badge-updated { background: #0f2a3a; border-color: #4fb3ff; color: #8fd0ff; }
+.badge-changed { background: #3a1f0a; border-color: #ff9d42; color: #ffbe7d; }
+.patch-note { border-left: 3px solid #ff9d42; padding: 6px 10px; margin: 8px 0 0; background: rgba(255, 157, 66, 0.08); border-radius: 4px; color: #ffcf9e; }

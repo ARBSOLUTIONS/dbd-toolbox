@@ -97,6 +97,19 @@ export default function BuildCard({ build, favorites, footer }) {
                 ✨ New perk
               </span>
             )}
+            {build.patchNotes?.some((n) => n.from || n.kind === 'dropped') && (
+              <span className="badge badge-updated" title={`Fixed automatically after patch ${build.patch ?? ''}`}>
+                🔄 Updated for {build.patch ?? 'new patch'}
+              </span>
+            )}
+            {build.patchNotes?.some((n) => n.kind === 'changed') && (
+              <span
+                className="badge badge-changed"
+                title={`Changed in patch ${build.patch ?? ''}: ${build.patchNotes.filter((n) => n.kind === 'changed').map((n) => n.perk).join(', ')}`}
+              >
+                ⚠ Perk changed
+              </span>
+            )}
             <span className="badge">{build.role === 'killer' ? build.killer ?? 'Any killer' : 'Survivor'}</span>
             {build.playstyles.map((p) => (
               <span key={p} className="badge badge-style">
@@ -138,6 +151,17 @@ export default function BuildCard({ build, favorites, footer }) {
       </div>
 
       {build.why && <p className="why">{build.why}</p>}
+
+      {build.patchNotes?.some((n) => n.kind === 'changed') && (
+        <p className="patch-note small">
+          ⚠ Changed in patch {build.patch}:{' '}
+          {build.patchNotes
+            .filter((n) => n.kind === 'changed')
+            .map((n) => n.perk)
+            .join(', ')}
+          . The perk text on hover is already up to date; the explanation above may be older.
+        </p>
+      )}
 
       {build.missing.length > 0 && (
         <p className="warning small">

@@ -17,6 +17,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { withTags, PLAYSTYLES } from '../src/lib/tags.js';
 import { resolveBuild, scoreBuild } from '../src/lib/builds.js';
+import { repairBuild } from '../src/lib/patchAware.js';
 import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
@@ -71,7 +72,7 @@ const autoState = await readJson('data/auto-update.json', {});
 
 const data = { meta, ...raw, perks: withTags(raw.perks), changes };
 const curated = curatedFile.builds.map((b) => {
-  const r = resolveBuild(b, data);
+  const r = repairBuild(resolveBuild(b, data), data, changes);
   return { ...r, rating: scoreBuild(r.resolved.perks, b.role, b.playstyles) };
 });
 const generated = generateBuilds(data, curated, changes);
