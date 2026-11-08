@@ -3,13 +3,14 @@
 import { useCallback, useEffect, useState } from 'react';
 
 const KEY = 'dbd-build-helper:favorites:v1';
-const EMPTY = { curated: [], custom: [] };
+// curated: ids of hand-picked/generated builds · custom: your own builds · perks: favourite perk ids
+const EMPTY = { curated: [], custom: [], perks: [] };
 
 function load() {
   try {
     const raw = localStorage.getItem(KEY);
     const parsed = raw ? JSON.parse(raw) : EMPTY;
-    return { curated: parsed.curated ?? [], custom: parsed.custom ?? [] };
+    return { curated: parsed.curated ?? [], custom: parsed.custom ?? [], perks: parsed.perks ?? [] };
   } catch {
     return EMPTY; // storage blocked or corrupt: start empty
   }
@@ -45,6 +46,11 @@ export function useFavorites() {
     setState((s) => ({ ...s, custom: [...s.custom.filter((b) => b.id !== build.id), build] }));
   }, []);
 
+  const isFavoritePerk = useCallback((id) => state.perks.includes(id), [state]);
+  const togglePerk = useCallback((id) => {
+    setState((s) => ({ ...s, perks: s.perks.includes(id) ? s.perks.filter((x) => x !== id) : [...s.perks, id] }));
+  }, []);
+
   const exportFile = useCallback(() => {
     const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
@@ -61,8 +67,9 @@ export function useFavorites() {
     setState((s) => ({
       curated: [...new Set([...s.curated, ...data.curated])],
       custom: [...s.custom.filter((b) => !data.custom.some((d) => d.id === b.id)), ...data.custom],
+      perks: [...new Set([...s.perks, ...(data.perks ?? [])])],
     }));
   }, []);
 
-  return { ...state, isFavorite, toggle, saveCustom, exportFile, importText };
+  return { ...state, isFavorite, toggle, saveCustom, exportFile, importText, isFavoritePerk, togglePerk };
 }

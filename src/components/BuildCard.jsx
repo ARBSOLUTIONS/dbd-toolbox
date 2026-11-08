@@ -27,7 +27,7 @@ export function ScoreBadge({ score }) {
   );
 }
 
-export default function BuildCard({ build, favorites }) {
+export default function BuildCard({ build, favorites, footer }) {
   const [open, setOpen] = useState(false);
   const { resolved, rating } = build;
   const labels = PLAYSTYLES[build.role];
@@ -39,7 +39,7 @@ export default function BuildCard({ build, favorites }) {
           <h3>{build.name}</h3>
           <div className="badges">
             <span className={`badge badge-${build.type}`}>
-              {{ meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated' }[build.type] ?? build.type}
+              {{ meta: 'Strong / meta', fun: 'Fun', custom: 'My build', auto: 'Auto-generated', community: 'Community' }[build.type] ?? build.type}
             </span>
             {build.variant === 'off-meta' && <span className="badge badge-offmeta">Off-meta</span>}
             {build.newPerks?.length > 0 && (
@@ -100,6 +100,9 @@ export default function BuildCard({ build, favorites }) {
           ? `${build.stats.label}: ${build.stats.value} — ${build.stats.source}, ${build.stats.date}`
           : 'Statistics: not available (no source that allows automated use yet).'}
       </p>}
+
+      {build.author && <p className="muted small community-author">by {build.author}</p>}
+      {footer}
 
       <button className="link-button" onClick={() => setOpen(!open)}>
         {open ? 'Less' : 'How to play & rating details'}

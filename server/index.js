@@ -9,6 +9,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DATA_DIR, ICON_DIR } from './refresh.js';
 import { refresh, startRefresh, startAutoUpdate, autoUpdateStatus, checkForUpdate } from './autoUpdate.js';
+import { listBuilds, createBuild, voteBuild, reportBuild, indexGameData, visitorHash, CommunityError } from './community/core.js';
+import { jsonStore } from './community/stores.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // API_PORT (not PORT) so it never clashes with tools that set PORT for the web app.
@@ -50,6 +52,34 @@ app.get('/api/refresh', (_req, res) => res.json(refresh));
 // --- Automatic updates ---
 app.get('/api/auto-update', async (_req, res) => res.json(await autoUpdateStatus()));
 app.post('/api/auto-update/check', async (_req, res) => res.json(await checkForUpdate({ force: true })));
+
+// --- Community builds (local test version; the live site uses Cloudflare D1) ---
+// Same rules as the live site (server/community/core.js); data in data/community-local.json.
+const communityStore = jsonStore(path.join(DATA_DIR, 'community-local.json'), fs);
+app.use('/api/community', express.json({ limit: '20kb' }));
+const community = (handler) => async (req, res) => {
+  try {
+    const voter = await visitorHash(req.headers['x-test-voter'] || req.ip, 'local-dev');
+    const game = indexGameData({
+      perks: await readJson('perks.json', []),
+      killers: await readJson('killers.json', []),
+      items: await readJson('items.json', []),
+      addons: await readJson('addons.json', []),
+      offerings: await readJson('offerings.json', []),
+    });
+    res.json(await handler(req, { voter, game }));
+  } catch (err) {
+    if (err instanceof CommunityError) return res.status(err.status).json({ error: err.message });
+    console.error(err);
+    res.status(500).json({ error: 'Something went wrong.' });
+  }
+};
+app.get('/api/community/builds', community((req, ctx) =>
+  listBuilds(communityStore, { role: req.query.role, killer: req.query.killer, sort: req.query.sort, voter: ctx.voter }).then((builds) => ({ builds })),
+));
+app.post('/api/community/builds', community(async (req, ctx) => ({ build: await createBuild(communityStore, req.body, ctx) })));
+app.post('/api/community/builds/:id/vote', community((req, ctx) => voteBuild(communityStore, req.params.id, req.body?.value, ctx)));
+app.post('/api/community/builds/:id/report', community((req, ctx) => reportBuild(communityStore, req.params.id, ctx)));
 
 app.use('/icons', express.static(ICON_DIR, { maxAge: '7d' }));
 

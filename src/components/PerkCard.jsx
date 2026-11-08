@@ -8,13 +8,27 @@ import { useNav } from '../lib/nav.js';
  */
 export function EntityCard({ entity, subtitle, note, isPerk = false }) {
   const [open, setOpen] = useState(false);
-  const { showCombos } = useNav();
+  const { showCombos, favorites } = useNav();
   const rarity = entity.rarity ? `rarity-${entity.rarity}` : '';
   return (
     <article className={`card perk-card ${rarity} ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
       <img className="perk-icon" src={iconSrc(entity.icon)} alt="" loading="lazy" />
       <div className="card-body">
-        <h3>{entity.name}</h3>
+        <h3>
+          {entity.name}
+          {isPerk && favorites && (
+            <button
+              className={`star small-star ${favorites.isFavoritePerk(entity.id) ? 'on' : ''}`}
+              title={favorites.isFavoritePerk(entity.id) ? 'Remove from favourite perks' : 'Save as favourite perk'}
+              onClick={(e) => {
+                e.stopPropagation();
+                favorites.togglePerk(entity.id);
+              }}
+            >
+              {favorites.isFavoritePerk(entity.id) ? '★' : '☆'}
+            </button>
+          )}
+        </h3>
         {subtitle && <div className="muted small">{subtitle}</div>}
         {note && <div className="entity-note">{note}</div>}
         <p className="description">{entity.description}</p>

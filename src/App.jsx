@@ -8,6 +8,7 @@ import BuildList from './components/BuildList.jsx';
 import Combos from './components/Combos.jsx';
 import BuildMaker from './components/BuildMaker.jsx';
 import Favorites from './components/Favorites.jsx';
+import Community from './components/Community.jsx';
 import { useFavorites } from './lib/favorites.js';
 import { NavContext } from './lib/nav.js';
 import { loadData, STATIC, SITE_NAME } from './lib/api.js';
@@ -24,6 +25,7 @@ const TABS = [
   { id: 'builds', label: 'Builds' },
   { id: 'combos', label: 'Combos' },
   { id: 'maker', label: 'Build maker' },
+  { id: 'community', label: '👥 Community' },
   { id: 'favorites', label: '★ Favourites' },
   { id: 'challenges', label: '🎲 Challenges' },
   { id: 'achievements', label: '🏆 Achievements' },
@@ -54,8 +56,9 @@ export default function App() {
         setTab('combos');
         window.scrollTo(0, 0);
       },
+      favorites,
     }),
-    [],
+    [favorites],
   );
 
   const load = useCallback(() => {
@@ -129,11 +132,16 @@ export default function App() {
         {data && tab === 'combos' && (
           <Combos data={data} builds={allBuilds} perkId={comboPerk} setPerkId={setComboPerk} favorites={favorites} />
         )}
-        {data && tab === 'maker' && <BuildMaker data={data} builds={builds} favorites={favorites} />}
+        {data && tab === 'maker' && (
+          <BuildMaker data={data} builds={builds} favorites={favorites} onShared={() => setTab('community')} />
+        )}
+        {data && tab === 'community' && (
+          <Community data={data} favorites={favorites} onOpenMaker={() => setTab('maker')} />
+        )}
         {data && tab === 'challenges' && <Challenges data={data} curated={builds} store={challenges} />}
         {tab === 'achievements' && <Achievements store={challenges} />}
         {data && tab === 'favorites' && (
-          <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} />
+          <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} perks={data.perks} />
         )}
         {data && tab === 'perks' && <PerkList perks={data.perks} />}
         {data && tab === 'killers' && (
