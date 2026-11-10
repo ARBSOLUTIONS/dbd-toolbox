@@ -1,6 +1,48 @@
 [
   {
     "fromPatch": "10.2.2a",
+    "toPatch": "10.2.2b",
+    "date": "2026-11-10T02:04:22.324Z",
+    "perks": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "killers": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "survivors": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "items": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "addons": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "offerings": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "total": 0,
+    "details": {
+      "perks": [],
+      "addons": [],
+      "items": []
+    },
+    "newPerkIds": []
+  },
+  {
+    "fromPatch": "10.2.2a",
     "toPatch": "10.2.2a",
     "date": "2026-11-08T04:10:29.268Z",
     "perks": {
