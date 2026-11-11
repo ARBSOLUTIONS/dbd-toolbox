@@ -1,8 +1,9 @@
 {
-  "lastCheck": "2026-11-10T17:47:52.248Z",
+  "lastCheck": "2026-11-11T10:51:19.411Z",
   "lastResult": {
-    "action": "refresh",
-    "why": "follow-up 24h after an update"
+    "action": "none",
+    "why": "still on patch 10.2.2b",
+    "livePatch": "10.2.2b"
   },
   "announcements": [
     {
