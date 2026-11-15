@@ -284,7 +284,7 @@ for (const role of ['killer', 'survivor']) {
         ? `${c.name} in Dead by Daylight: best builds, unique perks (${own.map((p) => p.name).join(', ')})${power ? `, ${power} add-ons` : ''} and how to play them.`
         : `${c.name} in Dead by Daylight: unique perks (${own.map((p) => p.name).join(', ')}), what they do and builds that use them.`,
     );
-    const body = `<article class="hero">${icon(c, 96)}<div><h1>${esc(c.name)}</h1><p class="muted">Dead by Daylight ${role}${power ? ` · Power: ${esc(power)}` : ''}</p></div></article>
+    const body = `<article class="hero">${icon(c, 96)}<div><h1>${esc(c.name)}${role === 'killer' ? ' builds &amp; perks' : ''}</h1><p class="muted">Dead by Daylight ${role}${power ? ` · Power: ${esc(power)}` : ''}</p></div></article>
 <h2>Unique perks</h2><ul class="combos">${own.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} – ${esc(short(p.description, 180))}</li>`).join('')}</ul>
 ${builds.length ? `<h2>Builds for ${esc(c.name)}</h2><div class="grid">${builds.map(buildCardHtml).join('')}</div>` : ''}
 ${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><ul class="list addons">${addons.map((a) => `<li>${icon(a, 32)} <strong>${esc(a.name)}</strong> <span class="muted">${esc(a.rarity)}</span><br><span class="small">${esc(short(a.description, 200))}</span></li>`).join('')}</ul>` : ''}`;
