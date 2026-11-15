@@ -1,5 +1,5 @@
 // Send old/alternate hosts to the canonical domain with a permanent redirect.
-const REDIRECT_HOSTS = new Set(['www.dbdtoolbox.wiki']) // TODO re-add 'dbd-toolbox.pages.dev' once dbdtoolbox.wiki DNS is delegated to Cloudflare;
+const REDIRECT_HOSTS = new Set(['dbd-toolbox.pages.dev', 'www.dbdtoolbox.wiki']);
 const NEW_HOST = 'dbdtoolbox.wiki';
 
 export async function onRequest({ request, next }) {
