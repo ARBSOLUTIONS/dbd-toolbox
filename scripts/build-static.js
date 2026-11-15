@@ -141,7 +141,7 @@ function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${canonical}">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="${SITE_URL}/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="${SITE_URL}/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/seo.css">
 ${adHead}
@@ -492,7 +492,7 @@ urls.pop();
 <link rel="canonical" href="${SITE_URL}/">
 <meta property="og:type" content="website"><meta property="og:site_name" content="${SITE}">
 <meta property="og:title" content="${SITE} – ${TAGLINE}"><meta property="og:description" content="${esc(description)}">
-<meta property="og:url" content="${SITE_URL}/"><meta name="twitter:card" content="summary">
+<meta property="og:url" content="${SITE_URL}/"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="${SITE_URL}/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="${SITE_URL}/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 ${verification}
 ${adHead}
