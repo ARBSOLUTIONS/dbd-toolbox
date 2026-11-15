@@ -21,7 +21,7 @@ import { scoreBuild } from './builds.js';
 import { suggestItemTypes, suggestAddons } from './combos.js';
 import { keywordTags } from './tags.js';
 import { bestOffering } from './offeringRatings.js';
-import { perkUsage, baselineRate, popularBuildSpecs, periodLabel, rateLabel } from './nlStats.js';
+import { perkUsage, perkBaseline, popularBuildSpecs, periodLabel, rateLabel } from './nlStats.js';
 
 /**
  * Small bonus (max 5) for perks that many players use. How often perks win is
@@ -157,7 +157,7 @@ export function generateBuilds(data, curated = [], changes = null) {
   const common = new Set(Object.entries(popularity).filter(([, n]) => n >= 2).map(([id]) => id));
   const stats = data.stats ?? null;
   const usageFor = { survivor: perkUsage(stats, 'survivor'), killer: perkUsage(stats, 'killer') };
-  const baseline = { survivor: baselineRate(stats, 'survivor'), killer: baselineRate(stats, 'killer') };
+  const baseline = { survivor: perkBaseline(stats, 'survivor'), killer: perkBaseline(stats, 'killer') };
   for (const [id, p] of Object.entries(stats?.perks ?? {})) if (p.usage >= 12) common.add(id);
   const opts = (role, extra = {}) => ({ popularity, usage: usageFor[role], baseline: baseline[role], stats, ...extra });
   const seen = new Set(curated.map((b) => b.resolved.perks.filter(Boolean).map((p) => p.id).sort().join('|')));

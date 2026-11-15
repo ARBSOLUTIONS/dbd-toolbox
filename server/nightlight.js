@@ -230,6 +230,21 @@ export function parseNightlight(raw, data, importedAt = new Date().toISOString()
   const { perks, nlToOurs } = parsePerkFeeds(feeds, perkNames, matchPerk, unmatched.perks);
   if (Object.keys(perks).length < 100) throw new Error(`Only ${Object.keys(perks).length} perks matched – check the export`);
   out.perks = perks;
+  // Perks are compared with the average over all perk slots of their role, not
+  // with the survivor feed's escape rate: that feed counts survivor-uploaded
+  // matches only and sits far higher (~53% vs ~36%), which made every survivor
+  // build look weak.
+  out.perkAverage = {};
+  for (const role of ['killer', 'survivor']) {
+    let games = 0;
+    let wins = 0;
+    for (const p of Object.values(perks)) {
+      if (p.role !== role || !p.count || p.rate == null) continue;
+      games += p.count;
+      wins += (p.count * p.rate) / 100;
+    }
+    out.perkAverage[role] = games ? Math.round((wins / games) * 1e4) / 100 : null;
+  }
 
   for (const [role, pages, target, match] of [
     ['killer', raw.pages?.killers, out.killers, matchKiller],

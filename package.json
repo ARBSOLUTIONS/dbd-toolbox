@@ -12,7 +12,8 @@
     "test": "node --test \"test/*.test.js\"",
     "check-builds": "node scripts/check-builds.js",
     "build:static": "vite build --mode static && node scripts/build-static.js",
-    "indexnow": "node scripts/indexnow.js"
+    "indexnow": "node scripts/indexnow.js",
+    "weekly-stats": "node scripts/weekly-stats.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

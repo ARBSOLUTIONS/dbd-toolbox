@@ -103,7 +103,16 @@ players upload). They are saved in `data/nightlight.json` and used in:
 
 NightLight's bot protection blocks scripts, so this project never downloads
 from NightLight itself. You collect the stats in your own browser instead
-(about 3 minutes, roughly 105 slow requests; please do this at most once a week):
+(about 3 minutes, roughly 105 slow requests; please do this at most once a week).
+
+**Shortcut:** `npm run weekly-stats` does steps 1, 3, 4 and 5 for you: it puts
+the collector on your clipboard, opens the viewer, waits for the export in your
+Downloads folder, imports it, commits and pushes. You only press F12, paste and
+Enter. A full export also brings each character's top builds, which the build
+generator shows as "most played" meta builds. A Windows scheduled task
+("DBD Toolbox - weekly NightLight stats", Sundays 19:00) starts it as a reminder.
+
+By hand:
 
 1. Open <https://nightlight.gg/perks/viewer> in your browser and wait until it
    has loaded.
