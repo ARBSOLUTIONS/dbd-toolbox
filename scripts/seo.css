@@ -52,3 +52,5 @@ h1, h2, h3 { letter-spacing: -0.02em; }
 footer { border-top-color: rgba(255, 255, 255, 0.07); color: #71717a; }
 .stats-table { border-collapse: collapse; width: 100%; font-size: 0.9em; margin: 8px 0 16px; display: block; overflow-x: auto; }
 .stats-table th, .stats-table td { text-align: left; padding: 4px 8px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+.ad { margin: 1.5rem 0; min-height: 100px; }

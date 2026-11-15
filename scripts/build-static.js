@@ -28,6 +28,19 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
 const SITE_URL = (process.env.SITE_URL || 'https://dbd-toolbox.pages.dev').replace(/\/$/, '');
 const SITE = 'DBD-Toolbox';
+// Ads (off unless ADSENSE_CLIENT is set, e.g. ca-pub-1234567890123456).
+// Consent banner: use Google's own CMP (AdSense > Privacy & messaging), it loads with this script.
+// Set via env vars or seo.config.json ({ "adsenseClient": "ca-pub-…", "adsenseSlot": "…" }); the IDs are public anyway.
+const adConfig = await fs.readFile(path.join(ROOT, 'seo.config.json'), 'utf8').then(JSON.parse).catch(() => ({}));
+const ADSENSE_CLIENT = (process.env.ADSENSE_CLIENT || adConfig.adsenseClient || '').trim();
+const ADSENSE_SLOT = (process.env.ADSENSE_SLOT || adConfig.adsenseSlot || '').trim();
+if (ADSENSE_CLIENT && !/^ca-pub-\d{10,20}$/.test(ADSENSE_CLIENT)) throw new Error(`ADSENSE_CLIENT looks wrong: ${ADSENSE_CLIENT}`);
+const adHead = ADSENSE_CLIENT
+  ? `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}" crossorigin="anonymous"></script>`
+  : '';
+const adSlot = ADSENSE_CLIENT && ADSENSE_SLOT
+  ? `<aside class="ad" aria-label="Advertisement"><ins class="adsbygoogle" style="display:block" data-ad-client="${ADSENSE_CLIENT}" data-ad-slot="${ADSENSE_SLOT}" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></aside>`
+  : '';
 const TAGLINE = 'Dead by Daylight build generator, perk combos & challenges';
 
 const readJson = async (rel, fallback) => {
@@ -93,6 +106,9 @@ await write(
 );
 await fs.cp(path.join(ROOT, 'data', 'icons'), path.join(DIST, 'icons'), { recursive: true });
 
+if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace('ca-', '')}, DIRECT, f08c47fec0942fa0
+`);
+
 // ---------- 2. Page template ----------
 const urls = []; // for the sitemap
 
@@ -128,6 +144,7 @@ function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
 <meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/seo.css">
+${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 </head>
 <body>
@@ -136,6 +153,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
+${adSlot}
 <p class="cta"><a class="button" href="/">Open the interactive build generator →</a></p>
 </main>
 <footer>Data: <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a> (CC BY-NC-SA 3.0), patch ${esc(meta.patch)}, updated ${lastmod}.
@@ -428,7 +446,7 @@ await write(
 <h2>Source code</h2><p>The project is open on <a href="https://github.com/ARBSOLUTIONS/dbd-toolbox">GitHub</a>. Suggestions for builds and perk tags are welcome.</p>
 <h2>Build ratings</h2><p>Hand-picked builds are based on general community knowledge. Synergy scores and generated builds are calculated by this site from perk descriptions and known combinations. They are a guide, not win-rate statistics.</p>
 <h2>Community statistics</h2><p>Pick rates, kill and escape rates and the "Most played" builds come from <a href="https://nightlight.gg">NightLight</a>, which collects them from matches that players upload. They are not official numbers and only cover players who use NightLight.</p>
-<h2>Privacy</h2><p>No accounts, no ads, no tracking cookies and no analytics. Favourites, your own builds and challenge progress are stored only in your own browser (localStorage).</p>`,
+<h2>Privacy</h2><p>${ADSENSE_CLIENT ? 'No accounts and no analytics. Pages show ads from Google AdSense; in the EU/UK you are asked for consent first, and Google may use cookies only as you allow (<a href="https://policies.google.com/technologies/ads">how Google uses data</a>).' : 'No accounts, no ads, no tracking cookies and no analytics.'} Favourites, your own builds and challenge progress are stored only in your own browser (localStorage).</p>`,
     crumbs: [{ name: 'About', url: '/about/' }],
   }),
 );
@@ -477,6 +495,7 @@ urls.pop();
 <meta property="og:url" content="${SITE_URL}/"><meta name="twitter:card" content="summary">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 ${verification}
+${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}`;
   html = html.replace(/<title>.*?<\/title>/, head);
   const top = [...curated].sort((a, b) => b.rating.score - a.rating.score).slice(0, 6);
