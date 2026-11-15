@@ -109,8 +109,9 @@ from NightLight itself. You collect the stats in your own browser instead
 the collector on your clipboard, opens the viewer, waits for the export in your
 Downloads folder, imports it, commits and pushes. You only press F12, paste and
 Enter. A full export also brings each character's top builds, which the build
-generator shows as "most played" meta builds. A Windows scheduled task
-("DBD Toolbox - weekly NightLight stats", Sundays 19:00) starts it as a reminder.
+generator shows as "most played" meta builds. A Claude scheduled task
+("dbd-weekly-nightlight-stats", Sundays 19:00) runs it with `--no-open` and
+pastes the collector in your own Chrome via Claude in Chrome.
 
 By hand:
 

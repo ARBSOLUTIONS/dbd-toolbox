@@ -11,6 +11,8 @@
 // You only press F12, paste (Ctrl + V) in the Console and press Enter.
 //
 // Options:  --no-publish   import only, do not commit/push
+//           --no-open      do not copy/open anything; only wait for the export
+//                          (used when an agent runs the collector in Chrome)
 //           --downloads <dir>   where your browser saves files (default ~/Downloads)
 import { execFileSync, spawn } from 'node:child_process';
 import fs from 'node:fs';
@@ -24,6 +26,7 @@ const opt = (flag) => {
 };
 const downloads = opt('--downloads') ?? path.join(os.homedir(), 'Downloads');
 const publish = !args.includes('--no-publish');
+const noOpen = args.includes('--no-open');
 const root = new URL('..', import.meta.url);
 const collector = fs.readFileSync(new URL('scripts/nightlight-collector.js', root), 'utf8');
 const VIEWER = 'https://nightlight.gg/perks/viewer';
@@ -47,11 +50,15 @@ const exports = () =>
 const startedAt = Date.now();
 const seen = new Set(exports().filter((f) => fs.statSync(f).mtimeMs < startedAt));
 
+if (noOpen) {
+  console.log(`Waiting for nightlight-export-*.json in ${downloads} ...`);
+} else {
 copyToClipboard(collector);
 openUrl(VIEWER);
 console.log(`The collector is on your clipboard and ${VIEWER} is opening.
 In that tab: press F12, open Console, paste (Ctrl + V; Chrome may ask you to type "allow pasting") and press Enter.
 It takes about 3 minutes. Waiting for nightlight-export-*.json in ${downloads} ...`);
+}
 
 const file = await new Promise((resolve, reject) => {
   const timer = setInterval(() => {
