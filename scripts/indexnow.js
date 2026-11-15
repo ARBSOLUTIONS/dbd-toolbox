@@ -5,7 +5,7 @@
 // Run after the site is deployed:  npm run indexnow
 import fs from 'node:fs/promises';
 
-const SITE_URL = (process.env.SITE_URL || 'https://dbd-toolbox.pages.dev').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://dbdtoolbox.wiki').replace(/\/$/, '');
 const { key } = JSON.parse(await fs.readFile(new URL('../indexnow.json', import.meta.url), 'utf8'));
 const sitemap = await fetch(`${SITE_URL}/sitemap.xml`).then((r) => r.text());
 const urlList = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);

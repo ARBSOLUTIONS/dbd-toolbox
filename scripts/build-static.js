@@ -9,7 +9,7 @@
 //    - sitemap.xml, robots.txt, llms.txt, about page, 404 page, IndexNow key
 //
 // Settings (environment variables):
-//   SITE_URL                   e.g. https://dbd-toolbox.pages.dev (no trailing slash)
+//   SITE_URL                   e.g. https://dbdtoolbox.wiki (no trailing slash)
 //   GOOGLE_SITE_VERIFICATION   code from Google Search Console (optional;
 //   BING_SITE_VERIFICATION     code from Bing Webmaster Tools   or put them in seo.config.json)
 import fs from 'node:fs/promises';
@@ -26,7 +26,7 @@ import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, periodLabel } from '../src/lib/
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
-const SITE_URL = (process.env.SITE_URL || 'https://dbd-toolbox.pages.dev').replace(/\/$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://dbdtoolbox.wiki').replace(/\/$/, '');
 const SITE = 'DBD-Toolbox';
 // Ads (off unless ADSENSE_CLIENT is set, e.g. ca-pub-1234567890123456).
 // Consent banner: use Google's own CMP (AdSense > Privacy & messaging), it loads with this script.

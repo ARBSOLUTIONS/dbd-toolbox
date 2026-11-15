@@ -209,7 +209,7 @@ Two things only you can do (you need your own account):
 1. **Google Search Console**: add the site → choose "HTML tag" → copy the code.
    In Cloudflare Pages → Settings → Environment variables, add
    `GOOGLE_SITE_VERIFICATION` = that code, then redeploy and click *Verify*.
-   Then submit `https://dbd-toolbox.pages.dev/sitemap.xml` under *Sitemaps*.
+   Then submit `https://dbdtoolbox.wiki/sitemap.xml` under *Sitemaps*.
 2. **Bing Webmaster Tools** (also used by ChatGPT search and Copilot): import
    the site from Google Search Console, or use `BING_SITE_VERIFICATION` in the
    same way. New pages are also reported to Bing automatically with
