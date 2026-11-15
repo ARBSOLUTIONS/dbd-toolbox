@@ -1,11 +1,10 @@
-// Send visitors and crawlers from the old pages.dev address to the own domain (301 keeps Google rankings).
-// Only the production host; preview deployments (<hash>.dbd-toolbox.pages.dev) keep working.
-const OLD_HOST = 'dbd-toolbox.pages.dev';
+// Send old/alternate hosts to the canonical domain with a permanent redirect.
+const REDIRECT_HOSTS = new Set(['dbd-toolbox.pages.dev', 'www.dbdtoolbox.wiki']);
 const NEW_HOST = 'dbdtoolbox.wiki';
 
 export async function onRequest({ request, next }) {
   const url = new URL(request.url);
-  if (url.hostname === OLD_HOST) {
+  if (REDIRECT_HOSTS.has(url.hostname)) {
     url.hostname = NEW_HOST;
     url.protocol = 'https:';
     url.port = '';
