@@ -54,8 +54,31 @@ function distance(a, b) {
  * spelling difference (e.g. "Chili" vs "Chilli") when there is exactly one
  * close candidate.
  */
+// Names NightLight uses that neither our name nor the wiki's search aliases cover.
+const EXTRA_NAMES = {
+  'Leon S. Kennedy': 'Leon Scott Kennedy',
+  'Detective Tapp': 'David Tapp',
+};
+
 export function makeMatcher(list) {
   const byKey = new Map(list.map((x) => [nameKey(x.name), x.id]));
+  const add = (name, id) => {
+    const key = nameKey(name);
+    if (key && !byKey.has(key)) byKey.set(key, id);
+  };
+  for (const x of list) {
+    // Wiki search aliases, e.g. 'Ashley J. Williams' for Ash Williams.
+    // Duos (The Troupe = 'Aestri Yazar & Baermar Uraz') also match each name alone.
+    for (const n of [x.name, x.aliases ?? '']) {
+      if (!n) continue;
+      add(n, x.id);
+      if (n.includes(' & ')) for (const part of n.split(' & ')) add(part, x.id);
+    }
+  }
+  for (const [nl, ours] of Object.entries(EXTRA_NAMES)) {
+    const id = byKey.get(nameKey(ours));
+    if (id) add(nl, id);
+  }
   return (name) => {
     const key = nameKey(name);
     if (byKey.has(key)) return byKey.get(key);

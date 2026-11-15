@@ -5,7 +5,7 @@
     "note": "Community stats from matches uploaded to NightLight; not official numbers."
   },
   "collectedAt": "2026-11-15T02:42:29.366Z",
-  "importedAt": "2026-11-15T02:43:01.298Z",
+  "importedAt": "2026-11-15T02:51:15.384Z",
   "period": {
     "start": "2026-10-17T16:00:00Z",
     "end": "2026-11-14T16:00:00Z"
@@ -37242,8 +37242,8 @@
     }
   },
   "survivorAverage": {
-    "matches": 28413,
-    "escapeRate": 52.73
+    "matches": 29806,
+    "escapeRate": 52.59
   },
   "survivors": {
     "sable-ward": {
@@ -54890,6 +54890,1111 @@
         }
       ]
     },
+    "leon-scott-kennedy": {
+      "matches": 631,
+      "pickRate": 2.12,
+      "escapeRate": 50.55,
+      "since": "10.1.0",
+      "topPerks": [
+        {
+          "perk": "lithe",
+          "usage": 24.69,
+          "rate": 28.98
+        },
+        {
+          "perk": "deja-vu",
+          "usage": 21.98,
+          "rate": 28.47
+        },
+        {
+          "perk": "resilience",
+          "usage": 20.83,
+          "rate": 29.95
+        },
+        {
+          "perk": "windows-of-opportunity",
+          "usage": 18.69,
+          "rate": 26.37
+        },
+        {
+          "perk": "dead-hard",
+          "usage": 17.12,
+          "rate": 31.59
+        },
+        {
+          "perk": "decisive-strike",
+          "usage": 12.04,
+          "rate": 31.16
+        },
+        {
+          "perk": "flashbang",
+          "usage": 11.78,
+          "rate": 28.89
+        },
+        {
+          "perk": "finesse",
+          "usage": 11.34,
+          "rate": 30.77
+        },
+        {
+          "perk": "five-moves-ahead",
+          "usage": 10.19,
+          "rate": 31.48
+        },
+        {
+          "perk": "iron-will",
+          "usage": 8.24,
+          "rate": 28.04
+        },
+        {
+          "perk": "unbreakable",
+          "usage": 7.79,
+          "rate": 27.17
+        },
+        {
+          "perk": "well-make-it",
+          "usage": 7.26,
+          "rate": 29.13
+        },
+        {
+          "perk": "adrenaline",
+          "usage": 7.26,
+          "rate": 27.93
+        },
+        {
+          "perk": "resurgence",
+          "usage": 7.13,
+          "rate": 28.75
+        },
+        {
+          "perk": "blast-mine",
+          "usage": 6.87,
+          "rate": 30.16
+        },
+        {
+          "perk": "hyperfocus",
+          "usage": 6.7,
+          "rate": 34.53
+        },
+        {
+          "perk": "bond",
+          "usage": 6.28,
+          "rate": 28.47
+        },
+        {
+          "perk": "sprint-burst",
+          "usage": 6.17,
+          "rate": 31.45
+        },
+        {
+          "perk": "bite-the-bullet",
+          "usage": 6,
+          "rate": 30.18
+        },
+        {
+          "perk": "head-on",
+          "usage": 5.63,
+          "rate": 30.23
+        },
+        {
+          "perk": "prove-thyself",
+          "usage": 5.61,
+          "rate": 22.96
+        },
+        {
+          "perk": "kindred",
+          "usage": 5.37,
+          "rate": 29.67
+        },
+        {
+          "perk": "were-gonna-live-forever",
+          "usage": 5.13,
+          "rate": 27.23
+        },
+        {
+          "perk": "botany-knowledge",
+          "usage": 4.73,
+          "rate": 26.73
+        },
+        {
+          "perk": "background-player",
+          "usage": 4.45,
+          "rate": 24.51
+        },
+        {
+          "perk": "stake-out",
+          "usage": 3.75,
+          "rate": 29.07
+        },
+        {
+          "perk": "plot-twist",
+          "usage": 3.6,
+          "rate": 35.76
+        },
+        {
+          "perk": "quick-and-quiet",
+          "usage": 3.27,
+          "rate": 37.33
+        },
+        {
+          "perk": "self-care",
+          "usage": 3.16,
+          "rate": 33.79
+        },
+        {
+          "perk": "fixated",
+          "usage": 3.14,
+          "rate": 25.69
+        },
+        {
+          "perk": "made-for-this",
+          "usage": 3.05,
+          "rate": 33.57
+        },
+        {
+          "perk": "balanced-landing",
+          "usage": 3.03,
+          "rate": 35.25
+        },
+        {
+          "perk": "champion-of-light",
+          "usage": 2.84,
+          "rate": 27.69
+        },
+        {
+          "perk": "deception",
+          "usage": 2.81,
+          "rate": 29.46
+        },
+        {
+          "perk": "boil-over",
+          "usage": 2.77,
+          "rate": 28.35
+        },
+        {
+          "perk": "lightweight",
+          "usage": 2.77,
+          "rate": 27.56
+        },
+        {
+          "perk": "built-to-last",
+          "usage": 2.6,
+          "rate": 32.77
+        },
+        {
+          "perk": "dramaturgy",
+          "usage": 2.55,
+          "rate": 30.77
+        },
+        {
+          "perk": "breakout",
+          "usage": 2.38,
+          "rate": 24.77
+        },
+        {
+          "perk": "vigil",
+          "usage": 2.31,
+          "rate": 30.19
+        },
+        {
+          "perk": "conviction",
+          "usage": 2.27,
+          "rate": 34.62
+        },
+        {
+          "perk": "alert",
+          "usage": 2.22,
+          "rate": 32.35
+        },
+        {
+          "perk": "last-stand",
+          "usage": 2.2,
+          "rate": 26.73
+        },
+        {
+          "perk": "distortion",
+          "usage": 2.12,
+          "rate": 35.05
+        },
+        {
+          "perk": "saboteur",
+          "usage": 2.07,
+          "rate": 26.32
+        },
+        {
+          "perk": "rookie-spirit",
+          "usage": 2.07,
+          "rate": 27.37
+        },
+        {
+          "perk": "boon-shadow-step",
+          "usage": 2.05,
+          "rate": 39.36
+        },
+        {
+          "perk": "boon-circle-of-healing",
+          "usage": 2.03,
+          "rate": 37.63
+        },
+        {
+          "perk": "inner-strength",
+          "usage": 1.98,
+          "rate": 31.87
+        },
+        {
+          "perk": "deliverance",
+          "usage": 1.98,
+          "rate": 28.57
+        },
+        {
+          "perk": "empathy",
+          "usage": 1.85,
+          "rate": 32.94
+        },
+        {
+          "perk": "urban-evasion",
+          "usage": 1.79,
+          "rate": 23.17
+        },
+        {
+          "perk": "hope",
+          "usage": 1.77,
+          "rate": 34.57
+        },
+        {
+          "perk": "flow-state",
+          "usage": 1.72,
+          "rate": 30.38
+        },
+        {
+          "perk": "quick-gambit",
+          "usage": 1.66,
+          "rate": 38.16
+        },
+        {
+          "perk": "potential-energy",
+          "usage": 1.64,
+          "rate": 21.33
+        },
+        {
+          "perk": "spine-chill",
+          "usage": 1.64,
+          "rate": 32
+        },
+        {
+          "perk": "autodidact",
+          "usage": 1.53,
+          "rate": 21.43
+        },
+        {
+          "perk": "left-behind",
+          "usage": 1.53,
+          "rate": 31.43
+        },
+        {
+          "perk": "flip-flop",
+          "usage": 1.5,
+          "rate": 27.54
+        },
+        {
+          "perk": "dark-sense",
+          "usage": 1.42,
+          "rate": 23.08
+        },
+        {
+          "perk": "bardic-inspiration",
+          "usage": 1.42,
+          "rate": 32.31
+        },
+        {
+          "perk": "fogwise",
+          "usage": 1.42,
+          "rate": 38.46
+        },
+        {
+          "perk": "object-of-obsession",
+          "usage": 1.4,
+          "rate": 31.25
+        },
+        {
+          "perk": "boon-exponential",
+          "usage": 1.37,
+          "rate": 41.27
+        },
+        {
+          "perk": "tenacity",
+          "usage": 1.35,
+          "rate": 22.58
+        },
+        {
+          "perk": "overcome",
+          "usage": 1.33,
+          "rate": 29.51
+        },
+        {
+          "perk": "no-one-left-behind",
+          "usage": 1.26,
+          "rate": 31.03
+        },
+        {
+          "perk": "chemical-trap",
+          "usage": 1.26,
+          "rate": 29.31
+        },
+        {
+          "perk": "empathic-connection",
+          "usage": 1.2,
+          "rate": 40
+        },
+        {
+          "perk": "poised",
+          "usage": 1.2,
+          "rate": 30.91
+        },
+        {
+          "perk": "soul-guard",
+          "usage": 1.16,
+          "rate": 28.3
+        },
+        {
+          "perk": "shoulder-the-burden",
+          "usage": 1.16,
+          "rate": 33.96
+        },
+        {
+          "perk": "dance-with-me",
+          "usage": 1.11,
+          "rate": 19.61
+        },
+        {
+          "perk": "any-means-necessary",
+          "usage": 1.09,
+          "rate": 28
+        },
+        {
+          "perk": "wiretap",
+          "usage": 1.09,
+          "rate": 36
+        },
+        {
+          "perk": "boon-steadfast",
+          "usage": 1.05,
+          "rate": 29.17
+        },
+        {
+          "perk": "one-two-three-four",
+          "usage": 1.05,
+          "rate": 29.17
+        },
+        {
+          "perk": "for-the-people",
+          "usage": 1.03,
+          "rate": 34.04
+        },
+        {
+          "perk": "smash-hit",
+          "usage": 1.03,
+          "rate": 21.28
+        },
+        {
+          "perk": "fast-track",
+          "usage": 1.03,
+          "rate": 19.15
+        },
+        {
+          "perk": "power-struggle",
+          "usage": 1.03,
+          "rate": 25.53
+        },
+        {
+          "perk": "self-preservation",
+          "usage": 1,
+          "rate": 30.43
+        },
+        {
+          "perk": "desperate-measures",
+          "usage": 0.98,
+          "rate": 35.56
+        },
+        {
+          "perk": "technician",
+          "usage": 0.98,
+          "rate": 24.44
+        },
+        {
+          "perk": "babysitter",
+          "usage": 0.98,
+          "rate": 35.56
+        },
+        {
+          "perk": "counterforce",
+          "usage": 0.94,
+          "rate": 34.88
+        },
+        {
+          "perk": "lucky-break",
+          "usage": 0.94,
+          "rate": 27.91
+        },
+        {
+          "perk": "leader",
+          "usage": 0.92,
+          "rate": 11.9
+        },
+        {
+          "perk": "scene-partner",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "a-place-for-us",
+          "usage": 0.83,
+          "rate": 39.47
+        },
+        {
+          "perk": "sole-survivor",
+          "usage": 0.83,
+          "rate": 23.68
+        },
+        {
+          "perk": "second-wind",
+          "usage": 0.83,
+          "rate": 39.47
+        },
+        {
+          "perk": "this-is-not-happening",
+          "usage": 0.79,
+          "rate": 30.56
+        },
+        {
+          "perk": "off-the-record",
+          "usage": 0.79,
+          "rate": 19.44
+        },
+        {
+          "perk": "wide-open-throttle",
+          "usage": 0.76,
+          "rate": 42.86
+        },
+        {
+          "perk": "overzealous",
+          "usage": 0.76,
+          "rate": 37.14
+        },
+        {
+          "perk": "diversion",
+          "usage": 0.76,
+          "rate": 37.14
+        },
+        {
+          "perk": "lend-a-hand",
+          "usage": 0.74,
+          "rate": 23.53
+        },
+        {
+          "perk": "scavenger",
+          "usage": 0.74,
+          "rate": 47.06
+        },
+        {
+          "perk": "slippery-meat",
+          "usage": 0.72,
+          "rate": 24.24
+        },
+        {
+          "perk": "strength-in-shadows",
+          "usage": 0.7,
+          "rate": 37.5
+        },
+        {
+          "perk": "plunderers-instinct",
+          "usage": 0.68,
+          "rate": 25.81
+        },
+        {
+          "perk": "cross-examination",
+          "usage": 0.63,
+          "rate": 24.14
+        },
+        {
+          "perk": "calm-spirit",
+          "usage": 0.61,
+          "rate": 25
+        },
+        {
+          "perk": "reassurance",
+          "usage": 0.61,
+          "rate": 28.57
+        },
+        {
+          "perk": "wake-up",
+          "usage": 0.61,
+          "rate": 32.14
+        },
+        {
+          "perk": "mettle-of-man",
+          "usage": 0.59,
+          "rate": 33.33
+        },
+        {
+          "perk": "open-handed",
+          "usage": 0.57,
+          "rate": 50
+        },
+        {
+          "perk": "we-see-you",
+          "usage": 0.57,
+          "rate": 42.31
+        },
+        {
+          "perk": "do-no-harm",
+          "usage": 0.55,
+          "rate": 32
+        },
+        {
+          "perk": "teamwork-full-circuit",
+          "usage": 0.55,
+          "rate": 40
+        },
+        {
+          "perk": "small-game",
+          "usage": 0.52,
+          "rate": 50
+        },
+        {
+          "perk": "ghost-notes",
+          "usage": 0.52,
+          "rate": 25
+        },
+        {
+          "perk": "borrowed-time",
+          "usage": 0.52,
+          "rate": 29.17
+        },
+        {
+          "perk": "no-mither",
+          "usage": 0.52,
+          "rate": 20.83
+        },
+        {
+          "perk": "exultation",
+          "usage": 0.52,
+          "rate": 25
+        },
+        {
+          "perk": "solidarity",
+          "usage": 0.5,
+          "rate": 30.43
+        },
+        {
+          "perk": "troubleshooter",
+          "usage": 0.5,
+          "rate": 26.09
+        },
+        {
+          "perk": "road-life",
+          "usage": 0.48,
+          "rate": 50
+        },
+        {
+          "perk": "extrasensory-perception",
+          "usage": 0.48,
+          "rate": 22.73
+        },
+        {
+          "perk": "moment-of-glory",
+          "usage": 0.46,
+          "rate": 52.38
+        },
+        {
+          "perk": "teamwork-soft-spoken",
+          "usage": 0.41,
+          "rate": 21.05
+        },
+        {
+          "perk": "salvations-cry",
+          "usage": 0.39,
+          "rate": 44.44
+        },
+        {
+          "perk": "boon-dark-theory",
+          "usage": 0.37,
+          "rate": 23.53
+        },
+        {
+          "perk": "reactive-healing",
+          "usage": 0.33,
+          "rate": 26.67
+        },
+        {
+          "perk": "light-footed",
+          "usage": 0.33,
+          "rate": 40
+        },
+        {
+          "perk": "residual-manifest",
+          "usage": 0.33,
+          "rate": 13.33
+        },
+        {
+          "perk": "parental-guidance",
+          "usage": 0.33,
+          "rate": 40
+        },
+        {
+          "perk": "inner-focus",
+          "usage": 0.31,
+          "rate": 28.57
+        },
+        {
+          "perk": "premonition",
+          "usage": 0.31,
+          "rate": 21.43
+        },
+        {
+          "perk": "aftercare",
+          "usage": 0.31,
+          "rate": 21.43
+        },
+        {
+          "perk": "ace-in-the-hole",
+          "usage": 0.28,
+          "rate": 38.46
+        },
+        {
+          "perk": "better-than-new",
+          "usage": 0.28,
+          "rate": 30.77
+        },
+        {
+          "perk": "eyes-of-belmont",
+          "usage": 0.28,
+          "rate": 30.77
+        },
+        {
+          "perk": "detectives-hunch",
+          "usage": 0.26,
+          "rate": 16.67
+        },
+        {
+          "perk": "fruits-of-your-labor",
+          "usage": 0.26,
+          "rate": 50
+        },
+        {
+          "perk": "wicked",
+          "usage": 0.26,
+          "rate": 33.33
+        },
+        {
+          "perk": "better-together",
+          "usage": 0.22,
+          "rate": 20
+        },
+        {
+          "perk": "up-the-ante",
+          "usage": 0.22,
+          "rate": 70
+        },
+        {
+          "perk": "mirrored-illusion",
+          "usage": 0.22,
+          "rate": 40
+        },
+        {
+          "perk": "corrective-action",
+          "usage": 0.22,
+          "rate": 50
+        },
+        {
+          "perk": "boon-illumination",
+          "usage": 0.22,
+          "rate": 50
+        },
+        {
+          "perk": "still-sight",
+          "usage": 0.2,
+          "rate": 22.22
+        },
+        {
+          "perk": "teamwork-throw-down",
+          "usage": 0.2,
+          "rate": 44.44
+        },
+        {
+          "perk": "friendly-competition",
+          "usage": 0.17,
+          "rate": 37.5
+        },
+        {
+          "perk": "clairvoyance",
+          "usage": 0.17,
+          "rate": 37.5
+        },
+        {
+          "perk": "invocation-weaving-spiders",
+          "usage": 0.17,
+          "rate": 25
+        },
+        {
+          "perk": "duty-of-care",
+          "usage": 0.17,
+          "rate": 50
+        },
+        {
+          "perk": "clean-break",
+          "usage": 0.15,
+          "rate": 57.14
+        },
+        {
+          "perk": "streetwise",
+          "usage": 0.15,
+          "rate": 14.29
+        },
+        {
+          "perk": "repressed-alliance",
+          "usage": 0.15,
+          "rate": 28.57
+        },
+        {
+          "perk": "hardened",
+          "usage": 0.15,
+          "rate": 14.29
+        },
+        {
+          "perk": "appraisal",
+          "usage": 0.13,
+          "rate": 16.67
+        },
+        {
+          "perk": "specialist",
+          "usage": 0.13,
+          "rate": 16.67
+        },
+        {
+          "perk": "low-profile",
+          "usage": 0.13,
+          "rate": 33.33
+        },
+        {
+          "perk": "buckle-up",
+          "usage": 0.13,
+          "rate": 50
+        },
+        {
+          "perk": "breakdown",
+          "usage": 0.11,
+          "rate": 20
+        },
+        {
+          "perk": "teamwork-power-of-two",
+          "usage": 0.11,
+          "rate": 40
+        },
+        {
+          "perk": "apocalyptic-ingenuity",
+          "usage": 0.09,
+          "rate": 25
+        },
+        {
+          "perk": "camaraderie",
+          "usage": 0.09,
+          "rate": 50
+        },
+        {
+          "perk": "lucky-star",
+          "usage": 0.09,
+          "rate": 50
+        },
+        {
+          "perk": "pharmacy",
+          "usage": 0.09,
+          "rate": 50
+        },
+        {
+          "perk": "visionary",
+          "usage": 0.07,
+          "rate": 66.67
+        },
+        {
+          "perk": "blood-pact",
+          "usage": 0.07,
+          "rate": 0
+        },
+        {
+          "perk": "bada-bada-boom",
+          "usage": 0.07,
+          "rate": 0
+        },
+        {
+          "perk": "come-and-get-me",
+          "usage": 0.07,
+          "rate": 66.67
+        },
+        {
+          "perk": "change-of-plan",
+          "usage": 0.04,
+          "rate": 0
+        },
+        {
+          "perk": "blood-rush",
+          "usage": 0.04,
+          "rate": 0
+        },
+        {
+          "perk": "red-herring",
+          "usage": 0.04,
+          "rate": 0
+        },
+        {
+          "perk": "rapid-response",
+          "usage": 0.04,
+          "rate": 0
+        },
+        {
+          "perk": "deadline",
+          "usage": 0.02,
+          "rate": 0
+        },
+        {
+          "perk": "invocation-treacherous-crows",
+          "usage": 0.02,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-collective-stealth",
+          "usage": 0.02,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-toughen-up",
+          "usage": 0.02,
+          "rate": 0
+        },
+        {
+          "perk": "cut-loose",
+          "usage": 0.02,
+          "rate": 0
+        }
+      ],
+      "topBuilds": [
+        {
+          "perks": [
+            "bite-the-bullet",
+            "flashbang",
+            "rookie-spirit"
+          ],
+          "usage": 0.81,
+          "rate": 29.73,
+          "samples": 37,
+          "wins": 11
+        },
+        {
+          "perks": [
+            "quick-and-quiet",
+            "head-on",
+            "deception",
+            "flashbang"
+          ],
+          "usage": 0.57,
+          "rate": 34.62,
+          "samples": 26,
+          "wins": 9
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "windows-of-opportunity",
+            "finesse"
+          ],
+          "usage": 0.39,
+          "rate": 16.67,
+          "samples": 18,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "resilience",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.33,
+          "rate": 40,
+          "samples": 15,
+          "wins": 6
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "finesse",
+            "five-moves-ahead"
+          ],
+          "usage": 0.33,
+          "rate": 33.33,
+          "samples": 15,
+          "wins": 5
+        },
+        {
+          "perks": [
+            "botany-knowledge",
+            "self-care",
+            "dead-hard",
+            "bite-the-bullet"
+          ],
+          "usage": 0.28,
+          "rate": 38.46,
+          "samples": 13,
+          "wins": 5
+        },
+        {
+          "perks": [
+            "boon-circle-of-healing",
+            "boon-shadow-step",
+            "boon-exponential",
+            "boon-steadfast"
+          ],
+          "usage": 0.26,
+          "rate": 41.67,
+          "samples": 12,
+          "wins": 5
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "stake-out",
+            "built-to-last",
+            "hyperfocus"
+          ],
+          "usage": 0.24,
+          "rate": 18.18,
+          "samples": 11,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "dead-hard",
+            "five-moves-ahead"
+          ],
+          "usage": 0.22,
+          "rate": 30,
+          "samples": 10,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "boon-circle-of-healing",
+            "boon-shadow-step",
+            "boon-exponential",
+            "boon-dark-theory"
+          ],
+          "usage": 0.17,
+          "rate": 25,
+          "samples": 8,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "boil-over",
+            "flip-flop"
+          ],
+          "usage": 0.17,
+          "rate": 12.5,
+          "samples": 8,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "well-make-it",
+            "alert",
+            "dead-hard",
+            "fast-track"
+          ],
+          "usage": 0.17,
+          "rate": 50,
+          "samples": 8,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "alert",
+            "dead-hard",
+            "blast-mine"
+          ],
+          "usage": 0.17,
+          "rate": 50,
+          "samples": 8,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "dead-hard",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.15,
+          "rate": 28.57,
+          "samples": 7,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "flip-flop",
+            "power-struggle"
+          ],
+          "usage": 0.15,
+          "rate": 14.29,
+          "samples": 7,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "resilience",
+            "well-make-it",
+            "lithe"
+          ],
+          "usage": 0.15,
+          "rate": 57.14,
+          "samples": 7,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "prove-thyself",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.15,
+          "rate": 0,
+          "samples": 7,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "resilience",
+            "dead-hard",
+            "finesse",
+            "five-moves-ahead"
+          ],
+          "usage": 0.13,
+          "rate": 33.33,
+          "samples": 6,
+          "wins": 2
+        }
+      ]
+    },
     "jake-park": {
       "matches": 625,
       "pickRate": 2.1,
@@ -70036,6 +71141,1049 @@
         }
       ]
     },
+    "bill-overbeck": {
+      "matches": 306,
+      "pickRate": 1.03,
+      "escapeRate": 47.71,
+      "since": "10.1.0",
+      "topPerks": [
+        {
+          "perk": "unbreakable",
+          "usage": 28.4,
+          "rate": 25.73
+        },
+        {
+          "perk": "deja-vu",
+          "usage": 24.6,
+          "rate": 27.92
+        },
+        {
+          "perk": "resilience",
+          "usage": 20.31,
+          "rate": 27.82
+        },
+        {
+          "perk": "lithe",
+          "usage": 19.87,
+          "rate": 32.11
+        },
+        {
+          "perk": "windows-of-opportunity",
+          "usage": 17.1,
+          "rate": 28.77
+        },
+        {
+          "perk": "left-behind",
+          "usage": 15.54,
+          "rate": 24.76
+        },
+        {
+          "perk": "decisive-strike",
+          "usage": 13.35,
+          "rate": 30.66
+        },
+        {
+          "perk": "dead-hard",
+          "usage": 12.13,
+          "rate": 33.73
+        },
+        {
+          "perk": "well-make-it",
+          "usage": 10.47,
+          "rate": 29.3
+        },
+        {
+          "perk": "borrowed-time",
+          "usage": 10.18,
+          "rate": 22.97
+        },
+        {
+          "perk": "kindred",
+          "usage": 9.84,
+          "rate": 26.73
+        },
+        {
+          "perk": "sprint-burst",
+          "usage": 7.36,
+          "rate": 25.17
+        },
+        {
+          "perk": "iron-will",
+          "usage": 6.82,
+          "rate": 39.29
+        },
+        {
+          "perk": "five-moves-ahead",
+          "usage": 6.43,
+          "rate": 36.36
+        },
+        {
+          "perk": "head-on",
+          "usage": 5.55,
+          "rate": 26.32
+        },
+        {
+          "perk": "bond",
+          "usage": 5.5,
+          "rate": 27.43
+        },
+        {
+          "perk": "finesse",
+          "usage": 5.41,
+          "rate": 32.43
+        },
+        {
+          "perk": "adrenaline",
+          "usage": 5.31,
+          "rate": 32.11
+        },
+        {
+          "perk": "prove-thyself",
+          "usage": 5.02,
+          "rate": 27.18
+        },
+        {
+          "perk": "lightweight",
+          "usage": 4.87,
+          "rate": 24
+        },
+        {
+          "perk": "botany-knowledge",
+          "usage": 4.68,
+          "rate": 34.38
+        },
+        {
+          "perk": "quick-and-quiet",
+          "usage": 4.09,
+          "rate": 35.71
+        },
+        {
+          "perk": "self-care",
+          "usage": 3.95,
+          "rate": 25.93
+        },
+        {
+          "perk": "balanced-landing",
+          "usage": 3.8,
+          "rate": 37.18
+        },
+        {
+          "perk": "were-gonna-live-forever",
+          "usage": 3.65,
+          "rate": 36
+        },
+        {
+          "perk": "dark-sense",
+          "usage": 3.65,
+          "rate": 21.33
+        },
+        {
+          "perk": "blast-mine",
+          "usage": 3.26,
+          "rate": 25.37
+        },
+        {
+          "perk": "deception",
+          "usage": 3.21,
+          "rate": 25.76
+        },
+        {
+          "perk": "no-one-left-behind",
+          "usage": 3.17,
+          "rate": 24.62
+        },
+        {
+          "perk": "hyperfocus",
+          "usage": 3.12,
+          "rate": 37.5
+        },
+        {
+          "perk": "resurgence",
+          "usage": 3.02,
+          "rate": 45.16
+        },
+        {
+          "perk": "spine-chill",
+          "usage": 2.83,
+          "rate": 22.41
+        },
+        {
+          "perk": "hope",
+          "usage": 2.83,
+          "rate": 25.86
+        },
+        {
+          "perk": "fixated",
+          "usage": 2.78,
+          "rate": 21.05
+        },
+        {
+          "perk": "sole-survivor",
+          "usage": 2.73,
+          "rate": 26.79
+        },
+        {
+          "perk": "flashbang",
+          "usage": 2.63,
+          "rate": 31.48
+        },
+        {
+          "perk": "urban-evasion",
+          "usage": 2.58,
+          "rate": 22.64
+        },
+        {
+          "perk": "background-player",
+          "usage": 2.44,
+          "rate": 42
+        },
+        {
+          "perk": "inner-strength",
+          "usage": 2.39,
+          "rate": 28.57
+        },
+        {
+          "perk": "empathy",
+          "usage": 2.29,
+          "rate": 36.17
+        },
+        {
+          "perk": "deliverance",
+          "usage": 2.29,
+          "rate": 29.79
+        },
+        {
+          "perk": "premonition",
+          "usage": 2.24,
+          "rate": 28.26
+        },
+        {
+          "perk": "built-to-last",
+          "usage": 2.19,
+          "rate": 35.56
+        },
+        {
+          "perk": "plot-twist",
+          "usage": 2.19,
+          "rate": 35.56
+        },
+        {
+          "perk": "boon-shadow-step",
+          "usage": 2.05,
+          "rate": 50
+        },
+        {
+          "perk": "slippery-meat",
+          "usage": 2.05,
+          "rate": 16.67
+        },
+        {
+          "perk": "this-is-not-happening",
+          "usage": 1.95,
+          "rate": 25
+        },
+        {
+          "perk": "boon-circle-of-healing",
+          "usage": 1.95,
+          "rate": 52.5
+        },
+        {
+          "perk": "stake-out",
+          "usage": 1.95,
+          "rate": 35
+        },
+        {
+          "perk": "champion-of-light",
+          "usage": 1.9,
+          "rate": 33.33
+        },
+        {
+          "perk": "boil-over",
+          "usage": 1.9,
+          "rate": 25.64
+        },
+        {
+          "perk": "distortion",
+          "usage": 1.75,
+          "rate": 27.78
+        },
+        {
+          "perk": "tenacity",
+          "usage": 1.7,
+          "rate": 31.43
+        },
+        {
+          "perk": "leader",
+          "usage": 1.66,
+          "rate": 23.53
+        },
+        {
+          "perk": "last-stand",
+          "usage": 1.56,
+          "rate": 18.75
+        },
+        {
+          "perk": "saboteur",
+          "usage": 1.56,
+          "rate": 21.88
+        },
+        {
+          "perk": "dramaturgy",
+          "usage": 1.56,
+          "rate": 34.38
+        },
+        {
+          "perk": "autodidact",
+          "usage": 1.51,
+          "rate": 32.26
+        },
+        {
+          "perk": "made-for-this",
+          "usage": 1.51,
+          "rate": 45.16
+        },
+        {
+          "perk": "alert",
+          "usage": 1.51,
+          "rate": 32.26
+        },
+        {
+          "perk": "dance-with-me",
+          "usage": 1.46,
+          "rate": 26.67
+        },
+        {
+          "perk": "boon-exponential",
+          "usage": 1.46,
+          "rate": 56.67
+        },
+        {
+          "perk": "potential-energy",
+          "usage": 1.41,
+          "rate": 34.48
+        },
+        {
+          "perk": "diversion",
+          "usage": 1.32,
+          "rate": 37.04
+        },
+        {
+          "perk": "flip-flop",
+          "usage": 1.32,
+          "rate": 22.22
+        },
+        {
+          "perk": "breakout",
+          "usage": 1.27,
+          "rate": 11.54
+        },
+        {
+          "perk": "overcome",
+          "usage": 1.27,
+          "rate": 30.77
+        },
+        {
+          "perk": "babysitter",
+          "usage": 1.27,
+          "rate": 34.62
+        },
+        {
+          "perk": "plunderers-instinct",
+          "usage": 1.22,
+          "rate": 40
+        },
+        {
+          "perk": "flow-state",
+          "usage": 1.12,
+          "rate": 30.43
+        },
+        {
+          "perk": "technician",
+          "usage": 1.12,
+          "rate": 8.7
+        },
+        {
+          "perk": "any-means-necessary",
+          "usage": 1.12,
+          "rate": 47.83
+        },
+        {
+          "perk": "one-two-three-four",
+          "usage": 1.12,
+          "rate": 34.78
+        },
+        {
+          "perk": "conviction",
+          "usage": 1.07,
+          "rate": 45.45
+        },
+        {
+          "perk": "vigil",
+          "usage": 1.07,
+          "rate": 40.91
+        },
+        {
+          "perk": "object-of-obsession",
+          "usage": 1.07,
+          "rate": 13.64
+        },
+        {
+          "perk": "lucky-break",
+          "usage": 1.02,
+          "rate": 9.52
+        },
+        {
+          "perk": "wiretap",
+          "usage": 0.97,
+          "rate": 35
+        },
+        {
+          "perk": "fogwise",
+          "usage": 0.93,
+          "rate": 42.11
+        },
+        {
+          "perk": "boon-steadfast",
+          "usage": 0.93,
+          "rate": 52.63
+        },
+        {
+          "perk": "calm-spirit",
+          "usage": 0.88,
+          "rate": 50
+        },
+        {
+          "perk": "small-game",
+          "usage": 0.83,
+          "rate": 35.29
+        },
+        {
+          "perk": "shoulder-the-burden",
+          "usage": 0.83,
+          "rate": 35.29
+        },
+        {
+          "perk": "desperate-measures",
+          "usage": 0.83,
+          "rate": 35.29
+        },
+        {
+          "perk": "self-preservation",
+          "usage": 0.83,
+          "rate": 35.29
+        },
+        {
+          "perk": "smash-hit",
+          "usage": 0.78,
+          "rate": 43.75
+        },
+        {
+          "perk": "for-the-people",
+          "usage": 0.78,
+          "rate": 25
+        },
+        {
+          "perk": "poised",
+          "usage": 0.78,
+          "rate": 31.25
+        },
+        {
+          "perk": "quick-gambit",
+          "usage": 0.73,
+          "rate": 33.33
+        },
+        {
+          "perk": "soul-guard",
+          "usage": 0.73,
+          "rate": 40
+        },
+        {
+          "perk": "bardic-inspiration",
+          "usage": 0.68,
+          "rate": 21.43
+        },
+        {
+          "perk": "overzealous",
+          "usage": 0.68,
+          "rate": 35.71
+        },
+        {
+          "perk": "power-struggle",
+          "usage": 0.63,
+          "rate": 30.77
+        },
+        {
+          "perk": "fast-track",
+          "usage": 0.63,
+          "rate": 23.08
+        },
+        {
+          "perk": "mettle-of-man",
+          "usage": 0.58,
+          "rate": 16.67
+        },
+        {
+          "perk": "moment-of-glory",
+          "usage": 0.58,
+          "rate": 33.33
+        },
+        {
+          "perk": "second-wind",
+          "usage": 0.58,
+          "rate": 33.33
+        },
+        {
+          "perk": "wide-open-throttle",
+          "usage": 0.58,
+          "rate": 25
+        },
+        {
+          "perk": "reassurance",
+          "usage": 0.54,
+          "rate": 45.45
+        },
+        {
+          "perk": "extrasensory-perception",
+          "usage": 0.54,
+          "rate": 54.55
+        },
+        {
+          "perk": "chemical-trap",
+          "usage": 0.49,
+          "rate": 40
+        },
+        {
+          "perk": "road-life",
+          "usage": 0.49,
+          "rate": 40
+        },
+        {
+          "perk": "scene-partner",
+          "usage": 0.49,
+          "rate": 30
+        },
+        {
+          "perk": "open-handed",
+          "usage": 0.49,
+          "rate": 40
+        },
+        {
+          "perk": "scavenger",
+          "usage": 0.49,
+          "rate": 30
+        },
+        {
+          "perk": "a-place-for-us",
+          "usage": 0.44,
+          "rate": 22.22
+        },
+        {
+          "perk": "empathic-connection",
+          "usage": 0.44,
+          "rate": 55.56
+        },
+        {
+          "perk": "aftercare",
+          "usage": 0.44,
+          "rate": 44.44
+        },
+        {
+          "perk": "solidarity",
+          "usage": 0.44,
+          "rate": 66.67
+        },
+        {
+          "perk": "wake-up",
+          "usage": 0.44,
+          "rate": 44.44
+        },
+        {
+          "perk": "no-mither",
+          "usage": 0.39,
+          "rate": 25
+        },
+        {
+          "perk": "strength-in-shadows",
+          "usage": 0.39,
+          "rate": 50
+        },
+        {
+          "perk": "residual-manifest",
+          "usage": 0.39,
+          "rate": 25
+        },
+        {
+          "perk": "inner-focus",
+          "usage": 0.39,
+          "rate": 25
+        },
+        {
+          "perk": "ace-in-the-hole",
+          "usage": 0.34,
+          "rate": 57.14
+        },
+        {
+          "perk": "counterforce",
+          "usage": 0.34,
+          "rate": 71.43
+        },
+        {
+          "perk": "breakdown",
+          "usage": 0.34,
+          "rate": 42.86
+        },
+        {
+          "perk": "off-the-record",
+          "usage": 0.34,
+          "rate": 28.57
+        },
+        {
+          "perk": "exultation",
+          "usage": 0.29,
+          "rate": 33.33
+        },
+        {
+          "perk": "boon-dark-theory",
+          "usage": 0.29,
+          "rate": 66.67
+        },
+        {
+          "perk": "light-footed",
+          "usage": 0.29,
+          "rate": 33.33
+        },
+        {
+          "perk": "streetwise",
+          "usage": 0.29,
+          "rate": 33.33
+        },
+        {
+          "perk": "do-no-harm",
+          "usage": 0.29,
+          "rate": 50
+        },
+        {
+          "perk": "lend-a-hand",
+          "usage": 0.29,
+          "rate": 16.67
+        },
+        {
+          "perk": "cross-examination",
+          "usage": 0.29,
+          "rate": 50
+        },
+        {
+          "perk": "salvations-cry",
+          "usage": 0.29,
+          "rate": 50
+        },
+        {
+          "perk": "friendly-competition",
+          "usage": 0.24,
+          "rate": 0
+        },
+        {
+          "perk": "better-together",
+          "usage": 0.24,
+          "rate": 20
+        },
+        {
+          "perk": "up-the-ante",
+          "usage": 0.24,
+          "rate": 0
+        },
+        {
+          "perk": "ghost-notes",
+          "usage": 0.24,
+          "rate": 40
+        },
+        {
+          "perk": "troubleshooter",
+          "usage": 0.24,
+          "rate": 60
+        },
+        {
+          "perk": "fruits-of-your-labor",
+          "usage": 0.24,
+          "rate": 40
+        },
+        {
+          "perk": "clairvoyance",
+          "usage": 0.24,
+          "rate": 40
+        },
+        {
+          "perk": "teamwork-soft-spoken",
+          "usage": 0.24,
+          "rate": 40
+        },
+        {
+          "perk": "bite-the-bullet",
+          "usage": 0.24,
+          "rate": 20
+        },
+        {
+          "perk": "teamwork-full-circuit",
+          "usage": 0.19,
+          "rate": 50
+        },
+        {
+          "perk": "apocalyptic-ingenuity",
+          "usage": 0.19,
+          "rate": 25
+        },
+        {
+          "perk": "visionary",
+          "usage": 0.19,
+          "rate": 25
+        },
+        {
+          "perk": "pharmacy",
+          "usage": 0.19,
+          "rate": 50
+        },
+        {
+          "perk": "reactive-healing",
+          "usage": 0.19,
+          "rate": 75
+        },
+        {
+          "perk": "detectives-hunch",
+          "usage": 0.19,
+          "rate": 25
+        },
+        {
+          "perk": "we-see-you",
+          "usage": 0.19,
+          "rate": 25
+        },
+        {
+          "perk": "low-profile",
+          "usage": 0.15,
+          "rate": 0
+        },
+        {
+          "perk": "mirrored-illusion",
+          "usage": 0.15,
+          "rate": 33.33
+        },
+        {
+          "perk": "appraisal",
+          "usage": 0.15,
+          "rate": 33.33
+        },
+        {
+          "perk": "hardened",
+          "usage": 0.15,
+          "rate": 66.67
+        },
+        {
+          "perk": "invocation-weaving-spiders",
+          "usage": 0.15,
+          "rate": 0
+        },
+        {
+          "perk": "bada-bada-boom",
+          "usage": 0.1,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-collective-stealth",
+          "usage": 0.1,
+          "rate": 100
+        },
+        {
+          "perk": "clean-break",
+          "usage": 0.1,
+          "rate": 50
+        },
+        {
+          "perk": "specialist",
+          "usage": 0.1,
+          "rate": 50
+        },
+        {
+          "perk": "rookie-spirit",
+          "usage": 0.1,
+          "rate": 0
+        },
+        {
+          "perk": "wicked",
+          "usage": 0.1,
+          "rate": 0
+        },
+        {
+          "perk": "red-herring",
+          "usage": 0.1,
+          "rate": 50
+        },
+        {
+          "perk": "parental-guidance",
+          "usage": 0.1,
+          "rate": 50
+        },
+        {
+          "perk": "still-sight",
+          "usage": 0.1,
+          "rate": 0
+        },
+        {
+          "perk": "buckle-up",
+          "usage": 0.1,
+          "rate": 50
+        },
+        {
+          "perk": "eyes-of-belmont",
+          "usage": 0.1,
+          "rate": 0
+        },
+        {
+          "perk": "invocation-treacherous-crows",
+          "usage": 0.05,
+          "rate": 100
+        },
+        {
+          "perk": "repressed-alliance",
+          "usage": 0.05,
+          "rate": 0
+        },
+        {
+          "perk": "boon-illumination",
+          "usage": 0.05,
+          "rate": 100
+        },
+        {
+          "perk": "lucky-star",
+          "usage": 0.05,
+          "rate": 100
+        },
+        {
+          "perk": "rapid-response",
+          "usage": 0.05,
+          "rate": 0
+        },
+        {
+          "perk": "better-than-new",
+          "usage": 0.05,
+          "rate": 100
+        },
+        {
+          "perk": "deadline",
+          "usage": 0.05,
+          "rate": 0
+        },
+        {
+          "perk": "cut-loose",
+          "usage": 0.05,
+          "rate": 0
+        }
+      ],
+      "topBuilds": [
+        {
+          "perks": [
+            "borrowed-time",
+            "left-behind",
+            "unbreakable"
+          ],
+          "usage": 2.09,
+          "rate": 30.23,
+          "samples": 43,
+          "wins": 13
+        },
+        {
+          "perks": [
+            "quick-and-quiet",
+            "head-on",
+            "deception",
+            "flashbang"
+          ],
+          "usage": 0.44,
+          "rate": 33.33,
+          "samples": 9,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "resilience",
+            "borrowed-time",
+            "left-behind",
+            "unbreakable"
+          ],
+          "usage": 0.39,
+          "rate": 25,
+          "samples": 8,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "windows-of-opportunity",
+            "finesse"
+          ],
+          "usage": 0.29,
+          "rate": 16.67,
+          "samples": 6,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "resilience",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.29,
+          "rate": 33.33,
+          "samples": 6,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "well-make-it",
+            "kindred",
+            "borrowed-time",
+            "lithe"
+          ],
+          "usage": 0.29,
+          "rate": 66.67,
+          "samples": 6,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "well-make-it",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.24,
+          "rate": 0,
+          "samples": 5,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "dead-hard",
+            "five-moves-ahead"
+          ],
+          "usage": 0.24,
+          "rate": 80,
+          "samples": 5,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "resilience",
+            "kindred",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.24,
+          "rate": 40,
+          "samples": 5,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "bond",
+            "iron-will",
+            "background-player",
+            "champion-of-light"
+          ],
+          "usage": 0.19,
+          "rate": 75,
+          "samples": 4,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "lightweight",
+            "borrowed-time",
+            "left-behind",
+            "unbreakable"
+          ],
+          "usage": 0.19,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "dark-sense",
+            "deja-vu",
+            "well-make-it",
+            "unbreakable"
+          ],
+          "usage": 0.19,
+          "rate": 50,
+          "samples": 4,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "unbreakable",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.19,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "boil-over",
+            "flip-flop"
+          ],
+          "usage": 0.19,
+          "rate": 50,
+          "samples": 4,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "dead-hard",
+            "made-for-this",
+            "five-moves-ahead"
+          ],
+          "usage": 0.19,
+          "rate": 50,
+          "samples": 4,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "unbreakable",
+            "dead-hard"
+          ],
+          "usage": 0.19,
+          "rate": 0,
+          "samples": 4,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "saboteur",
+            "mettle-of-man",
+            "breakout",
+            "background-player"
+          ],
+          "usage": 0.19,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        }
+      ]
+    },
     "trevor-belmont": {
       "matches": 308,
       "pickRate": 1.03,
@@ -79664,6 +81812,993 @@
         }
       ]
     },
+    "david-tapp": {
+      "matches": 205,
+      "pickRate": 0.69,
+      "escapeRate": 52.2,
+      "since": "10.1.0",
+      "topPerks": [
+        {
+          "perk": "stake-out",
+          "usage": 22.26,
+          "rate": 34.06
+        },
+        {
+          "perk": "deja-vu",
+          "usage": 21.45,
+          "rate": 31.58
+        },
+        {
+          "perk": "resilience",
+          "usage": 18.06,
+          "rate": 31.25
+        },
+        {
+          "perk": "dead-hard",
+          "usage": 17.42,
+          "rate": 37.96
+        },
+        {
+          "perk": "lithe",
+          "usage": 16.77,
+          "rate": 35.58
+        },
+        {
+          "perk": "windows-of-opportunity",
+          "usage": 16.77,
+          "rate": 32.69
+        },
+        {
+          "perk": "decisive-strike",
+          "usage": 16.29,
+          "rate": 43.56
+        },
+        {
+          "perk": "hyperfocus",
+          "usage": 13.87,
+          "rate": 29.07
+        },
+        {
+          "perk": "tenacity",
+          "usage": 10.65,
+          "rate": 24.24
+        },
+        {
+          "perk": "unbreakable",
+          "usage": 9.68,
+          "rate": 36.67
+        },
+        {
+          "perk": "five-moves-ahead",
+          "usage": 9.03,
+          "rate": 41.07
+        },
+        {
+          "perk": "finesse",
+          "usage": 8.39,
+          "rate": 26.92
+        },
+        {
+          "perk": "detectives-hunch",
+          "usage": 8.06,
+          "rate": 44
+        },
+        {
+          "perk": "sprint-burst",
+          "usage": 6.45,
+          "rate": 40
+        },
+        {
+          "perk": "prove-thyself",
+          "usage": 6.29,
+          "rate": 38.46
+        },
+        {
+          "perk": "iron-will",
+          "usage": 6.13,
+          "rate": 31.58
+        },
+        {
+          "perk": "botany-knowledge",
+          "usage": 5.81,
+          "rate": 36.11
+        },
+        {
+          "perk": "well-make-it",
+          "usage": 5.32,
+          "rate": 24.24
+        },
+        {
+          "perk": "plot-twist",
+          "usage": 5.32,
+          "rate": 36.36
+        },
+        {
+          "perk": "head-on",
+          "usage": 5.32,
+          "rate": 18.18
+        },
+        {
+          "perk": "quick-and-quiet",
+          "usage": 5,
+          "rate": 12.9
+        },
+        {
+          "perk": "bond",
+          "usage": 4.84,
+          "rate": 33.33
+        },
+        {
+          "perk": "built-to-last",
+          "usage": 4.35,
+          "rate": 33.33
+        },
+        {
+          "perk": "adrenaline",
+          "usage": 4.19,
+          "rate": 30.77
+        },
+        {
+          "perk": "boon-shadow-step",
+          "usage": 3.71,
+          "rate": 39.13
+        },
+        {
+          "perk": "resurgence",
+          "usage": 3.71,
+          "rate": 21.74
+        },
+        {
+          "perk": "kindred",
+          "usage": 3.55,
+          "rate": 18.18
+        },
+        {
+          "perk": "fixated",
+          "usage": 3.55,
+          "rate": 22.73
+        },
+        {
+          "perk": "balanced-landing",
+          "usage": 3.55,
+          "rate": 27.27
+        },
+        {
+          "perk": "deception",
+          "usage": 3.39,
+          "rate": 23.81
+        },
+        {
+          "perk": "flashbang",
+          "usage": 3.39,
+          "rate": 28.57
+        },
+        {
+          "perk": "blast-mine",
+          "usage": 3.23,
+          "rate": 25
+        },
+        {
+          "perk": "background-player",
+          "usage": 3.23,
+          "rate": 35
+        },
+        {
+          "perk": "boon-circle-of-healing",
+          "usage": 2.9,
+          "rate": 38.89
+        },
+        {
+          "perk": "self-care",
+          "usage": 2.9,
+          "rate": 33.33
+        },
+        {
+          "perk": "boil-over",
+          "usage": 2.9,
+          "rate": 11.11
+        },
+        {
+          "perk": "deliverance",
+          "usage": 2.9,
+          "rate": 33.33
+        },
+        {
+          "perk": "urban-evasion",
+          "usage": 2.74,
+          "rate": 23.53
+        },
+        {
+          "perk": "were-gonna-live-forever",
+          "usage": 2.74,
+          "rate": 35.29
+        },
+        {
+          "perk": "boon-exponential",
+          "usage": 2.42,
+          "rate": 26.67
+        },
+        {
+          "perk": "made-for-this",
+          "usage": 2.42,
+          "rate": 20
+        },
+        {
+          "perk": "counterforce",
+          "usage": 2.1,
+          "rate": 23.08
+        },
+        {
+          "perk": "fogwise",
+          "usage": 2.1,
+          "rate": 30.77
+        },
+        {
+          "perk": "empathy",
+          "usage": 2.1,
+          "rate": 38.46
+        },
+        {
+          "perk": "vigil",
+          "usage": 2.1,
+          "rate": 23.08
+        },
+        {
+          "perk": "flip-flop",
+          "usage": 1.94,
+          "rate": 8.33
+        },
+        {
+          "perk": "dramaturgy",
+          "usage": 1.94,
+          "rate": 41.67
+        },
+        {
+          "perk": "overcome",
+          "usage": 1.94,
+          "rate": 25
+        },
+        {
+          "perk": "self-preservation",
+          "usage": 1.77,
+          "rate": 9.09
+        },
+        {
+          "perk": "road-life",
+          "usage": 1.77,
+          "rate": 45.45
+        },
+        {
+          "perk": "shoulder-the-burden",
+          "usage": 1.77,
+          "rate": 45.45
+        },
+        {
+          "perk": "autodidact",
+          "usage": 1.61,
+          "rate": 40
+        },
+        {
+          "perk": "overzealous",
+          "usage": 1.61,
+          "rate": 30
+        },
+        {
+          "perk": "inner-strength",
+          "usage": 1.45,
+          "rate": 11.11
+        },
+        {
+          "perk": "alert",
+          "usage": 1.45,
+          "rate": 55.56
+        },
+        {
+          "perk": "lucky-break",
+          "usage": 1.45,
+          "rate": 22.22
+        },
+        {
+          "perk": "technician",
+          "usage": 1.45,
+          "rate": 33.33
+        },
+        {
+          "perk": "conviction",
+          "usage": 1.45,
+          "rate": 11.11
+        },
+        {
+          "perk": "boon-steadfast",
+          "usage": 1.29,
+          "rate": 37.5
+        },
+        {
+          "perk": "distortion",
+          "usage": 1.29,
+          "rate": 50
+        },
+        {
+          "perk": "this-is-not-happening",
+          "usage": 1.29,
+          "rate": 12.5
+        },
+        {
+          "perk": "power-struggle",
+          "usage": 1.29,
+          "rate": 12.5
+        },
+        {
+          "perk": "babysitter",
+          "usage": 1.29,
+          "rate": 50
+        },
+        {
+          "perk": "hope",
+          "usage": 1.13,
+          "rate": 14.29
+        },
+        {
+          "perk": "no-one-left-behind",
+          "usage": 1.13,
+          "rate": 14.29
+        },
+        {
+          "perk": "spine-chill",
+          "usage": 1.13,
+          "rate": 28.57
+        },
+        {
+          "perk": "scavenger",
+          "usage": 1.13,
+          "rate": 57.14
+        },
+        {
+          "perk": "one-two-three-four",
+          "usage": 1.13,
+          "rate": 57.14
+        },
+        {
+          "perk": "soul-guard",
+          "usage": 1.13,
+          "rate": 0
+        },
+        {
+          "perk": "last-stand",
+          "usage": 1.13,
+          "rate": 42.86
+        },
+        {
+          "perk": "wiretap",
+          "usage": 1.13,
+          "rate": 57.14
+        },
+        {
+          "perk": "sole-survivor",
+          "usage": 1.13,
+          "rate": 28.57
+        },
+        {
+          "perk": "small-game",
+          "usage": 1.13,
+          "rate": 57.14
+        },
+        {
+          "perk": "diversion",
+          "usage": 1.13,
+          "rate": 57.14
+        },
+        {
+          "perk": "potential-energy",
+          "usage": 1.13,
+          "rate": 14.29
+        },
+        {
+          "perk": "chemical-trap",
+          "usage": 0.97,
+          "rate": 50
+        },
+        {
+          "perk": "off-the-record",
+          "usage": 0.97,
+          "rate": 16.67
+        },
+        {
+          "perk": "dark-sense",
+          "usage": 0.97,
+          "rate": 16.67
+        },
+        {
+          "perk": "plunderers-instinct",
+          "usage": 0.97,
+          "rate": 50
+        },
+        {
+          "perk": "open-handed",
+          "usage": 0.97,
+          "rate": 16.67
+        },
+        {
+          "perk": "fast-track",
+          "usage": 0.97,
+          "rate": 33.33
+        },
+        {
+          "perk": "bardic-inspiration",
+          "usage": 0.97,
+          "rate": 33.33
+        },
+        {
+          "perk": "wake-up",
+          "usage": 0.97,
+          "rate": 66.67
+        },
+        {
+          "perk": "lightweight",
+          "usage": 0.81,
+          "rate": 40
+        },
+        {
+          "perk": "do-no-harm",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "desperate-measures",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "dance-with-me",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "smash-hit",
+          "usage": 0.81,
+          "rate": 60
+        },
+        {
+          "perk": "champion-of-light",
+          "usage": 0.81,
+          "rate": 40
+        },
+        {
+          "perk": "poised",
+          "usage": 0.81,
+          "rate": 40
+        },
+        {
+          "perk": "any-means-necessary",
+          "usage": 0.81,
+          "rate": 80
+        },
+        {
+          "perk": "leader",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "saboteur",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "cross-examination",
+          "usage": 0.81,
+          "rate": 20
+        },
+        {
+          "perk": "for-the-people",
+          "usage": 0.65,
+          "rate": 25
+        },
+        {
+          "perk": "blood-rush",
+          "usage": 0.65,
+          "rate": 25
+        },
+        {
+          "perk": "quick-gambit",
+          "usage": 0.65,
+          "rate": 0
+        },
+        {
+          "perk": "solidarity",
+          "usage": 0.65,
+          "rate": 25
+        },
+        {
+          "perk": "object-of-obsession",
+          "usage": 0.65,
+          "rate": 50
+        },
+        {
+          "perk": "extrasensory-perception",
+          "usage": 0.65,
+          "rate": 25
+        },
+        {
+          "perk": "reassurance",
+          "usage": 0.65,
+          "rate": 50
+        },
+        {
+          "perk": "flow-state",
+          "usage": 0.65,
+          "rate": 0
+        },
+        {
+          "perk": "empathic-connection",
+          "usage": 0.65,
+          "rate": 25
+        },
+        {
+          "perk": "second-wind",
+          "usage": 0.48,
+          "rate": 33.33
+        },
+        {
+          "perk": "left-behind",
+          "usage": 0.48,
+          "rate": 66.67
+        },
+        {
+          "perk": "wicked",
+          "usage": 0.48,
+          "rate": 33.33
+        },
+        {
+          "perk": "ghost-notes",
+          "usage": 0.48,
+          "rate": 100
+        },
+        {
+          "perk": "deadline",
+          "usage": 0.48,
+          "rate": 33.33
+        },
+        {
+          "perk": "moment-of-glory",
+          "usage": 0.48,
+          "rate": 66.67
+        },
+        {
+          "perk": "eyes-of-belmont",
+          "usage": 0.48,
+          "rate": 100
+        },
+        {
+          "perk": "aftercare",
+          "usage": 0.48,
+          "rate": 66.67
+        },
+        {
+          "perk": "we-see-you",
+          "usage": 0.48,
+          "rate": 0
+        },
+        {
+          "perk": "light-footed",
+          "usage": 0.48,
+          "rate": 33.33
+        },
+        {
+          "perk": "scene-partner",
+          "usage": 0.48,
+          "rate": 66.67
+        },
+        {
+          "perk": "breakout",
+          "usage": 0.48,
+          "rate": 0
+        },
+        {
+          "perk": "mirrored-illusion",
+          "usage": 0.48,
+          "rate": 0
+        },
+        {
+          "perk": "better-together",
+          "usage": 0.48,
+          "rate": 66.67
+        },
+        {
+          "perk": "teamwork-collective-stealth",
+          "usage": 0.48,
+          "rate": 0
+        },
+        {
+          "perk": "lend-a-hand",
+          "usage": 0.48,
+          "rate": 0
+        },
+        {
+          "perk": "slippery-meat",
+          "usage": 0.32,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-power-of-two",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "hardened",
+          "usage": 0.32,
+          "rate": 100
+        },
+        {
+          "perk": "troubleshooter",
+          "usage": 0.32,
+          "rate": 100
+        },
+        {
+          "perk": "premonition",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "borrowed-time",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "specialist",
+          "usage": 0.32,
+          "rate": 0
+        },
+        {
+          "perk": "a-place-for-us",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "mettle-of-man",
+          "usage": 0.32,
+          "rate": 0
+        },
+        {
+          "perk": "apocalyptic-ingenuity",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "fruits-of-your-labor",
+          "usage": 0.32,
+          "rate": 0
+        },
+        {
+          "perk": "repressed-alliance",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "better-than-new",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "boon-illumination",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "change-of-plan",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "no-mither",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "strength-in-shadows",
+          "usage": 0.32,
+          "rate": 50
+        },
+        {
+          "perk": "calm-spirit",
+          "usage": 0.32,
+          "rate": 0
+        },
+        {
+          "perk": "visionary",
+          "usage": 0.16,
+          "rate": 100
+        },
+        {
+          "perk": "boon-dark-theory",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "salvations-cry",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "wide-open-throttle",
+          "usage": 0.16,
+          "rate": 100
+        },
+        {
+          "perk": "teamwork-soft-spoken",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "ace-in-the-hole",
+          "usage": 0.16,
+          "rate": 100
+        },
+        {
+          "perk": "teamwork-full-circuit",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "exultation",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "bite-the-bullet",
+          "usage": 0.16,
+          "rate": 100
+        },
+        {
+          "perk": "invocation-weaving-spiders",
+          "usage": 0.16,
+          "rate": 100
+        },
+        {
+          "perk": "clean-break",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "residual-manifest",
+          "usage": 0.16,
+          "rate": 0
+        },
+        {
+          "perk": "come-and-get-me",
+          "usage": 0.16,
+          "rate": 100
+        }
+      ],
+      "topBuilds": [
+        {
+          "perks": [
+            "detectives-hunch",
+            "stake-out",
+            "tenacity"
+          ],
+          "usage": 4.19,
+          "rate": 50,
+          "samples": 26,
+          "wins": 13
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "dead-hard",
+            "plot-twist"
+          ],
+          "usage": 0.65,
+          "rate": 75,
+          "samples": 4,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "unbreakable",
+            "dead-hard"
+          ],
+          "usage": 0.65,
+          "rate": 75,
+          "samples": 4,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "stake-out",
+            "windows-of-opportunity",
+            "hyperfocus"
+          ],
+          "usage": 0.65,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "quick-and-quiet",
+            "head-on",
+            "deception",
+            "flashbang"
+          ],
+          "usage": 0.65,
+          "rate": 0,
+          "samples": 4,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "boil-over",
+            "flip-flop"
+          ],
+          "usage": 0.65,
+          "rate": 0,
+          "samples": 4,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "flip-flop",
+            "power-struggle"
+          ],
+          "usage": 0.48,
+          "rate": 0,
+          "samples": 3,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "bond",
+            "balanced-landing",
+            "windows-of-opportunity",
+            "deception"
+          ],
+          "usage": 0.48,
+          "rate": 66.67,
+          "samples": 3,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "prove-thyself",
+            "stake-out",
+            "hyperfocus"
+          ],
+          "usage": 0.48,
+          "rate": 66.67,
+          "samples": 3,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "boon-circle-of-healing",
+            "boon-shadow-step",
+            "boon-exponential",
+            "boon-steadfast"
+          ],
+          "usage": 0.48,
+          "rate": 100,
+          "samples": 3,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "stake-out",
+            "fast-track",
+            "hyperfocus"
+          ],
+          "usage": 0.48,
+          "rate": 33.33,
+          "samples": 3,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "boon-circle-of-healing",
+            "boon-shadow-step",
+            "boon-exponential",
+            "lend-a-hand"
+          ],
+          "usage": 0.32,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "lithe",
+            "windows-of-opportunity",
+            "fixated",
+            "finesse"
+          ],
+          "usage": 0.32,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "resilience",
+            "decisive-strike",
+            "lithe"
+          ],
+          "usage": 0.32,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "lithe",
+            "stake-out",
+            "windows-of-opportunity",
+            "hyperfocus"
+          ],
+          "usage": 0.32,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "well-make-it",
+            "sprint-burst",
+            "urban-evasion",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.32,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "resilience",
+            "stake-out",
+            "built-to-last",
+            "hyperfocus"
+          ],
+          "usage": 0.32,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "decisive-strike",
+            "dead-hard",
+            "plot-twist",
+            "five-moves-ahead"
+          ],
+          "usage": 0.32,
+          "rate": 100,
+          "samples": 2,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "dead-hard",
+            "were-gonna-live-forever"
+          ],
+          "usage": 0.32,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        }
+      ]
+    },
     "ellen-ripley": {
       "matches": 192,
       "pickRate": 0.64,
@@ -85914,6 +89049,1075 @@
         }
       ]
     },
+    "ash-williams": {
+      "matches": 151,
+      "pickRate": 0.51,
+      "escapeRate": 45.7,
+      "since": "10.1.0",
+      "topPerks": [
+        {
+          "perk": "lithe",
+          "usage": 20.31,
+          "rate": 38.89
+        },
+        {
+          "perk": "resilience",
+          "usage": 16.93,
+          "rate": 34.17
+        },
+        {
+          "perk": "deja-vu",
+          "usage": 16.5,
+          "rate": 35.04
+        },
+        {
+          "perk": "dead-hard",
+          "usage": 15.09,
+          "rate": 24.3
+        },
+        {
+          "perk": "flip-flop",
+          "usage": 14.25,
+          "rate": 31.68
+        },
+        {
+          "perk": "windows-of-opportunity",
+          "usage": 13.12,
+          "rate": 36.56
+        },
+        {
+          "perk": "finesse",
+          "usage": 11.28,
+          "rate": 18.75
+        },
+        {
+          "perk": "decisive-strike",
+          "usage": 11,
+          "rate": 30.77
+        },
+        {
+          "perk": "five-moves-ahead",
+          "usage": 10.16,
+          "rate": 34.72
+        },
+        {
+          "perk": "mettle-of-man",
+          "usage": 8.46,
+          "rate": 36.67
+        },
+        {
+          "perk": "iron-will",
+          "usage": 7.9,
+          "rate": 32.14
+        },
+        {
+          "perk": "unbreakable",
+          "usage": 6.91,
+          "rate": 26.53
+        },
+        {
+          "perk": "bond",
+          "usage": 6.63,
+          "rate": 38.3
+        },
+        {
+          "perk": "head-on",
+          "usage": 6.63,
+          "rate": 23.4
+        },
+        {
+          "perk": "adrenaline",
+          "usage": 6.49,
+          "rate": 30.43
+        },
+        {
+          "perk": "hyperfocus",
+          "usage": 5.92,
+          "rate": 33.33
+        },
+        {
+          "perk": "boil-over",
+          "usage": 5.78,
+          "rate": 29.27
+        },
+        {
+          "perk": "prove-thyself",
+          "usage": 5.78,
+          "rate": 26.83
+        },
+        {
+          "perk": "buckle-up",
+          "usage": 5.78,
+          "rate": 39.02
+        },
+        {
+          "perk": "were-gonna-live-forever",
+          "usage": 5.36,
+          "rate": 28.95
+        },
+        {
+          "perk": "blast-mine",
+          "usage": 5.08,
+          "rate": 33.33
+        },
+        {
+          "perk": "well-make-it",
+          "usage": 5.08,
+          "rate": 19.44
+        },
+        {
+          "perk": "sprint-burst",
+          "usage": 4.94,
+          "rate": 40
+        },
+        {
+          "perk": "kindred",
+          "usage": 4.8,
+          "rate": 38.24
+        },
+        {
+          "perk": "self-care",
+          "usage": 4.23,
+          "rate": 26.67
+        },
+        {
+          "perk": "balanced-landing",
+          "usage": 4.23,
+          "rate": 40
+        },
+        {
+          "perk": "resurgence",
+          "usage": 4.09,
+          "rate": 24.14
+        },
+        {
+          "perk": "stake-out",
+          "usage": 3.95,
+          "rate": 25
+        },
+        {
+          "perk": "power-struggle",
+          "usage": 3.95,
+          "rate": 28.57
+        },
+        {
+          "perk": "quick-and-quiet",
+          "usage": 3.95,
+          "rate": 28.57
+        },
+        {
+          "perk": "botany-knowledge",
+          "usage": 3.95,
+          "rate": 17.86
+        },
+        {
+          "perk": "plot-twist",
+          "usage": 3.67,
+          "rate": 42.31
+        },
+        {
+          "perk": "hope",
+          "usage": 3.67,
+          "rate": 34.62
+        },
+        {
+          "perk": "tenacity",
+          "usage": 3.67,
+          "rate": 26.92
+        },
+        {
+          "perk": "dramaturgy",
+          "usage": 3.53,
+          "rate": 20
+        },
+        {
+          "perk": "made-for-this",
+          "usage": 3.53,
+          "rate": 20
+        },
+        {
+          "perk": "flashbang",
+          "usage": 3.39,
+          "rate": 25
+        },
+        {
+          "perk": "built-to-last",
+          "usage": 2.96,
+          "rate": 33.33
+        },
+        {
+          "perk": "overcome",
+          "usage": 2.82,
+          "rate": 55
+        },
+        {
+          "perk": "fixated",
+          "usage": 2.82,
+          "rate": 30
+        },
+        {
+          "perk": "boon-shadow-step",
+          "usage": 2.82,
+          "rate": 30
+        },
+        {
+          "perk": "distortion",
+          "usage": 2.68,
+          "rate": 31.58
+        },
+        {
+          "perk": "last-stand",
+          "usage": 2.68,
+          "rate": 10.53
+        },
+        {
+          "perk": "background-player",
+          "usage": 2.68,
+          "rate": 42.11
+        },
+        {
+          "perk": "champion-of-light",
+          "usage": 2.54,
+          "rate": 27.78
+        },
+        {
+          "perk": "inner-strength",
+          "usage": 2.4,
+          "rate": 29.41
+        },
+        {
+          "perk": "breakout",
+          "usage": 2.4,
+          "rate": 17.65
+        },
+        {
+          "perk": "scene-partner",
+          "usage": 2.26,
+          "rate": 25
+        },
+        {
+          "perk": "lightweight",
+          "usage": 2.26,
+          "rate": 18.75
+        },
+        {
+          "perk": "deliverance",
+          "usage": 2.12,
+          "rate": 33.33
+        },
+        {
+          "perk": "quick-gambit",
+          "usage": 2.12,
+          "rate": 13.33
+        },
+        {
+          "perk": "deception",
+          "usage": 2.12,
+          "rate": 40
+        },
+        {
+          "perk": "vigil",
+          "usage": 1.97,
+          "rate": 21.43
+        },
+        {
+          "perk": "bardic-inspiration",
+          "usage": 1.97,
+          "rate": 28.57
+        },
+        {
+          "perk": "object-of-obsession",
+          "usage": 1.97,
+          "rate": 42.86
+        },
+        {
+          "perk": "alert",
+          "usage": 1.83,
+          "rate": 30.77
+        },
+        {
+          "perk": "saboteur",
+          "usage": 1.83,
+          "rate": 23.08
+        },
+        {
+          "perk": "boon-steadfast",
+          "usage": 1.83,
+          "rate": 23.08
+        },
+        {
+          "perk": "urban-evasion",
+          "usage": 1.83,
+          "rate": 30.77
+        },
+        {
+          "perk": "autodidact",
+          "usage": 1.69,
+          "rate": 41.67
+        },
+        {
+          "perk": "flow-state",
+          "usage": 1.69,
+          "rate": 41.67
+        },
+        {
+          "perk": "sole-survivor",
+          "usage": 1.69,
+          "rate": 41.67
+        },
+        {
+          "perk": "empathy",
+          "usage": 1.69,
+          "rate": 33.33
+        },
+        {
+          "perk": "smash-hit",
+          "usage": 1.55,
+          "rate": 18.18
+        },
+        {
+          "perk": "leader",
+          "usage": 1.55,
+          "rate": 36.36
+        },
+        {
+          "perk": "boon-exponential",
+          "usage": 1.55,
+          "rate": 9.09
+        },
+        {
+          "perk": "self-preservation",
+          "usage": 1.41,
+          "rate": 30
+        },
+        {
+          "perk": "boon-circle-of-healing",
+          "usage": 1.41,
+          "rate": 30
+        },
+        {
+          "perk": "left-behind",
+          "usage": 1.41,
+          "rate": 40
+        },
+        {
+          "perk": "desperate-measures",
+          "usage": 1.41,
+          "rate": 50
+        },
+        {
+          "perk": "off-the-record",
+          "usage": 1.41,
+          "rate": 40
+        },
+        {
+          "perk": "for-the-people",
+          "usage": 1.27,
+          "rate": 22.22
+        },
+        {
+          "perk": "wiretap",
+          "usage": 1.27,
+          "rate": 33.33
+        },
+        {
+          "perk": "dark-sense",
+          "usage": 1.27,
+          "rate": 55.56
+        },
+        {
+          "perk": "chemical-trap",
+          "usage": 1.27,
+          "rate": 33.33
+        },
+        {
+          "perk": "empathic-connection",
+          "usage": 1.27,
+          "rate": 11.11
+        },
+        {
+          "perk": "counterforce",
+          "usage": 1.27,
+          "rate": 55.56
+        },
+        {
+          "perk": "overzealous",
+          "usage": 1.27,
+          "rate": 44.44
+        },
+        {
+          "perk": "shoulder-the-burden",
+          "usage": 1.27,
+          "rate": 33.33
+        },
+        {
+          "perk": "poised",
+          "usage": 1.13,
+          "rate": 50
+        },
+        {
+          "perk": "any-means-necessary",
+          "usage": 1.13,
+          "rate": 37.5
+        },
+        {
+          "perk": "lucky-break",
+          "usage": 1.13,
+          "rate": 37.5
+        },
+        {
+          "perk": "dance-with-me",
+          "usage": 0.99,
+          "rate": 28.57
+        },
+        {
+          "perk": "extrasensory-perception",
+          "usage": 0.99,
+          "rate": 28.57
+        },
+        {
+          "perk": "small-game",
+          "usage": 0.99,
+          "rate": 28.57
+        },
+        {
+          "perk": "salvations-cry",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "potential-energy",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "babysitter",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "calm-spirit",
+          "usage": 0.85,
+          "rate": 50
+        },
+        {
+          "perk": "fruits-of-your-labor",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "slippery-meat",
+          "usage": 0.85,
+          "rate": 16.67
+        },
+        {
+          "perk": "moment-of-glory",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "conviction",
+          "usage": 0.85,
+          "rate": 16.67
+        },
+        {
+          "perk": "second-wind",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "lend-a-hand",
+          "usage": 0.85,
+          "rate": 33.33
+        },
+        {
+          "perk": "plunderers-instinct",
+          "usage": 0.85,
+          "rate": 16.67
+        },
+        {
+          "perk": "diversion",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "premonition",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "solidarity",
+          "usage": 0.71,
+          "rate": 80
+        },
+        {
+          "perk": "exultation",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "eyes-of-belmont",
+          "usage": 0.71,
+          "rate": 40
+        },
+        {
+          "perk": "do-no-harm",
+          "usage": 0.71,
+          "rate": 0
+        },
+        {
+          "perk": "strength-in-shadows",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "boon-dark-theory",
+          "usage": 0.71,
+          "rate": 40
+        },
+        {
+          "perk": "ace-in-the-hole",
+          "usage": 0.71,
+          "rate": 0
+        },
+        {
+          "perk": "one-two-three-four",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "bite-the-bullet",
+          "usage": 0.71,
+          "rate": 0
+        },
+        {
+          "perk": "fogwise",
+          "usage": 0.71,
+          "rate": 60
+        },
+        {
+          "perk": "a-place-for-us",
+          "usage": 0.71,
+          "rate": 20
+        },
+        {
+          "perk": "blood-pact",
+          "usage": 0.56,
+          "rate": 50
+        },
+        {
+          "perk": "wake-up",
+          "usage": 0.56,
+          "rate": 25
+        },
+        {
+          "perk": "spine-chill",
+          "usage": 0.56,
+          "rate": 25
+        },
+        {
+          "perk": "clean-break",
+          "usage": 0.56,
+          "rate": 25
+        },
+        {
+          "perk": "boon-illumination",
+          "usage": 0.56,
+          "rate": 25
+        },
+        {
+          "perk": "detectives-hunch",
+          "usage": 0.56,
+          "rate": 50
+        },
+        {
+          "perk": "cross-examination",
+          "usage": 0.56,
+          "rate": 75
+        },
+        {
+          "perk": "scavenger",
+          "usage": 0.56,
+          "rate": 50
+        },
+        {
+          "perk": "road-life",
+          "usage": 0.56,
+          "rate": 25
+        },
+        {
+          "perk": "troubleshooter",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "duty-of-care",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "ghost-notes",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "residual-manifest",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "change-of-plan",
+          "usage": 0.42,
+          "rate": 100
+        },
+        {
+          "perk": "wide-open-throttle",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "aftercare",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-soft-spoken",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "streetwise",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "we-see-you",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "lucky-star",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "red-herring",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "still-sight",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "this-is-not-happening",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "no-one-left-behind",
+          "usage": 0.42,
+          "rate": 33.33
+        },
+        {
+          "perk": "reassurance",
+          "usage": 0.42,
+          "rate": 0
+        },
+        {
+          "perk": "bada-bada-boom",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "better-together",
+          "usage": 0.28,
+          "rate": 50
+        },
+        {
+          "perk": "wicked",
+          "usage": 0.28,
+          "rate": 50
+        },
+        {
+          "perk": "mirrored-illusion",
+          "usage": 0.28,
+          "rate": 50
+        },
+        {
+          "perk": "pharmacy",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "soul-guard",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "appraisal",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "inner-focus",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "parental-guidance",
+          "usage": 0.28,
+          "rate": 50
+        },
+        {
+          "perk": "technician",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "friendly-competition",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "no-mither",
+          "usage": 0.28,
+          "rate": 50
+        },
+        {
+          "perk": "fast-track",
+          "usage": 0.28,
+          "rate": 0
+        },
+        {
+          "perk": "apocalyptic-ingenuity",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "corrective-action",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "specialist",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "hardened",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "repressed-alliance",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "visionary",
+          "usage": 0.14,
+          "rate": 100
+        },
+        {
+          "perk": "come-and-get-me",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "breakdown",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "low-profile",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "light-footed",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-throw-down",
+          "usage": 0.14,
+          "rate": 100
+        },
+        {
+          "perk": "open-handed",
+          "usage": 0.14,
+          "rate": 100
+        },
+        {
+          "perk": "borrowed-time",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "blood-rush",
+          "usage": 0.14,
+          "rate": 100
+        },
+        {
+          "perk": "up-the-ante",
+          "usage": 0.14,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-power-of-two",
+          "usage": 0.14,
+          "rate": 100
+        },
+        {
+          "perk": "teamwork-full-circuit",
+          "usage": 0.14,
+          "rate": 0
+        }
+      ],
+      "topBuilds": [
+        {
+          "perks": [
+            "buckle-up",
+            "flip-flop",
+            "mettle-of-man"
+          ],
+          "usage": 3.95,
+          "rate": 46.43,
+          "samples": 28,
+          "wins": 13
+        },
+        {
+          "perks": [
+            "hope",
+            "resilience",
+            "dead-hard",
+            "made-for-this"
+          ],
+          "usage": 0.71,
+          "rate": 0,
+          "samples": 5,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "lithe",
+            "stake-out",
+            "hyperfocus"
+          ],
+          "usage": 0.56,
+          "rate": 0,
+          "samples": 4,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "self-care",
+            "head-on",
+            "dramaturgy"
+          ],
+          "usage": 0.56,
+          "rate": 0,
+          "samples": 4,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "flip-flop",
+            "power-struggle"
+          ],
+          "usage": 0.42,
+          "rate": 33.33,
+          "samples": 3,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "tenacity",
+            "boil-over",
+            "flip-flop"
+          ],
+          "usage": 0.42,
+          "rate": 33.33,
+          "samples": 3,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "decisive-strike",
+            "dead-hard",
+            "were-gonna-live-forever",
+            "made-for-this"
+          ],
+          "usage": 0.42,
+          "rate": 0,
+          "samples": 3,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "boil-over",
+            "flip-flop",
+            "power-struggle"
+          ],
+          "usage": 0.42,
+          "rate": 66.67,
+          "samples": 3,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "balanced-landing",
+            "smash-hit",
+            "blast-mine",
+            "wiretap"
+          ],
+          "usage": 0.42,
+          "rate": 33.33,
+          "samples": 3,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "windows-of-opportunity",
+            "finesse"
+          ],
+          "usage": 0.42,
+          "rate": 100,
+          "samples": 3,
+          "wins": 3
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "adrenaline",
+            "dead-hard",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.28,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "finesse",
+            "five-moves-ahead"
+          ],
+          "usage": 0.28,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "well-make-it",
+            "prove-thyself",
+            "off-the-record",
+            "finesse"
+          ],
+          "usage": 0.28,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "bond",
+            "balanced-landing",
+            "five-moves-ahead"
+          ],
+          "usage": 0.28,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "well-make-it",
+            "bond",
+            "unbreakable"
+          ],
+          "usage": 0.28,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "bond",
+            "inner-strength",
+            "self-preservation",
+            "flashbang"
+          ],
+          "usage": 0.28,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "botany-knowledge",
+            "self-care",
+            "lithe",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.28,
+          "rate": 0,
+          "samples": 2,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "dead-hard",
+            "were-gonna-live-forever",
+            "windows-of-opportunity",
+            "for-the-people"
+          ],
+          "usage": 0.28,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "autodidact",
+            "solidarity",
+            "dramaturgy",
+            "fruits-of-your-labor"
+          ],
+          "usage": 0.28,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "resilience",
+            "adrenaline",
+            "decisive-strike",
+            "lithe"
+          ],
+          "usage": 0.28,
+          "rate": 100,
+          "samples": 2,
+          "wins": 2
+        }
+      ]
+    },
     "dustin-henderson": {
       "matches": 153,
       "pickRate": 0.51,
@@ -89080,6 +93284,1046 @@
         }
       ]
     },
+    "the-troupe": {
+      "matches": 100,
+      "pickRate": 0.34,
+      "escapeRate": 51,
+      "since": "10.1.0",
+      "topPerks": [
+        {
+          "perk": "lithe",
+          "usage": 19.22,
+          "rate": 37.72
+        },
+        {
+          "perk": "bardic-inspiration",
+          "usage": 18.89,
+          "rate": 33.93
+        },
+        {
+          "perk": "deja-vu",
+          "usage": 16.86,
+          "rate": 35
+        },
+        {
+          "perk": "mirrored-illusion",
+          "usage": 11.8,
+          "rate": 37.14
+        },
+        {
+          "perk": "still-sight",
+          "usage": 10.96,
+          "rate": 32.31
+        },
+        {
+          "perk": "resilience",
+          "usage": 10.62,
+          "rate": 44.44
+        },
+        {
+          "perk": "windows-of-opportunity",
+          "usage": 10.46,
+          "rate": 29.03
+        },
+        {
+          "perk": "decisive-strike",
+          "usage": 9.61,
+          "rate": 33.33
+        },
+        {
+          "perk": "five-moves-ahead",
+          "usage": 8.77,
+          "rate": 48.08
+        },
+        {
+          "perk": "dead-hard",
+          "usage": 8.6,
+          "rate": 27.45
+        },
+        {
+          "perk": "well-make-it",
+          "usage": 7.42,
+          "rate": 38.64
+        },
+        {
+          "perk": "hyperfocus",
+          "usage": 6.91,
+          "rate": 43.9
+        },
+        {
+          "perk": "blast-mine",
+          "usage": 6.75,
+          "rate": 32.5
+        },
+        {
+          "perk": "dramaturgy",
+          "usage": 6.75,
+          "rate": 42.5
+        },
+        {
+          "perk": "vigil",
+          "usage": 6.58,
+          "rate": 43.59
+        },
+        {
+          "perk": "resurgence",
+          "usage": 6.58,
+          "rate": 33.33
+        },
+        {
+          "perk": "finesse",
+          "usage": 6.24,
+          "rate": 27.03
+        },
+        {
+          "perk": "boon-shadow-step",
+          "usage": 6.07,
+          "rate": 44.44
+        },
+        {
+          "perk": "plot-twist",
+          "usage": 5.9,
+          "rate": 48.57
+        },
+        {
+          "perk": "kindred",
+          "usage": 5.9,
+          "rate": 37.14
+        },
+        {
+          "perk": "bond",
+          "usage": 5.4,
+          "rate": 28.13
+        },
+        {
+          "perk": "stake-out",
+          "usage": 5.23,
+          "rate": 35.48
+        },
+        {
+          "perk": "sprint-burst",
+          "usage": 5.06,
+          "rate": 26.67
+        },
+        {
+          "perk": "unbreakable",
+          "usage": 4.72,
+          "rate": 39.29
+        },
+        {
+          "perk": "head-on",
+          "usage": 4.55,
+          "rate": 33.33
+        },
+        {
+          "perk": "boon-circle-of-healing",
+          "usage": 4.55,
+          "rate": 59.26
+        },
+        {
+          "perk": "fixated",
+          "usage": 4.55,
+          "rate": 51.85
+        },
+        {
+          "perk": "prove-thyself",
+          "usage": 4.38,
+          "rate": 30.77
+        },
+        {
+          "perk": "balanced-landing",
+          "usage": 4.38,
+          "rate": 30.77
+        },
+        {
+          "perk": "adrenaline",
+          "usage": 4.22,
+          "rate": 44
+        },
+        {
+          "perk": "quick-and-quiet",
+          "usage": 4.22,
+          "rate": 24
+        },
+        {
+          "perk": "moment-of-glory",
+          "usage": 4.05,
+          "rate": 58.33
+        },
+        {
+          "perk": "autodidact",
+          "usage": 3.88,
+          "rate": 30.43
+        },
+        {
+          "perk": "plunderers-instinct",
+          "usage": 3.71,
+          "rate": 45.45
+        },
+        {
+          "perk": "lend-a-hand",
+          "usage": 3.71,
+          "rate": 59.09
+        },
+        {
+          "perk": "extrasensory-perception",
+          "usage": 3.37,
+          "rate": 60
+        },
+        {
+          "perk": "iron-will",
+          "usage": 3.37,
+          "rate": 45
+        },
+        {
+          "perk": "object-of-obsession",
+          "usage": 3.2,
+          "rate": 15.79
+        },
+        {
+          "perk": "were-gonna-live-forever",
+          "usage": 3.2,
+          "rate": 36.84
+        },
+        {
+          "perk": "one-two-three-four",
+          "usage": 2.87,
+          "rate": 29.41
+        },
+        {
+          "perk": "potential-energy",
+          "usage": 2.7,
+          "rate": 37.5
+        },
+        {
+          "perk": "boon-steadfast",
+          "usage": 2.53,
+          "rate": 26.67
+        },
+        {
+          "perk": "open-handed",
+          "usage": 2.53,
+          "rate": 53.33
+        },
+        {
+          "perk": "distortion",
+          "usage": 2.53,
+          "rate": 46.67
+        },
+        {
+          "perk": "pharmacy",
+          "usage": 2.36,
+          "rate": 50
+        },
+        {
+          "perk": "reassurance",
+          "usage": 2.36,
+          "rate": 35.71
+        },
+        {
+          "perk": "we-see-you",
+          "usage": 2.36,
+          "rate": 28.57
+        },
+        {
+          "perk": "flashbang",
+          "usage": 2.19,
+          "rate": 30.77
+        },
+        {
+          "perk": "inner-strength",
+          "usage": 2.19,
+          "rate": 30.77
+        },
+        {
+          "perk": "botany-knowledge",
+          "usage": 2.19,
+          "rate": 53.85
+        },
+        {
+          "perk": "flow-state",
+          "usage": 2.19,
+          "rate": 23.08
+        },
+        {
+          "perk": "self-care",
+          "usage": 2.02,
+          "rate": 41.67
+        },
+        {
+          "perk": "shoulder-the-burden",
+          "usage": 2.02,
+          "rate": 41.67
+        },
+        {
+          "perk": "deception",
+          "usage": 2.02,
+          "rate": 16.67
+        },
+        {
+          "perk": "quick-gambit",
+          "usage": 1.85,
+          "rate": 27.27
+        },
+        {
+          "perk": "overcome",
+          "usage": 1.85,
+          "rate": 36.36
+        },
+        {
+          "perk": "hope",
+          "usage": 1.85,
+          "rate": 36.36
+        },
+        {
+          "perk": "last-stand",
+          "usage": 1.85,
+          "rate": 18.18
+        },
+        {
+          "perk": "dance-with-me",
+          "usage": 1.69,
+          "rate": 40
+        },
+        {
+          "perk": "ace-in-the-hole",
+          "usage": 1.69,
+          "rate": 30
+        },
+        {
+          "perk": "alert",
+          "usage": 1.69,
+          "rate": 20
+        },
+        {
+          "perk": "lightweight",
+          "usage": 1.52,
+          "rate": 55.56
+        },
+        {
+          "perk": "background-player",
+          "usage": 1.52,
+          "rate": 33.33
+        },
+        {
+          "perk": "made-for-this",
+          "usage": 1.52,
+          "rate": 22.22
+        },
+        {
+          "perk": "deliverance",
+          "usage": 1.52,
+          "rate": 22.22
+        },
+        {
+          "perk": "scene-partner",
+          "usage": 1.52,
+          "rate": 66.67
+        },
+        {
+          "perk": "a-place-for-us",
+          "usage": 1.35,
+          "rate": 12.5
+        },
+        {
+          "perk": "champion-of-light",
+          "usage": 1.35,
+          "rate": 37.5
+        },
+        {
+          "perk": "built-to-last",
+          "usage": 1.35,
+          "rate": 37.5
+        },
+        {
+          "perk": "counterforce",
+          "usage": 1.35,
+          "rate": 12.5
+        },
+        {
+          "perk": "poised",
+          "usage": 1.35,
+          "rate": 37.5
+        },
+        {
+          "perk": "self-preservation",
+          "usage": 1.18,
+          "rate": 42.86
+        },
+        {
+          "perk": "empathic-connection",
+          "usage": 1.18,
+          "rate": 14.29
+        },
+        {
+          "perk": "no-one-left-behind",
+          "usage": 1.18,
+          "rate": 28.57
+        },
+        {
+          "perk": "ghost-notes",
+          "usage": 1.18,
+          "rate": 28.57
+        },
+        {
+          "perk": "wake-up",
+          "usage": 1.18,
+          "rate": 42.86
+        },
+        {
+          "perk": "spine-chill",
+          "usage": 1.18,
+          "rate": 14.29
+        },
+        {
+          "perk": "scavenger",
+          "usage": 1.18,
+          "rate": 71.43
+        },
+        {
+          "perk": "calm-spirit",
+          "usage": 1.18,
+          "rate": 14.29
+        },
+        {
+          "perk": "diversion",
+          "usage": 1.18,
+          "rate": 71.43
+        },
+        {
+          "perk": "leader",
+          "usage": 1.18,
+          "rate": 42.86
+        },
+        {
+          "perk": "any-means-necessary",
+          "usage": 1.01,
+          "rate": 16.67
+        },
+        {
+          "perk": "urban-evasion",
+          "usage": 1.01,
+          "rate": 16.67
+        },
+        {
+          "perk": "wiretap",
+          "usage": 1.01,
+          "rate": 33.33
+        },
+        {
+          "perk": "overzealous",
+          "usage": 1.01,
+          "rate": 50
+        },
+        {
+          "perk": "desperate-measures",
+          "usage": 1.01,
+          "rate": 50
+        },
+        {
+          "perk": "fast-track",
+          "usage": 1.01,
+          "rate": 33.33
+        },
+        {
+          "perk": "do-no-harm",
+          "usage": 1.01,
+          "rate": 16.67
+        },
+        {
+          "perk": "left-behind",
+          "usage": 1.01,
+          "rate": 33.33
+        },
+        {
+          "perk": "fruits-of-your-labor",
+          "usage": 1.01,
+          "rate": 66.67
+        },
+        {
+          "perk": "chemical-trap",
+          "usage": 1.01,
+          "rate": 0
+        },
+        {
+          "perk": "solidarity",
+          "usage": 0.84,
+          "rate": 20
+        },
+        {
+          "perk": "boon-exponential",
+          "usage": 0.84,
+          "rate": 60
+        },
+        {
+          "perk": "empathy",
+          "usage": 0.84,
+          "rate": 20
+        },
+        {
+          "perk": "repressed-alliance",
+          "usage": 0.84,
+          "rate": 20
+        },
+        {
+          "perk": "boil-over",
+          "usage": 0.84,
+          "rate": 0
+        },
+        {
+          "perk": "fogwise",
+          "usage": 0.84,
+          "rate": 0
+        },
+        {
+          "perk": "babysitter",
+          "usage": 0.84,
+          "rate": 40
+        },
+        {
+          "perk": "slippery-meat",
+          "usage": 0.84,
+          "rate": 0
+        },
+        {
+          "perk": "breakout",
+          "usage": 0.84,
+          "rate": 0
+        },
+        {
+          "perk": "exultation",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "premonition",
+          "usage": 0.67,
+          "rate": 0
+        },
+        {
+          "perk": "off-the-record",
+          "usage": 0.67,
+          "rate": 50
+        },
+        {
+          "perk": "boon-dark-theory",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "cross-examination",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "residual-manifest",
+          "usage": 0.67,
+          "rate": 75
+        },
+        {
+          "perk": "technician",
+          "usage": 0.67,
+          "rate": 75
+        },
+        {
+          "perk": "appraisal",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "smash-hit",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "light-footed",
+          "usage": 0.67,
+          "rate": 50
+        },
+        {
+          "perk": "troubleshooter",
+          "usage": 0.67,
+          "rate": 75
+        },
+        {
+          "perk": "boon-illumination",
+          "usage": 0.67,
+          "rate": 75
+        },
+        {
+          "perk": "aftercare",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "tenacity",
+          "usage": 0.67,
+          "rate": 50
+        },
+        {
+          "perk": "conviction",
+          "usage": 0.67,
+          "rate": 0
+        },
+        {
+          "perk": "strength-in-shadows",
+          "usage": 0.67,
+          "rate": 0
+        },
+        {
+          "perk": "borrowed-time",
+          "usage": 0.67,
+          "rate": 25
+        },
+        {
+          "perk": "dark-sense",
+          "usage": 0.51,
+          "rate": 33.33
+        },
+        {
+          "perk": "deadline",
+          "usage": 0.51,
+          "rate": 0
+        },
+        {
+          "perk": "clean-break",
+          "usage": 0.51,
+          "rate": 0
+        },
+        {
+          "perk": "sole-survivor",
+          "usage": 0.51,
+          "rate": 33.33
+        },
+        {
+          "perk": "road-life",
+          "usage": 0.51,
+          "rate": 66.67
+        },
+        {
+          "perk": "wide-open-throttle",
+          "usage": 0.51,
+          "rate": 33.33
+        },
+        {
+          "perk": "specialist",
+          "usage": 0.51,
+          "rate": 33.33
+        },
+        {
+          "perk": "inner-focus",
+          "usage": 0.51,
+          "rate": 33.33
+        },
+        {
+          "perk": "power-struggle",
+          "usage": 0.51,
+          "rate": 0
+        },
+        {
+          "perk": "for-the-people",
+          "usage": 0.51,
+          "rate": 0
+        },
+        {
+          "perk": "corrective-action",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "parental-guidance",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "lucky-break",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "red-herring",
+          "usage": 0.34,
+          "rate": 100
+        },
+        {
+          "perk": "teamwork-collective-stealth",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "soul-guard",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-power-of-two",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "small-game",
+          "usage": 0.34,
+          "rate": 100
+        },
+        {
+          "perk": "teamwork-soft-spoken",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "teamwork-full-circuit",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "bite-the-bullet",
+          "usage": 0.34,
+          "rate": 50
+        },
+        {
+          "perk": "clairvoyance",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "flip-flop",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "apocalyptic-ingenuity",
+          "usage": 0.34,
+          "rate": 50
+        },
+        {
+          "perk": "hardened",
+          "usage": 0.34,
+          "rate": 50
+        },
+        {
+          "perk": "low-profile",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "eyes-of-belmont",
+          "usage": 0.34,
+          "rate": 0
+        },
+        {
+          "perk": "reactive-healing",
+          "usage": 0.34,
+          "rate": 100
+        },
+        {
+          "perk": "streetwise",
+          "usage": 0.34,
+          "rate": 50
+        },
+        {
+          "perk": "come-and-get-me",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "blood-pact",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "saboteur",
+          "usage": 0.17,
+          "rate": 100
+        },
+        {
+          "perk": "no-mither",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "duty-of-care",
+          "usage": 0.17,
+          "rate": 100
+        },
+        {
+          "perk": "salvations-cry",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "better-than-new",
+          "usage": 0.17,
+          "rate": 100
+        },
+        {
+          "perk": "lucky-star",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "detectives-hunch",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "wicked",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "up-the-ante",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "visionary",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "rookie-spirit",
+          "usage": 0.17,
+          "rate": 100
+        },
+        {
+          "perk": "mettle-of-man",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "this-is-not-happening",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "bada-bada-boom",
+          "usage": 0.17,
+          "rate": 0
+        },
+        {
+          "perk": "better-together",
+          "usage": 0.17,
+          "rate": 100
+        }
+      ],
+      "topBuilds": [
+        {
+          "perks": [
+            "well-make-it",
+            "vigil",
+            "dramaturgy",
+            "plot-twist"
+          ],
+          "usage": 4.22,
+          "rate": 52,
+          "samples": 25,
+          "wins": 13
+        },
+        {
+          "perks": [
+            "mirrored-illusion",
+            "bardic-inspiration",
+            "still-sight"
+          ],
+          "usage": 3.54,
+          "rate": 38.1,
+          "samples": 21,
+          "wins": 8
+        },
+        {
+          "perks": [
+            "boon-circle-of-healing",
+            "boon-shadow-step",
+            "extrasensory-perception",
+            "lend-a-hand"
+          ],
+          "usage": 2.36,
+          "rate": 64.29,
+          "samples": 14,
+          "wins": 9
+        },
+        {
+          "perks": [
+            "quick-and-quiet",
+            "unbreakable",
+            "autodidact",
+            "head-on"
+          ],
+          "usage": 1.85,
+          "rate": 36.36,
+          "samples": 11,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "balanced-landing",
+            "object-of-obsession",
+            "resurgence",
+            "we-see-you"
+          ],
+          "usage": 1.35,
+          "rate": 25,
+          "samples": 8,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "plunderers-instinct",
+            "lithe",
+            "pharmacy",
+            "moment-of-glory"
+          ],
+          "usage": 1.35,
+          "rate": 62.5,
+          "samples": 8,
+          "wins": 5
+        },
+        {
+          "perks": [
+            "kindred",
+            "open-handed",
+            "fixated",
+            "still-sight"
+          ],
+          "usage": 1.18,
+          "rate": 57.14,
+          "samples": 7,
+          "wins": 4
+        },
+        {
+          "perks": [
+            "plunderers-instinct",
+            "ace-in-the-hole",
+            "pharmacy",
+            "moment-of-glory"
+          ],
+          "usage": 1.01,
+          "rate": 33.33,
+          "samples": 6,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "lithe",
+            "blast-mine",
+            "reassurance",
+            "shoulder-the-burden"
+          ],
+          "usage": 0.67,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "poised",
+            "repressed-alliance",
+            "reassurance",
+            "potential-energy"
+          ],
+          "usage": 0.67,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "balanced-landing",
+            "deliverance",
+            "blast-mine",
+            "reassurance"
+          ],
+          "usage": 0.67,
+          "rate": 25,
+          "samples": 4,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "kindred",
+            "decisive-strike",
+            "unbreakable",
+            "lithe"
+          ],
+          "usage": 0.51,
+          "rate": 66.67,
+          "samples": 3,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "kindred",
+            "open-handed",
+            "fixated",
+            "overcome"
+          ],
+          "usage": 0.51,
+          "rate": 66.67,
+          "samples": 3,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "deja-vu",
+            "stake-out",
+            "fast-track",
+            "hyperfocus"
+          ],
+          "usage": 0.51,
+          "rate": 0,
+          "samples": 3,
+          "wins": 0
+        },
+        {
+          "perks": [
+            "resilience",
+            "lithe",
+            "windows-of-opportunity",
+            "moment-of-glory"
+          ],
+          "usage": 0.34,
+          "rate": 100,
+          "samples": 2,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "unbreakable",
+            "lithe",
+            "distortion",
+            "inner-strength"
+          ],
+          "usage": 0.34,
+          "rate": 100,
+          "samples": 2,
+          "wins": 2
+        },
+        {
+          "perks": [
+            "hope",
+            "resilience",
+            "balanced-landing",
+            "windows-of-opportunity"
+          ],
+          "usage": 0.34,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        },
+        {
+          "perks": [
+            "resilience",
+            "decisive-strike",
+            "lithe",
+            "were-gonna-live-forever"
+          ],
+          "usage": 0.34,
+          "rate": 50,
+          "samples": 2,
+          "wins": 1
+        }
+      ]
+    },
     "yoichi-asakawa": {
       "matches": 84,
       "pickRate": 0.28,
@@ -92015,9 +97259,9 @@
         "five-moves-ahead",
         "resilience"
       ],
-      "samples": 672,
-      "wins": 271,
-      "rate": 40.33
+      "samples": 687,
+      "wins": 278,
+      "rate": 40.47
     },
     {
       "perks": [
@@ -92026,9 +97270,9 @@
         "resilience",
         "windows-of-opportunity"
       ],
-      "samples": 516,
-      "wins": 158,
-      "rate": 30.62
+      "samples": 543,
+      "wins": 165,
+      "rate": 30.39
     },
     {
       "perks": [
@@ -92037,9 +97281,9 @@
         "lithe",
         "resilience"
       ],
-      "samples": 422,
-      "wins": 164,
-      "rate": 38.86
+      "samples": 439,
+      "wins": 169,
+      "rate": 38.5
     },
     {
       "perks": [
@@ -92048,9 +97292,9 @@
         "boon-shadow-step",
         "boon-steadfast"
       ],
-      "samples": 361,
-      "wins": 129,
-      "rate": 35.73
+      "samples": 376,
+      "wins": 137,
+      "rate": 36.44
     },
     {
       "perks": [
@@ -92070,20 +97314,9 @@
         "five-moves-ahead",
         "resilience"
       ],
-      "samples": 312,
-      "wins": 124,
-      "rate": 39.74
-    },
-    {
-      "perks": [
-        "dead-hard",
-        "decisive-strike",
-        "plot-twist",
-        "resilience"
-      ],
-      "samples": 267,
-      "wins": 118,
-      "rate": 44.19
+      "samples": 318,
+      "wins": 126,
+      "rate": 39.62
     },
     {
       "perks": [
@@ -92092,9 +97325,20 @@
         "resilience",
         "windows-of-opportunity"
       ],
-      "samples": 256,
-      "wins": 78,
-      "rate": 30.47
+      "samples": 277,
+      "wins": 86,
+      "rate": 31.05
+    },
+    {
+      "perks": [
+        "dead-hard",
+        "decisive-strike",
+        "plot-twist",
+        "resilience"
+      ],
+      "samples": 271,
+      "wins": 121,
+      "rate": 44.65
     },
     {
       "perks": [
@@ -92141,6 +97385,28 @@
     },
     {
       "perks": [
+        "deception",
+        "flashbang",
+        "head-on",
+        "quick-and-quiet"
+      ],
+      "samples": 153,
+      "wins": 44,
+      "rate": 28.76
+    },
+    {
+      "perks": [
+        "built-to-last",
+        "deja-vu",
+        "hyperfocus",
+        "stake-out"
+      ],
+      "samples": 145,
+      "wins": 34,
+      "rate": 23.45
+    },
+    {
+      "perks": [
         "decisive-strike",
         "deja-vu",
         "five-moves-ahead",
@@ -92152,36 +97418,14 @@
     },
     {
       "perks": [
-        "built-to-last",
-        "deja-vu",
-        "hyperfocus",
-        "stake-out"
-      ],
-      "samples": 134,
-      "wins": 32,
-      "rate": 23.88
-    },
-    {
-      "perks": [
         "dead-hard",
         "decisive-strike",
         "resilience",
         "unbreakable"
       ],
-      "samples": 132,
-      "wins": 64,
-      "rate": 48.48
-    },
-    {
-      "perks": [
-        "deception",
-        "flashbang",
-        "head-on",
-        "quick-and-quiet"
-      ],
-      "samples": 114,
-      "wins": 32,
-      "rate": 28.07
+      "samples": 140,
+      "wins": 67,
+      "rate": 47.86
     },
     {
       "perks": [
@@ -92190,9 +97434,20 @@
         "boon-exponential",
         "boon-shadow-step"
       ],
-      "samples": 98,
-      "wins": 36,
-      "rate": 36.73
+      "samples": 106,
+      "wins": 38,
+      "rate": 35.85
+    },
+    {
+      "perks": [
+        "dead-hard",
+        "decisive-strike",
+        "resilience",
+        "windows-of-opportunity"
+      ],
+      "samples": 91,
+      "wins": 39,
+      "rate": 42.86
     },
     {
       "perks": [
@@ -92204,17 +97459,6 @@
       "samples": 88,
       "wins": 37,
       "rate": 42.05
-    },
-    {
-      "perks": [
-        "dead-hard",
-        "decisive-strike",
-        "resilience",
-        "windows-of-opportunity"
-      ],
-      "samples": 84,
-      "wins": 37,
-      "rate": 44.05
     },
     {
       "perks": [
@@ -92264,6 +97508,17 @@
       "perks": [
         "dead-hard",
         "five-moves-ahead",
+        "made-for-this",
+        "resilience"
+      ],
+      "samples": 71,
+      "wins": 25,
+      "rate": 35.21
+    },
+    {
+      "perks": [
+        "dead-hard",
+        "five-moves-ahead",
         "resilience",
         "resurgence"
       ],
@@ -92284,25 +97539,14 @@
     },
     {
       "perks": [
-        "dead-hard",
-        "five-moves-ahead",
-        "made-for-this",
-        "resilience"
-      ],
-      "samples": 67,
-      "wins": 23,
-      "rate": 34.33
-    },
-    {
-      "perks": [
         "deja-vu",
         "hyperfocus",
         "prove-thyself",
         "stake-out"
       ],
-      "samples": 64,
-      "wins": 27,
-      "rate": 42.19
+      "samples": 67,
+      "wins": 29,
+      "rate": 43.28
     },
     {
       "perks": [
@@ -92322,9 +97566,9 @@
         "lithe",
         "resilience"
       ],
-      "samples": 61,
+      "samples": 63,
       "wins": 27,
-      "rate": 44.26
+      "rate": 42.86
     },
     {
       "perks": [
@@ -92333,9 +97577,9 @@
         "five-moves-ahead",
         "plot-twist"
       ],
-      "samples": 58,
-      "wins": 25,
-      "rate": 43.1
+      "samples": 60,
+      "wins": 27,
+      "rate": 45
     },
     {
       "perks": [
@@ -92390,6 +97634,17 @@
     },
     {
       "perks": [
+        "flip-flop",
+        "power-struggle",
+        "tenacity",
+        "unbreakable"
+      ],
+      "samples": 52,
+      "wins": 14,
+      "rate": 26.92
+    },
+    {
+      "perks": [
         "bond",
         "leader",
         "prove-thyself"
@@ -92427,27 +97682,11 @@
       "samples": 48,
       "wins": 18,
       "rate": 37.5
-    },
-    {
-      "perks": [
-        "boil-over",
-        "dance-with-me",
-        "windows-of-opportunity"
-      ],
-      "samples": 48,
-      "wins": 19,
-      "rate": 39.58
     }
   ],
   "unmatched": {
     "killers": [],
-    "survivors": [
-      "Leon S. Kennedy",
-      "William \"Bill\" Overbeck",
-      "Detective Tapp",
-      "Ashley J. Williams",
-      "Aestri Yazar"
-    ],
+    "survivors": [],
     "perks": []
   },
   "perkAverage": {

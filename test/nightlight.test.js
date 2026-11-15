@@ -205,3 +205,17 @@ test('analyseBuild still judges the killer without perk stats, and sorts it afte
   assert.ok(analysisSortKey(onlyKiller) > analysisSortKey(null));
   assert.equal(analyseBuild({ role: 'survivor', resolved: { perks: sPerks.slice(0, 4) } }, { perks: {} }), null);
 });
+
+test('makeMatcher knows wiki aliases, duo names and NightLight short names', async () => {
+  const { makeMatcher } = await import('../server/nightlight.js');
+  const match = makeMatcher([
+    { id: 'ash-williams', name: 'Ash Williams', aliases: 'Ashley J. Williams' },
+    { id: 'the-troupe', name: 'The Troupe', aliases: 'Aestri Yazar & Baermar Uraz' },
+    { id: 'leon-scott-kennedy', name: 'Leon Scott Kennedy', aliases: 'Leon Scott Kennedy' },
+    { id: 'david-tapp', name: 'David Tapp', aliases: 'Detective David Tapp' },
+  ]);
+  assert.equal(match('Ashley J. Williams'), 'ash-williams');
+  assert.equal(match('Aestri Yazar'), 'the-troupe');
+  assert.equal(match('Leon S. Kennedy'), 'leon-scott-kennedy');
+  assert.equal(match('Detective Tapp'), 'david-tapp');
+});
