@@ -18,7 +18,7 @@ import { withOfferingRatings } from './lib/offeringRatings.js';
 import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
-import { buildStats, perkStatsTable } from './lib/nlStats.js';
+import { buildStats, perkStatsTable, periodLabel } from './lib/nlStats.js';
 import PatchNotes from './components/PatchNotes.jsx';
 import Home from './components/Home.jsx';
 import BuildCard from './components/BuildCard.jsx';
@@ -310,9 +310,24 @@ export default function App() {
 
     </div>
       <footer className="site-footer">
+        <div className="footer-glow" aria-hidden="true" />
         <div className="footer-inner">
-          <img className="footer-mark" src="/logo.svg" alt="" width="44" height="44" />
-          <div className="footer-cols">
+          <div className="footer-brand">
+            <div className="footer-brand-row">
+              <img className="footer-mark" src="/logo.svg" alt="" width="40" height="40" />
+              <span className="footer-name">{SITE_NAME}</span>
+            </div>
+            <p className="footer-tagline">Builds, perk combos and community stats for Dead by Daylight. Free, no account needed.</p>
+            <div className="footer-status">
+              {patch && (
+                <span className="footer-pill">
+                  <span className="footer-dot" aria-hidden="true" /> Patch {patch}
+                </span>
+              )}
+              {data?.stats && <span className="footer-pill">NightLight stats · {periodLabel(data.stats)}</span>}
+            </div>
+          </div>
+          <nav className="footer-cols" aria-label="Footer">
             {TAB_GROUPS.map((g) => (
               <div key={g.label} className="footer-col">
                 <span className="footer-col-label">{g.label}</span>
@@ -332,15 +347,22 @@ export default function App() {
                 <a className="footer-link" href="/builds/">All builds</a>
               </div>
             )}
-          </div>
+          </nav>
+        </div>
+        <div className="footer-bottom">
           <p className="footer-legal">
             Game data and icons from the{' '}
             <a href="https://deadbydaylight.wiki.gg" target="_blank" rel="noreferrer">
               Dead by Daylight Wiki
             </a>{' '}
-            (CC BY-NC-SA 3.0). {SITE_NAME} is a free, non-commercial fan project and is not affiliated with or endorsed
-            by Behaviour Interactive. Dead by Daylight is a trademark of Behaviour Interactive Inc.
+            (CC BY-NC-SA 3.0). Community stats from{' '}
+            <a href="https://nightlight.gg" target="_blank" rel="noreferrer">NightLight</a>. {SITE_NAME} is a free,
+            non-commercial fan project and is not affiliated with or endorsed by Behaviour Interactive. Dead by Daylight
+            is a trademark of Behaviour Interactive Inc.
           </p>
+          <button className="footer-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+            Back to top ↑
+          </button>
         </div>
         <div className="footer-word" aria-hidden="true">DBD Toolbox</div>
       </footer>
