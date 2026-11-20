@@ -153,7 +153,7 @@ export default function PerkList({ perks, stats = null }) {
             <a href={stats?.source?.url ?? 'https://nightlight.gg'} target="_blank" rel="noreferrer">
               NightLight.gg
             </a>{' '}
-            (last 28 days). “Above / below average” compares a perk’s kill or escape rate with the average perk of
+            (current patch). “Above / below average” compares a perk’s kill or escape rate with the average perk of
             its role ({stats?.perkAverage?.killer ?? '?'}% kill, {stats?.perkAverage?.survivor ?? '?'}% escape); under{' '}
             100 games is too few to judge. Popular perks are not always the strongest: a guide, not official numbers.
           </p>

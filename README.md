@@ -75,7 +75,7 @@ new icons and take about 20 seconds.
 ### Community stats (NightLight)
 
 Pick rates, kill and escape rates, perk usage and the **📊 Most played** builds
-come from [NightLight](https://nightlight.gg) (last 28 days, from matches that
+come from [NightLight](https://nightlight.gg) (current NightLight patch, from matches that
 players upload). They are saved in `data/nightlight.json` and used in:
 
 - **Killers / Survivors**: pick rate, kill or escape rate, kill distribution,
@@ -373,7 +373,7 @@ The app cannot see your real matches, so *you* mark a challenge as completed.
 |---|---|---|
 | [Dead by Daylight Wiki](https://deadbydaylight.wiki.gg) | Perks, killers, survivors, items, add-ons, offerings, descriptions, icons | Only normal `/wiki/` pages and `/images/`, which robots.txt allows. No `api.php` or Special/Cargo pages. Max ~1 request per second. Content is **CC BY-NC-SA 3.0**: personal, non-commercial use with credit. |
 
-| [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer and survivor pick, kill and escape rates; perk usage; each character's top perks and builds (last 28 days, from matches players upload) | Collected by hand in your own browser with `scripts/nightlight-collector.js`: the public stats feeds and character pages (allowed by robots.txt), one request every 1.5 s, at most about once a week. This project never fetches from NightLight automatically, because their bot protection blocks scripts. NightLight asks for a low request rate and credit, so every page with these numbers names NightLight as the source. |
+| [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer and survivor pick, kill and escape rates; perk usage; each character's top perks and builds (current NightLight patch, from matches players upload) | Collected by hand in your own browser with `scripts/nightlight-collector.js`: the public stats feeds and character pages (allowed by robots.txt), one request every 1.5 s, at most about once a week. This project never fetches from NightLight automatically, because their bot protection blocks scripts. NightLight asks for a low request rate and credit, so every page with these numbers names NightLight as the source. |
 
 ## Project layout
 

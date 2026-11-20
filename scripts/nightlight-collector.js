@@ -80,6 +80,19 @@
   console.log(`[collector] ${Object.keys(perkNames).length} perk names`);
 
   // 2. The public stats feeds (same data as the viewer pages).
+  // Since 2026-11 the feeds need ?patch=<NightLight patch> (a custom date range
+  // is for supporters only). Use the patch the viewer itself asked for, which is
+  // the newest one, or else the "Patch x.y.z" label on the page.
+  const patch =
+    performance
+      .getEntriesByType('resource')
+      .map((e) => (e.name.includes('patch=') ? new URL(e.name).searchParams.get('patch') : null))
+      .find(Boolean) ?? document.body.innerText.match(/Patch (\d+\.\d+\.\d+)/)?.[1];
+  if (!patch) {
+    alert('Could not find the NightLight patch. Open https://nightlight.gg/perks/viewer, wait until it has loaded, then run this again.');
+    return;
+  }
+  console.log(`[collector] patch ${patch}`);
   const feeds = {};
   for (const [key, path] of [
     ['killers', '/api/v1/stats/global/killers'],
@@ -87,7 +100,7 @@
     ['killerPerks', '/api/v1/stats/global/killer-perks'],
     ['survivorPerks', '/api/v1/stats/global/survivor-perks'],
   ]) {
-    feeds[key] = (await get(path)).data;
+    feeds[key] = (await get(`${path}?patch=${encodeURIComponent(patch)}`)).data;
     console.log(`[collector] feed ${key} ✓`);
   }
 
@@ -120,6 +133,7 @@
     version: 1,
     collectedAt: new Date().toISOString(),
     source: 'https://nightlight.gg',
+    patch,
     perkNames,
     feeds,
     pages,

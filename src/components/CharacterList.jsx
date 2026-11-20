@@ -211,7 +211,7 @@ export default function CharacterList({ characters, perksById, addons = [], stat
 
           {hasStats && (
             <>
-              <h3 className="section-title">Community stats (last 28 days)</h3>
+              <h3 className="section-title">Community stats (current patch)</h3>
               <CharacterStats entry={byId[character.id]} stats={stats} role={role} />
               <TopUsage entry={byId[character.id]} perksById={perksById} role={role} />
             </>

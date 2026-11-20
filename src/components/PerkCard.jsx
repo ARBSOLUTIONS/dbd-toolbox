@@ -16,7 +16,7 @@ export function PerkStats({ nl }) {
   return (
     <div
       className={`perk-stats verdict-${nl.verdict}`}
-      title="Community stats from matches uploaded to NightLight.gg (last 28 days)"
+      title="Community stats from matches uploaded to NightLight.gg (current patch)"
     >
       <div className="perk-stats-head">
         <span className="perk-verdict">
