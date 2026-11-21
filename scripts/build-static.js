@@ -653,7 +653,11 @@ await write(
   Cache-Control: public, max-age=31536000, immutable
 /data/app-data.*.json
   Cache-Control: public, max-age=31536000, immutable
-/data/*
+/data/app-data.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+/data/status.json
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+/data/community-index.json
   Cache-Control: public, max-age=300, stale-while-revalidate=3600
 /icons/*
   Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
