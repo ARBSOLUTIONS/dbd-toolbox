@@ -6,9 +6,29 @@ import { tagsFor, isExhaustionPerk } from './tags.js';
 import { communityScore } from './nlStats.js';
 
 const norm = (s) => (s ?? '').toLowerCase().replace(/[’']/g, "'").trim();
+const nameIndexCache = new WeakMap();
+
+function indexList(list) {
+  let map = nameIndexCache.get(list);
+  if (map) return map;
+  map = new Map();
+  for (const x of list) {
+    const k = norm(x.name);
+    let bucket = map.get(k);
+    if (!bucket) {
+      bucket = [];
+      map.set(k, bucket);
+    }
+    bucket.push(x);
+  }
+  nameIndexCache.set(list, map);
+  return map;
+}
 
 function findByName(list, name, extra = () => true) {
-  return list.find((x) => norm(x.name) === norm(name) && extra(x)) ?? null;
+  const bucket = indexList(list).get(norm(name));
+  if (!bucket) return null;
+  return bucket.find(extra) ?? null;
 }
 
 /**

@@ -21,7 +21,8 @@ let gameIndex = null; // cached per worker instance
 
 async function loadGame(context) {
   if (gameIndex) return gameIndex;
-  const res = await context.env.ASSETS.fetch(new URL('/data/app-data.json', context.request.url));
+  let res = await context.env.ASSETS.fetch(new URL('/data/community-index.json', context.request.url));
+  if (!res.ok) res = await context.env.ASSETS.fetch(new URL('/data/app-data.json', context.request.url));
   gameIndex = indexGameData(await res.json());
   return gameIndex;
 }

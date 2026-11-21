@@ -70,7 +70,7 @@ export function EntityCard({ entity, subtitle, note, isPerk = false }) {
   const rarity = entity.rarity ? `rarity-${entity.rarity}` : '';
   return (
     <article className={`card perk-card ${rarity} ${open ? 'open' : ''}`} onClick={() => setOpen(!open)}>
-      <img className="perk-icon" src={iconSrc(entity.icon)} alt="" loading="lazy" />
+      <img className="perk-icon" src={iconSrc(entity.icon)} alt="" loading="lazy" decoding="async" />
       <div className="card-body">
         <h3>
           {entity.name}

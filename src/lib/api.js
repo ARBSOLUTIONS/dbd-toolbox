@@ -6,8 +6,16 @@
 export const STATIC = import.meta.env.VITE_STATIC === '1';
 export const SITE_NAME = 'DBD-Toolbox';
 
+function appDataUrl() {
+  if (!STATIC) return '/api/data';
+  const preload =
+    typeof document !== 'undefined' &&
+    document.querySelector('link[rel="preload"][as="fetch"][href^="/data/app-data"]');
+  return preload?.getAttribute('href') || '/data/app-data.json';
+}
+
 export function loadData() {
-  return fetch(STATIC ? '/data/app-data.json' : '/api/data').then((r) => {
+  return fetch(appDataUrl()).then((r) => {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     return r.json();
   });

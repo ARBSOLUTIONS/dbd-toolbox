@@ -7,9 +7,9 @@ import { STATIC, loadAutoStatus } from '../lib/api.js';
  * status, and a "Refresh data" button. It also notices refreshes started
  * automatically by the server and reloads the data when they finish.
  */
-export default function DataStatus({ meta, onRefreshed }) {
+export default function DataStatus({ meta, initialStatus = null, onRefreshed }) {
   const [status, setStatus] = useState(null);
-  const [auto, setAuto] = useState(null);
+  const [auto, setAuto] = useState(initialStatus);
   const running = status?.running;
 
   const loadAuto = useCallback(() => {
@@ -17,6 +17,10 @@ export default function DataStatus({ meta, onRefreshed }) {
       .then(setAuto)
       .catch(() => {});
   }, []);
+
+  useEffect(() => {
+    if (initialStatus) setAuto(initialStatus);
+  }, [initialStatus]);
 
   // Fast polling while a refresh runs; slow polling otherwise (to catch automatic ones).
   useEffect(() => {
@@ -40,8 +44,9 @@ export default function DataStatus({ meta, onRefreshed }) {
     return () => clearInterval(timer);
   }, [running, onRefreshed, loadAuto]);
 
-  // Auto-update status (next check, prediction): load now and every 10 minutes.
+  // Auto-update status (next check, prediction): in static mode it arrives inside app-data.json.
   useEffect(() => {
+    if (STATIC) return undefined;
     loadAuto();
     const timer = setInterval(loadAuto, 10 * 60_000);
     return () => clearInterval(timer);
