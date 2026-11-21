@@ -1,14 +1,14 @@
-# Keeps the public site up to date with the game.
-# Runs every hour, but scripts/ci-update.js only contacts the wiki when a check
-# is due: every 12 hours normally, every hour on predicted patch days.
-# When the game data changed, it commits the new data; Cloudflare Pages then
-# rebuilds the site automatically. State-only commits use [skip ci] so they
-# do not trigger a rebuild.
+# Keeps the public site up to date with Dead by Daylight patches.
+# - Runs twice daily plus hourly during typical Tue/Wed DBD patch release windows (15:00–22:00 UTC).
+# - Keeps check-state (data/auto-update.json) in GitHub Actions Cache instead of polluting Git with [skip ci] commits.
+# - Only commits to Git when real game data changed; Cloudflare Pages then rebuilds the site automatically.
+# - Opens a follow-up GitHub Issue with a checklist if a patch adds untagged perks, renames items, or has wiki glitches.
 name: Update game data
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '17 6,18 * * *'
+    - cron: '17 15-22 * * 2,3'
   workflow_dispatch:
     inputs:
       force:
@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: update-data
@@ -35,32 +36,56 @@ jobs:
           node-version-file: .node-version
           cache: npm
 
+      - uses: actions/cache@v4
+        with:
+          path: data/auto-update.json
+          key: auto-update-state-${{ github.run_id }}
+          restore-keys: |
+            auto-update-state-
+
       - run: npm ci
 
       - name: Check for a new patch (and refresh if needed)
         run: node scripts/ci-update.js ${{ inputs.force && '--force' || '' }}
 
-      - name: Run tests on the new data
-        run: npm test || echo "::warning::Tests report problems (e.g. new perks without hand-checked tags). The site still updates."
+      - name: Run tests and data health check
+        run: |
+          npm test || echo "::warning::Tests reported follow-up items (see checklist issue)."
+          node scripts/check-data-health.js --markdown --write-issue /tmp/patch-followup.md
 
-      - name: Commit changes
+      - name: Commit game data changes (never state-only commits)
         id: commit
         run: |
           git config user.name "dbd-toolbox-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
+          git reset -- data/auto-update.json 2>/dev/null || true
           if git diff --cached --quiet; then
-            echo "Nothing changed."
+            echo "No game data changed."
             exit 0
           fi
-          if git diff --cached --name-only | grep -qv '^data/auto-update.json$'; then
-            PATCH=$(node -p "require('./data/meta.json').patch")
-            git commit -m "Update game data (patch $PATCH)"
-            echo "data=true" >> "$GITHUB_OUTPUT"
-          else
-            git commit -m "Update check state [skip ci]"
-          fi
+          PATCH=$(node -p "require('./data/meta.json').patch")
+          git commit -m "Update game data (patch $PATCH)"
           git push
+          echo "data=true" >> "$GITHUB_OUTPUT"
+          echo "patch=$PATCH" >> "$GITHUB_OUTPUT"
+
+      - name: Open follow-up issue if new perks or broken builds need attention
+        if: steps.commit.outputs.data == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PATCH: ${{ steps.commit.outputs.patch }}
+        run: |
+          if [ ! -s /tmp/patch-followup.md ]; then
+            exit 0
+          fi
+          TITLE="Patch $PATCH follow-up checklist"
+          EXISTING=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq '.[0].number')
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body-file /tmp/patch-followup.md
+          else
+            gh issue create --title "$TITLE" --body-file /tmp/patch-followup.md
+          fi
 
       - name: Notify search engines (IndexNow)
         if: steps.commit.outputs.data == 'true'

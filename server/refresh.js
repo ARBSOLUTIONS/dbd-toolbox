@@ -153,6 +153,33 @@ function resolveIdenticalPerks(perks) {
   }
 }
 
+const BROKEN_DESC_RE = /#effect(?:\(\d+\))?|\{\{|\}\}/i;
+
+/**
+ * Protects against temporary wiki template glitches (e.g. "#effect(1)" or "{{...}}"):
+ * if a newly scraped entry has a broken or empty description and the previous copy
+ * was clean, keep the previous clean description and log a warning.
+ */
+export function guardDescriptions(freshList, oldList, kind, log = console.log) {
+  const oldById = new Map((oldList ?? []).map((x) => [x.id, x]));
+  let kept = 0;
+  for (const item of freshList) {
+    const desc = String(item.description ?? '').trim();
+    if (!desc || BROKEN_DESC_RE.test(desc)) {
+      const prev = oldById.get(item.id);
+      const prevDesc = String(prev?.description ?? '').trim();
+      if (prevDesc && !BROKEN_DESC_RE.test(prevDesc)) {
+        item.description = prev.description;
+        kept++;
+        log(`  ! kept previous clean description for ${kind} "${item.name}" (wiki had broken placeholder)`);
+      } else {
+        log(`  ! wiki placeholder detected in ${kind} "${item.name}" (no clean previous copy available)`);
+      }
+    }
+  }
+  return kept;
+}
+
 /**
  * Runs a full refresh. `log` receives progress messages (console or the web UI).
  * Returns the new meta information.
@@ -193,6 +220,10 @@ export async function refreshData(log = console.log) {
   resolveIdenticalPerks(perks);
   linkPerks(perks, killers, 'killer', log);
   linkPerks(perks, survivors, 'survivor', log);
+  guardDescriptions(perks, old.perks, 'perk', log);
+  guardDescriptions(items, old.items, 'item', log);
+  guardDescriptions(addons, old.addons, 'add-on', log);
+  guardDescriptions(offerings, old.offerings, 'offering', log);
 
   log('Fetching patch history (for predicting the next patch)...');
   await updatePatchHistory(log);

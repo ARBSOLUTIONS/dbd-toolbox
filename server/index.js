@@ -9,6 +9,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DATA_DIR, ICON_DIR } from './refresh.js';
 import { refresh, startRefresh, startAutoUpdate, autoUpdateStatus, checkForUpdate } from './autoUpdate.js';
+import { importStatsObject } from './nightlight.js';
 import { listBuilds, createBuild, voteBuild, reportBuild, indexGameData, visitorHash, CommunityError } from './community/core.js';
 import { jsonStore } from './community/stores.js';
 
@@ -55,6 +56,23 @@ app.get('/api/refresh', (_req, res) => res.json(refresh));
 // --- Automatic updates ---
 app.get('/api/auto-update', async (_req, res) => res.json(await autoUpdateStatus()));
 app.post('/api/auto-update/check', async (_req, res) => res.json(await checkForUpdate({ force: true })));
+
+// --- Direct NightLight import (for the 1-click bookmarklet on nightlight.gg) ---
+app.options('/api/import-stats', (_req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://nightlight.gg');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, X-Import-Token');
+  res.sendStatus(204);
+});
+app.post('/api/import-stats', express.json({ limit: '8mb' }), async (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://nightlight.gg');
+  try {
+    const summary = await importStatsObject(req.body);
+    res.json(summary);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+});
 
 // --- Community builds (local test version; the live site uses Cloudflare D1) ---
 // Same rules as the live site (server/community/core.js); data in data/community-local.json.

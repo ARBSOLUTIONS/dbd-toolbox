@@ -281,6 +281,12 @@ export function parseNightlight(raw, data, importedAt = new Date().toISOString()
     }
   }
   out.popularSurvivorBuilds = popularSurvivorBuilds(out.survivors);
+  // Keep survivor topPerks/topBuilds lean in data/nightlight.json after computing
+  // popularSurvivorBuilds (the UI only displays top 10 perks and top 5 builds per survivor).
+  for (const s of Object.values(out.survivors)) {
+    if (s.topPerks?.length > 15) s.topPerks = s.topPerks.slice(0, 15);
+    if (s.topBuilds?.length > 10) s.topBuilds = s.topBuilds.slice(0, 10);
+  }
   for (const list of Object.values(unmatched)) list.splice(0, list.length, ...new Set(list));
   return out;
 }
@@ -401,27 +407,81 @@ async function readJson(file, fallback) {
   }
 }
 
-/** Imports a collector export (or killers feed) file into data/nightlight.json. */
-export async function importStats(file, { log = console.log } = {}) {
+/**
+ * Merges a newly parsed NightLight export with the previous data/nightlight.json:
+ * - Snapshots previous perk stats per role when the period changed (so Perk Ranking shows ▲/▼ movement).
+ * - Preserves per-character topPerks/topBuilds and popularSurvivorBuilds when a
+ *   quick/partial import (or a failed character page) omits them, so killer-specific
+ *   build rating scores and "Most played" builds keep working.
+ */
+export function mergeNightlight(fresh, old, { singleFeed = false } = {}) {
+  const stats = { ...fresh };
+  if (!old) return stats;
+
+  if (singleFeed && old.perks && Object.keys(old.perks).length) {
+    for (const key of ['survivorAverage', 'survivors', 'perks', 'perkAverage', 'popularSurvivorBuilds', 'previousPerks', 'previousPerkAverage', 'previousPerkPeriod']) {
+      if (old[key] !== undefined) stats[key] = old[key];
+    }
+  }
+
+  // Preserve previous perk numbers for movement arrows when importing a newer period.
+  if (!singleFeed && old.perks && Object.keys(old.perks).length) {
+    const samePeriod = old.period?.end && fresh.period?.end && old.period.end === fresh.period.end;
+    if (samePeriod) {
+      if (old.previousPerks) stats.previousPerks = old.previousPerks;
+      if (old.previousPerkAverage) stats.previousPerkAverage = old.previousPerkAverage;
+      if (old.previousPerkPeriod) stats.previousPerkPeriod = old.previousPerkPeriod;
+    } else {
+      const prevPerks = { killer: {}, survivor: {} };
+      for (const [id, p] of Object.entries(old.perks)) {
+        if (prevPerks[p.role]) prevPerks[p.role][id] = { usage: p.usage, rate: p.rate, count: p.count };
+      }
+      stats.previousPerks = prevPerks;
+      stats.previousPerkAverage = { ...(old.perkAverage ?? {}) };
+      stats.previousPerkPeriod = { killer: old.period ?? null, survivor: old.period ?? null };
+    }
+  }
+
+  // Keep per-killer / per-survivor topPerks & topBuilds when not present in the new export
+  // (e.g. quick mode, killer-only mode, or a page that timed out during collection).
+  for (const group of ['killers', 'survivors']) {
+    if (!stats[group] || !old[group]) continue;
+    for (const [id, entry] of Object.entries(stats[group])) {
+      const prev = old[group]?.[id];
+      if (!prev) continue;
+      if (!entry.topPerks?.length && prev.topPerks?.length) {
+        entry.topPerks = prev.topPerks;
+        entry.since ??= prev.since ?? null;
+      }
+      if (!entry.topBuilds?.length && prev.topBuilds?.length) {
+        entry.topBuilds = prev.topBuilds;
+        entry.since ??= prev.since ?? null;
+      }
+    }
+  }
+  if (!stats.popularSurvivorBuilds?.length && old.popularSurvivorBuilds?.length) {
+    stats.popularSurvivorBuilds = old.popularSurvivorBuilds;
+  }
+  return stats;
+}
+
+/** Imports an already-parsed NightLight export object into data/nightlight.json. */
+export async function importStatsObject(raw, { log = console.log } = {}) {
   const data = {
     killers: await readJson(path.join(DATA_DIR, 'killers.json'), []),
     survivors: await readJson(path.join(DATA_DIR, 'survivors.json'), []),
     perks: await readJson(path.join(DATA_DIR, 'perks.json'), []),
   };
   if (!data.killers.length) throw new Error('No killers in data/. Run "npm run refresh-data" first.');
-  log(`Reading NightLight stats from ${file}...`);
-  const raw = JSON.parse(await fs.readFile(file, 'utf8'));
-  const stats = parseNightlight(raw, data);
-
-  // A killers-only import keeps the survivor and perk stats of the previous import.
+  const parsed = parseNightlight(raw, data);
   const old = await readJson(STATS_FILE, null);
-  if (!raw.format && old?.perks && Object.keys(old.perks).length) {
-    for (const key of ['survivorAverage', 'survivors', 'perks', 'popularSurvivorBuilds']) stats[key] = old[key];
-    for (const [id, k] of Object.entries(stats.killers)) {
-      const prev = old.killers?.[id];
-      if (prev?.topPerks) Object.assign(k, { since: prev.since, topPerks: prev.topPerks, topBuilds: prev.topBuilds });
-    }
+  const singleFeed = !raw?.format;
+  const stats = mergeNightlight(parsed, old, { singleFeed });
+
+  if (singleFeed && old?.perks && Object.keys(old.perks).length) {
     log('  killers feed only: kept the survivor, perk and build stats of the previous import');
+  } else if (raw?.mode && raw.mode !== 'full' && old) {
+    log(`  ${raw.mode} mode: updated global stats and preserved missing character detail pages from previous import`);
   }
 
   await fs.writeFile(STATS_FILE + '.tmp', JSON.stringify(stats, null, 2));
@@ -438,5 +498,19 @@ export async function importStats(file, { log = console.log } = {}) {
     if (names.length) log(`  ? NightLight ${kind} not found in our data: ${names.join(', ')}`);
   }
   if (raw.failed?.length) log(`  ! pages the collector could not read: ${raw.failed.join('; ')}`);
-  return { action: 'updated', killers: count(stats.killers), survivors: count(stats.survivors), perks: count(stats.perks) };
+  return {
+    action: 'updated',
+    mode: raw?.mode ?? (singleFeed ? 'killers-feed' : 'full'),
+    killers: count(stats.killers),
+    survivors: count(stats.survivors),
+    perks: count(stats.perks),
+    games: stats.games,
+  };
+}
+
+/** Imports a collector export (or killers feed) file into data/nightlight.json. */
+export async function importStats(file, { log = console.log } = {}) {
+  log(`Reading NightLight stats from ${file}...`);
+  const raw = JSON.parse(await fs.readFile(file, 'utf8'));
+  return importStatsObject(raw, { log });
 }
