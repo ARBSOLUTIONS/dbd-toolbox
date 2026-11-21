@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import fs from 'node:fs';
 import { mergeNightlight } from '../server/nightlight.js';
 import { guardDescriptions } from '../server/refresh.js';
 import { scoreBuild } from '../src/lib/builds.js';
@@ -101,4 +102,16 @@ test('guardDescriptions restores previous clean text when wiki returns broken pl
   assert.equal(freshList[0].description, oldList[0].description);
   assert.equal(freshList[1].description, oldList[1].description);
   assert.equal(freshList[2].description, 'Valid new description.');
+});
+
+test('Chrome extension shares the exact same nightlight-core.js parser and has a valid MV3 manifest', () => {
+  const serverCore = fs.readFileSync('server/nightlight-core.js', 'utf8');
+  const extCore = fs.readFileSync('extension/lib/nightlight-core.js', 'utf8');
+  assert.equal(extCore, serverCore, 'Run copy from server/nightlight-core.js to extension/lib/nightlight-core.js');
+
+  const manifest = JSON.parse(fs.readFileSync('extension/manifest.json', 'utf8'));
+  assert.equal(manifest.manifest_version, 3);
+  assert.ok(fs.existsSync('extension/icon128.png'));
+  assert.ok(fs.existsSync('extension/background.js'));
+  assert.ok(fs.existsSync('extension/popup.html'));
 });

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "DBD-Toolbox Updater",
+  "version": "1.0.0",
+  "description": "1-klik update van alle DBD-Toolbox data (Wiki + NightLight → GitHub → Cloudflare Pages) met automatische patch-meldingen.",
+  "permissions": ["storage", "alarms", "notifications", "tabs", "scripting"],
+  "host_permissions": [
+    "https://nightlight.gg/*",
+    "https://api.github.com/*",
+    "https://raw.githubusercontent.com/*",
+    "https://deadbydaylight.wiki.gg/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DBD-Toolbox Updater",
+    "default_icon": {
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "128": "icon128.png"
+  }
+}
