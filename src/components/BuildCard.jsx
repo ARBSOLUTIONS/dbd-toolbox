@@ -22,11 +22,11 @@ export function Slot({ entity, fallback, big, showOwner }) {
       onBlur={() => setTip(null)}
       title={entity ? undefined : fallback}
     >
-      {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" loading="lazy" /> : <div className="slot-empty" />}
+      {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" loading="lazy" decoding="async" /> : <div className="slot-empty" />}
       <span>{entity?.name ?? fallback ?? '—'}</span>
       {owner !== undefined && (
         <span className={`slot-owner ${owner ? '' : 'general'}`}>
-          {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" loading="lazy" />}
+          {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" loading="lazy" decoding="async" />}
           {owner ? (entity.role === 'survivor' ? owner.name.split(' ')[0] : owner.name.replace(/^The /, '')) : 'General'}
         </span>
       )}
@@ -120,6 +120,7 @@ function NightLightLine({ nl }) {
 
 export default function BuildCard({ build, favorites, footer }) {
   const [open, setOpen] = useState(false);
+  const [scoreHover, setScoreHover] = useState(false);
   const { resolved, rating } = build;
   const labels = PLAYSTYLES[build.role];
   const changedPerks = (build.patchNotes ?? []).filter((n) => n.kind === 'changed').map((n) => n.perk);
@@ -169,10 +170,15 @@ export default function BuildCard({ build, favorites, footer }) {
             </button>
           )}
           {rating.parts?.length ? (
-            <div className="score-hover" tabIndex={0}>
+            <div
+              className="score-hover"
+              tabIndex={0}
+              onMouseEnter={() => setScoreHover(true)}
+              onFocus={() => setScoreHover(true)}
+            >
               <ScoreBadge score={rating.score} community={rating.community} plain />
               <div className="score-popover" role="tooltip">
-                <ScoreBreakdown rating={rating} role={build.role} />
+                {scoreHover && <ScoreBreakdown rating={rating} role={build.role} />}
               </div>
             </div>
           ) : (

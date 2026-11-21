@@ -12,6 +12,7 @@
 //   SITE_URL                   e.g. https://dbdtoolbox.wiki (no trailing slash)
 //   GOOGLE_SITE_VERIFICATION   code from Google Search Console (optional;
 //   BING_SITE_VERIFICATION     code from Bing Webmaster Tools   or put them in seo.config.json)
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -22,7 +23,7 @@ import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
 import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
-import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, periodLabel } from '../src/lib/nlStats.js';
+import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, MIN_SAMPLES, periodLabel } from '../src/lib/nlStats.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -55,7 +56,7 @@ const esc = (s) =>
 const para = (text) => esc(text).replace(/\n/g, '<br>');
 const icon = (e, size = 64) => {
   const src = e?.icon?.local ?? e?.portrait?.local;
-  return src ? `<img src="${src}" alt="${esc(e.name)} icon" width="${size}" height="${size}" loading="lazy">` : '';
+  return src ? `<img src="${src}" alt="${esc(e.name)} icon" width="${size}" height="${size}" loading="lazy" decoding="async">` : '';
 };
 const short = (text, n = 155) => {
   const t = String(text ?? '').replace(/\s+/g, ' ').trim();
@@ -98,11 +99,93 @@ const today = new Date().toISOString().slice(0, 10);
 const lastmod = (meta.fetchedAt ?? new Date().toISOString()).slice(0, 10);
 
 // ---------- 1. App data ----------
-await write('data/app-data.json', JSON.stringify({ meta, ...raw, changes, stats, patchNotes, patchHistory: history, curated: curatedFile }));
+// Trim fields that the public static app never needs:
+// - remote wiki icon URLs when a local cached icon exists (~175 KB saved)
+// - survivor topPerks beyond top 10 / topBuilds beyond top 5 (~500 KB saved; CharacterList only renders those)
+// Also embed pre-generated build blueprints + auto-update status so the browser
+// avoids running generateBuilds() (~5.6 s) and an extra /data/status.json waterfall.
+const stripRemote = (list, field = 'icon') =>
+  list.map((x) => {
+    const img = x[field];
+    if (!img?.local || !img.remote) return x;
+    return { ...x, [field]: { local: img.local } };
+  });
+const compactRaw = {
+  perks: stripRemote(raw.perks, 'icon'),
+  killers: stripRemote(raw.killers, 'portrait'),
+  survivors: stripRemote(raw.survivors, 'portrait'),
+  items: stripRemote(raw.items, 'icon'),
+  addons: stripRemote(raw.addons, 'icon'),
+  offerings: stripRemote(raw.offerings, 'icon'),
+};
+const compactStats = stats
+  ? {
+      ...stats,
+      survivors: stats.survivors
+        ? Object.fromEntries(
+            Object.entries(stats.survivors).map(([id, entry]) => [
+              id,
+              {
+                ...entry,
+                topPerks: (entry.topPerks ?? []).slice(0, 10),
+                topBuilds: (entry.topBuilds ?? []).filter((b) => b.samples >= MIN_SAMPLES / 4).slice(0, 5),
+              },
+            ]),
+          )
+        : undefined,
+    }
+  : null;
+const generatedBuilds = generated.map((b) => ({
+  id: b.id,
+  name: b.name,
+  role: b.role,
+  type: b.type,
+  variant: b.variant,
+  killer: b.killer,
+  playstyles: b.playstyles,
+  perks: b.perks,
+  item: b.item,
+  ...(b.itemAddons ? { itemAddons: b.itemAddons } : {}),
+  ...(b.addons ? { addons: b.addons } : {}),
+  offering: b.offering,
+  why: b.why,
+  howToPlay: b.howToPlay,
+  ...(b.newPerks?.length ? { newPerks: b.newPerks } : {}),
+}));
 const prediction = predictNextPatch(history, autoState.announcements ?? meta.announcements ?? [], new Date());
+const statusPayload = {
+  enabled: true,
+  static: true,
+  lastCheck: autoState.lastCheck ?? null,
+  lastResult: autoState.lastResult ?? null,
+  prediction,
+};
+const appDataJson = JSON.stringify({
+  meta,
+  ...compactRaw,
+  changes,
+  stats: compactStats,
+  patchNotes,
+  patchHistory: history,
+  curated: curatedFile,
+  generatedBuilds,
+  status: statusPayload,
+});
+const appDataHash = crypto.createHash('sha256').update(appDataJson).digest('hex').slice(0, 10);
+const appDataFile = `data/app-data.${appDataHash}.json`;
+await write(appDataFile, appDataJson);
+await write('data/app-data.json', appDataJson);
+await write('data/status.json', JSON.stringify(statusPayload));
+// Tiny name/type index for functions/api/community so the Worker avoids parsing the full app-data.json on cold start.
 await write(
-  'data/status.json',
-  JSON.stringify({ enabled: true, static: true, lastCheck: autoState.lastCheck ?? null, lastResult: autoState.lastResult ?? null, prediction }),
+  'data/community-index.json',
+  JSON.stringify({
+    perks: raw.perks.map((p) => ({ name: p.name, role: p.role })),
+    killers: raw.killers.map((k) => ({ name: k.name })),
+    items: raw.items.map((i) => ({ name: i.name, type: i.type })),
+    addons: raw.addons.map((a) => ({ name: a.name, killer: a.killer, itemType: a.itemType })),
+    offerings: raw.offerings.map((o) => ({ name: o.name })),
+  }),
 );
 await fs.cp(path.join(ROOT, 'data', 'icons'), path.join(DIST, 'icons'), { recursive: true });
 
@@ -493,7 +576,7 @@ urls.pop();
 <meta property="og:type" content="website"><meta property="og:site_name" content="${SITE}">
 <meta property="og:title" content="${SITE} – ${TAGLINE}"><meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${SITE_URL}/"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="${SITE_URL}/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="${SITE_URL}/og-image.png">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/${appDataFile}" as="fetch" crossorigin>
 ${verification}
 ${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}`;
@@ -564,6 +647,44 @@ ${[...curated].sort((a, b) => b.rating.score - a.rating.score).slice(0, 10).map(
 const indexNowKey = process.env.INDEXNOW_KEY || (await readJson('indexnow.json', {})).key;
 if (indexNowKey) await write(`${indexNowKey}.txt`, indexNowKey);
 await fs.copyFile(path.join(ROOT, 'scripts', 'seo.css'), path.join(DIST, 'seo.css'));
-await write('_headers', `/data/*\n  Cache-Control: public, max-age=300\n/icons/*\n  Cache-Control: public, max-age=604800\n`);
+await write(
+  '_headers',
+  `/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+/data/app-data.*.json
+  Cache-Control: public, max-age=31536000, immutable
+/data/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600
+/icons/*
+  Cache-Control: public, max-age=2592000, stale-while-revalidate=86400
+/seo.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=86400
+`,
+);
+// Exclude static assets from Pages Functions (_middleware.js) so Cloudflare serves them directly from edge CDN.
+await write(
+  '_routes.json',
+  JSON.stringify(
+    {
+      version: 1,
+      include: ['/*'],
+      exclude: [
+        '/assets/*',
+        '/icons/*',
+        '/data/*',
+        '/seo.css',
+        '/favicon.svg',
+        '/logo.svg',
+        '/og-image.png',
+        '/robots.txt',
+        '/sitemap.xml',
+        '/llms.txt',
+        '/ads.txt',
+      ],
+    },
+    null,
+    2,
+  ),
+);
 
 console.log(`Static site ready in dist/: ${urls.length} pages in the sitemap, ${allBuilds.length} builds. Site URL: ${SITE_URL}`);

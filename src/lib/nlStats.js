@@ -22,19 +22,32 @@ export function perkBaseline(stats, role) {
   return stats?.perkAverage?.[role] ?? baselineRate(stats, role);
 }
 
+const usageCache = new WeakMap();
+
 /**
  * Perk usage for a role: { perkId: { usage, rate, count } }. For a killer, that
  * killer's own top perks are used when known (they say more than the global
  * numbers), the global numbers otherwise.
  */
 export function perkUsage(stats, role, killerId = null) {
+  if (!stats || typeof stats !== 'object') return {};
+  let byKey = usageCache.get(stats);
+  if (!byKey) {
+    byKey = new Map();
+    usageCache.set(stats, byKey);
+  }
+  const cacheKey = `${role}|${killerId ?? ''}`;
+  const cached = byKey.get(cacheKey);
+  if (cached) return cached;
+
   const out = {};
-  for (const [id, p] of Object.entries(stats?.perks ?? {})) {
+  for (const [id, p] of Object.entries(stats.perks ?? {})) {
     if (p.role === role && p.usage != null) out[id] = { usage: p.usage, rate: p.rate, count: p.count ?? null, scope: 'all' };
   }
-  for (const p of (killerId && stats?.killers?.[killerId]?.topPerks) || []) {
+  for (const p of (killerId && stats.killers?.[killerId]?.topPerks) || []) {
     out[p.perk] = { usage: p.usage, rate: p.rate, scope: 'killer' };
   }
+  byKey.set(cacheKey, out);
   return out;
 }
 

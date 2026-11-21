@@ -1,15 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
 import DataStatus from './components/DataStatus.jsx';
-import PerkList from './components/PerkList.jsx';
-import PerkRanking from './components/PerkRanking.jsx';
-import CharacterList from './components/CharacterList.jsx';
-import ItemList from './components/ItemList.jsx';
-import OfferingList from './components/OfferingList.jsx';
-import BuildList from './components/BuildList.jsx';
-import Combos from './components/Combos.jsx';
-import BuildMaker from './components/BuildMaker.jsx';
-import Favorites from './components/Favorites.jsx';
-import Community from './components/Community.jsx';
 import { useFavorites } from './lib/favorites.js';
 import { NavContext } from './lib/nav.js';
 import { loadData, STATIC, SITE_NAME } from './lib/api.js';
@@ -19,12 +9,23 @@ import { resolveBuild, scoreBuild } from './lib/builds.js';
 import { repairBuild } from './lib/patchAware.js';
 import { generateBuilds } from './lib/generator.js';
 import { buildStats, perkStatsTable, periodLabel } from './lib/nlStats.js';
-import PatchNotes from './components/PatchNotes.jsx';
 import Home from './components/Home.jsx';
 import BuildCard from './components/BuildCard.jsx';
-import Challenges from './components/Challenges.jsx';
 import Achievements, { AchievementToasts } from './components/Achievements.jsx';
 import { useChallenges } from './lib/challengeStore.js';
+
+const PerkList = lazy(() => import('./components/PerkList.jsx'));
+const PerkRanking = lazy(() => import('./components/PerkRanking.jsx'));
+const CharacterList = lazy(() => import('./components/CharacterList.jsx'));
+const ItemList = lazy(() => import('./components/ItemList.jsx'));
+const OfferingList = lazy(() => import('./components/OfferingList.jsx'));
+const BuildList = lazy(() => import('./components/BuildList.jsx'));
+const Combos = lazy(() => import('./components/Combos.jsx'));
+const BuildMaker = lazy(() => import('./components/BuildMaker.jsx'));
+const Favorites = lazy(() => import('./components/Favorites.jsx'));
+const Community = lazy(() => import('./components/Community.jsx'));
+const PatchNotes = lazy(() => import('./components/PatchNotes.jsx'));
+const Challenges = lazy(() => import('./components/Challenges.jsx'));
 
 /** Always visible in the header; the rest sits under "More". */
 const PRIMARY_TABS = ['builds', 'maker', 'community', 'ranking', 'patchnotes'];
@@ -173,11 +174,20 @@ export default function App() {
     });
   }, [data]);
 
-  // Automatically generated builds: recalculated from the current data, so they
-  // follow every patch. Hand-picked builds come first, generated ones after.
+  // Automatically generated builds: in static builds these are precomputed at
+  // build time so startup stays instant; in local mode they recalculate live.
   const allBuilds = useMemo(() => {
     if (!data) return [];
-    const generated = generateBuilds(data, builds, data.changes).map((b) => ({ ...b, nl: buildStats(b, data.stats) }));
+    const generated = Array.isArray(data.generatedBuilds)
+      ? data.generatedBuilds.map((b) => {
+          const r = resolveBuild(b, data);
+          const build = {
+            ...r,
+            rating: scoreBuild(r.resolved.perks, b.role, b.playstyles, { stats: data.stats, killerId: r.resolved.killer?.id }),
+          };
+          return { ...build, nl: buildStats(build, data.stats) };
+        })
+      : generateBuilds(data, builds, data.changes).map((b) => ({ ...b, nl: buildStats(b, data.stats) }));
     return [...builds, ...generated];
   }, [data, builds]);
 
@@ -256,7 +266,7 @@ export default function App() {
             </div>
           </details>
         </nav>
-        <DataStatus meta={data?.meta} onRefreshed={load} />
+        <DataStatus meta={data?.meta} initialStatus={data?.status} onRefreshed={load} />
       </header>
 
       <main>
@@ -265,34 +275,36 @@ export default function App() {
         {data && tab === 'home' && (
           <Home data={data} builds={allBuilds} onOpen={setTab} onShowBuild={setFocusBuild} />
         )}
-        {data && tab === 'patchnotes' && <PatchNotes data={data} builds={allBuilds} onShowBuild={setFocusBuild} />}
-        {data && tab === 'builds' && (
-          <BuildList key={buildFilter.key} initial={buildFilter} builds={allBuilds} killers={data.killers} favorites={favorites} />
-        )}
-        {data && tab === 'combos' && (
-          <Combos data={data} builds={allBuilds} perkId={comboPerk} setPerkId={setComboPerk} favorites={favorites} />
-        )}
-        {data && tab === 'maker' && (
-          <BuildMaker data={data} builds={builds} favorites={favorites} onShared={() => setTab('community')} />
-        )}
-        {data && tab === 'community' && (
-          <Community data={data} favorites={favorites} picks={allBuilds.filter((b) => b.type === 'creator')} onOpenMaker={() => setTab('maker')} />
-        )}
-        {data && tab === 'challenges' && <Challenges data={data} curated={builds} store={challenges} />}
-        {tab === 'achievements' && <Achievements store={challenges} />}
-        {data && tab === 'favorites' && (
-          <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} perks={data.perks} />
-        )}
-        {data && tab === 'perks' && <PerkList perks={data.perks} stats={data.stats} />}
-        {data && tab === 'ranking' && <PerkRanking perks={data.perks} stats={data.stats} />}
-        {data && tab === 'killers' && (
-          <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
-        )}
-        {data && tab === 'survivors' && (
-          <CharacterList characters={data.survivors} perksById={perksById} stats={data.stats} role="survivor" />
-        )}
-        {data && tab === 'items' && <ItemList items={data.items} addons={data.addons} />}
-        {data && tab === 'offerings' && <OfferingList offerings={data.offerings} />}
+        <Suspense fallback={<p className="muted">Loading…</p>}>
+          {data && tab === 'patchnotes' && <PatchNotes data={data} builds={allBuilds} onShowBuild={setFocusBuild} />}
+          {data && tab === 'builds' && (
+            <BuildList key={buildFilter.key} initial={buildFilter} builds={allBuilds} killers={data.killers} favorites={favorites} />
+          )}
+          {data && tab === 'combos' && (
+            <Combos data={data} builds={allBuilds} perkId={comboPerk} setPerkId={setComboPerk} favorites={favorites} />
+          )}
+          {data && tab === 'maker' && (
+            <BuildMaker data={data} builds={builds} favorites={favorites} onShared={() => setTab('community')} />
+          )}
+          {data && tab === 'community' && (
+            <Community data={data} favorites={favorites} picks={allBuilds.filter((b) => b.type === 'creator')} onOpenMaker={() => setTab('maker')} />
+          )}
+          {data && tab === 'challenges' && <Challenges data={data} curated={builds} store={challenges} />}
+          {tab === 'achievements' && <Achievements store={challenges} />}
+          {data && tab === 'favorites' && (
+            <Favorites builds={allBuilds} customBuilds={customBuilds} favorites={favorites} perks={data.perks} />
+          )}
+          {data && tab === 'perks' && <PerkList perks={data.perks} stats={data.stats} />}
+          {data && tab === 'ranking' && <PerkRanking perks={data.perks} stats={data.stats} />}
+          {data && tab === 'killers' && (
+            <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
+          )}
+          {data && tab === 'survivors' && (
+            <CharacterList characters={data.survivors} perksById={perksById} stats={data.stats} role="survivor" />
+          )}
+          {data && tab === 'items' && <ItemList items={data.items} addons={data.addons} />}
+          {data && tab === 'offerings' && <OfferingList offerings={data.offerings} />}
+        </Suspense>
       </main>
 
       {focusBuild && (

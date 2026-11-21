@@ -1,7 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import BuildCard from './BuildCard.jsx';
 import { PLAYSTYLES } from '../lib/tags.js';
 import { makeQuery } from '../lib/search.js';
+
+const PAGE_SIZE = 36;
 
 // Builds with NightLight stats: an exact match counts most, otherwise the perk averages.
 const nlRate = (b) => (b.nl ? (b.nl.exact?.rate ?? b.nl.avgRate ?? -1) - (b.nl.baseline ?? 0) : -99);
@@ -21,8 +23,13 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
   const [onlyNew, setOnlyNew] = useState(false);
   const [showStyles, setShowStyles] = useState(false);
   const [sort, setSort] = useState('score');
+  const [limit, setLimit] = useState(PAGE_SIZE);
   const anyStats = builds.some((b) => b.nl);
   const anyNew = builds.some((b) => b.newPerks?.length);
+
+  useEffect(() => {
+    setLimit(PAGE_SIZE);
+  }, [role, type, killer, styles, query, onlyNew, sort]);
 
   const toggleStyle = (s) => setStyles(styles.includes(s) ? styles.filter((x) => x !== s) : [...styles, s]);
   const changeRole = (r) => {
@@ -133,11 +140,23 @@ export default function BuildList({ builds, killers, favorites, initial = {} }) 
       )}
 
       {shown.length ? (
-        <div className="build-grid">
-          {shown.map((b) => (
-            <BuildCard key={b.id} build={b} favorites={favorites} />
-          ))}
-        </div>
+        <>
+          <div className="build-grid">
+            {shown.slice(0, limit).map((b) => (
+              <BuildCard key={b.id} build={b} favorites={favorites} />
+            ))}
+          </div>
+          {shown.length > limit && (
+            <div className="load-more-row">
+              <button className="h2-btn" onClick={() => setLimit((n) => n + PAGE_SIZE)}>
+                Show more ({Math.min(PAGE_SIZE, shown.length - limit)} of {shown.length - limit} remaining)
+              </button>
+              <button className="link-button small" onClick={() => setLimit(shown.length)}>
+                Show all ({shown.length})
+              </button>
+            </div>
+          )}
+        </>
       ) : (
         <p className="muted">
           No builds match these filters{role === 'killer' && killer !== 'all' ? ` for ${killer} yet` : ''}.

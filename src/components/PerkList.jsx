@@ -1,8 +1,10 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import PerkCard from './PerkCard.jsx';
 import { makeQuery } from '../lib/search.js';
 import { iconSrc } from '../lib/format.js';
 import { PERK_VERDICTS } from '../lib/nlStats.js';
+
+const PAGE_SIZE = 48;
 
 // Perks without NightLight numbers always go last.
 const SORTS = {
@@ -52,7 +54,7 @@ function PerkStatsTable({ perks, sort, setSort }) {
             return (
               <tr key={p.id} className={nl ? `verdict-${nl.verdict}` : ''}>
                 <td>
-                  <img src={iconSrc(p.icon)} alt="" loading="lazy" />
+                  <img src={iconSrc(p.icon)} alt="" loading="lazy" decoding="async" />
                   {p.name}
                 </td>
                 <td className="muted">{p.role === 'killer' ? 'Killer' : 'Survivor'}</td>
@@ -78,7 +80,12 @@ export default function PerkList({ perks, stats = null }) {
   const [sort, setSort] = useState('name');
   const [verdict, setVerdict] = useState('all');
   const [view, setView] = useState('cards');
+  const [limit, setLimit] = useState(PAGE_SIZE);
   const hasStats = perks.some((p) => p.nl);
+
+  useEffect(() => {
+    setLimit(PAGE_SIZE);
+  }, [role, query, sort, verdict, view]);
 
   const shown = useMemo(() => {
     const q = makeQuery(query);
@@ -163,11 +170,23 @@ export default function PerkList({ perks, stats = null }) {
       {view === 'table' && hasStats ? (
         <PerkStatsTable perks={shown} sort={sort} setSort={setSort} />
       ) : (
-        <div className="grid">
-          {shown.map((p) => (
-            <PerkCard key={p.id} perk={p} />
-          ))}
-        </div>
+        <>
+          <div className="grid">
+            {shown.slice(0, limit).map((p) => (
+              <PerkCard key={p.id} perk={p} />
+            ))}
+          </div>
+          {shown.length > limit && (
+            <div className="load-more-row">
+              <button className="h2-btn" onClick={() => setLimit((n) => n + PAGE_SIZE)}>
+                Show more ({Math.min(PAGE_SIZE, shown.length - limit)} of {shown.length - limit} remaining)
+              </button>
+              <button className="link-button small" onClick={() => setLimit(shown.length)}>
+                Show all ({shown.length})
+              </button>
+            </div>
+          )}
+        </>
       )}
     </section>
   );

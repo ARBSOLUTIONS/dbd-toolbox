@@ -1320,3 +1320,5 @@ main { padding-top: 22px; }
 .build-card:hover, .build-card:focus-within { z-index: 20; }
 .build-card.type-creator { --type-color: #e8a33d; }
 .community-picks-title { margin: 28px 0 4px; }
+.perk-card { content-visibility: auto; contain-intrinsic-size: auto 220px; }
+.load-more-row { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 24px 0 8px; }
