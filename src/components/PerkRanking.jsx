@@ -25,7 +25,7 @@ function PerkChip({ e, by, selected, onSelect }) {
       title={`${e.perk.name}: ${fmt(e.rate)} ${e.rateLabel} (${signed(e.delta)} vs average), used in ${fmt(e.usage)} of games, ${e.count} games`}
     >
       <span className="rank-place">#{e.place}</span>
-      <img src={iconSrc(e.perk.icon)} alt="" loading="lazy" />
+      <img src={iconSrc(e.perk.icon)} alt="" width="24" height="24" loading="lazy" decoding="async" />
       <span className="rank-name">{e.perk.name}</span>
       <span className="rank-num">{by === 'popularity' ? fmt(e.usage) : fmt(e.rate)}</span>
       <Movement value={e.movement} />
@@ -154,7 +154,7 @@ export default function PerkRanking({ perks, stats }) {
                 <tr key={e.perk.id} className={selected === e.perk.id ? 'active' : ''} onClick={() => setSelected(selected === e.perk.id ? null : e.perk.id)}>
                   <td>{e.place}</td>
                   <td>
-                    <img src={iconSrc(e.perk.icon)} alt="" loading="lazy" />
+                    <img src={iconSrc(e.perk.icon)} alt="" width="24" height="24" loading="lazy" decoding="async" />
                     {e.perk.name}
                   </td>
                   <td>
@@ -190,7 +190,7 @@ export default function PerkRanking({ perks, stats }) {
           <div className="tier-perks">
             {ranking.unranked.map((e) => (
               <button key={e.perk.id} className="rank-chip muted-chip" onClick={() => setSelected(e.perk.id)} title={`${e.count} games`}>
-                <img src={iconSrc(e.perk.icon)} alt="" loading="lazy" />
+                <img src={iconSrc(e.perk.icon)} alt="" width="24" height="24" loading="lazy" decoding="async" />
                 <span className="rank-name">{e.perk.name}</span>
                 <span className="rank-num">{e.count} games</span>
               </button>

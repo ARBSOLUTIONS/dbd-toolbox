@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import Picker from './Picker.jsx';
-import { ScoreBadge } from './BuildCard.jsx';
+import ScoreBadge from './ScoreBadge.jsx';
 import ScoreBreakdown from './ScoreBreakdown.jsx';
 import { ITEM_TYPE_LABEL } from './ItemList.jsx';
 import { RARITY_LABEL } from './PerkCard.jsx';
@@ -10,6 +10,7 @@ import { scoreBuild } from '../lib/builds.js';
 import { suggestPerks, suggestItemTypes, suggestAddons } from '../lib/combos.js';
 import { bestOffering, stars } from '../lib/offeringRatings.js';
 import { shareBuild } from '../lib/community.js';
+import { makerShareUrl } from '../lib/urlState.js';
 
 const EMPTY = {
   role: 'survivor',
@@ -26,6 +27,7 @@ const EMPTY = {
 export default function BuildMaker({ data, builds, favorites, initial, onShared }) {
   const [b, setB] = useState(initial ?? EMPTY);
   const [saved, setSaved] = useState(false);
+  const [copiedLink, setCopiedLink] = useState(false);
   const [offeringSort, setOfferingSort] = useState('win');
   const [share, setShare] = useState(null); // null | { description, author, busy, error, done }
   const set = (patch) => {
@@ -149,6 +151,14 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
   function saveFavorite() {
     favorites.saveCustom(toBuildObject());
     setSaved(true);
+  }
+
+  function copyBuildLink() {
+    const url = makerShareUrl(b);
+    navigator.clipboard?.writeText(url).then(() => {
+      setCopiedLink(true);
+      setTimeout(() => setCopiedLink(false), 1800);
+    }).catch(() => {});
   }
 
   return (
@@ -351,6 +361,9 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
         <div className="maker-actions">
           <button className="primary" disabled={!chosen.length} onClick={saveFavorite}>
             {saved ? '★ Saved to favourites' : '☆ Save build to favourites'}
+          </button>
+          <button disabled={!chosen.length} onClick={copyBuildLink}>
+            {copiedLink ? '✓ Link copied!' : '🔗 Copy build link'}
           </button>
           <button
             disabled={!chosen.length}

@@ -10,7 +10,7 @@ function appDataUrl() {
   if (!STATIC) return '/api/data';
   const preload =
     typeof document !== 'undefined' &&
-    document.querySelector('link[rel="preload"][as="fetch"][href^="/data/app-data"]');
+    document.querySelector('link[rel="preload"][as="fetch"][href^="/data/"]');
   return preload?.getAttribute('href') || '/data/app-data.json';
 }
 
@@ -19,6 +19,18 @@ export function loadData() {
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
     return r.json();
   });
+}
+
+let extraPromise = null;
+export function loadExtraData(url) {
+  if (!url) return Promise.resolve(null);
+  if (!extraPromise) {
+    extraPromise = fetch(url).then((r) => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    });
+  }
+  return extraPromise;
 }
 
 /** Auto-update status: live from the server, or the snapshot made at build time. */

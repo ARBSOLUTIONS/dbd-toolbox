@@ -2,7 +2,11 @@ import { useLayoutEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
+import { buildCardShareUrl } from '../lib/urlState.js';
+import ScoreBadge from './ScoreBadge.jsx';
 import ScoreBreakdown from './ScoreBreakdown.jsx';
+
+export { ScoreBadge };
 
 export function Slot({ entity, fallback, big, showOwner }) {
   const owner = showOwner && entity ? entity.owner ?? null : undefined;
@@ -22,11 +26,11 @@ export function Slot({ entity, fallback, big, showOwner }) {
       onBlur={() => setTip(null)}
       title={entity ? undefined : fallback}
     >
-      {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" loading="lazy" decoding="async" /> : <div className="slot-empty" />}
+      {entity ? <img src={iconSrc(entity.icon ?? entity.portrait)} alt="" width="48" height="48" loading="lazy" decoding="async" /> : <div className="slot-empty" />}
       <span>{entity?.name ?? fallback ?? '—'}</span>
       {owner !== undefined && (
         <span className={`slot-owner ${owner ? '' : 'general'}`}>
-          {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" loading="lazy" decoding="async" />}
+          {owner?.portrait && <img src={iconSrc(owner.portrait)} alt="" width="14" height="14" loading="lazy" decoding="async" />}
           {owner ? (entity.role === 'survivor' ? owner.name.split(' ')[0] : owner.name.replace(/^The /, '')) : 'General'}
         </span>
       )}
@@ -68,22 +72,6 @@ function SlotTip({ entity, pos }) {
   );
 }
 
-export function ScoreBadge({ score, community = null, plain = false }) {
-  const level = score >= 80 ? 'high' : score >= 55 ? 'mid' : 'low';
-  return (
-    <div
-      className={`score score-${level}`}
-      title={plain ? undefined :
-        'Score (0-100): how well these perks fit together and with the playstyle' +
-        (community ? `, ${community.points >= 0 ? '+' : ''}${community.points} from NightLight community stats (how often the perks win)` : '') +
-        '. A rough guide, not a win rate.'
-      }
-    >
-      {score}
-    </div>
-  );
-}
-
 /** One line with this build's NightLight numbers (see src/lib/nlStats.js). */
 function NightLightLine({ nl }) {
   const diff = (rate) => (rate != null && nl.baseline != null ? rate - nl.baseline : null);
@@ -121,7 +109,15 @@ function NightLightLine({ nl }) {
 export default function BuildCard({ build, favorites, footer }) {
   const [open, setOpen] = useState(false);
   const [scoreHover, setScoreHover] = useState(false);
+  const [copied, setCopied] = useState(false);
   const { resolved, rating } = build;
+  const copyLink = () => {
+    const url = buildCardShareUrl(build);
+    navigator.clipboard?.writeText(url).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1800);
+    }).catch(() => {});
+  };
   const labels = PLAYSTYLES[build.role];
   const changedPerks = (build.patchNotes ?? []).filter((n) => n.kind === 'changed').map((n) => n.perk);
   // At most one status badge, most important first.
@@ -160,6 +156,14 @@ export default function BuildCard({ build, favorites, footer }) {
           </div>
         </div>
         <div className="build-head-right">
+          <button
+            className={`copy-link-btn ${copied ? 'copied' : ''}`}
+            title={copied ? 'Link copied!' : 'Copy link to this build'}
+            aria-label="Copy link to this build"
+            onClick={copyLink}
+          >
+            {copied ? '✓' : '🔗'}
+          </button>
           {favorites && (
             <button
               className={`star ${favorites.isFavorite(build.id) ? 'on' : ''}`}

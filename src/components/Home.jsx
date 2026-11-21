@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 import { iconSrc } from '../lib/format.js';
 import { analysePatch } from '../lib/patchImpact.js';
-import { ScoreBadge } from './BuildCard.jsx';
+import ScoreBadge from './ScoreBadge.jsx';
 
 function MiniBuild({ build, onShow }) {
   return (
     <button className="mini-build" onClick={() => onShow(build)}>
       <div className="mini-build-perks">
         {build.resolved.perks.map((p, i) =>
-          p ? <img key={i} src={iconSrc(p.icon)} alt={p.name} title={p.name} loading="lazy" decoding="async" /> : <span key={i} className="slot-empty" />,
+          p ? <img key={i} src={iconSrc(p.icon)} alt={p.name} title={p.name} width="36" height="36" loading="lazy" decoding="async" /> : <span key={i} className="slot-empty" />,
         )}
       </div>
       <div className="grow">

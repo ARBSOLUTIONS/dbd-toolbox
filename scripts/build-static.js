@@ -16,6 +16,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 import { withTags, PLAYSTYLES } from '../src/lib/tags.js';
 import { resolveBuild, scoreBuild } from '../src/lib/builds.js';
 import { repairBuild } from '../src/lib/patchAware.js';
@@ -54,8 +55,9 @@ const readJson = async (rel, fallback) => {
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const para = (text) => esc(text).replace(/\n/g, '<br>');
+const toWebpPath = (src) => (typeof src === 'string' && src.startsWith('/icons/') && src.endsWith('.png') ? src.slice(0, -4) + '.webp' : src);
 const icon = (e, size = 64) => {
-  const src = e?.icon?.local ?? e?.portrait?.local;
+  const src = toWebpPath(e?.icon?.local ?? e?.portrait?.local);
   return src ? `<img src="${src}" alt="${esc(e.name)} icon" width="${size}" height="${size}" loading="lazy" decoding="async">` : '';
 };
 const short = (text, n = 155) => {
@@ -98,25 +100,27 @@ const perkById = new Map(data.perks.map((p) => [p.id, p]));
 const today = new Date().toISOString().slice(0, 10);
 const lastmod = (meta.fetchedAt ?? new Date().toISOString()).slice(0, 10);
 
-// ---------- 1. App data ----------
+// ---------- 1. App data & WebP icons ----------
 // Trim fields that the public static app never needs:
 // - remote wiki icon URLs when a local cached icon exists (~175 KB saved)
+// - rewrite /icons/*.png -> /icons/*.webp (60-75% smaller icons on static site)
 // - survivor topPerks beyond top 10 / topBuilds beyond top 5 (~500 KB saved; CharacterList only renders those)
-// Also embed pre-generated build blueprints + auto-update status so the browser
-// avoids running generateBuilds() (~5.6 s) and an extra /data/status.json waterfall.
-const stripRemote = (list, field = 'icon') =>
+// Split payload into:
+// - data/core-data.<hash>.json  (preloaded for instant Home / Perks / Ranking)
+// - data/extra-data.<hash>.json (lazy-loaded in background for addons, offerings & per-character top perks/builds)
+const compactIcons = (list, field = 'icon') =>
   list.map((x) => {
     const img = x[field];
-    if (!img?.local || !img.remote) return x;
-    return { ...x, [field]: { local: img.local } };
+    if (!img?.local) return x;
+    return { ...x, [field]: { local: toWebpPath(img.local) } };
   });
 const compactRaw = {
-  perks: stripRemote(raw.perks, 'icon'),
-  killers: stripRemote(raw.killers, 'portrait'),
-  survivors: stripRemote(raw.survivors, 'portrait'),
-  items: stripRemote(raw.items, 'icon'),
-  addons: stripRemote(raw.addons, 'icon'),
-  offerings: stripRemote(raw.offerings, 'icon'),
+  perks: compactIcons(raw.perks, 'icon'),
+  killers: compactIcons(raw.killers, 'portrait'),
+  survivors: compactIcons(raw.survivors, 'portrait'),
+  items: compactIcons(raw.items, 'icon'),
+  addons: compactIcons(raw.addons, 'icon'),
+  offerings: compactIcons(raw.offerings, 'icon'),
 };
 const compactStats = stats
   ? {
@@ -135,6 +139,51 @@ const compactStats = stats
         : undefined,
     }
   : null;
+const coreStats = compactStats
+  ? {
+      ...compactStats,
+      killers: compactStats.killers
+        ? Object.fromEntries(
+            Object.entries(compactStats.killers).map(([id, { topPerks: _tp, topBuilds: _tb, ...rest }]) => [id, rest]),
+          )
+        : undefined,
+      survivors: compactStats.survivors
+        ? Object.fromEntries(
+            Object.entries(compactStats.survivors).map(([id, { topPerks: _tp, topBuilds: _tb, ...rest }]) => [id, rest]),
+          )
+        : undefined,
+    }
+  : null;
+const killerStatsDetails = compactStats?.killers
+  ? Object.fromEntries(
+      Object.entries(compactStats.killers).map(([id, e]) => [id, { topPerks: e.topPerks ?? [], topBuilds: e.topBuilds ?? [] }]),
+    )
+  : null;
+const survivorStatsDetails = compactStats?.survivors
+  ? Object.fromEntries(
+      Object.entries(compactStats.survivors).map(([id, e]) => [id, { topPerks: e.topPerks ?? [], topBuilds: e.topBuilds ?? [] }]),
+    )
+  : null;
+
+const curatedBuilds = curated.map((b) => ({
+  id: b.id,
+  name: b.name,
+  role: b.role,
+  type: b.type,
+  variant: b.variant,
+  killer: b.killer,
+  playstyles: b.playstyles,
+  perks: b.perks,
+  item: b.item,
+  ...(b.itemAddons ? { itemAddons: b.itemAddons } : {}),
+  ...(b.addons ? { addons: b.addons } : {}),
+  offering: b.offering,
+  why: b.why,
+  howToPlay: b.howToPlay,
+  ...(b.source ? { source: b.source } : {}),
+  ...(b.patchNotes?.length ? { patchNotes: b.patchNotes } : {}),
+  ...(b.patch ? { patch: b.patch } : {}),
+}));
 const generatedBuilds = generated.map((b) => ({
   id: b.id,
   name: b.name,
@@ -152,6 +201,10 @@ const generatedBuilds = generated.map((b) => ({
   howToPlay: b.howToPlay,
   ...(b.newPerks?.length ? { newPerks: b.newPerks } : {}),
 }));
+// Exact precomputed [score, communityPoints] so Home shows final scores even before extra-data arrives.
+const preScores = Object.fromEntries(
+  allBuilds.map((b) => [b.id, [b.rating.score, b.rating.community?.points ?? null]]),
+);
 const prediction = predictNextPatch(history, autoState.announcements ?? meta.announcements ?? [], new Date());
 const statusPayload = {
   enabled: true,
@@ -160,6 +213,40 @@ const statusPayload = {
   lastResult: autoState.lastResult ?? null,
   prediction,
 };
+
+const extraDataJson = JSON.stringify({
+  addons: compactRaw.addons,
+  offerings: compactRaw.offerings,
+  killerStatsDetails,
+  survivorStatsDetails,
+});
+const extraDataHash = crypto.createHash('sha256').update(extraDataJson).digest('hex').slice(0, 10);
+const extraDataFile = `data/extra-data.${extraDataHash}.json`;
+await write(extraDataFile, extraDataJson);
+
+const coreDataJson = JSON.stringify({
+  meta,
+  perks: compactRaw.perks,
+  killers: compactRaw.killers,
+  survivors: compactRaw.survivors,
+  items: compactRaw.items,
+  addons: [],
+  offerings: [],
+  changes,
+  stats: coreStats,
+  patchNotes,
+  patchHistory: history,
+  curated: { builds: curatedBuilds },
+  curatedRepaired: true,
+  generatedBuilds,
+  preScores,
+  status: statusPayload,
+  extraDataUrl: `/${extraDataFile}`,
+});
+const coreDataHash = crypto.createHash('sha256').update(coreDataJson).digest('hex').slice(0, 10);
+const coreDataFile = `data/core-data.${coreDataHash}.json`;
+await write(coreDataFile, coreDataJson);
+
 const appDataJson = JSON.stringify({
   meta,
   ...compactRaw,
@@ -171,9 +258,6 @@ const appDataJson = JSON.stringify({
   generatedBuilds,
   status: statusPayload,
 });
-const appDataHash = crypto.createHash('sha256').update(appDataJson).digest('hex').slice(0, 10);
-const appDataFile = `data/app-data.${appDataHash}.json`;
-await write(appDataFile, appDataJson);
 await write('data/app-data.json', appDataJson);
 await write('data/status.json', JSON.stringify(statusPayload));
 // Tiny name/type index for functions/api/community so the Worker avoids parsing the full app-data.json on cold start.
@@ -187,7 +271,37 @@ await write(
     offerings: raw.offerings.map((o) => ({ name: o.name })),
   }),
 );
-await fs.cp(path.join(ROOT, 'data', 'icons'), path.join(DIST, 'icons'), { recursive: true });
+
+// Convert PNG icons from data/icons -> WebP in dist/icons (keeping data/icons/*.png untouched for local dev).
+async function buildWebpIcons(srcRoot, dstRoot) {
+  const files = [];
+  async function walk(dir) {
+    for (const entry of await fs.readdir(dir, { withFileTypes: true })) {
+      const full = path.join(dir, entry.name);
+      if (entry.isDirectory()) await walk(full);
+      else files.push(full);
+    }
+  }
+  await walk(srcRoot);
+  await fs.rm(dstRoot, { recursive: true, force: true });
+  let idx = 0;
+  const worker = async () => {
+    while (idx < files.length) {
+      const src = files[idx++];
+      const rel = path.relative(srcRoot, src);
+      const isPng = rel.toLowerCase().endsWith('.png');
+      const dst = path.join(dstRoot, isPng ? rel.slice(0, -4) + '.webp' : rel);
+      await fs.mkdir(path.dirname(dst), { recursive: true });
+      if (isPng) {
+        await sharp(src).webp({ quality: 82, alphaQuality: 90, effort: 4 }).toFile(dst);
+      } else {
+        await fs.copyFile(src, dst);
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 16 }, worker));
+}
+await buildWebpIcons(path.join(ROOT, 'data', 'icons'), path.join(DIST, 'icons'));
 
 if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace('ca-', '')}, DIRECT, f08c47fec0942fa0
 `);
@@ -195,7 +309,7 @@ if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace
 // ---------- 2. Page template ----------
 const urls = []; // for the sitemap
 
-function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
+function page({ url, title, description, body, jsonLd = [], crumbs = [], ctaHref = '/', ctaLabel = 'Open the interactive build generator →' }) {
   urls.push(url);
   const canonical = `${SITE_URL}${url}`;
   const breadcrumb = crumbs.length
@@ -237,7 +351,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
 ${adSlot}
-<p class="cta"><a class="button" href="/">Open the interactive build generator →</a></p>
+<p class="cta"><a class="button" href="${esc(ctaHref)}">${esc(ctaLabel)}</a></p>
 </main>
 <footer>Data: <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a> (CC BY-NC-SA 3.0), patch ${esc(meta.patch)}, updated ${lastmod}.
 ${SITE} is a free fan project, not affiliated with Behaviour Interactive. <a href="/about/">About &amp; licence</a></footer>
@@ -294,7 +408,16 @@ ${usedIn.length ? `<div class="grid">${usedIn.map(buildCardHtml).join('')}</div>
   };
   await write(
     `perks/${p.id}/index.html`,
-    page({ url: `/perks/${p.id}/`, title, description, body, jsonLd: [faq], crumbs: [{ name: 'Perks', url: '/perks/' }, { name: p.name, url: `/perks/${p.id}/` }] }),
+    page({
+      url: `/perks/${p.id}/`,
+      title,
+      description,
+      body,
+      jsonLd: [faq],
+      crumbs: [{ name: 'Perks', url: '/perks/' }, { name: p.name, url: `/perks/${p.id}/` }],
+      ctaHref: `/?tab=combos&perk=${encodeURIComponent(p.id)}`,
+      ctaLabel: `Find best combos for ${p.name} in the interactive app →`,
+    }),
   );
 }
 
@@ -314,6 +437,8 @@ ${usedIn.length ? `<div class="grid">${usedIn.map(buildCardHtml).join('')}</div>
       description: `Every Dead by Daylight survivor and killer perk for patch ${meta.patch}, with descriptions, playstyle tags and the best perk combinations.`,
       body: `<h1>All Dead by Daylight perks</h1><p>Patch ${esc(meta.patch)}. Click a perk to see what it does and which perks work best with it.${stats?.perks ? ' See also the <a href="/perk-ranking/">perk ranking</a> from community stats.' : ''}</p>${section('survivor')}${section('killer')}`,
       crumbs: [{ name: 'Perks', url: '/perks/' }],
+      ctaHref: '/?tab=perks',
+      ctaLabel: 'Search & filter all perks in the interactive app →',
     }),
   );
 }
@@ -348,6 +473,8 @@ if (stats?.perks && Object.keys(stats.perks).length) {
 <p>Survivor and killer perks ranked by how often they win compared with the average perk, from matches players upload to <a href="https://nightlight.gg">NightLight</a> (${esc(periodLabel(stats))}). The difference is shrunk for small samples (× games ÷ (games + ${PRIOR_GAMES})), so a perk with only a few games cannot top the list. Tiers: S ≥ +3, A ≥ +1.25, B about average, C ≤ −1.25, D ≤ −3. Community numbers are a strong hint, not proof: a perk can also win because good players pick it.</p>
 ${section('survivor')}${section('killer')}`,
       crumbs: [{ name: 'Perk ranking', url: '/perk-ranking/' }],
+      ctaHref: '/?tab=ranking',
+      ctaLabel: 'Open the interactive perk ranking →',
     }),
   );
 }
@@ -384,6 +511,8 @@ ${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><
       description: `All ${list.length} Dead by Daylight ${folder} with their unique perks${role === 'killer' ? ', add-ons and recommended builds' : ''}.`,
       body: `<h1>All Dead by Daylight ${folder}</h1><ul class="tiles">${list.map((c) => `<li><a href="/${folder}/${c.id}/">${icon(c, 72)}<span>${esc(c.name)}</span></a></li>`).join('')}</ul>`,
       crumbs: [{ name: `${roleLabel(role)}s`, url: `/${folder}/` }],
+      ctaHref: `/?tab=${folder}`,
+      ctaLabel: `Browse all ${folder} in the interactive app →`,
     }),
   );
 }
@@ -429,7 +558,15 @@ ${scoreSection(b)}
 ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b.rating.pros.map((r) => `<li>✓ ${esc(r)}</li>`).join('')}${b.rating.cons.map((r) => `<li>✗ ${esc(r)}</li>`).join('')}</ul>` : ''}`;
   await write(
     `builds/${b.id}/index.html`,
-    page({ url: buildUrl(b), title, description, body, crumbs: [{ name: 'Builds', url: '/builds/' }, { name: b.name, url: buildUrl(b) }] }),
+    page({
+      url: buildUrl(b),
+      title,
+      description,
+      body,
+      crumbs: [{ name: 'Builds', url: '/builds/' }, { name: b.name, url: buildUrl(b) }],
+      ctaHref: `/?tab=builds&build=${encodeURIComponent(b.id)}`,
+      ctaLabel: 'Open this build in the interactive app →',
+    }),
   );
 }
 {
@@ -445,6 +582,8 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
       description: `The best Dead by Daylight survivor and killer builds for patch ${meta.patch}: meta, fun and auto-generated combinations, each with explanation and synergy score.`,
       body: `<h1>Dead by Daylight builds</h1><p>Hand-picked meta and fun builds plus builds generated from the current patch data. Updated automatically after every patch.</p>${section('survivor', 'Survivor builds')}${section('killer', 'Killer builds')}`,
       crumbs: [{ name: 'Builds', url: '/builds/' }],
+      ctaHref: '/?tab=builds',
+      ctaLabel: 'Filter & sort all builds in the interactive app →',
     }),
   );
 }
@@ -511,6 +650,8 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
         .join('')}</ul>`,
       jsonLd: [faq],
       crumbs: [{ name: 'Offerings', url: '/offerings/' }],
+      ctaHref: '/?tab=offerings',
+      ctaLabel: 'Open the interactive offerings tier list →',
     }),
   );
 }
@@ -576,7 +717,7 @@ urls.pop();
 <meta property="og:type" content="website"><meta property="og:site_name" content="${SITE}">
 <meta property="og:title" content="${SITE} – ${TAGLINE}"><meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${SITE_URL}/"><meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="${SITE_URL}/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="${SITE_URL}/og-image.png">
-<link rel="preload" href="/${appDataFile}" as="fetch" crossorigin>
+<link rel="preload" href="/${coreDataFile}" as="fetch" crossorigin>
 ${verification}
 ${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}`;
@@ -651,7 +792,9 @@ await write(
   '_headers',
   `/assets/*
   Cache-Control: public, max-age=31536000, immutable
-/data/app-data.*.json
+/data/core-data.*.json
+  Cache-Control: public, max-age=31536000, immutable
+/data/extra-data.*.json
   Cache-Control: public, max-age=31536000, immutable
 /data/app-data.json
   Cache-Control: public, max-age=300, stale-while-revalidate=3600

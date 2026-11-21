@@ -188,7 +188,7 @@ export default function CharacterList({ characters, perksById, addons = [], stat
             className={`killer-tile ${c.id === selected ? 'active' : ''}`}
             onClick={() => setSelected(c.id === selected ? null : c.id)}
           >
-            <img src={iconSrc(c.portrait)} alt="" loading="lazy" />
+            <img src={iconSrc(c.portrait)} alt="" width="68" height="68" loading="lazy" decoding="async" />
             <span>{role === 'killer' ? c.name.replace(/^The /, '') : c.name}</span>
             {byId[c.id] && (
               <span className="tile-stat small muted">
