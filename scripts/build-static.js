@@ -97,6 +97,9 @@ const allBuilds = [...curated, ...generated];
 const perkById = new Map(data.perks.map((p) => [p.id, p]));
 const today = new Date().toISOString().slice(0, 10);
 const lastmod = (meta.fetchedAt ?? new Date().toISOString()).slice(0, 10);
+// Every page shows build scores, which include the NightLight community part,
+// so a page also changes when new stats are imported.
+const sitemapLastmod = [lastmod, stats?.collectedAt?.slice(0, 10)].filter(Boolean).sort().at(-1);
 
 // ---------- 1. App data ----------
 // Trim fields that the public static app never needs:
@@ -195,8 +198,13 @@ if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace
 // ---------- 2. Page template ----------
 const urls = []; // for the sitemap
 
-function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
-  urls.push(url);
+// Google shows about 60 characters of a title; drop the site name before the
+// page's own words get cut off.
+const fitTitle = (title) => (title.length > 60 && title.endsWith(` | ${SITE}`) ? title.slice(0, -` | ${SITE}`.length) : title);
+
+function page({ url, title, description, body, jsonLd = [], crumbs = [], noindex = false }) {
+  if (!noindex) urls.push(url);
+  title = fitTitle(title);
   const canonical = `${SITE_URL}${url}`;
   const breadcrumb = crumbs.length
     ? {
@@ -218,7 +226,7 @@ function page({ url, title, description, body, jsonLd = [], crumbs = [] }) {
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
-<link rel="canonical" href="${canonical}">
+${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">`}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${SITE}">
 <meta property="og:title" content="${esc(title)}">
@@ -411,12 +419,16 @@ ${c ? `<h3>NightLight numbers per perk</h3><p class="muted">${label} of each per
 }
 
 // ---------- 5. Build pages ----------
+const buildTitles = new Set();
 for (const b of allBuilds) {
   const perks = b.resolved.perks.filter(Boolean);
   const kind = b.type === 'beginner' ? 'beginner-friendly' : b.type === 'auto' ? 'auto-generated' : b.type === 'popular' ? 'most played (community stats)' : b.type === 'creator' ? 'community-recommended' : b.type === 'meta' ? 'strong (meta)' : 'fun';
   const who = b.killer ?? (b.role === 'killer' ? 'any killer' : 'survivors');
-  const title = `${b.name} – ${b.role === 'killer' ? `${who} build` : 'survivor build'}: ${perks.map((p) => p.name).join(', ')} | ${SITE}`;
-  const description = short(`${b.name}: a ${kind} Dead by Daylight build for ${who}. ${b.why}`);
+  let title = `${b.name} – ${b.role === 'killer' ? `${who} build` : 'survivor build'} | ${SITE}`;
+  // Two builds can share a name; the first two perks tell them apart.
+  if (buildTitles.has(title)) title = `${b.name} – ${perks.slice(0, 2).map((p) => p.name).join(' & ')} | ${SITE}`;
+  buildTitles.add(title);
+  const description = short(`${b.name}: a ${kind} Dead by Daylight build for ${who} with ${perks.map((p) => p.name).join(', ')}. ${b.why}`);
   const extra = [b.resolved.item, b.resolved.killer, ...(b.resolved.addons ?? []), b.resolved.offering].filter(Boolean);
   const body = `<h1>${esc(b.name)}</h1>
 <p class="muted">A ${esc(kind)} Dead by Daylight build for ${esc(who)} · playstyle: ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')} · synergy score ${b.rating.score}/100 · patch ${esc(meta.patch)}</p>
@@ -493,7 +505,7 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
     page({
       url: '/offerings/',
       title: `Best Dead by Daylight offerings – tier list & Bloodpoint farming (${meta.patch}) | ${SITE}`,
-      description: `Dead by Daylight offerings tier list for patch ${meta.patch}: every killer and survivor offering rated 1–5 stars for how much it helps you win. Best: ${best.join(', ')}.`,
+      description: short(`Dead by Daylight offerings tier list for patch ${meta.patch}: every offering rated 1–5 stars for how much it helps you win. Best: ${best.join(', ')}.`),
       body: `<h1>Dead by Daylight offerings tier list</h1>
 <p>Every offering rated from 1 to 5 stars for how much it helps you <strong>win the match</strong>. Bloodpoint offerings are great for grinding but do nothing in the match, so they are in D tier. Patch ${esc(meta.patch)}.</p>
 <p class="jump"><a class="button" href="#farming">🩸 Best offerings for farming Bloodpoints ↓</a> <a class="button" href="#killer">🏆 Best killer offerings ↓</a> <a class="button" href="#survivor">🏆 Best survivor offerings ↓</a></p>
@@ -533,19 +545,16 @@ await write(
     crumbs: [{ name: 'About', url: '/about/' }],
   }),
 );
-urls.pop(); // keep /about/ in sitemap? yes: re-add below with low priority
-urls.push('/about/');
 await write(
   '404.html',
-  page({ url: '/404', title: `Page not found | ${SITE}`, description: 'This page does not exist.', body: '<h1>Page not found</h1><p>This page does not exist (anymore). Perks are sometimes renamed after a patch.</p>' }),
+  page({ url: '/404', noindex: true, title: `Page not found | ${SITE}`, description: 'This page does not exist.', body: '<h1>Page not found</h1><p>This page does not exist (anymore). Perks are sometimes renamed after a patch.</p>' }),
 );
-urls.pop();
 
 // ---------- 7. Home page (the React app) with crawlable fallback content ----------
 {
   const file = path.join(DIST, 'index.html');
   let html = await fs.readFile(file, 'utf8');
-  const description = `Free Dead by Daylight build generator: the best meta & fun survivor and killer builds for patch ${meta.patch}, perk combos, a build maker with ratings, and a challenge generator with achievements.`;
+  const description = `Free Dead by Daylight build generator: meta & fun survivor and killer builds for patch ${meta.patch}, perk combos, a build maker and challenges.`;
   // Verification codes: from environment variables or from seo.config.json in the repo.
   const seoConfig = await readJson('seo.config.json', {});
   const google = process.env.GOOGLE_SITE_VERIFICATION || seoConfig.googleSiteVerification;
@@ -598,7 +607,7 @@ await write(
   'sitemap.xml',
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map((u) => `<url><loc>${SITE_URL}${u}</loc><lastmod>${lastmod}</lastmod></url>`).join('\n')}
+${urls.map((u) => `<url><loc>${SITE_URL}${u}</loc><lastmod>${sitemapLastmod}</lastmod></url>`).join('\n')}
 </urlset>`,
 );
 await write(
