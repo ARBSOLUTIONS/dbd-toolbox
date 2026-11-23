@@ -269,15 +269,20 @@ export function parsePerks(html) {
 }
 
 /**
- * Parses the big character table (on the /wiki/Killers page it lists both
- * Killers and Survivors) and returns the characters of one role with portraits.
+ * Parses the character portraits on a wiki page and returns the characters of
+ * one role. Since 2026-11 /wiki/Killers lists only Killers and /wiki/Survivors
+ * only Survivors, and the portraits no longer sit in a table.charTable.
  */
+// Since 2026-11 the wiki puts the display name in front of the aliases.
+const withoutLeadingName = (aliases, name) =>
+  aliases === name ? '' : aliases.startsWith(`${name} `) ? aliases.slice(name.length + 1) : aliases;
+
 export function parseCharacters(html, role) {
   const $ = cheerio.load(html);
   const list = [];
   const seen = new Set();
 
-  $('table.charTable .charPortraitWrapper').each((_, wrap) => {
+  $('.charPortraitWrapper').each((_, wrap) => {
     if (!$(wrap).find(`.charPortraitRoleBg.${role}`).length) return;
     const link = $(wrap).find('.charPortraitImage a').first();
     const name = (link.attr('title') || '').trim();
@@ -287,7 +292,7 @@ export function parseCharacters(html, role) {
     list.push({
       id: slugify(name),
       name,
-      aliases: ($(wrap).attr('data-search-aliases') || '').trim(),
+      aliases: withoutLeadingName(($(wrap).attr('data-search-aliases') || '').trim(), name),
       portrait: iconFromSrc($(wrap).find('.charPortraitImage img').attr('src'), 128),
       wikiUrl: WIKI_BASE + (link.attr('href') || ''),
     });

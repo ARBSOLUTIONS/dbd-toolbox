@@ -168,10 +168,11 @@ export async function refreshData(log = console.log) {
   log(`  found ${perks.length} perks`);
 
   log('Fetching killers...');
-  // This page's character table lists both Killers and Survivors.
-  const charactersHtml = await politeFetch('/wiki/Killers');
-  const killers = parseKillers(charactersHtml);
-  const survivors = parseSurvivors(charactersHtml);
+  const killersHtml = await politeFetch('/wiki/Killers');
+  const killers = parseKillers(killersHtml);
+  // Survivors used to share the Killers page; since 2026-11 they have their own.
+  let survivors = parseSurvivors(killersHtml);
+  if (!survivors.length) survivors = parseSurvivors(await politeFetch('/wiki/Survivors'));
   log(`  found ${killers.length} killers and ${survivors.length} survivors`);
 
   log('Fetching items...');
