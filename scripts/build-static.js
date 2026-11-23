@@ -198,6 +198,18 @@ if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace
 
 // ---------- 2. Page template ----------
 const urls = []; // for the sitemap
+// Same fonts as the app (index.html), loaded without blocking the first paint.
+const FONTS = 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap';
+const NAV = [
+  ['/', 'Build generator'],
+  ['/builds/', 'Builds'],
+  ['/perks/', 'Perks'],
+  ['/patch/', `Patch ${esc(meta.patch)}`],
+  ['/perk-ranking/', 'Perk ranking'],
+  ['/killers/', 'Killers'],
+  ['/survivors/', 'Survivors'],
+  ['/offerings/', 'Offerings'],
+];
 
 // Google shows about 60 characters of a title; drop the site name before the
 // page's own words get cut off.
@@ -235,13 +247,15 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <meta property="og:url" content="${canonical}">
 <meta name="twitter:card" content="summary_large_image"><meta property="og:image" content="${SITE_URL}/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:image" content="${SITE_URL}/og-image.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="${FONTS}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="${FONTS}"></noscript>
 <link rel="stylesheet" href="/seo.css">
 ${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 </head>
 <body>
 <header class="top"><a class="logo" href="/"><img src="/logo.svg" alt="" width="32" height="32">DBD<span>Toolbox</span></a>
-<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/patch/">Patch ${esc(meta.patch)}</a><a href="/perk-ranking/">Perk ranking</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
+<nav>${NAV.map(([href, label]) => `<a href="${href}"${href !== '/' && url.startsWith(href) ? ' aria-current="page"' : ''}>${label}</a>`).join('')}</nav></header>
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
@@ -487,37 +501,55 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
   const newSurvivors = data.survivors.filter((c) => newNames('survivors').includes(c.name));
   const patchDate = history.find((h) => h.version === meta.patch)?.date;
   const real = impact.perks.filter((x) => x.judgement.verdict !== 'text');
-  const best = (role, n = 6) =>
-    allBuilds.filter((b) => b.role === role && b.type !== 'auto').sort((a, b) => b.rating.score - a.rating.score).slice(0, n);
-  const withNew = allBuilds.filter((b) => b.resolved.perks.some((p) => p && merged.newPerkIds.includes(p.id))).slice(0, 6);
-  const charLink = (c, folder) => `<li>${icon(c, 40)} <a href="/${folder}/${c.id}/">${esc(c.name)}</a></li>`;
+  const count = (k, word) => `${k} ${word}${k === 1 ? '' : 's'}`;
+  const byScore = (a, b) => b.rating.score - a.rating.score;
+  // Each build is shown once: the first section that wants it gets it.
+  const shown = new Set();
+  const take = (list, n) => {
+    const out = list.filter((b) => !shown.has(b.id)).slice(0, n);
+    out.forEach((b) => shown.add(b.id));
+    return out;
+  };
+  const grid = (list) => (list.length ? `<div class="grid">${list.map(buildCardHtml).join('')}</div>` : '');
   const topPerks = (role) =>
     stats?.perks ? rankPerks(data.perks, stats, { role }).ranked.slice(0, 5).map((e) => perkLink(e.perk)).join(', ') : '';
 
   // The wiki often lists a new killer before the patch is out, so the refresh
   // on patch day sees nothing new. The killers page is in release order, so
-  // the last one is the newest: always show it with its perks and builds.
+  // when the patch added no killer, the last one is shown as the newest.
+  const charCard = (c, role, label) => {
+    const folder = `${role}s`;
+    const own = (c.perks ?? []).map((id) => perkById.get(id)).filter(Boolean);
+    const power = role === 'killer' ? data.addons.find((a) => a.killer === c.name)?.power : null;
+    const builds = role === 'killer' ? take(allBuilds.filter((b) => b.killer === c.name).sort(byScore), 3) : [];
+    return `<article class="hero">${icon(c, 96)}<div><p class="eyebrow">${label}</p><h3><a href="/${folder}/${c.id}/">${esc(c.name)}</a></h3>
+<p class="muted">Dead by Daylight ${role}${power ? ` · Power: ${esc(power)}` : ''}</p>${own.length ? `<p class="small">Perks: ${own.map(perkLink).join(', ')}</p>` : ''}</div></article>${grid(builds)}`;
+  };
   const newest = newKillers.length ? null : data.killers.at(-1);
-  const newestPerks = newest ? (newest.perks ?? []).map((id) => perkById.get(id)).filter(Boolean) : [];
-  const newestBuilds = newest ? allBuilds.filter((b) => b.killer === newest.name).sort((a, b) => b.rating.score - a.rating.score).slice(0, 3) : [];
-  const newestHtml = newest
-    ? `<h2>Newest killer: ${esc(newest.name)}</h2><article class="hero">${icon(newest, 96)}<div><p><a href="/killers/${newest.id}/">${esc(newest.name)} builds, perks &amp; add-ons</a></p><p>Perks: ${newestPerks.map(perkLink).join(', ')}</p></div></article>${newestBuilds.length ? `<div class="grid">${newestBuilds.map(buildCardHtml).join('')}</div>` : ''}`
-    : '';
+
   const whatsNew = [
-    newKillers.length ? `<h3>New killer${newKillers.length > 1 ? 's' : ''}</h3><ul class="combos">${newKillers.map((c) => charLink(c, 'killers')).join('')}</ul>` : '',
-    newSurvivors.length ? `<h3>New survivor${newSurvivors.length > 1 ? 's' : ''}</h3><ul class="combos">${newSurvivors.map((c) => charLink(c, 'survivors')).join('')}</ul>` : '',
+    ...newKillers.map((c) => charCard(c, 'killer', 'New killer')),
+    ...newSurvivors.map((c) => charCard(c, 'survivor', 'New survivor')),
     impact.newPerks.length ? `<h3>New perks (${impact.newPerks.length})</h3><ul class="combos">${impact.newPerks.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} <span class="muted">${roleLabel(p.role)}</span> – ${esc(short(p.description, 180))}</li>`).join('')}</ul>` : '',
     real.length
       ? `<h3>Perk changes (${real.length})</h3><p class="muted">Buff or nerf is judged by this site from the old and new perk text (numbers, durations, conditions).</p><ul class="combos">${real
-          .map((x) => `<li>${x.perk ? icon(x.perk, 32) : ''} ${x.perk ? perkLink(x.perk) : esc(x.name)} <strong>${VERDICTS[x.judgement.verdict].icon} ${LEVELS[x.judgement.level] ?? ''} ${VERDICTS[x.judgement.verdict].label.toLowerCase()}</strong> <span class="muted">${roleLabel(x.role)} perk, in ${x.builds.length} build${x.builds.length === 1 ? '' : 's'}</span>${x.judgement.changes.length ? `<br><span class="small">${x.judgement.changes.map((c) => esc(c.label)).join(' · ')}</span>` : ''}</li>`)
+          .map((x) => `<li>${x.perk ? icon(x.perk, 32) : ''} ${x.perk ? perkLink(x.perk) : esc(x.name)} <strong class="verdict ${x.judgement.verdict}">${VERDICTS[x.judgement.verdict].icon} ${LEVELS[x.judgement.level] ?? ''} ${VERDICTS[x.judgement.verdict].label.toLowerCase()}</strong> <span class="muted">${roleLabel(x.role)} perk, in ${count(x.handPicked, 'hand-picked build')}</span>${x.judgement.changes.length ? `<br><span class="small">${x.judgement.changes.map((c) => esc(c.label)).join(' · ')}</span>` : ''}</li>`)
           .join('')}</ul>`
       : '',
   ].join('');
-  const affected = impact.builds.filter((e) => !['auto', 'popular'].includes(e.build.type)).slice(0, 6).map((e) => e.build);
+  // Sections in page order, so take() gives each build to the first one.
+  const newestHtml = newest ? `<h2>Newest killer</h2>${charCard(newest, 'killer', 'Newest killer')}` : '';
+  const newPerkKeys = new Set(impact.newPerks.map((p) => `${p.role}:${p.id}`));
+  const withNew = take(allBuilds.filter((b) => b.resolved.perks.some((p) => p && newPerkKeys.has(`${p.role}:${p.id}`))).sort(byScore), 6);
+  const affected = take(impact.builds.filter((e) => !['auto', 'popular'].includes(e.build.type)).map((e) => e.build), 6);
+  const bestOf = (role) => take(allBuilds.filter((b) => b.role === role && b.type !== 'auto').sort(byScore), 6);
+  const bestKiller = bestOf('killer');
+  const bestSurvivor = bestOf('survivor');
+
   const summary = [
-    newKillers.length ? `new killer ${newKillers.map((c) => c.name).join(', ')}` : '',
-    impact.newPerks.length ? `${impact.newPerks.length} new perks` : '',
-    real.length ? `${real.length} perk changes` : '',
+    newKillers.length ? `new killer${newKillers.length > 1 ? 's' : ''} ${newKillers.map((c) => c.name).join(' & ')}` : '',
+    impact.newPerks.length ? count(impact.newPerks.length, 'new perk') : '',
+    real.length ? count(real.length, 'perk change') : '',
   ].filter(Boolean);
   const description = short(
     `Dead by Daylight patch ${meta.patch}${patchDate ? ` (${patchDate})` : ''}: ${summary.length ? `${summary.join(', ')}, ` : ''}the best killer and survivor builds now and which builds the patch changes.`,
@@ -526,19 +558,19 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
     'patch/index.html',
     page({
       url: '/patch/',
-      title: `Best DBD builds for patch ${meta.patch}${newKillers.length ? ` (${newKillers[0].name})` : ''} – what changed | ${SITE}`,
+      title: `Best DBD builds for patch ${meta.patch}${newKillers.length ? ` (${newKillers.map((c) => c.name).join(' & ')})` : ''} – what changed | ${SITE}`,
       description,
       body: `<h1>Best Dead by Daylight builds for patch ${esc(meta.patch)}</h1>
-<p>Patch ${esc(meta.patch)}${patchDate ? `, released ${esc(patchDate)}` : ''}. This page updates automatically when a new patch comes out: what changed for perks and characters, which builds are affected, and the strongest builds right now.</p>
+<p class="muted">Patch ${esc(meta.patch)}${patchDate ? `, released ${esc(patchDate)}` : ''}. This page updates automatically when a new patch comes out: what changed for perks and characters, which builds are affected, and the strongest builds right now.</p>
 <h2>What changed in patch ${esc(meta.patch)}</h2>
-${whatsNew || '<p>No perk or character changes in this patch so far. Changes appear here as soon as the Dead by Daylight Wiki is updated.</p>'}
+${whatsNew || '<p class="muted">No perk or character changes in this patch so far. Changes appear here as soon as the Dead by Daylight Wiki is updated.</p>'}
 ${newestHtml}
-${withNew.length ? `<h2>Builds with the new perks</h2><div class="grid">${withNew.map(buildCardHtml).join('')}</div>` : ''}
-${affected.length ? `<h2>Builds changed by this patch</h2><p class="muted">Hand-picked builds that use a perk that changed.</p><div class="grid">${affected.map(buildCardHtml).join('')}</div>` : ''}
-<h2>Best killer builds in patch ${esc(meta.patch)}</h2><div class="grid">${best('killer').map(buildCardHtml).join('')}</div>
-<h2>Best survivor builds in patch ${esc(meta.patch)}</h2><div class="grid">${best('survivor').map(buildCardHtml).join('')}</div>
-${stats?.perks ? `<h2>Top perks from community stats</h2><p>Survivor: ${topPerks('survivor')}.<br>Killer: ${topPerks('killer')}.</p><p class="muted">From NightLight (${esc(periodLabel(stats))}). Full list: <a href="/perk-ranking/">perk ranking</a>.</p>` : ''}
-<p><a href="/builds/">All builds</a> · <a href="/perks/">All perks</a> · <a href="/killers/">All killers</a></p>`,
+${withNew.length ? `<h2>Builds with the new perks</h2>${grid(withNew)}` : ''}
+${affected.length ? `<h2>Builds changed by this patch</h2><p class="muted">Hand-picked builds that use a perk that changed.</p>${grid(affected)}` : ''}
+<h2>Best killer builds in patch ${esc(meta.patch)}</h2>${grid(bestKiller)}
+<h2>Best survivor builds in patch ${esc(meta.patch)}</h2>${grid(bestSurvivor)}
+${stats?.perks ? `<h2>Top perks from community stats</h2><ul class="combos"><li><strong>Survivor:</strong> ${topPerks('survivor')}</li><li><strong>Killer:</strong> ${topPerks('killer')}</li></ul><p class="muted">From NightLight (${esc(periodLabel(stats))}). Full list: <a href="/perk-ranking/">perk ranking</a>.</p>` : ''}
+<p class="jump"><a class="button" href="/builds/">All builds</a> <a class="button" href="/perks/">All perks</a> <a class="button" href="/killers/">All killers</a></p>`,
       crumbs: [{ name: `Patch ${meta.patch}`, url: '/patch/' }],
     }),
   );
