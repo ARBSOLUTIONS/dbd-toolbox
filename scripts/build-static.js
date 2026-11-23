@@ -198,6 +198,9 @@ if (ADSENSE_CLIENT) await write('ads.txt', `google.com, ${ADSENSE_CLIENT.replace
 
 // ---------- 2. Page template ----------
 const urls = []; // for the sitemap
+// seo.css is cached for a day; a content hash in the URL makes a changed
+// stylesheet reach visitors together with the HTML that needs it.
+const SEO_CSS_VERSION = crypto.createHash('sha256').update(await fs.readFile(path.join(ROOT, 'scripts', 'seo.css'))).digest('hex').slice(0, 10);
 // Same fonts as the app (index.html), loaded without blocking the first paint.
 const FONTS = 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap';
 const NAV = [
@@ -249,7 +252,7 @@ ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" hr
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="${FONTS}" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="${FONTS}"></noscript>
-<link rel="stylesheet" href="/seo.css">
+<link rel="stylesheet" href="/seo.css?v=${SEO_CSS_VERSION}">
 ${adHead}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
 </head>
