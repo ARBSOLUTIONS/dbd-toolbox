@@ -297,10 +297,10 @@ export default function App() {
           {data && tab === 'perks' && <PerkList perks={data.perks} stats={data.stats} />}
           {data && tab === 'ranking' && <PerkRanking perks={data.perks} stats={data.stats} />}
           {data && tab === 'killers' && (
-            <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" />
+            <CharacterList characters={data.killers} perksById={perksById} addons={data.addons} stats={data.stats} role="killer" builds={allBuilds} onShowBuild={setFocusBuild} />
           )}
           {data && tab === 'survivors' && (
-            <CharacterList characters={data.survivors} perksById={perksById} stats={data.stats} role="survivor" />
+            <CharacterList characters={data.survivors} perksById={perksById} stats={data.stats} role="survivor" builds={allBuilds} onShowBuild={setFocusBuild} />
           )}
           {data && tab === 'items' && <ItemList items={data.items} addons={data.addons} />}
           {data && tab === 'offerings' && <OfferingList offerings={data.offerings} />}

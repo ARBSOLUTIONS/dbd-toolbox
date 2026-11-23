@@ -697,3 +697,49 @@ footer.site-footer {
   .mainnav-menu { animation: none; }
   .h2-diamond, .mainnav-more svg { transition: none; }
 }
+
+/* ---------- Character pop-up (killers & survivors) ---------- */
+.modal.char-modal {
+  width: min(760px, 100%);
+  padding: 22px 24px 18px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.9);
+}
+.char-modal .modal-close { top: 10px; right: 10px; }
+.char-head { display: flex; gap: 18px; align-items: center; margin-bottom: 6px; }
+.char-head img { width: 112px; height: 112px; flex: none; object-fit: cover; border-radius: var(--radius); background: var(--panel-2); border: 1px solid var(--border); }
+.char-head h2 { margin: 0 0 4px; font-size: 1.7rem; font-weight: 600; }
+.char-head p { margin: 2px 0; }
+.char-links { display: flex; gap: 14px; margin-top: 8px !important; }
+.char-modal section { margin-top: 18px; }
+.char-modal h3 { margin: 0 0 10px; font-size: 1.05rem; font-weight: 500; }
+.char-facts { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.char-facts li { position: relative; padding-left: 16px; color: var(--muted); }
+.char-facts li::before { content: ''; position: absolute; left: 2px; top: 0.6em; width: 6px; height: 6px; background: var(--accent); transform: rotate(45deg); }
+.char-perks { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.char-perks li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); }
+.char-perks img { flex: none; }
+.char-perks p { margin: 4px 0 0; white-space: pre-line; color: var(--muted); }
+.char-builds { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.char-builds button {
+  width: 100%; display: flex; align-items: center; gap: 12px; padding: 8px 12px; text-align: left;
+  background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.char-builds button:hover { border-color: var(--border-strong); background: #161616; }
+.char-build-perks { display: flex; gap: 2px; flex: none; }
+.char-build-name { flex: 1; min-width: 0; font-weight: 500; }
+.char-build-score {
+  flex: none; display: inline-grid; place-items: center; width: 34px; height: 34px;
+  border: 2px solid #4caf50; border-radius: 50%; color: #4caf50; font-weight: 700; font-size: 0.85rem;
+}
+.char-more { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px; }
+.char-more summary { cursor: pointer; font-weight: 500; color: var(--text); }
+.char-more[open] summary { margin-bottom: 12px; }
+@media (max-width: 600px) {
+  .modal.char-modal { padding: 16px; }
+  .char-head img { width: 80px; height: 80px; }
+  .char-head h2 { font-size: 1.35rem; }
+  .char-build-perks img { width: 28px; height: 28px; }
+}

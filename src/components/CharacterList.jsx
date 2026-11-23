@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import PerkCard, { EntityCard, RARITY_LABEL, sortByRarity } from './PerkCard.jsx';
+import { useEffect, useRef, useState } from 'react';
+import { EntityCard, RARITY_LABEL, sortByRarity } from './PerkCard.jsx';
 import { iconSrc } from '../lib/format.js';
 import { baselineRate, periodLabel, MIN_SAMPLES } from '../lib/nlStats.js';
+import { PLAYSTYLES } from '../lib/tags.js';
 
 const fmt = (v, digits = 1) => (v == null ? '–' : `${v.toFixed(digits)}%`);
 
@@ -147,24 +148,206 @@ function StatsCredit({ stats }) {
   );
 }
 
+const list = (words) => (words.length < 2 ? words.join('') : `${words.slice(0, -1).join(', ')} and ${words.at(-1)}`);
+
 /**
- * Grid of character portraits (killers or survivors). Clicking one shows its
- * unique perks, for killers its power add-ons, and community stats.
+ * A few plain facts about how a character plays, worked out from the data:
+ * what their unique perks do, how they do in community stats, and which
+ * build this site rates highest for them.
  */
-export default function CharacterList({ characters, perksById, addons = [], stats = null, role = 'killer' }) {
+function glance({ character, role, perks, entry, byId, stats, best }) {
+  const out = [];
+  const counts = {};
+  for (const p of perks) for (const t of p.tags ?? []) counts[t] = (counts[t] ?? 0) + 1;
+  const tags = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([t]) => (PLAYSTYLES[role]?.[t] ?? t).toLowerCase());
+  if (tags.length) out.push(`${character.name}'s unique perks are about ${list(tags)}.`);
+  const key = role === 'killer' ? 'killRate' : 'escapeRate';
+  const rate = entry?.[key];
+  const avg = baselineRate(stats, role);
+  if (rate != null && avg != null && (entry.matches ?? 0) >= 150) {
+    const ranked = Object.values(byId)
+      .filter((e) => e[key] != null && (e.matches ?? 0) >= 150)
+      .sort((a, b) => b[key] - a[key]);
+    const place = ranked.indexOf(entry) + 1;
+    const diff = rate - avg;
+    const strength = Math.abs(diff) < 1 ? 'about average' : diff > 0 ? 'above average' : 'below average';
+    out.push(
+      `${role === 'killer' ? 'Kill' : 'Escape'} rate ${rate.toFixed(1)}% in community matches this patch: ${strength}${place ? `, #${place} of ${ranked.length}` : ''}.`,
+    );
+  }
+  if (entry?.pickRate != null) {
+    const byPick = Object.values(byId)
+      .filter((e) => e.pickRate != null)
+      .sort((a, b) => b.pickRate - a.pickRate);
+    const place = byPick.indexOf(entry) + 1;
+    if (place) out.push(`#${place} most played of ${byPick.length} (${entry.pickRate.toFixed(2)}% of games).`);
+  }
+  if (best) out.push(`Highest rated build on this site ${role === 'killer' ? 'for them' : 'with their perks'}: ${best.name} (${best.rating.score}/100).`);
+  return out;
+}
+
+/** Pop-up with everything about one killer or survivor. */
+function CharacterModal({ character, role, perksById, addons, stats, byId, builds, onShowBuild, onClose }) {
+  const closeRef = useRef(null);
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (e) => {
+      // A build pop-up opened from here sits on top and closes first.
+      if (e.key === 'Escape' && document.querySelectorAll('.modal-backdrop').length < 2) onClose();
+    };
+    window.addEventListener('keydown', onKey);
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = overflow;
+    };
+  }, [onClose]);
+
+  const perks = (character.perks ?? []).map((id) => perksById[id]).filter(Boolean);
+  const charAddons = role === 'killer' ? sortByRarity(addons.filter((a) => a.killer === character.name)) : [];
+  const power = charAddons[0]?.power;
+  const entry = byId[character.id];
+  const own = new Set(character.perks ?? []);
+  const related = builds
+    .filter((b) =>
+      role === 'killer'
+        ? b.killer === character.name
+        : b.role === 'survivor' && b.resolved?.perks?.some((p) => p && own.has(p.id)),
+    )
+    .sort((a, b) => b.rating.score - a.rating.score)
+    .slice(0, 4);
+  const facts = glance({ character, role, perks, entry, byId, stats, best: related[0] });
+
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      <div
+        className="modal char-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label={character.name}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button ref={closeRef} className="modal-close" onClick={onClose} aria-label="Close">
+          ✕
+        </button>
+        <header className="char-head">
+          <img src={iconSrc(character.portrait)} alt="" width="112" height="112" />
+          <div>
+            <p className="eyebrow">{role === 'killer' ? 'Killer' : 'Survivor'}</p>
+            <h2>{character.name}</h2>
+            {power && <p className="muted">Power: {power}</p>}
+            <p className="char-links small">
+              <a href={`/${role}s/${character.id}/`}>Full page</a>
+              <a href={character.wikiUrl} target="_blank" rel="noreferrer">
+                Wiki ↗
+              </a>
+            </p>
+          </div>
+        </header>
+
+        {facts.length > 0 && (
+          <section>
+            <h3>At a glance</h3>
+            <ul className="char-facts">
+              {facts.map((f) => (
+                <li key={f}>{f}</li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        <section>
+          <h3>Unique perks</h3>
+          <ul className="char-perks">
+            {perks.map((p) => (
+              <li key={p.id}>
+                <img src={iconSrc(p.icon)} alt="" width="48" height="48" loading="lazy" />
+                <div>
+                  <strong>{p.name}</strong>
+                  {p.tags?.length > 0 && (
+                    <span className="small muted"> · {p.tags.map((t) => PLAYSTYLES[role]?.[t] ?? t).join(', ')}</span>
+                  )}
+                  <p className="small">{p.description}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {related.length > 0 && (
+          <section>
+            <h3>{role === 'killer' ? `Best builds for ${character.name}` : 'Builds with their perks'}</h3>
+            <ul className="char-builds">
+              {related.map((b) => (
+                <li key={b.id}>
+                  <button type="button" onClick={() => onShowBuild?.(b)}>
+                    <span className="char-build-perks">
+                      {b.resolved.perks.filter(Boolean).map((p) => (
+                        <img key={p.id} src={iconSrc(p.icon)} alt="" title={p.name} width="36" height="36" loading="lazy" />
+                      ))}
+                    </span>
+                    <span className="char-build-name">{b.name}</span>
+                    <span className="char-build-score">{b.rating.score}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {Object.keys(byId).length > 0 && (
+          <details className="char-more">
+            <summary>Community stats (current patch)</summary>
+            <CharacterStats entry={entry} stats={stats} role={role} />
+            <TopUsage entry={entry} perksById={perksById} role={role} />
+          </details>
+        )}
+
+        {charAddons.length > 0 && (
+          <details className="char-more">
+            <summary>
+              {power ?? 'Power'} add-ons ({charAddons.length})
+            </summary>
+            <div className="grid">
+              {charAddons.map((a) => (
+                <EntityCard key={a.id} entity={a} subtitle={RARITY_LABEL[a.rarity] ?? a.rarity} />
+              ))}
+            </div>
+          </details>
+        )}
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Grid of character portraits (killers or survivors). Clicking one opens a
+ * pop-up with its unique perks, a short summary, best builds, community stats
+ * and (killers) its power add-ons.
+ */
+export default function CharacterList({
+  characters,
+  perksById,
+  addons = [],
+  stats = null,
+  role = 'killer',
+  builds = [],
+  onShowBuild,
+}) {
   const [selected, setSelected] = useState(null);
   const [sort, setSort] = useState('release');
   const character = characters.find((c) => c.id === selected);
-  const charAddons = character
-    ? sortByRarity(addons.filter((a) => a.killer === character.name))
-    : [];
-  const power = charAddons[0]?.power;
   const byId = (role === 'killer' ? stats?.killers : stats?.survivors) ?? {};
   const hasStats = Object.keys(byId).length > 0;
   const SORTS = sorts(role);
   const sortFn = SORTS[sort].fn;
   const shown = sortFn ? [...characters].sort((a, b) => sortFn(a, b, byId)) : characters;
   const tileRate = (s) => (role === 'killer' ? `${fmt(s.killRate)} kills` : `${fmt(s.escapeRate)} escapes`);
+  const close = useRef(() => setSelected(null)).current;
 
   return (
     <section>
@@ -186,7 +369,8 @@ export default function CharacterList({ characters, perksById, addons = [], stat
           <button
             key={c.id}
             className={`killer-tile ${c.id === selected ? 'active' : ''}`}
-            onClick={() => setSelected(c.id === selected ? null : c.id)}
+            onClick={() => setSelected(c.id)}
+            aria-haspopup="dialog"
           >
             <img src={iconSrc(c.portrait)} alt="" loading="lazy" />
             <span>{role === 'killer' ? c.name.replace(/^The /, '') : c.name}</span>
@@ -200,39 +384,17 @@ export default function CharacterList({ characters, perksById, addons = [], stat
       </div>
 
       {character && (
-        <div className="killer-detail">
-          <h2>
-            {character.name}{' '}
-            <a className="small" href={character.wikiUrl} target="_blank" rel="noreferrer">
-              wiki ↗
-            </a>
-          </h2>
-          {power && <p className="muted">Power: {power}</p>}
-
-          {hasStats && (
-            <>
-              <h3 className="section-title">Community stats (current patch)</h3>
-              <CharacterStats entry={byId[character.id]} stats={stats} role={role} />
-              <TopUsage entry={byId[character.id]} perksById={perksById} role={role} />
-            </>
-          )}
-
-          <h3 className="section-title">Unique perks</h3>
-          <div className="grid">
-            {character.perks.map((id) => perksById[id] && <PerkCard key={id} perk={perksById[id]} />)}
-          </div>
-
-          {charAddons.length > 0 && (
-            <>
-              <h3 className="section-title">Add-ons ({charAddons.length})</h3>
-              <div className="grid">
-                {charAddons.map((a) => (
-                  <EntityCard key={a.id} entity={a} subtitle={RARITY_LABEL[a.rarity] ?? a.rarity} />
-                ))}
-              </div>
-            </>
-          )}
-        </div>
+        <CharacterModal
+          character={character}
+          role={role}
+          perksById={perksById}
+          addons={addons}
+          stats={stats}
+          byId={byId}
+          builds={builds}
+          onShowBuild={onShowBuild}
+          onClose={close}
+        />
       )}
     </section>
   );
