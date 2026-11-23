@@ -282,15 +282,47 @@ export default function PatchNotes({ data, builds, onShowBuild }) {
       {history.length > 0 && (
         <>
           <h2 className="section-title">Patch timeline</h2>
+          <p className="muted small">
+            Pick a patch: the ones this site tracked open here, older ones open the patch notes on the Dead by Daylight Wiki.
+          </p>
           <ol className="patch-timeline">
-            {history.slice(0, 12).map((h, i) => (
-              <li key={h.version} className={i === 0 ? 'current' : ''}>
-                <strong>{h.version}</strong>
-                <span className="muted small">
-                  {new Date(`${h.date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-                </span>
-              </li>
-            ))}
+            {history.slice(0, 12).map((h, i) => {
+              const date = new Date(`${h.date}T12:00:00Z`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+              // Prefer the record with the real patch change over later wiki edits.
+              const own = records
+                .map((r, n) => ({ r, n }))
+                .filter(({ r }) => r.toPatch === h.version)
+                .sort((a, b) => (b.r.fromPatch !== b.r.toPatch) - (a.r.fromPatch !== a.r.toPatch) || (b.r.total ?? 0) - (a.r.total ?? 0))[0];
+              const selected = record?.toPatch === h.version;
+              const label = (
+                <>
+                  <strong>{h.version}</strong>
+                  <span className="muted small">{date}</span>
+                  <span className="timeline-hint small">{own ? (selected ? 'Showing' : 'Open here') : 'Wiki ↗'}</span>
+                </>
+              );
+              return (
+                <li key={h.version} className={`${selected ? 'current' : ''} ${i === 0 ? 'latest' : ''}`}>
+                  {own ? (
+                    <button
+                      type="button"
+                      aria-pressed={selected}
+                      onClick={() => {
+                        setIndex(own.n);
+                        setFilter('all');
+                        document.querySelector('.patch-notes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }}
+                    >
+                      {label}
+                    </button>
+                  ) : (
+                    <a href={`https://deadbydaylight.wiki.gg/wiki/Patch_${encodeURIComponent(h.version)}`} target="_blank" rel="noreferrer">
+                      {label}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ol>
         </>
       )}

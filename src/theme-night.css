@@ -592,7 +592,11 @@ footer.site-footer {
 .mainnav-item span { font-size: 0.8rem; color: var(--muted); line-height: 1.35; }
 .mainnav-item:hover { background: rgba(255, 255, 255, 0.05); }
 .mainnav-item.active strong { color: var(--accent-text); }
-.topbar .status-chip { flex: none; margin-left: auto; }
+/* The nav keeps its width; the patch pill gives way and is cut off with "…"
+   instead of running over the nav links. */
+.topbar .mainnav { flex: none; }
+.topbar .status-chip { flex: 0 1 auto; min-width: 0; margin-left: auto; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 1000px) and (min-width: 861px) { .topbar .status-chip { display: none; } }
 
 @media (max-width: 860px) {
   .topbar { flex-wrap: wrap; }
@@ -743,3 +747,15 @@ footer.site-footer {
   .char-head h2 { font-size: 1.35rem; }
   .char-build-perks img { width: 28px; height: 28px; }
 }
+
+/* ---------- Patch timeline: every item is clickable ---------- */
+.patch-timeline li { padding: 0; overflow: hidden; }
+.patch-timeline li > button, .patch-timeline li > a {
+  display: flex; flex-direction: column; gap: 2px; padding: 8px 12px; min-width: 112px;
+  background: none; border: 0; border-radius: 0; color: inherit; text-align: left; text-decoration: none; font: inherit; cursor: pointer;
+}
+.patch-timeline li:hover { border-color: var(--border-strong); background: var(--panel-2); }
+.patch-timeline li > button:focus-visible, .patch-timeline li > a:focus-visible { outline: 2px solid var(--accent-text); outline-offset: -2px; }
+.patch-timeline li.current { border-color: var(--accent); box-shadow: none; }
+.timeline-hint { color: var(--accent-text); margin-top: 2px; }
+.patch-timeline li.current .timeline-hint { color: var(--muted); }

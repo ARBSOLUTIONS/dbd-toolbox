@@ -22,6 +22,7 @@ import { repairBuild } from '../src/lib/patchAware.js';
 import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
+import { settings as autoSettings } from '../server/autoUpdate.js';
 import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
 import { analysePatch, VERDICTS, LEVELS } from '../src/lib/patchImpact.js';
 import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, MIN_SAMPLES, periodLabel } from '../src/lib/nlStats.js';
@@ -162,6 +163,8 @@ const statusPayload = {
   static: true,
   lastCheck: autoState.lastCheck ?? null,
   lastResult: autoState.lastResult ?? null,
+  // Same interval the hourly GitHub workflow uses (server/autoUpdate.js settings).
+  hours: autoSettings.hours,
   prediction,
 };
 const appDataJson = JSON.stringify({
