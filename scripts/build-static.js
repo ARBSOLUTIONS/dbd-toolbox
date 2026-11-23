@@ -494,6 +494,15 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
   const topPerks = (role) =>
     stats?.perks ? rankPerks(data.perks, stats, { role }).ranked.slice(0, 5).map((e) => perkLink(e.perk)).join(', ') : '';
 
+  // The wiki often lists a new killer before the patch is out, so the refresh
+  // on patch day sees nothing new. The killers page is in release order, so
+  // the last one is the newest: always show it with its perks and builds.
+  const newest = newKillers.length ? null : data.killers.at(-1);
+  const newestPerks = newest ? (newest.perks ?? []).map((id) => perkById.get(id)).filter(Boolean) : [];
+  const newestBuilds = newest ? allBuilds.filter((b) => b.killer === newest.name).sort((a, b) => b.rating.score - a.rating.score).slice(0, 3) : [];
+  const newestHtml = newest
+    ? `<h2>Newest killer: ${esc(newest.name)}</h2><article class="hero">${icon(newest, 96)}<div><p><a href="/killers/${newest.id}/">${esc(newest.name)} builds, perks &amp; add-ons</a></p><p>Perks: ${newestPerks.map(perkLink).join(', ')}</p></div></article>${newestBuilds.length ? `<div class="grid">${newestBuilds.map(buildCardHtml).join('')}</div>` : ''}`
+    : '';
   const whatsNew = [
     newKillers.length ? `<h3>New killer${newKillers.length > 1 ? 's' : ''}</h3><ul class="combos">${newKillers.map((c) => charLink(c, 'killers')).join('')}</ul>` : '',
     newSurvivors.length ? `<h3>New survivor${newSurvivors.length > 1 ? 's' : ''}</h3><ul class="combos">${newSurvivors.map((c) => charLink(c, 'survivors')).join('')}</ul>` : '',
@@ -523,6 +532,7 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
 <p>Patch ${esc(meta.patch)}${patchDate ? `, released ${esc(patchDate)}` : ''}. This page updates automatically when a new patch comes out: what changed for perks and characters, which builds are affected, and the strongest builds right now.</p>
 <h2>What changed in patch ${esc(meta.patch)}</h2>
 ${whatsNew || '<p>No perk or character changes in this patch so far. Changes appear here as soon as the Dead by Daylight Wiki is updated.</p>'}
+${newestHtml}
 ${withNew.length ? `<h2>Builds with the new perks</h2><div class="grid">${withNew.map(buildCardHtml).join('')}</div>` : ''}
 ${affected.length ? `<h2>Builds changed by this patch</h2><p class="muted">Hand-picked builds that use a perk that changed.</p><div class="grid">${affected.map(buildCardHtml).join('')}</div>` : ''}
 <h2>Best killer builds in patch ${esc(meta.patch)}</h2><div class="grid">${best('killer').map(buildCardHtml).join('')}</div>
