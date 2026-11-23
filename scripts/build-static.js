@@ -23,6 +23,7 @@ import { generateBuilds } from '../src/lib/generator.js';
 import { suggestPerks } from '../src/lib/combos.js';
 import { predictNextPatch } from '../server/predict.js';
 import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
+import { analysePatch, VERDICTS, LEVELS } from '../src/lib/patchImpact.js';
 import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, MIN_SAMPLES, periodLabel } from '../src/lib/nlStats.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -240,7 +241,7 @@ ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script
 </head>
 <body>
 <header class="top"><a class="logo" href="/"><img src="/logo.svg" alt="" width="32" height="32">DBD<span>Toolbox</span></a>
-<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/perk-ranking/">Perk ranking</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
+<nav><a href="/">Build generator</a><a href="/builds/">Builds</a><a href="/perks/">Perks</a><a href="/patch/">Patch ${esc(meta.patch)}</a><a href="/perk-ranking/">Perk ranking</a><a href="/killers/">Killers</a><a href="/survivors/">Survivors</a><a href="/offerings/">Offerings</a></nav></header>
 <main>
 ${crumbs.length ? `<p class="crumbs"><a href="/">${SITE}</a>${crumbs.map((c) => ` › <a href="${c.url}">${esc(c.name)}</a>`).join('')}</p>` : ''}
 ${body}
@@ -461,6 +462,78 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
   );
 }
 
+// ---------- 5a. Current patch page ----------
+// One fixed URL (/patch/) that always shows the newest patch: what changed and
+// the best builds now. The hourly patch check rebuilds it on patch day, so the
+// fresh content is there when people search for "best builds patch X".
+{
+  // A patch can arrive in several refreshes (patch day, then wiki edits), so
+  // merge every record for the current patch: earliest "before", latest "after".
+  const records = patchNotes.filter((r) => r.toPatch === meta.patch && r.fromPatch !== null);
+  const perkDetails = new Map();
+  for (const r of [...records].reverse()) {
+    for (const d of r.details?.perks ?? []) {
+      const k = `${d.role}:${d.id}`;
+      perkDetails.set(k, perkDetails.has(k) ? { ...d, before: perkDetails.get(k).before } : d);
+    }
+  }
+  const merged = {
+    details: { perks: [...perkDetails.values()].filter((d) => d.before !== d.after) },
+    newPerkIds: [...new Set(records.flatMap((r) => r.newPerkIds ?? []))],
+  };
+  const impact = analysePatch(merged, data, allBuilds);
+  const newNames = (kind) => [...new Set(records.flatMap((r) => r[kind]?.added ?? []))];
+  const newKillers = data.killers.filter((c) => newNames('killers').includes(c.name));
+  const newSurvivors = data.survivors.filter((c) => newNames('survivors').includes(c.name));
+  const patchDate = history.find((h) => h.version === meta.patch)?.date;
+  const real = impact.perks.filter((x) => x.judgement.verdict !== 'text');
+  const best = (role, n = 6) =>
+    allBuilds.filter((b) => b.role === role && b.type !== 'auto').sort((a, b) => b.rating.score - a.rating.score).slice(0, n);
+  const withNew = allBuilds.filter((b) => b.resolved.perks.some((p) => p && merged.newPerkIds.includes(p.id))).slice(0, 6);
+  const charLink = (c, folder) => `<li>${icon(c, 40)} <a href="/${folder}/${c.id}/">${esc(c.name)}</a></li>`;
+  const topPerks = (role) =>
+    stats?.perks ? rankPerks(data.perks, stats, { role }).ranked.slice(0, 5).map((e) => perkLink(e.perk)).join(', ') : '';
+
+  const whatsNew = [
+    newKillers.length ? `<h3>New killer${newKillers.length > 1 ? 's' : ''}</h3><ul class="combos">${newKillers.map((c) => charLink(c, 'killers')).join('')}</ul>` : '',
+    newSurvivors.length ? `<h3>New survivor${newSurvivors.length > 1 ? 's' : ''}</h3><ul class="combos">${newSurvivors.map((c) => charLink(c, 'survivors')).join('')}</ul>` : '',
+    impact.newPerks.length ? `<h3>New perks (${impact.newPerks.length})</h3><ul class="combos">${impact.newPerks.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} <span class="muted">${roleLabel(p.role)}</span> – ${esc(short(p.description, 180))}</li>`).join('')}</ul>` : '',
+    real.length
+      ? `<h3>Perk changes (${real.length})</h3><p class="muted">Buff or nerf is judged by this site from the old and new perk text (numbers, durations, conditions).</p><ul class="combos">${real
+          .map((x) => `<li>${x.perk ? icon(x.perk, 32) : ''} ${x.perk ? perkLink(x.perk) : esc(x.name)} <strong>${VERDICTS[x.judgement.verdict].icon} ${LEVELS[x.judgement.level] ?? ''} ${VERDICTS[x.judgement.verdict].label.toLowerCase()}</strong> <span class="muted">${roleLabel(x.role)} perk, in ${x.builds.length} build${x.builds.length === 1 ? '' : 's'}</span>${x.judgement.changes.length ? `<br><span class="small">${x.judgement.changes.map((c) => esc(c.label)).join(' · ')}</span>` : ''}</li>`)
+          .join('')}</ul>`
+      : '',
+  ].join('');
+  const affected = impact.builds.filter((e) => !['auto', 'popular'].includes(e.build.type)).slice(0, 6).map((e) => e.build);
+  const summary = [
+    newKillers.length ? `new killer ${newKillers.map((c) => c.name).join(', ')}` : '',
+    impact.newPerks.length ? `${impact.newPerks.length} new perks` : '',
+    real.length ? `${real.length} perk changes` : '',
+  ].filter(Boolean);
+  const description = short(
+    `Dead by Daylight patch ${meta.patch}${patchDate ? ` (${patchDate})` : ''}: ${summary.length ? `${summary.join(', ')}, ` : ''}the best killer and survivor builds now and which builds the patch changes.`,
+  );
+  await write(
+    'patch/index.html',
+    page({
+      url: '/patch/',
+      title: `Best DBD builds for patch ${meta.patch}${newKillers.length ? ` (${newKillers[0].name})` : ''} – what changed | ${SITE}`,
+      description,
+      body: `<h1>Best Dead by Daylight builds for patch ${esc(meta.patch)}</h1>
+<p>Patch ${esc(meta.patch)}${patchDate ? `, released ${esc(patchDate)}` : ''}. This page updates automatically when a new patch comes out: what changed for perks and characters, which builds are affected, and the strongest builds right now.</p>
+<h2>What changed in patch ${esc(meta.patch)}</h2>
+${whatsNew || '<p>No perk or character changes in this patch so far. Changes appear here as soon as the Dead by Daylight Wiki is updated.</p>'}
+${withNew.length ? `<h2>Builds with the new perks</h2><div class="grid">${withNew.map(buildCardHtml).join('')}</div>` : ''}
+${affected.length ? `<h2>Builds changed by this patch</h2><p class="muted">Hand-picked builds that use a perk that changed.</p><div class="grid">${affected.map(buildCardHtml).join('')}</div>` : ''}
+<h2>Best killer builds in patch ${esc(meta.patch)}</h2><div class="grid">${best('killer').map(buildCardHtml).join('')}</div>
+<h2>Best survivor builds in patch ${esc(meta.patch)}</h2><div class="grid">${best('survivor').map(buildCardHtml).join('')}</div>
+${stats?.perks ? `<h2>Top perks from community stats</h2><p>Survivor: ${topPerks('survivor')}.<br>Killer: ${topPerks('killer')}.</p><p class="muted">From NightLight (${esc(periodLabel(stats))}). Full list: <a href="/perk-ranking/">perk ranking</a>.</p>` : ''}
+<p><a href="/builds/">All builds</a> · <a href="/perks/">All perks</a> · <a href="/killers/">All killers</a></p>`,
+      crumbs: [{ name: `Patch ${meta.patch}`, url: '/patch/' }],
+    }),
+  );
+}
+
 // ---------- 5b. Offering tier list ----------
 {
   const rated = withOfferingRatings(raw.offerings)
@@ -643,6 +716,7 @@ await write(
 ## Main pages
 - [Build generator (interactive app)](${SITE_URL}/): builds, combos, build maker, challenges
 - [All builds](${SITE_URL}/builds/): ${allBuilds.length} survivor and killer builds with explanations and synergy scores
+- [Current patch](${SITE_URL}/patch/): what changed in patch ${meta.patch} and the best builds for it, updated on every patch
 - [All perks](${SITE_URL}/perks/): ${data.perks.length} perks with descriptions and best combos
 - [All killers](${SITE_URL}/killers/): ${data.killers.length} killers with perks, add-ons and builds
 - [All survivors](${SITE_URL}/survivors/): ${data.survivors.length} survivors with their perks
