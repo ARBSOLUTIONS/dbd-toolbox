@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <title>DBD-Toolbox Updater</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="head">
+    <img src="icon128.png" width="28" height="28" alt="" />
+    <div>
+      <h1>DBD-Toolbox Updater</h1>
+      <span id="branch-pill" class="pill">branch: …</span>
+    </div>
+  </header>
+
+  <section class="status-grid">
+    <div class="stat-box">
+      <span class="label">DBD Patch</span>
+      <strong id="patch-val">Controleren…</strong>
+      <small id="patch-sub" class="muted"></small>
+    </div>
+    <div class="stat-box">
+      <span class="label">NightLight stats</span>
+      <strong id="nl-val">Controleren…</strong>
+      <small id="nl-sub" class="muted"></small>
+    </div>
+  </section>
+
+  <div id="patch-alert" class="alert hidden"></div>
+
+  <button id="btn-update-all" class="btn-primary">
+    🔄 Update alle data (Wiki + NightLight)
+  </button>
+
+  <div id="progress-box" class="progress-box hidden">
+    <div class="progress-bar"><div id="progress-fill"></div></div>
+    <div class="progress-row">
+      <span id="progress-msg" class="small">Bezig…</span>
+      <button id="btn-cancel" class="link-btn hidden">Annuleren</button>
+    </div>
+  </div>
+
+  <div id="result-box" class="result-box hidden"></div>
+
+  <div class="quick-links">
+    <button id="btn-quick" class="link-btn" title="Alleen de 4 global feeds (~5 sec); bewaart killer details">⚡ Snelle perk-update (~5s)</button>
+    <button id="btn-check" class="link-btn">🔍 Check patch nu</button>
+  </div>
+
+  <details id="settings-panel" class="settings">
+    <summary>⚙️ Instellingen (GitHub Token &amp; branch)</summary>
+    <form id="settings-form">
+      <label>
+        GitHub Token (Fine-Grained PAT)
+        <input id="inp-token" type="password" placeholder="github_pat_…" autocomplete="off" />
+      </label>
+      <label>
+        Repository
+        <input id="inp-repo" type="text" placeholder="ARBSOLUTIONS/dbd-toolbox" />
+      </label>
+      <label>
+        Doel-branch
+        <select id="inp-branch">
+          <option value="test-toolbox">test-toolbox (testomgeving)</option>
+          <option value="main">main (live dbdtoolbox.wiki)</option>
+        </select>
+      </label>
+      <label class="check">
+        <input id="inp-notify" type="checkbox" checked />
+        Automatische melding bij nieuwe DBD-patch
+      </label>
+      <button type="submit" class="btn-secondary">Opslaan</button>
+      <span id="save-msg" class="small ok hidden">✓ Opgeslagen</span>
+      <p class="hint">
+        Maak op GitHub een Fine-Grained Token voor alleen <code>ARBSOLUTIONS/dbd-toolbox</code> met rechten:
+        <strong>Contents (Read &amp; write)</strong> en <strong>Actions (Read &amp; write)</strong>.
+      </p>
+    </form>
+  </details>
+
+  <script src="popup.js"></script>
+</body>
+</html>
