@@ -238,3 +238,41 @@ test('an export without character pages keeps the previous top perks and builds'
   assert.deepEqual(keepPreviousPages(withPages, old), []);
   assert.deepEqual(withPages.killers.k1.topPerks, [{ perk: 'z' }]);
 });
+
+test('an import with too few games (new patch) keeps the previous numbers', async () => {
+  const { keepWhenTooFew } = await import('../extension/lib/nightlight-core.js');
+  const old = {
+    games: 30000,
+    period: { start: 'a', end: 'b' },
+    average: { matches: 30000, killRate: 50 },
+    killers: { trapper: { matches: 900, killRate: 48 } },
+    survivorAverage: { matches: 120000, escapeRate: 40 },
+    survivors: { dwight: { matches: 5000, escapeRate: 39 } },
+    popularSurvivorBuilds: [{ perks: ['a', 'b', 'c', 'd'] }],
+    perks: { 'lay-waste': { role: 'killer', count: 500, rate: 60 }, 'sprint-burst': { role: 'survivor', count: 900, rate: 41 } },
+    perkAverage: { killer: 51, survivor: 33 },
+  };
+  const fresh = {
+    games: 0,
+    period: { start: 'c', end: 'd' },
+    average: { matches: 0, killRate: 0 },
+    killers: { trapper: { matches: 0, killRate: 0 } },
+    survivorAverage: { matches: 0, escapeRate: null },
+    survivors: { dwight: { matches: 0, escapeRate: null } },
+    perks: { 'lay-waste': { role: 'killer', count: 0, rate: 0 }, 'sprint-burst': { role: 'survivor', count: 0, rate: 0 } },
+    perkAverage: { killer: null, survivor: null },
+    previousPerks: { killer: { 'lay-waste': { count: 500 } } },
+  };
+  const kept = keepWhenTooFew(fresh, old);
+  assert.deepEqual(kept, ['killers', 'survivors', 'killer perks', 'survivor perks']);
+  assert.equal(fresh.games, 30000);
+  assert.equal(fresh.killers.trapper.killRate, 48);
+  assert.equal(fresh.perks['lay-waste'].count, 500);
+  assert.equal(fresh.perkAverage.survivor, 33);
+  assert.equal(fresh.previousPerks.killer, undefined);
+  assert.equal(fresh.popularSurvivorBuilds.length, 1);
+
+  // Enough new games: nothing is kept.
+  const full = { ...old, perks: { ...old.perks } };
+  assert.deepEqual(keepWhenTooFew(full, old), []);
+});

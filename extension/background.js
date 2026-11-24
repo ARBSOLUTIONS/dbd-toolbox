@@ -1,4 +1,4 @@
-import { parseNightlight, mergeNightlight } from './lib/nightlight-core.js';
+import { parseNightlight, mergeNightlight, keepWhenTooFew } from './lib/nightlight-core.js';
 
 const DEFAULT_CONFIG = {
   repo: 'ARBSOLUTIONS/dbd-toolbox',
@@ -273,6 +273,8 @@ async function finishNightlightImport(rawPayload) {
       survivors: survivorsF.data,
     });
     const merged = mergeNightlight(parsed, oldNlF.data, { singleFeed: false });
+    // Just after a patch NightLight has almost no games yet: keep the old numbers.
+    const kept = keepWhenTooFew(merged, oldNlF.data);
 
     // Safety net: a quick run collects no character pages, so it depends on the
     // previous file for top perks and builds. Never commit a file that loses them.
@@ -296,12 +298,12 @@ async function finishNightlightImport(rawPayload) {
       'data/nightlight.json',
       merged,
       oldNlF.sha,
-      `Update NightLight stats (${rawPayload.mode ?? activeMode}, ${dateStr})`,
+      `Update NightLight stats (${rawPayload.mode ?? activeMode}, ${dateStr})${kept.length ? `; too few new games, kept the previous ${kept.join(', ')}` : ''}`,
     );
 
     await closeActiveTab();
     const commitUrl = commitRes?.commit?.html_url ?? `https://github.com/${cfg.repo}/commits/${cfg.branch}`;
-    const summary = `${Object.keys(merged.perks).length} perks · ${Object.keys(merged.killers).length} killers · ${merged.games?.toLocaleString?.() ?? merged.games} games`;
+    const summary = `${kept.length ? `te weinig nieuwe games, oude cijfers behouden (${kept.join(', ')}) · ` : ''}${Object.keys(merged.perks).length} perks · ${Object.keys(merged.killers).length} killers · ${merged.games?.toLocaleString?.() ?? merged.games} games`;
 
     await setRunState({
       running: false,

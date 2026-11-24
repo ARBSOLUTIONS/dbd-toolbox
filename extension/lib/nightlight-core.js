@@ -326,6 +326,60 @@ export function mergePerkText(stats, parsed, perks) {
   return out;
 }
 
+// ---------- too little new data ----------
+
+/** Fewer killer games than this in an import: too few to replace the previous numbers. */
+export const MIN_IMPORT_GAMES = 2000;
+/** Perks need this many games to be ranked (same as MIN_PERK_GAMES in src/lib/nlStats.js). */
+const RANKABLE_GAMES = 100;
+
+/**
+ * Right after a patch NightLight only counts the new patch, so an import can
+ * hold almost no games. Then the previous numbers stay instead of an empty
+ * tier list:
+ * - killers (with their average, games and period) when the import has fewer
+ *   than MIN_IMPORT_GAMES killer games;
+ * - survivors (and the popular survivor builds) when it has fewer than
+ *   4 × MIN_IMPORT_GAMES survivor matches;
+ * - the perks of a role when fewer than half as many of them can be ranked
+ *   (100+ games) as in the previous import.
+ * Only applies when the previous import had more. Returns what was kept.
+ */
+export function keepWhenTooFew(stats, old) {
+  const kept = [];
+  if (!old) return kept;
+  const killerGames = (s) => s?.games ?? s?.average?.matches ?? 0;
+  if (killerGames(stats) < MIN_IMPORT_GAMES && killerGames(old) > killerGames(stats) && old.killers) {
+    for (const key of ['killers', 'average', 'games', 'period']) if (old[key] !== undefined) stats[key] = old[key];
+    kept.push('killers');
+  }
+  const survivorMatches = (s) => s?.survivorAverage?.matches ?? 0;
+  if (survivorMatches(stats) < 4 * MIN_IMPORT_GAMES && survivorMatches(old) > survivorMatches(stats) && old.survivors) {
+    for (const key of ['survivors', 'survivorAverage', 'popularSurvivorBuilds']) if (old[key] !== undefined) stats[key] = old[key];
+    kept.push('survivors');
+  }
+  const rankable = (s, role) => Object.values(s?.perks ?? {}).filter((p) => p.role === role && (p.count ?? 0) >= RANKABLE_GAMES).length;
+  for (const role of ['killer', 'survivor']) {
+    const before = rankable(old, role);
+    if (!before || rankable(stats, role) >= before / 2) continue;
+    const perks = Object.fromEntries(Object.entries(stats.perks ?? {}).filter(([, p]) => p.role !== role));
+    for (const [id, p] of Object.entries(old.perks)) if (p.role === role) perks[id] = p;
+    stats.perks = perks;
+    stats.perkAverage = { ...(stats.perkAverage ?? {}), [role]: old.perkAverage?.[role] ?? null };
+    stats.perkPeriod = { ...(stats.perkPeriod ?? {}), [role]: old.perkPeriod?.[role] ?? old.period ?? null };
+    // Movement arrows keep comparing with the import before the kept one.
+    for (const key of ['previousPerks', 'previousPerkAverage', 'previousPerkPeriod']) {
+      const prev = old[key]?.[role];
+      const next = { ...(stats[key] ?? {}) };
+      if (prev === undefined) delete next[role];
+      else next[role] = prev;
+      stats[key] = next;
+    }
+    kept.push(`${role} perks`);
+  }
+  return kept;
+}
+
 /**
  * Merges a newly parsed NightLight export with the previous data/nightlight.json:
  * - Snapshots previous perk stats per role when the period changed (so Perk Ranking shows ▲/▼ movement).

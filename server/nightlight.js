@@ -17,6 +17,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { DATA_DIR } from './refresh.js';
+import { keepWhenTooFew } from '../extension/lib/nightlight-core.js';
 
 export const STATS_FILE = path.join(DATA_DIR, 'nightlight.json');
 export const NIGHTLIGHT_PAGE = 'https://nightlight.gg/killers/viewer';
@@ -447,6 +448,8 @@ export async function importStats(file, { log = console.log } = {}) {
   for (const role of keepPreviousPages(stats, old)) {
     log(`  ! no ${role} pages in this export: kept the top perks and builds of the previous import`);
   }
+  const kept = keepWhenTooFew(stats, old);
+  if (kept.length) log(`  ! too few new games (new patch?): kept the previous ${kept.join(', ')}`);
 
   await fs.writeFile(STATS_FILE + '.tmp', JSON.stringify(stats, null, 2));
   await fs.rename(STATS_FILE + '.tmp', STATS_FILE);

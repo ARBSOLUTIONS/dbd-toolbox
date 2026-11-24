@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DBD-Toolbox Updater",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "1-klik update van alle DBD-Toolbox data (Wiki + NightLight → GitHub → Cloudflare Pages) met automatische patch-meldingen.",
   "permissions": ["storage", "alarms", "notifications", "tabs", "scripting"],
   "host_permissions": [
