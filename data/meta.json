@@ -1,7 +1,7 @@
 {
-  "fetchedAt": "2026-11-11T02:49:31.826Z",
-  "durationSeconds": 6,
-  "patch": "10.2.2b",
+  "fetchedAt": "2026-11-24T17:24:15.019Z",
+  "durationSeconds": 8,
+  "patch": "10.3.0",
   "announcements": [
     {
       "name": "Terrifier",

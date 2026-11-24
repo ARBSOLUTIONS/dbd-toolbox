@@ -107,7 +107,7 @@
   {
     "id": "bill-overbeck",
     "name": "Bill Overbeck",
-    "aliases": "William \"Bill\" Overbeck",
+    "aliases": "William \"Bill\" Overbeck Bill Overbeck",
     "portrait": {
       "local": "/icons/survivors/S08_BillOverbeck_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/S08_BillOverbeck_Portrait.png/128px-S08_BillOverbeck_Portrait.png"
@@ -167,7 +167,7 @@
   {
     "id": "david-tapp",
     "name": "David Tapp",
-    "aliases": "Detective David Tapp",
+    "aliases": "Detective David Tapp David Tapp",
     "portrait": {
       "local": "/icons/survivors/S12_DavidTapp_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/S12_DavidTapp_Portrait.png/128px-S12_DavidTapp_Portrait.png"
@@ -212,7 +212,7 @@
   {
     "id": "jeff-johansen",
     "name": "Jeff Johansen",
-    "aliases": "Jeffrey \"Jeff\" Johansen",
+    "aliases": "Jeffrey \"Jeff\" Johansen Jeff Johansen",
     "portrait": {
       "local": "/icons/survivors/S15_JeffJohansen_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/S15_JeffJohansen_Portrait.png/128px-S15_JeffJohansen_Portrait.png"
@@ -242,7 +242,7 @@
   {
     "id": "ash-williams",
     "name": "Ash Williams",
-    "aliases": "Ashley J. Williams",
+    "aliases": "Ashley J. Williams Ash Williams",
     "portrait": {
       "local": "/icons/survivors/S17_AshWilliams_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/S17_AshWilliams_Portrait.png/128px-S17_AshWilliams_Portrait.png"
@@ -617,7 +617,7 @@
   {
     "id": "the-troupe",
     "name": "The Troupe",
-    "aliases": "Aestri Yazar & Baermar Uraz",
+    "aliases": "Aestri Yazar & Baermar Uraz Troupe",
     "portrait": {
       "local": "/icons/survivors/S42_TheTroupe_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/S42_TheTroupe_Portrait.png/128px-S42_TheTroupe_Portrait.png"

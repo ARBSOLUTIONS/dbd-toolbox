@@ -1,5 +1,155 @@
 [
   {
+    "fromPatch": "10.2.2b",
+    "toPatch": "10.3.0",
+    "date": "2026-11-24T17:24:15.019Z",
+    "perks": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "Calm Spirit (survivor)",
+        "Dark Sense (survivor)",
+        "Five Moves Ahead (survivor)",
+        "Lend a Hand (survivor)",
+        "Off the Record (survivor)",
+        "Slippery Meat (survivor)",
+        "Celestial Witness (killer)",
+        "Dark Arrogance (killer)",
+        "Ravenous (killer)",
+        "Whispers (killer)"
+      ]
+    },
+    "killers": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "survivors": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "items": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "addons": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "Fingerless Parade Gloves (The Clown)",
+        "Inferno Wires (The Trickster)",
+        "Caged Heart Shoes (The Trickster)"
+      ]
+    },
+    "offerings": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "total": 13,
+    "details": {
+      "perks": [
+        {
+          "id": "calm-spirit",
+          "role": "survivor",
+          "name": "Calm Spirit",
+          "before": "You experience the following effects during a Trial:\n• Nearby Crows no longer fly off and alert others to your presence, unless you come within touching distance.\n• Suppresses the urge to scream from any cause at all times.\n• Suppresses all noises related to interacting with the following Props:\n• Chests\n• Totems\n• Increases the Action speeds for Blessing, Cleansing, and Unlocking by 8/9/10%.",
+          "after": "You experience the following effects during a Trial:\n• Nearby Crows no longer fly off and alert others to your presence, unless you come within touching distance.\n• Suppresses the urge to scream from any cause at all times.\n• Suppresses all noises related to interacting with the following Props:\n• Chests\n• Totems\n• Increases the Action speeds for Blessing, Cleansing, and Unlocking by 23/24/25%."
+        },
+        {
+          "id": "dark-sense",
+          "role": "survivor",
+          "name": "Dark Sense",
+          "before": "Unlocks potential in your Aura-reading ability.\nWhenever a Generator is completed, Dark Sense activates:\n• When the Killer gets within 24 metres of you, Dark Sense activates for 13/14/15 seconds:\n• You see the Killer's aura.\n• You see auras of other Survivors.\n• You see the auras of Pallets and Windows within 32 metres.\nDark Sense deactivates after use.",
+          "after": "Unlocks potential in your Aura-reading ability.\nDark Sense starts with and gains 1 Token whenever a Generator is completed. Dark Sense can hold up to 5 Tokens at once.\n• When the Killer gets within 24 metres of you, Dark Sense consumes 1 Token and activates for 13/14/15 seconds:\n• You see the Killer's aura.\n• You see auras of other Survivors.\n• You see the auras of Pallets and Windows within 32 metres.\nDark Sense deactivates after use."
+        },
+        {
+          "id": "five-moves-ahead",
+          "role": "survivor",
+          "name": "Five Moves Ahead",
+          "before": "This perk activates while you are being chased by the Killer or are inside the Killer's Terror Radius:\n• After you drop a Pallet, you start moving 50% earlier.\n• See the auras of the 5 closest Pallets.\nThis perk goes on a 40/35/30 seconds cool-down when you drop a Pallet while this perk is activated.",
+          "after": "Five Moves Ahead activates while you are being chased by the Killer or are inside the Killer's Terror Radius:\n• After you drop a Pallet, you start moving 50% earlier.\n• See the auras of the 5 closest Pallets.\nFive Moves Ahead goes on a 40/35/30 seconds cool-down when you drop a Pallet."
+        },
+        {
+          "id": "lend-a-hand",
+          "role": "survivor",
+          "name": "Lend a Hand",
+          "before": "Cleansing or Blessing a Totem activates this perk:\n• Once per Survivor, while healing a Survivor, press Activate Ability 2 to give the healed Survivor 2/3/4 permanent healing charges.",
+          "after": "Cleansing or Blessing a Totem activates Lend a Hand:\n• Once per Survivor, while healing a Survivor, press Activate Ability 2 to give the healed Survivor 2/3/4 permanent healing charges."
+        },
+        {
+          "id": "off-the-record",
+          "role": "survivor",
+          "name": "Off the Record",
+          "before": "After being unhooked or unhooking yourself, Off the Record activates for 30/35/40 seconds:\n• Blocks your Aura from being revealed.\n• Suppresses your Grunts of Pain while in the Injured State.\n• Suppresses the creation of your Scratch Marks.\n• Grants the Endurance Status Effect.\n• Endurance is cancelled prematurely when performing a Conspicuous Action of any kind.\nOff the Record deactivates prematurely and is disabled for the remainder of the Trial upon powering the Exit Gates.",
+          "after": "After being unhooked or unhooking yourself, Off the Record activates for 30/35/40 seconds:\n• Blocks your Aura from being revealed.\n• Suppresses your Grunts of Pain while in the Injured State.\n• Grants the Endurance Status Effect.\n• Endurance is cancelled prematurely when performing a Conspicuous Action of any kind.\nOff the Record deactivates prematurely and is disabled for the remainder of the Trial upon powering the Exit Gates."
+        },
+        {
+          "id": "slippery-meat",
+          "role": "survivor",
+          "name": "Slippery Meat",
+          "before": "You have developed an efficient way to get off Hooks.\n• Other Survivors unhook you 90/95/100% faster.\n• Increases the Haste granted by Unhook Protections by +5%.",
+          "after": "You have developed an efficient way to get off Hooks.\n• Other Survivors unhook you 65/70/75% faster.\n• Increases the Haste granted by Unhook Protections by +7%."
+        },
+        {
+          "id": "celestial-witness",
+          "role": "killer",
+          "name": "Celestial Witness",
+          "before": "Every 30 seconds, if the Obsession is 40 metres away from you, you see their aura for 2/2.5/3 seconds. Otherwise, the farthest Survivor becomes the Obsession.",
+          "after": "Every 30 seconds, if the Obsession is 40 metres away from you, you see their aura for 2/2.5/3 seconds.\nOtherwise, the farthest Survivor becomes the Obsession."
+        },
+        {
+          "id": "dark-arrogance",
+          "role": "killer",
+          "name": "Dark Arrogance",
+          "before": "Whenever you are vaulting a Window, you benefit from the following effect:\n• Increases the Vaulting speed by 15/20/25%.\n• Increases all basic-attack recovery speeds by +10%.\nWhenever you are stunned with a Pallet or blinded by any means, you suffer from the following effects:\n• Reduces the Recovery speed from Pallet Stuns by -25%.\n• Increases the duration of Killer Blinds by +25%.",
+          "after": "Permanently benefit from the following effects:\n• Increases the Vaulting speed by +15%.\n• Increases successful basic-attack recovery speed by 13/14/15%.\nPermanently suffer from the following effects:\n• Reduces the Recovery speed of missed basic-attacks by -15%.\n• Reduces the Recovery speed from Pallet Stuns by -15%.\n• Increases the duration of Killer Blinds by +15%."
+        },
+        {
+          "id": "ravenous",
+          "role": "killer",
+          "name": "Ravenous",
+          "before": "Whenever you hook a Survivor for the first time, Ravenous gains +1 Token, up to a maximum of 4 Tokens.\nFor each Token:\n• Grants +4% Haste Status Effect while carrying a Survivor.\n• Increases your hooking speed by +4%.\nOnce you accumulate 4 Tokens, all Survivors suffer from the following effects:\n• Causes them to scream.\n• Inflicts the Exposed Status Effect for 80/85/90 seconds.",
+          "after": "Whenever you hook a Survivor for the first time, Ravenous gains +1 Token, up to a maximum of 4 Tokens.\nFor each Token:\n• Grants +4% Haste Status Effect while carrying a Survivor.\n• Increases your hooking speed by +4%.\nOnce you accumulate 4 Tokens, all Survivors suffer from the following effects:\n• Causes them to scream.\n• Inflicts the Exposed Status Effect for 60/65/70 seconds."
+        },
+        {
+          "id": "whispers",
+          "role": "killer",
+          "name": "Whispers",
+          "before": "Whenever any Survivor is within 28/26/24 metres of your location:\n• Causes you to hear the sporadic whispers of The Entity, indicating a Survivor's presence.\nWhenever any Survivor is outside 28/26/24 metres of your location:\n• Gain +5% Haste Status Effect.",
+          "after": "Whenever any Survivor is within 28/26/24 metres of your location:\n• Causes you to hear the sporadic whispers of The Entity, indicating a Survivor's presence.\nWhenever any Survivor is outside 28/26/24 metres of your location:\n• Gain +7% Haste Status Effect."
+        }
+      ],
+      "addons": [
+        {
+          "id": "fingerless-parade-gloves",
+          "name": "Fingerless Parade Gloves",
+          "owner": "The Clown",
+          "before": "Modifies the Bottles with the following effects:\n• Increases their Throw speed by #effect(1).\n• Reduces their Throw angle by #effect(2).",
+          "after": "Modifies the Bottles with the following effects:\n• Increases their Throw speed by +25%.\n• Reduces their Throw angle by -15 °."
+        },
+        {
+          "id": "inferno-wires",
+          "name": "Inferno Wires",
+          "owner": "The Trickster",
+          "before": "Burnt wires form the studio fire that killed four of the five NO SPIN members.\nTheir deaths gave rise to The Trickster.\n• Increases the decay time of S-Rank by 20%.",
+          "after": "Burnt wires form the studio fire that killed four of the five NO SPIN members.\nTheir deaths gave rise to The Trickster.\n• Increases the decay time of S-Rank by +20%."
+        },
+        {
+          "id": "caged-heart-shoes",
+          "name": "Caged Heart Shoes",
+          "owner": "The Trickster",
+          "before": "Shoes that Ji-Woon wore during the music video for One Caged Heart.\nAllows for smooth, graceful movements of the point dance.\n• When you basic-break Pallets and Breakable Walls or damage Generators, the next time you enter Throw State, increase movement speed while in the Throw State by 5% for 10 seconds.",
+          "after": "Shoes that Ji-Woon wore during the music video for One Caged Heart.\nAllows for smooth, graceful movements of the point dance.\n• When you basic-break Pallets and Breakable Walls or damage Generators, the next time you enter Throw State, increase movement speed while in the Throw State by +5% for 10 seconds."
+        }
+      ],
+      "items": []
+    },
+    "newPerkIds": []
+  },
+  {
     "fromPatch": "10.2.2a",
     "toPatch": "10.2.2b",
     "date": "2026-11-10T02:04:22.324Z",

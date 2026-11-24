@@ -167,7 +167,7 @@
   {
     "id": "the-clown",
     "name": "The Clown",
-    "aliases": "Clown Jeffrey Hawk The Ringmaster The Medicine Man Kenneth Chase alias Jeffrey Hawk",
+    "aliases": "Clown Kenneth Chase Jeffrey Hawk The Ringmaster The Medicine Man Kenneth Chase alias Jeffrey Hawk",
     "portrait": {
       "local": "/icons/killers/K12_TheClown_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/K12_TheClown_Portrait.png/128px-K12_TheClown_Portrait.png"
@@ -197,7 +197,7 @@
   {
     "id": "the-legion",
     "name": "The Legion",
-    "aliases": "Legion Frank Morrison, Julie Kostenko, Susie Lavoie, Joey Cadogan",
+    "aliases": "Legion Frank, Julie, Susie, Joey Frank Morrison, Julie Kostenko, Susie Lavoie, Joey Cadogan",
     "portrait": {
       "local": "/icons/killers/K14_TheLegion_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/K14_TheLegion_Portrait.png/128px-K14_TheLegion_Portrait.png"
@@ -227,7 +227,7 @@
   {
     "id": "the-ghost-face",
     "name": "The Ghost Face",
-    "aliases": "Ghost Face Jed Olsen Danny Johnson alias Jed Olsen",
+    "aliases": "Ghost Face Danny Johnson Jed Olsen Danny Johnson alias Jed Olsen",
     "portrait": {
       "local": "/icons/killers/K16_TheGhostFace_Portrait.png",
       "remote": "https://deadbydaylight.wiki.gg/images/thumb/K16_TheGhostFace_Portrait.png/128px-K16_TheGhostFace_Portrait.png"

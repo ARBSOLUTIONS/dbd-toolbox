@@ -3,7 +3,7 @@
     "id": "fingerless-parade-gloves",
     "name": "Fingerless Parade Gloves",
     "rarity": "common",
-    "description": "Modifies the Bottles with the following effects:\n• Increases their Throw speed by #effect(1).\n• Reduces their Throw angle by #effect(2).",
+    "description": "Modifies the Bottles with the following effects:\n• Increases their Throw speed by +25%.\n• Reduces their Throw angle by -15 °.",
     "quote": "\"Part of the standard Clown apparel, the cut fingers allow for dexterous manipulations. \"",
     "icon": {
       "local": "/icons/addons/IconAddon_fingerlessParadeGloves.png",
@@ -9003,7 +9003,7 @@
     "id": "inferno-wires",
     "name": "Inferno Wires",
     "rarity": "common",
-    "description": "Burnt wires form the studio fire that killed four of the five NO SPIN members.\nTheir deaths gave rise to The Trickster.\n• Increases the decay time of S-Rank by 20%.",
+    "description": "Burnt wires form the studio fire that killed four of the five NO SPIN members.\nTheir deaths gave rise to The Trickster.\n• Increases the decay time of S-Rank by +20%.",
     "quote": null,
     "icon": {
       "local": "/icons/addons/IconAddon_infernoWires.png",
@@ -9078,7 +9078,7 @@
     "id": "caged-heart-shoes",
     "name": "Caged Heart Shoes",
     "rarity": "uncommon",
-    "description": "Shoes that Ji-Woon wore during the music video for One Caged Heart.\nAllows for smooth, graceful movements of the point dance.\n• When you basic-break Pallets and Breakable Walls or damage Generators, the next time you enter Throw State, increase movement speed while in the Throw State by 5% for 10 seconds.",
+    "description": "Shoes that Ji-Woon wore during the music video for One Caged Heart.\nAllows for smooth, graceful movements of the point dance.\n• When you basic-break Pallets and Breakable Walls or damage Generators, the next time you enter Throw State, increase movement speed while in the Throw State by +5% for 10 seconds.",
     "quote": null,
     "icon": {
       "local": "/icons/addons/IconAddon_cagedHeartShoes.png",
