@@ -43,7 +43,8 @@ const words = (s) =>
   String(s ?? '')
     .toLowerCase()
     .replace(/[’']/g, '')
-    .match(/[a-z0-9]+(?:\.[0-9]+)?/g) ?? [];
+    // A tier group like 20/25/30 is one value, so it counts as one word.
+    .match(/[a-z0-9]+(?:[./][0-9]+)*/g) ?? [];
 const numbers = (s) => String(s ?? '').match(/\d+(?:\.\d+)?/g) ?? [];
 const ngrams = (list, n) => {
   const out = [];
