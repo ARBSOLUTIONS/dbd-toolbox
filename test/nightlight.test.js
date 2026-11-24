@@ -219,3 +219,22 @@ test('makeMatcher knows wiki aliases, duo names and NightLight short names', asy
   assert.equal(match('Leon S. Kennedy'), 'leon-scott-kennedy');
   assert.equal(match('Detective Tapp'), 'david-tapp');
 });
+
+test('an export without character pages keeps the previous top perks and builds', async () => {
+  const { keepPreviousPages } = await import('../server/nightlight.js');
+  const build = { perks: ['a', 'b', 'c', 'd'], samples: 50, wins: 25 };
+  const old = {
+    killers: { k1: { killRate: 50, since: '10.2.2', topPerks: [{ perk: 'x' }], topBuilds: [] } },
+    survivors: { s1: { escapeRate: 40, since: '10.2.2', topPerks: [{ perk: 'y' }], topBuilds: [build] } },
+    popularSurvivorBuilds: [{ ...build }],
+  };
+  const stats = { killers: { k1: { killRate: 52 } }, survivors: { s1: { escapeRate: 41 } }, popularSurvivorBuilds: [] };
+  assert.deepEqual(keepPreviousPages(stats, old), ['killers', 'survivors']);
+  assert.equal(stats.killers.k1.killRate, 52); // fresh feed numbers stay
+  assert.deepEqual(stats.killers.k1.topPerks, [{ perk: 'x' }]);
+  assert.equal(stats.popularSurvivorBuilds.length, 1);
+  // With pages present nothing is replaced.
+  const withPages = { killers: { k1: { topPerks: [{ perk: 'z' }] } }, survivors: { s1: { topBuilds: [build] } } };
+  assert.deepEqual(keepPreviousPages(withPages, old), []);
+  assert.deepEqual(withPages.killers.k1.topPerks, [{ perk: 'z' }]);
+});

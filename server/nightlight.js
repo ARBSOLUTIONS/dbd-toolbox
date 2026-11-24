@@ -401,6 +401,27 @@ async function readJson(file, fallback) {
   }
 }
 
+/**
+ * When an import has no character pages for killers or survivors (the
+ * collector ran without them, or every page failed), keep the top perks and
+ * top builds of the previous import instead of losing them, and rebuild the
+ * popular survivor builds from what is kept. Returns the roles that were kept.
+ */
+export function keepPreviousPages(stats, old) {
+  const hasPages = (byId) => Object.values(byId ?? {}).some((x) => x.topPerks?.length || x.topBuilds?.length);
+  const kept = [];
+  for (const role of ['killers', 'survivors']) {
+    if (hasPages(stats[role]) || !hasPages(old?.[role])) continue;
+    for (const [id, entry] of Object.entries(stats[role] ?? {})) {
+      const prev = old[role][id];
+      if (prev?.topPerks) Object.assign(entry, { since: prev.since, topPerks: prev.topPerks, topBuilds: prev.topBuilds });
+    }
+    kept.push(role);
+  }
+  if (kept.includes('survivors')) stats.popularSurvivorBuilds = popularSurvivorBuilds(stats.survivors);
+  return kept;
+}
+
 /** Imports a collector export (or killers feed) file into data/nightlight.json. */
 export async function importStats(file, { log = console.log } = {}) {
   const data = {
@@ -422,6 +443,9 @@ export async function importStats(file, { log = console.log } = {}) {
       if (prev?.topPerks) Object.assign(k, { since: prev.since, topPerks: prev.topPerks, topBuilds: prev.topBuilds });
     }
     log('  killers feed only: kept the survivor, perk and build stats of the previous import');
+  }
+  for (const role of keepPreviousPages(stats, old)) {
+    log(`  ! no ${role} pages in this export: kept the top perks and builds of the previous import`);
   }
 
   await fs.writeFile(STATS_FILE + '.tmp', JSON.stringify(stats, null, 2));
