@@ -726,6 +726,9 @@ footer.site-footer {
 .char-perks li { display: flex; gap: 12px; align-items: flex-start; padding: 10px 12px; background: var(--panel-2); border: 1px solid var(--border); border-radius: var(--radius); }
 .char-perks img { flex: none; }
 .char-perks p { margin: 4px 0 0; white-space: pre-line; color: var(--muted); }
+.char-perks > li { display: flex; }
+.char-perks .facts { margin: 4px 0 0; padding-left: 18px; list-style: disc; display: block; color: var(--muted); }
+.char-perks .facts li { display: list-item; padding: 0; background: none; border: 0; border-radius: 0; margin: 1px 0; }
 .char-builds { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
 .char-builds button {
   width: 100%; display: flex; align-items: center; gap: 12px; padding: 8px 12px; text-align: left;

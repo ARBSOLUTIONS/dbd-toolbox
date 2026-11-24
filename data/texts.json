@@ -1,0 +1,3531 @@
+{
+ "killer:a-nurses-calling": {
+  "summary": "You see Survivors who are healing or being healed near you.",
+  "facts": [
+   "You see Survivors healing or being healed within 28/30/32 m."
+  ],
+  "tip": "Pair with Sloppy Butcher so Survivors spend longer healing.",
+  "sourceHash": "fbc090abf9f55dfc"
+ },
+ "killer:agitation": {
+  "summary": "Carry Survivors to hooks faster, but everyone hears you coming from further away.",
+  "facts": [
+   "While carrying a Survivor you move 14/16/18% faster.",
+   "Your Terror Radius grows by +12 m while carrying."
+  ],
+  "tip": "Great for reaching far hooks before the Survivor wiggles free.",
+  "sourceHash": "cb4ed8b9a0a2fc30"
+ },
+ "killer:alien-instinct": {
+  "summary": "Each hook reveals the farthest injured Survivor and leaves them unable to hear your Terror Radius.",
+  "facts": [
+   "On hooking a Survivor, you see the farthest injured Survivor for 8 s.",
+   "That Survivor becomes Oblivious for 40/50/60 s."
+  ],
+  "tip": "Go straight to the revealed Survivor while they cannot hear you.",
+  "sourceHash": "ea2de2d1844343bb"
+ },
+ "killer:all-shaking-thunder": {
+  "summary": "Dropping from a height gives you a much longer lunge for a short time.",
+  "facts": [
+   "After a fall from a height, it is active for 15/20/25 s.",
+   "Your lunge reaches +75% further.",
+   "Cool-down: 5 s."
+  ],
+  "tip": "Strong on maps with many drops; jump down right behind a Survivor.",
+  "sourceHash": "a4e3ea1c6ecd573b"
+ },
+ "killer:awakened-awareness": {
+  "summary": "While carrying a Survivor you see others nearby, catching anyone who tries a save.",
+  "facts": [
+   "While carrying, any Survivor within 16/18/20 m shows to you as an aura."
+  ],
+  "tip": "Drop the carried Survivor to hit a teammate who comes too close.",
+  "sourceHash": "e97a075d2d9a1bb5"
+ },
+ "killer:bamboozle": {
+  "summary": "Vault faster, and each window you vault gets blocked for Survivors for a while.",
+  "facts": [
+   "Permanent: you vault 5/10/15% faster.",
+   "After you vault a window, Survivors cannot use it for 8/12/16 s.",
+   "Vaulting it again restarts the block; vaulting another window moves the block there.",
+   "Does not apply to vaulting dropped pallets."
+  ],
+  "tip": "Vault the window at a strong loop to force Survivors away from it.",
+  "sourceHash": "3114c201843b0f47"
+ },
+ "killer:barbecue-and-chilli": {
+  "summary": "After each hook you briefly see Survivors who are far from that hook.",
+  "facts": [
+   "After hooking a Survivor, you see Survivors at least 60/50/40 m from that hook for 5 s."
+  ],
+  "tip": "Use the reveal to pick your next target right after a hook.",
+  "sourceHash": "e99c60ec06b7dcc8"
+ },
+ "killer:batteries-included": {
+  "summary": "Near completed generators you move a bit faster, with the boost lingering briefly.",
+  "facts": [
+   "Within 16 m of a completed generator you get +5% Haste.",
+   "The boost stays for 1/3/5 s after leaving."
+  ],
+  "tip": "Chase near finished generators to catch Survivors faster.",
+  "sourceHash": "2b626851dcce792b"
+ },
+ "killer:beast-of-prey": {
+  "summary": "Building Bloodlust during a chase also makes you Undetectable for a while.",
+  "facts": [
+   "When you gain Bloodlust, you are Undetectable for 30/35/40 s."
+  ],
+  "tip": "Long chases let you sneak up on the next Survivor after a down.",
+  "sourceHash": "32b53008a4d62a94"
+ },
+ "killer:bitter-murmur": {
+  "summary": "Finished generators reveal nearby Survivors, and the last one reveals everyone.",
+  "facts": [
+   "When a generator is completed, you see Survivors within 20 m of it for 10 s.",
+   "When the last generator is completed, you see all Survivors for 16/18/20 s."
+  ],
+  "tip": "Go to the revealed Survivors right away, they are often still grouped.",
+  "sourceHash": "a6f2b490c8c3250d"
+ },
+ "killer:blood-echo": {
+  "summary": "Each hook makes all injured Survivors Exhausted and unable to heal well.",
+  "facts": [
+   "On hooking a Survivor, all injured Survivors become Exhausted and Haemorrhaged for 20/25/30 s."
+  ],
+  "tip": "Pair with injury perks to block exhaustion perks after every hook.",
+  "sourceHash": "ae55f8cbe614476b"
+ },
+ "killer:blood-warden": {
+  "summary": "Once a gate is open, one hook in the endgame can trap the remaining Survivors inside.",
+  "facts": [
+   "Activates when any Exit Gate has been opened.",
+   "You see Survivors standing in an Exit Gate area.",
+   "Once per match, hooking someone while it is active closes off every open Exit Gate for 40/50/60 s.",
+   "No Survivor can escape through them during that time."
+  ],
+  "tip": "Hook a Survivor close to the gate to trap their rescuers.",
+  "sourceHash": "9c73f56fb5aa03c8"
+ },
+ "killer:bloodhound": {
+  "summary": "Makes blood pools of injured Survivors easier to see and longer lasting.",
+  "facts": [
+   "Blood pools of injured Survivors are bright red.",
+   "They last 2/3/4 s longer."
+  ],
+  "tip": "Use it to keep track of injured Survivors who break line of sight.",
+  "sourceHash": "de52449568938496"
+ },
+ "killer:brutal-strength": {
+  "summary": "Break walls and pallets and kick generators faster.",
+  "facts": [
+   "Breaking or damaging walls, pallets and generators is 10/15/20% faster."
+  ],
+  "tip": "Good for Killers who have to break many pallets in chase.",
+  "sourceHash": "400b667c630729d1"
+ },
+ "killer:call-of-brine": {
+  "summary": "Kicked generators regress faster and alert you when Survivors hit Good skill checks on them.",
+  "facts": [
+   "After you damage a generator, the effect lasts 90 s on it.",
+   "Regression is 130/140/150% of the normal speed.",
+   "You see that generator in yellow.",
+   "A Good skill check on it gives you a Loud Noise Notification."
+  ],
+  "tip": "Pair with Pop Goes the Weasel or Eruption for strong slowdown.",
+  "sourceHash": "1c9883f56658247f"
+ },
+ "killer:celestial-witness": {
+  "summary": "You keep track of the Obsession when they are far away, or a more distant Survivor becomes it.",
+  "facts": [
+   "Every 30 s: if the Obsession is 40 m away from you, you see them for 2/2.5/3 s.",
+   "If not, the farthest Survivor becomes the new Obsession."
+  ],
+  "tip": "Use the reveals to find the Obsession for an early chase.",
+  "sourceHash": "47dee94958492e21"
+ },
+ "killer:corrupt-intervention": {
+  "summary": "The three farthest generators are blocked at the start, buying time for your first down.",
+  "facts": [
+   "At the start, the 3 generators farthest from you are blocked for 80/100/120 s.",
+   "Ends early as soon as the first Survivor is downed."
+  ],
+  "tip": "Patrol the open generators near you; Survivors will come to them.",
+  "sourceHash": "79e8b6e32a54ad5d"
+ },
+ "killer:coulrophobia": {
+  "summary": "Survivors inside your Terror Radius heal slower and face faster healing skill checks.",
+  "facts": [
+   "In your Terror Radius, all healing is 20/25/30% slower.",
+   "Healing skill check needles move +50% faster."
+  ],
+  "tip": "Stay near injured Survivors to keep their heals slow.",
+  "sourceHash": "4583e8eb8e9ba9bd"
+ },
+ "killer:coup-de-grace": {
+  "summary": "Each finished generator gives tokens that extend your next lunges.",
+  "facts": [
+   "+2 Tokens per completed generator; up to 10 Tokens per match.",
+   "Your next lunge reaches 70/75/80% further and uses 1 Token.",
+   "Holds at most 5 Tokens at a time."
+  ],
+  "tip": "Save the long lunge for a Survivor who thinks they are out of reach.",
+  "sourceHash": "adb520cf8fb80e50"
+ },
+ "killer:cruel-limits": {
+  "summary": "Every finished generator blocks all windows for Survivors for a short time.",
+  "facts": [
+   "When a generator is completed, all windows are blocked for Survivors for 20/25/30 s.",
+   "You see the blocked windows in yellow."
+  ],
+  "tip": "Start chases at window loops right after a generator pops.",
+  "sourceHash": "77b5a941e3de08b8"
+ },
+ "killer:cull-the-weak": {
+  "summary": "Hooking anyone but the Obsession slows the rest of the team, while the Obsession gets faster at saves.",
+  "facts": [
+   "+1 Token per hook on anyone other than the Obsession.",
+   "While the Obsession lives, the others repair, heal and sabotage 2/2.5/3% slower per token, capped at 22/27.5/33% (11 Tokens).",
+   "The Obsession is not slowed and gets +33% speed at unhooking and healing others.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Leave the Obsession for last to keep the penalty running.",
+  "sourceHash": "082c6d34a653c31e"
+ },
+ "killer:dark-arrogance": {
+  "summary": "You vault windows faster and recover from attacks quicker, but stuns and blinds hurt you more.",
+  "facts": [
+   "Window vaults are 15/20/25% faster.",
+   "Recovery after basic attacks is +10% faster.",
+   "You recover from pallet stuns 25% slower.",
+   "Blinds on you last +25% longer."
+  ],
+  "tip": "Use it on Killers who rarely get stunned or blinded.",
+  "sourceHash": "d80ea70948ed6ad3"
+ },
+ "killer:dark-devotion": {
+  "summary": "Hurting the Obsession moves your Terror Radius onto them and makes you Undetectable.",
+  "facts": [
+   "When the Obsession gets injured, it is active for 35/40/45 s.",
+   "Your Terror Radius moves to the Obsession and is set to 40 m.",
+   "You are Undetectable.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Hit the Obsession near other Survivors to scare them while you sneak up.",
+  "sourceHash": "745a39c4095f3aa2"
+ },
+ "killer:darkness-revealed": {
+  "summary": "Opening a locker shows Survivors hiding near any locker on the map.",
+  "facts": [
+   "Searching a locker shows you Survivors within 8 m of any locker for 6/7/8 s.",
+   "Cool-down: 30 s."
+  ],
+  "tip": "Open a locker on the way to a generator to check for Survivors.",
+  "sourceHash": "7ebe4fe55a58cb27"
+ },
+ "killer:dead-mans-switch": {
+  "summary": "After a hook, the first generator a Survivor lets go of gets blocked for a while.",
+  "facts": [
+   "Triggers after you hook a Survivor.",
+   "When a Survivor lets go of a generator for 2 s, the first such generator gets blocked; the block lasts 30/35/40 s.",
+   "You see that generator in white.",
+   "Cannot trigger again while the previous block is still active."
+  ],
+  "tip": "Pair with Grim Embrace or Pain Resonance for more generator control.",
+  "sourceHash": "3658cb24d029cbfc"
+ },
+ "killer:deadlock": {
+  "summary": "Every finished generator blocks the most advanced remaining one for a short time.",
+  "facts": [
+   "When a generator is completed, the generator with the most progress is blocked for 15/20/25 s.",
+   "You see the blocked generator in white."
+  ],
+  "tip": "Patrol the blocked generator after it reopens; Survivors will return to it.",
+  "sourceHash": "f6f7b48afd78d87c"
+ },
+ "killer:deathbound": {
+  "summary": "A Survivor who heals another screams and becomes Oblivious when they move away from them.",
+  "facts": [
+   "Triggers when a Survivor heals another for 1 health state.",
+   "The healer screams and gives away their position.",
+   "The healer is Oblivious when more than 12/8/4 m from the healed Survivor.",
+   "The healer sees the healed Survivor's aura while it lasts.",
+   "Ends once the healer is hit or otherwise loses a health state."
+  ],
+  "tip": "Chase the healer after the scream; they cannot hear you coming.",
+  "sourceHash": "73a7bcb9de2ad1b7"
+ },
+ "killer:deerstalker": {
+  "summary": "Survivors who read your aura are revealed to you, and you show yourself to the least-chased Survivor.",
+  "facts": [
+   "When a Survivor reads your aura, you see their aura for the same time.",
+   "Every 40/35/30 s, your aura is shown for 4 s to the Survivor with the least total chase time."
+  ],
+  "tip": "Use the reveals to find Survivors running aura perks.",
+  "sourceHash": "c9640481fefba811"
+ },
+ "killer:discordance": {
+  "summary": "Generators being repaired by two or more Survivors are marked for you.",
+  "facts": [
+   "Generators within 64/96/128 m with 2 or more Survivors on them show in yellow.",
+   "When a generator is first marked, you get a Loud Noise Notification.",
+   "The mark lasts 4 s after the generator leaves your range or only 1 Survivor remains."
+  ],
+  "tip": "Interrupt group repairs early to stop fast generators.",
+  "sourceHash": "c17b864bb7eeec61"
+ },
+ "killer:dissolution": {
+  "summary": "After you hit a Survivor, the next pallet they fast-vault near you breaks instantly.",
+  "facts": [
+   "Activates 3 s after hurting a Survivor with a basic attack; lasts 13/14/15 s.",
+   "The next pallet that Survivor fast-vaults inside your Terror Radius breaks at once."
+  ],
+  "tip": "Pressure the injured Survivor right away to make them vault a pallet.",
+  "sourceHash": "78ed72819a6f927b"
+ },
+ "killer:distressing": {
+  "summary": "Your Terror Radius grows larger, and Survivors inside it repair more slowly.",
+  "facts": [
+   "Permanent: Terror Radius +30%.",
+   "Generator repairs by Survivors inside your Terror Radius are 6/7/8% slower."
+  ],
+  "tip": "Pair with Terror Radius perks like Coulrophobia or Overcharge.",
+  "sourceHash": "78b038f4d40d3fc7"
+ },
+ "killer:dominance": {
+  "summary": "The first Survivor to touch each totem makes it blocked, screams and is revealed to you.",
+  "facts": [
+   "Triggers the first time a Survivor interacts with each totem.",
+   "The Entity blocks that totem for 25 s; you see it in white.",
+   "The Survivor screams.",
+   "You see that Survivor's aura for 3/4/5 s."
+  ],
+  "tip": "Run it with Hex perks so cleansing attempts give you a free chase.",
+  "sourceHash": "633f583befb2ed8c"
+ },
+ "killer:dragons-grip": {
+  "summary": "After you kick a generator, the next Survivor who touches it screams and becomes Exposed.",
+  "facts": [
+   "Active for 30 s after you damage a generator.",
+   "The first Survivor to interact with it screams and shows their location for 4 s.",
+   "That Survivor is Exposed for 60 s.",
+   "Cool-down: 60/45/30 s."
+  ],
+  "tip": "Kick a generator and wait nearby to punish whoever returns to it.",
+  "sourceHash": "65743a833a4f8202"
+ },
+ "killer:dying-light": {
+  "summary": "Hooking anyone but the Obsession slows the rest of the team, while the Obsession gets faster at saves.",
+  "facts": [
+   "+1 Token per hook on anyone other than the Obsession.",
+   "While the Obsession lives, the others repair, heal and sabotage 2/2.5/3% slower per token, capped at 22/27.5/33% (11 Tokens).",
+   "The Obsession is not slowed and gets +33% speed at unhooking and healing others.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Leave the Obsession for last to keep the penalty running.",
+  "sourceHash": "082c6d34a653c31e"
+ },
+ "killer:enduring": {
+  "summary": "Pallet stuns hit you for a much shorter time, so chases keep going.",
+  "facts": [
+   "Pallet stuns on you are 40/45/50% shorter.",
+   "Does not apply to stuns while you carry a Survivor."
+  ],
+  "tip": "Pair with Spirit Fury to punish Survivors who drop pallets early.",
+  "sourceHash": "70d9055494d6e758"
+ },
+ "killer:eruption": {
+  "summary": "Kicked generators are marked, and each down makes them explode and expose the Survivors on them.",
+  "facts": [
+   "Generators you damage are marked for you in yellow.",
+   "When any Survivor is downed, all marked generators explode, losing 10% of total progress at once.",
+   "They then keep regressing.",
+   "Anyone repairing them screams, and you see them for 8/10/12 s.",
+   "Cool-down: 30 s after it fires, which also clears the marks."
+  ],
+  "tip": "Kick many generators during chases so each down hits several at once.",
+  "sourceHash": "666ddc6ae83f45e9"
+ },
+ "killer:fire-up": {
+  "summary": "Every finished generator makes many of your actions faster, up to a big late-game boost.",
+  "facts": [
+   "+1 Token per completed generator; max 5 Tokens.",
+   "Per token, 6/7/8% faster at the actions below, up to 30/35/40%:",
+   "picking up and dropping Survivors;",
+   "breaking walls and dropped pallets;",
+   "damaging generators;",
+   "vaulting windows."
+  ],
+  "tip": "It gets stronger as the match goes on, so it helps you catch up late.",
+  "sourceHash": "5581f2962a8a3b40"
+ },
+ "killer:forced-hesitation": {
+  "summary": "Downing a Survivor slows everyone near them, making saves and escapes harder.",
+  "facts": [
+   "When a Survivor is downed in any way, other Survivors within 16 m are Hindered by -20% for 10 s.",
+   "Cool-down: 40/35/30 s."
+  ],
+  "tip": "Down Survivors near their teammates to catch a second one quickly.",
+  "sourceHash": "f7ac1af8fd6dc993"
+ },
+ "killer:forced-penance": {
+  "summary": "Survivors who take a protection hit for someone become Broken for a while.",
+  "facts": [
+   "A Survivor who triggers a Protection Hit is Broken for 60/70/80 s."
+  ],
+  "tip": "Hit the Survivor who body-blocks; they cannot be healed afterwards.",
+  "sourceHash": "8430b4db24103c09"
+ },
+ "killer:forever-entwined": {
+  "summary": "Each time a Survivor is hit, you get faster at picking up, dropping and hooking.",
+  "facts": [
+   "+1 Token whenever a Survivor takes damage; max 6/7/8 Tokens.",
+   "+4% per token to picking up, dropping and hooking Survivors, up to 24/28/32%."
+  ],
+  "tip": "Faster pick-ups make flashlight and pallet saves harder.",
+  "sourceHash": "9a26282500f36eac"
+ },
+ "killer:franklins-demise": {
+  "summary": "Your basic attacks knock items out of Survivors' hands, and you see the dropped items.",
+  "facts": [
+   "Survivors hit by your basic attack drop their item.",
+   "You see dropped items within 32/48/64 m."
+  ],
+  "tip": "Good against teams that rely on flashlights and Med-Kits.",
+  "sourceHash": "df4a1734b62e85da"
+ },
+ "killer:friends-til-the-end": {
+  "summary": "Hooking others exposes the Obsession, and hooking the Obsession picks a new one.",
+  "facts": [
+   "Hooking anyone but the Obsession: you see the Obsession for 6/8/10 s.",
+   "The Obsession is then Exposed for 20 s.",
+   "Hooking the Obsession: a random Survivor screams, shows their location and becomes the new Obsession.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Rush to the Obsession after each hook to use the Exposed window.",
+  "sourceHash": "81c057412e613dc0"
+ },
+ "killer:funny-business": {
+  "summary": "Kicking a generator gives you speed and one random extra effect, good or bad.",
+  "facts": [
+   "Each generator kick gives +10% Haste for 10 s plus one random outcome:",
+   "the Haste lasts 5 s longer;",
+   "you are stunned for 2 s;",
+   "the generator is blocked for 30 s;",
+   "confetti only, with no effect."
+  ],
+  "tip": "Kick generators on your way to a chase to use the speed.",
+  "sourceHash": "846acbf3ef5ea8d9"
+ },
+ "killer:furtive-chase": {
+  "summary": "Hooking the Obsession makes you fast and Undetectable, and their rescuer becomes the new Obsession.",
+  "facts": [
+   "After hooking the Obsession, for 14/16/18 s: Undetectable and +10% Haste.",
+   "When another Survivor unhooks the Obsession, the rescuer becomes the Obsession.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Chase the rescuer next, they will often be the new Obsession.",
+  "sourceHash": "536ebba5337b3054"
+ },
+ "killer:game-afoot": {
+  "summary": "Hitting the Survivor who has been chased longest makes them your Obsession, and breaking things in chase speeds you up.",
+  "facts": [
+   "A basic attack on the Survivor with the most total chase time makes them the Obsession.",
+   "While chasing the Obsession, breaking or damaging something gives +10% Haste for 8/9/10 s.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Pair with Brutal Strength to break pallets fast during chases.",
+  "sourceHash": "001ef0ea07db3485"
+ },
+ "killer:gearhead": {
+  "summary": "After a Survivor is hit, Good skill checks on generators reveal who is repairing.",
+  "facts": [
+   "Active for 30 s after any Survivor loses a health state.",
+   "A Good repair skill check by a Survivor reveals them for 6/7/8 s."
+  ],
+  "tip": "Hit a Survivor, then go to the revealed generator for a new chase.",
+  "sourceHash": "f57b9cbcedde3ca9"
+ },
+ "killer:genetic-limits": {
+  "summary": "Losing a health state makes a Survivor Exhausted for a short time.",
+  "facts": [
+   "Any Survivor who drops a health state becomes Exhausted for 6/7/8 s."
+  ],
+  "tip": "Blocks the speed burst from Sprint Burst or Lithe right after a hit.",
+  "sourceHash": "8fb8b1a35e72c8b2"
+ },
+ "killer:grim-embrace": {
+  "summary": "First hooks on each Survivor block all generators briefly, and the fourth gives a long block.",
+  "facts": [
+   "+1 Token for each Survivor hooked for the first time.",
+   "It fires when you are 16 m or more away from the hook.",
+   "1-3 Tokens: all generators are blocked for 6/8/10 s.",
+   "4 Tokens: all generators are blocked for 40 s and you see the Obsession for 6 s."
+  ],
+  "tip": "Spread your hooks over all four Survivors for the full effect.",
+  "sourceHash": "5ed7827fb647db03"
+ },
+ "killer:haywire": {
+  "summary": "Exit gates that Survivors leave almost open start closing again.",
+  "facts": [
+   "If a Survivor stops opening a gate after reaching 80% progress, the gate regresses.",
+   "It regresses at 80/90/100% of normal opening speed.",
+   "The switch lights flicker while it regresses."
+  ],
+  "tip": "Interrupt gate openers late; the gate will start going back.",
+  "sourceHash": "242b7176c0d6d0ab"
+ },
+ "killer:help-wanted": {
+  "summary": "Kicked generators become compromised; when one is finished, you recover faster and idle generators regress.",
+  "facts": [
+   "Damaging a generator makes it Compromised; up to 3 at a time.",
+   "You see Compromised generators in yellow.",
+   "When a Compromised generator is completed, for 70/80/90 s:",
+   "your basic attack recovery is +25% faster;",
+   "generators no one is working on regress at 150% of normal speed.",
+   "Afterwards no generator is Compromised any more."
+  ],
+  "tip": "Kick generators you cannot defend, so finishing one hurts the Survivors.",
+  "sourceHash": "57ded7bb349d42c1"
+ },
+ "killer:hex-blood-favour": {
+  "summary": "A Hex that locks pallets near a Survivor you hit, so they cannot drop them.",
+  "facts": [
+   "A Hex Totem is lit at the start of the match.",
+   "When a basic attack takes a health state, pallets within 32 m of that Survivor are blocked for 13/14/15 s.",
+   "No Survivor can drop blocked pallets.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Hit Survivors near pallet loops so they have nowhere safe to run.",
+  "sourceHash": "840e974973ae3d44"
+ },
+ "killer:hex-crowd-control": {
+  "summary": "A Hex that blocks windows Survivors fast-vault, cutting off strong loops.",
+  "facts": [
+   "Lights on a random totem when a Survivor fast-vaults a window.",
+   "That window is blocked for all Survivors.",
+   "Blocked windows: your normal vault over them is 15% faster.",
+   "You see blocked windows within 24 m.",
+   "Affects 4/5/6 windows at a time.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Push Survivors to vault strong windows so they become blocked.",
+  "sourceHash": "dafba7f2de7158e2"
+ },
+ "killer:hex-devour-hope": {
+  "summary": "A Hex that grows stronger when Survivors are rescued far from you, ending with instant kills.",
+  "facts": [
+   "A Hex Totem is lit at the start of the match.",
+   "+1 Token for each unhook that happens 24 m or more away from you; max 5 Tokens.",
+   "2 Tokens: 10 s after hooking, you get 3/4/5% Haste for 10 s.",
+   "3 Tokens: all Survivors are Exposed.",
+   "5 Tokens: you can kill downed Survivors yourself.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Leave the hook quickly so rescues happen far away from you.",
+  "sourceHash": "e6d1352a06848f85"
+ },
+ "killer:hex-face-the-darkness": {
+  "summary": "Injuring a Survivor lights a Hex that makes everyone far away scream and reveal themselves.",
+  "facts": [
+   "Needs a Dull Totem on the map; lights a Hex when you injure a Survivor, cursing them.",
+   "While cursed, every 35/30/25 s all other Survivors outside your Terror Radius scream.",
+   "You see their auras for 2 s.",
+   "Ends when the cursed Survivor is healed or downed, which also puts out the totem.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Keep the cursed Survivor injured to keep the screams going.",
+  "sourceHash": "057a32e2ac5e9d39"
+ },
+ "killer:hex-fortunes-fool": {
+  "summary": "Your first hook on a Survivor lights a Hex that makes them Oblivious and protects the totem for a while.",
+  "facts": [
+   "Needs a Dull Totem; your first hook on a Survivor lights a Hex that curses them.",
+   "The cursed Survivor is Oblivious.",
+   "For 90 s nobody else can cleanse or bless the totem, since it is blocked.",
+   "The cursed Survivor is not blocked.",
+   "The cursed Survivor sees the totem within 24/20/16 m.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Patrol near the totem; the cursed Survivor will try to cleanse it.",
+  "sourceHash": "d529437e2753a2c8"
+ },
+ "killer:hex-haunted-ground": {
+  "summary": "Two trap totems: cleansing either one makes all Survivors Exposed for a while.",
+  "facts": [
+   "2 Hex Totems light when the match begins.",
+   "Blessing or cleansing either one makes all Survivors Exposed for 40/50/60 s.",
+   "The other Hex Totem goes out after the trap triggers.",
+   "Disabled for the rest of the match after it triggers."
+  ],
+  "tip": "Stay in a chase when the trap goes off to get a quick down.",
+  "sourceHash": "bfc37d1c9afbb505"
+ },
+ "killer:hex-hive-mind": {
+  "summary": "After your first hook, you see generator progress, and the fourth finished generator punishes the rest.",
+  "facts": [
+   "Your first hook turns a random remaining Dull Totem into its Hex Totem.",
+   "You see generators, brighter the more progress they have.",
+   "When 4 generators in total are completed, all others explode, lose 6/8/10% progress and start regressing.",
+   "The totem then becomes dull and the perk turns off for the match.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Use the brightness to defend the generators closest to completion.",
+  "sourceHash": "d2d380575c14b59f"
+ },
+ "killer:hex-huntress-lullaby": {
+  "summary": "A Hex that makes failed skill checks hurt more and, with tokens, removes the skill-check warning sound.",
+  "facts": [
+   "Survivors healing or repairing lose 2/4/6% more progress on failed skill checks.",
+   "+1 Token per Survivor hooked; max 5 Tokens.",
+   "Time between the warning sound and the skill check shrinks: 1 Token -14%, 2 -28%, 3 -42%, 4 -56%.",
+   "At 5 Tokens there is no warning sound at all.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Pair with skill-check perks like Overcharge or Unnerving Presence.",
+  "sourceHash": "fd93c5c8bcf47179"
+ },
+ "killer:hex-no-one-escapes-death": {
+  "summary": "When the gates get power, a Hex makes every Survivor Exposed and you slightly faster.",
+  "facts": [
+   "When the Exit Gates get power, it lights a remaining Dull Totem.",
+   "You get 2/3/4% Haste.",
+   "All Survivors are Exposed.",
+   "Once Survivors are told about it, they see the totem within 4 m, growing to 24 m over 30 s.",
+   "Does nothing if no Dull Totem is left.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Do not cleanse totems yourself early; leave Dull Totems for the endgame.",
+  "sourceHash": "98ba1f8aefaed039"
+ },
+ "killer:hex-nothing-but-misery": {
+  "summary": "After a few hits a Hex lights that slows down and hampers each Survivor you hit.",
+  "facts": [
+   "Once you land 4 basic-attack hits in total, a random Dull Totem lights as its Hex, cursing every Survivor.",
+   "Survivors hit by a basic attack are Hindered by -5% for 10/12.5/15 s.",
+   "They also vault 10% slower for 10/12.5/15 s.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Keep chasing after a hit; the Survivor cannot vault away as fast.",
+  "sourceHash": "1eb430f95e06745f"
+ },
+ "killer:hex-overture-of-doom": {
+  "summary": "A Hex curses the farthest generator; Survivors working on it trigger your Terror Radius there while you sneak.",
+  "facts": [
+   "The Hex Totem curses the generator farthest from it, shown to you in yellow.",
+   "When a Survivor repairs it for at least 5 s, for 20/25/30 s:",
+   "your Terror Radius moves to that generator and is set to 32 m;",
+   "you are Undetectable.",
+   "When that generator is done, the next farthest one is cursed.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Go to the cursed generator while Undetectable to surprise the Survivors there.",
+  "sourceHash": "afe460b03fcddf75"
+ },
+ "killer:hex-pentimento": {
+  "summary": "Bring cleansed totems back to life to stack heavy slowdown on healing and repairing.",
+  "facts": [
+   "You see cleansed totems in white.",
+   "Press Interaction at a cleansed totem to make it a Rekindled Totem.",
+   "+1 Token per Rekindled Totem; max 5 Tokens.",
+   "1 Token: healing and repairing are 20% slower.",
+   "2 to 5 Tokens: the penalty grows by 1/2/3% for each token, capped at 24/28/32%.",
+   "Cursed Survivors see Rekindled Totems within 16 m.",
+   "At 5 Tokens, all Rekindled Totems are blocked for the rest of the match.",
+   "A totem can be rekindled once; cleansed Rekindled Totems are gone for good.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Rekindle totems when Survivors cleanse fast, then stack tokens over the match.",
+  "sourceHash": "ca7b9fdad83aa09a"
+ },
+ "killer:hex-plaything": {
+  "summary": "Your first hook on a Survivor lights a Hex that makes them Oblivious and protects the totem for a while.",
+  "facts": [
+   "Needs a Dull Totem; your first hook on a Survivor lights a Hex that curses them.",
+   "The cursed Survivor is Oblivious.",
+   "For 90 s nobody else can cleanse or bless the totem, since it is blocked.",
+   "The cursed Survivor is not blocked.",
+   "The cursed Survivor sees the totem within 24/20/16 m.",
+   "Ends for good when a Survivor cleanses or blesses the Hex Totem."
+  ],
+  "tip": "Patrol near the totem; the cursed Survivor will try to cleanse it.",
+  "sourceHash": "d529437e2753a2c8"
+ },
+ "killer:hex-retribution": {
+  "summary": "Survivors who touch totems become Oblivious, and losing any Hex reveals the whole team.",
+  "facts": [
+   "Any Survivor who cleanses or blesses a totem turns Oblivious for 40/50/60 s.",
+   "When any Hex Totem is removed, including this one, you see all Survivors for 20 s.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Pair with other Hex perks so each lost totem still gives you something.",
+  "sourceHash": "96a35d52f6785d86"
+ },
+ "killer:hex-ruin": {
+  "summary": "A Hex that makes every generator nobody is working on lose progress by itself.",
+  "facts": [
+   "Unattended generators lose progress by themselves, at 100/125/150% of normal regression.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Pressure Survivors off generators so the regression can work.",
+  "sourceHash": "7e108a0d76660e8c"
+ },
+ "killer:hex-scared-to-death": {
+  "summary": "After hooking three different Survivors, breaking pallets in chase makes nearby Survivors scream and slows them.",
+  "facts": [
+   "Lights on a random Dull Totem once you have hooked 3 different Survivors.",
+   "Breaking a pallet normally during a chase makes Survivors within 13 m scream.",
+   "They are Hindered by -11/-12/-13% for 3 s.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Break pallets quickly in chase to catch the slowed Survivor.",
+  "sourceHash": "e5c054862de8de1e"
+ },
+ "killer:hex-the-third-seal": {
+  "summary": "The last few Survivors you hit lose all aura reading while the Hex stands.",
+  "facts": [
+   "Your 2/3/4 most recently hit Survivors (any basic or special attack) stay Blind permanently.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Strong against teams using Kindred or Bond for teamwork.",
+  "sourceHash": "7d3054c32d8aa11f"
+ },
+ "killer:hex-thrill-of-the-hunt": {
+  "summary": "Each lit Hex Totem adds a token; hooking a Survivor then blocks all totems for a while.",
+  "facts": [
+   "Needs a Dull Totem; your first hook on a Survivor lights its Hex, cursing them.",
+   "+1 token for each lit Hex Totem on the map.",
+   "Each hook blocks all totems for 4/5/6 s per token, up to 20/25/30 s.",
+   "Loses 1 Token when a Hex Totem is cleansed.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Run it with several other Hex perks to protect them all.",
+  "sourceHash": "3ce56779868b2bb2"
+ },
+ "killer:hex-two-can-play": {
+  "summary": "After being stunned or blinded a few times, a Hex blinds every Survivor who does it again.",
+  "facts": [
+   "Lights on a random totem after you are stunned or blinded 4/3/2 times by Survivors.",
+   "Needs at least one Dull Totem and no totem of its own yet.",
+   "Any Survivor who then stuns or blinds you is blinded in turn for 1.5 s.",
+   "Does not affect Survivors you carry.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Good against teams that rely on flashlight and pallet saves.",
+  "sourceHash": "905f5190d1912f6c"
+ },
+ "killer:hex-under-your-thumb": {
+  "summary": "A Hex that caps how much Haste Survivors can gain and reveals those who get it.",
+  "facts": [
+   "Lights on a random Dull Totem when a Survivor gets a hook state.",
+   "Haste on running Survivors is capped at 25/20/15%.",
+   "When a running Survivor within 32 m gains Haste, you see their location for 4 s.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Strong against Sprint Burst and other speed perks.",
+  "sourceHash": "5a2a2019f0278fe3"
+ },
+ "killer:hex-undying": {
+  "summary": "Protects your other Hexes by moving them onto this totem when cleansed, and shows Survivors near Dull Totems.",
+  "facts": [
+   "Survivors within 2/3/4 m of a Dull Totem show to you while they stay that close.",
+   "When another Hex Totem is cleansed, that Hex moves to the Undying totem and replaces it.",
+   "Ends for good when a Survivor cleanses or blesses its Hex Totem."
+  ],
+  "tip": "Pair with a strong Hex like Devour Hope or Ruin.",
+  "sourceHash": "17c8905fb498f37f"
+ },
+ "killer:hex-wretched-fate": {
+  "summary": "After a generator is done, a Hex curses the Obsession and slows their repairs a lot.",
+  "facts": [
+   "After a generator is completed, a random Dull Totem lights and curses the Obsession.",
+   "The Obsession repairs 27/30/33% slower.",
+   "The Obsession sees the Hex Totem within 12 m."
+  ],
+  "tip": "Pressure the Obsession so they do not have time to cleanse the totem.",
+  "sourceHash": "f6ec3913641e2849"
+ },
+ "killer:hoarder": {
+  "summary": "Alerts you when Survivors open chests or pick up items near you, and adds extra chests.",
+  "facts": [
+   "Within 32/48/64 m, a Survivor opening a chest or picking up an item alerts you with a 4 s Loud Noise Notification.",
+   "2 extra chests appear in the match."
+  ],
+  "tip": "Patrol chest-heavy areas early to catch looting Survivors.",
+  "sourceHash": "0eb78e8d3dc63cf0"
+ },
+ "killer:hubris": {
+  "summary": "Any Survivor who stuns you becomes Exposed for a while.",
+  "facts": [
+   "When a Survivor stuns you in any way, they are Exposed for 20/25/30 s.",
+   "Cool-down: 20 s."
+  ],
+  "tip": "Chase the stunning Survivor right away for a quick down.",
+  "sourceHash": "9a8a2d978171b7b0"
+ },
+ "killer:human-greed": {
+  "summary": "You can close opened chests and see unopened ones, revealing Survivors who come near them.",
+  "facts": [
+   "You can kick opened chests to close them.",
+   "You always see unopened chests.",
+   "A Survivor coming within 8 m of a closed or unopened chest is revealed for 3/4/5 s.",
+   "Cool-down: 10 s on kicking chests."
+  ],
+  "tip": "Close chests on your patrol to catch Survivors looking for items.",
+  "sourceHash": "10f04973e4583fc0"
+ },
+ "killer:hysteria": {
+  "summary": "Injuring a healthy Survivor makes every injured Survivor Oblivious for a while.",
+  "facts": [
+   "When you injure a healthy Survivor, all injured Survivors are Oblivious for 30/35/40 s.",
+   "This includes the Survivor you just hit.",
+   "Cool-down: 20 s."
+  ],
+  "tip": "Spread injuries so many Survivors cannot hear you coming.",
+  "sourceHash": "935e6f7748f279d9"
+ },
+ "killer:im-all-ears": {
+  "summary": "Survivors fast-vaulting near you are revealed for several seconds.",
+  "facts": [
+   "A fast vault by a Survivor within 48 m shows them to you for 8 s.",
+   "Cool-down: 60/45/30 s."
+  ],
+  "tip": "Use it to predict which way a Survivor runs after a vault.",
+  "sourceHash": "775ac11717069625"
+ },
+ "killer:insidious": {
+  "summary": "Standing still makes you Undetectable, and it lingers briefly when you move.",
+  "facts": [
+   "After standing still for 2 s, you are Undetectable while you do not move.",
+   "It stays for 6/7/8 s after you start moving."
+  ],
+  "tip": "Wait near a hook or generator for Survivors to come close.",
+  "sourceHash": "e1d5268b03a76868"
+ },
+ "killer:iron-grasp": {
+  "summary": "Carried Survivors push you around less and need more time to wiggle free.",
+  "facts": [
+   "Strafing from their wiggling is 75% weaker.",
+   "Wiggling free takes 10/11/12% longer."
+  ],
+  "tip": "Great for reaching far hooks or the Basement.",
+  "sourceHash": "ae0958740cf4c74c"
+ },
+ "killer:iron-maiden": {
+  "summary": "You search lockers faster, and Survivors leaving lockers scream and become Exposed.",
+  "facts": [
+   "Searching an empty locker is 30/40/50% faster.",
+   "A Survivor leaving a locker screams and you get a Loud Noise Notification there.",
+   "The notification stays for 4 s.",
+   "They are Exposed for 30 s."
+  ],
+  "tip": "Good against Survivors who use Head On or Deception.",
+  "sourceHash": "5c2d323b02b83603"
+ },
+ "killer:keep-them-waiting": {
+  "summary": "Hitting Survivors other than the Obsession shortens your attack cool-down; hitting the Obsession costs tokens.",
+  "facts": [
+   "+1 Token per basic-attack hit on a Survivor who is not the Obsession; max 6/7/8 Tokens.",
+   "Hitting the Obsession with any attack removes 2 Tokens.",
+   "Each token cuts the cool-down after a hit by 5%, up to 30/35/40%.",
+   "Tokens stop changing after the Obsession dies.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Avoid the Obsession early to stack faster recovery after hits.",
+  "sourceHash": "3328eea9aaa9a1e8"
+ },
+ "killer:kill-spree": {
+  "summary": "Once every Survivor is on second hook and all generators are done, you can kill them yourself.",
+  "facts": [
+   "With every generator done and every Survivor on their second hook stage, you may kill them by your own hand.",
+   "While you kill, and for 6/8/10 s after, the Exit Gate switches are blocked."
+  ],
+  "tip": "Spread your hooks evenly to set up the endgame.",
+  "sourceHash": "3c7348bb8e857980"
+ },
+ "killer:knock-out": {
+  "summary": "Survivors who drop a pallet and run off quickly are slowed for a moment.",
+  "facts": [
+   "If a Survivor drops a pallet and moves more than 10 m away within 6 s, with the pallet still standing...",
+   "...they are Hindered by -20% for 2/3/4 s."
+  ],
+  "tip": "Stand still after a pallet drop to catch the Survivor running off.",
+  "sourceHash": "f9e397795af32bcf"
+ },
+ "killer:languid-touch": {
+  "summary": "Survivors who startle crows near you become Exhausted.",
+  "facts": [
+   "When a Survivor startles a crow within 36 m, they are Exhausted for 6/8/10 s.",
+   "Cool-down: 5 s."
+  ],
+  "tip": "Blocks exhaustion perks while you search for Survivors.",
+  "sourceHash": "e637779d05a75d98"
+ },
+ "killer:laughingstock": {
+  "summary": "Survivors near a completed generator are Exhausted and cannot hear your Terror Radius.",
+  "facts": [
+   "Survivors within 12 m of a completed generator are Exhausted and Oblivious."
+  ],
+  "tip": "Chase Survivors near finished generators.",
+  "sourceHash": "54895ff90af336da"
+ },
+ "killer:lay-waste": {
+  "summary": "Kicking a generator makes it lose progress faster, more so the further along it is.",
+  "facts": [
+   "A damaged generator regresses +2% faster per charge it has.",
+   "Cool-down: 55/50/45 s after a kick."
+  ],
+  "tip": "Kick generators that are almost done.",
+  "sourceHash": "98cb38e7df5ee386"
+ },
+ "killer:lethal-pursuer": {
+  "summary": "See all Survivors at the start, and every Survivor aura reveal you get lasts longer.",
+  "facts": [
+   "At the start you see all Survivors for 7/8/9 s.",
+   "All Survivor aura reveals to you last +2 s longer.",
+   "The extra time also applies to its own reveal."
+  ],
+  "tip": "Pair with other aura perks like Barbecue & Chilli.",
+  "sourceHash": "f82081055e50909b"
+ },
+ "killer:leverage": {
+  "summary": "Survivors who unhook someone heal slower for a minute.",
+  "facts": [
+   "After any unhook, the Survivor who did it heals 20/25/30% slower for 60 s."
+  ],
+  "tip": "Pair with healing slowdown perks like Sloppy Butcher.",
+  "sourceHash": "8521bd64be4d982b"
+ },
+ "killer:lightborn": {
+  "summary": "You cannot be blinded by most light sources, and you see Survivors who try.",
+  "facts": [
+   "Any Survivor attempting a blind on you is revealed for 6/8/10 s.",
+   "Flashlights, Flash Grenades, Firecrackers and Blast Mine cannot blind you."
+  ],
+  "tip": "Pick it against teams with several flashlights.",
+  "sourceHash": "0bf281d9bec84130"
+ },
+ "killer:machine-learning": {
+  "summary": "Kicked generators become compromised; completing one makes you fast and Undetectable.",
+  "facts": [
+   "Damaging a generator makes it Compromised; up to 3 at a time.",
+   "You see Compromised generators in yellow.",
+   "Finishing a Compromised generator gives you Undetectable and +8% Haste for 40/50/60 s.",
+   "Afterwards no generator is Compromised any more."
+  ],
+  "tip": "Use the speed and stealth to start a chase right after the generator pops.",
+  "sourceHash": "ece0e74facd72898"
+ },
+ "killer:mad-grit": {
+  "summary": "While carrying, missed attacks cost no time and hits pause the carried Survivor's wiggling.",
+  "facts": [
+   "While carrying, missed basic attacks have no cool-down.",
+   "Hitting another Survivor pauses the carried Survivor's wiggle for 2/3/4 s."
+  ],
+  "tip": "Swing at Survivors who come close for a body block.",
+  "sourceHash": "cc64f8d6d6ad96b0"
+ },
+ "killer:make-your-choice": {
+  "summary": "Survivors who rescue someone while you are far away scream and become Exposed.",
+  "facts": [
+   "When a Survivor is unhooked while you are more than 32 m away, it triggers.",
+   "The rescuer screams and shows their location.",
+   "They are Exposed for 40/50/60 s.",
+   "Cool-down: 40/50/60 s."
+  ],
+  "tip": "Leave the hook quickly, then come back for the Exposed rescuer.",
+  "sourceHash": "abe956626c807196"
+ },
+ "killer:merciless-storm": {
+  "summary": "Generators near completion flood Survivors with skill checks, and one mistake blocks the generator.",
+  "facts": [
+   "Triggers when a generator reaches 90% progress.",
+   "Survivors working on it get skill check after skill check until it is done.",
+   "If any of them misses a check or stops, the Entity blocks it for 16/18/20 s.",
+   "Once per generator per match."
+  ],
+  "tip": "Pair with Huntress Lullaby to make the skill checks harder.",
+  "sourceHash": "4e58b180e3926e11"
+ },
+ "killer:mindbreaker": {
+  "summary": "Survivors repairing generators are Blind and Exhausted, which blocks their aura reading and sprint perks.",
+  "facts": [
+   "Survivors repairing a generator are Blind and Exhausted.",
+   "Both effects stay for 3/4/5 s after they stop.",
+   "Does not replace an existing Exhaustion; it pauses its timer instead."
+  ],
+  "tip": "Strong against Sprint Burst users who sit on generators.",
+  "sourceHash": "abeaf67d0632e711"
+ },
+ "killer:monitor-and-abuse": {
+  "summary": "Your Terror Radius is smaller while you patrol and slightly bigger while you chase.",
+  "facts": [
+   "In a chase your Terror Radius is 5/10/15% bigger.",
+   "Outside a chase it is 15/20/25% smaller."
+  ],
+  "tip": "Approach generators quietly, then start the chase.",
+  "sourceHash": "a6378654cbd1b762"
+ },
+ "killer:nemesis": {
+  "summary": "Survivors who stun or blind you become your Obsession and cannot hear you for a while.",
+  "facts": [
+   "Any other Survivor who blinds you, or uses a pallet or locker to stun you, takes over as Obsession.",
+   "Whenever the Obsession changes, the new one is Oblivious for 40/50/60 s.",
+   "You see the new Obsession for 8 s.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Go after the new Obsession right away while they are Oblivious.",
+  "sourceHash": "130bfb880b3f13a7"
+ },
+ "killer:no-holds-barred": {
+  "summary": "Every finished generator blocks the most advanced remaining one for a short time.",
+  "facts": [
+   "When a generator is completed, the generator with the most progress is blocked for 15/20/25 s.",
+   "You see the blocked generator in white."
+  ],
+  "tip": "Patrol the blocked generator after it reopens; Survivors will return to it.",
+  "sourceHash": "f6f7b48afd78d87c"
+ },
+ "killer:no-quarter": {
+  "summary": "Survivors healing themselves face a stream of skill checks near the end, and one mistake makes them Broken.",
+  "facts": [
+   "Triggers when a self-heal reaches 75% progress.",
+   "The Survivor gets skill check after skill check until the heal is done.",
+   "A missed check or stopping makes them Broken for 20/25/30 s."
+  ],
+  "tip": "Strong against Self-Care and Med-Kit heavy teams.",
+  "sourceHash": "0bd68a8c7b827f2b"
+ },
+ "killer:no-way-out": {
+  "summary": "First hooks build tokens; in the endgame the first touch on a gate switch blocks both switches for a while.",
+  "facts": [
+   "+1 Token for each Survivor you hook for the first time.",
+   "After the Exit Gates are powered, the first Survivor to use a switch gives you a Loud Noise Notification.",
+   "Both switches are then blocked for 12 s.",
+   "Each token adds 6/9/12 s, up to 36/48/60 s in total."
+  ],
+  "tip": "Hook every Survivor once to make the endgame block as long as possible.",
+  "sourceHash": "bc4ca6c391a34fd1"
+ },
+ "killer:none-are-free": {
+  "summary": "First hooks build tokens; once all generators are done, windows and pallets are blocked for a while.",
+  "facts": [
+   "+1 Token per Survivor hooked for the first time; max 4 Tokens.",
+   "When all generators are completed, all windows and standing pallets are blocked.",
+   "Block time is 12/14/16 s per token, up to 48/56/64 s."
+  ],
+  "tip": "Use the endgame window to down Survivors who have nowhere to loop.",
+  "sourceHash": "379979f701879884"
+ },
+ "killer:nowhere-to-hide": {
+  "summary": "Kicking a generator reveals Survivors hiding close to it.",
+  "facts": [
+   "When you damage a generator, you see all Survivors within 24 m of it for 3/4/5 s."
+  ],
+  "tip": "Kick generators that Survivors just left to find them nearby.",
+  "sourceHash": "5de6373e63dc03ce"
+ },
+ "killer:oppression": {
+  "summary": "Kicking one generator makes several others regress too and gives their repairers a hard skill check.",
+  "facts": [
+   "When you damage a generator, up to 4 other random generators start regressing too.",
+   "Survivors working on them get a difficult skill check.",
+   "Cool-down: 45/40/35 s."
+  ],
+  "tip": "Pair with Overcharge and Call of Brine for heavy regression.",
+  "sourceHash": "a93933b70176cbd5"
+ },
+ "killer:overcharge": {
+  "summary": "The next Survivor on a generator you kicked gets a hard skill check, and regression speeds up over time.",
+  "facts": [
+   "After you damage a generator, the next Survivor to touch it gets a difficult skill check.",
+   "Failing it costs an extra 2/3/4% of the generator's total progress.",
+   "Regression on that generator rises from 85% to 130% of normal over 30 s."
+  ],
+  "tip": "Kick generators Survivors are about to return to.",
+  "sourceHash": "3602aa31e12830dd"
+ },
+ "killer:overwhelming-presence": {
+  "summary": "Survivors using items near you become Exhausted, and Exhausted Survivors near you get revealed.",
+  "facts": [
+   "When a Survivor within 32 m starts using an item, they are Exhausted for 15 s.",
+   "When a Survivor within 32 m becomes Exhausted, you see the closest Exhausted Survivor for 2/3/4 s.",
+   "Cool-down: 25 s."
+  ],
+  "tip": "Good against teams that heal with Med-Kits or repair with Toolboxes.",
+  "sourceHash": "f071d90c60f20590"
+ },
+ "killer:phantom-fear": {
+  "summary": "Survivors who look at you inside your Terror Radius scream and are revealed briefly.",
+  "facts": [
+   "A Survivor inside your Terror Radius who faces you screams.",
+   "You see their aura for 2 s.",
+   "Cool-down: 80/70/60 s."
+  ],
+  "tip": "Approach from the front so Survivors look at you.",
+  "sourceHash": "7c8cc7ab03d20b0e"
+ },
+ "killer:play-with-your-food": {
+  "summary": "Letting the Obsession escape chases gives you speed tokens, which attacks use up.",
+  "facts": [
+   "+1 Token when you lose the Obsession in a chase; max 3 Tokens.",
+   "Any attack that could hurt a Survivor removes 1 Token.",
+   "With at least 1 Token you get 3/4/5% Haste per token, up to 9/12/15%.",
+   "Cool-down: 10 s between gaining tokens.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Let the Obsession go a few times early, then use the speed on others.",
+  "sourceHash": "bcd31cb2efff392f"
+ },
+ "killer:pop-goes-the-weasel": {
+  "summary": "After a hook, your next generator kick removes a big chunk of progress.",
+  "facts": [
+   "Active for 35/40/45 s after you hook a Survivor.",
+   "Damaging a generator by hand adds +15% regression, 20% in total.",
+   "Turns off after use or when time runs out."
+  ],
+  "tip": "Hook near generators that are almost done.",
+  "sourceHash": "375e714ba1b084d2"
+ },
+ "killer:predator": {
+  "summary": "When a Survivor escapes your chase, you see where they went for a moment.",
+  "facts": [
+   "If a chased Survivor gets away, their aura shows for 4 s.",
+   "Cool-down: 60/50/40 s."
+  ],
+  "tip": "Useful for Killers who often lose Survivors at corners.",
+  "sourceHash": "d66c9e8cb7dfd494"
+ },
+ "killer:rampage": {
+  "summary": "Breaking pallets and walls builds tokens that give you speed after being stunned or blinded.",
+  "facts": [
+   "+1 token for each pallet or wall you break normally; max 13.",
+   "When blinded or pallet-stunned, you get +1% Haste per token for 13 s.",
+   "Cool-down: 30/25/20 s after a blind or stun with at least 1 token."
+  ],
+  "tip": "Break pallets often to stack tokens for long chases.",
+  "sourceHash": "7b19e72b45903e95"
+ },
+ "killer:rancor": {
+  "summary": "Each finished generator shows all Survivors' locations, and in the endgame you can kill the Obsession.",
+  "facts": [
+   "When a generator is completed, all Survivors scream and give a Loud Noise Notification.",
+   "The notification stays 3 s.",
+   "The Obsession sees your aura for 5/4/3 s.",
+   "When the Exit Gates get power, the Obsession stays Exposed until the match ends.",
+   "You can then kill the Obsession up close.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Keep the Obsession alive until the gates are powered.",
+  "sourceHash": "a9c7e50a357430bb"
+ },
+ "killer:rapid-brutality": {
+  "summary": "You never gain Bloodlust, but every hit gives you a short speed boost.",
+  "facts": [
+   "You cannot gain Bloodlust.",
+   "A basic attack hit grants +5% Haste for 8/9/10 s."
+  ],
+  "tip": "Use the speed to reach the next Survivor or a new chase.",
+  "sourceHash": "167465c02bf7e983"
+ },
+ "killer:ravenous": {
+  "summary": "First hooks give speed while carrying and faster hooking; four of them make everyone Exposed.",
+  "facts": [
+   "+1 Token per Survivor hooked for the first time; max 4 Tokens.",
+   "Per token: +4% Haste while carrying and +4% hooking speed.",
+   "At 4 Tokens all Survivors scream and are Exposed for 80/85/90 s."
+  ],
+  "tip": "Spread hooks over all four Survivors to reach the Exposed effect.",
+  "sourceHash": "41bd26b2c0cec221"
+ },
+ "killer:remember-me": {
+  "summary": "Hurting the Obsession makes the exit gates take longer to open for everyone else.",
+  "facts": [
+   "+1 Token each time the Obsession is hurt or otherwise drops a health state; max 3/4/5 Tokens.",
+   "Each token adds 6 s to gate opening, up to 18/24/30 s extra.",
+   "Gates then take up to 38/44/50 s to open.",
+   "The Obsession still opens gates in the normal 20 s.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Chase the Obsession during the match, but kill them last.",
+  "sourceHash": "e25a45feaa1f1807"
+ },
+ "killer:save-the-best-for-last": {
+  "summary": "Hitting Survivors other than the Obsession shortens your attack cool-down; hitting the Obsession costs tokens.",
+  "facts": [
+   "+1 Token per basic-attack hit on a Survivor who is not the Obsession; max 6/7/8 Tokens.",
+   "Hitting the Obsession with any attack removes 2 Tokens.",
+   "Each token cuts the cool-down after a hit by 5%, up to 30/35/40%.",
+   "Tokens stop changing after the Obsession dies.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Avoid the Obsession early to stack faster recovery after hits.",
+  "sourceHash": "3328eea9aaa9a1e8"
+ },
+ "killer:scourge-hook-floods-of-rage": {
+  "summary": "Unhooks from Scourge Hooks reveal every other Survivor to you.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "When a Survivor is unhooked from one, you see the other Survivors for 5/6/7 s."
+  ],
+  "tip": "Hook Survivors on Scourge Hooks so rescues give you information.",
+  "sourceHash": "eba9721c8a7e7caf"
+ },
+ "killer:scourge-hook-gift-of-pain": {
+  "summary": "Survivors unhooked from Scourge Hooks bleed and, once healed, work slower until hurt again.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "A Survivor unhooked from one is Haemorrhaged for 90 s.",
+   "After their first full heal, they heal and repair 10/13/16% slower until they are injured again."
+  ],
+  "tip": "Pair with healing slowdown so Survivors avoid healing.",
+  "sourceHash": "35718917657d1a51"
+ },
+ "killer:scourge-hook-hangmans-trick": {
+  "summary": "While carrying, you see Survivors near Scourge Hooks, and you are alerted when hooks are sabotaged.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "While carrying a Survivor, you see Survivors within 12/14/16 m of a Scourge Hook.",
+   "When a Survivor starts sabotaging any hook, you get a Loud Noise Notification there."
+  ],
+  "tip": "Strong against saboteur teams.",
+  "sourceHash": "6a7b3dca8a127c49"
+ },
+ "killer:scourge-hook-jagged-compass": {
+  "summary": "Normal hooks turn into Scourge Hooks after use, and Scourge hooking shows the best generator.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "Any regular hook someone gets rescued from turns into a Scourge Hook.",
+   "Hooking someone on a Scourge Hook highlights the most advanced generator (yellow) for 6/8/10 s."
+  ],
+  "tip": "Use the generator reveal to defend the most dangerous generator.",
+  "sourceHash": "685cece25dd701f5"
+ },
+ "killer:scourge-hook-monstrous-shrine": {
+  "summary": "Basement hooks and some other hooks become Scourge Hooks; staying away from them speeds up regression.",
+  "facts": [
+   "At the start, the 4 Basement hooks and 4 other hooks become Scourge Hooks.",
+   "You see Scourge Hooks in white.",
+   "While you stay over 24 m away from a Survivor on a Scourge Hook, generator regression runs at 150/175/200% of normal."
+  ],
+  "tip": "Leave the hook after hooking to get the regression bonus.",
+  "sourceHash": "25001431ee34bd05"
+ },
+ "killer:scourge-hook-pain-resonance": {
+  "summary": "The first Scourge hook on each Survivor makes the most advanced generator explode and lose progress.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "Starts with 4 Tokens.",
+   "The first time a Survivor is hooked on a Scourge Hook, 1 Token is spent:",
+   "the most advanced generator explodes, dropping 10/15/20% of its progress at once;",
+   "it then starts regressing;",
+   "Survivors working on it scream, without a Loud Noise Notification.",
+   "Disabled for the rest of the match once all tokens are used."
+  ],
+  "tip": "Hook each Survivor on a Scourge Hook once to use all four tokens.",
+  "sourceHash": "6f3a32123e2d39ef"
+ },
+ "killer:scourge-hook-weeping-wounds": {
+  "summary": "Survivors unhooked from Scourge Hooks bleed and, once healed, work slower until hurt again.",
+  "facts": [
+   "4 hooks become Scourge Hooks when the match starts; you see them in white.",
+   "A Survivor unhooked from one is Haemorrhaged for 90 s.",
+   "After their first full heal, they heal and repair 10/13/16% slower until they are injured again."
+  ],
+  "tip": "Pair with healing slowdown so Survivors avoid healing.",
+  "sourceHash": "35718917657d1a51"
+ },
+ "killer:secret-project": {
+  "summary": "Totem cleanses and blessings block a generator, and any blocked generator makes you Undetectable.",
+  "facts": [
+   "Each cleanse or blessing of a totem blocks one random generator (not already blocked) for 20/25/30 s.",
+   "Whenever generators become blocked, you are Undetectable for 30 s."
+  ],
+  "tip": "Pair with other blocking perks like Grim Embrace for long Undetectable windows.",
+  "sourceHash": "c10c36c012a3dae7"
+ },
+ "killer:see-how-they-run": {
+  "summary": "Letting the Obsession escape chases gives you speed tokens, which attacks use up.",
+  "facts": [
+   "+1 Token when you lose the Obsession in a chase; max 3 Tokens.",
+   "Any attack that could hurt a Survivor removes 1 Token.",
+   "With at least 1 Token you get 3/4/5% Haste per token, up to 9/12/15%.",
+   "Cool-down: 10 s between gaining tokens.",
+   "You have only one Obsession at a time."
+  ],
+  "tip": "Let the Obsession go a few times early, then use the speed on others.",
+  "sourceHash": "bcd31cb2efff392f"
+ },
+ "killer:septic-touch": {
+  "summary": "Survivors healing inside your Terror Radius become Blind and Exhausted.",
+  "facts": [
+   "Survivors healing inside your Terror Radius are Blind and Exhausted.",
+   "Both effects stay for 20/25/30 s after the heal stops."
+  ],
+  "tip": "Interrupt heals to block their exhaustion perks for a long time.",
+  "sourceHash": "4098f51452a9f05a"
+ },
+ "killer:shadowborn": {
+  "summary": "Being blinded gives you a short speed boost instead of slowing you down.",
+  "facts": [
+   "When you are blinded in any way, you get 6/8/10% Haste for 10 s."
+  ],
+  "tip": "Punish flashlight Survivors by catching them after the blind.",
+  "sourceHash": "bd1d3c2b5ff63083"
+ },
+ "killer:shattered-hope": {
+  "summary": "You destroy Boon Totems instead of snuffing them, and totem actions block all totems briefly.",
+  "facts": [
+   "You destroy Boon Totems instead of snuffing them.",
+   "Each totem cleanse, blessing or destruction blocks every totem for 16/18/20 s.",
+   "You also see all blessed totems for 16/18/20 s."
+  ],
+  "tip": "Strong against boon-heavy Survivor teams.",
+  "sourceHash": "74f7344c791a0682"
+ },
+ "killer:silent-shadow": {
+  "summary": "Each hook makes you Undetectable briefly, and powered gates make it permanent.",
+  "facts": [
+   "After hooking a Survivor you are Undetectable for 11/12/13 s.",
+   "When the Exit Gates get power, you stay Undetectable until the match ends."
+  ],
+  "tip": "Use the hook window to surprise Survivors coming for the rescue.",
+  "sourceHash": "1ff4aaede78fe8db"
+ },
+ "killer:sloppy-butcher": {
+  "summary": "Your hits make Survivors bleed heavily and heal slower for over a minute.",
+  "facts": [
+   "Survivors hit by your basic attack are Haemorrhaged and Mangled for 70/80/90 s.",
+   "Their blood pools appear 50/75/100% more often.",
+   "Partial heal progress drops +25% faster."
+  ],
+  "tip": "Pair with A Nurse's Calling to find Survivors who try to heal.",
+  "sourceHash": "4239d8cc0cc2cdb2"
+ },
+ "killer:spies-from-the-shadows": {
+  "summary": "Crows startled by Survivors near you alert you with a special sound.",
+  "facts": [
+   "Crows startled by a Survivor up to 36/38/40 m away give you a crow-shaped Loud Noise Notification.",
+   "Cool-down: 3 s between alerts."
+  ],
+  "tip": "Great for finding stealthy Survivors moving between generators.",
+  "sourceHash": "b97beb835976d808"
+ },
+ "killer:spirit-fury": {
+  "summary": "After breaking a few pallets, the next pallet that stuns you breaks instantly.",
+  "facts": [
+   "Activates after you break 4/3/2 dropped pallets yourself.",
+   "The next pallet a Survivor stuns you with breaks at once.",
+   "The stun still lasts as long as usual.",
+   "Turns off after use."
+  ],
+  "tip": "Pair with Enduring to recover quickly from the stun.",
+  "sourceHash": "486b54fb5c70b74e"
+ },
+ "killer:starstruck": {
+  "summary": "While you carry a Survivor, everyone in your Terror Radius becomes Exposed.",
+  "facts": [
+   "While you carry someone, every other Survivor inside your Terror Radius is Exposed.",
+   "Exposed stays 26/28/30 s after they leave your Terror Radius or the perk ends.",
+   "Ends when you hook or drop the Survivor.",
+   "Cool-down: 60 s."
+  ],
+  "tip": "Walk toward Survivors who come for a body block or flashlight save.",
+  "sourceHash": "3ba91f5b8a8743ff"
+ },
+ "killer:stridor": {
+  "summary": "Survivors' pain grunts and breathing are louder, making them easier to find by sound.",
+  "facts": [
+   "Injured Survivors grunt 30/40/50% louder.",
+   "Normal breathing of Survivors is 15/20/25% louder."
+  ],
+  "tip": "Strong for Killers who track by sound, like Spirit.",
+  "sourceHash": "6e3694bb3d9a912d"
+ },
+ "killer:superior-anatomy": {
+  "summary": "A Survivor fast-vaulting near you makes your next vaults much faster for a short time.",
+  "facts": [
+   "When a Survivor fast-vaults within 12 m, it is active for 10 s.",
+   "Your vaults are 30/35/40% faster.",
+   "Cool-down: 20 s."
+  ],
+  "tip": "Follow the Survivor over the window right away.",
+  "sourceHash": "fe9b74b52f526596"
+ },
+ "killer:surge": {
+  "summary": "Downing a Survivor with a basic attack makes nearby generators explode and regress.",
+  "facts": [
+   "When your basic attack downs a Survivor, generators within 32 m explode.",
+   "They lose 6/7/8% progress at once and start regressing."
+  ],
+  "tip": "Chase Survivors near generators to trigger it more often.",
+  "sourceHash": "6ee12dc31330b634"
+ },
+ "killer:surveillance": {
+  "summary": "Shows the state of generators you kicked, and makes Survivors repairing louder.",
+  "facts": [
+   "Damaged generators show in white while regressing.",
+   "They show in yellow when a Survivor stopped the regression.",
+   "The yellow lasts 8/12/16 s, then the normal colour returns.",
+   "Repair noises can be heard +8 m further."
+  ],
+  "tip": "Kick generators, then return to the yellow ones.",
+  "sourceHash": "3cbe753530f1751e"
+ },
+ "killer:terminus": {
+  "summary": "In the endgame, injured, downed or hooked Survivors become Broken and cannot be healed.",
+  "facts": [
+   "Activates when the Exit Gates get power.",
+   "Injured, downed and hooked Survivors become Broken.",
+   "It lasts until a gate is opened, then for another 35/40/45 s."
+  ],
+  "tip": "Pair with No Way Out or Blood Warden for strong endgame pressure.",
+  "sourceHash": "ec997ff8ad429268"
+ },
+ "killer:territorial-imperative": {
+  "summary": "Survivors entering the Basement while you are far away are revealed to you.",
+  "facts": [
+   "If a Survivor goes into the Basement while you are over 24 m from its entrance, you see them for 4/5/6 s.",
+   "Cool-down: 45 s."
+  ],
+  "tip": "Hook Survivors in the Basement to catch rescuers coming down.",
+  "sourceHash": "339ecf58b2abb97e"
+ },
+ "killer:thanatophobia": {
+  "summary": "Every hurt, downed or hooked Survivor slows the whole team's work a little.",
+  "facts": [
+   "Active while at least one Survivor is injured, downed or hooked.",
+   "All Survivors cleanse, repair and sabotage 1/1.5/2% slower per such Survivor, up to 4/6/8%.",
+   "If all four are injured, downed or hooked, the penalty grows by +12% to 16/18/20%."
+  ],
+  "tip": "Spread injuries rather than downing one Survivor.",
+  "sourceHash": "2cdd0072ae7b0b29"
+ },
+ "killer:thrilling-tremors": {
+  "summary": "Picking up a Survivor blocks all generators nobody is working on for a short time.",
+  "facts": [
+   "When you pick up a Survivor, generators no one is repairing are blocked for 16 s.",
+   "You see the blocked generators in white.",
+   "Cool-down: 40/35/30 s."
+  ],
+  "tip": "Check which generators are not blocked; Survivors are working there.",
+  "sourceHash": "62f31313b1158ada"
+ },
+ "killer:thwack": {
+  "summary": "Breaking walls and pallets makes nearby Survivors scream and reveal themselves, using tokens.",
+  "facts": [
+   "Starts with 3 Tokens.",
+   "Breaking a wall or dropped pallet uses 1 Token.",
+   "Survivors within 36 m then scream; you see them for 4/5/6 s.",
+   "+1 Token each time you hook a Survivor."
+  ],
+  "tip": "Break pallets near generators to find Survivors working there.",
+  "sourceHash": "02218c548d8c9d21"
+ },
+ "killer:tinkerer": {
+  "summary": "Generators reaching 70% alert you, and you become Undetectable for a while.",
+  "facts": [
+   "When a generator reaches 70%, you get a Loud Noise Notification there.",
+   "You are Undetectable for 12/14/16 s.",
+   "Once per generator per match."
+  ],
+  "tip": "Go straight to the alerted generator to surprise the Survivors.",
+  "sourceHash": "f5002a669a17d8ee"
+ },
+ "killer:trail-of-torment": {
+  "summary": "Kicking a generator makes you Undetectable until its regression stops, but Survivors see it.",
+  "facts": [
+   "Damaging a generator makes you Undetectable.",
+   "All Survivors see that generator highlighted in yellow.",
+   "Ends when that generator stops regressing.",
+   "Cool-down: 60/45/30 s."
+  ],
+  "tip": "Kick a generator, then sneak to another area while Undetectable.",
+  "sourceHash": "63b61b14e3533e68"
+ },
+ "killer:turn-back-the-clock": {
+  "summary": "After a hook you can make a nearby generator explode and regress by pressing a button.",
+  "facts": [
+   "For 40/50/60 s after a hook, press Active Ability to target a generator within 20 m.",
+   "It explodes, loses 10% progress and starts regressing."
+  ],
+  "tip": "Hook near generators to use it right away.",
+  "sourceHash": "0c2403e28c0b3113"
+ },
+ "killer:ultimate-weapon": {
+  "summary": "Opening a locker makes Survivors near it scream, reveal their location and lose aura reading.",
+  "facts": [
+   "Searching a locker affects all Survivors within 40 m of it.",
+   "They scream and show their location.",
+   "They are Blind for 30 s.",
+   "Cool-down: 55/50/45 s."
+  ],
+  "tip": "Open a locker on your way across the map to find Survivors.",
+  "sourceHash": "897bd4de2c218372"
+ },
+ "killer:unbound": {
+  "summary": "After a Survivor gets injured, vaulting windows gives you a small speed boost.",
+  "facts": [
+   "When a Survivor becomes injured, it is active for 26/28/30 s.",
+   "Vaulting a window then gives +5% Haste for 25 s.",
+   "Does not stack with itself."
+  ],
+  "tip": "Strong on Killers who chase through window loops.",
+  "sourceHash": "aef1a82ac3a20f67"
+ },
+ "killer:undone": {
+  "summary": "Hooks give tokens that you spend on a kick to regress and block a generator.",
+  "facts": [
+   "+1 Token per hook; max 1/2/3 Tokens.",
+   "Damaging a generator uses all tokens.",
+   "The generator loses 10% per token, up to 10/20/30%.",
+   "It is blocked for 10 s per token, up to 10/20/30 s.",
+   "After the block it starts regressing."
+  ],
+  "tip": "Save tokens for a generator that is almost done.",
+  "sourceHash": "d5ed96d92c13279a"
+ },
+ "killer:unforeseen": {
+  "summary": "Kicking a generator moves your Terror Radius there while you become Undetectable.",
+  "facts": [
+   "After damaging a generator, for 22/26/30 s:",
+   "your Terror Radius moves to that generator and is set to 32 m;",
+   "you are Undetectable.",
+   "Cool-down: 30 s."
+  ],
+  "tip": "Survivors will run away from the generator, often straight toward you.",
+  "sourceHash": "32025639ad468bef"
+ },
+ "killer:unnerving-presence": {
+  "summary": "Survivors working in your Terror Radius get more skill checks that are harder to hit.",
+  "facts": [
+   "In your Terror Radius, repairing and healing Survivors get +10% more skill checks.",
+   "The Good zone of those checks is 40/50/60% smaller."
+  ],
+  "tip": "Pair with Overcharge or Huntress Lullaby.",
+  "sourceHash": "560b0b3d2820be28"
+ },
+ "killer:unrelenting": {
+  "summary": "You recover faster after missed and successful basic attacks.",
+  "facts": [
+   "Recovery after a missed basic attack is 30/35/40% faster.",
+   "Recovery after a hit is 10% faster."
+  ],
+  "tip": "Good for Killers who often miss swings around loops.",
+  "sourceHash": "477ae4c7b910ef74"
+ },
+ "killer:wandering-eye": {
+  "summary": "Starting a chase shows other injured Survivors close to you.",
+  "facts": [
+   "When a chase starts, you see other injured Survivors within 20 m for 5 s.",
+   "Cool-down: 40/35/30 s."
+  ],
+  "tip": "Switch to an injured Survivor if they are closer.",
+  "sourceHash": "6064b2de738cd671"
+ },
+ "killer:weave-attunement": {
+  "summary": "Items that run out are dropped and revealed to you, along with Survivors near them.",
+  "facts": [
+   "Items running out for the first time are dropped automatically.",
+   "You see dropped Survivor items and Survivors within 12 m of them.",
+   "Those Survivors see the item too.",
+   "Survivors picking up an item are Oblivious for 20/25/30 s."
+  ],
+  "tip": "Check the dropped items; Survivors often come back for them.",
+  "sourceHash": "9f187be889c57f61"
+ },
+ "killer:whispers": {
+  "summary": "You hear whispers when a Survivor is near you, and move faster when none are.",
+  "facts": [
+   "The Entity whispers to you whenever a Survivor is no more than 28/26/24 m away.",
+   "With nobody inside that 28/26/24 m range, you get +5% Haste."
+  ],
+  "tip": "Use the whispers to find Survivors hiding around you.",
+  "sourceHash": "5638d22c728da461"
+ },
+ "killer:zanshin-tactics": {
+  "summary": "Shows nearby pallets and windows, and reveals Survivors who drop a pallet.",
+  "facts": [
+   "You see pallets and windows within 32 m.",
+   "When a Survivor drops a pallet, you see them for 3/4/5 s."
+  ],
+  "tip": "Use it to learn loops and avoid wasting time at strong pallets.",
+  "sourceHash": "d3bec168d30cccbb"
+ },
+ "survivor:a-place-for-us": {
+  "summary": "Healing teammates makes both of you hard to track, with an extra stealth window after you mend the Obsession.",
+  "facts": [
+   "While you heal any other Survivor, you and they are Elusive.",
+   "Finishing a heal on the Obsession: you and the Obsession stay Elusive for 20/25/30 s.",
+   "Your chance to start as the Obsession drops by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Prioritise healing the Obsession to bank the longer Elusive window for both of you.",
+  "sourceHash": "7e8af9121d355de4"
+ },
+ "survivor:ace-in-the-hole": {
+  "summary": "Items you pull from chests arrive with add-ons, and the add-ons on your item survive when you escape.",
+  "facts": [
+   "Regular items taken from a chest get 1 to 2 add-ons.",
+   "First add-on slot: 100% chance, Visceral rarity or below.",
+   "Second add-on slot: 50/75/100% chance, Uncommon rarity or below.",
+   "Add-ons on the item you hold are not used up when you escape."
+  ],
+  "tip": "Pair with chest perks like Plunderer's Instinct to farm loaded items each match.",
+  "sourceHash": "168eab2185d414c7"
+ },
+ "survivor:adrenaline": {
+  "summary": "When the gates get power, you instantly heal one state and get a short sprint, even while Exhausted.",
+  "facts": [
+   "Fires on its own the moment the Exit Gates get power.",
+   "Heals you one Health State.",
+   "+50% Haste for 4 s.",
+   "Works while you are Exhausted and is not blocked by a status effect you already have.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Stay injured near the end so the free heal and sprint matter when the last generator pops.",
+  "sourceHash": "2ef4c883def70092"
+ },
+ "survivor:aftercare": {
+  "summary": "Keeps track of teammates you helped or who helped you, showing your auras to each other.",
+  "facts": [
+   "Shows the auras of your 1/2/3 latest linked Survivors.",
+   "A link forms by a hook rescue or a finished heal, in either direction.",
+   "Those Survivors see your aura too.",
+   "Getting hooked clears the list."
+  ],
+  "tip": "Great for coordinating heals in solo queue without voice chat.",
+  "sourceHash": "7cfc277e4f6c944f"
+ },
+ "survivor:alert": {
+  "summary": "Shows you where the Killer is every time they kick a generator or break something.",
+  "facts": [
+   "Triggers when the Killer does a Break or Damage action.",
+   "You see the Killer's aura for 3/4/5 s."
+  ],
+  "tip": "Use the reveal to judge whether a gen kick means the Killer is leaving or patrolling.",
+  "sourceHash": "eccb5bb387578777"
+ },
+ "survivor:any-means-necessary": {
+  "summary": "Lets you see dropped pallets and lift them back up to restore a loop.",
+  "facts": [
+   "You see the auras of pallets that have been dropped.",
+   "Hold the Active Ability button beside a dropped pallet to stand it up again.",
+   "Resetting takes 5/4/3 s."
+  ],
+  "tip": "Reset pallets at strong loops while the Killer chases someone else.",
+  "sourceHash": "d01b9023d09b7dea"
+ },
+ "survivor:apocalyptic-ingenuity": {
+  "summary": "After opening a chest you can rebuild broken pallets as one-use fragile pallets.",
+  "facts": [
+   "You see broken pallet locations within 24/28/32 m.",
+   "Unlocks after you open or rummage 1 chest.",
+   "Hold Active Ability for 3 s at a broken pallet spot to rebuild it.",
+   "Rebuilt pallets are Fragile and break the moment they are dropped."
+  ],
+  "tip": "Rebuild pallets at your strongest loops; a fragile pallet still blocks one stun window.",
+  "sourceHash": "a54f483cc6ed8fa8"
+ },
+ "survivor:appraisal": {
+  "summary": "Rummage through opened chests faster and pull a second item out of them.",
+  "facts": [
+   "Starts with 4 Tokens.",
+   "Hold Interaction at an opened, empty chest to rummage it.",
+   "A rummage gives one extra item and uses 1 Token; at most twice per chest.",
+   "Rummaging is 40/60/80% faster."
+  ],
+  "tip": "Combine with Ace in the Hole for extra items that already carry add-ons.",
+  "sourceHash": "b4b11b3be8276c60"
+ },
+ "survivor:autodidact": {
+  "summary": "Each successful skill check while healing teammates builds tokens that make later Good skill checks heal more.",
+  "facts": [
+   "+1 Token for each passed skill check when you heal a teammate; max 3/4/5 Tokens.",
+   "Great healing skill checks no longer appear.",
+   "Good healing skill checks add progress by tokens: 0 → -15%, 1 → +0%, 2 → +15%, 3 → +30%, 4 → +45%, 5 → +60%.",
+   "Tier I caps at 3 Tokens, Tier II at 4, Tier III at 5.",
+   "Does nothing when you heal with a Med-Kit."
+  ],
+  "tip": "Heal teammates early in the match so tokens are stacked when heals matter most.",
+  "sourceHash": "10805c82ba805122"
+ },
+ "survivor:babysitter": {
+  "summary": "After you unhook someone you see the Killer, while the rescued Survivor leaves no trail and runs faster.",
+  "facts": [
+   "On unhooking another Survivor you see the Killer's aura for 8 s.",
+   "The rescued Survivor leaves no Scratch Marks or blood pools for 20/25/30 s.",
+   "Their Haste is boosted by +10% for that time."
+  ],
+  "tip": "Use the Killer reveal to call out whether they are camping or leaving.",
+  "sourceHash": "d493abe726f271d1"
+ },
+ "survivor:background-player": {
+  "summary": "When the Killer picks up a teammate, you get a short window to sprint toward them for a save.",
+  "facts": [
+   "Becomes active for 10 s when the Killer picks up another downed Survivor.",
+   "Starting to run while active: +50% Haste for 5 s.",
+   "Cannot trigger while Exhausted.",
+   "Afterwards you are Exhausted for 30/25/20 s."
+  ],
+  "tip": "Stay close to chases so the sprint gets you to a pallet or flashlight save.",
+  "sourceHash": "f6e9b3c434eca135"
+ },
+ "survivor:bada-bada-boom": {
+  "summary": "After some gen progress you can trap a window so the Killer is slowed when vaulting it.",
+  "facts": [
+   "Activates after 20% of generator repair progress.",
+   "Press Active Ability at a window to set a trap lasting up to 40/50/60 s.",
+   "If the Killer vaults that window they are Hindered by -50% for 6 s.",
+   "Ends once it triggers or the timer runs out.",
+   "Trapped windows show to all Survivors in yellow."
+  ],
+  "tip": "Trap the window you plan to loop next so the Killer pays for following.",
+  "sourceHash": "80ac9d4886b90977"
+ },
+ "survivor:balanced-landing": {
+  "summary": "Dropping from heights is silent and gives you a quick burst of speed.",
+  "facts": [
+   "When you fall, falling and landing sounds are muted.",
+   "Landing stagger is 75% shorter.",
+   "+50% Haste for 3 s after the fall.",
+   "Cannot trigger while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Route chases over ledges and stairs so every drop turns into a free sprint.",
+  "sourceHash": "4d4f8db1d60c1738"
+ },
+ "survivor:bardic-inspiration": {
+  "summary": "Perform on the spot and roll a die to give nearby teammates faster skill-check progress.",
+  "facts": [
+   "Press Active Ability while standing still to perform for up to 15 s.",
+   "Affects other Survivors within 16 m.",
+   "Result of a d20 roll, lasting 90 s after the performance:",
+   "1: you scream, but the Killer gets no notification.",
+   "2 - 10: +1% progress on skill checks.",
+   "11 - 19: +2% progress on skill checks.",
+   "20: +3% progress on skill checks.",
+   "Cool-down 110/100/90 s after finishing or cancelling."
+  ],
+  "tip": "Perform in a safe corner while teammates sit on generators.",
+  "sourceHash": "39fa72d006427bd6"
+ },
+ "survivor:best-gift-ever": {
+  "summary": "Sacrifice items to the Entity to unlock a lasting bonus tied to each item type.",
+  "facts": [
+   "Starts with 4/5/6 Tokens.",
+   "First drop of each item type: spend 1 Token, the item is consumed and you get its bonus.",
+   "Flashlight: stunned Killers are blinded for 2 s.",
+   "Fog Vial: after a fast vault your Scratch Marks fade +50% faster for 5 s.",
+   "Key: one rummage allowed per chest.",
+   "Map: auras you see last +1 s longer.",
+   "Med-Kit: healing a Survivor also heals you at 25% speed.",
+   "Toolbox: you see the auras of the 3 nearest generators."
+  ],
+  "tip": "Open chests early and feed spare items to stack several bonuses.",
+  "sourceHash": "40b407eafae4b857"
+ },
+ "survivor:better-than-new": {
+  "summary": "Teammates you heal work faster on several actions until they are hit again.",
+  "facts": [
+   "After you finish healing another Survivor they get faster Blessing, Cleansing, Healing and Unlocking.",
+   "Bonus is 40/45/50%.",
+   "Lasts until they take damage."
+  ],
+  "tip": "Heal the teammate who will cleanse totems or open gates next.",
+  "sourceHash": "ce925fd219893aa0"
+ },
+ "survivor:better-together": {
+  "summary": "Shares the generator you work on with the team, and reveals everyone when a teammate goes down.",
+  "facts": [
+   "While you repair, all Survivors see that generator's aura in yellow.",
+   "If a teammate is downed during your repair, you see all Survivors' auras for 20/25/30 s."
+  ],
+  "tip": "Use the down reveal to see who is heading for the save.",
+  "sourceHash": "f1d804a787772081"
+ },
+ "survivor:bite-the-bullet": {
+  "summary": "Makes healing silent and softens the cost of missed healing skill checks.",
+  "facts": [
+   "Healing yourself or others makes no healing noise and no Grunts of Pain.",
+   "Missed healing skill checks give no Loud Noise Notification.",
+   "Missed check penalty drops to 3/2/1% of total progress."
+  ],
+  "tip": "Strong with self-heal perks against Killers who listen for grunts.",
+  "sourceHash": "83daf84958e6998d"
+ },
+ "survivor:blast-mine": {
+  "summary": "After repairing a while, trap a generator so the Killer gets stunned and blinded when kicking it.",
+  "facts": [
+   "Activates after repairs worth 40% of a generator.",
+   "Press Active Ability at a generator to trap it; trap lasts 100/110/120 s.",
+   "Goes off midway through the Killer's damage action on that generator.",
+   "Stuns the Killer for 4 s and blinds every player within 12.5 m.",
+   "The trap ends when it fires or time runs out.",
+   "Trapped generators show to all Survivors in yellow."
+  ],
+  "tip": "Trap the generator the Killer patrols most; stay away so you are not blinded too.",
+  "sourceHash": "fd6e0427a4a42027"
+ },
+ "survivor:blood-pact": {
+  "summary": "Links you and the Obsession once either is injured: shared auras and speed after healing each other.",
+  "facts": [
+   "Activates when you or the Obsession get injured.",
+   "You and the Obsession always see each other's aura.",
+   "Healing each other gives you both 5/6/7% Haste.",
+   "Haste holds while you stay within 16 m of each other.",
+   "If you are the Obsession and get hooked, another Survivor becomes the Obsession.",
+   "Your chance to start as the Obsession drops by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Stick near the Obsession during heals to keep the Haste running.",
+  "sourceHash": "209c008a0fbf4f2c"
+ },
+ "survivor:blood-rush": {
+  "summary": "After an unhook you can instantly clear Exhaustion once, so your exhaustion perk is ready again.",
+  "facts": [
+   "Active for 40/50/60 s after you are unhooked in any way.",
+   "Press Active Ability to remove Exhaustion immediately.",
+   "Does not make you Exhausted itself.",
+   "Ends early on a Conspicuous Action.",
+   "Ends after use; disabled for the rest of the match after the Exit Gates get power."
+  ],
+  "tip": "Pair with Sprint Burst or Lithe to use your exhaustion perk twice after an unhook.",
+  "sourceHash": "586e68cd3b5213dd"
+ },
+ "survivor:boil-over": {
+  "summary": "Makes you harder to carry by pushing the Killer around more and hiding nearby hooks from them.",
+  "facts": [
+   "While carried, your wiggling pushes the Killer 60/70/80% harder.",
+   "The Killer cannot see hook auras within 16 m of you.",
+   "If the Killer drops from a height, you gain +33% of your current wiggle progress."
+  ],
+  "tip": "Wiggle toward drops and hook-less areas to buy time for a save.",
+  "sourceHash": "c5de78703ac52348"
+ },
+ "survivor:bond": {
+  "summary": "Always shows nearby teammates so you know where help or danger is.",
+  "facts": [
+   "You see the auras of other Survivors within 20/28/36 m."
+  ],
+  "tip": "Use it to find teammates to share generators or get healed.",
+  "sourceHash": "87b3299dd6743906"
+ },
+ "survivor:boon-circle-of-healing": {
+  "summary": "Bless a totem to speed up healing others nearby and show injured teammates to everyone.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "Healing others is 50/75/100% faster without a Med-Kit.",
+   "Injured Survivors' auras are shown to the other Survivors.",
+   "Only one Circle of Healing affects a Survivor at a time.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Bless a totem near the centre of the map so the team heals there.",
+  "sourceHash": "3a476944799d74bd"
+ },
+ "survivor:boon-dark-theory": {
+  "summary": "Bless a totem to give a small permanent speed boost around it that lingers when you leave.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "+3% Haste inside the range.",
+   "Haste stays for 2/3/4 s after leaving.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Bless a totem near a strong loop so the extra speed helps in chases.",
+  "sourceHash": "5621c3f18a99ff05"
+ },
+ "survivor:boon-exponential": {
+  "summary": "Bless a totem so downed Survivors nearby can pick themselves up, and recover faster.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "Recovery in the Dying State is 90/95/100% faster.",
+   "Allows full self-recovery from the Dying State.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Crawl to the boon after a down instead of waiting for a teammate.",
+  "sourceHash": "0d80a7523413c26f"
+ },
+ "survivor:boon-illumination": {
+  "summary": "Bless a totem to show chests and generators to Survivors nearby, and bless faster.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "Survivors in range see all chest and generator auras in blue.",
+   "With your Boon Totem lit, you bless 150/175/200% faster.",
+   "Only one Illumination affects a Survivor at a time.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Bless quickly after a snuff to keep other boons running.",
+  "sourceHash": "5e1806cd4fb1e47a"
+ },
+ "survivor:boon-shadow-step": {
+  "summary": "Bless a totem to hide Survivors' tracks and auras from the Killer nearby.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "No Scratch Marks in range.",
+   "The Killer cannot see Survivors' auras in range.",
+   "Both effects stay for 2/3/4 s after leaving.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Lead chases through the boon to break line of sight and lose the Killer.",
+  "sourceHash": "bdb5a9c0094d4bc0"
+ },
+ "survivor:boon-steadfast": {
+  "summary": "Bless a totem to make nearby generators regress slower and repair faster.",
+  "facts": [
+   "Hold Active Ability at a Dull or Hex Totem: it becomes a Boon Totem.",
+   "Effect range is 24 m; Survivors in range hear chimes.",
+   "Generators in range regress 50% slower.",
+   "Survivors repair those generators +8/9/10% faster.",
+   "Survivors in range see those generators' auras.",
+   "Only one Steadfast affects a Survivor at a time.",
+   "Your Boon perks share one blessed totem."
+  ],
+  "tip": "Bless a totem between two or three generators to cover them all.",
+  "sourceHash": "b926aa4732b6fd74"
+ },
+ "survivor:borrowed-time": {
+  "summary": "Protects the teammate you unhook with a longer Endurance and Haste window.",
+  "facts": [
+   "When you unhook another Survivor, their Endurance lasts 6/8/10 s longer, for 16/18/20 s total.",
+   "Any Conspicuous Action ends that Endurance early.",
+   "Their Haste lasts +10 s longer, for 20 s total."
+  ],
+  "tip": "Unhook when the Killer is close; the protected Survivor should run, not repair.",
+  "sourceHash": "ba6e2b2162d85573"
+ },
+ "survivor:botany-knowledge": {
+  "summary": "A simple, always-on boost to how fast you heal.",
+  "facts": [
+   "Permanent: your healing is 30/40/50% faster."
+  ],
+  "tip": "Stacks well with Med-Kits and healing boons for quick team recovery.",
+  "sourceHash": "33b4e22ad17fd2a1"
+ },
+ "survivor:bound-by-obsession": {
+  "summary": "Turns the Killer's aura reading against them, showing them to you and speeding your work while they look.",
+  "facts": [
+   "Triggers each time your aura is read by the Killer, for as long as that reading lasts.",
+   "During it you see the Killer's aura.",
+   "During it Cleansing, Healing and Repairing are 8/9/10% faster.",
+   "If you are the current Obsession, every 30 s your aura shows to the Killer for 4 s.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Strong against aura-heavy Killers; expect to be found more often as the Obsession.",
+  "sourceHash": "a86b8b588f76a1ec"
+ },
+ "survivor:breakdown": {
+  "summary": "The hook you are taken off breaks immediately, and you briefly see where the Killer is.",
+  "facts": [
+   "Triggers when you are unhooked in any way.",
+   "That hook breaks at once.",
+   "It takes 180 s to repair itself.",
+   "You see the Killer's aura for 4/5/6 s."
+  ],
+  "tip": "Lead the Killer back toward the broken hook area to force long carries.",
+  "sourceHash": "3c1eef642d196edb"
+ },
+ "survivor:breakout": {
+  "summary": "Staying close to the Killer while they carry a teammate speeds you up and helps your friend wiggle free.",
+  "facts": [
+   "Works while you are within 5 m of a Killer who is carrying a teammate.",
+   "You get 6/8/10% Haste.",
+   "The carried Survivor wiggles +25% faster.",
+   "Only one Breakout affects a Survivor at a time."
+  ],
+  "tip": "Body-block in front of the Killer during carries to steer them away from hooks.",
+  "sourceHash": "f448c6ab81f58195"
+ },
+ "survivor:buckle-up": {
+  "summary": "Picking up a downed teammate shows you both the Killer, then sends them away fast and trackless.",
+  "facts": [
+   "Triggers when you heal a Survivor in the Dying State.",
+   "During the heal, you and the downed Survivor see the Killer's aura.",
+   "After the heal, for 3/4/5 s, the healed Survivor leaves no Scratch Marks.",
+   "In that window they also get +50% Haste.",
+   "Does not make anyone Exhausted."
+  ],
+  "tip": "Watch the Killer's aura to pick the right moment to finish the pick-up.",
+  "sourceHash": "4e7a6cba167ad2b6"
+ },
+ "survivor:built-to-last": {
+  "summary": "Hide in a locker with an empty item to refill it, up to three times per match.",
+  "facts": [
+   "Hide in a locker holding a depleted item for 12/10/8 s.",
+   "Charges are restored to 99% the first time.",
+   "Second time: 66%.",
+   "Third time: 33%.",
+   "Turns off for the rest of the match after the third use."
+  ],
+  "tip": "Best with strong items like Med-Kits or Toolboxes you want to use again.",
+  "sourceHash": "094808febff18e4a"
+ },
+ "survivor:calm-spirit": {
+  "summary": "Keeps you quiet: crows stay put, you never scream, and chests and totems make no sound.",
+  "facts": [
+   "Nearby crows do not fly up unless you get within touching distance.",
+   "You never scream, whatever the cause.",
+   "No sound when you use chests or totems.",
+   "Blessing, Cleansing and Unlocking are 8/9/10% faster."
+  ],
+  "tip": "Counters Killers who rely on scream perks like Infectious Fright.",
+  "sourceHash": "20fc3a796ffd95f7"
+ },
+ "survivor:camaraderie": {
+  "summary": "If a teammate comes close while you struggle on a hook, the struggle timer pauses for a while.",
+  "facts": [
+   "Works when you reach the Struggle Phase on a hook.",
+   "A Survivor within 16 m of your hook pauses the struggle timer for 26/30/34 s."
+  ],
+  "tip": "Teammates should approach early so the pause buys time for a safe rescue.",
+  "sourceHash": "fa261409f2e16af8"
+ },
+ "survivor:champion-of-light": {
+  "summary": "Run faster while using a flashlight and slow the Killer after you blind them.",
+  "facts": [
+   "While your flashlight is on: +50% Haste.",
+   "Blinding the Killer in any way Hinders them by -20% for 6 s.",
+   "The Hindered effect does not stack.",
+   "Cool-down: 60/50/40 s after a blind."
+  ],
+  "tip": "Blind the Killer when they are close in a chase to escape to the next loop.",
+  "sourceHash": "85d2106fc7d24fac"
+ },
+ "survivor:change-of-plan": {
+  "summary": "Inside a locker you can swap your Toolbox for an equally rare Med-Kit.",
+  "facts": [
+   "Starts with 2 Tokens.",
+   "Inside a locker, with a regular (non-event) Toolbox in hand, press Active Ability; this spends 1 Token.",
+   "The Toolbox turns into a Med-Kit of matching rarity, plus one random add-on of matching rarity.",
+   "Charges on the new Med-Kit: 80/90/100%."
+  ],
+  "tip": "Bring a Toolbox for gens early and switch to a Med-Kit once you get hit.",
+  "sourceHash": "91db617cc6e6b7e9"
+ },
+ "survivor:chemical-trap": {
+  "summary": "After some repair work you can trap a dropped pallet so the Killer is slowed when breaking it.",
+  "facts": [
+   "Activates after 20% of total generator repairs.",
+   "Press Active Ability at a dropped pallet to set a trap for 40/50/60 s.",
+   "If the Killer breaks that pallet the trap goes off.",
+   "The Killer is Hindered by -50% for 4 s.",
+   "Ends once it fires or the timer runs out.",
+   "Trapped pallets show to all Survivors in yellow."
+  ],
+  "tip": "Trap a pallet you just dropped in chase so the break costs the Killer extra time.",
+  "sourceHash": "879572b503fd0830"
+ },
+ "survivor:clairvoyance": {
+  "summary": "Once you have cleansed or blessed a totem, you can stand still to see key objects across a large area.",
+  "facts": [
+   "Activates once you cleanse or bless any totem.",
+   "Hold Use Item with empty hands to use it.",
+   "You see chests, Exit Gate switches, generators, the Hatch and hooks within 64 m.",
+   "Lasts while you hold it, up to 10/11/12 s."
+  ],
+  "tip": "Use it late in the match to find the Hatch or the nearest gate.",
+  "sourceHash": "3f839d3e55feb932"
+ },
+ "survivor:clean-break": {
+  "summary": "After healing a teammate, you can accept Broken to get healed by yourself automatically later.",
+  "facts": [
+   "Activates after you finish healing another Survivor.",
+   "Press Active Ability while a teammate heals you.",
+   "You become Broken.",
+   "You heal 1 Health State on your own after 75/60/45 s.",
+   "Going into the Dying State cancels it.",
+   "Will not activate if you are already Broken.",
+   "Turns off after it heals you."
+  ],
+  "tip": "Use it when there is no time for a full heal and you want to repair.",
+  "sourceHash": "8b9ad86a9af461e0"
+ },
+ "survivor:come-and-get-me": {
+  "summary": "After a rescue you can scream to pull the Killer to you while hiding injured teammates' traces.",
+  "facts": [
+   "Works after you unhook a Survivor, while you crouch without moving.",
+   "Press Active Ability to use it.",
+   "For 10/12.5/15 s, injured or downed Survivors within 24 m leave no grunts, blood or Scratch Marks.",
+   "You scream and your aura shows to the Killer for 5 s."
+  ],
+  "tip": "Use it right after the unhook so the rescued Survivor gets away clean.",
+  "sourceHash": "d1993279c22f6d26"
+ },
+ "survivor:conviction": {
+  "summary": "After healing someone, you can pick yourself up from the Dying State for a limited time.",
+  "facts": [
+   "Requires you to have finished healing another Survivor at some point.",
+   "In the Dying State, press Active Ability once your recovery reaches 25%.",
+   "You can then fully recover by yourself.",
+   "You become Broken.",
+   "After 20/25/30 s you drop back into the Dying State."
+  ],
+  "tip": "Use the time on your feet to reach a teammate who can heal you.",
+  "sourceHash": "d3f8d24b628d2eab"
+ },
+ "survivor:corrective-action": {
+  "summary": "Save teammates from missed skill checks by turning their failures into Good checks.",
+  "facts": [
+   "Starts with 1/2/3 Tokens; each Great skill check you hit adds +1, up to 5 Tokens.",
+   "When another Survivor misses a skill check, it becomes a Good one instead.",
+   "Each save uses 1 Token.",
+   "You then see that Survivor's aura for 6 s.",
+   "Special skill checks are not covered."
+  ],
+  "tip": "Repair with teammates who struggle with skill checks to avoid gen explosions.",
+  "sourceHash": "f0efbe0fec344eef"
+ },
+ "survivor:counterforce": {
+  "summary": "Cleanse totems much faster, getting quicker each time, and see where the next far totem is.",
+  "facts": [
+   "Permanent: your base cleansing speed is 125%.",
+   "Each totem you cleanse adds +25% cleansing speed, stacking.",
+   "After a cleanse you see the aura of the farthest totem for 10/12/14 s."
+  ],
+  "tip": "Great against Hex builds; chain cleanses early in the match.",
+  "sourceHash": "de8bdbbd79643d09"
+ },
+ "survivor:cross-examination": {
+  "summary": "Inside the Terror Radius you see light trails the Killer leaves, which make you harder to track.",
+  "facts": [
+   "Works inside the Terror Radius while you are not being chased.",
+   "You can see the Light Marks left by the moving Killer; each lasts 10 s.",
+   "Standing on a Light Mark makes you Elusive.",
+   "Elusive stays for 3/4/5 s after leaving it."
+  ],
+  "tip": "Walk along the Killer's recent path to stay hidden from aura perks.",
+  "sourceHash": "dc440ee4e313e43e"
+ },
+ "survivor:cut-loose": {
+  "summary": "Fast vaults during a chase become silent for a short time, and chaining vaults keeps it going.",
+  "facts": [
+   "A fast vault in a chase activates it for 4/5/6 s.",
+   "Fast vaults make no sound, including the Killer's Loud Noise Notification.",
+   "Each new fast vault while active resets the timer.",
+   "Cool-down: 45 s once it ends."
+  ],
+  "tip": "Chain vaults at windows close to each other to lose the Killer.",
+  "sourceHash": "7a1ae9be55de868a"
+ },
+ "survivor:dance-with-me": {
+  "summary": "Fast vaults through windows or fast locker exits hide your Scratch Marks for a moment.",
+  "facts": [
+   "Triggers on a fast window vault or a fast locker exit.",
+   "No Scratch Marks for 5 s.",
+   "Cool-down: 20/20/15 s."
+  ],
+  "tip": "Vault and turn a corner right away to break line of sight.",
+  "sourceHash": "67be7f19caaa09bb"
+ },
+ "survivor:dark-sense": {
+  "summary": "After a generator is done, the Killer's approach reveals them, other Survivors and nearby pallets and windows.",
+  "facts": [
+   "Arms whenever a generator is completed.",
+   "When the Killer comes within 24 m of you, it triggers for 13/14/15 s.",
+   "You see the Killer's aura and the other Survivors' auras.",
+   "You see pallets and windows within 32 m.",
+   "Turns off after use, until the next generator."
+  ],
+  "tip": "Plan your escape route with the pallet and window auras it shows.",
+  "sourceHash": "d75fe1857d794185"
+ },
+ "survivor:dead-hard": {
+  "summary": "After an unhook, a well-timed dash gives you a split second of Endurance to absorb a hit.",
+  "facts": [
+   "Unlocks after you are unhooked in any way.",
+   "Press Active Ability while injured and running.",
+   "You get Endurance for 0.5 s.",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Time it right before the hit lands; using it too early wastes it.",
+  "sourceHash": "af671be1bb13d0e8"
+ },
+ "survivor:deadline": {
+  "summary": "When injured you get more skill checks in random spots, but missing them hurts less.",
+  "facts": [
+   "Active while you are injured.",
+   "Skill checks trigger 6/8/10% more often while repairing or healing.",
+   "Skill checks appear anywhere on screen.",
+   "Missed skill check penalty is reduced by 50%."
+  ],
+  "tip": "Good with skill-check perks like Hyperfocus or Stake Out.",
+  "sourceHash": "ca5a811764c08a32"
+ },
+ "survivor:deception": {
+  "summary": "Fake a locker entry to send the Killer to the wrong place while you run off trackless.",
+  "facts": [
+   "Hold Sprint while interacting with a locker.",
+   "You run past instead of getting in.",
+   "The locker doors open and shut as if you jumped in.",
+   "The Killer gets a Loud Noise Notification at the locker.",
+   "No Scratch Marks or blood for 5 s.",
+   "Cool-down: 25/20/15 s."
+  ],
+  "tip": "Use it near a corner or tall cover so the Killer cannot see you leave.",
+  "sourceHash": "bb0987c8d45e859e"
+ },
+ "survivor:decisive-strike": {
+  "summary": "After an unhook, escape the Killer's grip once by hitting a skill check, stunning them.",
+  "facts": [
+   "Active for 40/50/60 s after you are unhooked or unhook yourself.",
+   "When the Killer grabs or picks you up, hit a skill check to break free.",
+   "Stuns the Killer for 4 s.",
+   "You become the next Obsession.",
+   "Turns off when the Exit Gates get power.",
+   "Can be used once per match.",
+   "A Conspicuous Action ends it early.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Avoid repairing or healing right after an unhook to keep it active.",
+  "sourceHash": "32bdd2178ae566ca"
+ },
+ "survivor:deja-vu": {
+  "summary": "Shows the three generators closest together and lets you repair them a bit faster.",
+  "facts": [
+   "You see the auras of the 3 generators that are nearest to each other.",
+   "Your repairs on those generators are 4/5/6% faster."
+  ],
+  "tip": "Work on those generators early to avoid a tight three-gen late in the match.",
+  "sourceHash": "b8d3fd919b344300"
+ },
+ "survivor:deliverance": {
+  "summary": "After safely rescuing a teammate, you can free yourself from your first hook.",
+  "facts": [
+   "Activates after you safely unhook another Survivor.",
+   "You can unhook yourself with certainty during your first hook stage.",
+   "After that you are Broken for 160/140/120 s.",
+   "Not usable in the second hook stage or as the last Survivor alive.",
+   "Can be used once per match."
+  ],
+  "tip": "Unhook a teammate early so you have the self-unhook ready for your first hook.",
+  "sourceHash": "1477e7ec61ff06dc"
+ },
+ "survivor:desperate-measures": {
+  "summary": "The more teammates are hurt, downed or hooked, the faster you heal and unhook.",
+  "facts": [
+   "Active when any Survivor, you included, is not healthy.",
+   "Healing and Unhooking are 16/18/20% faster per injured, downed or hooked Survivor.",
+   "Maximum bonus 64/72/80%."
+  ],
+  "tip": "Great support perk against Killers who injure the whole team.",
+  "sourceHash": "607656b15aec1bca"
+ },
+ "survivor:detectives-hunch": {
+  "summary": "Every finished generator briefly shows nearby chests, generators and totems.",
+  "facts": [
+   "Triggers whenever a generator is completed.",
+   "You see chests, generators and totems within 32/48/64 m.",
+   "The reveal lasts 20 s."
+  ],
+  "tip": "Use the totem reveal to find and cleanse Hex totems quickly.",
+  "sourceHash": "4c5203613ff5a70c"
+ },
+ "survivor:distortion": {
+  "summary": "Blocks the Killer's aura reading on you for a while and recharges during chases.",
+  "facts": [
+   "Starts with 1 Token; can hold 2 Tokens.",
+   "When the Killer tries to read your aura it spends 1 Token automatically.",
+   "For 8/10/12 s your aura cannot be read.",
+   "During that time you leave no Scratch Marks.",
+   "Gain +1 Token every 15 s of being chased.",
+   "Does not trigger while you are in the Dying State."
+  ],
+  "tip": "Watch the token count: a used token often means the Killer has aura perks.",
+  "sourceHash": "c6e5904f82e0f904"
+ },
+ "survivor:diversion": {
+  "summary": "After lurking unchased in the Terror Radius, throw a pebble to lure the Killer somewhere else.",
+  "facts": [
+   "Charges after 30/25/20 s spent in the Terror Radius with no chase on you.",
+   "Crouch, stand still and press Active Ability to throw a pebble where you face.",
+   "It lands 20 m away and gives the Killer a Loud Noise Notification there.",
+   "It also leaves fake Scratch Marks.",
+   "Turns off after use."
+  ],
+  "tip": "Throw it away from your hiding spot just before the Killer comes around the corner.",
+  "sourceHash": "86d87342fa519671"
+ },
+ "survivor:do-no-harm": {
+  "summary": "Heal teammates who have been hooked more often much faster, with better skill-check rewards.",
+  "facts": [
+   "Healing another Survivor: +30/35/40% speed per hook stage they have, max 60/70/80%.",
+   "Great healing skill checks give +3% extra progress per hook stage, max +6%.",
+   "Skill checks are +5% more likely per hook stage, max +5%."
+  ],
+  "tip": "Prioritise healing teammates on their second hook stage to get the full bonus.",
+  "sourceHash": "cbbd3160d4919ba4"
+ },
+ "survivor:down-to-the-last": {
+  "summary": "Builds tokens from hooks and repairs that speed up teammates at the gates and help you alone.",
+  "facts": [
+   "+1 Token each time you are hooked or repair a generator; max 6 Tokens.",
+   "Each token makes teammates +10% quicker at opening Exit Gates.",
+   "As the last Survivor alive with 3 or more Tokens, you can open the Hatch without a Key.",
+   "Then each token keeps the Killer from reading your aura for 6/8/10 s.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Keep repairing generators to stack tokens for the endgame.",
+  "sourceHash": "d87021c429aac587"
+ },
+ "survivor:dramaturgy": {
+  "summary": "A chaotic sprint ability for healthy Survivors, followed by a random extra effect that may help or hurt.",
+  "facts": [
+   "Active while you are fully healthy.",
+   "Press Active Ability while running: 0.5 s of high-knee running, then +25 Haste for 2 s.",
+   "Then one random extra effect, never the same twice in a row:",
+   "a second Haste burst;",
+   "Exposed for 12 s;",
+   "you scream;",
+   "a random Rare item with random add-ons (you drop the item you held).",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Use it away from the Killer so a bad roll like Exposed costs you less.",
+  "sourceHash": "0d8add0610fad716"
+ },
+ "survivor:duty-of-care": {
+  "summary": "Taking a hit for a teammate while healthy gives everyone near you a burst of speed.",
+  "facts": [
+   "When healthy and you take a Protection Hit, other Survivors within 12 m get +25% Haste.",
+   "The Haste lasts 4/5/6 s."
+  ],
+  "tip": "Body-block for an injured teammate so they can sprint to safety.",
+  "sourceHash": "f34ab93c3ffaf35b"
+ },
+ "survivor:empathic-connection": {
+  "summary": "You heal others faster, and injured teammates can see where you are to come to you.",
+  "facts": [
+   "Permanent: healing others is 30/35/40% faster.",
+   "Injured Survivors see your aura as a possible healer."
+  ],
+  "tip": "Stay near generators in the middle of the map so injured teammates reach you quickly.",
+  "sourceHash": "c95de8566ee97abe"
+ },
+ "survivor:empathy": {
+  "summary": "Shows you injured and downed teammates from a long way off.",
+  "facts": [
+   "Injured and downed teammates within 64/96/128 m show to you as auras."
+  ],
+  "tip": "Use it to find teammates to heal or to see where the chase is.",
+  "sourceHash": "26912b33678c4315"
+ },
+ "survivor:extrasensory-perception": {
+  "summary": "Crouch to see the area around you in growing detail while hard to track and unable to hear the Killer.",
+  "facts": [
+   "Crouch for 4 s to activate.",
+   "You see Survivors, the Killer and objects in a radius growing to 44 m.",
+   "Objects shown: generators, chests, pallets, windows, totems, items, the Hatch and the Exit Gate.",
+   "You are Elusive and Oblivious while it runs.",
+   "Ends when you stand up or after 11 s.",
+   "Cool-down: 60/50/40 s."
+  ],
+  "tip": "Use it right after spawning or a chase to plan your next move.",
+  "sourceHash": "520112c72958923f"
+ },
+ "survivor:exultation": {
+  "summary": "Stunning the Killer with a pallet recharges and upgrades the item you hold.",
+  "facts": [
+   "Requires holding an item.",
+   "A pallet stun on the Killer recharges your item by +75%.",
+   "The item rises to the next rarity.",
+   "Cool-down: 30/25/20 s."
+  ],
+  "tip": "Bring a cheap item and loop pallets to upgrade it during the match.",
+  "sourceHash": "39fb198a6b677078"
+ },
+ "survivor:eyes-of-belmont": {
+  "summary": "Each finished generator briefly shows the Killer, and every Killer reveal you get lasts longer.",
+  "facts": [
+   "When a generator is completed, you see the Killer's aura for 1/2/3 s.",
+   "All reveals of the Killer's aura to you last +2 s longer.",
+   "This extra time also applies to its own reveal."
+  ],
+  "tip": "Pair with other Killer-reveal perks like Alert or Fogwise for longer looks.",
+  "sourceHash": "07eb36c942251854"
+ },
+ "survivor:fast-track": {
+  "summary": "Unhooking teammates stores tokens that you cash in on a Great skill check to cut a generator's work.",
+  "facts": [
+   "+1 Token per Survivor you unhook; max 1/2/3 Tokens.",
+   "A Great repair skill check uses up all tokens.",
+   "That generator then needs 5 fewer charges per token, permanently."
+  ],
+  "tip": "After a rescue, go to a generator and hit a Great skill check soon.",
+  "sourceHash": "53f06ad34aa11378"
+ },
+ "survivor:finesse": {
+  "summary": "While healthy your fast vaults are quicker, with a cool-down after each one.",
+  "facts": [
+   "Active while you are healthy.",
+   "Fast vaults are +20% faster.",
+   "Cool-down: 40/35/30 s after a fast vault."
+  ],
+  "tip": "Lead the Killer to window loops early in a chase while still healthy.",
+  "sourceHash": "75173c98c3d8ce26"
+ },
+ "survivor:five-moves-ahead": {
+  "summary": "In chases or near the Killer you see the nearest pallets and recover faster after dropping one.",
+  "facts": [
+   "Active while being chased or inside the Terror Radius.",
+   "After dropping a pallet you can move 50% sooner.",
+   "The 5 nearest pallets show to you as auras.",
+   "Cool-down: 40/35/30 s after dropping a pallet while active."
+  ],
+  "tip": "Use the pallet auras to plan routes on maps you do not know well.",
+  "sourceHash": "f428a1dabfb1f5bd"
+ },
+ "survivor:fixated": {
+  "summary": "Walk faster and see your own Scratch Marks to judge how visible your trail is.",
+  "facts": [
+   "Permanent: walking is 10/15/20% faster.",
+   "You can see your own Scratch Marks."
+  ],
+  "tip": "Walk instead of run when the Killer is close to leave no trail.",
+  "sourceHash": "a749bfd20aa2710d"
+ },
+ "survivor:flashbang": {
+  "summary": "After some repair work, make a flash grenade inside a locker to blind the Killer.",
+  "facts": [
+   "Activates after generator repairs worth 50/45/40% in total.",
+   "Press Active Ability while inside a locker to make a Flash Grenade.",
+   "Turns off after use."
+  ],
+  "tip": "Throw the grenade during a pick-up to save a teammate.",
+  "sourceHash": "591544177c06f1ec"
+ },
+ "survivor:flip-flop": {
+  "summary": "Recovering while downed also fills your wiggle bar, giving you a head start if you are picked up.",
+  "facts": [
+   "In the Dying State, recovering also fills your wiggle bar at 50% of your recovery speed.",
+   "Wiggle progress from this is capped at 40/45/50%."
+  ],
+  "tip": "Combine with Unbreakable or Tenacity to keep recovering while downed.",
+  "sourceHash": "816bedffca654862"
+ },
+ "survivor:flow-state": {
+  "summary": "Each finished generator makes you faster at totems, healing and unhooking.",
+  "facts": [
+   "+1 token per completed generator; max 5.",
+   "Per token: blessing and cleansing totems 13/14/15% faster.",
+   "Per token: healing 13/14/15% faster.",
+   "Per token: unhooking 13/14/15% faster."
+  ],
+  "tip": "It peaks late, so play support roles in the second half of the match.",
+  "sourceHash": "84dce0fd3f5c62e6"
+ },
+ "survivor:fogwise": {
+  "summary": "Hitting Great skill checks on generators shows you where the Killer is.",
+  "facts": [
+   "While repairing, a Great skill check shows you the Killer's aura for 4/5/6 s."
+  ],
+  "tip": "Hit Great checks reliably to track the Killer while you repair.",
+  "sourceHash": "4b0d46823f00178c"
+ },
+ "survivor:for-the-people": {
+  "summary": "Instantly heal a teammate one state by taking the hit yourself and becoming the Obsession.",
+  "facts": [
+   "Works when you are healthy and heal a teammate without a Med-Kit.",
+   "Press Active Ability to hand over 1 of your health states.",
+   "A dying or Deep Wound Survivor goes straight to Injured.",
+   "An injured Survivor goes straight to full health.",
+   "You become injured and Broken for 80/70/60 s.",
+   "You become the Obsession if you were not already.",
+   "Your chance to start as the Obsession drops by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Use it to pick up a downed teammate fast when the Killer is close.",
+  "sourceHash": "349d5221b0b24478"
+ },
+ "survivor:friendly-competition": {
+  "summary": "Finishing a generator together with a teammate speeds up everyone's later repairs.",
+  "facts": [
+   "Triggers when you and at least one teammate complete a generator together.",
+   "Everyone who helped repairs +10% faster for 80/85/90 s."
+  ],
+  "tip": "Move to the next generator together to use the bonus straight away.",
+  "sourceHash": "c6bd5e96e1ccdf30"
+ },
+ "survivor:fruits-of-your-labor": {
+  "summary": "Every finished generator adds a token; finishing your own then gives speed and healing.",
+  "facts": [
+   "+1 token whenever any generator is completed.",
+   "When you finish a generator, per token: +5% Haste for 2 s.",
+   "Per token also 10/15/20% healing progress."
+  ],
+  "tip": "Finish generators yourself late in the match for a big free heal.",
+  "sourceHash": "917397782ba396dc"
+ },
+ "survivor:ghost-notes": {
+  "summary": "While Exhausted your trail fades faster and you recover from Exhaustion sooner.",
+  "facts": [
+   "While Exhausted, your Scratch Marks fade +50% faster.",
+   "Exhaustion wears off 5/7.5/10% faster.",
+   "Does not make you Exhausted itself."
+  ],
+  "tip": "Pair with an exhaustion perk like Sprint Burst to disappear after the sprint.",
+  "sourceHash": "2c0a61a91a36abf0"
+ },
+ "survivor:hardened": {
+  "summary": "After opening a chest and touching a totem, any scream you would make reveals the Killer instead.",
+  "facts": [
+   "Activates once you have opened a chest and blessed or cleansed a totem.",
+   "You never scream.",
+   "Instead, you see the Killer's aura for 3/4/5 s."
+  ],
+  "tip": "Great against Killers with scream effects, like Doctor.",
+  "sourceHash": "68b3c1f20ea2bd0a"
+ },
+ "survivor:head-on": {
+  "summary": "Hide in a locker, then burst out to stun a Killer standing right in front of it.",
+  "facts": [
+   "Activates after 3 s inside a locker.",
+   "Hold Sprint while leaving the locker to jump out.",
+   "A Killer within 2.5 m is stunned for 3 s.",
+   "A miss gives the Killer a Loud Noise Notification.",
+   "Cannot be used while Exhausted.",
+   "After a successful stun you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Lure the Killer to a locker in chase and hide just before they round a corner.",
+  "sourceHash": "551e9d994e6662ed"
+ },
+ "survivor:hope": {
+  "summary": "Once the gates are powered, you move a bit faster for the rest of the match.",
+  "facts": [
+   "After the Exit Gates are powered: 3/4/5% Haste until the end of the match."
+  ],
+  "tip": "Use the extra speed to make risky endgame saves.",
+  "sourceHash": "0dbf18fb04975cad"
+ },
+ "survivor:hyperfocus": {
+  "summary": "Chaining Great skill checks builds tokens that give bigger rewards but faster, more frequent checks.",
+  "facts": [
+   "+1 Token for each Great skill check during repairs or heals; max 6 Tokens.",
+   "Per token: +4% skill check chance and +4% needle speed, max +24% each.",
+   "Per token: Great check bonus progress grows by 10/20/30% of the base value, max 60/120/180%.",
+   "You lose all tokens on a Good check, a miss, or an interrupted action."
+  ],
+  "tip": "Pair with Stake Out for extra Great checks and safety on hard ones.",
+  "sourceHash": "fbe51c8f393f5b6c"
+ },
+ "survivor:inner-focus": {
+  "summary": "See other Survivors' Scratch Marks, and see the Killer each time they hurt a teammate.",
+  "facts": [
+   "Teammates' Scratch Marks are visible to you.",
+   "When the Killer takes a health state from another Survivor, you see the Killer's aura for 6/8/10 s."
+  ],
+  "tip": "Use the Scratch Marks to find teammates for heals or to avoid the chase.",
+  "sourceHash": "4df18fea0a37683c"
+ },
+ "survivor:inner-strength": {
+  "summary": "After cleansing a totem, a short locker stay heals you one state.",
+  "facts": [
+   "Activates after cleansing any totem.",
+   "Hide in any locker for 10/9/8 s to heal one health state.",
+   "Turns off after use.",
+   "Does not work while Broken."
+  ],
+  "tip": "Cleanse totems early to keep a free self-heal for after your first hit.",
+  "sourceHash": "f76bf7698849bdf5"
+ },
+ "survivor:invocation-treacherous-crows": {
+  "summary": "A basement ritual that makes crows betray the Killer, at the cost of being Broken all match.",
+  "facts": [
+   "Press Active Ability at the circle in the Basement to start; it takes 60 s.",
+   "Other Survivors see your aura and can help: +100% speed with an Invocation perk, +50% without.",
+   "After it ends: when a crow is startled by the Killer and a Survivor is inside the Terror Radius, all Survivors see the Killer's aura for 1/1.5/2 s.",
+   "You become injured and stay Broken for the rest of the match."
+  ],
+  "tip": "Do the ritual early when the Killer is busy far from the Basement.",
+  "sourceHash": "ddeb3237d5e25a42"
+ },
+ "survivor:invocation-weaving-spiders": {
+  "summary": "A basement ritual that makes every generator need fewer charges, at the cost of being Broken all match.",
+  "facts": [
+   "Press Active Ability at the circle in the Basement to start; it takes 60 s.",
+   "Other Survivors see your aura and can help: +100% speed with an Invocation perk, +50% without.",
+   "After it ends, all generators need 8/9/10 fewer charges permanently.",
+   "You become injured and stay Broken for the rest of the match.",
+   "Once done, other copies of this Invocation stop working this match."
+  ],
+  "tip": "Only one Survivor should bring it; do it early for the biggest gain.",
+  "sourceHash": "09c062f827b7e2e9"
+ },
+ "survivor:iron-will": {
+  "summary": "Mutes your pained grunts while injured, so the Killer cannot hear you hiding.",
+  "facts": [
+   "While injured, your Grunts of Pain are 80/90/100% quieter.",
+   "Does not work while Exhausted, but never makes you Exhausted."
+  ],
+  "tip": "Break line of sight in chase and stand still behind cover to lose the Killer.",
+  "sourceHash": "7922a877a45ce96f"
+ },
+ "survivor:kindred": {
+  "summary": "When anyone is hooked, the team sees each other and the Killer near the hook, making rescues safer.",
+  "facts": [
+   "Triggers whenever a Survivor is hooked.",
+   "All Survivors see the Killer when the Killer is within 14/15/16 m of that hook.",
+   "If you are the one hooked, all Survivors see each other's auras.",
+   "If someone else is hooked, only you see the other Survivors."
+  ],
+  "tip": "One of the best solo-queue perks: it stops two people going for the same save.",
+  "sourceHash": "271a6c118c163fbc"
+ },
+ "survivor:last-stand": {
+  "summary": "After lurking unchased near the Killer for a while, one fast vault can stun them.",
+  "facts": [
+   "Charges after 120/105/90 s in the Terror Radius with no chase on you.",
+   "Then a fast vault stuns the Killer for 3 s if they are within 2.5 m of the window.",
+   "One use per match."
+  ],
+  "tip": "Save it for a tall window loop where the Killer follows you closely.",
+  "sourceHash": "8d1e430368bddcbd"
+ },
+ "survivor:leader": {
+  "summary": "Teammates near you work faster on most actions, and the boost lingers after they leave.",
+  "facts": [
+   "Affects other Survivors within 10 m of you.",
+   "Healing, unhooking, unlocking, cleansing, sabotage and gate opening are 20/25/30% faster.",
+   "The boost stays for 15 s after leaving the area.",
+   "Only one Leader affects a Survivor at a time."
+  ],
+  "tip": "Stick with teammates on heals and gates for the biggest effect.",
+  "sourceHash": "cf4254fc87dfc49f"
+ },
+ "survivor:left-behind": {
+  "summary": "If you are the last one standing, you see the Hatch when you get close to it.",
+  "facts": [
+   "Active when you are the only Survivor left alive.",
+   "You see the Hatch's aura within 24/28/32 m."
+  ],
+  "tip": "Sweep the map in wide loops to bring the Hatch into range.",
+  "sourceHash": "2de328539a1b0fbd"
+ },
+ "survivor:lend-a-hand": {
+  "summary": "After a totem cleanse or blessing, you can give a teammate you heal extra self-heal charges.",
+  "facts": [
+   "Activates after you cleanse or bless a totem.",
+   "While healing a Survivor, press Active Ability 2 to hand them 2/3/4 healing charges that do not run out.",
+   "Once per Survivor."
+  ],
+  "tip": "Give charges to the teammate most likely to be chased next.",
+  "sourceHash": "a448115018b79ca8"
+ },
+ "survivor:light-footed": {
+  "summary": "Your running footsteps are silent while healthy, with a pause after each fast vault.",
+  "facts": [
+   "Active while you are healthy.",
+   "Your running makes no footstep sounds.",
+   "Cool-down: 14/12/10 s after a fast vault."
+  ],
+  "tip": "Strong against Killers who track by sound, like Spirit.",
+  "sourceHash": "b3b7e7f402acf3d9"
+ },
+ "survivor:lightweight": {
+  "summary": "Your Scratch Marks vanish sooner and appear less regularly, making your trail harder to follow.",
+  "facts": [
+   "Scratch Marks last 3/4/5 s less.",
+   "Scratch Mark patches spawn 60% less often and with uneven gaps."
+  ],
+  "tip": "Change direction often in chase to make use of the patchy trail.",
+  "sourceHash": "58a0a1a71985b827"
+ },
+ "survivor:lithe": {
+  "summary": "A fast vault gives you a burst of speed to gain distance in a chase.",
+  "facts": [
+   "A fast vault grants +50% Haste for 3 s.",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Use it at windows that lead to open space or another loop.",
+  "sourceHash": "4bd56cf973491bcc"
+ },
+ "survivor:low-profile": {
+  "summary": "When everyone else is down, carried or hooked, you leave no trail for a while.",
+  "facts": [
+   "Triggers when you are the only Survivor not downed, carried or hooked.",
+   "For 70/80/90 s you leave no Grunts of Pain, blood or Scratch Marks.",
+   "Turns off after use.",
+   "Only counts Survivors still in the match."
+  ],
+  "tip": "Use the window to reach the Hatch or a gate, not to rescue.",
+  "sourceHash": "8a22066c25c93fc9"
+ },
+ "survivor:lucky-break": {
+  "summary": "While injured you leave no blood or Scratch Marks for a limited time, refilled by healing others.",
+  "facts": [
+   "Active while injured.",
+   "Up to 40/50/60 s with no blood pools or Scratch Marks.",
+   "Time spent healing another Survivor refills it, up to the starting amount.",
+   "Ends when the timer is used up or you are no longer injured."
+  ],
+  "tip": "Stay injured and heal teammates to keep the timer topped up.",
+  "sourceHash": "add0f3dba55347d7"
+ },
+ "survivor:lucky-star": {
+  "summary": "Lockers hide your grunts, and leaving one shows teammates and the nearest generator.",
+  "facts": [
+   "Inside a locker: no Grunts of Pain.",
+   "For 30 s after leaving: no grunts or blood pools.",
+   "During that time every other Survivor's aura shows to you.",
+   "You also see the nearest generator highlighted in yellow.",
+   "Cool-down: 35/30/25 s."
+  ],
+  "tip": "Hide in a locker after a chase, then head to the shown generator.",
+  "sourceHash": "154c92d6341e88e0"
+ },
+ "survivor:made-for-this": {
+  "summary": "While injured, healing a teammate grants you Endurance, and Deep Wound gives you a little extra speed.",
+  "facts": [
+   "Active while you are injured.",
+   "Finishing a heal on another Survivor gives you Endurance for 6/8/10 s.",
+   "Any Conspicuous Action cancels that Endurance.",
+   "Running with Deep Wound gives 1/2/3% Haste."
+  ],
+  "tip": "Heal teammates while injured to stay protected against a hit.",
+  "sourceHash": "0f3caef170d7cca6"
+ },
+ "survivor:mettle-of-man": {
+  "summary": "After three protection hits, you can survive one extra down, but later your aura shows when far away.",
+  "facts": [
+   "Activates after your third Protection Hit in any way.",
+   "While injured, it blocks the next hit that would down you.",
+   "Once you are fully healed, the Killer sees your aura when you are more than 12/14/16 m away.",
+   "Turns off when you are downed in any way.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Take protection hits for teammates early; stay injured to keep your aura hidden.",
+  "sourceHash": "d5b1951eb98fa73a"
+ },
+ "survivor:mirrored-illusion": {
+  "summary": "After some repairs, create a fake copy of yourself next to an object to fool the Killer.",
+  "facts": [
+   "Activates after 20% of total generator repairs.",
+   "Press Active Ability beside a generator, totem, chest or Exit Gate to make a static illusion.",
+   "The illusion lasts 40/50/60 s.",
+   "Turns off after use."
+  ],
+  "tip": "Place the illusion at a generator far from where you work.",
+  "sourceHash": "17661cda633eaa12"
+ },
+ "survivor:moment-of-glory": {
+  "summary": "After opening a chest, your next injury makes you Broken but heals you on its own later.",
+  "facts": [
+   "Activates after you unlock or rummage a chest 1 time.",
+   "When you get injured, you become Broken.",
+   "You heal 1 Health State on your own after 80/70/60 s.",
+   "Being downed cancels it.",
+   "Does not activate if you are already Broken.",
+   "Turns off after it heals you."
+  ],
+  "tip": "Open a chest early so the auto-heal is ready for your first hit.",
+  "sourceHash": "9ec5ae8669e159ea"
+ },
+ "survivor:no-mither": {
+  "summary": "You are Broken all match but leave no blood, stay quiet and can pick yourself up.",
+  "facts": [
+   "Permanently Broken.",
+   "You leave no blood pools.",
+   "No Grunts of Pain while injured or downed.",
+   "You can pick yourself up fully when downed.",
+   "Recovery is 15/20/25% faster."
+  ],
+  "tip": "Play it as a chase or stealth challenge; never rely on heals.",
+  "sourceHash": "6e970323a6b1311d"
+ },
+ "survivor:no-one-left-behind": {
+  "summary": "Once gates are powered, you see teammates and heal and unhook them much faster.",
+  "facts": [
+   "Activates when the Exit Gates get power.",
+   "You see all other Survivors' auras.",
+   "Healing and unhooking are 80/90/100% faster.",
+   "Survivors you unhook get +10% stronger and +5 s longer Haste, for 20% Haste over 15 s."
+  ],
+  "tip": "Stay for endgame saves instead of leaving through the gate.",
+  "sourceHash": "9fd0433c2f57738f"
+ },
+ "survivor:object-of-obsession": {
+  "summary": "Turns the Killer's aura reading against them, showing them to you and speeding your work while they look.",
+  "facts": [
+   "Triggers each time your aura is read by the Killer, for as long as that reading lasts.",
+   "During it you see the Killer's aura.",
+   "During it Cleansing, Healing and Repairing are 8/9/10% faster.",
+   "If you are the current Obsession, every 30 s your aura shows to the Killer for 4 s.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Strong against aura-heavy Killers; expect to be found more often as the Obsession.",
+  "sourceHash": "a86b8b588f76a1ec"
+ },
+ "survivor:off-the-record": {
+  "summary": "After an unhook you are hidden from aura reading and protected by Endurance for a while.",
+  "facts": [
+   "Active for 30/35/40 s after you are unhooked or unhook yourself.",
+   "Your aura cannot be revealed.",
+   "No Grunts of Pain while injured.",
+   "No Scratch Marks.",
+   "You have Endurance; any Conspicuous Action ends it early.",
+   "Ends and is disabled for good once the Exit Gates are powered."
+  ],
+  "tip": "Run away from the hook instead of working; Conspicuous Actions end it.",
+  "sourceHash": "28658b1e4b493f4d"
+ },
+ "survivor:one-two-three-four": {
+  "summary": "Perform for nearby teammates and pass the skill checks to give them more skill checks afterwards.",
+  "facts": [
+   "Press Active Ability while standing still to perform for up to 15 s.",
+   "Affects Survivors within 16 m.",
+   "You get a series of skill checks during it.",
+   "After a full performance, affected Survivors healing or repairing have +20% skill check chance for 90 s.",
+   "Cool-down: 110/100/90 s after cancelling or finishing."
+  ],
+  "tip": "Combine with Hyperfocus or Stake Out on the team for more Great checks.",
+  "sourceHash": "94d462bed48775be"
+ },
+ "survivor:open-handed": {
+  "summary": "Extends the range of every Survivor's own aura-reading perks.",
+  "facts": [
+   "Permanent for all Survivors: aura-reading range +8/12/16 m.",
+   "Only affects auras that come from the Survivor's own effects.",
+   "Only one Open-Handed affects a Survivor at a time."
+  ],
+  "tip": "Run it with Bond, Kindred or Empathy for map-wide awareness.",
+  "sourceHash": "e1a3cf39d3269a69"
+ },
+ "survivor:overcome": {
+  "summary": "Getting hit from full health gives you a longer speed burst to reach the next loop.",
+  "facts": [
+   "Triggers when you go from healthy to injured.",
+   "The speed boost after a hit lasts +2 s longer.",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Take the first hit in open ground and run to a strong loop.",
+  "sourceHash": "bcbb001018eaab85"
+ },
+ "survivor:overzealous": {
+  "summary": "Cleansing or blessing a totem boosts your repair speed until you lose a health state.",
+  "facts": [
+   "Activates after you cleanse or bless a totem.",
+   "Dull Totem: repairs 8/9/10% faster.",
+   "Hex Totem: repairs 16/18/20% faster.",
+   "Ends when you lose a health state in any way."
+  ],
+  "tip": "Cleanse totems early, then stay on generators while healthy.",
+  "sourceHash": "b396ed7eff1cd2d3"
+ },
+ "survivor:parental-guidance": {
+  "summary": "After stunning the Killer, you leave no sound, blood or tracks for a few seconds.",
+  "facts": [
+   "Triggers after you stun the Killer in any way.",
+   "No Grunts of Pain, Scratch Marks or blood pools for 5/6/7 s."
+  ],
+  "tip": "Stun with a pallet, then change direction to lose the Killer.",
+  "sourceHash": "39b13e2694631e55"
+ },
+ "survivor:pharmacy": {
+  "summary": "Open chests faster and quieter, and always get an Emergency Med-Kit.",
+  "facts": [
+   "Unlocking and rummaging chests is 75/100/125% faster.",
+   "Unlocking noises can be heard 12 m less far.",
+   "You always get an Emergency Med-Kit when done.",
+   "Rummaging is limited to 1 time per chest."
+  ],
+  "tip": "Open a chest early in the match to have a Med-Kit when you need it.",
+  "sourceHash": "8569bb8743b2ff4c"
+ },
+ "survivor:plot-twist": {
+  "summary": "Go down on purpose while injured, then pick yourself up fully healed with a short sprint.",
+  "facts": [
+   "Active while injured.",
+   "Crouch, stand still and press Active Ability to drop into the Dying State silently, with no notification to the Killer.",
+   "No grunts or blood pools while down.",
+   "You can fully recover yourself; recovery is +25% faster.",
+   "After recovering yourself, you are fully healed.",
+   "Then you get +50% Haste for 2/3/4 s.",
+   "Disabled after recovering in any way; can be re-activated once when the Exit Gates are powered."
+  ],
+  "tip": "Use it out of sight of the Killer to fake a heal.",
+  "sourceHash": "955ea75a77d40cf5"
+ },
+ "survivor:plunderers-instinct": {
+  "summary": "Shows closed chests and items around the map and makes rarer chest items more likely.",
+  "facts": [
+   "You see the auras of closed chests.",
+   "You see items inside opened chests and items lying on the ground.",
+   "Rarer items in chests are +50% more likely.",
+   "Unlocking chests is 150/175/200% faster."
+  ],
+  "tip": "Pair with Ace in the Hole for strong items with add-ons.",
+  "sourceHash": "952dac9a77c89676"
+ },
+ "survivor:poised": {
+  "summary": "Every finished generator hides your tracks, and starting your first repair shows the Killer briefly.",
+  "facts": [
+   "When a generator is completed, your Scratch Marks stop for 20/25/30 s.",
+   "The first time you start on a generator, you see the Killer's aura for 8 s."
+  ],
+  "tip": "Move away right after a generator pops while your trail is hidden.",
+  "sourceHash": "a7b2566424102426"
+ },
+ "survivor:potential-energy": {
+  "summary": "Store repair progress as tokens, then dump it all into any generator at once.",
+  "facts": [
+   "Press Active Ability while repairing to start storing.",
+   "Repairs then fill tokens instead of the generator: 1 Token per 1% progress, max 10/15/20 Tokens.",
+   "A failed skill check below the cap removes 20% of your tokens.",
+   "A failed skill check at the cap regresses the generator by 10%.",
+   "With at least 1 Token, press Active Ability on any generator to release.",
+   "Releasing uses all tokens and adds +1% progress per token instantly.",
+   "Turns off after use or if you lose a health state; losing a health state also wipes the tokens."
+  ],
+  "tip": "Release the tokens on a generator that is almost done to finish it fast.",
+  "sourceHash": "24c83d82c50401de"
+ },
+ "survivor:power-struggle": {
+  "summary": "While being carried, you can drop a pallet on the Killer to free yourself once.",
+  "facts": [
+   "While downed, you see the auras of standing pallets.",
+   "Unlocks at 25/20/15% wiggle progress.",
+   "While carried, you can drop a pallet nearby.",
+   "It stuns the Killer and frees you.",
+   "Turns off after use."
+  ],
+  "tip": "Crawl toward pallets while downed so one is close when you are picked up.",
+  "sourceHash": "851266c98417bd88"
+ },
+ "survivor:premonition": {
+  "summary": "Looking toward the Killer when they are near gives a sound cue and a short reveal.",
+  "facts": [
+   "Works while you are not being chased.",
+   "Facing the Killer's direction within 32 m triggers it.",
+   "You hear a sound cue and see the Killer's aura for 3 s.",
+   "Cool-down: 55/50/45 s."
+  ],
+  "tip": "Turn your camera often while repairing to get early warnings.",
+  "sourceHash": "33a17a99f8a37a16"
+ },
+ "survivor:prove-thyself": {
+  "summary": "Repairing together with teammates makes everyone at the generator faster.",
+  "facts": [
+   "+6/8/10% repair speed for each other Survivor within 4 m, stacking up to 18/24/30%.",
+   "The bonus applies to all Survivors in range.",
+   "Only one Prove Thyself affects a Survivor at a time."
+  ],
+  "tip": "Group up on one generator when the Killer is busy in a long chase.",
+  "sourceHash": "7d3600cb47a8c454"
+ },
+ "survivor:quick-and-quiet": {
+  "summary": "Your fast vaults and fast locker moves make no noise every so often.",
+  "facts": [
+   "Fast vaults over pallets or windows, and fast locker entries or exits, are silent.",
+   "The Killer gets no Loud Noise Notification for them.",
+   "Cool-down: 25/20/15 s."
+  ],
+  "tip": "Fast-enter a locker out of sight to vanish during a chase.",
+  "sourceHash": "5601b89b9f4c7c03"
+ },
+ "survivor:quick-gambit": {
+  "summary": "While you are chased, you see your teammates and they repair a bit faster.",
+  "facts": [
+   "During a chase you see other Survivors' auras.",
+   "Other Survivors repair 3/4/5% faster during that chase.",
+   "Cool-down: 40 s after you lose a health state."
+  ],
+  "tip": "Lead the Killer away from the teammates you can see working.",
+  "sourceHash": "6b42e6f95f3d600c"
+ },
+ "survivor:rapid-response": {
+  "summary": "Becoming Exhausted shows you the Killer, and you can choose to become Exhausted to trigger it.",
+  "facts": [
+   "Any time you become Exhausted, you see the Killer's aura for 2 s.",
+   "A fast locker exit makes you Exhausted for 30/25/20 s on purpose.",
+   "Cannot replace an Exhaustion you already have."
+  ],
+  "tip": "Use the locker trick to check where the Killer is before leaving cover.",
+  "sourceHash": "ea3fb213c683f0b5"
+ },
+ "survivor:reactive-healing": {
+  "summary": "When you are injured and a nearby teammate gets hurt, you instantly gain a chunk of healing.",
+  "facts": [
+   "Requires you to be injured.",
+   "When another Survivor within 32 m loses a health state in any way, you recover 40/45/50% of the healing you still need."
+  ],
+  "tip": "Stay injured near chases to collect free healing.",
+  "sourceHash": "a16811076211d23c"
+ },
+ "survivor:reassurance": {
+  "summary": "Stand near a hooked teammate to pause their hook timer and buy time for a safe rescue.",
+  "facts": [
+   "Press Active Ability within 6 m of a hooked Survivor.",
+   "Their sacrifice timer pauses for 20/25/30 s.",
+   "If they are already struggling, their struggle skill checks pause too.",
+   "That Survivor is outlined in white.",
+   "Once per Survivor per hook."
+  ],
+  "tip": "Use it when the Killer camps, then come back later for the rescue.",
+  "sourceHash": "8bbb7d273cbc90e5"
+ },
+ "survivor:red-herring": {
+  "summary": "Mark the generator you repair, then hide in a locker to make it look like someone is there.",
+  "facts": [
+   "After at least 1 s of repairing, that generator is highlighted for you in yellow.",
+   "The highlight ends when the generator is done, you start another one, or you enter a locker.",
+   "Entering a locker gives the Killer a Loud Noise Notification at the highlighted generator.",
+   "Cool-down: 25/20/15 s."
+  ],
+  "tip": "Mark a generator far from you to send the Killer the wrong way.",
+  "sourceHash": "a604f312699f9114"
+ },
+ "survivor:repressed-alliance": {
+  "summary": "After working on generators, you can make the Entity block your generator to protect its progress.",
+  "facts": [
+   "Activates after 40/35/30 s of total repair time.",
+   "Press Active Ability to block the generator you work on for 15 s.",
+   "Then it turns off.",
+   "All Survivors see the blocked generator in white.",
+   "Only usable when nobody else is repairing that generator with you."
+  ],
+  "tip": "Block a generator that is almost done before the Killer can kick it.",
+  "sourceHash": "f980ffdc74cbdb73"
+ },
+ "survivor:residual-manifest": {
+  "summary": "Blinding the Killer leaves them unable to see auras for a long time, and a chest gives you a flashlight.",
+  "facts": [
+   "A successful blind gives the Killer Blindness for 20/25/30 s.",
+   "Once per match you can rummage an opened chest for a guaranteed basic Flashlight."
+  ],
+  "tip": "Blind the Killer before a rescue to block their aura perks.",
+  "sourceHash": "52f4e05fb3efa54e"
+ },
+ "survivor:resilience": {
+  "summary": "While injured, almost every action you take is a little faster.",
+  "facts": [
+   "Active while injured.",
+   "7/8/9% faster at: blessing or cleansing totems, healing yourself or others, opening Exit Gates, repairing generators, sabotaging hooks, searching chests, unhooking and vaulting windows."
+  ],
+  "tip": "Stay injured when the Killer has no instant-down power to get value.",
+  "sourceHash": "2ebd91b97d77470b"
+ },
+ "survivor:resurgence": {
+  "summary": "After being unhooked you start with a large part of your heal already done.",
+  "facts": [
+   "After being unhooked in any way, you gain 50/60/70% healing progress."
+  ],
+  "tip": "Pair with Self-Care or a Med-Kit to finish the heal quickly.",
+  "sourceHash": "fc62abb2ff585845"
+ },
+ "survivor:road-life": {
+  "summary": "While injured, good repair skill checks build tokens that unlock a fast self-heal.",
+  "facts": [
+   "Works while injured and repairing.",
+   "Great repair check: +1 Token.",
+   "Good repair check: 0 Tokens.",
+   "Missed repair check: -1 Token.",
+   "At 6/5/4 Tokens, all tokens are spent and you can heal yourself, +10% faster.",
+   "It turns off 4 s after you stop healing yourself."
+  ],
+  "tip": "Repair while injured instead of looking for a healer.",
+  "sourceHash": "3c3cdb298a2cfb87"
+ },
+ "survivor:rookie-spirit": {
+  "summary": "After a few good skill checks, you see every generator that is regressing for the rest of the match.",
+  "facts": [
+   "Pass 5/4/3 repair skill checks (Good or Great) to switch it on for the match.",
+   "Any generator losing progress shows to you as long as it keeps regressing."
+  ],
+  "tip": "Use it to tap kicked generators and stop their regression.",
+  "sourceHash": "856aab41f0194ff6"
+ },
+ "survivor:saboteur": {
+  "summary": "See hooks while a teammate is carried and sabotage them without a toolbox.",
+  "facts": [
+   "While the Killer carries another Survivor, you see hooks within 56 m of where they were picked up.",
+   "Normal hooks show in white, Scourge Hooks in yellow.",
+   "You can sabotage hooks without a Toolbox, +30% faster.",
+   "Cool-down: 70/65/60 s after sabotaging this way."
+  ],
+  "tip": "Sabotage the nearest hook only when the Killer is really heading for it.",
+  "sourceHash": "db7c9490f1717e16"
+ },
+ "survivor:salvations-cry": {
+  "summary": "When a chase on you starts, the team learns where you and the Killer are.",
+  "facts": [
+   "Triggers when a chase on you begins.",
+   "You see the other Survivors' auras for 1/2/3 s.",
+   "Survivors not in a chase see your aura for 5 s.",
+   "For those 5 s they see the Killer too."
+  ],
+  "tip": "Strong in solo queue: teammates know they can work safely.",
+  "sourceHash": "b22954aec5c179ed"
+ },
+ "survivor:scavenger": {
+  "summary": "Refill an empty Toolbox with Great skill checks, and get a free Toolbox from a chest.",
+  "facts": [
+   "Works while you hold a depleted Toolbox.",
+   "Each Great repair skill check gives 1 Token; max 5 Tokens.",
+   "At 5 Tokens they are spent and the Toolbox is fully recharged.",
+   "After a recharge your repairs are 50% slower for 40/35/30 s.",
+   "Once per match you can rummage an opened chest for a guaranteed basic Toolbox."
+  ],
+  "tip": "Keep hitting Great checks with an empty Toolbox to get it back.",
+  "sourceHash": "b257829e9c7b0c64"
+ },
+ "survivor:scene-partner": {
+  "summary": "Looking at the Killer inside the Terror Radius makes you scream and reveals them.",
+  "facts": [
+   "Active inside the Terror Radius.",
+   "Looking at the Killer makes you scream; you then see them for 4/5/6 s.",
+   "50% chance of a second scream that adds +2 s.",
+   "Cool-down: 40 s."
+  ],
+  "tip": "Be careful: screams tell the Killer where you are.",
+  "sourceHash": "49d02f0f11d7eac2"
+ },
+ "survivor:second-wind": {
+  "summary": "After healing a teammate, your next unhook makes you Broken but heals you on its own soon after.",
+  "facts": [
+   "Activates after you heal others for 1 health state in total.",
+   "On your next unhook (by anyone, or by yourself) you become Broken until it ends.",
+   "You heal 1 health state on your own after 28/24/20 s.",
+   "It ends after that heal, or if you are downed before the timer ends.",
+   "Does not activate if you are already Broken."
+  ],
+  "tip": "Hide after the unhook until the automatic heal finishes.",
+  "sourceHash": "0b1ba28fbc07c3af"
+ },
+ "survivor:self-care": {
+  "summary": "Lets you heal yourself without a Med-Kit, but slowly.",
+  "facts": [
+   "You can heal yourself without a Med-Kit.",
+   "Self-healing runs at 25/30/35% of normal healing speed."
+  ],
+  "tip": "Heal yourself in a safe corner far from the Killer's patrol.",
+  "sourceHash": "6c5ffeef22065a7e"
+ },
+ "survivor:self-preservation": {
+  "summary": "Each time a teammate is hooked, you become harder to find with aura reading.",
+  "facts": [
+   "Triggers whenever another Survivor is hooked.",
+   "You are Elusive for 13/14/15 s."
+  ],
+  "tip": "Use the window to go for the rescue without being seen.",
+  "sourceHash": "8e662e0cfe26d9ea"
+ },
+ "survivor:shared-trauma": {
+  "summary": "Taking a protection hit lets you and nearby Survivors recover from Exhaustion while running.",
+  "facts": [
+   "After a protection hit, you and Survivors within 12 m recover from Exhausted while running.",
+   "This lasts 30/35/40 s.",
+   "You see Exhausted Survivors within 32 m."
+  ],
+  "tip": "Take a hit for a teammate so both of you can use exhaustion perks again.",
+  "sourceHash": "a20e0044c27c5a16"
+ },
+ "survivor:shoulder-the-burden": {
+  "summary": "Take a hook stage from a teammate when you unhook them, at a heavy cost to yourself.",
+  "facts": [
+   "Once per match, while you are not on your last hook.",
+   "Press Active Ability at a hooked teammate to take them down.",
+   "1 of their hook stages moves to you.",
+   "You scream, get injured if healthy, and are Broken for 160/140/120 s."
+  ],
+  "tip": "Use it on a teammate who is one hook from death.",
+  "sourceHash": "7918408860b6ab75"
+ },
+ "survivor:slippery-meat": {
+  "summary": "Teammates unhook you much faster, and you get a bit more speed after rescues.",
+  "facts": [
+   "Teammates are 90/95/100% faster at taking you off a hook.",
+   "The Haste from unhook protection is +5% stronger."
+  ],
+  "tip": "Faster rescues give the Killer less time to trade hits.",
+  "sourceHash": "6a476c089bcf6f19"
+ },
+ "survivor:small-game": {
+  "summary": "Shows totems close to you so you can cleanse Hexes faster.",
+  "facts": [
+   "You see totem auras within 10/11/12 m."
+  ],
+  "tip": "Combine with Counterforce for a strong anti-Hex build.",
+  "sourceHash": "7b2bfaa4e569a9b0"
+ },
+ "survivor:smash-hit": {
+  "summary": "Stunning the Killer with a pallet gives you a burst of speed to get away.",
+  "facts": [
+   "A pallet stun on the Killer grants +50% Haste for 4 s.",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 30/25/20 s."
+  ],
+  "tip": "Drop pallets early against Killers who cannot break them fast.",
+  "sourceHash": "0254cdd073f81a27"
+ },
+ "survivor:sole-survivor": {
+  "summary": "Builds tokens from hooks and repairs that speed up teammates at the gates and help you alone.",
+  "facts": [
+   "+1 Token each time you are hooked or repair a generator; max 6 Tokens.",
+   "Each token makes teammates +10% quicker at opening Exit Gates.",
+   "As the last Survivor alive with 3 or more Tokens, you can open the Hatch without a Key.",
+   "Then each token keeps the Killer from reading your aura for 6/8/10 s.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Keep repairing generators to stack tokens for the endgame.",
+  "sourceHash": "d87021c429aac587"
+ },
+ "survivor:solidarity": {
+  "summary": "While injured, healing a teammate slowly heals you at the same time.",
+  "facts": [
+   "While injured and healing another Survivor, you heal yourself too.",
+   "You heal at 65/70/75% of the speed you heal them."
+  ],
+  "tip": "Heal a teammate while you are both injured to fix two people at once.",
+  "sourceHash": "1a33dee7a248fb39"
+ },
+ "survivor:soul-guard": {
+  "summary": "Healing or getting up gives you brief Endurance, and while Cursed you can recover from downs yourself.",
+  "facts": [
+   "After a heal, or after getting up from the Dying State, you get Endurance for 4/6/8 s.",
+   "Any Conspicuous Action ends it early.",
+   "Cool-down: 30 s.",
+   "While Cursed you can fully pick yourself up from the Dying State."
+  ],
+  "tip": "Strong against Hex builds; leave one Hex alive to keep self-recovery.",
+  "sourceHash": "7de872a9a0329d5d"
+ },
+ "survivor:specialist": {
+  "summary": "Opening chests builds tokens that you spend on a Great skill check to shorten a generator.",
+  "facts": [
+   "+1 Token each time you unlock or rummage a chest; max 6 Tokens.",
+   "A Great repair skill check uses up all tokens.",
+   "That generator then needs 2/3/4 fewer charges per token, permanently, up to 12/18/24 charges."
+  ],
+  "tip": "Open several chests early, then cash in on one generator.",
+  "sourceHash": "befd9252e77f6071"
+ },
+ "survivor:spine-chill": {
+  "summary": "Warns you when the Killer looks at you from close by, and you vault faster for a moment.",
+  "facts": [
+   "Triggers when the Killer is within 40 m and looking at you.",
+   "You get a notification.",
+   "You cannot scream for 12 s.",
+   "Vaults are +10% faster for 12 s.",
+   "Cool-down: 40/35/30 s."
+  ],
+  "tip": "Strong against stealth Killers like Myers or Ghost Face.",
+  "sourceHash": "7a0312cd89bdf9ec"
+ },
+ "survivor:sprint-burst": {
+  "summary": "Breaking into a run gives you an instant short sprint, then a long Exhaustion cooldown.",
+  "facts": [
+   "Starting to run grants +50% Haste for 2 s.",
+   "Cannot be used while Exhausted.",
+   "Afterwards you are Exhausted for 60/50/40 s."
+  ],
+  "tip": "Walk between objectives so the sprint is ready when the Killer shows up.",
+  "sourceHash": "c24b063fdb3da9c0"
+ },
+ "survivor:stake-out": {
+  "summary": "Lurking near the Killer unchased earns tokens that turn skill checks into easy, rewarding ones.",
+  "facts": [
+   "+1 Token every 15 s while in the Terror Radius, within 24 m of the Killer and not chased; max 2/3/4 Tokens.",
+   "During actions with skill checks, regular checks become special ones.",
+   "Hitting a special check gives +4% more progress.",
+   "Each special check, hit or missed, uses 1 Token."
+  ],
+  "tip": "Pair with Hyperfocus to keep Great skill check streaks going.",
+  "sourceHash": "21e67c9971c91bc4"
+ },
+ "survivor:still-sight": {
+  "summary": "Standing still for a moment shows the Killer, chests and generators around you.",
+  "facts": [
+   "Activates after you stand still for 4/3/2 s.",
+   "Within 24 m you see the Killer, chests and generators.",
+   "Ends as soon as you move."
+  ],
+  "tip": "Pause briefly before leaving a generator to check where the Killer is.",
+  "sourceHash": "bd11a6279360c83e"
+ },
+ "survivor:streetwise": {
+  "summary": "Chest items get many more charges, and running out of charges shows the Killer once.",
+  "facts": [
+   "Items with charges from chests permanently get 60/70/80% more charges.",
+   "The first time your item runs out, you see the Killer's aura for 8 s."
+  ],
+  "tip": "Combine with Plunderer's Instinct to find better chest items.",
+  "sourceHash": "d923dd4fe10b505a"
+ },
+ "survivor:strength-in-shadows": {
+  "summary": "In the Basement you can heal yourself without a Med-Kit, and finishing a heal there shows the Killer.",
+  "facts": [
+   "Active while you are in the Basement.",
+   "Self-healing without a Med-Kit is possible there, at 70% of normal speed.",
+   "Completing a heal down there shows you the Killer's aura for 6/8/10 s."
+  ],
+  "tip": "Heal in the Basement after a Killer has hooked someone far away.",
+  "sourceHash": "6c33460db696b391"
+ },
+ "survivor:teamwork-collective-stealth": {
+  "summary": "After a teammate heals you, both of you leave no Scratch Marks while staying close.",
+  "facts": [
+   "Triggers when another Survivor finishes healing you.",
+   "You and the healer leave no Scratch Marks while within 8/12/16 m of each other.",
+   "It holds for 4 s out of range and resumes if you get close again in time.",
+   "Only one Collective Stealth affects a Survivor at a time."
+  ],
+  "tip": "Move together after the heal to stay hidden from tracking Killers.",
+  "sourceHash": "a8ed48df03deeec2"
+ },
+ "survivor:teamwork-full-circuit": {
+  "summary": "Repairing with teammates makes Good skill checks easier and speeds you up a little.",
+  "facts": [
+   "Each teammate on your generator makes your Good skill check zones 15/20/25% bigger.",
+   "With at least 1 teammate on your generator, you repair 5% faster."
+  ],
+  "tip": "Pair up on generators to reduce failed skill checks.",
+  "sourceHash": "de7d6083cf80d384"
+ },
+ "survivor:teamwork-power-of-two": {
+  "summary": "After you heal someone, both of you move a bit faster while staying near each other.",
+  "facts": [
+   "Triggers when you finish healing another Survivor.",
+   "You and the healed Survivor get +5% Haste while within 8/12/16 m of each other.",
+   "It holds for 4 s out of range and resumes if you get close again in time.",
+   "Only one Power of Two affects a Survivor at a time."
+  ],
+  "tip": "Stay together after the heal to reach the next generator faster.",
+  "sourceHash": "9ca27815b48246e8"
+ },
+ "survivor:teamwork-soft-spoken": {
+  "summary": "Group repairs are harder for the Killer to hear and slightly faster.",
+  "facts": [
+   "Each other Survivor repairing with you makes the generator noise reach 15/20/25% less far.",
+   "With at least 1 teammate on your generator, you repair 5% faster."
+  ],
+  "tip": "Useful against Killers that patrol by listening for generators.",
+  "sourceHash": "5e6e21b0f86b4c25"
+ },
+ "survivor:teamwork-throw-down": {
+  "summary": "Blinding or pallet-stunning the Killer protects nearby injured teammates with Endurance.",
+  "facts": [
+   "Triggers when you blind the Killer in any way or stun them with a pallet.",
+   "Other injured Survivors within 24 m get Endurance for 6/8/10 s."
+  ],
+  "tip": "Use flashlight saves close to injured teammates for the best value.",
+  "sourceHash": "f768c6b4443d5f56"
+ },
+ "survivor:teamwork-toughen-up": {
+  "summary": "When a nearby teammate blinds or stuns the Killer while you are injured, your trail disappears for a while.",
+  "facts": [
+   "Requires you to be injured.",
+   "Triggers when another Survivor within 24 m blinds the Killer or pallet-stuns them.",
+   "For 20/25/30 s you leave no Grunts of Pain, blood pools or Scratch Marks."
+  ],
+  "tip": "Run while a teammate stuns the Killer; you will be hard to find.",
+  "sourceHash": "31b18c1f7d9abcd2"
+ },
+ "survivor:technician": {
+  "summary": "Your repairs are quieter, and failed skill checks never blow up the generator.",
+  "facts": [
+   "While repairing, your repair noise reaches 16 m less far.",
+   "A failed skill check costs 4/3/2% more progress.",
+   "Failed checks do not cause a generator explosion or Loud Noise Notification."
+  ],
+  "tip": "Good for new players who still miss skill checks.",
+  "sourceHash": "41c951efec49cdbd"
+ },
+ "survivor:tenacity": {
+  "summary": "While downed you can crawl and recover at the same time, quickly and quietly.",
+  "facts": [
+   "In the Dying State you can recover while crawling.",
+   "You get 30/40/50% Haste while crawling.",
+   "Grunts of Pain are 75% quieter.",
+   "Your aura cannot be read."
+  ],
+  "tip": "Crawl toward teammates or out of sight while you recover.",
+  "sourceHash": "1a3b3c0527aa92c9"
+ },
+ "survivor:this-is-not-happening": {
+  "summary": "Makes the Good skill-check zone much bigger while you repair or heal.",
+  "facts": [
+   "While repairing or healing, the Good skill check zone is 150/175/200% bigger."
+  ],
+  "tip": "Strong against Killers who make skill checks harder, like Doctor.",
+  "sourceHash": "614ee2236f1f9cab"
+ },
+ "survivor:troubleshooter": {
+  "summary": "During a chase you see the most advanced generator, and dropping a pallet shows the Killer.",
+  "facts": [
+   "Active while you are chased.",
+   "The most-progressed generator shows to you as an aura.",
+   "After dropping a pallet you see the Killer's aura for 4/5/6 s.",
+   "Both effects last 6/8/10 s after the chase, then it turns off."
+  ],
+  "tip": "Lead the chase away from the shown generator to protect it.",
+  "sourceHash": "98e0d295dbb8d55e"
+ },
+ "survivor:unbreakable": {
+  "summary": "Once per match, you can pick yourself up from the Dying State after the Killer downs you.",
+  "facts": [
+   "Triggers when the Killer puts you in the Dying State.",
+   "Recovery is 25/30/35% faster.",
+   "You can fully recover by yourself.",
+   "Once per match."
+  ],
+  "tip": "Crawl to a safe place before getting up, or the Killer will just down you again.",
+  "sourceHash": "321b5e31d6b4bbc1"
+ },
+ "survivor:up-the-ante": {
+  "summary": "Lets every Survivor try to unhook themselves, with better odds for each living Survivor.",
+  "facts": [
+   "All Survivors can attempt self-unhooks in the first hook stage.",
+   "+1 Token for each Survivor still in the match.",
+   "Per token, every Survivor's luck at self-unhooking rises by 1/2/3%, stacking up to 3/6/9%."
+  ],
+  "tip": "Best with luck offerings and other luck perks.",
+  "sourceHash": "5abfa32c58d77da4"
+ },
+ "survivor:urban-evasion": {
+  "summary": "You move much faster while crouching, making stealth play easier.",
+  "facts": [
+   "Permanent: moving while crouched is 90/95/100% faster."
+  ],
+  "tip": "Crouch away from the generator when the Killer arrives.",
+  "sourceHash": "65129caa8602be04"
+ },
+ "survivor:valkyries-rage": {
+  "summary": "After a long chase, your next pallet stun lasts much longer.",
+  "facts": [
+   "Activates after 40/35/30 s of being chased.",
+   "Your next pallet stun on the Killer lasts +75% longer.",
+   "Then it turns off."
+  ],
+  "tip": "Keep the chase going and drop a pallet at the right moment.",
+  "sourceHash": "b8d017ad16608090"
+ },
+ "survivor:vigil": {
+  "summary": "You and Survivors near you recover from Exhaustion faster.",
+  "facts": [
+   "Exhaustion wears off 20/25/30% faster.",
+   "Also affects all Survivors within 16 m, and lingers 15 s after they leave.",
+   "Only one Vigil affects a Survivor at a time."
+  ],
+  "tip": "Run with a team that uses exhaustion perks.",
+  "sourceHash": "7c16811dcdc776ad"
+ },
+ "survivor:visionary": {
+  "summary": "Shows generators near you, pausing briefly whenever one is finished.",
+  "facts": [
+   "Permanent: you see generator auras within 32 m.",
+   "Turns off for 20/18/16 s each time a generator is completed."
+  ],
+  "tip": "Use it on maps you do not know to find generators quickly.",
+  "sourceHash": "3aaa3dfa1856ab83"
+ },
+ "survivor:wake-up": {
+  "summary": "Once all generators are done, you see the gate switches and open gates faster.",
+  "facts": [
+   "Activates when all generators are completed.",
+   "You always see the Exit Gate switches within 128 m.",
+   "While you open a gate, Survivors within 128 m see your aura.",
+   "Gate opening is 8/9/10% faster, plus an extra bonus per living Survivor (amount not shown on the wiki), up to 68/69/70%."
+  ],
+  "tip": "Go straight to the switch you see to open it quickly.",
+  "sourceHash": "94a3f8d3426cd71f"
+ },
+ "survivor:we-see-you": {
+  "summary": "Each time the Killer reads your aura you collect a token; four reveal the Killer to everyone.",
+  "facts": [
+   "+1 token whenever the Killer reveals your aura.",
+   "At 4 tokens, all are used and every Survivor sees the Killer's aura for 10/12.5/15 s.",
+   "10-second cool-down after gaining a token."
+  ],
+  "tip": "Strong against Killers who rely on aura-reading perks.",
+  "sourceHash": "d73427f4a81610d0"
+ },
+ "survivor:well-make-it": {
+  "summary": "After a rescue you heal other Survivors twice as fast for a while.",
+  "facts": [
+   "Active for 70/80/90 s after you unhook another Survivor.",
+   "Healing others is +100% faster."
+  ],
+  "tip": "Heal the rescued Survivor right away in a safe place.",
+  "sourceHash": "c6a15da81d1df90c"
+ },
+ "survivor:were-gonna-live-forever": {
+  "summary": "Pick up downed teammates twice as fast and give them a short Endurance shield.",
+  "facts": [
+   "Healing a downed Survivor is +100% faster.",
+   "A downed Survivor you heal to Injured gets Endurance for 6/8/10 s.",
+   "Once every 30 s."
+  ],
+  "tip": "Pick up teammates the Killer has left on the ground.",
+  "sourceHash": "3a52e27a203e675b"
+ },
+ "survivor:wicked": {
+  "summary": "After being unhooked you see the Killer for a long time, and Basement hooks can be escaped once.",
+  "facts": [
+   "After you are unhooked in any way, you see the Killer's aura for 16/18/20 s.",
+   "On a Basement hook in your first hook stage, a self-unhook attempt has a 100% success chance.",
+   "Does nothing on the second hook stage or as the last Survivor alive."
+  ],
+  "tip": "Use the long reveal to avoid getting tunnelled after an unhook.",
+  "sourceHash": "9de71c57bf339596"
+ },
+ "survivor:wide-open-throttle": {
+  "summary": "Fast-vaulting a pallet gives a little speed and resets the pallet, but the Entity blocks it.",
+  "facts": [
+   "A fast pallet vault grants 10/12.5/15% Haste for 3 s.",
+   "The pallet is reset at once, blocked by the Entity and shown to all Survivors for 60 s.",
+   "Cool-down: 60 s."
+  ],
+  "tip": "Vault the pallet and leave; it will be blocked for a while.",
+  "sourceHash": "fab5cc6fe17e3d90"
+ },
+ "survivor:will-to-live": {
+  "summary": "After an unhook, escape the Killer's grip once by hitting a skill check, stunning them.",
+  "facts": [
+   "Active for 40/50/60 s after you are unhooked or unhook yourself.",
+   "When the Killer grabs or picks you up, hit a skill check to break free.",
+   "Stuns the Killer for 4 s.",
+   "You become the next Obsession.",
+   "Turns off when the Exit Gates get power.",
+   "Can be used once per match.",
+   "A Conspicuous Action ends it early.",
+   "Your chance to start as the Obsession rises by 100% of the default.",
+   "The Killer has only one Obsession at a time."
+  ],
+  "tip": "Avoid repairing or healing right after an unhook to keep it active.",
+  "sourceHash": "32bdd2178ae566ca"
+ },
+ "survivor:windows-of-opportunity": {
+  "summary": "Shows nearby windows and makes your window vaults a bit faster.",
+  "facts": [
+   "You see window auras within 24 m.",
+   "Window vaults are +10% faster.",
+   "Cool-down: 40/35/30 s after vaulting a window."
+  ],
+  "tip": "Use it to learn the window loops on new maps.",
+  "sourceHash": "75a3f433073720b4"
+ },
+ "survivor:wiretap": {
+  "summary": "After some repairs, bug a generator so all Survivors see the Killer when they come near it.",
+  "facts": [
+   "Activates after repairs worth 40% of a generator.",
+   "Press Active Ability at a generator to place a bug with a timer of 100/110/120 s.",
+   "All Survivors see the Killer within 14 m of that generator.",
+   "The bug ends when the timer runs out or the generator is kicked.",
+   "Bugged generators show to all Survivors in yellow."
+  ],
+  "tip": "Bug a generator in the middle of the map for the best view.",
+  "sourceHash": "c5c1b77dc69a66ab"
+ }
+}

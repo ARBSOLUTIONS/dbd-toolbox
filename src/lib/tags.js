@@ -70,13 +70,20 @@ const KILLER_RULES = [
   ['info', /loud noise notification|killer instinct|is revealed|notification/],
 ];
 
+// The public app data ships no wiki descriptions (licence), so the build
+// precomputes what these functions read from them: `exhaustion` and `kwTags`
+// ({ survivor: [...], killer: [...] }). When present, those values win, so
+// scores in the browser are identical to the ones computed from the full text.
+
 // Survivors: only one Exhaustion perk works at a time.
 export function isExhaustionPerk(perk) {
+  if (perk.description == null && typeof perk.exhaustion === 'boolean') return perk.exhaustion;
   return perk.role === 'survivor' && /causes? the exhausted|cannot be used (while|when) exhausted/i.test(perk.description);
 }
 
 /** Tags from the keyword rules only (used for new perks and for add-ons). */
 export function keywordTags(entity, role = entity.role) {
+  if (entity.description == null && entity.kwTags) return [...(entity.kwTags[role] ?? [])];
   const text = `${entity.name}\n${entity.description}`.toLowerCase();
   const rules = role === 'killer' ? KILLER_RULES : SURVIVOR_RULES;
   return rules
@@ -84,6 +91,9 @@ export function keywordTags(entity, role = entity.role) {
     .map(([tag]) => tag)
     .slice(0, 3);
 }
+
+/** Precomputed keyword tags for both roles (see the note above isExhaustionPerk). */
+export const kwTagsFor = (entity) => ({ survivor: keywordTags(entity, 'survivor'), killer: keywordTags(entity, 'killer') });
 
 /** Returns { tags, source } where source is 'manual' or 'keywords'. */
 export function tagsFor(perk) {

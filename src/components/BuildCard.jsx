@@ -3,19 +3,20 @@ import { createPortal } from 'react-dom';
 import { iconSrc } from '../lib/format.js';
 import { PLAYSTYLES } from '../lib/tags.js';
 import ScoreBreakdown from './ScoreBreakdown.jsx';
+import { isPerk, blurb } from '../lib/perkText.js';
 
 export function Slot({ entity, fallback, big, showOwner }) {
   const owner = showOwner && entity ? entity.owner ?? null : undefined;
   const [tip, setTip] = useState(null);
   const show = (e) => {
-    if (!entity?.description) return;
+    if (!entity) return;
     const r = e.currentTarget.getBoundingClientRect();
     setTip({ x: r.left + r.width / 2, top: r.top, bottom: r.bottom });
   };
   return (
     <div
       className={`slot ${big ? 'slot-big' : ''}`}
-      tabIndex={entity?.description ? 0 : undefined}
+      tabIndex={entity ? 0 : undefined}
       onMouseEnter={show}
       onMouseLeave={() => setTip(null)}
       onFocus={show}
@@ -35,7 +36,7 @@ export function Slot({ entity, fallback, big, showOwner }) {
   );
 }
 
-/** Floating card with the full description, shown while hovering a slot. */
+/** Floating card with our own perk summary (never the wiki text), shown while hovering a slot. */
 function SlotTip({ entity, pos }) {
   const ref = useRef(null);
   const [style, setStyle] = useState({ left: pos.x, top: pos.bottom + 8, visibility: 'hidden' });
@@ -63,7 +64,14 @@ function SlotTip({ entity, pos }) {
         </div>
       </div>
       {entity.identicalTo && <p className="muted small">Same effect as {entity.identicalTo}.</p>}
-      <p className="slot-tip-desc">{entity.description}</p>
+      {blurb(entity) && <p className="slot-tip-desc">{blurb(entity)}</p>}
+      {isPerk(entity) && entity.text?.facts?.length ? (
+        <ul className="slot-tip-desc facts">
+          {entity.text.facts.map((f, i) => (
+            <li key={i}>{f}</li>
+          ))}
+        </ul>
+      ) : null}
     </div>
   );
 }

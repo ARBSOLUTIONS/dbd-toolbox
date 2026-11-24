@@ -2,7 +2,7 @@
   "name": "dbd-build-helper",
   "version": "0.1.0",
   "private": true,
-  "description": "Personal Dead by Daylight build helper. Data from the Dead by Daylight Wiki (CC BY-NC-SA 3.0).",
+  "description": "Dead by Daylight build helper. Game data from the Dead by Daylight Wiki; perk texts written by this project.",
   "type": "module",
   "scripts": {
     "dev": "concurrently -n server,web -c yellow,cyan \"node --watch-path=server server/index.js\" \"vite\"",

@@ -1,6 +1,7 @@
 // Downloads fresh data from the wiki and saves it into the data/ folder.
 // Icons are only downloaded when they are not on disk yet, so a refresh after
 // a new chapter only fetches the new ones.
+import { textStatus } from './ownTexts.js';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -251,6 +252,15 @@ export async function refreshData(log = console.log) {
   }
 
   await writeJson('meta.json', meta); // written last: marks a complete refresh
+  // Our own perk texts (data/texts.json) are written from a specific wiki text.
+  // List the perks whose text is missing or out of date, so they get rewritten;
+  // until then the site shows a neutral line + wiki link for them.
+  const { missing, stale } = textStatus(perks, await readJson('texts.json', {}));
+  if (missing.length || stale.length) {
+    log(`Own perk texts to (re)write: ${stale.length} stale, ${missing.length} missing (check: node scripts/check-texts.js)`);
+    if (stale.length) log(`  stale (wiki text changed): ${stale.join(', ')}`);
+    if (missing.length) log(`  missing: ${missing.join(', ')}`);
+  } else log('Own perk texts: all up to date.');
   log(
     `Done. Patch ${patch ?? 'unknown'}: ${perks.length} perks, ${killers.length} killers, ` +
       `${items.length} items, ${addons.length} add-ons, ${offerings.length} offerings.`,

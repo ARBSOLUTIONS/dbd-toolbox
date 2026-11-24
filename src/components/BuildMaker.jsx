@@ -335,7 +335,7 @@ export default function BuildMaker({ data, builds, favorites, initial, onShared 
             <ul className="suggestions">
               {addonSuggestions.map(({ addon }) => (
                 <li key={addon.id}>
-                  <button onClick={() => addAddon(addon)} title={addon.description}>
+                  <button onClick={() => addAddon(addon)} title={RARITY_LABEL[addon.rarity] ?? addon.rarity}>
                     <img src={iconSrc(addon.icon)} alt="" />
                     <span>
                       {addon.name} <span className="muted small">({RARITY_LABEL[addon.rarity] ?? addon.rarity})</span>

@@ -127,7 +127,8 @@ export function rateBloodpoints(o) {
 
 /** Adds `rating` to every offering. */
 export function withOfferingRatings(offerings) {
-  return offerings.map((o) => ({ ...o, rating: rateOffering(o) }));
+  // The public app data ships the rating precomputed (and no wiki description).
+  return offerings.map((o) => ({ ...o, rating: o.rating ?? rateOffering(o) }));
 }
 
 /** Best offering for a role and playstyle (used by the build generator and maker). */

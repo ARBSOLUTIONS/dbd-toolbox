@@ -11,6 +11,9 @@ import { DATA_DIR, ICON_DIR } from './refresh.js';
 import { refresh, startRefresh, startAutoUpdate, autoUpdateStatus, checkForUpdate } from './autoUpdate.js';
 import { listBuilds, createBuild, voteBuild, reportBuild, indexGameData, visitorHash, CommunityError } from './community/core.js';
 import { jsonStore } from './community/stores.js';
+import { ownText } from './ownTexts.js';
+
+const withOwnTexts = (perks, texts) => perks.map((p) => ({ ...p, text: ownText(p, texts) }));
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 // API_PORT (not PORT) so it never clashes with tools that set PORT for the web app.
@@ -29,7 +32,8 @@ const readJson = (name, fallback) => readJsonFrom(path.join(DATA_DIR, name), fal
 app.get('/api/data', async (_req, res) => {
   res.json({
     meta: await readJson('meta.json', null),
-    perks: await readJson('perks.json', []),
+    // Our own perk texts ride along as `text`; the app never shows the wiki description.
+    perks: withOwnTexts(await readJson('perks.json', []), await readJson('texts.json', {})),
     killers: await readJson('killers.json', []),
     survivors: await readJson('survivors.json', []),
     items: await readJson('items.json', []),

@@ -26,6 +26,8 @@ import { settings as autoSettings } from '../server/autoUpdate.js';
 import { withOfferingRatings, stars, KIND_LABEL } from '../src/lib/offeringRatings.js';
 import { analysePatch, VERDICTS, LEVELS } from '../src/lib/patchImpact.js';
 import { rankPerks, PRIOR_GAMES, MIN_PERK_GAMES, MIN_SAMPLES, periodLabel } from '../src/lib/nlStats.js';
+import { ownText, fallbackLine, textStatus } from '../server/ownTexts.js';
+import { toPublicPerk, toPublicItem, toPublicOffering, publicChanges } from '../server/publicData.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(ROOT, 'dist');
@@ -88,6 +90,9 @@ const history = await readJson('data/patch-history.json', []);
 const patchNotes = await readJson('data/patch-notes.json', []);
 const autoState = await readJson('data/auto-update.json', {});
 const stats = await readJson('data/nightlight.json', null);
+// Our own perk texts. The public pages never show the wiki descriptions
+// (CC BY-NC-SA); scoring and tags still read them internally.
+const texts = await readJson('data/texts.json', {});
 
 const data = { meta, ...raw, perks: withTags(raw.perks), changes, stats };
 const curated = curatedFile.builds.map((b) => {
@@ -115,13 +120,15 @@ const stripRemote = (list, field = 'icon') =>
     if (!img?.local || !img.remote) return x;
     return { ...x, [field]: { local: img.local } };
   });
+// No wiki descriptions in the public app data (CC BY-NC-SA); see server/publicData.js.
+const publicPerk = (p) => toPublicPerk(p, texts);
 const compactRaw = {
-  perks: stripRemote(raw.perks, 'icon'),
+  perks: stripRemote(raw.perks, 'icon').map(publicPerk),
   killers: stripRemote(raw.killers, 'portrait'),
   survivors: stripRemote(raw.survivors, 'portrait'),
-  items: stripRemote(raw.items, 'icon'),
-  addons: stripRemote(raw.addons, 'icon'),
-  offerings: stripRemote(raw.offerings, 'icon'),
+  items: stripRemote(raw.items, 'icon').map(toPublicItem),
+  addons: stripRemote(raw.addons, 'icon').map(toPublicItem),
+  offerings: stripRemote(raw.offerings, 'icon').map(toPublicOffering),
 };
 const compactStats = stats
   ? {
@@ -170,9 +177,9 @@ const statusPayload = {
 const appDataJson = JSON.stringify({
   meta,
   ...compactRaw,
-  changes,
+  changes: publicChanges(changes),
   stats: compactStats,
-  patchNotes,
+  patchNotes: patchNotes.map(publicChanges),
   patchHistory: history,
   curated: curatedFile,
   generatedBuilds,
@@ -268,13 +275,32 @@ ${body}
 ${adSlot}
 <p class="cta"><a class="button" href="/">Open the interactive build generator →</a></p>
 </main>
-<footer>Data: <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a> (CC BY-NC-SA 3.0), patch ${esc(meta.patch)}, updated ${lastmod}.
+<footer>Perk texts written by ${SITE}; game data from the <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a>, patch ${esc(meta.patch)}, updated ${lastmod}.
 ${SITE} is a free fan project, not affiliated with Behaviour Interactive. <a href="/about/">About &amp; licence</a></footer>
 </body>
 </html>`;
 }
 
 const perkLink = (p) => (p ? `<a href="/perks/${p.id}/">${esc(p.name)}</a>` : '');
+// Own text of a perk, or null when missing / written for an older wiki text.
+const perkText = (p) => ownText(p, texts);
+/** One-line plain text about a perk (lists, meta descriptions). Never the wiki text. */
+const perkSummary = (p) => perkText(p)?.summary ?? fallbackLine(p);
+/** Plain text with all facts (FAQ answers, longer meta). */
+const perkPlain = (p) => {
+  const t = perkText(p);
+  return t ? `${t.summary} ${t.facts.join(' ')}` : fallbackLine(p);
+};
+const wikiLink = (p) =>
+  p?.wikiUrl ? `<a href="${esc(p.wikiUrl)}" rel="nofollow noopener" target="_blank">${esc(p.name)} on the Dead by Daylight Wiki</a>` : 'the Dead by Daylight Wiki';
+/** Full perk text as HTML: summary, facts, tip; or the neutral fallback with a wiki link. */
+const perkHtml = (p) => {
+  const t = perkText(p);
+  if (!t) return `<p>${esc(fallbackLine(p))} Read ${wikiLink(p)}.</p>`;
+  return `<p>${esc(t.summary)}</p>
+<ul class="facts">${t.facts.map((f) => `<li>${esc(f)}</li>`).join('')}</ul>
+${t.tip ? `<p class="tip"><strong>Tip:</strong> ${esc(t.tip)}</p>` : ''}`;
+};
 const buildUrl = (b) => `/builds/${b.id}/`;
 const roleLabel = (r) => (r === 'killer' ? 'Killer' : 'Survivor');
 const styleLabel = (role, s) => PLAYSTYLES[role]?.[s] ?? s;
@@ -294,13 +320,13 @@ for (const p of data.perks) {
   const usedIn = allBuilds.filter((b) => b.resolved.perks.some((x) => x?.id === p.id)).slice(0, 8);
   const owner = p.character ? `${p.role === 'killer' ? '' : ''}${esc(p.character)}` : 'a general perk (any character)';
   const title = `${p.name} – ${roleLabel(p.role)} perk: best builds & combos | ${SITE}`;
-  const description = short(`${p.name} (Dead by Daylight ${p.role} perk${p.character ? ` of ${p.character}` : ''}): ${p.description}`);
+  const description = short(`${p.name} (Dead by Daylight ${p.role} perk${p.character ? ` of ${p.character}` : ''}): ${perkPlain(p)}`);
   const tags = p.tags.map((t) => styleLabel(p.role, t)).join(', ');
   const body = `<article class="hero">${icon(p, 96)}<div><h1>${esc(p.name)}</h1>
 <p class="muted">Dead by Daylight ${p.role} perk · ${p.character ? `Unique perk of <strong>${esc(p.character)}</strong>` : 'General perk'}${p.identicalTo ? ` · same effect as ${perkLink(perkById.get(data.perks.find((x) => x.name === p.identicalTo && x.role === p.role)?.id))}` : ''}</p>
 <p class="tags">${p.tags.map((t) => `<span>${esc(styleLabel(p.role, t))}</span>`).join('')}</p></div></article>
 <h2>What does ${esc(p.name)} do?</h2>
-<p>${para(p.description)}</p>
+${perkHtml(p)}
 ${p.quote ? `<blockquote>${esc(p.quote)}</blockquote>` : ''}
 <h2>Best perks to combine with ${esc(p.name)}</h2>
 ${partners.length ? `<ul class="combos">${partners.map((x) => `<li>${icon(x.perk, 32)} ${perkLink(x.perk)} – ${esc(x.reasons.join(' '))}</li>`).join('')}</ul>` : '<p>No clear partners found.</p>'}
@@ -313,7 +339,7 @@ ${usedIn.length ? `<div class="grid">${usedIn.map(buildCardHtml).join('')}</div>
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: `What does ${p.name} do in Dead by Daylight?`, acceptedAnswer: { '@type': 'Answer', text: short(p.description, 500) } },
+      { '@type': 'Question', name: `What does ${p.name} do in Dead by Daylight?`, acceptedAnswer: { '@type': 'Answer', text: short(perkPlain(p), 500) } },
       {
         '@type': 'Question',
         name: `What perks go well with ${p.name}?`,
@@ -397,9 +423,9 @@ for (const role of ['killer', 'survivor']) {
         : `${c.name} in Dead by Daylight: unique perks (${own.map((p) => p.name).join(', ')}), what they do and builds that use them.`,
     );
     const body = `<article class="hero">${icon(c, 96)}<div><h1>${esc(c.name)}${role === 'killer' ? ' builds &amp; perks' : ''}</h1><p class="muted">Dead by Daylight ${role}${power ? ` · Power: ${esc(power)}` : ''}</p></div></article>
-<h2>Unique perks</h2><ul class="combos">${own.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} – ${esc(short(p.description, 180))}</li>`).join('')}</ul>
+<h2>Unique perks</h2><ul class="combos">${own.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} – ${esc(perkSummary(p))}</li>`).join('')}</ul>
 ${builds.length ? `<h2>Builds for ${esc(c.name)}</h2><div class="grid">${builds.map(buildCardHtml).join('')}</div>` : ''}
-${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><ul class="list addons">${addons.map((a) => `<li>${icon(a, 32)} <strong>${esc(a.name)}</strong> <span class="muted">${esc(a.rarity)}</span><br><span class="small">${esc(short(a.description, 200))}</span></li>`).join('')}</ul>` : ''}`;
+${addons.length ? `<h2>${esc(power ?? 'Power')} add-ons (${addons.length})</h2><ul class="list addons">${addons.map((a) => `<li>${icon(a, 32)} <strong>${esc(a.name)}</strong> <span class="muted">${esc(a.rarity)}</span></li>`).join('')}</ul>` : ''}`;
     await write(
       `${folder}/${c.id}/index.html`,
       page({ url: `/${folder}/${c.id}/`, title, description, body, crumbs: [{ name: `${roleLabel(role)}s`, url: `/${folder}/` }, { name: c.name, url: `/${folder}/${c.id}/` }] }),
@@ -453,8 +479,8 @@ for (const b of allBuilds) {
   const extra = [b.resolved.item, b.resolved.killer, ...(b.resolved.addons ?? []), b.resolved.offering].filter(Boolean);
   const body = `<h1>${esc(b.name)}</h1>
 <p class="muted">A ${esc(kind)} Dead by Daylight build for ${esc(who)} · playstyle: ${b.playstyles.map((s) => esc(styleLabel(b.role, s))).join(', ')} · synergy score ${b.rating.score}/100 · patch ${esc(meta.patch)}</p>
-<h2>Perks</h2><ul class="combos">${perks.map((p) => `<li>${icon(p, 48)} ${perkLink(p)} – ${esc(short(p.description, 200))}</li>`).join('')}</ul>
-${extra.length ? `<h2>${b.role === 'killer' ? 'Killer & add-ons' : 'Item & add-ons'}</h2><ul class="combos">${extra.map((e) => `<li>${icon(e, 40)} <strong>${esc(e.name)}</strong>${e.description ? ` – ${esc(short(e.description, 160))}` : ''}</li>`).join('')}</ul>` : ''}
+<h2>Perks</h2><ul class="combos">${perks.map((p) => `<li>${icon(p, 48)} ${perkLink(p)} – ${esc(perkSummary(p))}</li>`).join('')}</ul>
+${extra.length ? `<h2>${b.role === 'killer' ? 'Killer & add-ons' : 'Item & add-ons'}</h2><ul class="combos">${extra.map((e) => `<li>${icon(e, 40)} <strong>${esc(e.name)}</strong>${e.rarity ? ` <span class="muted">${esc(e.rarity)}</span>` : ''}</li>`).join('')}</ul>` : ''}
 <h2>Why it works</h2><p>${esc(b.why)}</p>
 ${b.source ? `<p class="muted">Recommended by <a href="${esc(b.source.url)}" rel="nofollow noopener">${esc(b.source.name)}</a>${b.source.date ? ` (${esc(b.source.date)})` : ''}.</p>` : ''}
 ${b.howToPlay ? `<h2>How to play</h2><p>${esc(b.howToPlay)}</p>` : ''}
@@ -536,7 +562,7 @@ ${b.rating.pros.length || b.rating.cons.length ? `<h2>Rating details</h2><ul>${b
   const whatsNew = [
     ...newKillers.map((c) => charCard(c, 'killer', 'New killer')),
     ...newSurvivors.map((c) => charCard(c, 'survivor', 'New survivor')),
-    impact.newPerks.length ? `<h3>New perks (${impact.newPerks.length})</h3><ul class="combos">${impact.newPerks.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} <span class="muted">${roleLabel(p.role)}</span> – ${esc(short(p.description, 180))}</li>`).join('')}</ul>` : '',
+    impact.newPerks.length ? `<h3>New perks (${impact.newPerks.length})</h3><ul class="combos">${impact.newPerks.map((p) => `<li>${icon(p, 32)} ${perkLink(p)} <span class="muted">${roleLabel(p.role)}</span> – ${esc(perkSummary(p))}</li>`).join('')}</ul>` : '',
     real.length
       ? `<h3>Perk changes (${real.length})</h3><p class="muted">Buff or nerf is judged by this site from the old and new perk text (numbers, durations, conditions).</p><ul class="combos">${real
           .map((x) => `<li>${x.perk ? icon(x.perk, 32) : ''} ${x.perk ? perkLink(x.perk) : esc(x.name)} <strong class="verdict ${x.judgement.verdict}">${VERDICTS[x.judgement.verdict].icon} ${LEVELS[x.judgement.level] ?? ''} ${VERDICTS[x.judgement.verdict].label.toLowerCase()}</strong> <span class="muted">${roleLabel(x.role)} perk, in ${count(x.handPicked, 'hand-picked build')}</span>${x.judgement.changes.length ? `<br><span class="small">${x.judgement.changes.map((c) => esc(c.label)).join(' · ')}</span>` : ''}</li>`)
@@ -606,7 +632,7 @@ ${stats?.perks ? `<h2>Top perks from community stats</h2><ul class="combos"><li>
         return `<h3>${label}</h3><ul class="combos">${list
           .map(
             (o) =>
-              `<li>${icon(o, 40)} <strong>${esc(o.name)}</strong> <span class="score">${stars(o.rating.stars)}</span> <span class="muted">${esc(KIND_LABEL[o.rating.kind])} · ${esc(roleName[o.role] ?? o.role)}</span><br>${esc(o.rating.why)}<br><span class="muted small">${esc(short(o.description, 200))}</span></li>`,
+              `<li>${icon(o, 40)} <strong>${esc(o.name)}</strong> <span class="score">${stars(o.rating.stars)}</span> <span class="muted">${esc(KIND_LABEL[o.rating.kind])} · ${esc(roleName[o.role] ?? o.role)}</span><br>${esc(o.rating.why)}</li>`,
           )
           .join('')}</ul>`;
       })
@@ -654,13 +680,13 @@ await write(
   page({
     url: '/about/',
     title: `About ${SITE} – sources, licence & privacy`,
-    description: `${SITE} is a free, non-commercial Dead by Daylight fan tool. Sources, licence, privacy and disclaimer.`,
+    description: `${SITE} is a free Dead by Daylight fan tool. Sources, licence, privacy and disclaimer.`,
     body: `<h1>About ${SITE}</h1>
 <p>${SITE} helps you find strong and fun Dead by Daylight builds: hand-picked and auto-generated builds, perk combinations, a build maker with ratings, and a challenge generator with achievements.</p>
-<h2>Sources</h2><p>Game data (perk, item, add-on and offering names and descriptions, and icons) comes from the <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a>. The text is available under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>. The data on this site that is derived from it is shared under the same licence. Data is fetched politely (only allowed pages, low request rate) and updated automatically after each game patch.</p>
+<h2>Sources</h2><p>The perk descriptions on this site (summary, facts and tip) are written by ${SITE} itself. Names, numbers, rarities and icons of perks, items, add-ons and offerings come from the <a href="https://deadbydaylight.wiki.gg">Dead by Daylight Wiki</a> and the game; the wiki's own description texts (<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>) are not republished here. When a patch changes a perk, its text is marked out of date and the page links to the wiki until we have rewritten it. Data is fetched politely (only allowed pages, low request rate) and updated automatically after each game patch.</p>
 <h2>Not affiliated</h2><p>${SITE} is an unofficial fan project and is not affiliated with, endorsed or sponsored by Behaviour Interactive Inc. Dead by Daylight, its characters, names and artwork are trademarks and property of Behaviour Interactive Inc. and their respective licensors. If you are a rights holder and want something removed, please <a href="https://github.com/ARBSOLUTIONS/dbd-toolbox/issues">open an issue on GitHub</a>.</p>
 <h2>Source code</h2><p>The project is open on <a href="https://github.com/ARBSOLUTIONS/dbd-toolbox">GitHub</a>. Suggestions for builds and perk tags are welcome.</p>
-<h2>Build ratings</h2><p>Hand-picked builds are based on general community knowledge. Synergy scores and generated builds are calculated by this site from perk descriptions and known combinations. They are a guide, not win-rate statistics.</p>
+<h2>Build ratings</h2><p>Hand-picked builds are based on general community knowledge. Synergy scores and generated builds are calculated by this site from the perk data and known combinations. They are a guide, not win-rate statistics.</p>
 <h2>Community statistics</h2><p>Pick rates, kill and escape rates and the "Most played" builds come from <a href="https://nightlight.gg">NightLight</a>, which collects them from matches that players upload. They are not official numbers and only cover players who use NightLight.</p>
 <h2>Privacy</h2><p>${ADSENSE_CLIENT ? 'No accounts. Visitor counts come from Cloudflare Web Analytics, which uses no cookies and does not track individual visitors. Pages show ads from Google AdSense; in the EU/UK you are asked for consent first, and Google may use cookies only as you allow (<a href="https://policies.google.com/technologies/ads">how Google uses data</a>).' : 'No accounts, no ads and no tracking cookies. Visitor counts come from Cloudflare Web Analytics, which uses no cookies and does not track individual visitors.'} Favourites, your own builds and challenge progress are stored only in your own browser (localStorage).</p>`,
     crumbs: [{ name: 'About', url: '/about/' }],

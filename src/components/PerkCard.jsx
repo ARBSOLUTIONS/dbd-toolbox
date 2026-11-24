@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { iconSrc } from '../lib/format.js';
 import { useNav } from '../lib/nav.js';
 import { PERK_VERDICTS } from '../lib/nlStats.js';
+import { isPerk as hasPerkText, fallbackLine } from '../lib/perkText.js';
 
 const cap = (s) => s[0].toUpperCase() + s.slice(1);
 
@@ -61,8 +62,46 @@ export function PerkStats({ nl }) {
 }
 
 /**
- * Card for anything with an icon, name and description:
+ * What a perk does, in our own words (never the wiki description): summary and
+ * facts, plus the tip when `full`. Without a current own text: a neutral line
+ * and a link to the wiki.
+ */
+export function PerkText({ perk, full = true }) {
+  const t = perk.text;
+  if (!t) {
+    return (
+      <p className="description muted">
+        {fallbackLine(perk)}{' '}
+        {perk.wikiUrl && (
+          <a href={perk.wikiUrl} target="_blank" rel="noreferrer" onClick={(e) => e.stopPropagation()}>
+            Wiki ↗
+          </a>
+        )}
+      </p>
+    );
+  }
+  return (
+    <div className="description own-text">
+      <p>{t.summary}</p>
+      <ul className="facts">
+        {t.facts.map((f, i) => (
+          <li key={i}>{f}</li>
+        ))}
+      </ul>
+      {full && t.tip && (
+        <p className="tip">
+          <strong>Tip:</strong> {t.tip}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/**
+ * Card for anything with an icon and name:
  * perks, add-ons, items and offerings. `subtitle` is the grey line under the name.
+ * Perks show our own text; add-ons, items and offerings no wiki text (only what
+ * the caller passes as `note`, e.g. the offering rating).
  */
 export function EntityCard({ entity, subtitle, note, isPerk = false }) {
   const [open, setOpen] = useState(false);
@@ -90,7 +129,7 @@ export function EntityCard({ entity, subtitle, note, isPerk = false }) {
         {subtitle && <div className="muted small">{subtitle}</div>}
         {note && <div className="entity-note">{note}</div>}
         {entity.nl?.usage != null && <PerkStats nl={entity.nl} />}
-        <p className="description">{entity.description}</p>
+        {hasPerkText(entity) && <PerkText perk={entity} full={open} />}
         {open && entity.quote && <p className="quote small">{entity.quote}</p>}
         {entity.tags?.length > 0 && (
           <div className="badges">

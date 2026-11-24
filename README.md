@@ -366,12 +366,33 @@ The app cannot see your real matches, so *you* mark a challenge as completed.
      the name in `perkTags.js`.
    - *"Build ..."* means a hand-picked build uses a name that no longer
      exists. Fix it in `builds/builds.json`.
+3. Rewrite the own perk texts that the refresh reported as stale or missing
+   (`node scripts/check-texts.js` lists them). See *Own perk texts* below.
+
+### Own perk texts
+
+The public site does not show the wiki's perk descriptions (CC BY-NC-SA does
+not mix with ads). Every perk has a text we wrote ourselves in
+`data/texts.json`, keyed `<role>:<id>`:
+
+- `summary`: one sentence, max 25 words, in our own words
+- `facts`: every number and condition, with all tier values (`28/30/32 m`)
+- `tip`: one practical tip, max 20 words
+- `sourceHash`: hash of the wiki description the text was written from
+
+When a patch changes a perk's wiki text, the hash no longer matches and the
+site shows a neutral line plus a wiki link for that perk until the text is
+rewritten. `node scripts/check-texts.js` checks all texts: missing or stale,
+every wiki number present in the facts, no copied run of 6+ words, length
+limits. `npm test` runs the same check. Scoring, tags and patch analysis still
+read the wiki text internally; the public `app-data.json` gets precomputed
+results instead (`server/publicData.js`), so scores are identical.
 
 ## Where the data comes from
 
 | Source | What | Rules we follow |
 |---|---|---|
-| [Dead by Daylight Wiki](https://deadbydaylight.wiki.gg) | Perks, killers, survivors, items, add-ons, offerings, descriptions, icons | Only normal `/wiki/` pages and `/images/`, which robots.txt allows. No `api.php` or Special/Cargo pages. Max ~1 request per second. Content is **CC BY-NC-SA 3.0**: personal, non-commercial use with credit. |
+| [Dead by Daylight Wiki](https://deadbydaylight.wiki.gg) | Perks, killers, survivors, items, add-ons, offerings, descriptions, icons | Only normal `/wiki/` pages and `/images/`, which robots.txt allows. No `api.php` or Special/Cargo pages. Max ~1 request per second. The description texts are **CC BY-NC-SA 3.0**, so they are only used internally (scoring, tags, patch analysis) and never published; the site shows our own perk texts (`data/texts.json`). |
 
 | [NightLight](https://nightlight.gg/killers/viewer?shown=pick) | Killer and survivor pick, kill and escape rates; perk usage; each character's top perks and builds (current NightLight patch, from matches players upload) | Collected by hand in your own browser with `scripts/nightlight-collector.js`: the public stats feeds and character pages (allowed by robots.txt), one request every 1.5 s, at most about once a week. This project never fetches from NightLight automatically, because their bot protection blocks scripts. NightLight asks for a low request rate and credit, so every page with these numbers names NightLight as the source. |
 

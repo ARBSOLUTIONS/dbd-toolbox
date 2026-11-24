@@ -121,6 +121,24 @@ export function judgeChange(before, after) {
   return { verdict, level, score: Math.round(score * 100) / 100, changes };
 }
 
+/**
+ * Short version of a word diff for public use: every part is cut to at most
+ * `max` words, so the changed numbers and words stay visible with a little
+ * context, but no longer run of the (wiki) text is shown.
+ */
+export function shortDiff(before, after, max = 5) {
+  const parts = wordDiff(before, after).filter((d) => d.text.trim());
+  return parts.map((d, i) => {
+    const w = d.text.trim().split(/\s+/);
+    if (w.length <= max) return { type: d.type, text: ` ${w.join(' ')} ` };
+    if (d.type !== 'same') return { type: d.type, text: ` ${w.slice(0, max).join(' ')} … ` };
+    // Unchanged text: keep only the words next to the changes.
+    const head = i > 0 ? w.slice(0, 2).join(' ') : '';
+    const tail = i < parts.length - 1 ? w.slice(-2).join(' ') : '';
+    return { type: 'same', text: ` ${[head, '…', tail].filter(Boolean).join(' ')} ` };
+  });
+}
+
 /** Word-level diff for the before/after view: [{type: 'same'|'del'|'add', text}]. */
 export function wordDiff(before, after) {
   const A = (before ?? '').split(/(\s+)/);
@@ -172,7 +190,8 @@ export function analysePatch(record, data, builds) {
     return {
       ...d,
       perk: perkData.get(key) ?? null,
-      judgement: judgeChange(d.before, d.after),
+      // Public app data ships the judgement precomputed instead of the wiki texts.
+      judgement: d.judgement ?? judgeChange(d.before, d.after),
       builds: used,
       handPicked: used.filter((b) => b.type !== 'auto' && b.type !== 'popular').length,
     };

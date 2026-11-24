@@ -165,6 +165,13 @@ main { padding-top: 16px; }
   overflow: hidden;
 }
 .perk-card.open .description { -webkit-line-clamp: unset; }
+/* Our own perk texts: summary, facts list, tip. Closed cards show only the summary. */
+.description.own-text { display: block; white-space: normal; overflow: visible; }
+.own-text p { margin: 0 0 4px; }
+.own-text .facts, .slot-tip-desc.facts { margin: 4px 0 6px; padding-left: 18px; }
+.own-text .facts li, .slot-tip-desc.facts li { margin: 1px 0; }
+.own-text .tip { color: var(--muted, #b8b8c0); }
+.perk-card:not(.open) .own-text .facts { display: none; }
 
 .killer-grid {
   display: grid;

@@ -3,6 +3,7 @@ import PerkCard from './PerkCard.jsx';
 import { makeQuery } from '../lib/search.js';
 import { iconSrc } from '../lib/format.js';
 import { PERK_VERDICTS } from '../lib/nlStats.js';
+import { searchText } from '../lib/perkText.js';
 
 const PAGE_SIZE = 48;
 
@@ -89,9 +90,9 @@ export default function PerkList({ perks, stats = null }) {
 
   const shown = useMemo(() => {
     const q = makeQuery(query);
-    // Best name matches first; then character and description hits.
+    // Best name matches first; then character and (own) description hits.
     const rank = (p) =>
-      Math.min(q.rank(p.name), q.rank(p.character ?? '') + 3, q.matches(p.description, { fuzzy: false }) ? 6 : Infinity);
+      Math.min(q.rank(p.name), q.rank(p.character ?? '') + 3, q.matches(searchText(p), { fuzzy: false }) ? 6 : Infinity);
     const sortFn = SORTS[sort].fn;
     return perks
       .filter((p) => role === 'all' || p.role === role)

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { EntityCard, RARITY_LABEL, sortByRarity } from './PerkCard.jsx';
+import { EntityCard, PerkText, RARITY_LABEL, sortByRarity } from './PerkCard.jsx';
 import { iconSrc } from '../lib/format.js';
 import { baselineRate, periodLabel, MIN_SAMPLES } from '../lib/nlStats.js';
 import { PLAYSTYLES } from '../lib/tags.js';
@@ -271,7 +271,9 @@ function CharacterModal({ character, role, perksById, addons, stats, byId, build
                   {p.tags?.length > 0 && (
                     <span className="small muted"> · {p.tags.map((t) => PLAYSTYLES[role]?.[t] ?? t).join(', ')}</span>
                   )}
-                  <p className="small">{p.description}</p>
+                  <div className="small">
+                    <PerkText perk={p} full={false} />
+                  </div>
                 </div>
               </li>
             ))}

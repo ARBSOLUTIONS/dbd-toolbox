@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 import { iconSrc } from '../lib/format.js';
 import { makeQuery } from '../lib/search.js';
+import { blurb } from '../lib/perkText.js';
 
 /**
  * Search box with a dropdown list of matching options (perks, items, add-ons...).
@@ -35,7 +36,7 @@ export default function Picker({ options, value, onPick, placeholder = 'Searchâ€
   return (
     <div className="picker">
       {value && !open ? (
-        <button className="picker-value" onClick={() => setOpen(true)} title={value.description}>
+        <button className="picker-value" onClick={() => setOpen(true)} title={blurb(value) || undefined}>
           <img src={iconSrc(value.icon ?? value.portrait)} alt="" />
           <span>{value.name}</span>
           {allowClear && (

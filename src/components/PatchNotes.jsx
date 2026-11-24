@@ -27,8 +27,10 @@ function ImpactMeter({ level, verdict }) {
   );
 }
 
-function Diff({ before, after }) {
-  const parts = useMemo(() => wordDiff(before, after), [before, after]);
+// The public app data has only a clipped `diff` (no full wiki texts); the
+// local server still sends before/after.
+function Diff({ before, after, diff }) {
+  const parts = useMemo(() => diff ?? wordDiff(before, after), [before, after, diff]);
   return (
     <p className="diff-text">
       {parts.map((p, i) =>
@@ -111,7 +113,7 @@ function PerkChange({ change, onShowBuild }) {
       <button className="link-button small" onClick={() => setOpen(!open)}>
         {open ? 'Hide text changes ▴' : 'Show exact text changes ▾'}
       </button>
-      {open && <Diff before={change.before} after={change.after} />}
+      {open && <Diff before={change.before} after={change.after} diff={change.diff} />}
     </article>
   );
 }

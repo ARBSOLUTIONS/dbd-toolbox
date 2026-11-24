@@ -58,7 +58,7 @@ const TAB_GROUPS = [
   {
     label: 'Game data',
     tabs: [
-      { id: 'perks', icon: '✦', label: 'Perks', desc: 'Every perk with its full description.' },
+      { id: 'perks', icon: '✦', label: 'Perks', desc: 'Every perk explained in our own words.' },
       { id: 'ranking', icon: '🏅', label: 'Perk ranking', desc: 'Tier list of perks from community stats.' },
       { id: 'killers', icon: '🔪', label: 'Killers', desc: 'All killers, their perks and add-ons.' },
       { id: 'survivors', icon: '🏃', label: 'Survivors', desc: 'All survivors and their perks.' },
@@ -363,13 +363,13 @@ export default function App() {
         </div>
         <div className="footer-bottom">
           <p className="footer-legal">
-            Game data and icons from the{' '}
+            Perk texts written by {SITE_NAME}. Game data and icons from the{' '}
             <a href="https://deadbydaylight.wiki.gg" target="_blank" rel="noreferrer">
               Dead by Daylight Wiki
-            </a>{' '}
-            (CC BY-NC-SA 3.0). Community stats from{' '}
-            <a href="https://nightlight.gg" target="_blank" rel="noreferrer">NightLight</a>. {SITE_NAME} is a free,
-            non-commercial fan project and is not affiliated with or endorsed by Behaviour Interactive. Dead by Daylight
+            </a>
+            . Community stats from{' '}
+            <a href="https://nightlight.gg" target="_blank" rel="noreferrer">NightLight</a>. {SITE_NAME} is a free fan
+            project and is not affiliated with or endorsed by Behaviour Interactive. Dead by Daylight
             is a trademark of Behaviour Interactive Inc.
           </p>
           <button className="footer-top" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
