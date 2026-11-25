@@ -4,140 +4,224 @@
     "url": "https://nightlight.gg/killers/viewer",
     "note": "Community stats from matches uploaded to NightLight; not official numbers."
   },
-  "collectedAt": "2026-11-24T23:46:46.701Z",
-  "importedAt": "2026-11-24T23:46:47.650Z",
+  "collectedAt": "2026-11-25T23:18:40.353Z",
+  "importedAt": "2026-11-25T23:18:40.821Z",
   "period": {
     "start": "2026-11-24T16:04:00Z",
-    "end": "2026-11-24T16:00:00Z"
+    "end": "2026-11-25T16:00:00Z"
   },
-  "games": 0,
+  "games": 349,
   "average": {
-    "matches": 0,
+    "matches": 349,
     "pickRate": 2.22,
-    "killRate": 0,
+    "killRate": 45.85,
     "kills": [
-      null,
-      null,
-      null,
-      null,
-      null
+      28.94,
+      18.62,
+      15.47,
+      14.04,
+      22.92
     ]
   },
   "killers": {
-    "the-trickster": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-terrifier": {
+      "matches": 234,
+      "pickRate": 67.05,
+      "killRate": 45.09,
+      "kills": [
+        29.06,
+        19.66,
+        16.24,
+        11.97,
+        23.08
+      ]
+    },
+    "the-blight": {
+      "matches": 8,
+      "pickRate": 2.29,
+      "killRate": 59.38,
+      "kills": [
+        25,
+        12.5,
+        0,
+        25,
+        37.5
+      ]
+    },
+    "the-mastermind": {
+      "matches": 8,
+      "pickRate": 2.29,
+      "killRate": 46.88,
+      "kills": [
+        37.5,
+        12.5,
+        12.5,
+        0,
+        37.5
+      ]
+    },
+    "the-good-guy": {
+      "matches": 7,
+      "pickRate": 2.01,
+      "killRate": 53.57,
+      "kills": [
+        28.57,
+        14.29,
+        0,
+        28.57,
+        28.57
+      ]
+    },
+    "the-animatronic": {
+      "matches": 7,
+      "pickRate": 2.01,
+      "killRate": 35.71,
+      "kills": [
+        28.57,
+        14.29,
+        42.86,
+        14.29,
+        0
+      ]
+    },
+    "the-slasher": {
+      "matches": 7,
+      "pickRate": 2.01,
+      "killRate": 50,
+      "kills": [
+        28.57,
+        0,
+        28.57,
+        28.57,
+        14.29
+      ]
+    },
+    "the-ghoul": {
+      "matches": 6,
+      "pickRate": 1.72,
+      "killRate": 50,
+      "kills": [
+        16.67,
+        33.33,
+        16.67,
+        0,
+        33.33
+      ]
+    },
+    "the-executioner": {
+      "matches": 6,
+      "pickRate": 1.72,
+      "killRate": 58.33,
+      "kills": [
+        33.33,
+        0,
+        0,
+        33.33,
+        33.33
+      ]
+    },
+    "the-ghost-face": {
+      "matches": 6,
+      "pickRate": 1.72,
+      "killRate": 54.17,
       "kills": [
         0,
+        50,
+        16.67,
         0,
-        0,
+        33.33
+      ]
+    },
+    "the-spirit": {
+      "matches": 5,
+      "pickRate": 1.43,
+      "killRate": 15,
+      "kills": [
+        60,
+        20,
+        20,
         0,
         0
       ]
     },
-    "the-demogorgon": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-dredge": {
+      "matches": 4,
+      "pickRate": 1.15,
+      "killRate": 43.75,
       "kills": [
         0,
+        75,
         0,
         0,
+        25
+      ]
+    },
+    "the-unknown": {
+      "matches": 4,
+      "pickRate": 1.15,
+      "killRate": 56.25,
+      "kills": [
+        25,
         0,
+        25,
+        25,
+        25
+      ]
+    },
+    "the-lich": {
+      "matches": 4,
+      "pickRate": 1.15,
+      "killRate": 62.5,
+      "kills": [
+        0,
+        25,
+        25,
+        25,
+        25
+      ]
+    },
+    "the-houndmaster": {
+      "matches": 4,
+      "pickRate": 1.15,
+      "killRate": 43.75,
+      "kills": [
+        25,
+        25,
+        25,
+        0,
+        25
+      ]
+    },
+    "the-hillbilly": {
+      "matches": 3,
+      "pickRate": 0.86,
+      "killRate": 66.67,
+      "kills": [
+        0,
+        33.33,
+        0,
+        33.33,
+        33.33
+      ]
+    },
+    "the-legion": {
+      "matches": 3,
+      "pickRate": 0.86,
+      "killRate": 33.33,
+      "kills": [
+        33.33,
+        33.33,
+        0,
+        33.33,
         0
       ]
     },
-    "the-nurse": {
-      "matches": 0,
-      "pickRate": 0,
+    "the-oni": {
+      "matches": 3,
+      "pickRate": 0.86,
       "killRate": 0,
       "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-shape": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-hag": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-doctor": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-huntress": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-cannibal": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-nightmare": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-pig": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
+        100,
         0,
         0,
         0,
@@ -145,114 +229,246 @@
       ]
     },
     "the-clown": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 37.5,
+      "kills": [
+        50,
+        0,
+        0,
+        50,
+        0
+      ]
+    },
+    "the-hag": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 50,
+      "kills": [
+        50,
+        0,
+        0,
+        0,
+        50
+      ]
+    },
+    "the-shape": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 37.5,
       "kills": [
         0,
+        50,
+        50,
+        0,
+        0
+      ]
+    },
+    "the-pig": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 37.5,
+      "kills": [
+        50,
+        0,
+        0,
+        50,
+        0
+      ]
+    },
+    "the-nurse": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 0,
+      "kills": [
+        100,
         0,
         0,
         0,
         0
       ]
     },
-    "the-spirit": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-plague": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 25,
       "kills": [
+        50,
         0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-legion": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
+        50,
         0,
         0
       ]
     },
     "the-artist": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 25,
+      "kills": [
+        50,
+        0,
+        50,
+        0,
+        0
+      ]
+    },
+    "the-knight": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 37.5,
+      "kills": [
+        50,
+        0,
+        0,
+        50,
+        0
+      ]
+    },
+    "the-krasue": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 50,
       "kills": [
         0,
+        50,
+        0,
+        50,
+        0
+      ]
+    },
+    "the-trapper": {
+      "matches": 2,
+      "pickRate": 0.57,
+      "killRate": 87.5,
+      "kills": [
+        0,
+        0,
+        0,
+        50,
+        50
+      ]
+    },
+    "the-demogorgon": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 0,
+      "kills": [
+        100,
         0,
         0,
         0,
         0
       ]
     },
-    "the-ghost-face": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-doctor": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 100,
       "kills": [
         0,
         0,
         0,
         0,
+        100
+      ]
+    },
+    "the-nightmare": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 75,
+      "kills": [
+        0,
+        0,
+        0,
+        100,
         0
+      ]
+    },
+    "the-huntress": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 75,
+      "kills": [
+        0,
+        0,
+        0,
+        100,
+        0
+      ]
+    },
+    "the-nemesis": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 100,
+      "kills": [
+        0,
+        0,
+        0,
+        0,
+        100
       ]
     },
     "the-cenobite": {
-      "matches": 0,
-      "pickRate": 0,
+      "matches": 1,
+      "pickRate": 0.29,
       "killRate": 0,
       "kills": [
-        0,
+        100,
         0,
         0,
         0,
         0
       ]
     },
-    "the-oni": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-onryo": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 50,
+      "kills": [
+        0,
+        0,
+        100,
+        0,
+        0
+      ]
+    },
+    "the-skull-merchant": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 100,
       "kills": [
         0,
         0,
         0,
         0,
+        100
+      ]
+    },
+    "the-dark-lord": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 75,
+      "kills": [
+        0,
+        0,
+        0,
+        100,
         0
       ]
     },
-    "the-deathslinger": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
+    "the-cannibal": {
+      "matches": 1,
+      "pickRate": 0.29,
+      "killRate": 100,
       "kills": [
         0,
         0,
         0,
         0,
-        0
+        100
       ]
     },
-    "the-executioner": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-blight": {
+    "the-wraith": {
       "matches": 0,
       "pickRate": 0,
       "killRate": 0,
@@ -276,103 +492,7 @@
         0
       ]
     },
-    "the-trapper": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-hillbilly": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-nemesis": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-plague": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-onryo": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-dredge": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-mastermind": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-knight": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-skull-merchant": {
+    "the-trickster": {
       "matches": 0,
       "pickRate": 0,
       "killRate": 0,
@@ -408,115 +528,7 @@
         0
       ]
     },
-    "the-good-guy": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-unknown": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-lich": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-dark-lord": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-houndmaster": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-ghoul": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-animatronic": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-krasue": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
     "the-first": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-slasher": {
       "matches": 0,
       "pickRate": 0,
       "killRate": 0,
@@ -540,19 +552,7 @@
         0
       ]
     },
-    "the-terrifier": {
-      "matches": 0,
-      "pickRate": 0,
-      "killRate": 0,
-      "kills": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ]
-    },
-    "the-wraith": {
+    "the-deathslinger": {
       "matches": 0,
       "pickRate": 0,
       "killRate": 0,
@@ -566,482 +566,1034 @@
     }
   },
   "survivorAverage": {
-    "matches": 0,
-    "escapeRate": null
+    "matches": 1406,
+    "escapeRate": 54.34
   },
   "survivors": {
-    "dwight-fairfield": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "meg-thomas": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "claudette-morel": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "jake-park": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "nea-karlsson": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "laurie-strode": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "ace-visconti": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "feng-min": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "david-king": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "quentin-smith": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "david-tapp": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "kate-denson": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "adam-francis": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "jeff-johansen": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "jane-romero": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "nancy-wheeler": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "steve-harrington": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "yui-kimura": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "zarina-kassir": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "cheryl-mason": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "felix-richter": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "elodie-rakoto": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "lee-yun-jin": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "jill-valentine": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "leon-scott-kennedy": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "mikaela-reid": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "jonah-vasquez": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "yoichi-asakawa": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "haddie-kaur": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "ada-wong": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "rebecca-chambers": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "vittorio-toscano": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "thalita-lyra": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "renato-lyra": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "gabriel-soma": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "nicolas-cage": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "ellen-ripley": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "alan-wake": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "sienna-shaw": {
+      "matches": 285,
+      "pickRate": 19.82,
+      "escapeRate": 50.18
     },
     "sable-ward": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+      "matches": 67,
+      "pickRate": 4.66,
+      "escapeRate": 46.27
     },
-    "the-troupe": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "dwight-fairfield": {
+      "matches": 66,
+      "pickRate": 4.59,
+      "escapeRate": 77.27
     },
-    "lara-croft": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "cheryl-mason": {
+      "matches": 60,
+      "pickRate": 4.17,
+      "escapeRate": 55
     },
-    "trevor-belmont": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "taurie-cain": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "orela-rose": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "rick-grimes": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
-    },
-    "michonne-grimes": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "feng-min": {
+      "matches": 58,
+      "pickRate": 4.03,
+      "escapeRate": 55.17
     },
     "vee-boonyasak": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+      "matches": 51,
+      "pickRate": 3.55,
+      "escapeRate": 50.98
     },
-    "dustin-henderson": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "kate-denson": {
+      "matches": 45,
+      "pickRate": 3.13,
+      "escapeRate": 46.67
     },
-    "eleven": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "yui-kimura": {
+      "matches": 43,
+      "pickRate": 2.99,
+      "escapeRate": 51.16
+    },
+    "meg-thomas": {
+      "matches": 42,
+      "pickRate": 2.92,
+      "escapeRate": 23.81
+    },
+    "thalita-lyra": {
+      "matches": 40,
+      "pickRate": 2.78,
+      "escapeRate": 47.5
+    },
+    "nea-karlsson": {
+      "matches": 40,
+      "pickRate": 2.78,
+      "escapeRate": 60
+    },
+    "mikaela-reid": {
+      "matches": 33,
+      "pickRate": 2.29,
+      "escapeRate": 57.58
+    },
+    "claudette-morel": {
+      "matches": 32,
+      "pickRate": 2.23,
+      "escapeRate": 59.38
     },
     "kwon-tae-young": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+      "matches": 32,
+      "pickRate": 2.23,
+      "escapeRate": 65.63
+    },
+    "lara-croft": {
+      "matches": 31,
+      "pickRate": 2.16,
+      "escapeRate": 48.39
+    },
+    "leon-scott-kennedy": {
+      "matches": 29,
+      "pickRate": 2.02,
+      "escapeRate": 55.17
+    },
+    "renato-lyra": {
+      "matches": 29,
+      "pickRate": 2.02,
+      "escapeRate": 62.07
+    },
+    "zarina-kassir": {
+      "matches": 28,
+      "pickRate": 1.95,
+      "escapeRate": 71.43
+    },
+    "ada-wong": {
+      "matches": 23,
+      "pickRate": 1.6,
+      "escapeRate": 56.52
+    },
+    "nicolas-cage": {
+      "matches": 21,
+      "pickRate": 1.46,
+      "escapeRate": 71.43
+    },
+    "lee-yun-jin": {
+      "matches": 21,
+      "pickRate": 1.46,
+      "escapeRate": 61.9
+    },
+    "ace-visconti": {
+      "matches": 20,
+      "pickRate": 1.39,
+      "escapeRate": 60
+    },
+    "taurie-cain": {
+      "matches": 20,
+      "pickRate": 1.39,
+      "escapeRate": 30
+    },
+    "jill-valentine": {
+      "matches": 19,
+      "pickRate": 1.32,
+      "escapeRate": 52.63
+    },
+    "david-king": {
+      "matches": 19,
+      "pickRate": 1.32,
+      "escapeRate": 47.37
+    },
+    "nancy-wheeler": {
+      "matches": 17,
+      "pickRate": 1.18,
+      "escapeRate": 70.59
+    },
+    "jake-park": {
+      "matches": 17,
+      "pickRate": 1.18,
+      "escapeRate": 52.94
+    },
+    "elodie-rakoto": {
+      "matches": 16,
+      "pickRate": 1.11,
+      "escapeRate": 87.5
+    },
+    "rebecca-chambers": {
+      "matches": 15,
+      "pickRate": 1.04,
+      "escapeRate": 40
+    },
+    "vittorio-toscano": {
+      "matches": 15,
+      "pickRate": 1.04,
+      "escapeRate": 80
+    },
+    "orela-rose": {
+      "matches": 14,
+      "pickRate": 0.97,
+      "escapeRate": 71.43
+    },
+    "steve-harrington": {
+      "matches": 14,
+      "pickRate": 0.97,
+      "escapeRate": 50
+    },
+    "rick-grimes": {
+      "matches": 13,
+      "pickRate": 0.9,
+      "escapeRate": 61.54
+    },
+    "jane-romero": {
+      "matches": 13,
+      "pickRate": 0.9,
+      "escapeRate": 61.54
+    },
+    "quentin-smith": {
+      "matches": 13,
+      "pickRate": 0.9,
+      "escapeRate": 53.85
+    },
+    "jeff-johansen": {
+      "matches": 11,
+      "pickRate": 0.76,
+      "escapeRate": 27.27
+    },
+    "david-tapp": {
+      "matches": 10,
+      "pickRate": 0.7,
+      "escapeRate": 50
+    },
+    "gabriel-soma": {
+      "matches": 9,
+      "pickRate": 0.63,
+      "escapeRate": 33.33
     },
     "shane-wiigwaas": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+      "matches": 9,
+      "pickRate": 0.63,
+      "escapeRate": 55.56
+    },
+    "felix-richter": {
+      "matches": 8,
+      "pickRate": 0.56,
+      "escapeRate": 25
+    },
+    "trevor-belmont": {
+      "matches": 7,
+      "pickRate": 0.49,
+      "escapeRate": 57.14
+    },
+    "alan-wake": {
+      "matches": 6,
+      "pickRate": 0.42,
+      "escapeRate": 66.67
     },
     "aurora-stardotter": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+      "matches": 6,
+      "pickRate": 0.42,
+      "escapeRate": 66.67
     },
-    "sienna-shaw": {
-      "matches": 0,
-      "pickRate": 0,
-      "escapeRate": 0
+    "michonne-grimes": {
+      "matches": 5,
+      "pickRate": 0.35,
+      "escapeRate": 80
+    },
+    "dustin-henderson": {
+      "matches": 5,
+      "pickRate": 0.35,
+      "escapeRate": 20
+    },
+    "adam-francis": {
+      "matches": 5,
+      "pickRate": 0.35,
+      "escapeRate": 80
+    },
+    "laurie-strode": {
+      "matches": 5,
+      "pickRate": 0.35,
+      "escapeRate": 80
+    },
+    "ellen-ripley": {
+      "matches": 5,
+      "pickRate": 0.35,
+      "escapeRate": 20
+    },
+    "jonah-vasquez": {
+      "matches": 4,
+      "pickRate": 0.28,
+      "escapeRate": 50
+    },
+    "haddie-kaur": {
+      "matches": 4,
+      "pickRate": 0.28,
+      "escapeRate": 75
+    },
+    "eleven": {
+      "matches": 2,
+      "pickRate": 0.14,
+      "escapeRate": 50
+    },
+    "the-troupe": {
+      "matches": 2,
+      "pickRate": 0.14,
+      "escapeRate": 50
+    },
+    "yoichi-asakawa": {
+      "matches": 2,
+      "pickRate": 0.14,
+      "escapeRate": 100
     }
   },
   "perks": {
-    "bitter-murmur": {
+    "scourge-hook-pain-resonance": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 32.95,
+      "rate": 48.93,
+      "count": 115
     },
-    "deerstalker": {
+    "funny-business": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 22.64,
+      "rate": 41.86,
+      "count": 79
     },
-    "distressing": {
+    "corrupt-intervention": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 17.19,
+      "rate": 52.59,
+      "count": 60
     },
-    "hex-no-one-escapes-death": {
+    "laughingstock": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 12.89,
+      "rate": 36.7,
+      "count": 45
     },
-    "insidious": {
+    "lethal-pursuer": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 12.61,
+      "rate": 38.94,
+      "count": 44
     },
-    "iron-grasp": {
+    "kill-spree": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 12.32,
+      "rate": 35.71,
+      "count": 43
     },
-    "scourge-hook-monstrous-shrine": {
+    "pop-goes-the-weasel": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 12.03,
+      "rate": 56.52,
+      "count": 42
     },
-    "sloppy-butcher": {
+    "turn-back-the-clock": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "spies-from-the-shadows": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "unrelenting": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "whispers": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-thrill-of-the-hunt": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "agitation": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "brutal-strength": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "unnerving-presence": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bloodhound": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "predator": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "shadowborn": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "enduring": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lightborn": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "tinkerer": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "a-nurses-calling": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "stridor": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "thanatophobia": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dying-light": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "play-with-your-food": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "save-the-best-for-last": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-devour-hope": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 10.6,
+      "rate": 63.33,
+      "count": 37
     },
     "hex-ruin": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 9.46,
+      "rate": 25.71,
+      "count": 33
     },
-    "hex-the-third-seal": {
+    "eruption": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 9.17,
+      "rate": 63.01,
+      "count": 32
     },
-    "overcharge": {
+    "brutal-strength": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 8.88,
+      "rate": 51.9,
+      "count": 31
+    },
+    "nowhere-to-hide": {
+      "role": "killer",
+      "usage": 8.6,
+      "rate": 44.62,
+      "count": 30
+    },
+    "barbecue-and-chilli": {
+      "role": "killer",
+      "usage": 8.31,
+      "rate": 57.53,
+      "count": 29
+    },
+    "deadlock": {
+      "role": "killer",
+      "usage": 7.16,
+      "rate": 58.93,
+      "count": 25
+    },
+    "scourge-hook-monstrous-shrine": {
+      "role": "killer",
+      "usage": 6.88,
+      "rate": 49.21,
+      "count": 24
+    },
+    "undone": {
+      "role": "killer",
+      "usage": 6.02,
+      "rate": 56.6,
+      "count": 21
+    },
+    "grim-embrace": {
+      "role": "killer",
+      "usage": 5.73,
+      "rate": 42.55,
+      "count": 20
+    },
+    "no-way-out": {
+      "role": "killer",
+      "usage": 5.44,
+      "rate": 46.34,
+      "count": 19
+    },
+    "thrilling-tremors": {
+      "role": "killer",
+      "usage": 5.44,
+      "rate": 51.11,
+      "count": 19
+    },
+    "surge": {
+      "role": "killer",
+      "usage": 5.44,
+      "rate": 38.46,
+      "count": 19
+    },
+    "whispers": {
+      "role": "killer",
+      "usage": 5.44,
+      "rate": 44.68,
+      "count": 19
+    },
+    "bamboozle": {
+      "role": "killer",
+      "usage": 5.16,
+      "rate": 55.26,
+      "count": 18
+    },
+    "a-nurses-calling": {
+      "role": "killer",
+      "usage": 5.16,
+      "rate": 34.04,
+      "count": 18
+    },
+    "lay-waste": {
+      "role": "killer",
+      "usage": 4.87,
+      "rate": 54.55,
+      "count": 17
+    },
+    "dead-mans-switch": {
+      "role": "killer",
+      "usage": 4.87,
+      "rate": 37.14,
+      "count": 17
+    },
+    "tinkerer": {
+      "role": "killer",
+      "usage": 4.3,
+      "rate": 53.85,
+      "count": 15
+    },
+    "hex-undying": {
+      "role": "killer",
+      "usage": 4.3,
+      "rate": 18.75,
+      "count": 15
+    },
+    "lightborn": {
+      "role": "killer",
+      "usage": 4.01,
+      "rate": 50,
+      "count": 14
+    },
+    "fire-up": {
+      "role": "killer",
+      "usage": 4.01,
+      "rate": 57.14,
+      "count": 14
+    },
+    "save-the-best-for-last": {
+      "role": "killer",
+      "usage": 3.72,
+      "rate": 64.71,
+      "count": 13
+    },
+    "hex-plaything": {
+      "role": "killer",
+      "usage": 3.72,
+      "rate": 50,
+      "count": 13
+    },
+    "hex-no-one-escapes-death": {
+      "role": "killer",
+      "usage": 3.72,
+      "rate": 46.67,
+      "count": 13
+    },
+    "scourge-hook-gift-of-pain": {
+      "role": "killer",
+      "usage": 3.44,
+      "rate": 51.61,
+      "count": 12
+    },
+    "blood-warden": {
+      "role": "killer",
+      "usage": 3.44,
+      "rate": 39.29,
+      "count": 12
+    },
+    "rapid-brutality": {
+      "role": "killer",
+      "usage": 3.44,
+      "rate": 35.71,
+      "count": 12
+    },
+    "agitation": {
+      "role": "killer",
+      "usage": 3.15,
+      "rate": 47.83,
+      "count": 11
+    },
+    "friends-til-the-end": {
+      "role": "killer",
+      "usage": 2.87,
+      "rate": 74.07,
+      "count": 10
+    },
+    "machine-learning": {
+      "role": "killer",
+      "usage": 2.87,
+      "rate": 68,
+      "count": 10
+    },
+    "secret-project": {
+      "role": "killer",
+      "usage": 2.87,
+      "rate": 61.11,
+      "count": 10
+    },
+    "discordance": {
+      "role": "killer",
+      "usage": 2.58,
+      "rate": 39.13,
+      "count": 9
+    },
+    "bitter-murmur": {
+      "role": "killer",
+      "usage": 2.58,
+      "rate": 28,
+      "count": 9
+    },
+    "enduring": {
+      "role": "killer",
+      "usage": 2.58,
+      "rate": 72,
+      "count": 9
+    },
+    "unforeseen": {
+      "role": "killer",
+      "usage": 2.58,
+      "rate": 52.63,
+      "count": 9
+    },
+    "silent-shadow": {
+      "role": "killer",
+      "usage": 2.58,
+      "rate": 54.55,
+      "count": 9
+    },
+    "remember-me": {
+      "role": "killer",
+      "usage": 2.29,
+      "rate": 47.62,
+      "count": 8
+    },
+    "forever-entwined": {
+      "role": "killer",
+      "usage": 2.29,
+      "rate": 62.5,
+      "count": 8
+    },
+    "mindbreaker": {
+      "role": "killer",
+      "usage": 2.29,
+      "rate": 36.84,
+      "count": 8
+    },
+    "scourge-hook-jagged-compass": {
+      "role": "killer",
+      "usage": 2.01,
+      "rate": 92.86,
+      "count": 7
+    },
+    "help-wanted": {
+      "role": "killer",
+      "usage": 2.01,
+      "rate": 22.22,
+      "count": 7
+    },
+    "sloppy-butcher": {
+      "role": "killer",
+      "usage": 2.01,
+      "rate": 38.1,
+      "count": 7
+    },
+    "im-all-ears": {
+      "role": "killer",
+      "usage": 2.01,
+      "rate": 42.86,
+      "count": 7
+    },
+    "spies-from-the-shadows": {
+      "role": "killer",
+      "usage": 1.72,
+      "rate": 41.18,
+      "count": 6
+    },
+    "unrelenting": {
+      "role": "killer",
+      "usage": 1.72,
+      "rate": 33.33,
+      "count": 6
+    },
+    "deerstalker": {
+      "role": "killer",
+      "usage": 1.72,
+      "rate": 66.67,
+      "count": 6
+    },
+    "terminus": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 25,
+      "count": 5
+    },
+    "furtive-chase": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 69.23,
+      "count": 5
+    },
+    "distressing": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 64.29,
+      "count": 5
+    },
+    "dying-light": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 70,
+      "count": 5
+    },
+    "batteries-included": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 71.43,
+      "count": 5
     },
     "monitor-and-abuse": {
       "role": "killer",
-      "usage": 0,
+      "usage": 1.43,
+      "rate": 66.67,
+      "count": 5
+    },
+    "hex-blood-favour": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 33.33,
+      "count": 5
+    },
+    "trail-of-torment": {
+      "role": "killer",
+      "usage": 1.43,
+      "rate": 30.77,
+      "count": 5
+    },
+    "knock-out": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 100,
+      "count": 4
+    },
+    "ravenous": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 77.78,
+      "count": 4
+    },
+    "coulrophobia": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 50,
+      "count": 4
+    },
+    "iron-grasp": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 100,
+      "count": 4
+    },
+    "surveillance": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 45.45,
+      "count": 4
+    },
+    "zanshin-tactics": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 58.33,
+      "count": 4
+    },
+    "thanatophobia": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 22.22,
+      "count": 4
+    },
+    "infectious-fright": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 72.73,
+      "count": 4
+    },
+    "play-with-your-food": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 50,
+      "count": 4
+    },
+    "overcharge": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 40,
+      "count": 4
+    },
+    "oppression": {
+      "role": "killer",
+      "usage": 1.15,
+      "rate": 77.78,
+      "count": 4
+    },
+    "coup-de-grace": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 62.5,
+      "count": 3
+    },
+    "none-are-free": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 33.33,
+      "count": 3
+    },
+    "spirit-fury": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 75,
+      "count": 3
+    },
+    "dominance": {
+      "role": "killer",
+      "usage": 0.86,
       "rate": 0,
-      "count": 0
+      "count": 3
+    },
+    "nemesis": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 57.14,
+      "count": 3
+    },
+    "celestial-witness": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 55.56,
+      "count": 3
+    },
+    "insidious": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 0,
+      "count": 3
+    },
+    "merciless-storm": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 100,
+      "count": 3
+    },
+    "hex-haunted-ground": {
+      "role": "killer",
+      "usage": 0.86,
+      "rate": 33.33,
+      "count": 3
+    },
+    "hex-the-third-seal": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 0,
+      "count": 2
+    },
+    "hubris": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 100,
+      "count": 2
+    },
+    "stridor": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 0,
+      "count": 2
+    },
+    "hex-pentimento": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 25,
+      "count": 2
+    },
+    "hex-scared-to-death": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 66.67,
+      "count": 2
+    },
+    "hex-hive-mind": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 50,
+      "count": 2
+    },
+    "hex-overture-of-doom": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 100,
+      "count": 2
+    },
+    "dissolution": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 66.67,
+      "count": 2
+    },
+    "haywire": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 50,
+      "count": 2
+    },
+    "phantom-fear": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 66.67,
+      "count": 2
+    },
+    "starstruck": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 100,
+      "count": 2
+    },
+    "franklins-demise": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 16.67,
+      "count": 2
+    },
+    "forced-hesitation": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 50,
+      "count": 2
+    },
+    "dark-devotion": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 60,
+      "count": 2
+    },
+    "genetic-limits": {
+      "role": "killer",
+      "usage": 0.57,
+      "rate": 75,
+      "count": 2
+    },
+    "languid-touch": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "hex-nothing-but-misery": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "hex-retribution": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "thwack": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "leverage": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "hysteria": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "awakened-awareness": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "deathbound": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "ultimate-weapon": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "iron-maiden": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "hex-under-your-thumb": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "hex-two-can-play": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "superior-anatomy": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "rampage": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "unbound": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "scourge-hook-floods-of-rage": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "blood-echo": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "weave-attunement": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
+    },
+    "hex-devour-hope": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "dark-arrogance": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "mad-grit": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
+    },
+    "wandering-eye": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "darkness-revealed": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "all-shaking-thunder": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 0,
+      "count": 1
     },
     "overwhelming-presence": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 0.29,
+      "rate": 100,
+      "count": 1
     },
-    "beast-of-prey": {
+    "septic-touch": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
     },
-    "hex-huntress-lullaby": {
+    "gearhead": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "hex-crowd-control": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 66.67,
+      "count": 1
+    },
+    "shattered-hope": {
+      "role": "killer",
+      "usage": 0.29,
+      "rate": 33.33,
+      "count": 1
+    },
+    "dragons-grip": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
@@ -1053,235 +1605,7 @@
       "rate": 0,
       "count": 0
     },
-    "barbecue-and-chilli": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "franklins-demise": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "knock-out": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "blood-warden": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "fire-up": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "remember-me": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scourge-hook-hangmans-trick": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "make-your-choice": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "surveillance": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bamboozle": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "coulrophobia": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "pop-goes-the-weasel": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-haunted-ground": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "rancor": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "spirit-fury": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "discordance": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "iron-maiden": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "mad-grit": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "corrupt-intervention": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dark-devotion": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "infectious-fright": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "furtive-chase": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "im-all-ears": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "thrilling-tremors": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
     "cruel-limits": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "mindbreaker": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "surge": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "blood-echo": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "nemesis": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "zanshin-tactics": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dead-mans-switch": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "gearhead": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-retribution": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "deathbound": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "forced-penance": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "trail-of-torment": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dragons-grip": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-blood-favour": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-undying": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
@@ -1293,271 +1617,7 @@
       "rate": 0,
       "count": 0
     },
-    "oppression": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "coup-de-grace": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "starstruck": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-crowd-control": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "no-way-out": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lethal-pursuer": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hysteria": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "eruption": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "deadlock": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-plaything": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scourge-hook-gift-of-pain": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "grim-embrace": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scourge-hook-pain-resonance": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-pentimento": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scourge-hook-floods-of-rage": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "call-of-brine": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "merciless-storm": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dissolution": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "darkness-revealed": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "septic-touch": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "shattered-hope": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "superior-anatomy": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "awakened-awareness": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "terminus": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "nowhere-to-hide": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-face-the-darkness": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hubris": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "game-afoot": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "thwack": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "leverage": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "genetic-limits": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "forced-hesitation": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "machine-learning": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "ultimate-weapon": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "rapid-brutality": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "alien-instinct": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-two-can-play": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "friends-til-the-end": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "batteries-included": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "unbound": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "unforeseen": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "undone": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "weave-attunement": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "languid-touch": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dark-arrogance": {
+    "human-greed": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
@@ -1569,25 +1629,25 @@
       "rate": 0,
       "count": 0
     },
-    "human-greed": {
+    "rancor": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "dominance": {
+    "beast-of-prey": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "all-shaking-thunder": {
+    "call-of-brine": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "scourge-hook-jagged-compass": {
+    "forced-penance": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
@@ -1599,589 +1659,1087 @@
       "rate": 0,
       "count": 0
     },
-    "hex-nothing-but-misery": {
+    "hex-face-the-darkness": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "forever-entwined": {
+    "hex-huntress-lullaby": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "none-are-free": {
+    "alien-instinct": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "help-wanted": {
+    "scourge-hook-hangmans-trick": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "phantom-fear": {
+    "shadowborn": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "haywire": {
+    "predator": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "ravenous": {
+    "bloodhound": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "wandering-eye": {
+    "unnerving-presence": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "hex-overture-of-doom": {
+    "hex-thrill-of-the-hunt": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "turn-back-the-clock": {
+    "make-your-choice": {
       "role": "killer",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "secret-project": {
+    "game-afoot": {
       "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-hive-mind": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-scared-to-death": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "silent-shadow": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "rampage": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "celestial-witness": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hex-under-your-thumb": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lay-waste": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "laughingstock": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "kill-spree": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "funny-business": {
-      "role": "killer",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dark-sense": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "deja-vu": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hope": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lightweight": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "no-one-left-behind": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "plunderers-instinct": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "premonition": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "resilience": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "slippery-meat": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "small-game": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "spine-chill": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "this-is-not-happening": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "well-make-it": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "kindred": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bond": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "leader": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "prove-thyself": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "adrenaline": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "quick-and-quiet": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "sprint-burst": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "botany-knowledge": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "empathy": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "self-care": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "calm-spirit": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "iron-will": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "saboteur": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "balanced-landing": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "streetwise": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "urban-evasion": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "decisive-strike": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "object-of-obsession": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "sole-survivor": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "ace-in-the-hole": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "open-handed": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "up-the-ante": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "borrowed-time": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "left-behind": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "unbreakable": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "alert": {
-      "role": "survivor",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
     "lithe": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 22.6,
+      "rate": 40.48,
+      "count": 457
     },
-    "technician": {
+    "resilience": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 21.46,
+      "rate": 40.78,
+      "count": 434
+    },
+    "deja-vu": {
+      "role": "survivor",
+      "usage": 20.62,
+      "rate": 38.61,
+      "count": 417
     },
     "dead-hard": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 18.35,
+      "rate": 41.24,
+      "count": 371
     },
-    "no-mither": {
+    "five-moves-ahead": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 18.35,
+      "rate": 40.16,
+      "count": 371
     },
-    "were-gonna-live-forever": {
+    "decisive-strike": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 17.36,
+      "rate": 43.3,
+      "count": 351
     },
-    "pharmacy": {
+    "finesse": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 9.25,
+      "rate": 36.36,
+      "count": 187
     },
-    "vigil": {
+    "valkyries-rage": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 8.7,
+      "rate": 36.36,
+      "count": 176
     },
-    "wake-up": {
+    "iron-will": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 8.46,
+      "rate": 37.43,
+      "count": 171
     },
-    "detectives-hunch": {
+    "hyperfocus": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 7.07,
+      "rate": 33.57,
+      "count": 143
     },
-    "stake-out": {
+    "bond": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 7.07,
+      "rate": 39.86,
+      "count": 143
     },
-    "tenacity": {
+    "resurgence": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 6.97,
+      "rate": 36.17,
+      "count": 141
     },
-    "boil-over": {
+    "adrenaline": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 6.58,
+      "rate": 40.6,
+      "count": 133
     },
-    "dance-with-me": {
+    "best-gift-ever": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 6.53,
+      "rate": 32.58,
+      "count": 132
+    },
+    "unbreakable": {
+      "role": "survivor",
+      "usage": 6.48,
+      "rate": 39.69,
+      "count": 131
     },
     "windows-of-opportunity": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 6.43,
+      "rate": 42.31,
+      "count": 130
     },
-    "autodidact": {
+    "kindred": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.59,
+      "rate": 45.13,
+      "count": 113
     },
-    "deliverance": {
+    "blast-mine": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.54,
+      "rate": 39.29,
+      "count": 112
     },
-    "diversion": {
+    "balanced-landing": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.49,
+      "rate": 35.14,
+      "count": 111
     },
-    "aftercare": {
+    "were-gonna-live-forever": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.44,
+      "rate": 32.73,
+      "count": 110
     },
-    "breakdown": {
+    "botany-knowledge": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.29,
+      "rate": 42.06,
+      "count": 107
     },
-    "distortion": {
+    "well-make-it": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 5.24,
+      "rate": 42.45,
+      "count": 106
+    },
+    "prove-thyself": {
+      "role": "survivor",
+      "usage": 5.04,
+      "rate": 30.39,
+      "count": 102
+    },
+    "plot-twist": {
+      "role": "survivor",
+      "usage": 4.2,
+      "rate": 45.88,
+      "count": 85
+    },
+    "sprint-burst": {
+      "role": "survivor",
+      "usage": 3.76,
+      "rate": 48.68,
+      "count": 76
+    },
+    "self-care": {
+      "role": "survivor",
+      "usage": 3.56,
+      "rate": 43.06,
+      "count": 72
+    },
+    "smash-hit": {
+      "role": "survivor",
+      "usage": 3.21,
+      "rate": 32.31,
+      "count": 65
     },
     "head-on": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 3.17,
+      "rate": 40.63,
+      "count": 64
     },
-    "poised": {
+    "quick-and-quiet": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 3.12,
+      "rate": 42.86,
+      "count": 63
     },
-    "solidarity": {
+    "shared-trauma": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "buckle-up": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "flip-flop": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "mettle-of-man": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "better-together": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.97,
+      "rate": 41.67,
+      "count": 60
     },
     "fixated": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.92,
+      "rate": 40.68,
+      "count": 59
     },
-    "inner-strength": {
+    "dramaturgy": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.87,
+      "rate": 34.48,
+      "count": 58
     },
-    "babysitter": {
+    "background-player": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.77,
+      "rate": 26.79,
+      "count": 56
     },
-    "camaraderie": {
+    "built-to-last": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.77,
+      "rate": 41.07,
+      "count": 56
     },
-    "second-wind": {
+    "made-for-this": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 2.62,
+      "rate": 39.62,
+      "count": 53
+    },
+    "boil-over": {
+      "role": "survivor",
+      "usage": 2.37,
+      "rate": 37.5,
+      "count": 48
+    },
+    "plunderers-instinct": {
+      "role": "survivor",
+      "usage": 2.27,
+      "rate": 39.13,
+      "count": 46
+    },
+    "champion-of-light": {
+      "role": "survivor",
+      "usage": 2.27,
+      "rate": 30.43,
+      "count": 46
+    },
+    "boon-circle-of-healing": {
+      "role": "survivor",
+      "usage": 2.23,
+      "rate": 42.22,
+      "count": 45
+    },
+    "empathy": {
+      "role": "survivor",
+      "usage": 2.13,
+      "rate": 41.86,
+      "count": 43
+    },
+    "boon-exponential": {
+      "role": "survivor",
+      "usage": 2.13,
+      "rate": 41.86,
+      "count": 43
+    },
+    "dark-sense": {
+      "role": "survivor",
+      "usage": 2.08,
+      "rate": 42.86,
+      "count": 42
+    },
+    "boon-shadow-step": {
+      "role": "survivor",
+      "usage": 1.98,
+      "rate": 40,
+      "count": 40
+    },
+    "sole-survivor": {
+      "role": "survivor",
+      "usage": 1.98,
+      "rate": 42.5,
+      "count": 40
+    },
+    "vigil": {
+      "role": "survivor",
+      "usage": 1.98,
+      "rate": 40,
+      "count": 40
+    },
+    "alert": {
+      "role": "survivor",
+      "usage": 1.93,
+      "rate": 41.03,
+      "count": 39
+    },
+    "flow-state": {
+      "role": "survivor",
+      "usage": 1.88,
+      "rate": 47.37,
+      "count": 38
     },
     "any-means-necessary": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 1.83,
+      "rate": 37.84,
+      "count": 37
+    },
+    "quick-gambit": {
+      "role": "survivor",
+      "usage": 1.83,
+      "rate": 37.84,
+      "count": 37
+    },
+    "appraisal": {
+      "role": "survivor",
+      "usage": 1.78,
+      "rate": 41.67,
+      "count": 36
+    },
+    "bardic-inspiration": {
+      "role": "survivor",
+      "usage": 1.73,
+      "rate": 42.86,
+      "count": 35
+    },
+    "lightweight": {
+      "role": "survivor",
+      "usage": 1.73,
+      "rate": 51.43,
+      "count": 35
+    },
+    "premonition": {
+      "role": "survivor",
+      "usage": 1.73,
+      "rate": 51.43,
+      "count": 35
+    },
+    "inner-strength": {
+      "role": "survivor",
+      "usage": 1.68,
+      "rate": 26.47,
+      "count": 34
+    },
+    "overcome": {
+      "role": "survivor",
+      "usage": 1.63,
+      "rate": 60.61,
+      "count": 33
+    },
+    "spine-chill": {
+      "role": "survivor",
+      "usage": 1.63,
+      "rate": 36.36,
+      "count": 33
     },
     "breakout": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 1.63,
+      "rate": 33.33,
+      "count": 33
+    },
+    "saboteur": {
+      "role": "survivor",
+      "usage": 1.63,
+      "rate": 24.24,
+      "count": 33
+    },
+    "desperate-measures": {
+      "role": "survivor",
+      "usage": 1.58,
+      "rate": 46.88,
+      "count": 32
+    },
+    "hope": {
+      "role": "survivor",
+      "usage": 1.58,
+      "rate": 40.63,
+      "count": 32
+    },
+    "flashbang": {
+      "role": "survivor",
+      "usage": 1.53,
+      "rate": 58.06,
+      "count": 31
+    },
+    "distortion": {
+      "role": "survivor",
+      "usage": 1.53,
+      "rate": 38.71,
+      "count": 31
+    },
+    "conviction": {
+      "role": "survivor",
+      "usage": 1.53,
+      "rate": 38.71,
+      "count": 31
+    },
+    "deception": {
+      "role": "survivor",
+      "usage": 1.48,
+      "rate": 43.33,
+      "count": 30
+    },
+    "object-of-obsession": {
+      "role": "survivor",
+      "usage": 1.48,
+      "rate": 33.33,
+      "count": 30
+    },
+    "wicked": {
+      "role": "survivor",
+      "usage": 1.48,
+      "rate": 46.67,
+      "count": 30
+    },
+    "empathic-connection": {
+      "role": "survivor",
+      "usage": 1.43,
+      "rate": 20.69,
+      "count": 29
+    },
+    "urban-evasion": {
+      "role": "survivor",
+      "usage": 1.34,
+      "rate": 62.96,
+      "count": 27
+    },
+    "dance-with-me": {
+      "role": "survivor",
+      "usage": 1.34,
+      "rate": 51.85,
+      "count": 27
+    },
+    "potential-energy": {
+      "role": "survivor",
+      "usage": 1.34,
+      "rate": 22.22,
+      "count": 27
+    },
+    "deliverance": {
+      "role": "survivor",
+      "usage": 1.34,
+      "rate": 40.74,
+      "count": 27
+    },
+    "one-two-three-four": {
+      "role": "survivor",
+      "usage": 1.29,
+      "rate": 26.92,
+      "count": 26
+    },
+    "flip-flop": {
+      "role": "survivor",
+      "usage": 1.29,
+      "rate": 23.08,
+      "count": 26
+    },
+    "scene-partner": {
+      "role": "survivor",
+      "usage": 1.29,
+      "rate": 53.85,
+      "count": 26
+    },
+    "fogwise": {
+      "role": "survivor",
+      "usage": 1.29,
+      "rate": 46.15,
+      "count": 26
+    },
+    "last-stand": {
+      "role": "survivor",
+      "usage": 1.29,
+      "rate": 38.46,
+      "count": 26
+    },
+    "left-behind": {
+      "role": "survivor",
+      "usage": 1.24,
+      "rate": 40,
+      "count": 25
+    },
+    "mettle-of-man": {
+      "role": "survivor",
+      "usage": 1.24,
+      "rate": 24,
+      "count": 25
+    },
+    "small-game": {
+      "role": "survivor",
+      "usage": 1.24,
+      "rate": 44,
+      "count": 25
+    },
+    "leader": {
+      "role": "survivor",
+      "usage": 1.19,
+      "rate": 54.17,
+      "count": 24
+    },
+    "poised": {
+      "role": "survivor",
+      "usage": 1.14,
+      "rate": 39.13,
+      "count": 23
+    },
+    "wiretap": {
+      "role": "survivor",
+      "usage": 1.14,
+      "rate": 26.09,
+      "count": 23
+    },
+    "scavenger": {
+      "role": "survivor",
+      "usage": 1.14,
+      "rate": 52.17,
+      "count": 23
+    },
+    "power-struggle": {
+      "role": "survivor",
+      "usage": 1.14,
+      "rate": 34.78,
+      "count": 23
+    },
+    "autodidact": {
+      "role": "survivor",
+      "usage": 1.09,
+      "rate": 40.91,
+      "count": 22
+    },
+    "do-no-harm": {
+      "role": "survivor",
+      "usage": 1.09,
+      "rate": 45.45,
+      "count": 22
+    },
+    "technician": {
+      "role": "survivor",
+      "usage": 1.09,
+      "rate": 40.91,
+      "count": 22
+    },
+    "specialist": {
+      "role": "survivor",
+      "usage": 1.09,
+      "rate": 27.27,
+      "count": 22
     },
     "lucky-break": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 1.04,
+      "rate": 61.9,
+      "count": 21
     },
-    "for-the-people": {
+    "boon-steadfast": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 1.04,
+      "rate": 38.1,
+      "count": 21
+    },
+    "calm-spirit": {
+      "role": "survivor",
+      "usage": 0.99,
+      "rate": 50,
+      "count": 20
+    },
+    "soul-guard": {
+      "role": "survivor",
+      "usage": 0.99,
+      "rate": 40,
+      "count": 20
+    },
+    "borrowed-time": {
+      "role": "survivor",
+      "usage": 0.99,
+      "rate": 50,
+      "count": 20
+    },
+    "road-life": {
+      "role": "survivor",
+      "usage": 0.99,
+      "rate": 50,
+      "count": 20
+    },
+    "moment-of-glory": {
+      "role": "survivor",
+      "usage": 0.99,
+      "rate": 55,
+      "count": 20
     },
     "off-the-record": {
       "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
+      "usage": 0.99,
+      "rate": 45,
+      "count": 20
     },
-    "red-herring": {
+    "wide-open-throttle": {
+      "role": "survivor",
+      "usage": 0.94,
+      "rate": 42.11,
+      "count": 19
+    },
+    "ghost-notes": {
+      "role": "survivor",
+      "usage": 0.94,
+      "rate": 36.84,
+      "count": 19
+    },
+    "self-preservation": {
+      "role": "survivor",
+      "usage": 0.89,
+      "rate": 50,
+      "count": 18
+    },
+    "parental-guidance": {
+      "role": "survivor",
+      "usage": 0.89,
+      "rate": 16.67,
+      "count": 18
+    },
+    "overzealous": {
+      "role": "survivor",
+      "usage": 0.89,
+      "rate": 22.22,
+      "count": 18
+    },
+    "tenacity": {
+      "role": "survivor",
+      "usage": 0.89,
+      "rate": 33.33,
+      "count": 18
+    },
+    "fast-track": {
+      "role": "survivor",
+      "usage": 0.84,
+      "rate": 47.06,
+      "count": 17
+    },
+    "troubleshooter": {
+      "role": "survivor",
+      "usage": 0.84,
+      "rate": 23.53,
+      "count": 17
+    },
+    "babysitter": {
+      "role": "survivor",
+      "usage": 0.84,
+      "rate": 35.29,
+      "count": 17
+    },
+    "no-one-left-behind": {
+      "role": "survivor",
+      "usage": 0.79,
+      "rate": 43.75,
+      "count": 16
+    },
+    "reassurance": {
+      "role": "survivor",
+      "usage": 0.74,
+      "rate": 26.67,
+      "count": 15
+    },
+    "solidarity": {
+      "role": "survivor",
+      "usage": 0.69,
+      "rate": 35.71,
+      "count": 14
+    },
+    "bite-the-bullet": {
+      "role": "survivor",
+      "usage": 0.69,
+      "rate": 28.57,
+      "count": 14
+    },
+    "wake-up": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 38.46,
+      "count": 13
+    },
+    "residual-manifest": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 30.77,
+      "count": 13
+    },
+    "slippery-meat": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 30.77,
+      "count": 13
+    },
+    "we-see-you": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 30.77,
+      "count": 13
+    },
+    "extrasensory-perception": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 38.46,
+      "count": 13
+    },
+    "eyes-of-belmont": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 46.15,
+      "count": 13
+    },
+    "strength-in-shadows": {
+      "role": "survivor",
+      "usage": 0.64,
+      "rate": 23.08,
+      "count": 13
+    },
+    "shoulder-the-burden": {
+      "role": "survivor",
+      "usage": 0.59,
+      "rate": 50,
+      "count": 12
+    },
+    "second-wind": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 72.73,
+      "count": 11
+    },
+    "cross-examination": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 36.36,
+      "count": 11
+    },
+    "teamwork-soft-spoken": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 18.18,
+      "count": 11
+    },
+    "stake-out": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 54.55,
+      "count": 11
+    },
+    "this-is-not-happening": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 45.45,
+      "count": 11
+    },
+    "chemical-trap": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 63.64,
+      "count": 11
+    },
+    "light-footed": {
+      "role": "survivor",
+      "usage": 0.54,
+      "rate": 45.45,
+      "count": 11
+    },
+    "ace-in-the-hole": {
+      "role": "survivor",
+      "usage": 0.49,
+      "rate": 60,
+      "count": 10
+    },
+    "lend-a-hand": {
+      "role": "survivor",
+      "usage": 0.49,
+      "rate": 20,
+      "count": 10
+    },
+    "lucky-star": {
+      "role": "survivor",
+      "usage": 0.49,
+      "rate": 40,
+      "count": 10
+    },
+    "open-handed": {
+      "role": "survivor",
+      "usage": 0.45,
+      "rate": 33.33,
+      "count": 9
+    },
+    "a-place-for-us": {
+      "role": "survivor",
+      "usage": 0.45,
+      "rate": 44.44,
+      "count": 9
+    },
+    "invocation-weaving-spiders": {
+      "role": "survivor",
+      "usage": 0.4,
+      "rate": 50,
+      "count": 8
+    },
+    "salvations-cry": {
+      "role": "survivor",
+      "usage": 0.4,
+      "rate": 62.5,
+      "count": 8
+    },
+    "boon-illumination": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 42.86,
+      "count": 7
+    },
+    "no-mither": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 71.43,
+      "count": 7
+    },
+    "counterforce": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 42.86,
+      "count": 7
+    },
+    "for-the-people": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 57.14,
+      "count": 7
+    },
+    "boon-dark-theory": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 28.57,
+      "count": 7
+    },
+    "inner-focus": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 28.57,
+      "count": 7
+    },
+    "teamwork-full-circuit": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 14.29,
+      "count": 7
+    },
+    "duty-of-care": {
+      "role": "survivor",
+      "usage": 0.35,
+      "rate": 42.86,
+      "count": 7
+    },
+    "repressed-alliance": {
+      "role": "survivor",
+      "usage": 0.3,
+      "rate": 50,
+      "count": 6
+    },
+    "breakdown": {
+      "role": "survivor",
+      "usage": 0.3,
+      "rate": 0,
+      "count": 6
+    },
+    "corrective-action": {
+      "role": "survivor",
+      "usage": 0.3,
+      "rate": 66.67,
+      "count": 6
+    },
+    "mirrored-illusion": {
+      "role": "survivor",
+      "usage": 0.3,
+      "rate": 33.33,
+      "count": 6
+    },
+    "streetwise": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 60,
+      "count": 5
+    },
+    "visionary": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 40,
+      "count": 5
+    },
+    "detectives-hunch": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 20,
+      "count": 5
+    },
+    "diversion": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 60,
+      "count": 5
+    },
+    "friendly-competition": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 60,
+      "count": 5
+    },
+    "hardened": {
+      "role": "survivor",
+      "usage": 0.25,
+      "rate": 0,
+      "count": 5
+    },
+    "pharmacy": {
+      "role": "survivor",
+      "usage": 0.2,
+      "rate": 75,
+      "count": 4
+    },
+    "clairvoyance": {
+      "role": "survivor",
+      "usage": 0.2,
+      "rate": 50,
+      "count": 4
+    },
+    "aftercare": {
+      "role": "survivor",
+      "usage": 0.2,
+      "rate": 50,
+      "count": 4
+    },
+    "clean-break": {
+      "role": "survivor",
+      "usage": 0.2,
+      "rate": 50,
+      "count": 4
+    },
+    "teamwork-power-of-two": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 33.33,
+      "count": 3
+    },
+    "low-profile": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 33.33,
+      "count": 3
+    },
+    "better-together": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 0,
+      "count": 3
+    },
+    "blood-rush": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 0,
+      "count": 3
+    },
+    "exultation": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 33.33,
+      "count": 3
+    },
+    "change-of-plan": {
+      "role": "survivor",
+      "usage": 0.15,
+      "rate": 66.67,
+      "count": 3
+    },
+    "still-sight": {
+      "role": "survivor",
+      "usage": 0.1,
+      "rate": 0,
+      "count": 2
+    },
+    "bada-bada-boom": {
+      "role": "survivor",
+      "usage": 0.1,
+      "rate": 50,
+      "count": 2
+    },
+    "invocation-treacherous-crows": {
+      "role": "survivor",
+      "usage": 0.1,
+      "rate": 50,
+      "count": 2
+    },
+    "fruits-of-your-labor": {
+      "role": "survivor",
+      "usage": 0.1,
+      "rate": 50,
+      "count": 2
+    },
+    "teamwork-toughen-up": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 0,
+      "count": 1
+    },
+    "teamwork-collective-stealth": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 100,
+      "count": 1
+    },
+    "reactive-healing": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 0,
+      "count": 1
+    },
+    "cut-loose": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 100,
+      "count": 1
+    },
+    "apocalyptic-ingenuity": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 0,
+      "count": 1
+    },
+    "deadline": {
+      "role": "survivor",
+      "usage": 0.05,
+      "rate": 100,
+      "count": 1
+    },
+    "buckle-up": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
@@ -2193,97 +2751,19 @@
       "rate": 0,
       "count": 0
     },
-    "repressed-alliance": {
+    "come-and-get-me": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "soul-guard": {
+    "red-herring": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "built-to-last": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "desperate-measures": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "visionary": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "appraisal": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "deception": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "power-struggle": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "fast-track": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "smash-hit": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "self-preservation": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "counterforce": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "resurgence": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "blast-mine": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bite-the-bullet": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "flashbang": {
+    "up-the-ante": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
@@ -2295,91 +2775,7 @@
       "rate": 0,
       "count": 0
     },
-    "clairvoyance": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-circle-of-healing": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-shadow-step": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "overcome": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "corrective-action": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-exponential": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "parental-guidance": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "empathic-connection": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-dark-theory": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "inner-focus": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "residual-manifest": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "overzealous": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "wiretap": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "reactive-healing": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "low-profile": {
+    "teamwork-throw-down": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
@@ -2391,409 +2787,13 @@
       "rate": 0,
       "count": 0
     },
-    "reassurance": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hyperfocus": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "potential-energy": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "fogwise": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "quick-gambit": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "cut-loose": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "friendly-competition": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-power-of-two": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "background-player": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "blood-rush": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-collective-stealth": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "troubleshooter": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "made-for-this": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scavenger": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "dramaturgy": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "scene-partner": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "plot-twist": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lucky-star": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "chemical-trap": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "light-footed": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "champion-of-light": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-illumination": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "deadline": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "invocation-weaving-spiders": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "strength-in-shadows": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "wicked": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "mirrored-illusion": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bardic-inspiration": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "still-sight": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "finesse": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "hardened": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "specialist": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "eyes-of-belmont": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "exultation": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "moment-of-glory": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "invocation-treacherous-crows": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "clean-break": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "shoulder-the-burden": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "do-no-harm": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "duty-of-care": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
     "rapid-response": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
       "count": 0
     },
-    "apocalyptic-ingenuity": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "come-and-get-me": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-toughen-up": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "conviction": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "last-stand": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-throw-down": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "road-life": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "one-two-three-four": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "ghost-notes": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "bada-bada-boom": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "change-of-plan": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-full-circuit": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "extrasensory-perception": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "we-see-you": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "teamwork-soft-spoken": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "flow-state": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "a-place-for-us": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "five-moves-ahead": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "wide-open-throttle": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "lend-a-hand": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "cross-examination": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "fruits-of-your-labor": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "salvations-cry": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "boon-steadfast": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "valkyries-rage": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "shared-trauma": {
-      "role": "survivor",
-      "usage": 0,
-      "rate": 0,
-      "count": 0
-    },
-    "best-gift-ever": {
+    "camaraderie": {
       "role": "survivor",
       "usage": 0,
       "rate": 0,
@@ -2804,13 +2804,1668 @@
   "unmatched": {
     "killers": [],
     "survivors": [
-      "William \"Bill\" Overbeck",
-      "Ashley J. Williams"
+      "Ashley J. Williams",
+      "William \"Bill\" Overbeck"
     ],
     "perks": []
   },
   "perkAverage": {
+    "killer": 48.84,
+    "survivor": 39.73
+  },
+  "previousPerks": {
+    "killer": {
+      "bitter-murmur": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deerstalker": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "distressing": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-no-one-escapes-death": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "insidious": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "iron-grasp": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-monstrous-shrine": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "sloppy-butcher": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "spies-from-the-shadows": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "unrelenting": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "whispers": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-thrill-of-the-hunt": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "agitation": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "brutal-strength": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "unnerving-presence": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bloodhound": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "predator": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "shadowborn": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "enduring": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lightborn": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "tinkerer": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "a-nurses-calling": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "stridor": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "thanatophobia": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dying-light": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "play-with-your-food": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "save-the-best-for-last": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-devour-hope": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-ruin": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-the-third-seal": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "overcharge": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "monitor-and-abuse": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "overwhelming-presence": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "beast-of-prey": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-huntress-lullaby": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "territorial-imperative": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "barbecue-and-chilli": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "franklins-demise": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "knock-out": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "blood-warden": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "fire-up": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "remember-me": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-hangmans-trick": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "make-your-choice": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "surveillance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bamboozle": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "coulrophobia": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "pop-goes-the-weasel": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-haunted-ground": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "rancor": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "spirit-fury": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "discordance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "iron-maiden": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "mad-grit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "corrupt-intervention": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dark-devotion": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "infectious-fright": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "furtive-chase": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "im-all-ears": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "thrilling-tremors": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "cruel-limits": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "mindbreaker": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "surge": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "blood-echo": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "nemesis": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "zanshin-tactics": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dead-mans-switch": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "gearhead": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-retribution": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deathbound": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "forced-penance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "trail-of-torment": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dragons-grip": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-blood-favour": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-undying": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hoarder": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "oppression": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "coup-de-grace": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "starstruck": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-crowd-control": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "no-way-out": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lethal-pursuer": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hysteria": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "eruption": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deadlock": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-plaything": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-gift-of-pain": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "grim-embrace": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-pain-resonance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-pentimento": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-floods-of-rage": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "call-of-brine": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "merciless-storm": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dissolution": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "darkness-revealed": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "septic-touch": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "shattered-hope": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "superior-anatomy": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "awakened-awareness": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "terminus": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "nowhere-to-hide": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-face-the-darkness": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hubris": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "game-afoot": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "thwack": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "leverage": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "genetic-limits": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "forced-hesitation": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "machine-learning": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "ultimate-weapon": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "rapid-brutality": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "alien-instinct": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-two-can-play": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "friends-til-the-end": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "batteries-included": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "unbound": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "unforeseen": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "undone": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "weave-attunement": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "languid-touch": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dark-arrogance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-wretched-fate": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "human-greed": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dominance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "all-shaking-thunder": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scourge-hook-jagged-compass": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "no-quarter": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-nothing-but-misery": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "forever-entwined": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "none-are-free": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "help-wanted": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "phantom-fear": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "haywire": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "ravenous": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "wandering-eye": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-overture-of-doom": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "turn-back-the-clock": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "secret-project": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-hive-mind": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-scared-to-death": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "silent-shadow": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "rampage": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "celestial-witness": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hex-under-your-thumb": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lay-waste": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "laughingstock": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "kill-spree": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "funny-business": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      }
+    },
+    "survivor": {
+      "dark-sense": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deja-vu": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hope": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lightweight": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "no-one-left-behind": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "plunderers-instinct": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "premonition": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "resilience": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "slippery-meat": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "small-game": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "spine-chill": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "this-is-not-happening": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "well-make-it": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "kindred": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bond": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "leader": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "prove-thyself": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "adrenaline": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "quick-and-quiet": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "sprint-burst": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "botany-knowledge": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "empathy": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "self-care": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "calm-spirit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "iron-will": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "saboteur": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "balanced-landing": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "streetwise": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "urban-evasion": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "decisive-strike": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "object-of-obsession": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "sole-survivor": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "ace-in-the-hole": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "open-handed": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "up-the-ante": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "borrowed-time": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "left-behind": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "unbreakable": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "alert": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lithe": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "technician": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dead-hard": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "no-mither": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "were-gonna-live-forever": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "pharmacy": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "vigil": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "wake-up": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "detectives-hunch": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "stake-out": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "tenacity": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boil-over": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dance-with-me": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "windows-of-opportunity": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "autodidact": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deliverance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "diversion": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "aftercare": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "breakdown": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "distortion": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "head-on": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "poised": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "solidarity": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "buckle-up": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "flip-flop": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "mettle-of-man": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "better-together": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "fixated": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "inner-strength": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "babysitter": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "camaraderie": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "second-wind": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "any-means-necessary": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "breakout": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lucky-break": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "for-the-people": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "off-the-record": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "red-herring": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "blood-pact": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "repressed-alliance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "soul-guard": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "built-to-last": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "desperate-measures": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "visionary": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "appraisal": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deception": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "power-struggle": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "fast-track": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "smash-hit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "self-preservation": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "counterforce": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "resurgence": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "blast-mine": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bite-the-bullet": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "flashbang": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "rookie-spirit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "clairvoyance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-circle-of-healing": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-shadow-step": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "overcome": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "corrective-action": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-exponential": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "parental-guidance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "empathic-connection": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-dark-theory": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "inner-focus": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "residual-manifest": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "overzealous": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "wiretap": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "reactive-healing": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "low-profile": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "better-than-new": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "reassurance": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hyperfocus": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "potential-energy": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "fogwise": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "quick-gambit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "cut-loose": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "friendly-competition": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-power-of-two": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "background-player": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "blood-rush": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-collective-stealth": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "troubleshooter": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "made-for-this": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scavenger": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "dramaturgy": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "scene-partner": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "plot-twist": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lucky-star": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "chemical-trap": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "light-footed": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "champion-of-light": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-illumination": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "deadline": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "invocation-weaving-spiders": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "strength-in-shadows": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "wicked": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "mirrored-illusion": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bardic-inspiration": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "still-sight": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "finesse": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "hardened": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "specialist": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "eyes-of-belmont": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "exultation": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "moment-of-glory": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "invocation-treacherous-crows": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "clean-break": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "shoulder-the-burden": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "do-no-harm": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "duty-of-care": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "rapid-response": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "apocalyptic-ingenuity": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "come-and-get-me": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-toughen-up": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "conviction": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "last-stand": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-throw-down": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "road-life": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "one-two-three-four": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "ghost-notes": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "bada-bada-boom": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "change-of-plan": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-full-circuit": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "extrasensory-perception": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "we-see-you": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "teamwork-soft-spoken": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "flow-state": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "a-place-for-us": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "five-moves-ahead": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "wide-open-throttle": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "lend-a-hand": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "cross-examination": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "fruits-of-your-labor": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "salvations-cry": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "boon-steadfast": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "valkyries-rage": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "shared-trauma": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      },
+      "best-gift-ever": {
+        "usage": 0,
+        "rate": 0,
+        "count": 0
+      }
+    }
+  },
+  "previousPerkAverage": {
     "killer": null,
     "survivor": null
+  },
+  "previousPerkPeriod": {
+    "killer": {
+      "start": "2026-11-24T16:04:00Z",
+      "end": "2026-11-24T16:00:00Z"
+    },
+    "survivor": {
+      "start": "2026-11-24T16:04:00Z",
+      "end": "2026-11-24T16:00:00Z"
+    }
   }
 }
