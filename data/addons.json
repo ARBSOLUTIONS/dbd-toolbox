@@ -378,7 +378,7 @@
     "id": "brookes-pustule",
     "name": "Brooke's Pustule",
     "rarity": "uncommon",
-    "description": "• While standing in the Acid Puddle and for 5 seconds after, increase basic-breaking speed of Pallets and Breakable Walls by +25%.\n• When you apply Torture, the next Bag of Toys search is guaranteed to contain the Acid Bottle.",
+    "description": "• Increases the size of the Acid Puddle up to +100% based on the distance the Acid Bottle traveled, reaching the maximum at 6 metres.\n• When you apply Torture, the next Bag of Toys search is guaranteed to contain the Acid Bottle.",
     "quote": "\"A weeping blister that bubbled as acid ate through Brooke's face. \"",
     "icon": {
       "local": "/icons/addons/T_UI_iconAddon_BrooksPustule.png",
@@ -528,7 +528,7 @@
     "id": "explosive-gift",
     "name": "Explosive Gift",
     "rarity": "very-rare",
-    "description": "• For each Toy with maximum Deadliness, reduce your Terror Radius size by -20%.",
+    "description": "• For each Toy with maximum Deadliness, reduce your Terror Radius size by -12%.",
     "quote": "\"A disarmingly joyful gift that's sure to be a blast. \"",
     "icon": {
       "local": "/icons/addons/T_UI_iconAddon_ExplosiveGift.png",
@@ -543,7 +543,7 @@
     "id": "jonathans-skull",
     "name": "Jonathan's Skull",
     "rarity": "very-rare",
-    "description": "• Damaging or Torturing a Survivor with a Toy grants 1 Token, up to 10 Tokens.\n• Manually Taunting consumes all Tokens then, if at least 1 Token was consumed, reveal all Survivor auras within 8 metres plus +2 metres per Token for 6 seconds.",
+    "description": "• Damaging or Torturing a Survivor with a Toy grants 1 Token, up to 5 Tokens.\n• Manually Taunting consumes all Tokens then, if at least 1 Token was consumed, reveal all Survivor auras within 10 metres plus +5 metres per Token for 6 seconds.",
     "quote": "\"The bespectacled skull of Sienna's brother. Hilarious! \"",
     "icon": {
       "local": "/icons/addons/T_UI_iconAddon_JonathansSkull.png",
@@ -573,7 +573,7 @@
     "id": "duct-tape",
     "name": "Duct Tape",
     "rarity": "iridescent",
-    "description": "• Equipping a Toy within 0.5 seconds of opening the Bag of Toys reduces its cool-down by -5 seconds.",
+    "description": "• Equipping a Toy within 0.5 seconds of opening the Bag of Toys reduces its cool-down by -4 seconds.",
     "quote": "\"Made for restraining victims but could probably be used to keep things in place. \"",
     "icon": {
       "local": "/icons/addons/T_UI_iconAddon_DuctTape.png",

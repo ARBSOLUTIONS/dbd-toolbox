@@ -2650,7 +2650,7 @@
     "name": "Dark Arrogance",
     "role": "killer",
     "character": "The Lich",
-    "description": "Permanently benefit from the following effects:\n• Increases the Vaulting speed by +15%.\n• Increases successful basic-attack recovery speed by 13/14/15%.\nPermanently suffer from the following effects:\n• Reduces the Recovery speed of missed basic-attacks by -15%.\n• Reduces the Recovery speed from Pallet Stuns by -15%.\n• Increases the duration of Killer Blinds by +15%.",
+    "description": "Permanently benefit from the following effects:\n• Increases the Vaulting speed by +15%.\n• Increases successful basic-attack recovery speed by 13/14/15%.\nPermanently suffer from the following effects:\n• Reduces the Recovery speed from Pallet Stuns by -15%.\n• Increases the duration of Killer Blinds by +15%.",
     "quote": "\"Run all you want. I will not be denied. \" — Vecna",
     "icon": {
       "local": "/icons/perks/IconPerks_darkArrogance.png",
@@ -3448,7 +3448,7 @@
     "name": "Kill Spree",
     "role": "killer",
     "character": "The Terrifier",
-    "description": "When all Survivors have reached the second Hook Stage and all Generators have been completed, you can kill Survivors.\nWhile killing a Survivor, Exit Gate Switches are blocked by The Entity and for 6/8/10 seconds after.",
+    "description": "When all Survivors have reached the second Hook Stage and all Generators have been completed, you can kill Survivors.\nWhile killing a Survivor, Exit Gate Switches are blocked by The Entity and for 12/18/20 seconds after.",
     "quote": "\"He’s killing them, one by one by one like cows. \" — Cat Lady",
     "icon": {
       "local": "/icons/perks/T_UI_iconsPerks_KillSpree.png",
@@ -3933,7 +3933,7 @@
     "name": "Scourge Hook: Monstrous Shrine",
     "role": "killer",
     "character": null,
-    "description": "At the start of the Trial, the 4 Hooks located inside the Basement and an additional 4 Hooks located throughout the Trial Grounds are all changed into Scourge Hooks:\n• The Auras of Scourge Hooks are highlighted to you in white.\nWhenever you are farther than 24 metres from a Survivor hooked onto a Scourge Hook, the following effect applies:\n• All Generators regress at 150/175/200% of the default Regression rate.",
+    "description": "At the start of the Trial, the 4 Hooks located inside the Basement and an additional 4 Hooks located throughout the Trial Grounds are all changed into Scourge Hooks:\n• The Auras of Scourge Hooks are highlighted to you in white.\nWhenever you are farther than 24 metres from a Survivor hooked onto a Scourge Hook, the following effect applies:\n• All Generators regress at +200% of the default Regression rate.\n• This persists for 20/25/30 seconds after the Survivor is unhooked.",
     "quote": "\"Then you will know that there is no escape. When hanging in the depths, you face the dark one. \"",
     "icon": {
       "local": "/icons/perks/IconPerks_scourgeHookMonstrousShrine.png",

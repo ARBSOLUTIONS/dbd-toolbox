@@ -1,5 +1,107 @@
 [
   {
+    "fromPatch": "10.3.0",
+    "toPatch": "10.3.0",
+    "date": "2026-11-25T19:55:36.204Z",
+    "perks": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "Dark Arrogance (killer)",
+        "Kill Spree (killer)",
+        "Scourge Hook: Monstrous Shrine (killer)"
+      ]
+    },
+    "killers": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "survivors": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "items": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "addons": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "Brooke's Pustule (The Terrifier)",
+        "Explosive Gift (The Terrifier)",
+        "Jonathan's Skull (The Terrifier)",
+        "Duct Tape (The Terrifier)"
+      ]
+    },
+    "offerings": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "total": 7,
+    "details": {
+      "perks": [
+        {
+          "id": "dark-arrogance",
+          "role": "killer",
+          "name": "Dark Arrogance",
+          "before": "Permanently benefit from the following effects:\n• Increases the Vaulting speed by +15%.\n• Increases successful basic-attack recovery speed by 13/14/15%.\nPermanently suffer from the following effects:\n• Reduces the Recovery speed of missed basic-attacks by -15%.\n• Reduces the Recovery speed from Pallet Stuns by -15%.\n• Increases the duration of Killer Blinds by +15%.",
+          "after": "Permanently benefit from the following effects:\n• Increases the Vaulting speed by +15%.\n• Increases successful basic-attack recovery speed by 13/14/15%.\nPermanently suffer from the following effects:\n• Reduces the Recovery speed from Pallet Stuns by -15%.\n• Increases the duration of Killer Blinds by +15%."
+        },
+        {
+          "id": "kill-spree",
+          "role": "killer",
+          "name": "Kill Spree",
+          "before": "When all Survivors have reached the second Hook Stage and all Generators have been completed, you can kill Survivors.\nWhile killing a Survivor, Exit Gate Switches are blocked by The Entity and for 6/8/10 seconds after.",
+          "after": "When all Survivors have reached the second Hook Stage and all Generators have been completed, you can kill Survivors.\nWhile killing a Survivor, Exit Gate Switches are blocked by The Entity and for 12/18/20 seconds after."
+        },
+        {
+          "id": "scourge-hook-monstrous-shrine",
+          "role": "killer",
+          "name": "Scourge Hook: Monstrous Shrine",
+          "before": "At the start of the Trial, the 4 Hooks located inside the Basement and an additional 4 Hooks located throughout the Trial Grounds are all changed into Scourge Hooks:\n• The Auras of Scourge Hooks are highlighted to you in white.\nWhenever you are farther than 24 metres from a Survivor hooked onto a Scourge Hook, the following effect applies:\n• All Generators regress at 150/175/200% of the default Regression rate.",
+          "after": "At the start of the Trial, the 4 Hooks located inside the Basement and an additional 4 Hooks located throughout the Trial Grounds are all changed into Scourge Hooks:\n• The Auras of Scourge Hooks are highlighted to you in white.\nWhenever you are farther than 24 metres from a Survivor hooked onto a Scourge Hook, the following effect applies:\n• All Generators regress at +200% of the default Regression rate.\n• This persists for 20/25/30 seconds after the Survivor is unhooked."
+        }
+      ],
+      "addons": [
+        {
+          "id": "brookes-pustule",
+          "name": "Brooke's Pustule",
+          "owner": "The Terrifier",
+          "before": "• While standing in the Acid Puddle and for 5 seconds after, increase basic-breaking speed of Pallets and Breakable Walls by +25%.\n• When you apply Torture, the next Bag of Toys search is guaranteed to contain the Acid Bottle.",
+          "after": "• Increases the size of the Acid Puddle up to +100% based on the distance the Acid Bottle traveled, reaching the maximum at 6 metres.\n• When you apply Torture, the next Bag of Toys search is guaranteed to contain the Acid Bottle."
+        },
+        {
+          "id": "explosive-gift",
+          "name": "Explosive Gift",
+          "owner": "The Terrifier",
+          "before": "• For each Toy with maximum Deadliness, reduce your Terror Radius size by -20%.",
+          "after": "• For each Toy with maximum Deadliness, reduce your Terror Radius size by -12%."
+        },
+        {
+          "id": "jonathans-skull",
+          "name": "Jonathan's Skull",
+          "owner": "The Terrifier",
+          "before": "• Damaging or Torturing a Survivor with a Toy grants 1 Token, up to 10 Tokens.\n• Manually Taunting consumes all Tokens then, if at least 1 Token was consumed, reveal all Survivor auras within 8 metres plus +2 metres per Token for 6 seconds.",
+          "after": "• Damaging or Torturing a Survivor with a Toy grants 1 Token, up to 5 Tokens.\n• Manually Taunting consumes all Tokens then, if at least 1 Token was consumed, reveal all Survivor auras within 10 metres plus +5 metres per Token for 6 seconds."
+        },
+        {
+          "id": "duct-tape",
+          "name": "Duct Tape",
+          "owner": "The Terrifier",
+          "before": "• Equipping a Toy within 0.5 seconds of opening the Bag of Toys reduces its cool-down by -5 seconds.",
+          "after": "• Equipping a Toy within 0.5 seconds of opening the Bag of Toys reduces its cool-down by -4 seconds."
+        }
+      ],
+      "items": []
+    },
+    "newPerkIds": []
+  },
+  {
     "fromPatch": "10.2.2b",
     "toPatch": "10.3.0",
     "date": "2026-11-24T17:24:15.019Z",
