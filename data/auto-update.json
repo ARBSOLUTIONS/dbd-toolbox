@@ -1,8 +1,9 @@
 {
-  "lastCheck": "2026-11-25T09:50:07.059Z",
+  "lastCheck": "2026-11-26T02:50:01.449Z",
   "lastResult": {
-    "action": "refresh",
-    "why": "follow-up 24h after an update"
+    "action": "none",
+    "why": "still on patch 10.3.0",
+    "livePatch": "10.3.0"
   },
   "announcements": [
     {
